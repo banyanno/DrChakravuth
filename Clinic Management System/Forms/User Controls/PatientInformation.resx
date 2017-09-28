@@ -1,0 +1,1634 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="SplitContainer1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="SplitContainer1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 32</value>
+  </data>
+  <data name="SplitContainer1.Orientation" type="System.Windows.Forms.Orientation, System.Windows.Forms">
+    <value>Horizontal</value>
+  </data>
+  <data name="GridPatientInfo_DesignTimeLayout.LayoutString" xml:space="preserve">
+    <value>&lt;GridEXLayoutData&gt;&lt;RootTable&gt;&lt;Columns Collection="true" ElementName="Column"&gt;&lt;Column0 ID="patientid"&gt;&lt;Caption&gt;Patient No.&lt;/Caption&gt;&lt;DataMember&gt;patientid&lt;/DataMember&gt;&lt;Key&gt;patientid&lt;/Key&gt;&lt;Position&gt;0&lt;/Position&gt;&lt;Width&gt;160&lt;/Width&gt;&lt;CellStyle&gt;&lt;FontSize&gt;12&lt;/FontSize&gt;&lt;/CellStyle&gt;&lt;HeaderStyle&gt;&lt;Font&gt;Microsoft Sans Serif, 11.25pt&lt;/Font&gt;&lt;LineAlignment&gt;Center&lt;/LineAlignment&gt;&lt;/HeaderStyle&gt;&lt;/Column0&gt;&lt;Column1 ID="ppatientid"&gt;&lt;Caption&gt;pPatientNo&lt;/Caption&gt;&lt;DataMember&gt;ppatientid&lt;/DataMember&gt;&lt;Key&gt;ppatientid&lt;/Key&gt;&lt;Position&gt;1&lt;/Position&gt;&lt;Visible&gt;False&lt;/Visible&gt;&lt;Width&gt;146&lt;/Width&gt;&lt;CellStyle&gt;&lt;FontSize&gt;12&lt;/FontSize&gt;&lt;/CellStyle&gt;&lt;HeaderStyle&gt;&lt;Font&gt;Microsoft Sans Serif, 8.25pt&lt;/Font&gt;&lt;/HeaderStyle&gt;&lt;/Column1&gt;&lt;Column2 ID="pname"&gt;&lt;Caption&gt;Full Name&lt;/Caption&gt;&lt;DataMember&gt;pname&lt;/DataMember&gt;&lt;Key&gt;pname&lt;/Key&gt;&lt;Position&gt;2&lt;/Position&gt;&lt;Width&gt;250&lt;/Width&gt;&lt;CellStyle&gt;&lt;FontSize&gt;12&lt;/FontSize&gt;&lt;/CellStyle&gt;&lt;HeaderStyle&gt;&lt;Font&gt;Microsoft Sans Serif, 11.25pt&lt;/Font&gt;&lt;LineAlignment&gt;Center&lt;/LineAlignment&gt;&lt;/HeaderStyle&gt;&lt;/Column2&gt;&lt;Column3 ID="pgender"&gt;&lt;Caption&gt;Gender&lt;/Caption&gt;&lt;DataMember&gt;pgender&lt;/DataMember&gt;&lt;Key&gt;pgender&lt;/Key&gt;&lt;Position&gt;3&lt;/Position&gt;&lt;Width&gt;86&lt;/Width&gt;&lt;CellStyle&gt;&lt;FontSize&gt;12&lt;/FontSize&gt;&lt;/CellStyle&gt;&lt;HeaderStyle&gt;&lt;Font&gt;Microsoft Sans Serif, 11.25pt&lt;/Font&gt;&lt;LineAlignment&gt;Center&lt;/LineAlignment&gt;&lt;/HeaderStyle&gt;&lt;/Column3&gt;&lt;Column4 ID="Age"&gt;&lt;Caption&gt;Age&lt;/Caption&gt;&lt;DataMember&gt;Age&lt;/DataMember&gt;&lt;Key&gt;Age&lt;/Key&gt;&lt;Position&gt;4&lt;/Position&gt;&lt;Width&gt;64&lt;/Width&gt;&lt;CellStyle&gt;&lt;TextAlignment&gt;Center&lt;/TextAlignment&gt;&lt;/CellStyle&gt;&lt;/Column4&gt;&lt;Column5 ID="pAge"&gt;&lt;Caption&gt;Date of Birth&lt;/Caption&gt;&lt;DataMember&gt;pAge&lt;/DataMember&gt;&lt;FormatString&gt;dd-MMM-yyyy&lt;/FormatString&gt;&lt;Key&gt;pAge&lt;/Key&gt;&lt;Position&gt;5&lt;/Position&gt;&lt;Width&gt;168&lt;/Width&gt;&lt;CellStyle&gt;&lt;FontSize&gt;12&lt;/FontSize&gt;&lt;/CellStyle&gt;&lt;HeaderStyle&gt;&lt;Font&gt;Microsoft Sans Serif, 11.25pt&lt;/Font&gt;&lt;LineAlignment&gt;Center&lt;/LineAlignment&gt;&lt;/HeaderStyle&gt;&lt;/Column5&gt;&lt;Column6 ID="pphoneno"&gt;&lt;Caption&gt;Phone Number&lt;/Caption&gt;&lt;DataMember&gt;pphoneno&lt;/DataMember&gt;&lt;Key&gt;pphoneno&lt;/Key&gt;&lt;Position&gt;6&lt;/Position&gt;&lt;Width&gt;184&lt;/Width&gt;&lt;CellStyle&gt;&lt;FontSize&gt;12&lt;/FontSize&gt;&lt;/CellStyle&gt;&lt;HeaderStyle&gt;&lt;Font&gt;Microsoft Sans Serif, 11.25pt&lt;/Font&gt;&lt;LineAlignment&gt;Center&lt;/LineAlignment&gt;&lt;/HeaderStyle&gt;&lt;/Column6&gt;&lt;Column7 ID="pcontactaddress"&gt;&lt;Caption&gt;Address&lt;/Caption&gt;&lt;DataMember&gt;pcontactaddress&lt;/DataMember&gt;&lt;Key&gt;pcontactaddress&lt;/Key&gt;&lt;Position&gt;7&lt;/Position&gt;&lt;Width&gt;300&lt;/Width&gt;&lt;CellStyle&gt;&lt;FontSize&gt;12&lt;/FontSize&gt;&lt;/CellStyle&gt;&lt;HeaderStyle&gt;&lt;Font&gt;Microsoft Sans Serif, 11.25pt&lt;/Font&gt;&lt;LineAlignment&gt;Center&lt;/LineAlignment&gt;&lt;/HeaderStyle&gt;&lt;/Column7&gt;&lt;Column8 ID="IsValid"&gt;&lt;Caption&gt;IsValid&lt;/Caption&gt;&lt;DataMember&gt;IsValid&lt;/DataMember&gt;&lt;Key&gt;IsValid&lt;/Key&gt;&lt;Position&gt;8&lt;/Position&gt;&lt;Visible&gt;False&lt;/Visible&gt;&lt;CellStyle&gt;&lt;FontSize&gt;12&lt;/FontSize&gt;&lt;/CellStyle&gt;&lt;HeaderStyle&gt;&lt;Font&gt;Microsoft Sans Serif, 8.25pt&lt;/Font&gt;&lt;/HeaderStyle&gt;&lt;/Column8&gt;&lt;/Columns&gt;&lt;GridLineStyle&gt;Solid&lt;/GridLineStyle&gt;&lt;GroupCondition /&gt;&lt;RowHeaderContent&gt;RowPosition&lt;/RowHeaderContent&gt;&lt;RowHeaderWidth&gt;100&lt;/RowHeaderWidth&gt;&lt;RowHeight&gt;40&lt;/RowHeight&gt;&lt;HeaderFormatStyle&gt;&lt;ForeColor&gt;Blue&lt;/ForeColor&gt;&lt;Font&gt;Verdana, 11.25pt&lt;/Font&gt;&lt;/HeaderFormatStyle&gt;&lt;RowHeaderFormatStyle&gt;&lt;ForeColor&gt;Blue&lt;/ForeColor&gt;&lt;Font&gt;Times New Roman, 12pt&lt;/Font&gt;&lt;/RowHeaderFormatStyle&gt;&lt;/RootTable&gt;&lt;/GridEXLayoutData&gt;</value>
+  </data>
+  <data name="GridPatientInfo.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="GridPatientInfo.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 11.25pt</value>
+  </data>
+  <data name="GridPatientInfo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="GridPatientInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1518, 331</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="GridPatientInfo.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="&gt;&gt;GridPatientInfo.Name" xml:space="preserve">
+    <value>GridPatientInfo</value>
+  </data>
+  <data name="&gt;&gt;GridPatientInfo.Type" xml:space="preserve">
+    <value>Janus.Windows.GridEX.GridEX, Janus.Windows.GridEX.v3, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;GridPatientInfo.Parent" xml:space="preserve">
+    <value>SplitContainer1.Panel1</value>
+  </data>
+  <data name="&gt;&gt;GridPatientInfo.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="SplitContainer1.Panel1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 11.25pt</value>
+  </data>
+  <data name="&gt;&gt;SplitContainer1.Panel1.Name" xml:space="preserve">
+    <value>SplitContainer1.Panel1</value>
+  </data>
+  <data name="&gt;&gt;SplitContainer1.Panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SplitContainer1.Panel1.Parent" xml:space="preserve">
+    <value>SplitContainer1</value>
+  </data>
+  <data name="&gt;&gt;SplitContainer1.Panel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="UiTab1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="UiTab1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Khmer OS Battambang, 12pt</value>
+  </data>
+  <data name="UiTab1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="UiTab1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1518, 578</value>
+  </data>
+  <data name="UiTab1.TabIndex" type="System.Int32, mscorlib">
+    <value>28</value>
+  </data>
+  <data name="UiTabPage1.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="CboAddress.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="CboAddress.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 14.25pt</value>
+  </data>
+  <data name="CboAddress.Location" type="System.Drawing.Point, System.Drawing">
+    <value>546, 73</value>
+  </data>
+  <data name="CboAddress.Size" type="System.Drawing.Size, System.Drawing">
+    <value>281, 32</value>
+  </data>
+  <data name="CboAddress.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;CboAddress.Name" xml:space="preserve">
+    <value>CboAddress</value>
+  </data>
+  <data name="&gt;&gt;CboAddress.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CboAddress.Parent" xml:space="preserve">
+    <value>GroupBox1</value>
+  </data>
+  <data name="&gt;&gt;CboAddress.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="RadAddress.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="RadAddress.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Khmer OS Battambang, 11.25pt</value>
+  </data>
+  <data name="RadAddress.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="RadAddress.Location" type="System.Drawing.Point, System.Drawing">
+    <value>431, 75</value>
+  </data>
+  <data name="RadAddress.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 31</value>
+  </data>
+  <data name="RadAddress.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="RadAddress.Text" xml:space="preserve">
+    <value>អាស័យដ្ឋាន</value>
+  </data>
+  <data name="&gt;&gt;RadAddress.Name" xml:space="preserve">
+    <value>RadAddress</value>
+  </data>
+  <data name="&gt;&gt;RadAddress.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;RadAddress.Parent" xml:space="preserve">
+    <value>GroupBox1</value>
+  </data>
+  <data name="&gt;&gt;RadAddress.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="Button2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Khmer OS Battambang, 11.25pt</value>
+  </data>
+  <data name="Button2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Button2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>849, 25</value>
+  </data>
+  <data name="Button2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>90, 32</value>
+  </data>
+  <data name="Button2.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="Button2.Text" xml:space="preserve">
+    <value>ស្វែងរក</value>
+  </data>
+  <data name="&gt;&gt;Button2.Name" xml:space="preserve">
+    <value>Button2</value>
+  </data>
+  <data name="&gt;&gt;Button2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Button2.Parent" xml:space="preserve">
+    <value>GroupBox1</value>
+  </data>
+  <data name="&gt;&gt;Button2.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="TxtByPhone.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="TxtByPhone.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 14.25pt</value>
+  </data>
+  <data name="TxtByPhone.Location" type="System.Drawing.Point, System.Drawing">
+    <value>546, 26</value>
+  </data>
+  <data name="TxtByPhone.Size" type="System.Drawing.Size, System.Drawing">
+    <value>281, 29</value>
+  </data>
+  <data name="TxtByPhone.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;TxtByPhone.Name" xml:space="preserve">
+    <value>TxtByPhone</value>
+  </data>
+  <data name="&gt;&gt;TxtByPhone.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TxtByPhone.Parent" xml:space="preserve">
+    <value>GroupBox1</value>
+  </data>
+  <data name="&gt;&gt;TxtByPhone.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="RadByPhone.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="RadByPhone.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Khmer OS Battambang, 11.25pt</value>
+  </data>
+  <data name="RadByPhone.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="RadByPhone.Location" type="System.Drawing.Point, System.Drawing">
+    <value>429, 32</value>
+  </data>
+  <data name="RadByPhone.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 31</value>
+  </data>
+  <data name="RadByPhone.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="RadByPhone.Text" xml:space="preserve">
+    <value>លេខទូរស័ព្ទ</value>
+  </data>
+  <data name="&gt;&gt;RadByPhone.Name" xml:space="preserve">
+    <value>RadByPhone</value>
+  </data>
+  <data name="&gt;&gt;RadByPhone.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;RadByPhone.Parent" xml:space="preserve">
+    <value>GroupBox1</value>
+  </data>
+  <data name="&gt;&gt;RadByPhone.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="TxtByPatientName.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="TxtByPatientName.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 14.25pt</value>
+  </data>
+  <data name="TxtByPatientName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>130, 72</value>
+  </data>
+  <data name="TxtByPatientName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>281, 29</value>
+  </data>
+  <data name="TxtByPatientName.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;TxtByPatientName.Name" xml:space="preserve">
+    <value>TxtByPatientName</value>
+  </data>
+  <data name="&gt;&gt;TxtByPatientName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TxtByPatientName.Parent" xml:space="preserve">
+    <value>GroupBox1</value>
+  </data>
+  <data name="&gt;&gt;TxtByPatientName.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="TxtByPatientNo.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 14.25pt</value>
+  </data>
+  <data name="TxtByPatientNo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>130, 28</value>
+  </data>
+  <data name="TxtByPatientNo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>281, 29</value>
+  </data>
+  <data name="TxtByPatientNo.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;TxtByPatientNo.Name" xml:space="preserve">
+    <value>TxtByPatientNo</value>
+  </data>
+  <data name="&gt;&gt;TxtByPatientNo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TxtByPatientNo.Parent" xml:space="preserve">
+    <value>GroupBox1</value>
+  </data>
+  <data name="&gt;&gt;TxtByPatientNo.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="RadByPateintName.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="RadByPateintName.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Khmer OS Battambang, 11.25pt</value>
+  </data>
+  <data name="RadByPateintName.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="RadByPateintName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 78</value>
+  </data>
+  <data name="RadByPateintName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>108, 31</value>
+  </data>
+  <data name="RadByPateintName.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="RadByPateintName.Text" xml:space="preserve">
+    <value>ឈ្មោះអ្នកជម្ងឺ</value>
+  </data>
+  <data name="&gt;&gt;RadByPateintName.Name" xml:space="preserve">
+    <value>RadByPateintName</value>
+  </data>
+  <data name="&gt;&gt;RadByPateintName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;RadByPateintName.Parent" xml:space="preserve">
+    <value>GroupBox1</value>
+  </data>
+  <data name="&gt;&gt;RadByPateintName.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="RadByPatientNo.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="RadByPatientNo.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Khmer OS Battambang, 11.25pt</value>
+  </data>
+  <data name="RadByPatientNo.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="RadByPatientNo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 34</value>
+  </data>
+  <data name="RadByPatientNo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>109, 31</value>
+  </data>
+  <data name="RadByPatientNo.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="RadByPatientNo.Text" xml:space="preserve">
+    <value>លេខសំគាល់ </value>
+  </data>
+  <data name="&gt;&gt;RadByPatientNo.Name" xml:space="preserve">
+    <value>RadByPatientNo</value>
+  </data>
+  <data name="&gt;&gt;RadByPatientNo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;RadByPatientNo.Parent" xml:space="preserve">
+    <value>GroupBox1</value>
+  </data>
+  <data name="&gt;&gt;RadByPatientNo.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="GroupBox1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Khmer OS Battambang, 11.25pt</value>
+  </data>
+  <data name="GroupBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 229</value>
+  </data>
+  <data name="GroupBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>961, 124</value>
+  </data>
+  <data name="GroupBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="GroupBox1.Text" xml:space="preserve">
+    <value>ស្វែងរកតាមរយៈ</value>
+  </data>
+  <data name="&gt;&gt;GroupBox1.Name" xml:space="preserve">
+    <value>GroupBox1</value>
+  </data>
+  <data name="&gt;&gt;GroupBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBox1.Parent" xml:space="preserve">
+    <value>UiTabPage1</value>
+  </data>
+  <data name="&gt;&gt;GroupBox1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="txtsex.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt</value>
+  </data>
+  <data name="txtsex.Items" xml:space="preserve">
+    <value>Male</value>
+  </data>
+  <data name="txtsex.Items1" xml:space="preserve">
+    <value>Female</value>
+  </data>
+  <data name="txtsex.Location" type="System.Drawing.Point, System.Drawing">
+    <value>533, 58</value>
+  </data>
+  <data name="txtsex.Size" type="System.Drawing.Size, System.Drawing">
+    <value>107, 28</value>
+  </data>
+  <data name="txtsex.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;txtsex.Name" xml:space="preserve">
+    <value>txtsex</value>
+  </data>
+  <data name="&gt;&gt;txtsex.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtsex.Parent" xml:space="preserve">
+    <value>UiTabPage1</value>
+  </data>
+  <data name="&gt;&gt;txtsex.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="txtaddress.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt</value>
+  </data>
+  <data name="txtaddress.Location" type="System.Drawing.Point, System.Drawing">
+    <value>128, 114</value>
+  </data>
+  <data name="txtaddress.Size" type="System.Drawing.Size, System.Drawing">
+    <value>330, 28</value>
+  </data>
+  <data name="txtaddress.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;txtaddress.Name" xml:space="preserve">
+    <value>txtaddress</value>
+  </data>
+  <data name="&gt;&gt;txtaddress.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtaddress.Parent" xml:space="preserve">
+    <value>UiTabPage1</value>
+  </data>
+  <data name="&gt;&gt;txtaddress.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="TxtAge.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt</value>
+  </data>
+  <data name="TxtAge.Location" type="System.Drawing.Point, System.Drawing">
+    <value>128, 63</value>
+  </data>
+  <data name="TxtAge.Size" type="System.Drawing.Size, System.Drawing">
+    <value>61, 26</value>
+  </data>
+  <data name="TxtAge.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="TxtAge.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="&gt;&gt;TxtAge.Name" xml:space="preserve">
+    <value>TxtAge</value>
+  </data>
+  <data name="&gt;&gt;TxtAge.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TxtAge.Parent" xml:space="preserve">
+    <value>UiTabPage1</value>
+  </data>
+  <data name="&gt;&gt;TxtAge.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="Label14.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Label14.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Khmer OS Battambang, 12pt</value>
+  </data>
+  <data name="Label14.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Label14.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 64</value>
+  </data>
+  <data name="Label14.Size" type="System.Drawing.Size, System.Drawing">
+    <value>46, 29</value>
+  </data>
+  <data name="Label14.TabIndex" type="System.Int32, mscorlib">
+    <value>35</value>
+  </data>
+  <data name="Label14.Text" xml:space="preserve">
+    <value>អាយុ</value>
+  </data>
+  <data name="Label14.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;Label14.Name" xml:space="preserve">
+    <value>Label14</value>
+  </data>
+  <data name="&gt;&gt;Label14.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label14.Parent" xml:space="preserve">
+    <value>UiTabPage1</value>
+  </data>
+  <data name="&gt;&gt;Label14.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="btnCancel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Khmer OS Battambang, 11.25pt</value>
+  </data>
+  <data name="btnCancel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnCancel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>639, 168</value>
+  </data>
+  <data name="btnCancel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 38</value>
+  </data>
+  <data name="btnCancel.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>បោះបង់</value>
+  </data>
+  <data name="&gt;&gt;btnCancel.Name" xml:space="preserve">
+    <value>btnCancel</value>
+  </data>
+  <data name="&gt;&gt;btnCancel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnCancel.Parent" xml:space="preserve">
+    <value>UiTabPage1</value>
+  </data>
+  <data name="&gt;&gt;btnCancel.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="btnSave.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Khmer OS Battambang, 11.25pt</value>
+  </data>
+  <data name="btnSave.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnSave.Location" type="System.Drawing.Point, System.Drawing">
+    <value>533, 168</value>
+  </data>
+  <data name="btnSave.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 38</value>
+  </data>
+  <data name="btnSave.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="btnSave.Text" xml:space="preserve">
+    <value>រក្សាទុក</value>
+  </data>
+  <data name="&gt;&gt;btnSave.Name" xml:space="preserve">
+    <value>btnSave</value>
+  </data>
+  <data name="&gt;&gt;btnSave.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnSave.Parent" xml:space="preserve">
+    <value>UiTabPage1</value>
+  </data>
+  <data name="&gt;&gt;btnSave.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="btnDelete.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Khmer OS Battambang, 11.25pt</value>
+  </data>
+  <data name="btnDelete.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnDelete.Location" type="System.Drawing.Point, System.Drawing">
+    <value>227, 168</value>
+  </data>
+  <data name="btnDelete.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 38</value>
+  </data>
+  <data name="btnDelete.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="btnDelete.Text" xml:space="preserve">
+    <value>លុបចោល</value>
+  </data>
+  <data name="&gt;&gt;btnDelete.Name" xml:space="preserve">
+    <value>btnDelete</value>
+  </data>
+  <data name="&gt;&gt;btnDelete.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnDelete.Parent" xml:space="preserve">
+    <value>UiTabPage1</value>
+  </data>
+  <data name="&gt;&gt;btnDelete.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="btnUpdate.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Khmer OS Battambang, 11.25pt</value>
+  </data>
+  <data name="btnUpdate.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnUpdate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>121, 168</value>
+  </data>
+  <data name="btnUpdate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 38</value>
+  </data>
+  <data name="btnUpdate.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="btnUpdate.Text" xml:space="preserve">
+    <value>កែប្រែ</value>
+  </data>
+  <data name="&gt;&gt;btnUpdate.Name" xml:space="preserve">
+    <value>btnUpdate</value>
+  </data>
+  <data name="&gt;&gt;btnUpdate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnUpdate.Parent" xml:space="preserve">
+    <value>UiTabPage1</value>
+  </data>
+  <data name="&gt;&gt;btnUpdate.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="btnAdd.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Khmer OS Battambang, 11.25pt</value>
+  </data>
+  <data name="btnAdd.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnAdd.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 168</value>
+  </data>
+  <data name="btnAdd.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 38</value>
+  </data>
+  <data name="btnAdd.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="btnAdd.Text" xml:space="preserve">
+    <value>បញ្ចូលថ្មី</value>
+  </data>
+  <data name="&gt;&gt;btnAdd.Name" xml:space="preserve">
+    <value>btnAdd</value>
+  </data>
+  <data name="&gt;&gt;btnAdd.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnAdd.Parent" xml:space="preserve">
+    <value>UiTabPage1</value>
+  </data>
+  <data name="&gt;&gt;btnAdd.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="dtbirth.CustomFormat" xml:space="preserve">
+    <value>dd/MM/yyyy</value>
+  </data>
+  <data name="dtbirth.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt</value>
+  </data>
+  <data name="dtbirth.Location" type="System.Drawing.Point, System.Drawing">
+    <value>333, 61</value>
+  </data>
+  <data name="dtbirth.Size" type="System.Drawing.Size, System.Drawing">
+    <value>125, 26</value>
+  </data>
+  <data name="dtbirth.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;dtbirth.Name" xml:space="preserve">
+    <value>dtbirth</value>
+  </data>
+  <data name="&gt;&gt;dtbirth.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dtbirth.Parent" xml:space="preserve">
+    <value>UiTabPage1</value>
+  </data>
+  <data name="&gt;&gt;dtbirth.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="txtname.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt</value>
+  </data>
+  <data name="txtname.Location" type="System.Drawing.Point, System.Drawing">
+    <value>532, 17</value>
+  </data>
+  <data name="txtname.Size" type="System.Drawing.Size, System.Drawing">
+    <value>409, 26</value>
+  </data>
+  <data name="txtname.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;txtname.Name" xml:space="preserve">
+    <value>txtname</value>
+  </data>
+  <data name="&gt;&gt;txtname.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtname.Parent" xml:space="preserve">
+    <value>UiTabPage1</value>
+  </data>
+  <data name="&gt;&gt;txtname.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="Label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Label1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Khmer OS Battambang, 12pt</value>
+  </data>
+  <data name="Label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>469, 19</value>
+  </data>
+  <data name="Label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>52, 29</value>
+  </data>
+  <data name="Label1.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="Label1.Text" xml:space="preserve">
+    <value>ឈ្មោះ</value>
+  </data>
+  <data name="Label1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;Label1.Name" xml:space="preserve">
+    <value>Label1</value>
+  </data>
+  <data name="&gt;&gt;Label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label1.Parent" xml:space="preserve">
+    <value>UiTabPage1</value>
+  </data>
+  <data name="&gt;&gt;Label1.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="txtid.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt</value>
+  </data>
+  <data name="txtid.Location" type="System.Drawing.Point, System.Drawing">
+    <value>128, 17</value>
+  </data>
+  <data name="txtid.Size" type="System.Drawing.Size, System.Drawing">
+    <value>330, 26</value>
+  </data>
+  <data name="txtid.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;txtid.Name" xml:space="preserve">
+    <value>txtid</value>
+  </data>
+  <data name="&gt;&gt;txtid.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtid.Parent" xml:space="preserve">
+    <value>UiTabPage1</value>
+  </data>
+  <data name="&gt;&gt;txtid.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="Label4.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Label4.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Khmer OS Battambang, 12pt</value>
+  </data>
+  <data name="Label4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Label4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 22</value>
+  </data>
+  <data name="Label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>95, 29</value>
+  </data>
+  <data name="Label4.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="Label4.Text" xml:space="preserve">
+    <value>លេខសំគាល់</value>
+  </data>
+  <data name="Label4.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;Label4.Name" xml:space="preserve">
+    <value>Label4</value>
+  </data>
+  <data name="&gt;&gt;Label4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label4.Parent" xml:space="preserve">
+    <value>UiTabPage1</value>
+  </data>
+  <data name="&gt;&gt;Label4.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="Label3.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Label3.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Khmer OS Battambang, 12pt</value>
+  </data>
+  <data name="Label3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Label3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>206, 62</value>
+  </data>
+  <data name="Label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>110, 29</value>
+  </data>
+  <data name="Label3.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="Label3.Text" xml:space="preserve">
+    <value>ថ្ងៃខែឆ្នាំកំណើត</value>
+  </data>
+  <data name="Label3.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;Label3.Name" xml:space="preserve">
+    <value>Label3</value>
+  </data>
+  <data name="&gt;&gt;Label3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label3.Parent" xml:space="preserve">
+    <value>UiTabPage1</value>
+  </data>
+  <data name="&gt;&gt;Label3.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="txtphone.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt</value>
+  </data>
+  <data name="txtphone.Location" type="System.Drawing.Point, System.Drawing">
+    <value>756, 58</value>
+  </data>
+  <data name="txtphone.Size" type="System.Drawing.Size, System.Drawing">
+    <value>185, 26</value>
+  </data>
+  <data name="txtphone.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;txtphone.Name" xml:space="preserve">
+    <value>txtphone</value>
+  </data>
+  <data name="&gt;&gt;txtphone.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtphone.Parent" xml:space="preserve">
+    <value>UiTabPage1</value>
+  </data>
+  <data name="&gt;&gt;txtphone.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="Label2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Label2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Khmer OS Battambang, 12pt</value>
+  </data>
+  <data name="Label2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>476, 60</value>
+  </data>
+  <data name="Label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>40, 29</value>
+  </data>
+  <data name="Label2.TabIndex" type="System.Int32, mscorlib">
+    <value>27</value>
+  </data>
+  <data name="Label2.Text" xml:space="preserve">
+    <value>ភេទ</value>
+  </data>
+  <data name="Label2.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;Label2.Name" xml:space="preserve">
+    <value>Label2</value>
+  </data>
+  <data name="&gt;&gt;Label2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label2.Parent" xml:space="preserve">
+    <value>UiTabPage1</value>
+  </data>
+  <data name="&gt;&gt;Label2.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="Label7.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Label7.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Khmer OS Battambang, 12pt</value>
+  </data>
+  <data name="Label7.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Label7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>653, 61</value>
+  </data>
+  <data name="Label7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>89, 29</value>
+  </data>
+  <data name="Label7.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
+  <data name="Label7.Text" xml:space="preserve">
+    <value>លេខទូរស័ព្ទ</value>
+  </data>
+  <data name="Label7.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;Label7.Name" xml:space="preserve">
+    <value>Label7</value>
+  </data>
+  <data name="&gt;&gt;Label7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label7.Parent" xml:space="preserve">
+    <value>UiTabPage1</value>
+  </data>
+  <data name="&gt;&gt;Label7.ZOrder" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="Label5.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Label5.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Khmer OS Battambang, 12pt</value>
+  </data>
+  <data name="Label5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Label5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 114</value>
+  </data>
+  <data name="Label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>89, 29</value>
+  </data>
+  <data name="Label5.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="Label5.Text" xml:space="preserve">
+    <value>អាស័យដ្ឋាន</value>
+  </data>
+  <data name="Label5.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;Label5.Name" xml:space="preserve">
+    <value>Label5</value>
+  </data>
+  <data name="&gt;&gt;Label5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label5.Parent" xml:space="preserve">
+    <value>UiTabPage1</value>
+  </data>
+  <data name="&gt;&gt;Label5.ZOrder" xml:space="preserve">
+    <value>19</value>
+  </data>
+  <data name="UiTabPage1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1, 37</value>
+  </data>
+  <data name="UiTabPage1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1516, 540</value>
+  </data>
+  <data name="UiTabPage1.Text" xml:space="preserve">
+    <value>Patient Registration Info.</value>
+  </data>
+  <data name="&gt;&gt;UiTabPage1.Name" xml:space="preserve">
+    <value>UiTabPage1</value>
+  </data>
+  <data name="&gt;&gt;UiTabPage1.Type" xml:space="preserve">
+    <value>Janus.Windows.UI.Tab.UITabPage, Janus.Windows.UI.v3, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;UiTabPage1.Parent" xml:space="preserve">
+    <value>UiTab1</value>
+  </data>
+  <data name="&gt;&gt;UiTabPage1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;UiTab1.Name" xml:space="preserve">
+    <value>UiTab1</value>
+  </data>
+  <data name="&gt;&gt;UiTab1.Type" xml:space="preserve">
+    <value>Janus.Windows.UI.Tab.UITab, Janus.Windows.UI.v3, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;UiTab1.Parent" xml:space="preserve">
+    <value>SplitContainer1.Panel2</value>
+  </data>
+  <data name="&gt;&gt;UiTab1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;SplitContainer1.Panel2.Name" xml:space="preserve">
+    <value>SplitContainer1.Panel2</value>
+  </data>
+  <data name="&gt;&gt;SplitContainer1.Panel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SplitContainer1.Panel2.Parent" xml:space="preserve">
+    <value>SplitContainer1</value>
+  </data>
+  <data name="&gt;&gt;SplitContainer1.Panel2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="SplitContainer1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1518, 913</value>
+  </data>
+  <data name="SplitContainer1.SplitterDistance" type="System.Int32, mscorlib">
+    <value>331</value>
+  </data>
+  <data name="SplitContainer1.TabIndex" type="System.Int32, mscorlib">
+    <value>28</value>
+  </data>
+  <data name="&gt;&gt;SplitContainer1.Name" xml:space="preserve">
+    <value>SplitContainer1</value>
+  </data>
+  <data name="&gt;&gt;SplitContainer1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitContainer, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SplitContainer1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;SplitContainer1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="ToolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>6, 25</value>
+  </data>
+  <data name="ToolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>6, 25</value>
+  </data>
+  <metadata name="ErrValidate.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>135, 8</value>
+  </metadata>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>89</value>
+  </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <metadata name="ToolStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
+  <data name="ToolStrip1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="ToolStripButton1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 12pt</value>
+  </data>
+  <data name="ToolStripButton1.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="ToolStripButton1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>149, 29</value>
+  </data>
+  <data name="ToolStripButton1.Text" xml:space="preserve">
+    <value>View All patient</value>
+  </data>
+  <data name="ToolStripSeparator5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>6, 32</value>
+  </data>
+  <data name="BtnSendPatientWaiting.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Verdana, 12pt</value>
+  </data>
+  <data name="BtnSendPatientWaiting.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="BtnSendPatientWaiting.Size" type="System.Drawing.Size, System.Drawing">
+    <value>263, 29</value>
+  </data>
+  <data name="BtnSendPatientWaiting.Text" xml:space="preserve">
+    <value>Send patient to waiting list</value>
+  </data>
+  <data name="ToolStripSeparator7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>6, 32</value>
+  </data>
+  <data name="btnPatientSendIssueReceipt.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Verdana, 12pt</value>
+  </data>
+  <data name="btnPatientSendIssueReceipt.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+        6LwCHX8F/hNJZnTSger6ggAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="btnPatientSendIssueReceipt.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="btnPatientSendIssueReceipt.Size" type="System.Drawing.Size, System.Drawing">
+    <value>283, 29</value>
+  </data>
+  <data name="btnPatientSendIssueReceipt.Text" xml:space="preserve">
+    <value>Sent Patient To Issue Receipt</value>
+  </data>
+  <data name="ToolStripSeparator10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>6, 32</value>
+  </data>
+  <data name="btnPrescription.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Verdana, 12pt</value>
+  </data>
+  <data name="btnPrescription.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="btnPrescription.Size" type="System.Drawing.Size, System.Drawing">
+    <value>174, 29</value>
+  </data>
+  <data name="btnPrescription.Text" xml:space="preserve">
+    <value>New Prescription</value>
+  </data>
+  <data name="btnPrescription.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="ToolStripSeparator6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>6, 32</value>
+  </data>
+  <data name="ToolStripSeparator6.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="BtnHistory.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Verdana, 12pt</value>
+  </data>
+  <data name="BtnHistory.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="BtnHistory.Size" type="System.Drawing.Size, System.Drawing">
+    <value>216, 29</value>
+  </data>
+  <data name="BtnHistory.Text" xml:space="preserve">
+    <value>Make an Appointment</value>
+  </data>
+  <data name="BtnPatientReferal.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Verdana, 12pt</value>
+  </data>
+  <data name="BtnPatientReferal.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="BtnPatientReferal.Size" type="System.Drawing.Size, System.Drawing">
+    <value>160, 29</value>
+  </data>
+  <data name="BtnPatientReferal.Text" xml:space="preserve">
+    <value>Patient Referal</value>
+  </data>
+  <data name="BtnPatientReferal.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="ToolStripSeparator11.Size" type="System.Drawing.Size, System.Drawing">
+    <value>6, 32</value>
+  </data>
+  <data name="ToolStrip1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="ToolStrip1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1518, 32</value>
+  </data>
+  <data name="ToolStrip1.TabIndex" type="System.Int32, mscorlib">
+    <value>31</value>
+  </data>
+  <data name="ToolStrip1.Text" xml:space="preserve">
+    <value>ToolStrip1</value>
+  </data>
+  <data name="&gt;&gt;ToolStrip1.Name" xml:space="preserve">
+    <value>ToolStrip1</value>
+  </data>
+  <data name="&gt;&gt;ToolStrip1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ToolStrip1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ToolStrip1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1518, 945</value>
+  </data>
+  <data name="&gt;&gt;ToolStripSeparator1.Name" xml:space="preserve">
+    <value>ToolStripSeparator1</value>
+  </data>
+  <data name="&gt;&gt;ToolStripSeparator1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ToolStripSeparator2.Name" xml:space="preserve">
+    <value>ToolStripSeparator2</value>
+  </data>
+  <data name="&gt;&gt;ToolStripSeparator2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ErrValidate.Name" xml:space="preserve">
+    <value>ErrValidate</value>
+  </data>
+  <data name="&gt;&gt;ErrValidate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ErrorProvider, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ToolStripButton1.Name" xml:space="preserve">
+    <value>ToolStripButton1</value>
+  </data>
+  <data name="&gt;&gt;ToolStripButton1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ToolStripSeparator5.Name" xml:space="preserve">
+    <value>ToolStripSeparator5</value>
+  </data>
+  <data name="&gt;&gt;ToolStripSeparator5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BtnSendPatientWaiting.Name" xml:space="preserve">
+    <value>BtnSendPatientWaiting</value>
+  </data>
+  <data name="&gt;&gt;BtnSendPatientWaiting.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ToolStripSeparator7.Name" xml:space="preserve">
+    <value>ToolStripSeparator7</value>
+  </data>
+  <data name="&gt;&gt;ToolStripSeparator7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnPatientSendIssueReceipt.Name" xml:space="preserve">
+    <value>btnPatientSendIssueReceipt</value>
+  </data>
+  <data name="&gt;&gt;btnPatientSendIssueReceipt.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ToolStripSeparator10.Name" xml:space="preserve">
+    <value>ToolStripSeparator10</value>
+  </data>
+  <data name="&gt;&gt;ToolStripSeparator10.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnPrescription.Name" xml:space="preserve">
+    <value>btnPrescription</value>
+  </data>
+  <data name="&gt;&gt;btnPrescription.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ToolStripSeparator6.Name" xml:space="preserve">
+    <value>ToolStripSeparator6</value>
+  </data>
+  <data name="&gt;&gt;ToolStripSeparator6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BtnHistory.Name" xml:space="preserve">
+    <value>BtnHistory</value>
+  </data>
+  <data name="&gt;&gt;BtnHistory.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BtnPatientReferal.Name" xml:space="preserve">
+    <value>BtnPatientReferal</value>
+  </data>
+  <data name="&gt;&gt;BtnPatientReferal.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ToolStripSeparator11.Name" xml:space="preserve">
+    <value>ToolStripSeparator11</value>
+  </data>
+  <data name="&gt;&gt;ToolStripSeparator11.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BgLoadingPatient.Name" xml:space="preserve">
+    <value>BgLoadingPatient</value>
+  </data>
+  <data name="&gt;&gt;BgLoadingPatient.Type" xml:space="preserve">
+    <value>System.ComponentModel.BackgroundWorker, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>PatientInformation</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.UserControl, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <metadata name="BgLoadingPatient.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>246, 8</value>
+  </metadata>
+</root>

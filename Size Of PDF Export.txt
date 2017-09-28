@@ -1,0 +1,163 @@
+I noticed a font size problem in exporting Crystal Report using Crystal 11.5 and ASP.Net 3.5.  In this case I needed to export a Crystal Report contains some barcodes.  The barcodes in the exported PDF had a very small font size. Searching web, I found that this issue can be fixed using to registry keys:
+
+SAP Knowledge Base Article:
+
+    To resolve the behavior
+
+        Set the resolution of the default printer of the local computer experiencing the issue to 1200 DPI. Most printers have a default setting of 600 DPI.
+        Create two registry keys to prevent the crxf_pdf.dll from decreasing in font size.
+        Click Start > Run. Type “regedit”. The Registry Editor appears.
+        Create the following keys for Crystal Reports XI with the defined values:HKEY_CURRENT_USER\Software\Business Objects\Suite 11.0\Crystal Reports\Export\PDF\ForceLargerFonts
+        Type: DWORD
+        Recognized Values: 0,1
+        Default Value: 1
+        Creation Method: manual
+
+        HKEY_LOCAL_MACHINE\Software\Business Objects\Suite 11.0\Crystal Reports\Export\PDF\ForceLargerFonts
+        Type: DWORD
+        Recognized Values: 0,1
+        Default Value: 1
+        Creation Method: manual
+        Set both registry key values to 1 to turn them on.
+        Create the following keys for Crystal Reports XI Release 2 with the defined values:HKEY_CURRENT_USER\Software\Business Objects\Suite 11.5\Crystal Reports\Export\PDF\ForceLargerFonts
+        Type: DWORD
+        Recognized Values: 0,1
+        Default Value: 1
+        Creation Method: manual
+
+        HKEY_LOCAL_MACHINE\Software\Business Objects\Suite 11.5\Crystal Reports\Export\PDF\ForceLargerFonts
+        Type: DWORD
+        Recognized Values: 0,1
+        Default Value: 1
+        Creation Method: manual
+        Set both registry key values to 1 to turn them on.
+        Restart the Crystal Reports Page, Job and Cache Servers
+
+and for the Unix server:
+
+    UNIX, an X server client such as x-win32 must be installed. Add the keys as follows:
+
+        Launch the X server client (alternatively use xming on the client machine and export the display to the client machine.
+        Login as business Objects user
+        Go to the business objects installation folder: cd  <bobje install>/bobje/setup/
+        Sorce env.sh (for example: . ./env.sh).
+        Type regedit
+        Create the registry keys as detailed below.
+            Create the following keys for Crystal Reports XI Release 2 with the defined values:
+            Create a new key under ‘HKEY_CURRENT_USER\Software\Business Objects\Suite 11.5\Crystal Reports’ called ‘Export’
+            Create a new key under ‘HKEY_CURRENT_USER\Software\Business Objects\Suite 11.5\Crystal Reports\Export’ called ‘PDF’
+            Create a new Dword value called ‘ForceLargerFonts’ under ‘HKEY_CURRENT_USER\Software\Business Objects\Suite 11.5\Crystal Reports\Export\PDF’
+            Set the value to 1 (just double click on the name you just created)
+            Create a new key under ‘HKEY_LOCAL_MACHINE\Software\Business Objects\Suite 11.5\Crystal Reports’ called ‘Export’
+            Create a new key under ‘HKEY_LOCAL_MACHINE\Software\Business Objects\Suite 11.5\Crystal Reports\Export’ called ‘PDF’
+            Create a new Dword value called ‘ForceLargerFonts’ under ‘HKEY_LOCAL_MACHINE\Software\Business Objects\Suite 11.5\Crystal Reports\Export’
+            Set the value to 1 (just double click on the name you just created).
+        Restart the Crystal Reports Page, Job and Cache Servers.
+
+I followed the provided instruction in SAP knowledge base but it did not work for me. I set the registry at HKEY_LOCAL_MACHINE which I expected to affect IIS, and then I set the HKEY_CURRENT_USER registry (which to me is not relevant as IIS uses different profile), then restarted the web server. The result was still barcode printing in small font.
+
+Further search on the web I found a new solution in SAP community forum: https://forums.sdn.sap.com/thread.jspa?threadID=1161804
+
+    1. Press Ctrl-Alt-Del on your keyboard, then click the Task Manager button. Click the Processes tab. The security account is listed beside your process name (for IIS 5 the process name is aspnet_wp.exe and for IIS 6 it is w3wp.exe).
+
+    2. Open the registry editor. On the Start menu, click Run then type “regedit” and click OK.
+
+    3. Navigate to the following registry sub key:
+
+    HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\ProfileList
+
+    There will be a number of keys here that start with “S-1-5?. Inspect each one and look for your security account name in the ProfileImagePath entry. Take note of the key (folder) you are on when you find your process.
+
+    4. Go to the following registry sub key:
+
+    HKEY_USERS[your security profile]\Software\Crystal Decisions\10.2\Crystal Reports\Export\Pdf
+
+    5. Right-click the sub key and click New > DWORD Value. Name the DWORD value “ForceLargerFonts” and set it to the value of 1.
+
+    6. Restart IIS, and try the application again.
+
+My experience:
+
+    The IIS running on a XP machine where the Process Name (Image Name) equals to aspnet_wp.exe and the User Name equals to  ASPNET.   Looked at HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\ProfileList and found that  S-1-5-21-1085031214-562591055-839522115-1004 has the value of
+
+    Value Name: ProfileImagePath
+
+    Value data: %SystemDrive%\Documents and Settings\TESTXP17908\ASPNET
+
+    Next step: I added ForceLargerFonts value to HKEY_USERS\S-1-5-21-1085031214-562591055-839522115-1004\Software\Business Objects\Suite 11.5\Crystal Reports\Export\PDF.
+
+    Restarted IIS
+
+    Result: Problem solved :)
+
+
+
+
+
+
+
+
+================================== Solustion 2 ==================================
+If barcode size is not what you expect when export to PDF in Crystal Report, you need to look no further for solution.
+
+To fix the bug, just follow steps below by adding 2 registry keys.
+
+1. Select Start > Run. Type regedit and click OK.
+
+2. For Crystal Reports 2008, Expand HKEY_CURRENT_USER\Software\Business Objects\Suite 12.0\Crystal Reports\Export.
+
+For Crystal Reports 11.0, Expand HKEY_CURRENT_USER\Software\Business Objects\Crystal Reports.
+
+For Crystal Reports 10.0, Expand HKEY_CURRENT_USER\SOFTWARE\Crystal Decisions\10.0\Crystal Reports\Export
+
+For Crystal Reports 9,0, Expand HKEY_CURRENT_USER\software\crystal decisions\9.0\Crystal Reports\Export
+
+3. Right-click the Export folder and select New > Key. This creates a new folder. Name the new folder PDF.
+
+4. Right-click the PDF folder and select New > DWORD Value.
+
+5. Name this 'ForceLargerFonts' with no quotes and note that it is case sensitive.
+
+6. Double-click ForceLargerFonts and change the Value data to 1 and click OK.
+
+7. Close all the registry folders and expand the following registry For Crystal Reports 2008, HKEY_LOCAL_MACHINE\Software\Business Objects\Suite 12.0\Crystal Reports.
+
+For Crystal Reports 11.0, HKEY_LOCAL_MACHINE\Software\Business Objects\Suite 11.0.
+
+For Crystal Reports 10.0, HKEY_LOCAL_MACHINE\SOFTWARE\Crystal Decisions\10.0\Crystal Reports
+
+For Crystal Reports 9.0, HKEY_LOCAL_MACHINE\Software\Crystal Decisions\9.0\Crystal Reports
+
+8. Right-click the Crystal Reports folder and select New > Key. Name this key Export.
+
+9. Right-click the Export folder and select New > Key. This creates a new folder. Name this folder PDF.
+
+10. Repeat steps 4 through 6.
+
+11. Close the Registry Editor and restart Crystal Reports.
+
+
+After adding these two registry keys, Crystal Reports won't have this font size problem any more.
+
+
+However, if you want to generate barcode in Crystal Reports from IIS server, you need to modify permissions of these registry keys.
+
+IIS security model prevents the application pool identity to read those registry entries by default.
+
+Open Windows application Regedit and browse to
+
+HKEY_LOCAL_MACHINE\SOFTWARE\Business Objects\Suite 12.0\Crystal Reports\Export\PDF
+
+Right click the key and choose “Permissions” from context menu.
+
+
+
+===========================================================
+
+Add two DWORD keys and set their values as 1:
+Collapse | Copy Code
+
+ 
+HKEY_CURRENT_USER\Software\SAP BusinessObjects\Crystal Reports for .NET Framework 4.0\Crystal Reports\Export\PDF\ForceLargerFonts
+HKEY_LOCAL_MACHINE\SOFTWARE\SAP BusinessObjects\Crystal Reports for .NET Framework 4.0\Crystal Reports\Export\Pdf\ForceLargerFonts
+Add in default IIS user account. Usually it's IUSR_MachineName.

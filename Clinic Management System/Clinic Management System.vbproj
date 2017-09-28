@@ -1,0 +1,2845 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9C45BCCA-6EB1-4BA3-ABC7-37C1F1673469}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>Clinic_Management_System.My.MyApplication</StartupObject>
+    <RootNamespace>Clinic_Management_System</RootNamespace>
+    <AssemblyName>Clinic Management System</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <OptionExplicit>Off</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>Off</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+    <ApplicationIcon>1364030100_61657.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>false</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>Clinic Management System.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <WarningLevel>1</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>false</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>Clinic Management System.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <WarningLevel>1</WarningLevel>
+    <DebugSymbols>true</DebugSymbols>
+    <PlatformTarget>x86</PlatformTarget>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>Clinic Management System.xml</DocumentationFile>
+    <WarningLevel>1</WarningLevel>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DocumentationFile>Clinic Management System.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <WarningLevel>1</WarningLevel>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutocompleteMenu, Version=1.2.2.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Enterprise.Framework, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Enterprise.InfoStore, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="Janus.Data.v3, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null" />
+    <Reference Include="Janus.Windows.ButtonBar.v3, Version=3.5.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Janus.Windows.CalendarCombo.v3, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null" />
+    <Reference Include="Janus.Windows.Common.v3, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null" />
+    <Reference Include="Janus.Windows.ExplorerBar.v3, Version=3.5.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Janus.Windows.FilterEditor.v3, Version=3.5.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Janus.Windows.GridEX.v3, Version=3.5.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Janus.Windows.Ribbon.v3, Version=3.5.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Janus.Windows.UI.v3, Version=3.5.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\ModCommon.vb" />
+    <Compile Include="Common\ModValidation.vb" />
+    <Compile Include="Common\ModWriteFile.vb" />
+    <Compile Include="DataClasses.designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataClasses.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="DataClasses.vb">
+      <DependentUpon>DataClasses.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="DS\PATIENT\DSPAtient.vb">
+      <DependentUpon>DSPAtient.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DS\PATIENT\DSPAtient1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSPAtient.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Appointment\Appointment.designer.vb">
+      <DependentUpon>Appointment.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Appointment\Appointment.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Appointment\NewAppointment.designer.vb">
+      <DependentUpon>NewAppointment.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Appointment\NewAppointment.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Appointment\SearchAppointment.Designer.vb">
+      <DependentUpon>SearchAppointment.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Appointment\SearchAppointment.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Blood\BloodForm.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BloodForm.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\Blood\CrystalReport1.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\Blood\FormBlood.Designer.vb">
+      <DependentUpon>FormBlood.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Blood\FormBlood.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Consultation\BloodCheck.Designer.vb">
+      <DependentUpon>BloodCheck.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Consultation\BloodCheck.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Consultation\ViewBloodCheck.Designer.vb">
+      <DependentUpon>ViewBloodCheck.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Consultation\ViewBloodCheck.vb">
+    </Compile>
+    <Compile Include="Forms\Consultation\ChooseConsultation.Designer.vb">
+      <DependentUpon>ChooseConsultation.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Consultation\ChooseConsultation.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Consultation\NewFinalConsultation.Designer.vb">
+      <DependentUpon>NewFinalConsultation.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Consultation\NewFinalConsultation.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Consultation\ViewFinalConsultation.Designer.vb">
+      <DependentUpon>ViewFinalConsultation.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Consultation\ViewFinalConsultation.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Consultation\NewLiverConsultation.Designer.vb">
+      <DependentUpon>NewLiverConsultation.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Consultation\NewLiverConsultation.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Consultation\ViewLiverConsultation.Designer.vb">
+      <DependentUpon>ViewLiverConsultation.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Consultation\ViewLiverConsultation.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Consultation\NewStomachConsultation.Designer.vb">
+      <DependentUpon>NewStomachConsultation.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Consultation\NewStomachConsultation.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Consultation\ViewStomachConsultation.designer.vb">
+      <DependentUpon>ViewStomachConsultation.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Consultation\ViewStomachConsultation.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Doctor\DoctorFee.Designer.vb">
+      <DependentUpon>DoctorFee.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Doctor\DoctorFee.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Doctor\NewDoctor.Designer.vb">
+      <DependentUpon>NewDoctor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Doctor\NewDoctor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Doctor\ReportDoctorFee.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportDoctorFee.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\Invoice\DS_Invoice.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_Invoice.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Invoice\DS_Invoice.vb">
+      <DependentUpon>DS_Invoice.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Invoice\Reports\RptIncomeV1.vb">
+      <DependentUpon>RptIncomeV1.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Forms\Invoice\Reports\RptConsultation.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RptConsultation.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\Invoice\Reports\RptIncome.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RptIncome.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\Invoice\Reports\RptMedicine.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RptMedicine.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\Invoice\Reports\RptParaExam.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RptParaExam.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\Parameter\ConclosionOfColoscopy\FormConconclusion.Designer.vb">
+      <DependentUpon>FormConconclusion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Parameter\ConclosionOfColoscopy\FormConconclusion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Parameter\Diagnosis\NewDiagnosis.Designer.vb">
+      <DependentUpon>NewDiagnosis.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Parameter\Diagnosis\NewDiagnosis.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Parameter\DS_Parameter.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_Parameter.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Parameter\KeyWord\KeyWord.Designer.vb">
+      <DependentUpon>KeyWord.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Parameter\KeyWord\KeyWord.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Parameter\Motif\FormMotif.Designer.vb">
+      <DependentUpon>FormMotif.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Parameter\Motif\FormMotif.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Parameter\Motif_OfColoscopy\FormMotifOfColoscopy.Designer.vb">
+      <DependentUpon>FormMotifOfColoscopy.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Parameter\Motif_OfColoscopy\FormMotifOfColoscopy.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Parameter\Usesage\FormNewPrescriptionUsage.Designer.vb">
+      <DependentUpon>FormNewPrescriptionUsage.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Parameter\Usesage\FormNewPrescriptionUsage.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\version2\Analysis\DSAnalysis.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSAnalysis.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\version2\Analysis\FormDataAnalysis.Designer.vb">
+      <DependentUpon>FormDataAnalysis.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\version2\Analysis\FormDataAnalysis.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\version2\Analysis\ReportAnalysis\ReportDiagnosis.vb">
+      <DependentUpon>ReportDiagnosis.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Forms\version2\Analysis\ReportAnalysis\ReportDiagnosisColoscopy.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportDiagnosisColoscopy.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\version2\Analysis\ReportAnalysis\ReportDiagnosisComplaint.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportDiagnosisComplaint.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\version2\Analysis\ReportAnalysis\ReportDiagnosisFibroscopy.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportDiagnosisFibroscopy.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\version2\Analysis\ReportAnalysis\ReportDiagnosisMedicalHistory.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportDiagnosisMedicalHistory.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\version2\Analysis\ReportAnalysis\ReportDiagnosisNasogastro.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportDiagnosisNasogastro.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\version2\Analysis\ReportAnalysis\ReportDiagnosisPhysicalCheck.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportDiagnosisPhysicalCheck.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\version2\Analysis\ReportAnalysis\ReportEachProvince.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportEachProvince.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\version2\Analysis\ReportAnalysis\ReportParaWithBlood.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportParaWithBlood.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\version2\Analysis\UAnalysis.Designer.vb">
+      <DependentUpon>UAnalysis.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\version2\Analysis\UAnalysis.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\version2\DoctorRequestExam\Reports\ColoEng.vb">
+      <DependentUpon>ColoEng.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Forms\version2\DoctorRequestExam\Reports\NasoEng.vb">
+      <DependentUpon>NasoEng.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Forms\version2\DoctorRequestExam\Reports\FibroEng.vb">
+      <DependentUpon>FibroEng.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Forms\version2\DoctorRequestExam\Reports\EchoV1.vb">
+      <DependentUpon>EchoV1.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Forms\version2\ParaClinicExamination\Complementary\CFAnaPath\FormCFAnaPath.Designer.vb">
+      <DependentUpon>FormCFAnaPath.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\version2\ParaClinicExamination\Complementary\CFAnaPath\FormCFAnaPath.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\version2\ParaClinicExamination\Complementary\Colo\FormResultColoEnglish.Designer.vb">
+      <DependentUpon>FormResultColoEnglish.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\version2\ParaClinicExamination\Complementary\Colo\FormResultColoEnglish.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\version2\ParaClinicExamination\Complementary\Echo\DSEcho.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSEcho.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\version2\ParaClinicExamination\Complementary\Echo\EchoImage.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EchoImage.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\version2\ParaClinicExamination\Complementary\Echo\ImageEcho.Designer.vb">
+      <DependentUpon>ImageEcho.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\version2\ParaClinicExamination\Complementary\Echo\ImageEcho.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\version2\ParaClinicExamination\Complementary\Fibio\FormFibroEnglish.Designer.vb">
+      <DependentUpon>FormFibroEnglish.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\version2\ParaClinicExamination\Complementary\Fibio\FormFibroEnglish.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\version2\ParaClinicExamination\Complementary\Naso\FormNasograstroEng.Designer.vb">
+      <DependentUpon>FormNasograstroEng.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\version2\ParaClinicExamination\Complementary\Naso\FormNasograstroEng.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\version2\ParaClinicExamination\ParaExamHistory\FormParaExamHistory.Designer.vb">
+      <DependentUpon>FormParaExamHistory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\version2\ParaClinicExamination\ParaExamHistory\FormParaExamHistory.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\version2\ParaClinicExamination\ParaExamHistory\FrmFindHistory.Designer.vb">
+      <DependentUpon>FrmFindHistory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\version2\ParaClinicExamination\ParaExamHistory\FrmFindHistory.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\version2\PatientIssueReceipt\invoiceSmalV2.vb">
+      <DependentUpon>invoiceSmalV2.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Forms\version2\PatientIssueReceipt\invoiceEng.vb">
+      <DependentUpon>invoiceEng.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Forms\version2\PatientIssueReceipt\EditeConsultationFee.Designer.vb">
+      <DependentUpon>EditeConsultationFee.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\version2\PatientIssueReceipt\EditeConsultationFee.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\version2\PatientIssueReceipt\Expend\FormNewExpend.Designer.vb">
+      <DependentUpon>FormNewExpend.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\version2\PatientIssueReceipt\Expend\FormNewExpend.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\version2\PatientIssueReceipt\Expend\UCMainExpend.Designer.vb">
+      <DependentUpon>UCMainExpend.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\version2\PatientIssueReceipt\Expend\UCMainExpend.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\version2\PatientIssueReceipt\FormExchangeRate.Designer.vb">
+      <DependentUpon>FormExchangeRate.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\version2\PatientIssueReceipt\FormExchangeRate.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\version2\PatientIssueReceipt\InvoiceSmalV1.vb">
+      <DependentUpon>InvoiceSmalV1.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Forms\version2\PatientIssueReceipt\invoiceSmal.vb">
+      <DependentUpon>invoiceSmal.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Forms\version2\PatientIssueReceipt\DSInvoice1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSInvoice.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\version2\PatientIssueReceipt\FormIssueReceipt.Designer.vb">
+      <DependentUpon>FormIssueReceipt.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\version2\PatientIssueReceipt\FormIssueReceipt.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\version2\PatientIssueReceipt\InvoiceParaExam.Designer.vb">
+      <DependentUpon>InvoiceParaExam.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\version2\PatientIssueReceipt\InvoiceParaExam.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\version2\PatientMedicalReport\ConsultationList.Designer.vb">
+      <DependentUpon>ConsultationList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\version2\PatientMedicalReport\ConsultationList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\version2\PatientMedicalReport\EditConsultation.Designer.vb">
+      <DependentUpon>EditConsultation.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\version2\PatientMedicalReport\EditConsultation.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\version2\PatientMedicalReport\FindConsult.Designer.vb">
+      <DependentUpon>FindConsult.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\version2\PatientMedicalReport\FindConsult.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\version2\PatientMedicalReport\PrescriptionList.Designer.vb">
+      <DependentUpon>PrescriptionList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\version2\PatientMedicalReport\PrescriptionList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\version2\PatientMedicalReport\UPatientMedicalReport.Designer.vb">
+      <DependentUpon>UPatientMedicalReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\version2\PatientMedicalReport\UPatientMedicalReport.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\version2\Stock\BarcodeGenerator\CryBarcodeVeiwer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CryBarcodeVeiwer.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\version2\Stock\BarcodeGenerator\DSBarCode.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSBarCode.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\version2\Stock\BarcodeGenerator\FormPrintBarCode.designer.vb">
+      <DependentUpon>FormPrintBarCode.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\version2\Stock\BarcodeGenerator\FormPrintBarCode.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\version2\Stock\BarcodeGenerator\NewGenerateBarcode.designer.vb">
+      <DependentUpon>NewGenerateBarcode.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\version2\Stock\BarcodeGenerator\NewGenerateBarcode.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\version2\Stock\BarcodeGenerator\UIBarcodeGenerator.designer.vb">
+      <DependentUpon>UIBarcodeGenerator.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\version2\Stock\BarcodeGenerator\UIBarcodeGenerator.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\version2\Stock\DSStore.vb">
+      <DependentUpon>DSStore.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\version2\Stock\MedicinceReport\CryMedicinceReport.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CryMedicinceReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\version2\Stock\MedicinceReport\DSMedicalReceive.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSMedicalReceive.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\version2\Stock\MedicinceReport\DSMedicalReceive.vb">
+      <DependentUpon>DSMedicalReceive.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\version2\Stock\MedicinceReport\FMedicalReceived.Designer.vb">
+      <DependentUpon>FMedicalReceived.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\version2\Stock\MedicinceReport\FMedicalReceived.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\version2\Stock\MedicinceReport\UMgrMedicince.Designer.vb">
+      <DependentUpon>UMgrMedicince.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\version2\Stock\MedicinceReport\UMgrMedicince.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\version2\Stock\Reports\FormShowBy.Designer.vb">
+      <DependentUpon>FormShowBy.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\version2\Stock\Reports\FormShowBy.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Invoice\Income_Clinic.Designer.vb">
+      <DependentUpon>Income_Clinic.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Invoice\Income_Clinic.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Invoice\InvoiceDetial.Designer.vb">
+      <DependentUpon>InvoiceDetial.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Invoice\InvoiceDetial.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Invoice\MainInvoice.Designer.vb">
+      <DependentUpon>MainInvoice.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Invoice\MainInvoice.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Invoice\MedicineOrder.Designer.vb">
+      <DependentUpon>MedicineOrder.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Invoice\MedicineOrder.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Invoice\NewInvoice.Designer.vb">
+      <DependentUpon>NewInvoice.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Invoice\NewInvoice.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Invoice\RptOrdinance.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RptOrdinance.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\Item\Item.Designer.vb">
+      <DependentUpon>Item.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Item\Item.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Item\ItemCategory.Designer.vb">
+      <DependentUpon>ItemCategory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Item\ItemCategory.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Parameter\BloodCheck\MainBlood.Designer.vb">
+      <DependentUpon>MainBlood.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Parameter\BloodCheck\MainBlood.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Parameter\ConsultationType\NewConsultationType.Designer.vb">
+      <DependentUpon>NewConsultationType.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Parameter\ConsultationType\NewConsultationType.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Parameter\ConsultationType\UCConsultationType.Designer.vb">
+      <DependentUpon>UCConsultationType.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Parameter\ConsultationType\UCConsultationType.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Parameter\Conclusion\FormConclustion.Designer.vb">
+      <DependentUpon>FormConclustion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Parameter\Conclusion\FormConclustion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Parameter\MainParameter.Designer.vb">
+      <DependentUpon>MainParameter.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Parameter\MainParameter.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Parameter\Medical\NewMedicalHistory.Designer.vb">
+      <DependentUpon>NewMedicalHistory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Parameter\Medical\NewMedicalHistory.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Parameter\Medical\UCMedical.Designer.vb">
+      <DependentUpon>UCMedical.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Parameter\Medical\UCMedical.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Parameter\ParaClinicExamination\NewParaClinicExam.Designer.vb">
+      <DependentUpon>NewParaClinicExam.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Parameter\ParaClinicExamination\NewParaClinicExam.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Parameter\ParaClinicExamination\UCParaClinicExam.Designer.vb">
+      <DependentUpon>UCParaClinicExam.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Parameter\ParaClinicExamination\UCParaClinicExam.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Parameter\PatientComplaint\NewPatientComplaint.Designer.vb">
+      <DependentUpon>NewPatientComplaint.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Parameter\PatientComplaint\NewPatientComplaint.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Parameter\PatientComplaint\UCPateintComplaint.Designer.vb">
+      <DependentUpon>UCPateintComplaint.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Parameter\PatientComplaint\UCPateintComplaint.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Parameter\PhysicalExamination\NewPhysicalExamination.Designer.vb">
+      <DependentUpon>NewPhysicalExamination.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Parameter\PhysicalExamination\NewPhysicalExamination.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Parameter\PhysicalExamination\UCPhysicalExamination.Designer.vb">
+      <DependentUpon>UCPhysicalExamination.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Parameter\PhysicalExamination\UCPhysicalExamination.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Parameter\ReferTo\MainReferParameter.Designer.vb">
+      <DependentUpon>MainReferParameter.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Parameter\ReferTo\MainReferParameter.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Parameter\ReferTo\NewReferParameter.Designer.vb">
+      <DependentUpon>NewReferParameter.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Parameter\ReferTo\NewReferParameter.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Patient_Prescription\Complaint.Designer.vb">
+      <DependentUpon>Complaint.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Patient_Prescription\Complaint.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Patient_Prescription\DS_Prescription.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_Prescription.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Patient_Prescription\DS_Prescription.vb">
+      <DependentUpon>DS_Prescription.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Patient_Prescription\EditPrescription.Designer.vb">
+      <DependentUpon>EditPrescription.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Patient_Prescription\EditPrescription.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Patient_Prescription\History.Designer.vb">
+      <DependentUpon>History.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Patient_Prescription\History.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Patient_Prescription\NewPrescription.Designer.vb">
+      <DependentUpon>NewPrescription.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Patient_Prescription\NewPrescription.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Patient_Prescription\ParaClinic.Designer.vb">
+      <DependentUpon>ParaClinic.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Patient_Prescription\ParaClinic.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Symptom\DSComplaint.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSComplaint.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Symptom\EditSymptom.Designer.vb">
+      <DependentUpon>EditSymptom.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Symptom\EditSymptom.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Symptom\Edit_Patient_Symptom.Designer.vb">
+      <DependentUpon>Edit_Patient_Symptom.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Symptom\Edit_Patient_Symptom.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Symptom\NewSymptom.Designer.vb">
+      <DependentUpon>NewSymptom.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Symptom\NewSymptom.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Symptom\PatientComplain.Designer.vb">
+      <DependentUpon>PatientComplain.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Symptom\PatientComplain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Symptom\Patient_Symptom.Designer.vb">
+      <DependentUpon>Patient_Symptom.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Symptom\Patient_Symptom.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\User_Management\DSUserManagerment.vb">
+      <DependentUpon>DSUserManagerment.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User_Management\DSUserManagerment1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSUserManagerment.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User_Management\FormNewMenuInventory.designer.vb">
+      <DependentUpon>FormNewMenuInventory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User_Management\FormNewMenuInventory.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\User_Management\FrmChangeUserPWD.designer.vb">
+      <DependentUpon>FrmChangeUserPWD.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User_Management\FrmChangeUserPWD.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\User_Management\frmDepartment.designer.vb">
+      <DependentUpon>frmDepartment.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User_Management\frmDepartment.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\User_Management\FRMGroupProperties.designer.vb">
+      <DependentUpon>FRMGroupProperties.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User_Management\FRMGroupProperties.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\User_Management\FRMNewUser.designer.vb">
+      <DependentUpon>FRMNewUser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User_Management\FRMNewUser.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\User_Management\UserGlobleVariable.vb" />
+    <Compile Include="Forms\version2\DoctorRequestExam\DSExamination.vb">
+      <DependentUpon>DSExamination.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\version2\DoctorRequestExam\ParaExam.Designer.vb">
+      <DependentUpon>ParaExam.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\version2\DoctorRequestExam\ParaExam.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\version2\MedicalHistory\DSMedicalHistory.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSMedicalHistory.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\version2\DoctorRequestExam\ExaminationStatus.Designer.vb">
+      <DependentUpon>ExaminationStatus.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\version2\DoctorRequestExam\ExaminationStatus.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\version2\DoctorRequestExam\FindPatientExam.Designer.vb">
+      <DependentUpon>FindPatientExam.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\version2\DoctorRequestExam\FindPatientExam.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\version2\DoctorRequestExam\Reports\Colo.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Colo.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\version2\DoctorRequestExam\Reports\Naso.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Naso.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\version2\MedicineHistory\FormMedicineHistory.Designer.vb">
+      <DependentUpon>FormMedicineHistory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\version2\MedicineHistory\FormMedicineHistory.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\version2\PatientIssueReceipt\DSInvoice.vb">
+      <DependentUpon>DSInvoice.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\version2\PatientIssueReceipt\invoice.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>invoice.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\version2\PatientIssueReceipt\InvoiceMedicine.Designer.vb">
+      <DependentUpon>InvoiceMedicine.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\version2\PatientIssueReceipt\InvoiceMedicine.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\version2\PatientIssueReceipt\UPatientIssueReceipt.Designer.vb">
+      <DependentUpon>UPatientIssueReceipt.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\version2\PatientIssueReceipt\UPatientIssueReceipt.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\version2\PatientMedicalReport\RptPatientRecord.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RptPatientRecord.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\version2\PhysicalExamination\DSPhysicalExam.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSPhysicalExam.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\version2\PhysicalExamination\Physical.Designer.vb">
+      <DependentUpon>Physical.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\version2\PhysicalExamination\Physical.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Patient_Prescription\Prescription.Designer.vb">
+      <DependentUpon>Prescription.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Patient_Prescription\Prescription.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Patient_Prescription\RptPrescription.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RptPrescription.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\Patient_Prescription\PrescriptionHistory.Designer.vb">
+      <DependentUpon>PrescriptionHistory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Patient_Prescription\PrescriptionHistory.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ReportViewer\FormReportViewer.Designer.vb">
+      <DependentUpon>FormReportViewer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ReportViewer\FormReportViewer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Service\EditService.Designer.vb">
+      <DependentUpon>EditService.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Service\EditService.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Service\EditServiceType.Designer.vb">
+      <DependentUpon>EditServiceType.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Service\EditServiceType.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Service\NewService.Designer.vb">
+      <DependentUpon>NewService.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Service\NewService.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Service\NewServiceType.Designer.vb">
+      <DependentUpon>NewServiceType.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Service\NewServiceType.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\User_Management\frmLoginChackTravoth.designer.vb">
+      <DependentUpon>frmLoginChackTravoth.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User_Management\frmLoginChackTravoth.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\User_Management\frmWelcome.designer.vb">
+      <DependentUpon>frmWelcome.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User_Management\frmWelcome.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\User_Management\UCDepartment.designer.vb">
+      <DependentUpon>UCDepartment.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User_Management\UCDepartment.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\version2\Consult\MainConsult.Designer.vb">
+      <DependentUpon>MainConsult.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\version2\Consult\MainConsult.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\version2\DoctorRequestExam\DashbordDotorRequestExamination.Designer.vb">
+      <DependentUpon>DashbordDotorRequestExamination.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\version2\DoctorRequestExam\DashbordDotorRequestExamination.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\version2\DoctorRequestExam\DSExamination.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSExamination.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\version2\DoctorRequestExam\MainDocRequestExam.Designer.vb">
+      <DependentUpon>MainDocRequestExam.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\version2\DoctorRequestExam\MainDocRequestExam.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\version2\ParaClinicExamination\Biology\FormResultBlood.Designer.vb">
+      <DependentUpon>FormResultBlood.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\version2\ParaClinicExamination\Biology\FormResultBlood.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\version2\ParaClinicExamination\Complementary\Colo\FormResultColoscopy.Designer.vb">
+      <DependentUpon>FormResultColoscopy.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\version2\ParaClinicExamination\Complementary\Colo\FormResultColoscopy.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\version2\ParaClinicExamination\Complementary\Echo\FormResultEcho.Designer.vb">
+      <DependentUpon>FormResultEcho.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\version2\ParaClinicExamination\Complementary\Echo\FormResultEcho.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\version2\ParaClinicExamination\Complementary\FibioScan\FormFibrosScan.Designer.vb">
+      <DependentUpon>FormFibrosScan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\version2\ParaClinicExamination\Complementary\FibioScan\FormFibrosScan.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\version2\ParaClinicExamination\Complementary\Fibio\FormFibroscopy.Designer.vb">
+      <DependentUpon>FormFibroscopy.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\version2\ParaClinicExamination\Complementary\Fibio\FormFibroscopy.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\version2\ParaClinicExamination\Complementary\MRI\FormResultMRI.Designer.vb">
+      <DependentUpon>FormResultMRI.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\version2\ParaClinicExamination\Complementary\MRI\FormResultMRI.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\version2\ParaClinicExamination\Complementary\Naso\FormNasogastro.Designer.vb">
+      <DependentUpon>FormNasogastro.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\version2\ParaClinicExamination\Complementary\Naso\FormNasogastro.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\version2\ParaClinicExamination\Complementary\Scan\FormScan.Designer.vb">
+      <DependentUpon>FormScan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\version2\ParaClinicExamination\Complementary\Scan\FormScan.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\version2\PatientReferto\DSReferal.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSReferal.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\version2\PatientReferto\MainHospital.Designer.vb">
+      <DependentUpon>MainHospital.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\version2\PatientReferto\MainHospital.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\version2\PatientReferto\MainPatientReferto.Designer.vb">
+      <DependentUpon>MainPatientReferto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\version2\PatientReferto\MainPatientReferto.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\version2\PatientReferto\NewHospital.Designer.vb">
+      <DependentUpon>NewHospital.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\version2\PatientReferto\NewHospital.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\version2\PatientReferto\NewReferTo.Designer.vb">
+      <DependentUpon>NewReferTo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\version2\PatientReferto\NewReferTo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\version2\Stock\Adjustment.Designer.vb">
+      <DependentUpon>Adjustment.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\version2\Stock\Adjustment.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\version2\Stock\DSStore.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSStore.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\version2\Stock\Issue.Designer.vb">
+      <DependentUpon>Issue.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\version2\Stock\Issue.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\version2\Stock\NewMedicine.Designer.vb">
+      <DependentUpon>NewMedicine.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\version2\Stock\NewMedicine.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\version2\Stock\NewStore.Designer.vb">
+      <DependentUpon>NewStore.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\version2\Stock\NewStore.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\version2\Stock\Receive.Designer.vb">
+      <DependentUpon>Receive.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\version2\Stock\Receive.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\version2\Stock\Reports\DSStoreReport.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSStoreReport.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\version2\Stock\Reports\FormShowCurrentStore.Designer.vb">
+      <DependentUpon>FormShowCurrentStore.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\version2\Stock\Reports\FormShowCurrentStore.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\version2\Stock\Reports\RptAdjustment.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RptAdjustment.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\version2\Stock\Reports\RptIssue.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RptIssue.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\version2\Stock\Reports\RptReceive.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RptReceive.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\version2\Stock\Reports\RptStore.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RptStore.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\version2\Stock\Reports\RptTransaction.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RptTransaction.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\version2\Stock\Reports\RptTransfer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RptTransfer.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\version2\Stock\StoreManagement.Designer.vb">
+      <DependentUpon>StoreManagement.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\version2\Stock\StoreManagement.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\version2\Stock\Transfer.Designer.vb">
+      <DependentUpon>Transfer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\version2\Stock\Transfer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\version2\Stock\UCMedicine.Designer.vb">
+      <DependentUpon>UCMedicine.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\version2\Stock\UCMedicine.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\version2\Stock\UCStock.Designer.vb">
+      <DependentUpon>UCStock.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\version2\Stock\UCStock.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\version2\Stock\UCStoreReport.Designer.vb">
+      <DependentUpon>UCStoreReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\version2\Stock\UCStoreReport.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\version2\Stock\UpdateMedicine.Designer.vb">
+      <DependentUpon>UpdateMedicine.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\version2\Stock\UpdateMedicine.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\version2\Stock\UpdateStore.Designer.vb">
+      <DependentUpon>UpdateStore.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\version2\Stock\UpdateStore.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\version2\WaitingConsuling\DSConsultation.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSConsultation.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\version2\WaitingConsuling\DSConsultation.vb">
+      <DependentUpon>DSConsultation.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\version2\WaitingConsuling\EditPara\Blood.Designer.vb">
+      <DependentUpon>Blood.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\version2\WaitingConsuling\EditPara\Blood.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\version2\WaitingConsuling\FNewPatientWaitingConsuling.Designer.vb">
+      <DependentUpon>FNewPatientWaitingConsuling.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\version2\WaitingConsuling\FNewPatientWaitingConsuling.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\version2\WaitingConsuling\FormHistoryConsultation.Designer.vb">
+      <DependentUpon>FormHistoryConsultation.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\version2\WaitingConsuling\FormHistoryConsultation.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\version2\WaitingConsuling\MainWaitingConsuling.Designer.vb">
+      <DependentUpon>MainWaitingConsuling.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\version2\WaitingConsuling\MainWaitingConsuling.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\version2\DoctorRequestExam\Reports\Echo.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Echo.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\version2\DoctorRequestExam\Reports\Fibro.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Fibro.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\version2\WaitingConsuling\NewConsultingForm.Designer.vb">
+      <DependentUpon>NewConsultingForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\version2\WaitingConsuling\NewConsultingForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\IAppointment.vb" />
+    <Compile Include="Interfaces\ICheckBlood.vb" />
+    <Compile Include="main.Designer.vb">
+      <DependentUpon>main.vb</DependentUpon>
+    </Compile>
+    <Compile Include="main.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Models\BaseParameterDataContext.vb" />
+    <Compile Include="Interfaces\IConsultation.vb" />
+    <Compile Include="Interfaces\IPatient.vb" />
+    <Compile Include="Models\ModelCheckBlood.vb" />
+    <Compile Include="Models\ModelConsultation.vb" />
+    <Compile Include="Models\ModelPatient.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Forms\User Controls\DoctorConsultation.Designer.vb">
+      <DependentUpon>DoctorConsultation.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User Controls\DoctorConsultation.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\User Controls\DoctorInformation.Designer.vb">
+      <DependentUpon>DoctorInformation.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User Controls\DoctorInformation.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\User Controls\FindPatient.Designer.vb">
+      <DependentUpon>FindPatient.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User Controls\FindPatient.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Item\Medicine.Designer.vb">
+      <DependentUpon>Medicine.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Item\Medicine.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Item\MedicineCategory.Designer.vb">
+      <DependentUpon>MedicineCategory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Item\MedicineCategory.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\User Controls\PatientInformation.Designer.vb">
+      <DependentUpon>PatientInformation.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User Controls\PatientInformation.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\User Controls\Service.Designer.vb">
+      <DependentUpon>Service.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User Controls\Service.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\User Controls\ServiceTypes.Designer.vb">
+      <DependentUpon>ServiceTypes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User Controls\ServiceTypes.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\User Controls\SymptomInformation.Designer.vb">
+      <DependentUpon>SymptomInformation.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User Controls\SymptomInformation.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DataClasses.dbml.layout">
+      <DependentUpon>DataClasses.dbml</DependentUpon>
+    </None>
+    <EmbeddedResource Include="Forms\Appointment\Appointment.resx">
+      <DependentUpon>Appointment.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Appointment\NewAppointment.resx">
+      <DependentUpon>NewAppointment.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Appointment\SearchAppointment.resx">
+      <DependentUpon>SearchAppointment.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Blood\BloodForm.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>BloodForm.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Blood\CrystalReport1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport1.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Blood\FormBlood.resx">
+      <DependentUpon>FormBlood.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Consultation\BloodCheck.resx">
+      <DependentUpon>BloodCheck.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Consultation\ViewBloodCheck.resx">
+      <DependentUpon>ViewBloodCheck.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Consultation\ChooseConsultation.resx">
+      <DependentUpon>ChooseConsultation.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Consultation\NewFinalConsultation.resx">
+      <DependentUpon>NewFinalConsultation.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Consultation\ViewFinalConsultation.resx">
+      <DependentUpon>ViewFinalConsultation.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Consultation\NewLiverConsultation.resx">
+      <DependentUpon>NewLiverConsultation.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Consultation\ViewLiverConsultation.resx">
+      <DependentUpon>ViewLiverConsultation.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Consultation\NewStomachConsultation.resx">
+      <DependentUpon>NewStomachConsultation.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Consultation\ViewStomachConsultation.resx">
+      <DependentUpon>ViewStomachConsultation.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Doctor\DoctorFee.resx">
+      <DependentUpon>DoctorFee.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Doctor\NewDoctor.resx">
+      <DependentUpon>NewDoctor.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Doctor\ReportDoctorFee.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReportDoctorFee.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Invoice\Reports\RptIncomeV1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RptIncomeV1.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Invoice\Reports\RptConsultation.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RptConsultation.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Invoice\Reports\RptIncome.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RptIncome.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Invoice\Reports\RptMedicine.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RptMedicine.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Invoice\Reports\RptParaExam.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RptParaExam.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Item\Item.resx">
+      <DependentUpon>Item.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Parameter\ConclosionOfColoscopy\FormConconclusion.resx">
+      <DependentUpon>FormConconclusion.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Parameter\Diagnosis\NewDiagnosis.resx">
+      <DependentUpon>NewDiagnosis.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Parameter\KeyWord\KeyWord.resx">
+      <DependentUpon>KeyWord.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Parameter\Motif\FormMotif.resx">
+      <DependentUpon>FormMotif.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Parameter\Motif_OfColoscopy\FormMotifOfColoscopy.resx">
+      <DependentUpon>FormMotifOfColoscopy.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Parameter\Usesage\FormNewPrescriptionUsage.resx">
+      <DependentUpon>FormNewPrescriptionUsage.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\Analysis\FormDataAnalysis.resx">
+      <DependentUpon>FormDataAnalysis.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\Analysis\ReportAnalysis\ReportDiagnosis.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReportDiagnosis.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\Analysis\ReportAnalysis\ReportDiagnosisColoscopy.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReportDiagnosisColoscopy.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\Analysis\ReportAnalysis\ReportDiagnosisComplaint.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReportDiagnosisComplaint.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\Analysis\ReportAnalysis\ReportDiagnosisFibroscopy.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReportDiagnosisFibroscopy.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\Analysis\ReportAnalysis\ReportDiagnosisMedicalHistory.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReportDiagnosisMedicalHistory.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\Analysis\ReportAnalysis\ReportDiagnosisNasogastro.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReportDiagnosisNasogastro.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\Analysis\ReportAnalysis\ReportDiagnosisPhysicalCheck.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReportDiagnosisPhysicalCheck.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\Analysis\ReportAnalysis\ReportEachProvince.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReportEachProvince.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\Analysis\ReportAnalysis\ReportParaWithBlood.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReportParaWithBlood.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\Analysis\UAnalysis.resx">
+      <DependentUpon>UAnalysis.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\DoctorRequestExam\Reports\ColoEng.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ColoEng.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\DoctorRequestExam\Reports\NasoEng.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>NasoEng.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\DoctorRequestExam\Reports\FibroEng.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>FibroEng.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\DoctorRequestExam\Reports\EchoV1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>EchoV1.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\ParaClinicExamination\Complementary\CFAnaPath\FormCFAnaPath.resx">
+      <DependentUpon>FormCFAnaPath.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\ParaClinicExamination\Complementary\Colo\FormResultColoEnglish.resx">
+      <DependentUpon>FormResultColoEnglish.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\ParaClinicExamination\Complementary\Echo\EchoImage.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>EchoImage.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\ParaClinicExamination\Complementary\Echo\ImageEcho.resx">
+      <DependentUpon>ImageEcho.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\ParaClinicExamination\Complementary\Fibio\FormFibroEnglish.resx">
+      <DependentUpon>FormFibroEnglish.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\ParaClinicExamination\Complementary\Naso\FormNasograstroEng.resx">
+      <DependentUpon>FormNasograstroEng.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\ParaClinicExamination\ParaExamHistory\FormParaExamHistory.resx">
+      <DependentUpon>FormParaExamHistory.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\ParaClinicExamination\ParaExamHistory\FrmFindHistory.resx">
+      <DependentUpon>FrmFindHistory.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\PatientIssueReceipt\invoiceSmalV2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>invoiceSmalV2.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\PatientIssueReceipt\invoiceEng.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>invoiceEng.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\PatientIssueReceipt\EditeConsultationFee.resx">
+      <DependentUpon>EditeConsultationFee.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\PatientIssueReceipt\Expend\FormNewExpend.resx">
+      <DependentUpon>FormNewExpend.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\PatientIssueReceipt\Expend\UCMainExpend.resx">
+      <DependentUpon>UCMainExpend.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\PatientIssueReceipt\FormExchangeRate.resx">
+      <DependentUpon>FormExchangeRate.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\PatientIssueReceipt\InvoiceSmalV1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>InvoiceSmalV1.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\PatientIssueReceipt\invoiceSmal.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>invoiceSmal.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\PatientIssueReceipt\FormIssueReceipt.resx">
+      <DependentUpon>FormIssueReceipt.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\PatientIssueReceipt\InvoiceParaExam.resx">
+      <DependentUpon>InvoiceParaExam.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\PatientMedicalReport\ConsultationList.resx">
+      <DependentUpon>ConsultationList.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\PatientMedicalReport\EditConsultation.resx">
+      <DependentUpon>EditConsultation.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\PatientMedicalReport\FindConsult.resx">
+      <DependentUpon>FindConsult.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\PatientMedicalReport\PrescriptionList.resx">
+      <DependentUpon>PrescriptionList.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\PatientMedicalReport\UPatientMedicalReport.resx">
+      <DependentUpon>UPatientMedicalReport.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\Stock\BarcodeGenerator\CryBarcodeVeiwer.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CryBarcodeVeiwer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\Stock\BarcodeGenerator\FormPrintBarCode.resx">
+      <DependentUpon>FormPrintBarCode.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\Stock\BarcodeGenerator\NewGenerateBarcode.resx">
+      <DependentUpon>NewGenerateBarcode.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\Stock\BarcodeGenerator\UIBarcodeGenerator.resx">
+      <DependentUpon>UIBarcodeGenerator.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\Stock\MedicinceReport\CryMedicinceReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CryMedicinceReport.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\Stock\MedicinceReport\FMedicalReceived.resx">
+      <DependentUpon>FMedicalReceived.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\Stock\MedicinceReport\UMgrMedicince.resx">
+      <DependentUpon>UMgrMedicince.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\Stock\Reports\FormShowBy.resx">
+      <DependentUpon>FormShowBy.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Invoice\Income_Clinic.resx">
+      <DependentUpon>Income_Clinic.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Invoice\InvoiceDetial.resx">
+      <DependentUpon>InvoiceDetial.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Invoice\MainInvoice.resx">
+      <DependentUpon>MainInvoice.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Invoice\MedicineOrder.resx">
+      <DependentUpon>MedicineOrder.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Invoice\NewInvoice.resx">
+      <DependentUpon>NewInvoice.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Invoice\RptOrdinance.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RptOrdinance.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Item\ItemCategory.resx">
+      <DependentUpon>ItemCategory.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Parameter\BloodCheck\MainBlood.resx">
+      <DependentUpon>MainBlood.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Parameter\Conclusion\FormConclustion.resx">
+      <DependentUpon>FormConclustion.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Parameter\ConsultationType\NewConsultationType.resx">
+      <DependentUpon>NewConsultationType.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Parameter\ConsultationType\UCConsultationType.resx">
+      <DependentUpon>UCConsultationType.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Parameter\MainParameter.resx">
+      <DependentUpon>MainParameter.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Parameter\Medical\NewMedicalHistory.resx">
+      <DependentUpon>NewMedicalHistory.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Parameter\Medical\UCMedical.resx">
+      <DependentUpon>UCMedical.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Parameter\ParaClinicExamination\NewParaClinicExam.resx">
+      <DependentUpon>NewParaClinicExam.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Parameter\ParaClinicExamination\UCParaClinicExam.resx">
+      <DependentUpon>UCParaClinicExam.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Parameter\PatientComplaint\NewPatientComplaint.resx">
+      <DependentUpon>NewPatientComplaint.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Parameter\PatientComplaint\UCPateintComplaint.resx">
+      <DependentUpon>UCPateintComplaint.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Parameter\PhysicalExamination\NewPhysicalExamination.resx">
+      <DependentUpon>NewPhysicalExamination.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Parameter\PhysicalExamination\UCPhysicalExamination.resx">
+      <DependentUpon>UCPhysicalExamination.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Parameter\ReferTo\MainReferParameter.resx">
+      <DependentUpon>MainReferParameter.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Parameter\ReferTo\NewReferParameter.resx">
+      <DependentUpon>NewReferParameter.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Patient_Prescription\Complaint.resx">
+      <DependentUpon>Complaint.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Patient_Prescription\EditPrescription.resx">
+      <DependentUpon>EditPrescription.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Patient_Prescription\History.resx">
+      <DependentUpon>History.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Patient_Prescription\NewPrescription.resx">
+      <DependentUpon>NewPrescription.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Patient_Prescription\ParaClinic.resx">
+      <DependentUpon>ParaClinic.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Symptom\EditSymptom.resx">
+      <DependentUpon>EditSymptom.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Symptom\Edit_Patient_Symptom.resx">
+      <DependentUpon>Edit_Patient_Symptom.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Symptom\NewSymptom.resx">
+      <DependentUpon>NewSymptom.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Symptom\PatientComplain.resx">
+      <DependentUpon>PatientComplain.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Symptom\Patient_Symptom.resx">
+      <DependentUpon>Patient_Symptom.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\User_Management\FormNewMenuInventory.resx">
+      <DependentUpon>FormNewMenuInventory.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\User_Management\FrmChangeUserPWD.resx">
+      <DependentUpon>FrmChangeUserPWD.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\User_Management\frmDepartment.resx">
+      <DependentUpon>frmDepartment.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\User_Management\FRMGroupProperties.resx">
+      <DependentUpon>FRMGroupProperties.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\User_Management\FRMNewUser.resx">
+      <DependentUpon>FRMNewUser.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\DoctorRequestExam\ExaminationStatus.resx">
+      <DependentUpon>ExaminationStatus.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\DoctorRequestExam\FindPatientExam.resx">
+      <DependentUpon>FindPatientExam.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\DoctorRequestExam\ParaExam.resx">
+      <DependentUpon>ParaExam.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\DoctorRequestExam\Reports\Colo.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Colo.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\DoctorRequestExam\Reports\Naso.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Naso.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\MedicineHistory\FormMedicineHistory.resx">
+      <DependentUpon>FormMedicineHistory.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\PatientIssueReceipt\invoice.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>invoice.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\PatientIssueReceipt\InvoiceMedicine.resx">
+      <DependentUpon>InvoiceMedicine.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\PatientIssueReceipt\UPatientIssueReceipt.resx">
+      <DependentUpon>UPatientIssueReceipt.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\PatientMedicalReport\RptPatientRecord.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RptPatientRecord.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\PhysicalExamination\Physical.resx">
+      <DependentUpon>Physical.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Patient_Prescription\Prescription.resx">
+      <DependentUpon>Prescription.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Patient_Prescription\RptPrescription.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RptPrescription.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Patient_Prescription\PrescriptionHistory.resx">
+      <DependentUpon>PrescriptionHistory.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ReportViewer\FormReportViewer.resx">
+      <DependentUpon>FormReportViewer.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Service\EditService.resx">
+      <DependentUpon>EditService.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Service\EditServiceType.resx">
+      <DependentUpon>EditServiceType.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Service\NewService.resx">
+      <DependentUpon>NewService.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Service\NewServiceType.resx">
+      <DependentUpon>NewServiceType.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\User_Management\frmLoginChackTravoth.resx">
+      <DependentUpon>frmLoginChackTravoth.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\User_Management\frmWelcome.resx">
+      <DependentUpon>frmWelcome.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\User_Management\UCDepartment.resx">
+      <DependentUpon>UCDepartment.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\Consult\MainConsult.resx">
+      <DependentUpon>MainConsult.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\DoctorRequestExam\DashbordDotorRequestExamination.resx">
+      <DependentUpon>DashbordDotorRequestExamination.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\DoctorRequestExam\MainDocRequestExam.resx">
+      <DependentUpon>MainDocRequestExam.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\ParaClinicExamination\Biology\FormResultBlood.resx">
+      <DependentUpon>FormResultBlood.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\ParaClinicExamination\Complementary\Colo\FormResultColoscopy.resx">
+      <DependentUpon>FormResultColoscopy.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\ParaClinicExamination\Complementary\Echo\FormResultEcho.resx">
+      <DependentUpon>FormResultEcho.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\ParaClinicExamination\Complementary\FibioScan\FormFibrosScan.resx">
+      <DependentUpon>FormFibrosScan.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\ParaClinicExamination\Complementary\Fibio\FormFibroscopy.resx">
+      <DependentUpon>FormFibroscopy.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\ParaClinicExamination\Complementary\MRI\FormResultMRI.resx">
+      <DependentUpon>FormResultMRI.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\ParaClinicExamination\Complementary\Naso\FormNasogastro.resx">
+      <DependentUpon>FormNasogastro.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\ParaClinicExamination\Complementary\Scan\FormScan.resx">
+      <DependentUpon>FormScan.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\PatientReferto\MainHospital.resx">
+      <DependentUpon>MainHospital.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\PatientReferto\MainPatientReferto.resx">
+      <DependentUpon>MainPatientReferto.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\PatientReferto\NewHospital.resx">
+      <DependentUpon>NewHospital.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\PatientReferto\NewReferTo.resx">
+      <DependentUpon>NewReferTo.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\Stock\Adjustment.resx">
+      <DependentUpon>Adjustment.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\Stock\Issue.resx">
+      <DependentUpon>Issue.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\Stock\NewMedicine.resx">
+      <DependentUpon>NewMedicine.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\Stock\NewStore.resx">
+      <DependentUpon>NewStore.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\Stock\Receive.resx">
+      <DependentUpon>Receive.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\Stock\Reports\FormShowCurrentStore.resx">
+      <DependentUpon>FormShowCurrentStore.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\Stock\Reports\RptAdjustment.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RptAdjustment.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\Stock\Reports\RptIssue.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RptIssue.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\Stock\Reports\RptReceive.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RptReceive.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\Stock\Reports\RptStore.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RptStore.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\Stock\Reports\RptTransaction.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RptTransaction.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\Stock\Reports\RptTransfer.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RptTransfer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\Stock\StoreManagement.resx">
+      <DependentUpon>StoreManagement.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\Stock\Transfer.resx">
+      <DependentUpon>Transfer.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\Stock\UCMedicine.resx">
+      <DependentUpon>UCMedicine.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\Stock\UCStock.resx">
+      <DependentUpon>UCStock.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\Stock\UCStoreReport.resx">
+      <DependentUpon>UCStoreReport.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\Stock\UpdateMedicine.resx">
+      <DependentUpon>UpdateMedicine.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\Stock\UpdateStore.resx">
+      <DependentUpon>UpdateStore.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\WaitingConsuling\EditPara\Blood.resx">
+      <DependentUpon>Blood.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\WaitingConsuling\FNewPatientWaitingConsuling.resx">
+      <DependentUpon>FNewPatientWaitingConsuling.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\WaitingConsuling\FormHistoryConsultation.resx">
+      <DependentUpon>FormHistoryConsultation.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\WaitingConsuling\MainWaitingConsuling.resx">
+      <DependentUpon>MainWaitingConsuling.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\DoctorRequestExam\Reports\Echo.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Echo.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\DoctorRequestExam\Reports\Fibro.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Fibro.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\WaitingConsuling\NewConsultingForm.resx">
+      <DependentUpon>NewConsultingForm.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="main.resx">
+      <DependentUpon>main.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\licenses.licx" />
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>PublicVbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\User Controls\DoctorConsultation.resx">
+      <DependentUpon>DoctorConsultation.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\User Controls\DoctorInformation.resx">
+      <DependentUpon>DoctorInformation.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\User Controls\FindPatient.resx">
+      <DependentUpon>FindPatient.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Item\Medicine.resx">
+      <DependentUpon>Medicine.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Item\MedicineCategory.resx">
+      <DependentUpon>MedicineCategory.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\User Controls\PatientInformation.resx">
+      <DependentUpon>PatientInformation.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\User Controls\Service.resx">
+      <DependentUpon>Service.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\User Controls\ServiceTypes.resx">
+      <DependentUpon>ServiceTypes.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\User Controls\SymptomInformation.resx">
+      <DependentUpon>SymptomInformation.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\patient.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\doctor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\find_patient.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\find.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\send_to_doctor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{967B4E0D-AD0C-4609-AB67-0FA40C0206D8}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\choose.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bloodtest.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\appointment.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\new_appointment.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DataClasses.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DataClasses.designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Resources\delete_appointment.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loading-bar1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1342235107_navigation-right-button_blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1342235074_navigation-down-button_blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navigation-down-button_blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navigation-left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Forms\Patient_Prescription\DS_Prescription.xsc">
+      <DependentUpon>DS_Prescription.xsd</DependentUpon>
+    </None>
+    <None Include="Forms\Patient_Prescription\DS_Prescription.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_Prescription.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Forms\Patient_Prescription\DS_Prescription.xss">
+      <DependentUpon>DS_Prescription.xsd</DependentUpon>
+    </None>
+    <None Include="Resources\Navigation-up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\invoice.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\prescription.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\document-print.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\printer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Forms\Invoice\DS_Invoice.xsc">
+      <DependentUpon>DS_Invoice.xsd</DependentUpon>
+    </None>
+    <None Include="Forms\Invoice\DS_Invoice.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_Invoice.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Forms\Invoice\DS_Invoice.xss">
+      <DependentUpon>DS_Invoice.xsd</DependentUpon>
+    </None>
+    <None Include="Resources\Print.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Measurement.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\desktop_computer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navigation-down-button_blue1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stethoscope.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dokter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\surgeon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sthetoscope.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DefineControls.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Chat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wheelchair.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\0003 copy.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\64aba8208423082b80b19790b24c2c085d955202_m.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1316401141_Schedule_File.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1316401187_Vial-Pills.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1316414518_self1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1316415362_cashbox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1316415712_Warning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1316761851_ark2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1320892236_8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1320892585_11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1323157036_check.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_to_list.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AdminBg.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\app_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Approved.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Aproved.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_down_green_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Barcode.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bg1.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blue_new.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Box Donated.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\caritas_logo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cashbox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CasherBg.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CashReceipt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cate_treeview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\check.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Check1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Checked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\column_chart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\column_chart32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\configuration_edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\country.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\country32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cross-circle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\database.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\db_add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\department.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\discount.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\example.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\expired_date.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eye.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Floppy_s2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Forward.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Image1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\input-keyboard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\instock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iSync.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kmenuedit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loadgraphic.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loading_bar.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loading2222.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loading-bar11.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loadingNew1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loadingNew3.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loadingProcessing1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loadingqw.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mac.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\medicine.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menu1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\money.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\new.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\new_vendor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Open.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\order_icon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\play.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus-circle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\price.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\process.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\progressbar.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Receipt_nop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Receipt_oop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RegisBG.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\register.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Remove.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\report.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\request-navigation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sales-report.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\send.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\spreadsheet-template.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\store.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\store1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TakeoLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user-group-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\view-refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vista %28198%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wait.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\waiting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WardBg.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Warning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Forms\version2\PatientReferto\DSReferal.xsc">
+      <DependentUpon>DSReferal.xsd</DependentUpon>
+    </None>
+    <None Include="Forms\version2\PatientReferto\DSReferal.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSReferal.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Forms\version2\PatientReferto\DSReferal.xss">
+      <DependentUpon>DSReferal.xsd</DependentUpon>
+    </None>
+    <None Include="Forms\version2\WaitingConsuling\DSConsultation.xsc">
+      <DependentUpon>DSConsultation.xsd</DependentUpon>
+    </None>
+    <None Include="Forms\version2\WaitingConsuling\DSConsultation.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSConsultation.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Forms\version2\WaitingConsuling\DSConsultation.xss">
+      <DependentUpon>DSConsultation.xsd</DependentUpon>
+    </None>
+    <None Include="Resources\welcome_bg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1349420620_todo-list.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\laboratory.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blood_drop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Clinic Management System.exe.config" />
+    <None Include="bin\Debug\Clinic Management System.vshost.exe.config" />
+    <None Include="bin\Debug\Clinic Management System.vshost.exe.manifest" />
+    <None Include="DS\PATIENT\DSPAtient.xsc">
+      <DependentUpon>DSPAtient.xsd</DependentUpon>
+    </None>
+    <None Include="DS\PATIENT\DSPAtient.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSPAtient1.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DS\PATIENT\DSPAtient.xss">
+      <DependentUpon>DSPAtient.xsd</DependentUpon>
+    </None>
+    <None Include="Forms\Parameter\DS_Parameter.xsc">
+      <DependentUpon>DS_Parameter.xsd</DependentUpon>
+    </None>
+    <None Include="Forms\Parameter\DS_Parameter.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_Parameter.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Forms\Parameter\DS_Parameter.xss">
+      <DependentUpon>DS_Parameter.xsd</DependentUpon>
+    </None>
+    <None Include="Forms\Symptom\DSComplaint.xsc">
+      <DependentUpon>DSComplaint.xsd</DependentUpon>
+    </None>
+    <None Include="Forms\Symptom\DSComplaint.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSComplaint.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Forms\Symptom\DSComplaint.xss">
+      <DependentUpon>DSComplaint.xsd</DependentUpon>
+    </None>
+    <None Include="Forms\User_Management\DSUserManagerment.xsc">
+      <DependentUpon>DSUserManagerment.xsd</DependentUpon>
+    </None>
+    <None Include="Forms\User_Management\DSUserManagerment.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSUserManagerment1.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Forms\User_Management\DSUserManagerment.xss">
+      <DependentUpon>DSUserManagerment.xsd</DependentUpon>
+    </None>
+    <None Include="Forms\version2\Analysis\DSAnalysis.xsc">
+      <DependentUpon>DSAnalysis.xsd</DependentUpon>
+    </None>
+    <None Include="Forms\version2\Analysis\DSAnalysis.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSAnalysis.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Forms\version2\Analysis\DSAnalysis.xss">
+      <DependentUpon>DSAnalysis.xsd</DependentUpon>
+    </None>
+    <None Include="Forms\version2\DoctorRequestExam\DSExamination.xsc">
+      <DependentUpon>DSExamination.xsd</DependentUpon>
+    </None>
+    <None Include="Forms\version2\DoctorRequestExam\DSExamination.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSExamination.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Forms\version2\DoctorRequestExam\DSExamination.xss">
+      <DependentUpon>DSExamination.xsd</DependentUpon>
+    </None>
+    <None Include="Forms\version2\MedicalHistory\DSMedicalHistory.xsc">
+      <DependentUpon>DSMedicalHistory.xsd</DependentUpon>
+    </None>
+    <None Include="Forms\version2\MedicalHistory\DSMedicalHistory.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSMedicalHistory.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Forms\version2\MedicalHistory\DSMedicalHistory.xss">
+      <DependentUpon>DSMedicalHistory.xsd</DependentUpon>
+    </None>
+    <None Include="Forms\version2\ParaClinicExamination\Complementary\Echo\DSEcho.xsc">
+      <DependentUpon>DSEcho.xsd</DependentUpon>
+    </None>
+    <None Include="Forms\version2\ParaClinicExamination\Complementary\Echo\DSEcho.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSEcho.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Forms\version2\ParaClinicExamination\Complementary\Echo\DSEcho.xss">
+      <DependentUpon>DSEcho.xsd</DependentUpon>
+    </None>
+    <None Include="Forms\version2\PatientIssueReceipt\DSInvoice.xsc">
+      <DependentUpon>DSInvoice.xsd</DependentUpon>
+    </None>
+    <None Include="Forms\version2\PatientIssueReceipt\DSInvoice.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSInvoice1.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Forms\version2\PatientIssueReceipt\DSInvoice.xss">
+      <DependentUpon>DSInvoice.xsd</DependentUpon>
+    </None>
+    <None Include="Forms\version2\PhysicalExamination\DSPhysicalExam.xsc">
+      <DependentUpon>DSPhysicalExam.xsd</DependentUpon>
+    </None>
+    <None Include="Forms\version2\PhysicalExamination\DSPhysicalExam.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSPhysicalExam.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Forms\version2\PhysicalExamination\DSPhysicalExam.xss">
+      <DependentUpon>DSPhysicalExam.xsd</DependentUpon>
+    </None>
+    <None Include="Forms\version2\Stock\BarcodeGenerator\DSBarCode.xsc">
+      <DependentUpon>DSBarCode.xsd</DependentUpon>
+    </None>
+    <None Include="Forms\version2\Stock\BarcodeGenerator\DSBarCode.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSBarCode.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Forms\version2\Stock\BarcodeGenerator\DSBarCode.xss">
+      <DependentUpon>DSBarCode.xsd</DependentUpon>
+    </None>
+    <None Include="Forms\version2\Stock\DSStore.xsc">
+      <DependentUpon>DSStore.xsd</DependentUpon>
+    </None>
+    <None Include="Forms\version2\Stock\DSStore.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSStore.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Forms\version2\Stock\DSStore.xss">
+      <DependentUpon>DSStore.xsd</DependentUpon>
+    </None>
+    <None Include="Forms\version2\Stock\MedicinceReport\DSMedicalReceive.xsc">
+      <DependentUpon>DSMedicalReceive.xsd</DependentUpon>
+    </None>
+    <None Include="Forms\version2\Stock\MedicinceReport\DSMedicalReceive.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSMedicalReceive.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Forms\version2\Stock\MedicinceReport\DSMedicalReceive.xss">
+      <DependentUpon>DSMedicalReceive.xsd</DependentUpon>
+    </None>
+    <None Include="Forms\version2\Stock\Reports\DSStoreReport.xsc">
+      <DependentUpon>DSStoreReport.xsd</DependentUpon>
+    </None>
+    <None Include="Forms\version2\Stock\Reports\DSStoreReport.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSStoreReport.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Forms\version2\Stock\Reports\DSStoreReport.xss">
+      <DependentUpon>DSStoreReport.xsd</DependentUpon>
+    </None>
+    <None Include="Resources\1349422462_analytics_64.png" />
+    <None Include="Resources\1349422790_microscope.png" />
+    <None Include="Resources\1349422899_clipboard.png" />
+    <None Include="Resources\Adjust.png" />
+    <Content Include="1364030100_61657.ico" />
+    <Content Include="Add.ico" />
+    <None Include="Resources\1369921179_pie_chart.png" />
+    <Content Include="bin\Debug\AutocompleteMenu.dll" />
+    <Content Include="bin\Debug\AxInterop.AcroPDFLib.dll" />
+    <Content Include="bin\Debug\Clinic Management System.exe" />
+    <Content Include="bin\Debug\Clinic Management System.pdb" />
+    <Content Include="bin\Debug\Clinic Management System.vshost.exe" />
+    <Content Include="bin\Debug\Clinic Management System.xml" />
+    <Content Include="bin\Debug\Janus.Data.v3.dll" />
+    <Content Include="bin\Debug\Janus.Windows.ButtonBar.v3.dll" />
+    <Content Include="bin\Debug\Janus.Windows.ButtonBar.v3.xml" />
+    <Content Include="bin\Debug\Janus.Windows.CalendarCombo.v3.dll" />
+    <Content Include="bin\Debug\Janus.Windows.CalendarCombo.v3.xml" />
+    <Content Include="bin\Debug\Janus.Windows.Common.v3.dll" />
+    <Content Include="bin\Debug\Janus.Windows.ExplorerBar.v3.dll" />
+    <Content Include="bin\Debug\Janus.Windows.ExplorerBar.v3.xml" />
+    <Content Include="bin\Debug\Janus.Windows.FilterEditor.v3.dll" />
+    <Content Include="bin\Debug\Janus.Windows.GridEX.v3.dll" />
+    <Content Include="bin\Debug\Janus.Windows.GridEX.v3.xml" />
+    <Content Include="bin\Debug\Janus.Windows.Ribbon.v3.dll" />
+    <Content Include="bin\Debug\Janus.Windows.Ribbon.v3.xml" />
+    <Content Include="bin\Debug\Janus.Windows.UI.v3.dll" />
+    <Content Include="bin\Debug\Janus.Windows.UI.v3.xml" />
+    <None Include="Resources\1413013384_open-file.png" />
+    <None Include="Resources\1342235152_navigation-down-button_basic_blue.png" />
+    <Content Include="Resources\gme3.jpg" />
+    <Content Include="Resources\HEALTH-CLINIC-5.jpg" />
+    <Content Include="Resources\HEALTH-CLINIC-51.jpg" />
+    <None Include="Resources\MedicineStore.png" />
+    <None Include="Resources\NewStore.png" />
+    <None Include="Resources\transfer.png" />
+    <None Include="Resources\Issue.png" />
+    <None Include="Resources\Receive.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="AxAcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Forms\version2\Appoinment\" />
+    <Folder Include="Forms\version2\Prescription\" />
+    <Folder Include="Forms\version2\Symptom\" />
+    <Folder Include="Modules\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
