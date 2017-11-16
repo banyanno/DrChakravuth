@@ -6,151 +6,171 @@ ClinicManagementSystem
 </name>
 </assembly>
 <members>
-<member name="T:Clinic_Management_System.DSUserManagerment.USER_OF_DEPARTMENTDataTable">
+<member name="T:Clinic_Management_System.DSEcho.tblechoImageDataTable">
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
-</member><member name="T:Clinic_Management_System.DSUserManagerment.USER_MENUSDataTable">
+</member><member name="T:Clinic_Management_System.DSEcho.tblpatientDataTable">
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
-</member><member name="T:Clinic_Management_System.DSUserManagerment.USERS_SYSTEMDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSUserManagerment.USER_PERMISTION_MENUDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSUserManagerment.V_USER_PERMISTIONDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSUserManagerment.V_USER_IN_DEPDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSUserManagerment.V_USER_MENU_PERMISIONDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSUserManagerment.USER_OF_DEPARTMENTRow">
+</member><member name="T:Clinic_Management_System.DSEcho.tblechoImageRow">
 	<summary>
 Represents strongly named DataRow class.
 </summary>
-</member><member name="T:Clinic_Management_System.DSUserManagerment.USER_MENUSRow">
+</member><member name="T:Clinic_Management_System.DSEcho.tblpatientRow">
 	<summary>
 Represents strongly named DataRow class.
 </summary>
-</member><member name="T:Clinic_Management_System.DSUserManagerment.USERS_SYSTEMRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSUserManagerment.USER_PERMISTION_MENURow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSUserManagerment.V_USER_PERMISTIONRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSUserManagerment.V_USER_IN_DEPRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSUserManagerment.V_USER_MENU_PERMISIONRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSUserManagerment.USER_OF_DEPARTMENTRowChangeEvent">
+</member><member name="T:Clinic_Management_System.DSEcho.tblechoImageRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>
-</member><member name="T:Clinic_Management_System.DSUserManagerment.USER_MENUSRowChangeEvent">
+</member><member name="T:Clinic_Management_System.DSEcho.tblpatientRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>
-</member><member name="T:Clinic_Management_System.DSUserManagerment.USERS_SYSTEMRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Clinic_Management_System.DSUserManagerment.USER_PERMISTION_MENURowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Clinic_Management_System.DSUserManagerment.V_USER_PERMISTIONRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Clinic_Management_System.DSUserManagerment.V_USER_IN_DEPRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Clinic_Management_System.DSUserManagerment.V_USER_MENU_PERMISIONRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Clinic_Management_System.DSUserManagerment">
+</member><member name="T:Clinic_Management_System.DSEcho">
 	<summary>
 Represents a strongly typed in-memory cache of data.
 </summary>
-</member><member name="T:Clinic_Management_System.DSUserManagermentTableAdapters.USER_OF_DEPARTMENTTableAdapter">
+</member><member name="T:Clinic_Management_System.DSEchoTableAdapters.tblechoImageTableAdapter">
 	<summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>
-</member><member name="T:Clinic_Management_System.DSUserManagermentTableAdapters.USER_MENUSTableAdapter">
+</member><member name="T:Clinic_Management_System.DSEchoTableAdapters.tblpatientTableAdapter">
 	<summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>
-</member><member name="T:Clinic_Management_System.DSUserManagermentTableAdapters.USERS_SYSTEMTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:Clinic_Management_System.DSUserManagermentTableAdapters.USER_PERMISTION_MENUTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:Clinic_Management_System.DSUserManagermentTableAdapters.V_USER_PERMISTIONTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:Clinic_Management_System.DSUserManagermentTableAdapters.V_USER_IN_DEPTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:Clinic_Management_System.DSUserManagermentTableAdapters.V_USER_MENU_PERMISIONTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="M:Clinic_Management_System.DSUserManagermentTableAdapters.TableAdapterManager.UpdateUpdatedRows(Clinic_Management_System.DSUserManagerment,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+</member><member name="M:Clinic_Management_System.DSEchoTableAdapters.TableAdapterManager.UpdateUpdatedRows(Clinic_Management_System.DSEcho,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
 	<summary>
 Update rows in top-down order.
 </summary>
-</member><member name="M:Clinic_Management_System.DSUserManagermentTableAdapters.TableAdapterManager.UpdateInsertedRows(Clinic_Management_System.DSUserManagerment,System.Collections.Generic.List{System.Data.DataRow})">
+</member><member name="M:Clinic_Management_System.DSEchoTableAdapters.TableAdapterManager.UpdateInsertedRows(Clinic_Management_System.DSEcho,System.Collections.Generic.List{System.Data.DataRow})">
 	<summary>
 Insert rows in top-down order.
 </summary>
-</member><member name="M:Clinic_Management_System.DSUserManagermentTableAdapters.TableAdapterManager.UpdateDeletedRows(Clinic_Management_System.DSUserManagerment,System.Collections.Generic.List{System.Data.DataRow})">
+</member><member name="M:Clinic_Management_System.DSEchoTableAdapters.TableAdapterManager.UpdateDeletedRows(Clinic_Management_System.DSEcho,System.Collections.Generic.List{System.Data.DataRow})">
 	<summary>
 Delete rows in bottom-up order.
 </summary>
-</member><member name="M:Clinic_Management_System.DSUserManagermentTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+</member><member name="M:Clinic_Management_System.DSEchoTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
 	<summary>
 Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
 </summary>
-</member><member name="M:Clinic_Management_System.DSUserManagermentTableAdapters.TableAdapterManager.UpdateAll(Clinic_Management_System.DSUserManagerment)">
+</member><member name="M:Clinic_Management_System.DSEchoTableAdapters.TableAdapterManager.UpdateAll(Clinic_Management_System.DSEcho)">
 	<summary>
 Update all changes to the dataset.
 </summary>
-</member><member name="T:Clinic_Management_System.DSUserManagermentTableAdapters.TableAdapterManager.UpdateOrderOption">
+</member><member name="T:Clinic_Management_System.DSEchoTableAdapters.TableAdapterManager.UpdateOrderOption">
 	<summary>
 Update Order Option
 </summary>
-</member><member name="T:Clinic_Management_System.DSUserManagermentTableAdapters.TableAdapterManager.SelfReferenceComparer">
+</member><member name="T:Clinic_Management_System.DSEchoTableAdapters.TableAdapterManager.SelfReferenceComparer">
 	<summary>
 Used to sort self-referenced table's rows
 </summary>
-</member><member name="T:Clinic_Management_System.DSUserManagermentTableAdapters.TableAdapterManager">
+</member><member name="T:Clinic_Management_System.DSEchoTableAdapters.TableAdapterManager">
+	<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member><member name="T:Clinic_Management_System.DSPhysicalExam.tblPhysicalCheckDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSPhysicalExam.V_PHYSICAL_EXAMDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSPhysicalExam.tblphysicalcheckdetailDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSPhysicalExam.tblprephysicalcheckdetailDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSPhysicalExam.tblPhysicalCheckRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSPhysicalExam.V_PHYSICAL_EXAMRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSPhysicalExam.tblphysicalcheckdetailRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSPhysicalExam.tblprephysicalcheckdetailRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSPhysicalExam.tblPhysicalCheckRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Clinic_Management_System.DSPhysicalExam.V_PHYSICAL_EXAMRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Clinic_Management_System.DSPhysicalExam.tblphysicalcheckdetailRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Clinic_Management_System.DSPhysicalExam.tblprephysicalcheckdetailRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Clinic_Management_System.DSPhysicalExam">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:Clinic_Management_System.DSPhysicalExamTableAdapters.tblPhysicalCheckTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Clinic_Management_System.DSPhysicalExamTableAdapters.V_PHYSICAL_EXAMTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Clinic_Management_System.DSPhysicalExamTableAdapters.tblphysicalcheckdetailTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Clinic_Management_System.DSPhysicalExamTableAdapters.tblprephysicalcheckdetailTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="M:Clinic_Management_System.DSPhysicalExamTableAdapters.TableAdapterManager.UpdateUpdatedRows(Clinic_Management_System.DSPhysicalExam,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Update rows in top-down order.
+</summary>
+</member><member name="M:Clinic_Management_System.DSPhysicalExamTableAdapters.TableAdapterManager.UpdateInsertedRows(Clinic_Management_System.DSPhysicalExam,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Insert rows in top-down order.
+</summary>
+</member><member name="M:Clinic_Management_System.DSPhysicalExamTableAdapters.TableAdapterManager.UpdateDeletedRows(Clinic_Management_System.DSPhysicalExam,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Delete rows in bottom-up order.
+</summary>
+</member><member name="M:Clinic_Management_System.DSPhysicalExamTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member><member name="M:Clinic_Management_System.DSPhysicalExamTableAdapters.TableAdapterManager.UpdateAll(Clinic_Management_System.DSPhysicalExam)">
+	<summary>
+Update all changes to the dataset.
+</summary>
+</member><member name="T:Clinic_Management_System.DSPhysicalExamTableAdapters.TableAdapterManager.UpdateOrderOption">
+	<summary>
+Update Order Option
+</summary>
+</member><member name="T:Clinic_Management_System.DSPhysicalExamTableAdapters.TableAdapterManager.SelfReferenceComparer">
+	<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member><member name="T:Clinic_Management_System.DSPhysicalExamTableAdapters.TableAdapterManager">
 	<summary>
 TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
 </summary>
@@ -318,6 +338,1407 @@ Used to sort self-referenced table's rows
 	<summary>
 TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
 </summary>
+</member><member name="T:Clinic_Management_System.DSReferal.HOSPITALDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSReferal.HOSPITAL_REFERALDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSReferal.V_HOSPITAL_REFERALDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSReferal.HOSPITALRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSReferal.HOSPITAL_REFERALRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSReferal.V_HOSPITAL_REFERALRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSReferal.HOSPITALRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Clinic_Management_System.DSReferal.HOSPITAL_REFERALRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Clinic_Management_System.DSReferal.V_HOSPITAL_REFERALRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Clinic_Management_System.DSReferal">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:Clinic_Management_System.DSReferalTableAdapters.HOSPITALTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Clinic_Management_System.DSReferalTableAdapters.HOSPITAL_REFERALTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Clinic_Management_System.DSReferalTableAdapters.V_HOSPITAL_REFERALTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="M:Clinic_Management_System.DSReferalTableAdapters.TableAdapterManager.UpdateUpdatedRows(Clinic_Management_System.DSReferal,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Update rows in top-down order.
+</summary>
+</member><member name="M:Clinic_Management_System.DSReferalTableAdapters.TableAdapterManager.UpdateInsertedRows(Clinic_Management_System.DSReferal,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Insert rows in top-down order.
+</summary>
+</member><member name="M:Clinic_Management_System.DSReferalTableAdapters.TableAdapterManager.UpdateDeletedRows(Clinic_Management_System.DSReferal,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Delete rows in bottom-up order.
+</summary>
+</member><member name="M:Clinic_Management_System.DSReferalTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member><member name="M:Clinic_Management_System.DSReferalTableAdapters.TableAdapterManager.UpdateAll(Clinic_Management_System.DSReferal)">
+	<summary>
+Update all changes to the dataset.
+</summary>
+</member><member name="T:Clinic_Management_System.DSReferalTableAdapters.TableAdapterManager.UpdateOrderOption">
+	<summary>
+Update Order Option
+</summary>
+</member><member name="T:Clinic_Management_System.DSReferalTableAdapters.TableAdapterManager.SelfReferenceComparer">
+	<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member><member name="T:Clinic_Management_System.DSReferalTableAdapters.TableAdapterManager">
+	<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member><member name="P:Clinic_Management_System.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:Clinic_Management_System.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:Clinic_Management_System.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member><member name="T:Clinic_Management_System.DSMedicalHistory.tblhistoryDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSMedicalHistory.V_MEDICAL_HISTORYDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSMedicalHistory.tblhistorydetailDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSMedicalHistory.tblprehistorydetailDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSMedicalHistory.tblhistoryRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSMedicalHistory.V_MEDICAL_HISTORYRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSMedicalHistory.tblhistorydetailRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSMedicalHistory.tblprehistorydetailRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSMedicalHistory.tblhistoryRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Clinic_Management_System.DSMedicalHistory.V_MEDICAL_HISTORYRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Clinic_Management_System.DSMedicalHistory.tblhistorydetailRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Clinic_Management_System.DSMedicalHistory.tblprehistorydetailRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Clinic_Management_System.DSMedicalHistory">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:Clinic_Management_System.DSMedicalHistoryTableAdapters.tblhistoryTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Clinic_Management_System.DSMedicalHistoryTableAdapters.V_MEDICAL_HISTORYTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Clinic_Management_System.DSMedicalHistoryTableAdapters.tblhistorydetailTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Clinic_Management_System.DSMedicalHistoryTableAdapters.tblprehistorydetailTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="M:Clinic_Management_System.DSMedicalHistoryTableAdapters.TableAdapterManager.UpdateUpdatedRows(Clinic_Management_System.DSMedicalHistory,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Update rows in top-down order.
+</summary>
+</member><member name="M:Clinic_Management_System.DSMedicalHistoryTableAdapters.TableAdapterManager.UpdateInsertedRows(Clinic_Management_System.DSMedicalHistory,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Insert rows in top-down order.
+</summary>
+</member><member name="M:Clinic_Management_System.DSMedicalHistoryTableAdapters.TableAdapterManager.UpdateDeletedRows(Clinic_Management_System.DSMedicalHistory,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Delete rows in bottom-up order.
+</summary>
+</member><member name="M:Clinic_Management_System.DSMedicalHistoryTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member><member name="M:Clinic_Management_System.DSMedicalHistoryTableAdapters.TableAdapterManager.UpdateAll(Clinic_Management_System.DSMedicalHistory)">
+	<summary>
+Update all changes to the dataset.
+</summary>
+</member><member name="T:Clinic_Management_System.DSMedicalHistoryTableAdapters.TableAdapterManager.UpdateOrderOption">
+	<summary>
+Update Order Option
+</summary>
+</member><member name="T:Clinic_Management_System.DSMedicalHistoryTableAdapters.TableAdapterManager.SelfReferenceComparer">
+	<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member><member name="T:Clinic_Management_System.DSMedicalHistoryTableAdapters.TableAdapterManager">
+	<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member><member name="T:Clinic_Management_System.DSConsultation.tblcheckresultDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSConsultation.tblnasogastroDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSConsultation.tblcoloscopyDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSConsultation.tblechoDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSConsultation.V_PRESCRIPTIONDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSConsultation.V_PRESCRIPTION_DETAILDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSConsultation.tbl_preinvoice_consultationDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSConsultation.tbl_invoice_consultationDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSConsultation.DOCTOR_FEEDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSConsultation.tblcheckresultRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSConsultation.tblnasogastroRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSConsultation.tblcoloscopyRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSConsultation.tblechoRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSConsultation.V_PRESCRIPTIONRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSConsultation.V_PRESCRIPTION_DETAILRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSConsultation.tbl_preinvoice_consultationRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSConsultation.tbl_invoice_consultationRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSConsultation.DOCTOR_FEERow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSConsultation.tblcheckresultRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Clinic_Management_System.DSConsultation.tblnasogastroRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Clinic_Management_System.DSConsultation.tblcoloscopyRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Clinic_Management_System.DSConsultation.tblechoRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Clinic_Management_System.DSConsultation.V_PRESCRIPTIONRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Clinic_Management_System.DSConsultation.V_PRESCRIPTION_DETAILRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Clinic_Management_System.DSConsultation.tbl_preinvoice_consultationRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Clinic_Management_System.DSConsultation.tbl_invoice_consultationRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Clinic_Management_System.DSConsultation.DOCTOR_FEERowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Clinic_Management_System.DSConsultation">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:Clinic_Management_System.DSConsultationTableAdapters.tblcheckresultTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Clinic_Management_System.DSConsultationTableAdapters.tblnasogastroTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Clinic_Management_System.DSConsultationTableAdapters.tblcoloscopyTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Clinic_Management_System.DSConsultationTableAdapters.tblechoTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Clinic_Management_System.DSConsultationTableAdapters.V_PRESCRIPTIONTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Clinic_Management_System.DSConsultationTableAdapters.V_PRESCRIPTION_DETAILTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Clinic_Management_System.DSConsultationTableAdapters.tbl_preinvoice_consultationTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Clinic_Management_System.DSConsultationTableAdapters.tbl_invoice_consultationTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Clinic_Management_System.DSConsultationTableAdapters.DOCTOR_FEETableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="M:Clinic_Management_System.DSConsultationTableAdapters.TableAdapterManager.UpdateUpdatedRows(Clinic_Management_System.DSConsultation,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Update rows in top-down order.
+</summary>
+</member><member name="M:Clinic_Management_System.DSConsultationTableAdapters.TableAdapterManager.UpdateInsertedRows(Clinic_Management_System.DSConsultation,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Insert rows in top-down order.
+</summary>
+</member><member name="M:Clinic_Management_System.DSConsultationTableAdapters.TableAdapterManager.UpdateDeletedRows(Clinic_Management_System.DSConsultation,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Delete rows in bottom-up order.
+</summary>
+</member><member name="M:Clinic_Management_System.DSConsultationTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member><member name="M:Clinic_Management_System.DSConsultationTableAdapters.TableAdapterManager.UpdateAll(Clinic_Management_System.DSConsultation)">
+	<summary>
+Update all changes to the dataset.
+</summary>
+</member><member name="T:Clinic_Management_System.DSConsultationTableAdapters.TableAdapterManager.UpdateOrderOption">
+	<summary>
+Update Order Option
+</summary>
+</member><member name="T:Clinic_Management_System.DSConsultationTableAdapters.TableAdapterManager.SelfReferenceComparer">
+	<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member><member name="T:Clinic_Management_System.DSConsultationTableAdapters.TableAdapterManager">
+	<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member><member name="T:Clinic_Management_System.DSStore.tblunitDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSStore.tbladjustmentDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSStore.tbltransactionDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSStore.tblmedicinestoreDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSStore.tblissueDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSStore.tbltransferDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSStore.tblreceiveDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSStore.tblunitRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSStore.tbladjustmentRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSStore.tbltransactionRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSStore.tblmedicinestoreRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSStore.tblissueRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSStore.tbltransferRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSStore.tblreceiveRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSStore.tblunitRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Clinic_Management_System.DSStore.tbladjustmentRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Clinic_Management_System.DSStore.tbltransactionRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Clinic_Management_System.DSStore.tblmedicinestoreRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Clinic_Management_System.DSStore.tblissueRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Clinic_Management_System.DSStore.tbltransferRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Clinic_Management_System.DSStore.tblreceiveRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Clinic_Management_System.DSStore">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:Clinic_Management_System.DSStoreTableAdapters.tblunitTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Clinic_Management_System.DSStoreTableAdapters.tbladjustmentTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Clinic_Management_System.DSStoreTableAdapters.tbltransactionTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Clinic_Management_System.DSStoreTableAdapters.tblmedicinestoreTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Clinic_Management_System.DSStoreTableAdapters.tblissueTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Clinic_Management_System.DSStoreTableAdapters.tbltransferTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Clinic_Management_System.DSStoreTableAdapters.tblreceiveTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="M:Clinic_Management_System.DSStoreTableAdapters.TableAdapterManager.UpdateUpdatedRows(Clinic_Management_System.DSStore,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Update rows in top-down order.
+</summary>
+</member><member name="M:Clinic_Management_System.DSStoreTableAdapters.TableAdapterManager.UpdateInsertedRows(Clinic_Management_System.DSStore,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Insert rows in top-down order.
+</summary>
+</member><member name="M:Clinic_Management_System.DSStoreTableAdapters.TableAdapterManager.UpdateDeletedRows(Clinic_Management_System.DSStore,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Delete rows in bottom-up order.
+</summary>
+</member><member name="M:Clinic_Management_System.DSStoreTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member><member name="M:Clinic_Management_System.DSStoreTableAdapters.TableAdapterManager.UpdateAll(Clinic_Management_System.DSStore)">
+	<summary>
+Update all changes to the dataset.
+</summary>
+</member><member name="T:Clinic_Management_System.DSStoreTableAdapters.TableAdapterManager.UpdateOrderOption">
+	<summary>
+Update Order Option
+</summary>
+</member><member name="T:Clinic_Management_System.DSStoreTableAdapters.TableAdapterManager.SelfReferenceComparer">
+	<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member><member name="T:Clinic_Management_System.DSStoreTableAdapters.TableAdapterManager">
+	<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member><member name="T:Clinic_Management_System.DS_Invoice.tblInvoiceDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Clinic_Management_System.DS_Invoice.tblInvoiceParaDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Clinic_Management_System.DS_Invoice.tblMedicineOrderDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Clinic_Management_System.DS_Invoice.tblPrescriptionDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Clinic_Management_System.DS_Invoice.tbl_invoice_medicineorderDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Clinic_Management_System.DS_Invoice.tbl_invoiceDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Clinic_Management_System.DS_Invoice.SaleDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Clinic_Management_System.DS_Invoice.ParaExamDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Clinic_Management_System.DS_Invoice._tblprescriptionDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Clinic_Management_System.DS_Invoice.ConsultationDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Clinic_Management_System.DS_Invoice.IncomeDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Clinic_Management_System.DS_Invoice.tblInvoiceRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Clinic_Management_System.DS_Invoice.tblInvoiceParaRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Clinic_Management_System.DS_Invoice.tblMedicineOrderRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Clinic_Management_System.DS_Invoice.tblPrescriptionRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Clinic_Management_System.DS_Invoice.tbl_invoice_medicineorderRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Clinic_Management_System.DS_Invoice.tbl_invoiceRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Clinic_Management_System.DS_Invoice.SaleRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Clinic_Management_System.DS_Invoice.ParaExamRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Clinic_Management_System.DS_Invoice._tblprescriptionRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Clinic_Management_System.DS_Invoice.ConsultationRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Clinic_Management_System.DS_Invoice.IncomeRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Clinic_Management_System.DS_Invoice.tblInvoiceRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Clinic_Management_System.DS_Invoice.tblInvoiceParaRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Clinic_Management_System.DS_Invoice.tblMedicineOrderRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Clinic_Management_System.DS_Invoice.tblPrescriptionRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Clinic_Management_System.DS_Invoice.tbl_invoice_medicineorderRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Clinic_Management_System.DS_Invoice.tbl_invoiceRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Clinic_Management_System.DS_Invoice.SaleRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Clinic_Management_System.DS_Invoice.ParaExamRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Clinic_Management_System.DS_Invoice._tblprescriptionRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Clinic_Management_System.DS_Invoice.ConsultationRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Clinic_Management_System.DS_Invoice.IncomeRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Clinic_Management_System.DS_Invoice">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:Clinic_Management_System.DS_InvoiceTableAdapters.tblInvoiceTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Clinic_Management_System.DS_InvoiceTableAdapters.tblInvoiceParaTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Clinic_Management_System.DS_InvoiceTableAdapters.tblMedicineOrderTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Clinic_Management_System.DS_InvoiceTableAdapters.tblPrescriptionTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Clinic_Management_System.DS_InvoiceTableAdapters.tbl_invoice_medicineorderTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Clinic_Management_System.DS_InvoiceTableAdapters.tbl_invoiceTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Clinic_Management_System.DS_InvoiceTableAdapters.SaleTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Clinic_Management_System.DS_InvoiceTableAdapters.ParaExamTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Clinic_Management_System.DS_InvoiceTableAdapters.tblprescriptionTableAdapter1">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Clinic_Management_System.DS_InvoiceTableAdapters.ConsultationTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Clinic_Management_System.DS_InvoiceTableAdapters.IncomeTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="M:Clinic_Management_System.DS_InvoiceTableAdapters.TableAdapterManager.UpdateUpdatedRows(Clinic_Management_System.DS_Invoice,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Update rows in top-down order.
+</summary>
+</member><member name="M:Clinic_Management_System.DS_InvoiceTableAdapters.TableAdapterManager.UpdateInsertedRows(Clinic_Management_System.DS_Invoice,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Insert rows in top-down order.
+</summary>
+</member><member name="M:Clinic_Management_System.DS_InvoiceTableAdapters.TableAdapterManager.UpdateDeletedRows(Clinic_Management_System.DS_Invoice,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Delete rows in bottom-up order.
+</summary>
+</member><member name="M:Clinic_Management_System.DS_InvoiceTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member><member name="M:Clinic_Management_System.DS_InvoiceTableAdapters.TableAdapterManager.UpdateAll(Clinic_Management_System.DS_Invoice)">
+	<summary>
+Update all changes to the dataset.
+</summary>
+</member><member name="T:Clinic_Management_System.DS_InvoiceTableAdapters.TableAdapterManager.UpdateOrderOption">
+	<summary>
+Update Order Option
+</summary>
+</member><member name="T:Clinic_Management_System.DS_InvoiceTableAdapters.TableAdapterManager.SelfReferenceComparer">
+	<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member><member name="T:Clinic_Management_System.DS_InvoiceTableAdapters.TableAdapterManager">
+	<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member><member name="T:Clinic_Management_System.DSUserManagerment.USER_OF_DEPARTMENTDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSUserManagerment.USER_MENUSDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSUserManagerment.USERS_SYSTEMDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSUserManagerment.USER_PERMISTION_MENUDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSUserManagerment.V_USER_PERMISTIONDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSUserManagerment.V_USER_IN_DEPDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSUserManagerment.V_USER_MENU_PERMISIONDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSUserManagerment.USER_OF_DEPARTMENTRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSUserManagerment.USER_MENUSRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSUserManagerment.USERS_SYSTEMRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSUserManagerment.USER_PERMISTION_MENURow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSUserManagerment.V_USER_PERMISTIONRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSUserManagerment.V_USER_IN_DEPRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSUserManagerment.V_USER_MENU_PERMISIONRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSUserManagerment.USER_OF_DEPARTMENTRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Clinic_Management_System.DSUserManagerment.USER_MENUSRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Clinic_Management_System.DSUserManagerment.USERS_SYSTEMRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Clinic_Management_System.DSUserManagerment.USER_PERMISTION_MENURowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Clinic_Management_System.DSUserManagerment.V_USER_PERMISTIONRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Clinic_Management_System.DSUserManagerment.V_USER_IN_DEPRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Clinic_Management_System.DSUserManagerment.V_USER_MENU_PERMISIONRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Clinic_Management_System.DSUserManagerment">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:Clinic_Management_System.DSUserManagermentTableAdapters.USER_OF_DEPARTMENTTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Clinic_Management_System.DSUserManagermentTableAdapters.USER_MENUSTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Clinic_Management_System.DSUserManagermentTableAdapters.USERS_SYSTEMTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Clinic_Management_System.DSUserManagermentTableAdapters.USER_PERMISTION_MENUTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Clinic_Management_System.DSUserManagermentTableAdapters.V_USER_PERMISTIONTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Clinic_Management_System.DSUserManagermentTableAdapters.V_USER_IN_DEPTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Clinic_Management_System.DSUserManagermentTableAdapters.V_USER_MENU_PERMISIONTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="M:Clinic_Management_System.DSUserManagermentTableAdapters.TableAdapterManager.UpdateUpdatedRows(Clinic_Management_System.DSUserManagerment,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Update rows in top-down order.
+</summary>
+</member><member name="M:Clinic_Management_System.DSUserManagermentTableAdapters.TableAdapterManager.UpdateInsertedRows(Clinic_Management_System.DSUserManagerment,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Insert rows in top-down order.
+</summary>
+</member><member name="M:Clinic_Management_System.DSUserManagermentTableAdapters.TableAdapterManager.UpdateDeletedRows(Clinic_Management_System.DSUserManagerment,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Delete rows in bottom-up order.
+</summary>
+</member><member name="M:Clinic_Management_System.DSUserManagermentTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member><member name="M:Clinic_Management_System.DSUserManagermentTableAdapters.TableAdapterManager.UpdateAll(Clinic_Management_System.DSUserManagerment)">
+	<summary>
+Update all changes to the dataset.
+</summary>
+</member><member name="T:Clinic_Management_System.DSUserManagermentTableAdapters.TableAdapterManager.UpdateOrderOption">
+	<summary>
+Update Order Option
+</summary>
+</member><member name="T:Clinic_Management_System.DSUserManagermentTableAdapters.TableAdapterManager.SelfReferenceComparer">
+	<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member><member name="T:Clinic_Management_System.DSUserManagermentTableAdapters.TableAdapterManager">
+	<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoice.tbl_preinvoice_paraexamDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoice.tbl_preinvoiceDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoice.tbl_invoiceDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoice.tbl_invoice_paraexamDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoice.ParaExamDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoice.MedicineDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoice.PrescriptionDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoice.tblprescriptionDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoice.PrescriptionDetailDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoice.EchoDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoice.ColoDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoice.FibroDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoice.NasoDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoice.MRIDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoice.ScanDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoice.PatientDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoice.PhysicalExamDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoice.BloodDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoice.tbl_preinvoice_medicineDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoice.tbl_invoice_medicineorderDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoice.ComplaintDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoice.HistoryDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoice.InvoiceDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoice.tbl_invoice_consultationDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoice.FibroScan1DataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoice.RECEIPT_DETAILDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoice.V_DIALYCONSULTDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoice.PrescriptionRemarkDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoice.V_ReceiptDetailDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoice.EXCHANGE_RATEDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoice.tbl_preinvoice_paraexamRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoice.tbl_preinvoiceRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoice.tbl_invoiceRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoice.tbl_invoice_paraexamRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoice.ParaExamRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoice.MedicineRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoice.PrescriptionRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoice.tblprescriptionRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoice.PrescriptionDetailRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoice.EchoRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoice.ColoRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoice.FibroRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoice.NasoRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoice.MRIRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoice.ScanRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoice.PatientRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoice.PhysicalExamRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoice.BloodRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoice.tbl_preinvoice_medicineRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoice.tbl_invoice_medicineorderRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoice.ComplaintRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoice.HistoryRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoice.InvoiceRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoice.tbl_invoice_consultationRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoice.FibroScan1Row">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoice.RECEIPT_DETAILRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoice.V_DIALYCONSULTRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoice.PrescriptionRemarkRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoice.V_ReceiptDetailRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoice.EXCHANGE_RATERow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoice.tbl_preinvoice_paraexamRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoice.tbl_preinvoiceRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoice.tbl_invoiceRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoice.tbl_invoice_paraexamRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoice.ParaExamRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoice.MedicineRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoice.PrescriptionRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoice.tblprescriptionRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoice.PrescriptionDetailRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoice.EchoRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoice.ColoRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoice.FibroRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoice.NasoRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoice.MRIRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoice.ScanRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoice.PatientRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoice.PhysicalExamRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoice.BloodRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoice.tbl_preinvoice_medicineRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoice.tbl_invoice_medicineorderRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoice.ComplaintRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoice.HistoryRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoice.InvoiceRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoice.tbl_invoice_consultationRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoice.FibroScan1RowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoice.RECEIPT_DETAILRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoice.V_DIALYCONSULTRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoice.PrescriptionRemarkRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoice.V_ReceiptDetailRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoice.EXCHANGE_RATERowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoice">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoiceTableAdapters.tbl_preinvoice_paraexamTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoiceTableAdapters.tbl_preinvoiceTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoiceTableAdapters.tbl_invoiceTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoiceTableAdapters.tbl_invoice_paraexamTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoiceTableAdapters.ParaExamTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoiceTableAdapters.MedicineTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoiceTableAdapters.PrescriptionTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoiceTableAdapters.tblprescriptionTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoiceTableAdapters.PrescriptionDetailTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoiceTableAdapters.EchoTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoiceTableAdapters.ColoTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoiceTableAdapters.FibroTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoiceTableAdapters.NasoTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoiceTableAdapters.MRITableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoiceTableAdapters.ScanTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoiceTableAdapters.PatientTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoiceTableAdapters.PhysicalExamTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoiceTableAdapters.BloodTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoiceTableAdapters.tbl_preinvoice_medicineTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoiceTableAdapters.tbl_invoice_medicineorderTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoiceTableAdapters.ComplaintTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoiceTableAdapters.HistoryTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoiceTableAdapters.InvoiceTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoiceTableAdapters.tbl_invoice_consultationTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoiceTableAdapters.FibroScan1TableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoiceTableAdapters.RECEIPT_DETAILTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoiceTableAdapters.V_DIALYCONSULTTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoiceTableAdapters.PrescriptionRemarkTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoiceTableAdapters.V_ReceiptDetailTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoiceTableAdapters.EXCHANGE_RATETableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="M:Clinic_Management_System.DSInvoiceTableAdapters.TableAdapterManager.UpdateUpdatedRows(Clinic_Management_System.DSInvoice,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Update rows in top-down order.
+</summary>
+</member><member name="M:Clinic_Management_System.DSInvoiceTableAdapters.TableAdapterManager.UpdateInsertedRows(Clinic_Management_System.DSInvoice,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Insert rows in top-down order.
+</summary>
+</member><member name="M:Clinic_Management_System.DSInvoiceTableAdapters.TableAdapterManager.UpdateDeletedRows(Clinic_Management_System.DSInvoice,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Delete rows in bottom-up order.
+</summary>
+</member><member name="M:Clinic_Management_System.DSInvoiceTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member><member name="M:Clinic_Management_System.DSInvoiceTableAdapters.TableAdapterManager.UpdateAll(Clinic_Management_System.DSInvoice)">
+	<summary>
+Update all changes to the dataset.
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoiceTableAdapters.TableAdapterManager.UpdateOrderOption">
+	<summary>
+Update Order Option
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoiceTableAdapters.TableAdapterManager.SelfReferenceComparer">
+	<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member><member name="T:Clinic_Management_System.DSInvoiceTableAdapters.TableAdapterManager">
+	<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
 </member><member name="T:Clinic_Management_System.DSMedicalReceive.MEDICAL_RECEIVEDDataTable">
 	<summary>
 Represents the strongly named DataTable class.
@@ -402,103 +1823,391 @@ Used to sort self-referenced table's rows
 	<summary>
 TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
 </summary>
-</member><member name="T:Clinic_Management_System.DS_Parameter.tblConclusionOfColoscopyDataTable">
+</member><member name="T:Clinic_Management_System.DSStoreReport.StoreDataTable">
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
-</member><member name="T:Clinic_Management_System.DS_Parameter.tblMotiveOfColoscopyDataTable">
+</member><member name="T:Clinic_Management_System.DSStoreReport.ReceiveDataTable">
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
-</member><member name="T:Clinic_Management_System.DS_Parameter.tblMotiveOfFibroAnaNasoDataTable">
+</member><member name="T:Clinic_Management_System.DSStoreReport.IssueDataTable">
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
-</member><member name="T:Clinic_Management_System.DS_Parameter.KEY_WORDDataTable">
+</member><member name="T:Clinic_Management_System.DSStoreReport.TransactionDataTable">
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
-</member><member name="T:Clinic_Management_System.DS_Parameter.tblConclusionOfColoscopyRow">
+</member><member name="T:Clinic_Management_System.DSStoreReport.AdjustmentDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSStoreReport.TransferDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSStoreReport.StoreRow">
 	<summary>
 Represents strongly named DataRow class.
 </summary>
-</member><member name="T:Clinic_Management_System.DS_Parameter.tblMotiveOfColoscopyRow">
+</member><member name="T:Clinic_Management_System.DSStoreReport.ReceiveRow">
 	<summary>
 Represents strongly named DataRow class.
 </summary>
-</member><member name="T:Clinic_Management_System.DS_Parameter.tblMotiveOfFibroAnaNasoRow">
+</member><member name="T:Clinic_Management_System.DSStoreReport.IssueRow">
 	<summary>
 Represents strongly named DataRow class.
 </summary>
-</member><member name="T:Clinic_Management_System.DS_Parameter.KEY_WORDRow">
+</member><member name="T:Clinic_Management_System.DSStoreReport.TransactionRow">
 	<summary>
 Represents strongly named DataRow class.
 </summary>
-</member><member name="T:Clinic_Management_System.DS_Parameter.tblConclusionOfColoscopyRowChangeEvent">
+</member><member name="T:Clinic_Management_System.DSStoreReport.AdjustmentRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSStoreReport.TransferRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSStoreReport.StoreRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>
-</member><member name="T:Clinic_Management_System.DS_Parameter.tblMotiveOfColoscopyRowChangeEvent">
+</member><member name="T:Clinic_Management_System.DSStoreReport.ReceiveRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>
-</member><member name="T:Clinic_Management_System.DS_Parameter.tblMotiveOfFibroAnaNasoRowChangeEvent">
+</member><member name="T:Clinic_Management_System.DSStoreReport.IssueRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>
-</member><member name="T:Clinic_Management_System.DS_Parameter.KEY_WORDRowChangeEvent">
+</member><member name="T:Clinic_Management_System.DSStoreReport.TransactionRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>
-</member><member name="T:Clinic_Management_System.DS_Parameter">
+</member><member name="T:Clinic_Management_System.DSStoreReport.AdjustmentRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Clinic_Management_System.DSStoreReport.TransferRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Clinic_Management_System.DSStoreReport">
 	<summary>
 Represents a strongly typed in-memory cache of data.
 </summary>
-</member><member name="T:Clinic_Management_System.DS_ParameterTableAdapters.tblConclusionOfColoscopyTableAdapter">
+</member><member name="T:Clinic_Management_System.DSStoreReportTableAdapters.StoreTableAdapter">
 	<summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>
-</member><member name="T:Clinic_Management_System.DS_ParameterTableAdapters.tblMotiveOfColoscopyTableAdapter">
+</member><member name="T:Clinic_Management_System.DSStoreReportTableAdapters.ReceiveTableAdapter">
 	<summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>
-</member><member name="T:Clinic_Management_System.DS_ParameterTableAdapters.tblMotiveOfFibroAnaNasoTableAdapter">
+</member><member name="T:Clinic_Management_System.DSStoreReportTableAdapters.IssueTableAdapter">
 	<summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>
-</member><member name="T:Clinic_Management_System.DS_ParameterTableAdapters.KEY_WORDTableAdapter">
+</member><member name="T:Clinic_Management_System.DSStoreReportTableAdapters.TransactionTableAdapter">
 	<summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>
-</member><member name="M:Clinic_Management_System.DS_ParameterTableAdapters.TableAdapterManager.UpdateUpdatedRows(Clinic_Management_System.DS_Parameter,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+</member><member name="T:Clinic_Management_System.DSStoreReportTableAdapters.AdjustmentTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Clinic_Management_System.DSStoreReportTableAdapters.TransferTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="M:Clinic_Management_System.DSStoreReportTableAdapters.TableAdapterManager.UpdateUpdatedRows(Clinic_Management_System.DSStoreReport,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
 	<summary>
 Update rows in top-down order.
 </summary>
-</member><member name="M:Clinic_Management_System.DS_ParameterTableAdapters.TableAdapterManager.UpdateInsertedRows(Clinic_Management_System.DS_Parameter,System.Collections.Generic.List{System.Data.DataRow})">
+</member><member name="M:Clinic_Management_System.DSStoreReportTableAdapters.TableAdapterManager.UpdateInsertedRows(Clinic_Management_System.DSStoreReport,System.Collections.Generic.List{System.Data.DataRow})">
 	<summary>
 Insert rows in top-down order.
 </summary>
-</member><member name="M:Clinic_Management_System.DS_ParameterTableAdapters.TableAdapterManager.UpdateDeletedRows(Clinic_Management_System.DS_Parameter,System.Collections.Generic.List{System.Data.DataRow})">
+</member><member name="M:Clinic_Management_System.DSStoreReportTableAdapters.TableAdapterManager.UpdateDeletedRows(Clinic_Management_System.DSStoreReport,System.Collections.Generic.List{System.Data.DataRow})">
 	<summary>
 Delete rows in bottom-up order.
 </summary>
-</member><member name="M:Clinic_Management_System.DS_ParameterTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+</member><member name="M:Clinic_Management_System.DSStoreReportTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
 	<summary>
 Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
 </summary>
-</member><member name="M:Clinic_Management_System.DS_ParameterTableAdapters.TableAdapterManager.UpdateAll(Clinic_Management_System.DS_Parameter)">
+</member><member name="M:Clinic_Management_System.DSStoreReportTableAdapters.TableAdapterManager.UpdateAll(Clinic_Management_System.DSStoreReport)">
 	<summary>
 Update all changes to the dataset.
 </summary>
-</member><member name="T:Clinic_Management_System.DS_ParameterTableAdapters.TableAdapterManager.UpdateOrderOption">
+</member><member name="T:Clinic_Management_System.DSStoreReportTableAdapters.TableAdapterManager.UpdateOrderOption">
 	<summary>
 Update Order Option
 </summary>
-</member><member name="T:Clinic_Management_System.DS_ParameterTableAdapters.TableAdapterManager.SelfReferenceComparer">
+</member><member name="T:Clinic_Management_System.DSStoreReportTableAdapters.TableAdapterManager.SelfReferenceComparer">
 	<summary>
 Used to sort self-referenced table's rows
 </summary>
-</member><member name="T:Clinic_Management_System.DS_ParameterTableAdapters.TableAdapterManager">
+</member><member name="T:Clinic_Management_System.DSStoreReportTableAdapters.TableAdapterManager">
+	<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member><member name="T:Clinic_Management_System.DSAnalysis.PROVINCE_DIAGNOSISDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSAnalysis.VIEW_DIAGNOSI_COMPLAINTDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSAnalysis.VIEW_DIAGNOSI_MEDICALHISTORYDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSAnalysis.VIEW_DIAGNOSI_PHYSICALCHECKDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSAnalysis.VIEW_PARAEXAM_BLOODDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSAnalysis.VIEW_PARAEXAM_FIBROSCOPYDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSAnalysis.VIEW_PARAEXAM_NASOGASTRODataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSAnalysis.VIEW_PARAEXAM_COLOSCOPYDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSAnalysis.PROVINCE_DIAGNOSISRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSAnalysis.VIEW_DIAGNOSI_COMPLAINTRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSAnalysis.VIEW_DIAGNOSI_MEDICALHISTORYRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSAnalysis.VIEW_DIAGNOSI_PHYSICALCHECKRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSAnalysis.VIEW_PARAEXAM_BLOODRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSAnalysis.VIEW_PARAEXAM_FIBROSCOPYRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSAnalysis.VIEW_PARAEXAM_NASOGASTRORow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSAnalysis.VIEW_PARAEXAM_COLOSCOPYRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSAnalysis.PROVINCE_DIAGNOSISRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Clinic_Management_System.DSAnalysis.VIEW_DIAGNOSI_COMPLAINTRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Clinic_Management_System.DSAnalysis.VIEW_DIAGNOSI_MEDICALHISTORYRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Clinic_Management_System.DSAnalysis.VIEW_DIAGNOSI_PHYSICALCHECKRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Clinic_Management_System.DSAnalysis.VIEW_PARAEXAM_BLOODRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Clinic_Management_System.DSAnalysis.VIEW_PARAEXAM_FIBROSCOPYRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Clinic_Management_System.DSAnalysis.VIEW_PARAEXAM_NASOGASTRORowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Clinic_Management_System.DSAnalysis.VIEW_PARAEXAM_COLOSCOPYRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Clinic_Management_System.DSAnalysis">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:Clinic_Management_System.DSAnalysisTableAdapters.PROVINCE_DIAGNOSISTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Clinic_Management_System.DSAnalysisTableAdapters.VIEW_DIAGNOSI_COMPLAINTTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Clinic_Management_System.DSAnalysisTableAdapters.VIEW_DIAGNOSI_MEDICALHISTORYTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Clinic_Management_System.DSAnalysisTableAdapters.VIEW_DIAGNOSI_PHYSICALCHECKTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Clinic_Management_System.DSAnalysisTableAdapters.VIEW_PARAEXAM_BLOODTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Clinic_Management_System.DSAnalysisTableAdapters.VIEW_PARAEXAM_FIBROSCOPYTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Clinic_Management_System.DSAnalysisTableAdapters.VIEW_PARAEXAM_NASOGASTROTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Clinic_Management_System.DSAnalysisTableAdapters.VIEW_PARAEXAM_COLOSCOPYTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="M:Clinic_Management_System.DSAnalysisTableAdapters.TableAdapterManager.UpdateUpdatedRows(Clinic_Management_System.DSAnalysis,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Update rows in top-down order.
+</summary>
+</member><member name="M:Clinic_Management_System.DSAnalysisTableAdapters.TableAdapterManager.UpdateInsertedRows(Clinic_Management_System.DSAnalysis,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Insert rows in top-down order.
+</summary>
+</member><member name="M:Clinic_Management_System.DSAnalysisTableAdapters.TableAdapterManager.UpdateDeletedRows(Clinic_Management_System.DSAnalysis,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Delete rows in bottom-up order.
+</summary>
+</member><member name="M:Clinic_Management_System.DSAnalysisTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member><member name="M:Clinic_Management_System.DSAnalysisTableAdapters.TableAdapterManager.UpdateAll(Clinic_Management_System.DSAnalysis)">
+	<summary>
+Update all changes to the dataset.
+</summary>
+</member><member name="T:Clinic_Management_System.DSAnalysisTableAdapters.TableAdapterManager.UpdateOrderOption">
+	<summary>
+Update Order Option
+</summary>
+</member><member name="T:Clinic_Management_System.DSAnalysisTableAdapters.TableAdapterManager.SelfReferenceComparer">
+	<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member><member name="T:Clinic_Management_System.DSAnalysisTableAdapters.TableAdapterManager">
+	<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member><member name="T:Clinic_Management_System.DSBarCode.BARCODEDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSBarCode.V_BarcodeDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSBarCode.DynamicBarcodeDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSBarCode.BarcodeForPrintDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSBarCode.BARCODERow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSBarCode.V_BarcodeRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSBarCode.DynamicBarcodeRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSBarCode.BarcodeForPrintRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Clinic_Management_System.DSBarCode.BARCODERowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Clinic_Management_System.DSBarCode.V_BarcodeRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Clinic_Management_System.DSBarCode.DynamicBarcodeRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Clinic_Management_System.DSBarCode.BarcodeForPrintRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Clinic_Management_System.DSBarCode">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:Clinic_Management_System.DSBarCodeTableAdapters.BARCODETableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Clinic_Management_System.DSBarCodeTableAdapters.V_BarcodeTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="M:Clinic_Management_System.DSBarCodeTableAdapters.TableAdapterManager.UpdateUpdatedRows(Clinic_Management_System.DSBarCode,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Update rows in top-down order.
+</summary>
+</member><member name="M:Clinic_Management_System.DSBarCodeTableAdapters.TableAdapterManager.UpdateInsertedRows(Clinic_Management_System.DSBarCode,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Insert rows in top-down order.
+</summary>
+</member><member name="M:Clinic_Management_System.DSBarCodeTableAdapters.TableAdapterManager.UpdateDeletedRows(Clinic_Management_System.DSBarCode,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Delete rows in bottom-up order.
+</summary>
+</member><member name="M:Clinic_Management_System.DSBarCodeTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member><member name="M:Clinic_Management_System.DSBarCodeTableAdapters.TableAdapterManager.UpdateAll(Clinic_Management_System.DSBarCode)">
+	<summary>
+Update all changes to the dataset.
+</summary>
+</member><member name="T:Clinic_Management_System.DSBarCodeTableAdapters.TableAdapterManager.UpdateOrderOption">
+	<summary>
+Update Order Option
+</summary>
+</member><member name="T:Clinic_Management_System.DSBarCodeTableAdapters.TableAdapterManager.SelfReferenceComparer">
+	<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member><member name="T:Clinic_Management_System.DSBarCodeTableAdapters.TableAdapterManager">
 	<summary>
 TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
 </summary>
@@ -1226,1399 +2935,103 @@ Used to sort self-referenced table's rows
 	<summary>
 TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
 </summary>
-</member><member name="T:Clinic_Management_System.DSMedicalHistory.tblhistoryDataTable">
+</member><member name="T:Clinic_Management_System.DS_Parameter.tblConclusionOfColoscopyDataTable">
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
-</member><member name="T:Clinic_Management_System.DSMedicalHistory.V_MEDICAL_HISTORYDataTable">
+</member><member name="T:Clinic_Management_System.DS_Parameter.tblMotiveOfColoscopyDataTable">
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
-</member><member name="T:Clinic_Management_System.DSMedicalHistory.tblhistorydetailDataTable">
+</member><member name="T:Clinic_Management_System.DS_Parameter.tblMotiveOfFibroAnaNasoDataTable">
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
-</member><member name="T:Clinic_Management_System.DSMedicalHistory.tblprehistorydetailDataTable">
+</member><member name="T:Clinic_Management_System.DS_Parameter.KEY_WORDDataTable">
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
-</member><member name="T:Clinic_Management_System.DSMedicalHistory.tblhistoryRow">
+</member><member name="T:Clinic_Management_System.DS_Parameter.tblConclusionOfColoscopyRow">
 	<summary>
 Represents strongly named DataRow class.
 </summary>
-</member><member name="T:Clinic_Management_System.DSMedicalHistory.V_MEDICAL_HISTORYRow">
+</member><member name="T:Clinic_Management_System.DS_Parameter.tblMotiveOfColoscopyRow">
 	<summary>
 Represents strongly named DataRow class.
 </summary>
-</member><member name="T:Clinic_Management_System.DSMedicalHistory.tblhistorydetailRow">
+</member><member name="T:Clinic_Management_System.DS_Parameter.tblMotiveOfFibroAnaNasoRow">
 	<summary>
 Represents strongly named DataRow class.
 </summary>
-</member><member name="T:Clinic_Management_System.DSMedicalHistory.tblprehistorydetailRow">
+</member><member name="T:Clinic_Management_System.DS_Parameter.KEY_WORDRow">
 	<summary>
 Represents strongly named DataRow class.
 </summary>
-</member><member name="T:Clinic_Management_System.DSMedicalHistory.tblhistoryRowChangeEvent">
+</member><member name="T:Clinic_Management_System.DS_Parameter.tblConclusionOfColoscopyRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>
-</member><member name="T:Clinic_Management_System.DSMedicalHistory.V_MEDICAL_HISTORYRowChangeEvent">
+</member><member name="T:Clinic_Management_System.DS_Parameter.tblMotiveOfColoscopyRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>
-</member><member name="T:Clinic_Management_System.DSMedicalHistory.tblhistorydetailRowChangeEvent">
+</member><member name="T:Clinic_Management_System.DS_Parameter.tblMotiveOfFibroAnaNasoRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>
-</member><member name="T:Clinic_Management_System.DSMedicalHistory.tblprehistorydetailRowChangeEvent">
+</member><member name="T:Clinic_Management_System.DS_Parameter.KEY_WORDRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>
-</member><member name="T:Clinic_Management_System.DSMedicalHistory">
-	<summary>
-Represents a strongly typed in-memory cache of data.
-</summary>
-</member><member name="T:Clinic_Management_System.DSMedicalHistoryTableAdapters.tblhistoryTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:Clinic_Management_System.DSMedicalHistoryTableAdapters.V_MEDICAL_HISTORYTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:Clinic_Management_System.DSMedicalHistoryTableAdapters.tblhistorydetailTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:Clinic_Management_System.DSMedicalHistoryTableAdapters.tblprehistorydetailTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="M:Clinic_Management_System.DSMedicalHistoryTableAdapters.TableAdapterManager.UpdateUpdatedRows(Clinic_Management_System.DSMedicalHistory,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
-	<summary>
-Update rows in top-down order.
-</summary>
-</member><member name="M:Clinic_Management_System.DSMedicalHistoryTableAdapters.TableAdapterManager.UpdateInsertedRows(Clinic_Management_System.DSMedicalHistory,System.Collections.Generic.List{System.Data.DataRow})">
-	<summary>
-Insert rows in top-down order.
-</summary>
-</member><member name="M:Clinic_Management_System.DSMedicalHistoryTableAdapters.TableAdapterManager.UpdateDeletedRows(Clinic_Management_System.DSMedicalHistory,System.Collections.Generic.List{System.Data.DataRow})">
-	<summary>
-Delete rows in bottom-up order.
-</summary>
-</member><member name="M:Clinic_Management_System.DSMedicalHistoryTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
-	<summary>
-Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
-</summary>
-</member><member name="M:Clinic_Management_System.DSMedicalHistoryTableAdapters.TableAdapterManager.UpdateAll(Clinic_Management_System.DSMedicalHistory)">
-	<summary>
-Update all changes to the dataset.
-</summary>
-</member><member name="T:Clinic_Management_System.DSMedicalHistoryTableAdapters.TableAdapterManager.UpdateOrderOption">
-	<summary>
-Update Order Option
-</summary>
-</member><member name="T:Clinic_Management_System.DSMedicalHistoryTableAdapters.TableAdapterManager.SelfReferenceComparer">
-	<summary>
-Used to sort self-referenced table's rows
-</summary>
-</member><member name="T:Clinic_Management_System.DSMedicalHistoryTableAdapters.TableAdapterManager">
-	<summary>
-TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
-</summary>
-</member><member name="T:Clinic_Management_System.DSBarCode.BARCODEDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSBarCode.V_BarcodeDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSBarCode.DynamicBarcodeDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSBarCode.BarcodeForPrintDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSBarCode.BARCODERow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSBarCode.V_BarcodeRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSBarCode.DynamicBarcodeRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSBarCode.BarcodeForPrintRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSBarCode.BARCODERowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Clinic_Management_System.DSBarCode.V_BarcodeRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Clinic_Management_System.DSBarCode.DynamicBarcodeRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Clinic_Management_System.DSBarCode.BarcodeForPrintRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Clinic_Management_System.DSBarCode">
+</member><member name="T:Clinic_Management_System.DS_Parameter">
 	<summary>
 Represents a strongly typed in-memory cache of data.
 </summary>
-</member><member name="T:Clinic_Management_System.DSBarCodeTableAdapters.BARCODETableAdapter">
+</member><member name="T:Clinic_Management_System.DS_ParameterTableAdapters.tblConclusionOfColoscopyTableAdapter">
 	<summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>
-</member><member name="T:Clinic_Management_System.DSBarCodeTableAdapters.V_BarcodeTableAdapter">
+</member><member name="T:Clinic_Management_System.DS_ParameterTableAdapters.tblMotiveOfColoscopyTableAdapter">
 	<summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>
-</member><member name="M:Clinic_Management_System.DSBarCodeTableAdapters.TableAdapterManager.UpdateUpdatedRows(Clinic_Management_System.DSBarCode,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
-	<summary>
-Update rows in top-down order.
-</summary>
-</member><member name="M:Clinic_Management_System.DSBarCodeTableAdapters.TableAdapterManager.UpdateInsertedRows(Clinic_Management_System.DSBarCode,System.Collections.Generic.List{System.Data.DataRow})">
-	<summary>
-Insert rows in top-down order.
-</summary>
-</member><member name="M:Clinic_Management_System.DSBarCodeTableAdapters.TableAdapterManager.UpdateDeletedRows(Clinic_Management_System.DSBarCode,System.Collections.Generic.List{System.Data.DataRow})">
-	<summary>
-Delete rows in bottom-up order.
-</summary>
-</member><member name="M:Clinic_Management_System.DSBarCodeTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
-	<summary>
-Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
-</summary>
-</member><member name="M:Clinic_Management_System.DSBarCodeTableAdapters.TableAdapterManager.UpdateAll(Clinic_Management_System.DSBarCode)">
-	<summary>
-Update all changes to the dataset.
-</summary>
-</member><member name="T:Clinic_Management_System.DSBarCodeTableAdapters.TableAdapterManager.UpdateOrderOption">
-	<summary>
-Update Order Option
-</summary>
-</member><member name="T:Clinic_Management_System.DSBarCodeTableAdapters.TableAdapterManager.SelfReferenceComparer">
-	<summary>
-Used to sort self-referenced table's rows
-</summary>
-</member><member name="T:Clinic_Management_System.DSBarCodeTableAdapters.TableAdapterManager">
-	<summary>
-TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
-</summary>
-</member><member name="T:Clinic_Management_System.DSConsultation.tblcheckresultDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSConsultation.tblnasogastroDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSConsultation.tblcoloscopyDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSConsultation.tblechoDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSConsultation.V_PRESCRIPTIONDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSConsultation.V_PRESCRIPTION_DETAILDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSConsultation.tbl_preinvoice_consultationDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSConsultation.tbl_invoice_consultationDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSConsultation.DOCTOR_FEEDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSConsultation.tblcheckresultRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSConsultation.tblnasogastroRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSConsultation.tblcoloscopyRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSConsultation.tblechoRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSConsultation.V_PRESCRIPTIONRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSConsultation.V_PRESCRIPTION_DETAILRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSConsultation.tbl_preinvoice_consultationRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSConsultation.tbl_invoice_consultationRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSConsultation.DOCTOR_FEERow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSConsultation.tblcheckresultRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Clinic_Management_System.DSConsultation.tblnasogastroRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Clinic_Management_System.DSConsultation.tblcoloscopyRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Clinic_Management_System.DSConsultation.tblechoRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Clinic_Management_System.DSConsultation.V_PRESCRIPTIONRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Clinic_Management_System.DSConsultation.V_PRESCRIPTION_DETAILRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Clinic_Management_System.DSConsultation.tbl_preinvoice_consultationRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Clinic_Management_System.DSConsultation.tbl_invoice_consultationRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Clinic_Management_System.DSConsultation.DOCTOR_FEERowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Clinic_Management_System.DSConsultation">
-	<summary>
-Represents a strongly typed in-memory cache of data.
-</summary>
-</member><member name="T:Clinic_Management_System.DSConsultationTableAdapters.tblcheckresultTableAdapter">
+</member><member name="T:Clinic_Management_System.DS_ParameterTableAdapters.tblMotiveOfFibroAnaNasoTableAdapter">
 	<summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>
-</member><member name="T:Clinic_Management_System.DSConsultationTableAdapters.tblnasogastroTableAdapter">
+</member><member name="T:Clinic_Management_System.DS_ParameterTableAdapters.KEY_WORDTableAdapter">
 	<summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>
-</member><member name="T:Clinic_Management_System.DSConsultationTableAdapters.tblcoloscopyTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:Clinic_Management_System.DSConsultationTableAdapters.tblechoTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:Clinic_Management_System.DSConsultationTableAdapters.V_PRESCRIPTIONTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:Clinic_Management_System.DSConsultationTableAdapters.V_PRESCRIPTION_DETAILTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:Clinic_Management_System.DSConsultationTableAdapters.tbl_preinvoice_consultationTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:Clinic_Management_System.DSConsultationTableAdapters.tbl_invoice_consultationTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:Clinic_Management_System.DSConsultationTableAdapters.DOCTOR_FEETableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="M:Clinic_Management_System.DSConsultationTableAdapters.TableAdapterManager.UpdateUpdatedRows(Clinic_Management_System.DSConsultation,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+</member><member name="M:Clinic_Management_System.DS_ParameterTableAdapters.TableAdapterManager.UpdateUpdatedRows(Clinic_Management_System.DS_Parameter,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
 	<summary>
 Update rows in top-down order.
 </summary>
-</member><member name="M:Clinic_Management_System.DSConsultationTableAdapters.TableAdapterManager.UpdateInsertedRows(Clinic_Management_System.DSConsultation,System.Collections.Generic.List{System.Data.DataRow})">
+</member><member name="M:Clinic_Management_System.DS_ParameterTableAdapters.TableAdapterManager.UpdateInsertedRows(Clinic_Management_System.DS_Parameter,System.Collections.Generic.List{System.Data.DataRow})">
 	<summary>
 Insert rows in top-down order.
 </summary>
-</member><member name="M:Clinic_Management_System.DSConsultationTableAdapters.TableAdapterManager.UpdateDeletedRows(Clinic_Management_System.DSConsultation,System.Collections.Generic.List{System.Data.DataRow})">
+</member><member name="M:Clinic_Management_System.DS_ParameterTableAdapters.TableAdapterManager.UpdateDeletedRows(Clinic_Management_System.DS_Parameter,System.Collections.Generic.List{System.Data.DataRow})">
 	<summary>
 Delete rows in bottom-up order.
 </summary>
-</member><member name="M:Clinic_Management_System.DSConsultationTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+</member><member name="M:Clinic_Management_System.DS_ParameterTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
 	<summary>
 Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
 </summary>
-</member><member name="M:Clinic_Management_System.DSConsultationTableAdapters.TableAdapterManager.UpdateAll(Clinic_Management_System.DSConsultation)">
+</member><member name="M:Clinic_Management_System.DS_ParameterTableAdapters.TableAdapterManager.UpdateAll(Clinic_Management_System.DS_Parameter)">
 	<summary>
 Update all changes to the dataset.
 </summary>
-</member><member name="T:Clinic_Management_System.DSConsultationTableAdapters.TableAdapterManager.UpdateOrderOption">
+</member><member name="T:Clinic_Management_System.DS_ParameterTableAdapters.TableAdapterManager.UpdateOrderOption">
 	<summary>
 Update Order Option
 </summary>
-</member><member name="T:Clinic_Management_System.DSConsultationTableAdapters.TableAdapterManager.SelfReferenceComparer">
+</member><member name="T:Clinic_Management_System.DS_ParameterTableAdapters.TableAdapterManager.SelfReferenceComparer">
 	<summary>
 Used to sort self-referenced table's rows
 </summary>
-</member><member name="T:Clinic_Management_System.DSConsultationTableAdapters.TableAdapterManager">
-	<summary>
-TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
-</summary>
-</member><member name="T:Clinic_Management_System.DSStoreReport.StoreDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSStoreReport.ReceiveDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSStoreReport.IssueDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSStoreReport.TransactionDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSStoreReport.AdjustmentDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSStoreReport.TransferDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSStoreReport.StoreRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSStoreReport.ReceiveRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSStoreReport.IssueRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSStoreReport.TransactionRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSStoreReport.AdjustmentRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSStoreReport.TransferRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSStoreReport.StoreRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Clinic_Management_System.DSStoreReport.ReceiveRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Clinic_Management_System.DSStoreReport.IssueRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Clinic_Management_System.DSStoreReport.TransactionRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Clinic_Management_System.DSStoreReport.AdjustmentRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Clinic_Management_System.DSStoreReport.TransferRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Clinic_Management_System.DSStoreReport">
-	<summary>
-Represents a strongly typed in-memory cache of data.
-</summary>
-</member><member name="T:Clinic_Management_System.DSStoreReportTableAdapters.StoreTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:Clinic_Management_System.DSStoreReportTableAdapters.ReceiveTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:Clinic_Management_System.DSStoreReportTableAdapters.IssueTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:Clinic_Management_System.DSStoreReportTableAdapters.TransactionTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:Clinic_Management_System.DSStoreReportTableAdapters.AdjustmentTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:Clinic_Management_System.DSStoreReportTableAdapters.TransferTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="M:Clinic_Management_System.DSStoreReportTableAdapters.TableAdapterManager.UpdateUpdatedRows(Clinic_Management_System.DSStoreReport,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
-	<summary>
-Update rows in top-down order.
-</summary>
-</member><member name="M:Clinic_Management_System.DSStoreReportTableAdapters.TableAdapterManager.UpdateInsertedRows(Clinic_Management_System.DSStoreReport,System.Collections.Generic.List{System.Data.DataRow})">
-	<summary>
-Insert rows in top-down order.
-</summary>
-</member><member name="M:Clinic_Management_System.DSStoreReportTableAdapters.TableAdapterManager.UpdateDeletedRows(Clinic_Management_System.DSStoreReport,System.Collections.Generic.List{System.Data.DataRow})">
-	<summary>
-Delete rows in bottom-up order.
-</summary>
-</member><member name="M:Clinic_Management_System.DSStoreReportTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
-	<summary>
-Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
-</summary>
-</member><member name="M:Clinic_Management_System.DSStoreReportTableAdapters.TableAdapterManager.UpdateAll(Clinic_Management_System.DSStoreReport)">
-	<summary>
-Update all changes to the dataset.
-</summary>
-</member><member name="T:Clinic_Management_System.DSStoreReportTableAdapters.TableAdapterManager.UpdateOrderOption">
-	<summary>
-Update Order Option
-</summary>
-</member><member name="T:Clinic_Management_System.DSStoreReportTableAdapters.TableAdapterManager.SelfReferenceComparer">
-	<summary>
-Used to sort self-referenced table's rows
-</summary>
-</member><member name="T:Clinic_Management_System.DSStoreReportTableAdapters.TableAdapterManager">
-	<summary>
-TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
-</summary>
-</member><member name="T:Clinic_Management_System.DS_Invoice.tblInvoiceDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Clinic_Management_System.DS_Invoice.tblInvoiceParaDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Clinic_Management_System.DS_Invoice.tblMedicineOrderDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Clinic_Management_System.DS_Invoice.tblPrescriptionDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Clinic_Management_System.DS_Invoice.tbl_invoice_medicineorderDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Clinic_Management_System.DS_Invoice.tbl_invoiceDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Clinic_Management_System.DS_Invoice.SaleDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Clinic_Management_System.DS_Invoice.ParaExamDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Clinic_Management_System.DS_Invoice._tblprescriptionDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Clinic_Management_System.DS_Invoice.ConsultationDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Clinic_Management_System.DS_Invoice.IncomeDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Clinic_Management_System.DS_Invoice.tblInvoiceRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Clinic_Management_System.DS_Invoice.tblInvoiceParaRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Clinic_Management_System.DS_Invoice.tblMedicineOrderRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Clinic_Management_System.DS_Invoice.tblPrescriptionRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Clinic_Management_System.DS_Invoice.tbl_invoice_medicineorderRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Clinic_Management_System.DS_Invoice.tbl_invoiceRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Clinic_Management_System.DS_Invoice.SaleRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Clinic_Management_System.DS_Invoice.ParaExamRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Clinic_Management_System.DS_Invoice._tblprescriptionRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Clinic_Management_System.DS_Invoice.ConsultationRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Clinic_Management_System.DS_Invoice.IncomeRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Clinic_Management_System.DS_Invoice.tblInvoiceRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Clinic_Management_System.DS_Invoice.tblInvoiceParaRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Clinic_Management_System.DS_Invoice.tblMedicineOrderRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Clinic_Management_System.DS_Invoice.tblPrescriptionRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Clinic_Management_System.DS_Invoice.tbl_invoice_medicineorderRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Clinic_Management_System.DS_Invoice.tbl_invoiceRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Clinic_Management_System.DS_Invoice.SaleRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Clinic_Management_System.DS_Invoice.ParaExamRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Clinic_Management_System.DS_Invoice._tblprescriptionRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Clinic_Management_System.DS_Invoice.ConsultationRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Clinic_Management_System.DS_Invoice.IncomeRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Clinic_Management_System.DS_Invoice">
-	<summary>
-Represents a strongly typed in-memory cache of data.
-</summary>
-</member><member name="T:Clinic_Management_System.DS_InvoiceTableAdapters.tblInvoiceTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:Clinic_Management_System.DS_InvoiceTableAdapters.tblInvoiceParaTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:Clinic_Management_System.DS_InvoiceTableAdapters.tblMedicineOrderTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:Clinic_Management_System.DS_InvoiceTableAdapters.tblPrescriptionTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:Clinic_Management_System.DS_InvoiceTableAdapters.tbl_invoice_medicineorderTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:Clinic_Management_System.DS_InvoiceTableAdapters.tbl_invoiceTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:Clinic_Management_System.DS_InvoiceTableAdapters.SaleTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:Clinic_Management_System.DS_InvoiceTableAdapters.ParaExamTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:Clinic_Management_System.DS_InvoiceTableAdapters.tblprescriptionTableAdapter1">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:Clinic_Management_System.DS_InvoiceTableAdapters.ConsultationTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:Clinic_Management_System.DS_InvoiceTableAdapters.IncomeTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="M:Clinic_Management_System.DS_InvoiceTableAdapters.TableAdapterManager.UpdateUpdatedRows(Clinic_Management_System.DS_Invoice,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
-	<summary>
-Update rows in top-down order.
-</summary>
-</member><member name="M:Clinic_Management_System.DS_InvoiceTableAdapters.TableAdapterManager.UpdateInsertedRows(Clinic_Management_System.DS_Invoice,System.Collections.Generic.List{System.Data.DataRow})">
-	<summary>
-Insert rows in top-down order.
-</summary>
-</member><member name="M:Clinic_Management_System.DS_InvoiceTableAdapters.TableAdapterManager.UpdateDeletedRows(Clinic_Management_System.DS_Invoice,System.Collections.Generic.List{System.Data.DataRow})">
-	<summary>
-Delete rows in bottom-up order.
-</summary>
-</member><member name="M:Clinic_Management_System.DS_InvoiceTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
-	<summary>
-Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
-</summary>
-</member><member name="M:Clinic_Management_System.DS_InvoiceTableAdapters.TableAdapterManager.UpdateAll(Clinic_Management_System.DS_Invoice)">
-	<summary>
-Update all changes to the dataset.
-</summary>
-</member><member name="T:Clinic_Management_System.DS_InvoiceTableAdapters.TableAdapterManager.UpdateOrderOption">
-	<summary>
-Update Order Option
-</summary>
-</member><member name="T:Clinic_Management_System.DS_InvoiceTableAdapters.TableAdapterManager.SelfReferenceComparer">
-	<summary>
-Used to sort self-referenced table's rows
-</summary>
-</member><member name="T:Clinic_Management_System.DS_InvoiceTableAdapters.TableAdapterManager">
-	<summary>
-TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
-</summary>
-</member><member name="T:Clinic_Management_System.DSAnalysis.PROVINCE_DIAGNOSISDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSAnalysis.VIEW_DIAGNOSI_COMPLAINTDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSAnalysis.VIEW_DIAGNOSI_MEDICALHISTORYDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSAnalysis.VIEW_DIAGNOSI_PHYSICALCHECKDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSAnalysis.VIEW_PARAEXAM_BLOODDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSAnalysis.VIEW_PARAEXAM_FIBROSCOPYDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSAnalysis.VIEW_PARAEXAM_NASOGASTRODataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSAnalysis.VIEW_PARAEXAM_COLOSCOPYDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSAnalysis.PROVINCE_DIAGNOSISRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSAnalysis.VIEW_DIAGNOSI_COMPLAINTRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSAnalysis.VIEW_DIAGNOSI_MEDICALHISTORYRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSAnalysis.VIEW_DIAGNOSI_PHYSICALCHECKRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSAnalysis.VIEW_PARAEXAM_BLOODRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSAnalysis.VIEW_PARAEXAM_FIBROSCOPYRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSAnalysis.VIEW_PARAEXAM_NASOGASTRORow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSAnalysis.VIEW_PARAEXAM_COLOSCOPYRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSAnalysis.PROVINCE_DIAGNOSISRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Clinic_Management_System.DSAnalysis.VIEW_DIAGNOSI_COMPLAINTRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Clinic_Management_System.DSAnalysis.VIEW_DIAGNOSI_MEDICALHISTORYRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Clinic_Management_System.DSAnalysis.VIEW_DIAGNOSI_PHYSICALCHECKRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Clinic_Management_System.DSAnalysis.VIEW_PARAEXAM_BLOODRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Clinic_Management_System.DSAnalysis.VIEW_PARAEXAM_FIBROSCOPYRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Clinic_Management_System.DSAnalysis.VIEW_PARAEXAM_NASOGASTRORowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Clinic_Management_System.DSAnalysis.VIEW_PARAEXAM_COLOSCOPYRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Clinic_Management_System.DSAnalysis">
-	<summary>
-Represents a strongly typed in-memory cache of data.
-</summary>
-</member><member name="T:Clinic_Management_System.DSAnalysisTableAdapters.PROVINCE_DIAGNOSISTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:Clinic_Management_System.DSAnalysisTableAdapters.VIEW_DIAGNOSI_COMPLAINTTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:Clinic_Management_System.DSAnalysisTableAdapters.VIEW_DIAGNOSI_MEDICALHISTORYTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:Clinic_Management_System.DSAnalysisTableAdapters.VIEW_DIAGNOSI_PHYSICALCHECKTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:Clinic_Management_System.DSAnalysisTableAdapters.VIEW_PARAEXAM_BLOODTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:Clinic_Management_System.DSAnalysisTableAdapters.VIEW_PARAEXAM_FIBROSCOPYTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:Clinic_Management_System.DSAnalysisTableAdapters.VIEW_PARAEXAM_NASOGASTROTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:Clinic_Management_System.DSAnalysisTableAdapters.VIEW_PARAEXAM_COLOSCOPYTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="M:Clinic_Management_System.DSAnalysisTableAdapters.TableAdapterManager.UpdateUpdatedRows(Clinic_Management_System.DSAnalysis,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
-	<summary>
-Update rows in top-down order.
-</summary>
-</member><member name="M:Clinic_Management_System.DSAnalysisTableAdapters.TableAdapterManager.UpdateInsertedRows(Clinic_Management_System.DSAnalysis,System.Collections.Generic.List{System.Data.DataRow})">
-	<summary>
-Insert rows in top-down order.
-</summary>
-</member><member name="M:Clinic_Management_System.DSAnalysisTableAdapters.TableAdapterManager.UpdateDeletedRows(Clinic_Management_System.DSAnalysis,System.Collections.Generic.List{System.Data.DataRow})">
-	<summary>
-Delete rows in bottom-up order.
-</summary>
-</member><member name="M:Clinic_Management_System.DSAnalysisTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
-	<summary>
-Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
-</summary>
-</member><member name="M:Clinic_Management_System.DSAnalysisTableAdapters.TableAdapterManager.UpdateAll(Clinic_Management_System.DSAnalysis)">
-	<summary>
-Update all changes to the dataset.
-</summary>
-</member><member name="T:Clinic_Management_System.DSAnalysisTableAdapters.TableAdapterManager.UpdateOrderOption">
-	<summary>
-Update Order Option
-</summary>
-</member><member name="T:Clinic_Management_System.DSAnalysisTableAdapters.TableAdapterManager.SelfReferenceComparer">
-	<summary>
-Used to sort self-referenced table's rows
-</summary>
-</member><member name="T:Clinic_Management_System.DSAnalysisTableAdapters.TableAdapterManager">
-	<summary>
-TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoice.tbl_preinvoice_paraexamDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoice.tbl_preinvoiceDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoice.tbl_invoiceDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoice.tbl_invoice_paraexamDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoice.ParaExamDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoice.MedicineDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoice.PrescriptionDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoice.tblprescriptionDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoice.PrescriptionDetailDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoice.EchoDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoice.ColoDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoice.FibroDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoice.NasoDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoice.MRIDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoice.ScanDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoice.PatientDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoice.PhysicalExamDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoice.BloodDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoice.tbl_preinvoice_medicineDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoice.tbl_invoice_medicineorderDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoice.ComplaintDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoice.HistoryDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoice.InvoiceDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoice.tbl_invoice_consultationDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoice.FibroScan1DataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoice.RECEIPT_DETAILDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoice.V_DIALYCONSULTDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoice.PrescriptionRemarkDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoice.V_ReceiptDetailDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoice.EXCHANGE_RATEDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoice.tbl_preinvoice_paraexamRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoice.tbl_preinvoiceRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoice.tbl_invoiceRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoice.tbl_invoice_paraexamRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoice.ParaExamRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoice.MedicineRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoice.PrescriptionRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoice.tblprescriptionRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoice.PrescriptionDetailRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoice.EchoRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoice.ColoRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoice.FibroRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoice.NasoRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoice.MRIRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoice.ScanRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoice.PatientRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoice.PhysicalExamRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoice.BloodRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoice.tbl_preinvoice_medicineRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoice.tbl_invoice_medicineorderRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoice.ComplaintRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoice.HistoryRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoice.InvoiceRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoice.tbl_invoice_consultationRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoice.FibroScan1Row">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoice.RECEIPT_DETAILRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoice.V_DIALYCONSULTRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoice.PrescriptionRemarkRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoice.V_ReceiptDetailRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoice.EXCHANGE_RATERow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoice.tbl_preinvoice_paraexamRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoice.tbl_preinvoiceRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoice.tbl_invoiceRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoice.tbl_invoice_paraexamRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoice.ParaExamRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoice.MedicineRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoice.PrescriptionRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoice.tblprescriptionRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoice.PrescriptionDetailRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoice.EchoRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoice.ColoRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoice.FibroRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoice.NasoRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoice.MRIRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoice.ScanRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoice.PatientRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoice.PhysicalExamRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoice.BloodRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoice.tbl_preinvoice_medicineRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoice.tbl_invoice_medicineorderRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoice.ComplaintRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoice.HistoryRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoice.InvoiceRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoice.tbl_invoice_consultationRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoice.FibroScan1RowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoice.RECEIPT_DETAILRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoice.V_DIALYCONSULTRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoice.PrescriptionRemarkRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoice.V_ReceiptDetailRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoice.EXCHANGE_RATERowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoice">
-	<summary>
-Represents a strongly typed in-memory cache of data.
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoiceTableAdapters.tbl_preinvoice_paraexamTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoiceTableAdapters.tbl_preinvoiceTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoiceTableAdapters.tbl_invoiceTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoiceTableAdapters.tbl_invoice_paraexamTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoiceTableAdapters.ParaExamTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoiceTableAdapters.MedicineTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoiceTableAdapters.PrescriptionTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoiceTableAdapters.tblprescriptionTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoiceTableAdapters.PrescriptionDetailTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoiceTableAdapters.EchoTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoiceTableAdapters.ColoTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoiceTableAdapters.FibroTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoiceTableAdapters.NasoTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoiceTableAdapters.MRITableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoiceTableAdapters.ScanTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoiceTableAdapters.PatientTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoiceTableAdapters.PhysicalExamTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoiceTableAdapters.BloodTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoiceTableAdapters.tbl_preinvoice_medicineTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoiceTableAdapters.tbl_invoice_medicineorderTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoiceTableAdapters.ComplaintTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoiceTableAdapters.HistoryTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoiceTableAdapters.InvoiceTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoiceTableAdapters.tbl_invoice_consultationTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoiceTableAdapters.FibroScan1TableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoiceTableAdapters.RECEIPT_DETAILTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoiceTableAdapters.V_DIALYCONSULTTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoiceTableAdapters.PrescriptionRemarkTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoiceTableAdapters.V_ReceiptDetailTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoiceTableAdapters.EXCHANGE_RATETableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="M:Clinic_Management_System.DSInvoiceTableAdapters.TableAdapterManager.UpdateUpdatedRows(Clinic_Management_System.DSInvoice,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
-	<summary>
-Update rows in top-down order.
-</summary>
-</member><member name="M:Clinic_Management_System.DSInvoiceTableAdapters.TableAdapterManager.UpdateInsertedRows(Clinic_Management_System.DSInvoice,System.Collections.Generic.List{System.Data.DataRow})">
-	<summary>
-Insert rows in top-down order.
-</summary>
-</member><member name="M:Clinic_Management_System.DSInvoiceTableAdapters.TableAdapterManager.UpdateDeletedRows(Clinic_Management_System.DSInvoice,System.Collections.Generic.List{System.Data.DataRow})">
-	<summary>
-Delete rows in bottom-up order.
-</summary>
-</member><member name="M:Clinic_Management_System.DSInvoiceTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
-	<summary>
-Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
-</summary>
-</member><member name="M:Clinic_Management_System.DSInvoiceTableAdapters.TableAdapterManager.UpdateAll(Clinic_Management_System.DSInvoice)">
-	<summary>
-Update all changes to the dataset.
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoiceTableAdapters.TableAdapterManager.UpdateOrderOption">
-	<summary>
-Update Order Option
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoiceTableAdapters.TableAdapterManager.SelfReferenceComparer">
-	<summary>
-Used to sort self-referenced table's rows
-</summary>
-</member><member name="T:Clinic_Management_System.DSInvoiceTableAdapters.TableAdapterManager">
+</member><member name="T:Clinic_Management_System.DS_ParameterTableAdapters.TableAdapterManager">
 	<summary>
 TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
 </summary>
@@ -2719,419 +3132,6 @@ Update Order Option
 Used to sort self-referenced table's rows
 </summary>
 </member><member name="T:Clinic_Management_System.DSComplaintTableAdapters.TableAdapterManager">
-	<summary>
-TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
-</summary>
-</member><member name="T:Clinic_Management_System.DSPhysicalExam.tblPhysicalCheckDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSPhysicalExam.V_PHYSICAL_EXAMDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSPhysicalExam.tblphysicalcheckdetailDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSPhysicalExam.tblprephysicalcheckdetailDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSPhysicalExam.tblPhysicalCheckRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSPhysicalExam.V_PHYSICAL_EXAMRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSPhysicalExam.tblphysicalcheckdetailRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSPhysicalExam.tblprephysicalcheckdetailRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSPhysicalExam.tblPhysicalCheckRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Clinic_Management_System.DSPhysicalExam.V_PHYSICAL_EXAMRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Clinic_Management_System.DSPhysicalExam.tblphysicalcheckdetailRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Clinic_Management_System.DSPhysicalExam.tblprephysicalcheckdetailRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Clinic_Management_System.DSPhysicalExam">
-	<summary>
-Represents a strongly typed in-memory cache of data.
-</summary>
-</member><member name="T:Clinic_Management_System.DSPhysicalExamTableAdapters.tblPhysicalCheckTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:Clinic_Management_System.DSPhysicalExamTableAdapters.V_PHYSICAL_EXAMTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:Clinic_Management_System.DSPhysicalExamTableAdapters.tblphysicalcheckdetailTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:Clinic_Management_System.DSPhysicalExamTableAdapters.tblprephysicalcheckdetailTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="M:Clinic_Management_System.DSPhysicalExamTableAdapters.TableAdapterManager.UpdateUpdatedRows(Clinic_Management_System.DSPhysicalExam,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
-	<summary>
-Update rows in top-down order.
-</summary>
-</member><member name="M:Clinic_Management_System.DSPhysicalExamTableAdapters.TableAdapterManager.UpdateInsertedRows(Clinic_Management_System.DSPhysicalExam,System.Collections.Generic.List{System.Data.DataRow})">
-	<summary>
-Insert rows in top-down order.
-</summary>
-</member><member name="M:Clinic_Management_System.DSPhysicalExamTableAdapters.TableAdapterManager.UpdateDeletedRows(Clinic_Management_System.DSPhysicalExam,System.Collections.Generic.List{System.Data.DataRow})">
-	<summary>
-Delete rows in bottom-up order.
-</summary>
-</member><member name="M:Clinic_Management_System.DSPhysicalExamTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
-	<summary>
-Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
-</summary>
-</member><member name="M:Clinic_Management_System.DSPhysicalExamTableAdapters.TableAdapterManager.UpdateAll(Clinic_Management_System.DSPhysicalExam)">
-	<summary>
-Update all changes to the dataset.
-</summary>
-</member><member name="T:Clinic_Management_System.DSPhysicalExamTableAdapters.TableAdapterManager.UpdateOrderOption">
-	<summary>
-Update Order Option
-</summary>
-</member><member name="T:Clinic_Management_System.DSPhysicalExamTableAdapters.TableAdapterManager.SelfReferenceComparer">
-	<summary>
-Used to sort self-referenced table's rows
-</summary>
-</member><member name="T:Clinic_Management_System.DSPhysicalExamTableAdapters.TableAdapterManager">
-	<summary>
-TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
-</summary>
-</member><member name="P:Clinic_Management_System.My.Resources.Resources.ResourceManager">
-	<summary>
-  Returns the cached ResourceManager instance used by this class.
-</summary>
-</member><member name="P:Clinic_Management_System.My.Resources.Resources.Culture">
-	<summary>
-  Overrides the current thread's CurrentUICulture property for all
-  resource lookups using this strongly typed resource class.
-</summary>
-</member><member name="T:Clinic_Management_System.My.Resources.Resources">
-	<summary>
-  A strongly-typed resource class, for looking up localized strings, etc.
-</summary>
-</member><member name="T:Clinic_Management_System.DSStore.tblunitDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSStore.tbladjustmentDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSStore.tbltransactionDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSStore.tblmedicinestoreDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSStore.tblissueDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSStore.tbltransferDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSStore.tblreceiveDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSStore.tblunitRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSStore.tbladjustmentRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSStore.tbltransactionRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSStore.tblmedicinestoreRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSStore.tblissueRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSStore.tbltransferRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSStore.tblreceiveRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSStore.tblunitRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Clinic_Management_System.DSStore.tbladjustmentRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Clinic_Management_System.DSStore.tbltransactionRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Clinic_Management_System.DSStore.tblmedicinestoreRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Clinic_Management_System.DSStore.tblissueRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Clinic_Management_System.DSStore.tbltransferRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Clinic_Management_System.DSStore.tblreceiveRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Clinic_Management_System.DSStore">
-	<summary>
-Represents a strongly typed in-memory cache of data.
-</summary>
-</member><member name="T:Clinic_Management_System.DSStoreTableAdapters.tblunitTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:Clinic_Management_System.DSStoreTableAdapters.tbladjustmentTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:Clinic_Management_System.DSStoreTableAdapters.tbltransactionTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:Clinic_Management_System.DSStoreTableAdapters.tblmedicinestoreTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:Clinic_Management_System.DSStoreTableAdapters.tblissueTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:Clinic_Management_System.DSStoreTableAdapters.tbltransferTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:Clinic_Management_System.DSStoreTableAdapters.tblreceiveTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="M:Clinic_Management_System.DSStoreTableAdapters.TableAdapterManager.UpdateUpdatedRows(Clinic_Management_System.DSStore,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
-	<summary>
-Update rows in top-down order.
-</summary>
-</member><member name="M:Clinic_Management_System.DSStoreTableAdapters.TableAdapterManager.UpdateInsertedRows(Clinic_Management_System.DSStore,System.Collections.Generic.List{System.Data.DataRow})">
-	<summary>
-Insert rows in top-down order.
-</summary>
-</member><member name="M:Clinic_Management_System.DSStoreTableAdapters.TableAdapterManager.UpdateDeletedRows(Clinic_Management_System.DSStore,System.Collections.Generic.List{System.Data.DataRow})">
-	<summary>
-Delete rows in bottom-up order.
-</summary>
-</member><member name="M:Clinic_Management_System.DSStoreTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
-	<summary>
-Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
-</summary>
-</member><member name="M:Clinic_Management_System.DSStoreTableAdapters.TableAdapterManager.UpdateAll(Clinic_Management_System.DSStore)">
-	<summary>
-Update all changes to the dataset.
-</summary>
-</member><member name="T:Clinic_Management_System.DSStoreTableAdapters.TableAdapterManager.UpdateOrderOption">
-	<summary>
-Update Order Option
-</summary>
-</member><member name="T:Clinic_Management_System.DSStoreTableAdapters.TableAdapterManager.SelfReferenceComparer">
-	<summary>
-Used to sort self-referenced table's rows
-</summary>
-</member><member name="T:Clinic_Management_System.DSStoreTableAdapters.TableAdapterManager">
-	<summary>
-TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
-</summary>
-</member><member name="T:Clinic_Management_System.DSReferal.HOSPITALDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSReferal.HOSPITAL_REFERALDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSReferal.V_HOSPITAL_REFERALDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSReferal.HOSPITALRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSReferal.HOSPITAL_REFERALRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSReferal.V_HOSPITAL_REFERALRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSReferal.HOSPITALRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Clinic_Management_System.DSReferal.HOSPITAL_REFERALRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Clinic_Management_System.DSReferal.V_HOSPITAL_REFERALRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Clinic_Management_System.DSReferal">
-	<summary>
-Represents a strongly typed in-memory cache of data.
-</summary>
-</member><member name="T:Clinic_Management_System.DSReferalTableAdapters.HOSPITALTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:Clinic_Management_System.DSReferalTableAdapters.HOSPITAL_REFERALTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:Clinic_Management_System.DSReferalTableAdapters.V_HOSPITAL_REFERALTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="M:Clinic_Management_System.DSReferalTableAdapters.TableAdapterManager.UpdateUpdatedRows(Clinic_Management_System.DSReferal,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
-	<summary>
-Update rows in top-down order.
-</summary>
-</member><member name="M:Clinic_Management_System.DSReferalTableAdapters.TableAdapterManager.UpdateInsertedRows(Clinic_Management_System.DSReferal,System.Collections.Generic.List{System.Data.DataRow})">
-	<summary>
-Insert rows in top-down order.
-</summary>
-</member><member name="M:Clinic_Management_System.DSReferalTableAdapters.TableAdapterManager.UpdateDeletedRows(Clinic_Management_System.DSReferal,System.Collections.Generic.List{System.Data.DataRow})">
-	<summary>
-Delete rows in bottom-up order.
-</summary>
-</member><member name="M:Clinic_Management_System.DSReferalTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
-	<summary>
-Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
-</summary>
-</member><member name="M:Clinic_Management_System.DSReferalTableAdapters.TableAdapterManager.UpdateAll(Clinic_Management_System.DSReferal)">
-	<summary>
-Update all changes to the dataset.
-</summary>
-</member><member name="T:Clinic_Management_System.DSReferalTableAdapters.TableAdapterManager.UpdateOrderOption">
-	<summary>
-Update Order Option
-</summary>
-</member><member name="T:Clinic_Management_System.DSReferalTableAdapters.TableAdapterManager.SelfReferenceComparer">
-	<summary>
-Used to sort self-referenced table's rows
-</summary>
-</member><member name="T:Clinic_Management_System.DSReferalTableAdapters.TableAdapterManager">
-	<summary>
-TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
-</summary>
-</member><member name="T:Clinic_Management_System.DSEcho.tblechoImageDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSEcho.tblpatientDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSEcho.tblechoImageRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSEcho.tblpatientRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:Clinic_Management_System.DSEcho.tblechoImageRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Clinic_Management_System.DSEcho.tblpatientRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:Clinic_Management_System.DSEcho">
-	<summary>
-Represents a strongly typed in-memory cache of data.
-</summary>
-</member><member name="T:Clinic_Management_System.DSEchoTableAdapters.tblechoImageTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:Clinic_Management_System.DSEchoTableAdapters.tblpatientTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="M:Clinic_Management_System.DSEchoTableAdapters.TableAdapterManager.UpdateUpdatedRows(Clinic_Management_System.DSEcho,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
-	<summary>
-Update rows in top-down order.
-</summary>
-</member><member name="M:Clinic_Management_System.DSEchoTableAdapters.TableAdapterManager.UpdateInsertedRows(Clinic_Management_System.DSEcho,System.Collections.Generic.List{System.Data.DataRow})">
-	<summary>
-Insert rows in top-down order.
-</summary>
-</member><member name="M:Clinic_Management_System.DSEchoTableAdapters.TableAdapterManager.UpdateDeletedRows(Clinic_Management_System.DSEcho,System.Collections.Generic.List{System.Data.DataRow})">
-	<summary>
-Delete rows in bottom-up order.
-</summary>
-</member><member name="M:Clinic_Management_System.DSEchoTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
-	<summary>
-Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
-</summary>
-</member><member name="M:Clinic_Management_System.DSEchoTableAdapters.TableAdapterManager.UpdateAll(Clinic_Management_System.DSEcho)">
-	<summary>
-Update all changes to the dataset.
-</summary>
-</member><member name="T:Clinic_Management_System.DSEchoTableAdapters.TableAdapterManager.UpdateOrderOption">
-	<summary>
-Update Order Option
-</summary>
-</member><member name="T:Clinic_Management_System.DSEchoTableAdapters.TableAdapterManager.SelfReferenceComparer">
-	<summary>
-Used to sort self-referenced table's rows
-</summary>
-</member><member name="T:Clinic_Management_System.DSEchoTableAdapters.TableAdapterManager">
 	<summary>
 TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
 </summary>
