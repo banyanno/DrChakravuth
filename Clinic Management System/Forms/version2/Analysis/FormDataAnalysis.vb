@@ -79,35 +79,67 @@
             If RadPAllDiagnosis.Checked = True Then
                 Dim tblAllDiagnosis As DataTable = DA_ProvinceAnalysis.SelectDateToDateAllProvince(DateFrom.Value.Date, DateTo.Value.Date)
                 Dim REachProvince As New ReportDiagnosis
+                Dim REachProvinceV1 As New ReportDiagnosisV1
 
                 REachProvince.SetDataSource(tblAllDiagnosis)
-                mainAnalysis.CrvViewer.ReportSource = REachProvince
-                REachProvince.SetParameterValue("Title", "Data Analys Diagnosis From: " & Format(Me.DateFrom.Value, "dd-MM-yyyy") & " To: " & Format(Me.DateTo.Value, "dd-MM-yyyy"))
+                REachProvinceV1.SetDataSource(tblAllDiagnosis)
+                If ChViewDetialData.Checked = True Then
+                    mainAnalysis.CrvViewer.ReportSource = REachProvinceV1
+                    REachProvinceV1.SetParameterValue("Title", "Data Analys Diagnosis From: " & Format(Me.DateFrom.Value, "dd-MM-yyyy") & " To: " & Format(Me.DateTo.Value, "dd-MM-yyyy"))
+                Else
+                    mainAnalysis.CrvViewer.ReportSource = REachProvince
+                    REachProvince.SetParameterValue("Title", "Data Analys Diagnosis From: " & Format(Me.DateFrom.Value, "dd-MM-yyyy") & " To: " & Format(Me.DateTo.Value, "dd-MM-yyyy"))
+                End If
             End If
             If RadOnePDiagnosis.Checked = True Then
                 Dim tblAllDiagnosis As DataTable = DA_ProvinceAnalysis.SelectDateToDateByDiagnosis(DateFrom.Value.Date, DateTo.Value.Date, CboPDiagnosis.Text)
                 Dim REachProvince As New ReportDiagnosis
+                Dim REachProvinceV1 As New ReportDiagnosisV1
                 REachProvince.SetDataSource(tblAllDiagnosis)
-                mainAnalysis.CrvViewer.ReportSource = REachProvince
-                REachProvince.SetParameterValue("Title", "Data Analys Diagnosis From: " & Format(Me.DateFrom.Value, "dd-MM-yyyy") & " To: " & Format(Me.DateTo.Value, "dd-MM-yyyy"))
+                REachProvinceV1.SetDataSource(tblAllDiagnosis)
+                If ChViewDetialData.Checked = True Then
+                    mainAnalysis.CrvViewer.ReportSource = REachProvinceV1
+                    REachProvinceV1.SetParameterValue("Title", "Data Analys Diagnosis From: " & Format(Me.DateFrom.Value, "dd-MM-yyyy") & " To: " & Format(Me.DateTo.Value, "dd-MM-yyyy"))
+                Else
+                    mainAnalysis.CrvViewer.ReportSource = REachProvince
+                    REachProvince.SetParameterValue("Title", "Data Analys Diagnosis From: " & Format(Me.DateFrom.Value, "dd-MM-yyyy") & " To: " & Format(Me.DateTo.Value, "dd-MM-yyyy"))
+                End If
+               
             End If
 
             If RadEachProvince.Checked = True Then
                 If ValidateCombobox(CboProvince, "", ErrAnalysis) = False Then Exit Sub
                 Dim tblProvince As DataTable = DA_ProvinceAnalysis.SelectDateToDateByProvince(DateFrom.Value.Date, DateTo.Value.Date, CboProvince.Text)
                 Dim REachProvince As New ReportEachProvince
+                Dim REachProvinceV1 As New ReportEachProvincev1
 
                 REachProvince.SetDataSource(tblProvince)
-                mainAnalysis.CrvViewer.ReportSource = REachProvince
-                REachProvince.SetParameterValue("Title", "From: " & Format(Me.DateFrom.Value, "dd-MM-yyyy") & " To: " & Format(Me.DateTo.Value, "dd-MM-yyyy"))
+                REachProvinceV1.SetDataSource(tblProvince)
+                If ChViewDetialData.Checked = True Then
+                    mainAnalysis.CrvViewer.ReportSource = REachProvinceV1
+                    REachProvinceV1.SetParameterValue("Title", "From: " & Format(Me.DateFrom.Value, "dd-MM-yyyy") & " To: " & Format(Me.DateTo.Value, "dd-MM-yyyy"))
+                Else
+                    mainAnalysis.CrvViewer.ReportSource = REachProvince
+                    REachProvince.SetParameterValue("Title", "From: " & Format(Me.DateFrom.Value, "dd-MM-yyyy") & " To: " & Format(Me.DateTo.Value, "dd-MM-yyyy"))
+                End If
+               
             End If
             If RadAllProvince.Checked = True Then
                 Dim tblProvince As DataTable = DA_ProvinceAnalysis.SelectDateToDateAllProvince(DateFrom.Value.Date, DateTo.Value.Date)
                 Dim REachProvince As New ReportEachProvince
+                Dim REachProvinceV1 As New ReportEachProvincev1
 
                 REachProvince.SetDataSource(tblProvince)
-                mainAnalysis.CrvViewer.ReportSource = REachProvince
-                REachProvince.SetParameterValue("Title", "From: " & Format(Me.DateFrom.Value, "dd-MM-yyyy") & " To: " & Format(Me.DateTo.Value, "dd-MM-yyyy"))
+                REachProvinceV1.SetDataSource(tblProvince)
+                If ChViewDetialData.Checked = True Then
+                    mainAnalysis.CrvViewer.ReportSource = REachProvinceV1
+                    REachProvinceV1.SetParameterValue("Title", "From: " & Format(Me.DateFrom.Value, "dd-MM-yyyy") & " To: " & Format(Me.DateTo.Value, "dd-MM-yyyy"))
+                Else
+                    mainAnalysis.CrvViewer.ReportSource = REachProvince
+                    REachProvince.SetParameterValue("Title", "From: " & Format(Me.DateFrom.Value, "dd-MM-yyyy") & " To: " & Format(Me.DateTo.Value, "dd-MM-yyyy"))
+                End If
+
+                
             End If
         End If
     End Sub

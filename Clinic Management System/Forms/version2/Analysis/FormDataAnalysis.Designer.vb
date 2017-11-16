@@ -25,8 +25,10 @@ Partial Class FormDataAnalysis
         Me.components = New System.ComponentModel.Container
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormDataAnalysis))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox
+        Me.ChViewDetialData = New System.Windows.Forms.CheckBox
         Me.UiTab1 = New Janus.Windows.UI.Tab.UITab
         Me.UiTabPage1 = New Janus.Windows.UI.Tab.UITabPage
+        Me.Label3 = New System.Windows.Forms.Label
         Me.CboPDiagnosis = New System.Windows.Forms.ComboBox
         Me.RadOnePDiagnosis = New System.Windows.Forms.RadioButton
         Me.RadPAllDiagnosis = New System.Windows.Forms.RadioButton
@@ -89,6 +91,7 @@ Partial Class FormDataAnalysis
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.ChViewDetialData)
         Me.GroupBox1.Controls.Add(Me.UiTab1)
         Me.GroupBox1.Controls.Add(Me.DateTo)
         Me.GroupBox1.Controls.Add(Me.DateFrom)
@@ -102,6 +105,17 @@ Partial Class FormDataAnalysis
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Date To Date"
         '
+        'ChViewDetialData
+        '
+        Me.ChViewDetialData.AutoSize = True
+        Me.ChViewDetialData.ForeColor = System.Drawing.Color.Red
+        Me.ChViewDetialData.Location = New System.Drawing.Point(477, 42)
+        Me.ChViewDetialData.Name = "ChViewDetialData"
+        Me.ChViewDetialData.Size = New System.Drawing.Size(131, 24)
+        Me.ChViewDetialData.TabIndex = 8
+        Me.ChViewDetialData.Text = "View in Details"
+        Me.ChViewDetialData.UseVisualStyleBackColor = True
+        '
         'UiTab1
         '
         Me.UiTab1.Location = New System.Drawing.Point(16, 81)
@@ -112,6 +126,7 @@ Partial Class FormDataAnalysis
         '
         'UiTabPage1
         '
+        Me.UiTabPage1.Controls.Add(Me.Label3)
         Me.UiTabPage1.Controls.Add(Me.CboPDiagnosis)
         Me.UiTabPage1.Controls.Add(Me.RadOnePDiagnosis)
         Me.UiTabPage1.Controls.Add(Me.RadPAllDiagnosis)
@@ -122,9 +137,19 @@ Partial Class FormDataAnalysis
         Me.UiTabPage1.Key = "By Province"
         Me.UiTabPage1.Location = New System.Drawing.Point(1, 28)
         Me.UiTabPage1.Name = "UiTabPage1"
-        Me.UiTabPage1.Size = New System.Drawing.Size(810, 279)
+        Me.UiTabPage1.Size = New System.Drawing.Size(808, 277)
         Me.UiTabPage1.TabStop = True
         Me.UiTabPage1.Text = "Analys By Province Or Diagnosis"
+        '
+        'Label3
+        '
+        Me.Label3.BackColor = System.Drawing.Color.Black
+        Me.Label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Label3.Location = New System.Drawing.Point(9, 97)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(796, 2)
+        Me.Label3.TabIndex = 7
+        Me.Label3.Text = "-"
         '
         'CboPDiagnosis
         '
@@ -140,29 +165,31 @@ Partial Class FormDataAnalysis
         'RadOnePDiagnosis
         '
         Me.RadOnePDiagnosis.AutoSize = True
+        Me.RadOnePDiagnosis.BackColor = System.Drawing.Color.Transparent
         Me.RadOnePDiagnosis.Location = New System.Drawing.Point(22, 61)
         Me.RadOnePDiagnosis.Name = "RadOnePDiagnosis"
         Me.RadOnePDiagnosis.Size = New System.Drawing.Size(169, 24)
         Me.RadOnePDiagnosis.TabIndex = 5
         Me.RadOnePDiagnosis.Text = "View One Diagnosis"
-        Me.RadOnePDiagnosis.UseVisualStyleBackColor = True
+        Me.RadOnePDiagnosis.UseVisualStyleBackColor = False
         '
         'RadPAllDiagnosis
         '
         Me.RadPAllDiagnosis.AutoSize = True
+        Me.RadPAllDiagnosis.BackColor = System.Drawing.Color.Transparent
         Me.RadPAllDiagnosis.Checked = True
-        Me.RadPAllDiagnosis.Location = New System.Drawing.Point(22, 13)
+        Me.RadPAllDiagnosis.Location = New System.Drawing.Point(22, 27)
         Me.RadPAllDiagnosis.Name = "RadPAllDiagnosis"
         Me.RadPAllDiagnosis.Size = New System.Drawing.Size(156, 24)
         Me.RadPAllDiagnosis.TabIndex = 4
         Me.RadPAllDiagnosis.TabStop = True
         Me.RadPAllDiagnosis.Text = "View All Diagnosis"
-        Me.RadPAllDiagnosis.UseVisualStyleBackColor = True
+        Me.RadPAllDiagnosis.UseVisualStyleBackColor = False
         '
         'BtnProvincePreview
         '
         Me.BtnProvincePreview.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnProvincePreview.Location = New System.Drawing.Point(364, 212)
+        Me.BtnProvincePreview.Location = New System.Drawing.Point(364, 207)
         Me.BtnProvincePreview.Name = "BtnProvincePreview"
         Me.BtnProvincePreview.Size = New System.Drawing.Size(164, 30)
         Me.BtnProvincePreview.TabIndex = 3
@@ -183,22 +210,24 @@ Partial Class FormDataAnalysis
         'RadEachProvince
         '
         Me.RadEachProvince.AutoSize = True
+        Me.RadEachProvince.BackColor = System.Drawing.Color.Transparent
         Me.RadEachProvince.Location = New System.Drawing.Point(22, 164)
         Me.RadEachProvince.Name = "RadEachProvince"
         Me.RadEachProvince.Size = New System.Drawing.Size(150, 24)
         Me.RadEachProvince.TabIndex = 1
         Me.RadEachProvince.Text = "View One Provice"
-        Me.RadEachProvince.UseVisualStyleBackColor = True
+        Me.RadEachProvince.UseVisualStyleBackColor = False
         '
         'RadAllProvince
         '
         Me.RadAllProvince.AutoSize = True
-        Me.RadAllProvince.Location = New System.Drawing.Point(22, 108)
+        Me.RadAllProvince.BackColor = System.Drawing.Color.Transparent
+        Me.RadAllProvince.Location = New System.Drawing.Point(22, 128)
         Me.RadAllProvince.Name = "RadAllProvince"
         Me.RadAllProvince.Size = New System.Drawing.Size(146, 24)
         Me.RadAllProvince.TabIndex = 0
         Me.RadAllProvince.Text = "View All Province"
-        Me.RadAllProvince.UseVisualStyleBackColor = True
+        Me.RadAllProvince.UseVisualStyleBackColor = False
         '
         'UiTabPage2
         '
@@ -210,7 +239,7 @@ Partial Class FormDataAnalysis
         Me.UiTabPage2.Key = "Analys By Diagnosis"
         Me.UiTabPage2.Location = New System.Drawing.Point(1, 28)
         Me.UiTabPage2.Name = "UiTabPage2"
-        Me.UiTabPage2.Size = New System.Drawing.Size(810, 279)
+        Me.UiTabPage2.Size = New System.Drawing.Size(808, 277)
         Me.UiTabPage2.TabStop = True
         Me.UiTabPage2.Text = "Analys By Diagnosis With other"
         '
@@ -261,7 +290,7 @@ Partial Class FormDataAnalysis
         'BtnPreviewDiagnosis
         '
         Me.BtnPreviewDiagnosis.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnPreviewDiagnosis.Location = New System.Drawing.Point(559, 154)
+        Me.BtnPreviewDiagnosis.Location = New System.Drawing.Point(276, 135)
         Me.BtnPreviewDiagnosis.Name = "BtnPreviewDiagnosis"
         Me.BtnPreviewDiagnosis.Size = New System.Drawing.Size(233, 32)
         Me.BtnPreviewDiagnosis.TabIndex = 4
@@ -274,7 +303,7 @@ Partial Class FormDataAnalysis
         Me.cbodiagnosis.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
         Me.cbodiagnosis.Enabled = False
         Me.cbodiagnosis.FormattingEnabled = True
-        Me.cbodiagnosis.Location = New System.Drawing.Point(461, 109)
+        Me.cbodiagnosis.Location = New System.Drawing.Point(276, 100)
         Me.cbodiagnosis.Name = "cbodiagnosis"
         Me.cbodiagnosis.Size = New System.Drawing.Size(331, 28)
         Me.cbodiagnosis.TabIndex = 2
@@ -282,7 +311,7 @@ Partial Class FormDataAnalysis
         'RadEachDiagnosis
         '
         Me.RadEachDiagnosis.AutoSize = True
-        Me.RadEachDiagnosis.Location = New System.Drawing.Point(278, 113)
+        Me.RadEachDiagnosis.Location = New System.Drawing.Point(276, 64)
         Me.RadEachDiagnosis.Name = "RadEachDiagnosis"
         Me.RadEachDiagnosis.Size = New System.Drawing.Size(169, 24)
         Me.RadEachDiagnosis.TabIndex = 1
@@ -293,7 +322,7 @@ Partial Class FormDataAnalysis
         '
         Me.RadAllDiagnosis.AutoSize = True
         Me.RadAllDiagnosis.Checked = True
-        Me.RadAllDiagnosis.Location = New System.Drawing.Point(278, 68)
+        Me.RadAllDiagnosis.Location = New System.Drawing.Point(276, 34)
         Me.RadAllDiagnosis.Name = "RadAllDiagnosis"
         Me.RadAllDiagnosis.Size = New System.Drawing.Size(156, 24)
         Me.RadAllDiagnosis.TabIndex = 0
@@ -307,7 +336,7 @@ Partial Class FormDataAnalysis
         Me.UiTabPage3.Key = "AnalysParaExam"
         Me.UiTabPage3.Location = New System.Drawing.Point(1, 28)
         Me.UiTabPage3.Name = "UiTabPage3"
-        Me.UiTabPage3.Size = New System.Drawing.Size(810, 279)
+        Me.UiTabPage3.Size = New System.Drawing.Size(808, 277)
         Me.UiTabPage3.TabStop = True
         Me.UiTabPage3.Text = "Analys By Para Exam"
         '
@@ -341,7 +370,7 @@ Partial Class FormDataAnalysis
         '
         Me.RadParaAllDiagnosis.AutoSize = True
         Me.RadParaAllDiagnosis.Checked = True
-        Me.RadParaAllDiagnosis.Location = New System.Drawing.Point(73, 44)
+        Me.RadParaAllDiagnosis.Location = New System.Drawing.Point(15, 11)
         Me.RadParaAllDiagnosis.Name = "RadParaAllDiagnosis"
         Me.RadParaAllDiagnosis.Size = New System.Drawing.Size(156, 24)
         Me.RadParaAllDiagnosis.TabIndex = 0
@@ -355,7 +384,7 @@ Partial Class FormDataAnalysis
         Me.cboParaDiagnosis.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
         Me.cboParaDiagnosis.Enabled = False
         Me.cboParaDiagnosis.FormattingEnabled = True
-        Me.cboParaDiagnosis.Location = New System.Drawing.Point(276, 85)
+        Me.cboParaDiagnosis.Location = New System.Drawing.Point(15, 83)
         Me.cboParaDiagnosis.Name = "cboParaDiagnosis"
         Me.cboParaDiagnosis.Size = New System.Drawing.Size(331, 28)
         Me.cboParaDiagnosis.TabIndex = 3
@@ -363,7 +392,7 @@ Partial Class FormDataAnalysis
         'RadParaOneDiagnosis
         '
         Me.RadParaOneDiagnosis.AutoSize = True
-        Me.RadParaOneDiagnosis.Location = New System.Drawing.Point(73, 97)
+        Me.RadParaOneDiagnosis.Location = New System.Drawing.Point(15, 53)
         Me.RadParaOneDiagnosis.Name = "RadParaOneDiagnosis"
         Me.RadParaOneDiagnosis.Size = New System.Drawing.Size(169, 24)
         Me.RadParaOneDiagnosis.TabIndex = 1
@@ -398,7 +427,7 @@ Partial Class FormDataAnalysis
         '
         Me.RadFibMotif.AutoSize = True
         Me.RadFibMotif.Checked = True
-        Me.RadFibMotif.Location = New System.Drawing.Point(71, 49)
+        Me.RadFibMotif.Location = New System.Drawing.Point(20, 15)
         Me.RadFibMotif.Name = "RadFibMotif"
         Me.RadFibMotif.Size = New System.Drawing.Size(206, 24)
         Me.RadFibMotif.TabIndex = 4
@@ -413,7 +442,7 @@ Partial Class FormDataAnalysis
         Me.CboFibroMotif.DropDownWidth = 500
         Me.CboFibroMotif.Enabled = False
         Me.CboFibroMotif.FormattingEnabled = True
-        Me.CboFibroMotif.Location = New System.Drawing.Point(320, 98)
+        Me.CboFibroMotif.Location = New System.Drawing.Point(20, 84)
         Me.CboFibroMotif.Name = "CboFibroMotif"
         Me.CboFibroMotif.Size = New System.Drawing.Size(331, 28)
         Me.CboFibroMotif.TabIndex = 7
@@ -421,7 +450,7 @@ Partial Class FormDataAnalysis
         'RadFibOneMotif
         '
         Me.RadFibOneMotif.AutoSize = True
-        Me.RadFibOneMotif.Location = New System.Drawing.Point(71, 102)
+        Me.RadFibOneMotif.Location = New System.Drawing.Point(20, 54)
         Me.RadFibOneMotif.Name = "RadFibOneMotif"
         Me.RadFibOneMotif.Size = New System.Drawing.Size(209, 24)
         Me.RadFibOneMotif.TabIndex = 5
@@ -431,7 +460,7 @@ Partial Class FormDataAnalysis
         'BtnFibPrintPreview
         '
         Me.BtnFibPrintPreview.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnFibPrintPreview.Location = New System.Drawing.Point(441, 143)
+        Me.BtnFibPrintPreview.Location = New System.Drawing.Point(20, 128)
         Me.BtnFibPrintPreview.Name = "BtnFibPrintPreview"
         Me.BtnFibPrintPreview.Size = New System.Drawing.Size(210, 38)
         Me.BtnFibPrintPreview.TabIndex = 6
@@ -456,7 +485,7 @@ Partial Class FormDataAnalysis
         '
         Me.RadNasoAllMotif.AutoSize = True
         Me.RadNasoAllMotif.Checked = True
-        Me.RadNasoAllMotif.Location = New System.Drawing.Point(74, 52)
+        Me.RadNasoAllMotif.Location = New System.Drawing.Point(32, 21)
         Me.RadNasoAllMotif.Name = "RadNasoAllMotif"
         Me.RadNasoAllMotif.Size = New System.Drawing.Size(216, 24)
         Me.RadNasoAllMotif.TabIndex = 4
@@ -470,7 +499,7 @@ Partial Class FormDataAnalysis
         Me.CboNasoMotif.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
         Me.CboNasoMotif.Enabled = False
         Me.CboNasoMotif.FormattingEnabled = True
-        Me.CboNasoMotif.Location = New System.Drawing.Point(320, 98)
+        Me.CboNasoMotif.Location = New System.Drawing.Point(32, 81)
         Me.CboNasoMotif.Name = "CboNasoMotif"
         Me.CboNasoMotif.Size = New System.Drawing.Size(331, 28)
         Me.CboNasoMotif.TabIndex = 7
@@ -478,7 +507,7 @@ Partial Class FormDataAnalysis
         'RadNasoByMotif
         '
         Me.RadNasoByMotif.AutoSize = True
-        Me.RadNasoByMotif.Location = New System.Drawing.Point(74, 102)
+        Me.RadNasoByMotif.Location = New System.Drawing.Point(32, 51)
         Me.RadNasoByMotif.Name = "RadNasoByMotif"
         Me.RadNasoByMotif.Size = New System.Drawing.Size(219, 24)
         Me.RadNasoByMotif.TabIndex = 5
@@ -488,7 +517,7 @@ Partial Class FormDataAnalysis
         'BtnNasoPrintPreview
         '
         Me.BtnNasoPrintPreview.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnNasoPrintPreview.Location = New System.Drawing.Point(441, 143)
+        Me.BtnNasoPrintPreview.Location = New System.Drawing.Point(32, 115)
         Me.BtnNasoPrintPreview.Name = "BtnNasoPrintPreview"
         Me.BtnNasoPrintPreview.Size = New System.Drawing.Size(210, 38)
         Me.BtnNasoPrintPreview.TabIndex = 6
@@ -513,7 +542,7 @@ Partial Class FormDataAnalysis
         '
         Me.RadColoAllDiagnosis.AutoSize = True
         Me.RadColoAllDiagnosis.Checked = True
-        Me.RadColoAllDiagnosis.Location = New System.Drawing.Point(71, 47)
+        Me.RadColoAllDiagnosis.Location = New System.Drawing.Point(39, 29)
         Me.RadColoAllDiagnosis.Name = "RadColoAllDiagnosis"
         Me.RadColoAllDiagnosis.Size = New System.Drawing.Size(156, 24)
         Me.RadColoAllDiagnosis.TabIndex = 4
@@ -527,7 +556,7 @@ Partial Class FormDataAnalysis
         Me.cboColoMotify.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
         Me.cboColoMotify.Enabled = False
         Me.cboColoMotify.FormattingEnabled = True
-        Me.cboColoMotify.Location = New System.Drawing.Point(256, 96)
+        Me.cboColoMotify.Location = New System.Drawing.Point(39, 96)
         Me.cboColoMotify.Name = "cboColoMotify"
         Me.cboColoMotify.Size = New System.Drawing.Size(331, 28)
         Me.cboColoMotify.TabIndex = 7
@@ -535,7 +564,7 @@ Partial Class FormDataAnalysis
         'RadColoOneDiagnosis
         '
         Me.RadColoOneDiagnosis.AutoSize = True
-        Me.RadColoOneDiagnosis.Location = New System.Drawing.Point(71, 100)
+        Me.RadColoOneDiagnosis.Location = New System.Drawing.Point(39, 66)
         Me.RadColoOneDiagnosis.Name = "RadColoOneDiagnosis"
         Me.RadColoOneDiagnosis.Size = New System.Drawing.Size(169, 24)
         Me.RadColoOneDiagnosis.TabIndex = 5
@@ -545,7 +574,7 @@ Partial Class FormDataAnalysis
         'BtnColoPrintPreview
         '
         Me.BtnColoPrintPreview.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnColoPrintPreview.Location = New System.Drawing.Point(377, 130)
+        Me.BtnColoPrintPreview.Location = New System.Drawing.Point(39, 130)
         Me.BtnColoPrintPreview.Name = "BtnColoPrintPreview"
         Me.BtnColoPrintPreview.Size = New System.Drawing.Size(210, 38)
         Me.BtnColoPrintPreview.TabIndex = 6
@@ -557,7 +586,7 @@ Partial Class FormDataAnalysis
         Me.DateTo.CustomFormat = "dd/MM/yyyy"
         Me.DateTo.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DateTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DateTo.Location = New System.Drawing.Point(441, 34)
+        Me.DateTo.Location = New System.Drawing.Point(311, 36)
         Me.DateTo.Name = "DateTo"
         Me.DateTo.Size = New System.Drawing.Size(139, 29)
         Me.DateTo.TabIndex = 1
@@ -567,7 +596,7 @@ Partial Class FormDataAnalysis
         Me.DateFrom.CustomFormat = "dd/MM/yyyy"
         Me.DateFrom.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DateFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DateFrom.Location = New System.Drawing.Point(241, 34)
+        Me.DateFrom.Location = New System.Drawing.Point(111, 36)
         Me.DateFrom.Name = "DateFrom"
         Me.DateFrom.Size = New System.Drawing.Size(139, 29)
         Me.DateFrom.TabIndex = 0
@@ -575,7 +604,7 @@ Partial Class FormDataAnalysis
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(399, 40)
+        Me.Label2.Location = New System.Drawing.Point(269, 42)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(31, 20)
         Me.Label2.TabIndex = 2
@@ -584,7 +613,7 @@ Partial Class FormDataAnalysis
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(146, 40)
+        Me.Label1.Location = New System.Drawing.Point(16, 42)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(89, 20)
         Me.Label1.TabIndex = 1
@@ -695,4 +724,6 @@ Partial Class FormDataAnalysis
     Friend WithEvents RadColoOneDiagnosis As System.Windows.Forms.RadioButton
     Friend WithEvents BtnColoPrintPreview As System.Windows.Forms.Button
     Friend WithEvents BgLoadAnalysis As System.ComponentModel.BackgroundWorker
+    Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents ChViewDetialData As System.Windows.Forms.CheckBox
 End Class

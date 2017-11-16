@@ -23,9 +23,9 @@ Partial Class UAnalysis
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip
+        Me.BtnAnalysis = New System.Windows.Forms.ToolStripButton
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker
         Me.CrvViewer = New CrystalDecisions.Windows.Forms.CrystalReportViewer
-        Me.BtnAnalysis = New System.Windows.Forms.ToolStripButton
         Me.ToolStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -35,24 +35,9 @@ Partial Class UAnalysis
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BtnAnalysis})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(1070, 32)
+        Me.ToolStrip1.Size = New System.Drawing.Size(1070, 51)
         Me.ToolStrip1.TabIndex = 0
         Me.ToolStrip1.Text = "ToolStrip1"
-        '
-        'CrvViewer
-        '
-        Me.CrvViewer.ActiveViewIndex = -1
-        Me.CrvViewer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.CrvViewer.DisplayGroupTree = False
-        Me.CrvViewer.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.CrvViewer.Location = New System.Drawing.Point(0, 32)
-        Me.CrvViewer.Name = "CrvViewer"
-        Me.CrvViewer.SelectionFormula = ""
-        Me.CrvViewer.ShowGroupTreeButton = False
-        Me.CrvViewer.ShowRefreshButton = False
-        Me.CrvViewer.Size = New System.Drawing.Size(1070, 582)
-        Me.CrvViewer.TabIndex = 1
-        Me.CrvViewer.ViewTimeSelectionFormula = ""
         '
         'BtnAnalysis
         '
@@ -61,8 +46,24 @@ Partial Class UAnalysis
         Me.BtnAnalysis.Image = Global.Clinic_Management_System.My.Resources.Resources._1369921179_pie_chart
         Me.BtnAnalysis.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.BtnAnalysis.Name = "BtnAnalysis"
-        Me.BtnAnalysis.Size = New System.Drawing.Size(139, 29)
+        Me.BtnAnalysis.Size = New System.Drawing.Size(114, 48)
         Me.BtnAnalysis.Text = "Clinic Analysis"
+        Me.BtnAnalysis.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
+        'CrvViewer
+        '
+        Me.CrvViewer.ActiveViewIndex = -1
+        Me.CrvViewer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.CrvViewer.DisplayGroupTree = False
+        Me.CrvViewer.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.CrvViewer.Location = New System.Drawing.Point(0, 51)
+        Me.CrvViewer.Name = "CrvViewer"
+        Me.CrvViewer.SelectionFormula = ""
+        Me.CrvViewer.ShowGroupTreeButton = False
+        Me.CrvViewer.ShowRefreshButton = False
+        Me.CrvViewer.Size = New System.Drawing.Size(1070, 563)
+        Me.CrvViewer.TabIndex = 1
+        Me.CrvViewer.ViewTimeSelectionFormula = ""
         '
         'UAnalysis
         '
