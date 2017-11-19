@@ -362,16 +362,33 @@
             If RadNasoAllMotif.Checked = True Then
                 Dim tblNaso As DataTable = DA_DiagnosisParaNasogasroAnalys.SelectNasogastroDateToDate(DateFrom.Value.Date, DateTo.Value.Date)
                 Dim RNasograstro As New ReportDiagnosisNasogastro
+                Dim RNasograstroV1 As New ReportDiagnosisNasogastroV1
+
+                RNasograstroV1.SetDataSource(tblNaso)
                 RNasograstro.SetDataSource(tblNaso)
-                mainAnalysis.CrvViewer.ReportSource = RNasograstro
-                RNasograstro.SetParameterValue("Title", "Data Analysis (Para Exam with Motif's Nasogastro) From: " & Format(DateFrom.Value, "dd-MM-yyyy") & " To: " & Format(DateTo.Value, "dd-MM-yyyy"))
+                If ChViewDetialData.Checked = True Then
+                    mainAnalysis.CrvViewer.ReportSource = RNasograstroV1
+                    RNasograstroV1.SetParameterValue("Title", "Data Analysis (Para Exam with Motif's Nasogastro) From: " & Format(DateFrom.Value, "dd-MM-yyyy") & " To: " & Format(DateTo.Value, "dd-MM-yyyy"))
+                Else
+                    mainAnalysis.CrvViewer.ReportSource = RNasograstro
+                    RNasograstro.SetParameterValue("Title", "Data Analysis (Para Exam with Motif's Nasogastro) From: " & Format(DateFrom.Value, "dd-MM-yyyy") & " To: " & Format(DateTo.Value, "dd-MM-yyyy"))
+                End If
+                
             End If
             If RadNasoByMotif.Checked = True Then
                 Dim tblNaso As DataTable = DA_DiagnosisParaNasogasroAnalys.SelectNasogastroWithMotif(DateFrom.Value.Date, DateTo.Value.Date, CboNasoMotif.Text)
                 Dim RNasograstro As New ReportDiagnosisNasogastro
+                Dim RNasograstroV1 As New ReportDiagnosisNasogastroV1
+
+                RNasograstroV1.SetDataSource(tblNaso)
                 RNasograstro.SetDataSource(tblNaso)
-                mainAnalysis.CrvViewer.ReportSource = RNasograstro
-                RNasograstro.SetParameterValue("Title", "Data Analysis (Para Exam with Motif's Nasogastro) From: " & Format(DateFrom.Value, "dd-MM-yyyy") & " To: " & Format(DateTo.Value, "dd-MM-yyyy"))
+                If ChViewDetialData.Checked = True Then
+                    mainAnalysis.CrvViewer.ReportSource = RNasograstroV1
+                    RNasograstroV1.SetParameterValue("Title", "Data Analysis (Para Exam with Motif's Nasogastro) From: " & Format(DateFrom.Value, "dd-MM-yyyy") & " To: " & Format(DateTo.Value, "dd-MM-yyyy"))
+                Else
+                    mainAnalysis.CrvViewer.ReportSource = RNasograstro
+                    RNasograstro.SetParameterValue("Title", "Data Analysis (Para Exam with Motif's Nasogastro) From: " & Format(DateFrom.Value, "dd-MM-yyyy") & " To: " & Format(DateTo.Value, "dd-MM-yyyy"))
+                End If
             End If
         End If
     End Sub
@@ -382,16 +399,31 @@
             If RadColoAllDiagnosis.Checked = True Then
                 Dim tblColo As DataTable = DA_DiagnosisParaColoscopyAnalys.SelelectColoDateToDate(DateFrom.Value.Date, DateTo.Value.Date)
                 Dim RColoscopy As New ReportDiagnosisColoscopy
+                Dim RColoscopyV1 As New ReportDiagnosisColoscopyV1
                 RColoscopy.SetDataSource(tblColo)
-                mainAnalysis.CrvViewer.ReportSource = RColoscopy
-                RColoscopy.SetParameterValue("Title", "Data Analysis (Para Exam with motif's Coloscopy) From: " & Format(DateFrom.Value, "dd-MM-yyyy") & " To: " & Format(DateTo.Value, "dd-MM-yyyy"))
+                RColoscopyV1.SetDataSource(tblColo)
+                If ChViewDetialData.Checked = True Then
+                    mainAnalysis.CrvViewer.ReportSource = RColoscopyV1
+                    RColoscopyV1.SetParameterValue("Title", "Data Analysis (Para Exam with motif's Coloscopy) From: " & Format(DateFrom.Value, "dd-MM-yyyy") & " To: " & Format(DateTo.Value, "dd-MM-yyyy"))
+                Else
+                    mainAnalysis.CrvViewer.ReportSource = RColoscopy
+                    RColoscopy.SetParameterValue("Title", "Data Analysis (Para Exam with motif's Coloscopy) From: " & Format(DateFrom.Value, "dd-MM-yyyy") & " To: " & Format(DateTo.Value, "dd-MM-yyyy"))
+                End If
+                
             End If
             If RadColoOneDiagnosis.Checked = True Then
                 Dim tblColo As DataTable = DA_DiagnosisParaColoscopyAnalys.SelectColoscopyWithMotif(DateFrom.Value.Date, DateTo.Value.Date, cboColoMotify.Text)
                 Dim RColoscopy As New ReportDiagnosisColoscopy
+                Dim RColoscopyV1 As New ReportDiagnosisColoscopyV1
                 RColoscopy.SetDataSource(tblColo)
-                mainAnalysis.CrvViewer.ReportSource = RColoscopy
-                RColoscopy.SetParameterValue("Title", "Data Analysis (Para Exam with motif's Coloscopy) From: " & Format(DateFrom.Value, "dd-MM-yyyy") & " To: " & Format(DateTo.Value, "dd-MM-yyyy"))
+                RColoscopyV1.SetDataSource(tblColo)
+                If ChViewDetialData.Checked = True Then
+                    mainAnalysis.CrvViewer.ReportSource = RColoscopyV1
+                    RColoscopyV1.SetParameterValue("Title", "Data Analysis (Para Exam with motif's Coloscopy) From: " & Format(DateFrom.Value, "dd-MM-yyyy") & " To: " & Format(DateTo.Value, "dd-MM-yyyy"))
+                Else
+                    mainAnalysis.CrvViewer.ReportSource = RColoscopy
+                    RColoscopy.SetParameterValue("Title", "Data Analysis (Para Exam with motif's Coloscopy) From: " & Format(DateFrom.Value, "dd-MM-yyyy") & " To: " & Format(DateTo.Value, "dd-MM-yyyy"))
+                End If
             End If
         End If
     End Sub
