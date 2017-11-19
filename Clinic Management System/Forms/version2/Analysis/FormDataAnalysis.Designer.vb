@@ -121,6 +121,8 @@ Partial Class FormDataAnalysis
         Me.UiTab1.FlatBorderColor = System.Drawing.SystemColors.Control
         Me.UiTab1.Location = New System.Drawing.Point(16, 81)
         Me.UiTab1.Name = "UiTab1"
+        Me.UiTab1.Office2007ColorScheme = Janus.Windows.UI.Office2007ColorScheme.Custom
+        Me.UiTab1.Office2007CustomColor = System.Drawing.SystemColors.Control
         Me.UiTab1.Size = New System.Drawing.Size(812, 308)
         Me.UiTab1.TabIndex = 2
         Me.UiTab1.TabPages.AddRange(New Janus.Windows.UI.Tab.UITabPage() {Me.UiTabPage1, Me.UiTabPage2, Me.UiTabPage3})
@@ -405,7 +407,7 @@ Partial Class FormDataAnalysis
         'btnParaExamViewer
         '
         Me.btnParaExamViewer.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnParaExamViewer.Location = New System.Drawing.Point(397, 130)
+        Me.btnParaExamViewer.Location = New System.Drawing.Point(15, 117)
         Me.btnParaExamViewer.Name = "btnParaExamViewer"
         Me.btnParaExamViewer.Size = New System.Drawing.Size(210, 38)
         Me.btnParaExamViewer.TabIndex = 2
@@ -463,7 +465,7 @@ Partial Class FormDataAnalysis
         'BtnFibPrintPreview
         '
         Me.BtnFibPrintPreview.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnFibPrintPreview.Location = New System.Drawing.Point(20, 128)
+        Me.BtnFibPrintPreview.Location = New System.Drawing.Point(20, 120)
         Me.BtnFibPrintPreview.Name = "BtnFibPrintPreview"
         Me.BtnFibPrintPreview.Size = New System.Drawing.Size(210, 38)
         Me.BtnFibPrintPreview.TabIndex = 6

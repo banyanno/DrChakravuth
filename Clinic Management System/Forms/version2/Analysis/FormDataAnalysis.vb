@@ -169,19 +169,38 @@
                     End If
                    
                 End If
+                ' ============================= Report on Tab History with diagnosis 2 ===================================
                 If RadByMedicalHistory.Checked = True Then
                     Dim MedicalHistory As DataTable = DA_DiagnosisMedicalHistoryAnalys.SelectMedicalHistoryDateToDate(DateFrom.Value, DateTo.Value)
                     Dim RMedicalHistory As New ReportDiagnosisMedicalHistory
+                    Dim RMedicalHistoryv1 As New ReportDiagnosisMedicalHistoryV1
                     RMedicalHistory.SetDataSource(MedicalHistory)
-                    mainAnalysis.CrvViewer.ReportSource = RMedicalHistory
-                    RMedicalHistory.SetParameterValue("Title", "Data Analys (Diagnosis with Patient Medical History) From: " & Format(DateFrom.Value, "dd-MM-yyyy") & " To: " & Format(DateTo.Value, "dd-MM-yyyy"))
+                    RMedicalHistoryv1.SetDataSource(MedicalHistory)
+                    If ChViewDetialData.Checked = True Then
+                        mainAnalysis.CrvViewer.ReportSource = RMedicalHistoryv1
+                        RMedicalHistoryv1.SetParameterValue("Title", "Data Analys (Diagnosis with Patient Medical History) From: " & Format(DateFrom.Value, "dd-MM-yyyy") & " To: " & Format(DateTo.Value, "dd-MM-yyyy"))
+                    Else
+                        mainAnalysis.CrvViewer.ReportSource = RMedicalHistory
+                        RMedicalHistory.SetParameterValue("Title", "Data Analys (Diagnosis with Patient Medical History) From: " & Format(DateFrom.Value, "dd-MM-yyyy") & " To: " & Format(DateTo.Value, "dd-MM-yyyy"))
+                    End If
+
+                   
                 End If
                 If RadByPhysical.Checked = True Then
                     Dim TblPysicalCheck As DataTable = DA_DiagnosisPhysicalAnalys.SelectPhysicalDateToDate(DateFrom.Value, DateTo.Value)
                     Dim RPhysicalChecka As New ReportDiagnosisPhysicalCheck
+                    Dim RphysicalCheckv1 As New ReportDiagnosisPhysicalCheckV1
+
                     RPhysicalChecka.SetDataSource(TblPysicalCheck)
-                    mainAnalysis.CrvViewer.ReportSource = RPhysicalChecka
-                    RPhysicalChecka.SetParameterValue("Title", "Data Analys (Diagnosis with Physical Check) From: " & Format(DateFrom.Value, "dd-MM-yyyy") & " To: " & Format(DateTo.Value, "dd-MM-yyyy"))
+                    RphysicalCheckv1.SetDataSource(TblPysicalCheck)
+                    If ChViewDetialData.Checked = True Then
+                        mainAnalysis.CrvViewer.ReportSource = RphysicalCheckv1
+                        RphysicalCheckv1.SetParameterValue("Title", "Data Analys (Diagnosis with Physical Check) From: " & Format(DateFrom.Value, "dd-MM-yyyy") & " To: " & Format(DateTo.Value, "dd-MM-yyyy"))
+                    Else
+                        mainAnalysis.CrvViewer.ReportSource = RPhysicalChecka
+                        RPhysicalChecka.SetParameterValue("Title", "Data Analys (Diagnosis with Physical Check) From: " & Format(DateFrom.Value, "dd-MM-yyyy") & " To: " & Format(DateTo.Value, "dd-MM-yyyy"))
+                    End If
+                    
                 End If
 
             End If
@@ -204,16 +223,31 @@
                 If RadByMedicalHistory.Checked = True Then
                     Dim MedicalHistory As DataTable = DA_DiagnosisMedicalHistoryAnalys.SelectMedicalHistoryWithDiagnosis(DateFrom.Value, DateTo.Value, cbodiagnosis.Text)
                     Dim RMedicalHistory As New ReportDiagnosisMedicalHistory
+                    Dim RMedicalHistoryv1 As New ReportDiagnosisMedicalHistoryV1
                     RMedicalHistory.SetDataSource(MedicalHistory)
-                    mainAnalysis.CrvViewer.ReportSource = RMedicalHistory
-                    RMedicalHistory.SetParameterValue("Title", "Data Analys (Diagnosis with Patient Medical History) From: " & Format(DateFrom.Value, "dd-MM-yyyy") & " To: " & Format(DateTo.Value, "dd-MM-yyyy"))
+                    RMedicalHistoryv1.SetDataSource(MedicalHistory)
+                    If ChViewDetialData.Checked = True Then
+                        mainAnalysis.CrvViewer.ReportSource = RMedicalHistoryv1
+                        RMedicalHistoryv1.SetParameterValue("Title", "Data Analys (Diagnosis with Patient Medical History) From: " & Format(DateFrom.Value, "dd-MM-yyyy") & " To: " & Format(DateTo.Value, "dd-MM-yyyy"))
+                    Else
+                        mainAnalysis.CrvViewer.ReportSource = RMedicalHistory
+                        RMedicalHistory.SetParameterValue("Title", "Data Analys (Diagnosis with Patient Medical History) From: " & Format(DateFrom.Value, "dd-MM-yyyy") & " To: " & Format(DateTo.Value, "dd-MM-yyyy"))
+                    End If
                 End If
                 If RadByPhysical.Checked = True Then
                     Dim TblPysicalCheck As DataTable = DA_DiagnosisPhysicalAnalys.SelectPhysicalWithDiagnosis(DateFrom.Value, DateTo.Value, cbodiagnosis.Text)
                     Dim RPhysicalChecka As New ReportDiagnosisPhysicalCheck
+                    Dim RphysicalCheckv1 As New ReportDiagnosisPhysicalCheckV1
+
                     RPhysicalChecka.SetDataSource(TblPysicalCheck)
-                    mainAnalysis.CrvViewer.ReportSource = RPhysicalChecka
-                    RPhysicalChecka.SetParameterValue("Title", "Data Analys (Diagnosis with Physical Check) From: " & Format(DateFrom.Value, "dd-MM-yyyy") & " To: " & Format(DateTo.Value, "dd-MM-yyyy"))
+                    RphysicalCheckv1.SetDataSource(TblPysicalCheck)
+                    If ChViewDetialData.Checked = True Then
+                        mainAnalysis.CrvViewer.ReportSource = RphysicalCheckv1
+                        RphysicalCheckv1.SetParameterValue("Title", "Data Analys (Diagnosis with Physical Check) From: " & Format(DateFrom.Value, "dd-MM-yyyy") & " To: " & Format(DateTo.Value, "dd-MM-yyyy"))
+                    Else
+                        mainAnalysis.CrvViewer.ReportSource = RPhysicalChecka
+                        RPhysicalChecka.SetParameterValue("Title", "Data Analys (Diagnosis with Physical Check) From: " & Format(DateFrom.Value, "dd-MM-yyyy") & " To: " & Format(DateTo.Value, "dd-MM-yyyy"))
+                    End If
                 End If
             End If
         End If
@@ -251,16 +285,33 @@
             If RadParaAllDiagnosis.Checked = True Then
                 Dim tblParaExam As DataTable = DA_DiagnosisParaBloodAnalys.SelectParaExamBloodByDateToDate(DateFrom.Value, DateTo.Value)
                 Dim RParaBlood As New ReportParaWithBlood
+                Dim RParaBloodV1 As New ReportParaWithBloodV1
+
                 RParaBlood.SetDataSource(tblParaExam)
-                mainAnalysis.CrvViewer.ReportSource = RParaBlood
-                RParaBlood.SetParameterValue("Title", "Data Analysis (Para Exam with Diagnosis and Blood) From: " & Format(DateFrom.Value, "dd-MM-yyyy") & " To: " & Format(DateTo.Value, "dd-MM-yyyy"))
+                RParaBloodV1.SetDataSource(tblParaExam)
+                If ChViewDetialData.Checked = True Then
+                    mainAnalysis.CrvViewer.ReportSource = RParaBloodV1
+                    RParaBloodV1.SetParameterValue("Title", "Data Analysis (Para Exam with Diagnosis and Blood) From: " & Format(DateFrom.Value, "dd-MM-yyyy") & " To: " & Format(DateTo.Value, "dd-MM-yyyy"))
+                Else
+                    mainAnalysis.CrvViewer.ReportSource = RParaBlood
+                    RParaBlood.SetParameterValue("Title", "Data Analysis (Para Exam with Diagnosis and Blood) From: " & Format(DateFrom.Value, "dd-MM-yyyy") & " To: " & Format(DateTo.Value, "dd-MM-yyyy"))
+                End If
+              
             End If
             If RadParaOneDiagnosis.Checked = True Then
                 Dim tblParaExam As DataTable = DA_DiagnosisParaBloodAnalys.SelectParaExamBloodByDiagnosis(DateFrom.Value, DateTo.Value, cboParaDiagnosis.Text)
                 Dim RParaBlood As New ReportParaWithBlood
+                Dim RParaBloodV1 As New ReportParaWithBloodV1
+
                 RParaBlood.SetDataSource(tblParaExam)
-                mainAnalysis.CrvViewer.ReportSource = RParaBlood
-                RParaBlood.SetParameterValue("Title", "Data Analysis (Para Exam with Diagnosis and Blood) From: " & Format(DateFrom.Value, "dd-MM-yyyy") & " To: " & Format(DateTo.Value, "dd-MM-yyyy"))
+                RParaBloodV1.SetDataSource(tblParaExam)
+                If ChViewDetialData.Checked = True Then
+                    mainAnalysis.CrvViewer.ReportSource = RParaBloodV1
+                    RParaBloodV1.SetParameterValue("Title", "Data Analysis (Para Exam with Diagnosis and Blood) From: " & Format(DateFrom.Value, "dd-MM-yyyy") & " To: " & Format(DateTo.Value, "dd-MM-yyyy"))
+                Else
+                    mainAnalysis.CrvViewer.ReportSource = RParaBlood
+                    RParaBlood.SetParameterValue("Title", "Data Analysis (Para Exam with Diagnosis and Blood) From: " & Format(DateFrom.Value, "dd-MM-yyyy") & " To: " & Format(DateTo.Value, "dd-MM-yyyy"))
+                End If
             End If
 
         End If
@@ -272,16 +323,35 @@
             If RadFibMotif.Checked = True Then
                 Dim TblFibro As DataTable = DA_DiagnosisParaFibroAnalys.SelectFibroscopyDateToDate(DateFrom.Value.Date, DateTo.Value.Date)
                 Dim RParaFibro As New ReportDiagnosisFibroscopy
+                Dim RParaFibroV1 As New ReportDiagnosisFibroscopyV1
+
                 RParaFibro.SetDataSource(TblFibro)
-                mainAnalysis.CrvViewer.ReportSource = RParaFibro
-                RParaFibro.SetParameterValue("Title", " Data Analysis (Para Exam with Motif's Fibroscopy) From: " & Format(DateFrom.Value, "dd-MM-yyyy") & " To: " & Format(DateTo.Value, "dd-MM-yyyy"))
+                RParaFibroV1.SetDataSource(TblFibro)
+
+                If ChViewDetialData.Checked = True Then
+                    mainAnalysis.CrvViewer.ReportSource = RParaFibroV1
+                    RParaFibroV1.SetParameterValue("Title", " Data Analysis (Para Exam with Motif's Fibroscopy) From: " & Format(DateFrom.Value, "dd-MM-yyyy") & " To: " & Format(DateTo.Value, "dd-MM-yyyy"))
+                Else
+                    mainAnalysis.CrvViewer.ReportSource = RParaFibro
+                    RParaFibro.SetParameterValue("Title", " Data Analysis (Para Exam with Motif's Fibroscopy) From: " & Format(DateFrom.Value, "dd-MM-yyyy") & " To: " & Format(DateTo.Value, "dd-MM-yyyy"))
+                End If
+                
             End If
             If RadFibOneMotif.Checked = True Then
                 Dim TblFibro As DataTable = DA_DiagnosisParaFibroAnalys.SelectFibroScopyWithMotif(DateFrom.Value.Date, DateTo.Value.Date, CboFibroMotif.Text)
                 Dim RParaFibro As New ReportDiagnosisFibroscopy
+                Dim RParaFibroV1 As New ReportDiagnosisFibroscopyV1
+
                 RParaFibro.SetDataSource(TblFibro)
-                mainAnalysis.CrvViewer.ReportSource = RParaFibro
-                RParaFibro.SetParameterValue("Title", " Data Analysis (Para Exam with Motif's Fibroscopy) From: " & Format(DateFrom.Value, "dd-MM-yyyy") & " To: " & Format(DateTo.Value, "dd-MM-yyyy"))
+                RParaFibroV1.SetDataSource(TblFibro)
+
+                If ChViewDetialData.Checked = True Then
+                    mainAnalysis.CrvViewer.ReportSource = RParaFibroV1
+                    RParaFibroV1.SetParameterValue("Title", " Data Analysis (Para Exam with Motif's Fibroscopy) From: " & Format(DateFrom.Value, "dd-MM-yyyy") & " To: " & Format(DateTo.Value, "dd-MM-yyyy"))
+                Else
+                    mainAnalysis.CrvViewer.ReportSource = RParaFibro
+                    RParaFibro.SetParameterValue("Title", " Data Analysis (Para Exam with Motif's Fibroscopy) From: " & Format(DateFrom.Value, "dd-MM-yyyy") & " To: " & Format(DateTo.Value, "dd-MM-yyyy"))
+                End If
             End If
         End If
     End Sub
