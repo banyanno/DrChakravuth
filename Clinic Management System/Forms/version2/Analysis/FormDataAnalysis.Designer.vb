@@ -380,7 +380,7 @@ Partial Class FormDataAnalysis
         Me.RadParaAllDiagnosis.Size = New System.Drawing.Size(156, 24)
         Me.RadParaAllDiagnosis.TabIndex = 0
         Me.RadParaAllDiagnosis.TabStop = True
-        Me.RadParaAllDiagnosis.Text = "View All coloscopy"
+        Me.RadParaAllDiagnosis.Text = "View All Diagnosis"
         Me.RadParaAllDiagnosis.UseVisualStyleBackColor = True
         '
         'cboParaDiagnosis
@@ -401,7 +401,7 @@ Partial Class FormDataAnalysis
         Me.RadParaOneDiagnosis.Name = "RadParaOneDiagnosis"
         Me.RadParaOneDiagnosis.Size = New System.Drawing.Size(169, 24)
         Me.RadParaOneDiagnosis.TabIndex = 1
-        Me.RadParaOneDiagnosis.Text = "View One coloscopy"
+        Me.RadParaOneDiagnosis.Text = "View One Diagnosis"
         Me.RadParaOneDiagnosis.UseVisualStyleBackColor = True
         '
         'btnParaExamViewer
@@ -552,7 +552,7 @@ Partial Class FormDataAnalysis
         Me.RadColoAllDiagnosis.Size = New System.Drawing.Size(156, 24)
         Me.RadColoAllDiagnosis.TabIndex = 4
         Me.RadColoAllDiagnosis.TabStop = True
-        Me.RadColoAllDiagnosis.Text = "View All Diagnosis"
+        Me.RadColoAllDiagnosis.Text = "View All coloscopy"
         Me.RadColoAllDiagnosis.UseVisualStyleBackColor = True
         '
         'cboColoMotify
@@ -573,7 +573,7 @@ Partial Class FormDataAnalysis
         Me.RadColoOneDiagnosis.Name = "RadColoOneDiagnosis"
         Me.RadColoOneDiagnosis.Size = New System.Drawing.Size(169, 24)
         Me.RadColoOneDiagnosis.TabIndex = 5
-        Me.RadColoOneDiagnosis.Text = "View One Diagnosis"
+        Me.RadColoOneDiagnosis.Text = "View One coloscopy"
         Me.RadColoOneDiagnosis.UseVisualStyleBackColor = True
         '
         'BtnColoPrintPreview
