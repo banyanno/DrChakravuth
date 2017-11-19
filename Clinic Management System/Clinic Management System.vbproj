@@ -335,6 +335,12 @@
     <Compile Include="Forms\version2\Analysis\FormDataAnalysis.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\version2\Analysis\ReportAnalysis\ReportDiagnosisComplaintV1.vb">
+      <DependentUpon>ReportDiagnosisComplaintV1.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Forms\version2\Analysis\ReportAnalysis\ReportEachProvincev1.vb">
       <DependentUpon>ReportEachProvincev1.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -1526,6 +1532,10 @@
     <EmbeddedResource Include="Forms\version2\Analysis\FormDataAnalysis.resx">
       <DependentUpon>FormDataAnalysis.vb</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\Analysis\ReportAnalysis\ReportDiagnosisComplaintV1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReportDiagnosisComplaintV1.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\version2\Analysis\ReportAnalysis\ReportEachProvincev1.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

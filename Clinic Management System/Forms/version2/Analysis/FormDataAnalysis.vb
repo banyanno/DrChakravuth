@@ -152,13 +152,22 @@
         If Me.InvokeRequired Then
             Me.Invoke(New MethodInvoker(AddressOf LoadingAnalysisOther))
         Else
+            ' ============================= Report on Tab 2 ===================================
             If RadAllDiagnosis.Checked = True Then
                 If RadByComplaint.Checked = True Then
                     Dim tblAllDiagnosisCompliant As DataTable = DA_DiagnosisComplaintAnalys.SelectComplaintDateToDate(DateFrom.Value, DateTo.Value)
                     Dim ReportComplaint As New ReportDiagnosisComplaint
+                    Dim ReportComplaintv1 As New ReportDiagnosisComplaintV1
                     ReportComplaint.SetDataSource(tblAllDiagnosisCompliant)
-                    mainAnalysis.CrvViewer.ReportSource = ReportComplaint
-                    ReportComplaint.SetParameterValue("Title", "Data Analys (Diagnosis with Patient Complaint) From:" & Format(Me.DateFrom.Value, "dd-MM-yyyy") & " To: " & Format(Me.DateTo.Value, "dd-MM-yyyy"))
+                    ReportComplaintv1.SetDataSource(tblAllDiagnosisCompliant)
+                    If ChViewDetialData.Checked = True Then
+                        mainAnalysis.CrvViewer.ReportSource = ReportComplaintv1
+                        ReportComplaintv1.SetParameterValue("Title", "Data Analys (Diagnosis with Patient Complaint) From:" & Format(Me.DateFrom.Value, "dd-MM-yyyy") & " To: " & Format(Me.DateTo.Value, "dd-MM-yyyy"))
+                    Else
+                        mainAnalysis.CrvViewer.ReportSource = ReportComplaint
+                        ReportComplaint.SetParameterValue("Title", "Data Analys (Diagnosis with Patient Complaint) From:" & Format(Me.DateFrom.Value, "dd-MM-yyyy") & " To: " & Format(Me.DateTo.Value, "dd-MM-yyyy"))
+                    End If
+                   
                 End If
                 If RadByMedicalHistory.Checked = True Then
                     Dim MedicalHistory As DataTable = DA_DiagnosisMedicalHistoryAnalys.SelectMedicalHistoryDateToDate(DateFrom.Value, DateTo.Value)
@@ -180,9 +189,17 @@
                 If RadByComplaint.Checked = True Then
                     Dim tblDiagnosisCompliant As DataTable = DA_DiagnosisComplaintAnalys.SelectComplaintWithDiagnosis(DateFrom.Value, DateTo.Value, cbodiagnosis.Text)
                     Dim ReportComplaint As New ReportDiagnosisComplaint
+                    Dim ReportComplaintv1 As New ReportDiagnosisComplaintV1
                     ReportComplaint.SetDataSource(tblDiagnosisCompliant)
-                    mainAnalysis.CrvViewer.ReportSource = ReportComplaint
-                    ReportComplaint.SetParameterValue("Title", "Data Analysis (Diagnosis with Patient Complaint) From:" & Format(Me.DateFrom.Value, "dd-MM-yyyy") & " To: " & Format(Me.DateTo.Value, "dd-MM-yyyy"))
+                    ReportComplaintv1.SetDataSource(tblDiagnosisCompliant)
+                    If ChViewDetialData.Checked = True Then
+                        mainAnalysis.CrvViewer.ReportSource = ReportComplaintv1
+                        ReportComplaintv1.SetParameterValue("Title", "Data Analysis (Diagnosis with Patient Complaint) From:" & Format(Me.DateFrom.Value, "dd-MM-yyyy") & " To: " & Format(Me.DateTo.Value, "dd-MM-yyyy"))
+                    Else
+                        mainAnalysis.CrvViewer.ReportSource = ReportComplaint
+                        ReportComplaint.SetParameterValue("Title", "Data Analysis (Diagnosis with Patient Complaint) From:" & Format(Me.DateFrom.Value, "dd-MM-yyyy") & " To: " & Format(Me.DateTo.Value, "dd-MM-yyyy"))
+                    End If
+                   
                 End If
                 If RadByMedicalHistory.Checked = True Then
                     Dim MedicalHistory As DataTable = DA_DiagnosisMedicalHistoryAnalys.SelectMedicalHistoryWithDiagnosis(DateFrom.Value, DateTo.Value, cbodiagnosis.Text)

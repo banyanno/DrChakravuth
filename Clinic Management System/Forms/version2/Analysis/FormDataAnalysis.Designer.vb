@@ -118,6 +118,7 @@ Partial Class FormDataAnalysis
         '
         'UiTab1
         '
+        Me.UiTab1.FlatBorderColor = System.Drawing.SystemColors.Control
         Me.UiTab1.Location = New System.Drawing.Point(16, 81)
         Me.UiTab1.Name = "UiTab1"
         Me.UiTab1.Size = New System.Drawing.Size(812, 308)
@@ -311,16 +312,18 @@ Partial Class FormDataAnalysis
         'RadEachDiagnosis
         '
         Me.RadEachDiagnosis.AutoSize = True
+        Me.RadEachDiagnosis.BackColor = System.Drawing.Color.Transparent
         Me.RadEachDiagnosis.Location = New System.Drawing.Point(276, 64)
         Me.RadEachDiagnosis.Name = "RadEachDiagnosis"
         Me.RadEachDiagnosis.Size = New System.Drawing.Size(169, 24)
         Me.RadEachDiagnosis.TabIndex = 1
         Me.RadEachDiagnosis.Text = "View One Diagnosis"
-        Me.RadEachDiagnosis.UseVisualStyleBackColor = True
+        Me.RadEachDiagnosis.UseVisualStyleBackColor = False
         '
         'RadAllDiagnosis
         '
         Me.RadAllDiagnosis.AutoSize = True
+        Me.RadAllDiagnosis.BackColor = System.Drawing.Color.Transparent
         Me.RadAllDiagnosis.Checked = True
         Me.RadAllDiagnosis.Location = New System.Drawing.Point(276, 34)
         Me.RadAllDiagnosis.Name = "RadAllDiagnosis"
@@ -328,7 +331,7 @@ Partial Class FormDataAnalysis
         Me.RadAllDiagnosis.TabIndex = 0
         Me.RadAllDiagnosis.TabStop = True
         Me.RadAllDiagnosis.Text = "View All Diagnosis"
-        Me.RadAllDiagnosis.UseVisualStyleBackColor = True
+        Me.RadAllDiagnosis.UseVisualStyleBackColor = False
         '
         'UiTabPage3
         '
