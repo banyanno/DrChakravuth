@@ -28,15 +28,20 @@ Partial Class FormDataAnalysis
         Me.ChViewDetialData = New System.Windows.Forms.CheckBox
         Me.UiTab1 = New Janus.Windows.UI.Tab.UITab
         Me.UiTabPage1 = New Janus.Windows.UI.Tab.UITabPage
+        Me.UiGroupBox1 = New Janus.Windows.EditControls.UIGroupBox
+        Me.RadAllProvince = New System.Windows.Forms.RadioButton
+        Me.RadEachProvince = New System.Windows.Forms.RadioButton
+        Me.CboProvince = New System.Windows.Forms.ComboBox
+        Me.CboSexProvince = New System.Windows.Forms.ComboBox
+        Me.ChSexProvince = New System.Windows.Forms.CheckBox
         Me.Label3 = New System.Windows.Forms.Label
         Me.CboPDiagnosis = New System.Windows.Forms.ComboBox
         Me.RadOnePDiagnosis = New System.Windows.Forms.RadioButton
         Me.RadPAllDiagnosis = New System.Windows.Forms.RadioButton
         Me.BtnProvincePreview = New System.Windows.Forms.Button
-        Me.CboProvince = New System.Windows.Forms.ComboBox
-        Me.RadEachProvince = New System.Windows.Forms.RadioButton
-        Me.RadAllProvince = New System.Windows.Forms.RadioButton
         Me.UiTabPage2 = New Janus.Windows.UI.Tab.UITabPage
+        Me.CboSexComplain = New System.Windows.Forms.ComboBox
+        Me.chSexComplaint = New System.Windows.Forms.CheckBox
         Me.GroupBox2 = New System.Windows.Forms.GroupBox
         Me.RadByPhysical = New System.Windows.Forms.RadioButton
         Me.RadByMedicalHistory = New System.Windows.Forms.RadioButton
@@ -48,21 +53,35 @@ Partial Class FormDataAnalysis
         Me.UiTabPage3 = New Janus.Windows.UI.Tab.UITabPage
         Me.TabControl1 = New System.Windows.Forms.TabControl
         Me.ByBlood = New System.Windows.Forms.TabPage
+        Me.CboSexBlood = New System.Windows.Forms.ComboBox
+        Me.ChSexBlood = New System.Windows.Forms.CheckBox
         Me.RadParaAllDiagnosis = New System.Windows.Forms.RadioButton
         Me.cboParaDiagnosis = New System.Windows.Forms.ComboBox
         Me.RadParaOneDiagnosis = New System.Windows.Forms.RadioButton
         Me.btnParaExamViewer = New System.Windows.Forms.Button
         Me.Fibroscopy = New System.Windows.Forms.TabPage
+        Me.CboSexFibros = New System.Windows.Forms.ComboBox
+        Me.ChSexFibros = New System.Windows.Forms.CheckBox
+        Me.CboFibroDiagnosis = New System.Windows.Forms.ComboBox
+        Me.ChViewFibroDiagnosis = New System.Windows.Forms.CheckBox
         Me.RadFibMotif = New System.Windows.Forms.RadioButton
         Me.CboFibroMotif = New System.Windows.Forms.ComboBox
         Me.RadFibOneMotif = New System.Windows.Forms.RadioButton
         Me.BtnFibPrintPreview = New System.Windows.Forms.Button
         Me.Nasogastro = New System.Windows.Forms.TabPage
+        Me.CboSexNasoga = New System.Windows.Forms.ComboBox
+        Me.ChSexNasogo = New System.Windows.Forms.CheckBox
+        Me.CboDiagnosisNasogastgro = New System.Windows.Forms.ComboBox
+        Me.ChDiagnosisNaso = New System.Windows.Forms.CheckBox
         Me.RadNasoAllMotif = New System.Windows.Forms.RadioButton
         Me.CboNasoMotif = New System.Windows.Forms.ComboBox
         Me.RadNasoByMotif = New System.Windows.Forms.RadioButton
         Me.BtnNasoPrintPreview = New System.Windows.Forms.Button
         Me.Coloscopy = New System.Windows.Forms.TabPage
+        Me.CboSexColoscopy = New System.Windows.Forms.ComboBox
+        Me.ChSexColosco = New System.Windows.Forms.CheckBox
+        Me.CboDiagnosisColoscopy = New System.Windows.Forms.ComboBox
+        Me.ChViewDiagnosisColoscopy = New System.Windows.Forms.CheckBox
         Me.RadColoAllDiagnosis = New System.Windows.Forms.RadioButton
         Me.cboColoMotify = New System.Windows.Forms.ComboBox
         Me.RadColoOneDiagnosis = New System.Windows.Forms.RadioButton
@@ -78,6 +97,8 @@ Partial Class FormDataAnalysis
         CType(Me.UiTab1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.UiTab1.SuspendLayout()
         Me.UiTabPage1.SuspendLayout()
+        CType(Me.UiGroupBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.UiGroupBox1.SuspendLayout()
         Me.UiTabPage2.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.UiTabPage3.SuspendLayout()
@@ -129,14 +150,14 @@ Partial Class FormDataAnalysis
         '
         'UiTabPage1
         '
+        Me.UiTabPage1.Controls.Add(Me.UiGroupBox1)
+        Me.UiTabPage1.Controls.Add(Me.CboSexProvince)
+        Me.UiTabPage1.Controls.Add(Me.ChSexProvince)
         Me.UiTabPage1.Controls.Add(Me.Label3)
         Me.UiTabPage1.Controls.Add(Me.CboPDiagnosis)
         Me.UiTabPage1.Controls.Add(Me.RadOnePDiagnosis)
         Me.UiTabPage1.Controls.Add(Me.RadPAllDiagnosis)
         Me.UiTabPage1.Controls.Add(Me.BtnProvincePreview)
-        Me.UiTabPage1.Controls.Add(Me.CboProvince)
-        Me.UiTabPage1.Controls.Add(Me.RadEachProvince)
-        Me.UiTabPage1.Controls.Add(Me.RadAllProvince)
         Me.UiTabPage1.Key = "By Province"
         Me.UiTabPage1.Location = New System.Drawing.Point(1, 28)
         Me.UiTabPage1.Name = "UiTabPage1"
@@ -144,13 +165,87 @@ Partial Class FormDataAnalysis
         Me.UiTabPage1.TabStop = True
         Me.UiTabPage1.Text = "Analys By Province Or Diagnosis"
         '
+        'UiGroupBox1
+        '
+        Me.UiGroupBox1.BackColor = System.Drawing.Color.CadetBlue
+        Me.UiGroupBox1.BackgroundStyle = Janus.Windows.EditControls.BackgroundStyle.TabPage
+        Me.UiGroupBox1.Controls.Add(Me.RadAllProvince)
+        Me.UiGroupBox1.Controls.Add(Me.RadEachProvince)
+        Me.UiGroupBox1.Controls.Add(Me.CboProvince)
+        Me.UiGroupBox1.Location = New System.Drawing.Point(9, 102)
+        Me.UiGroupBox1.Name = "UiGroupBox1"
+        Me.UiGroupBox1.Office2007ColorScheme = Janus.Windows.UI.Office2007ColorScheme.Custom
+        Me.UiGroupBox1.Size = New System.Drawing.Size(519, 123)
+        Me.UiGroupBox1.TabIndex = 12
+        Me.UiGroupBox1.Text = "Select province"
+        Me.UiGroupBox1.TextAlignment = Janus.Windows.EditControls.TextAlignment.Center
+        Me.UiGroupBox1.TextOffset = 1
+        Me.UiGroupBox1.VisualStyle = Janus.Windows.UI.Dock.PanelVisualStyle.Office2007
+        '
+        'RadAllProvince
+        '
+        Me.RadAllProvince.AutoSize = True
+        Me.RadAllProvince.BackColor = System.Drawing.Color.Transparent
+        Me.RadAllProvince.Location = New System.Drawing.Point(21, 25)
+        Me.RadAllProvince.Name = "RadAllProvince"
+        Me.RadAllProvince.Size = New System.Drawing.Size(146, 24)
+        Me.RadAllProvince.TabIndex = 0
+        Me.RadAllProvince.Text = "View All Province"
+        Me.RadAllProvince.UseVisualStyleBackColor = False
+        '
+        'RadEachProvince
+        '
+        Me.RadEachProvince.AutoSize = True
+        Me.RadEachProvince.BackColor = System.Drawing.Color.Transparent
+        Me.RadEachProvince.Location = New System.Drawing.Point(21, 61)
+        Me.RadEachProvince.Name = "RadEachProvince"
+        Me.RadEachProvince.Size = New System.Drawing.Size(150, 24)
+        Me.RadEachProvince.TabIndex = 1
+        Me.RadEachProvince.Text = "View One Provice"
+        Me.RadEachProvince.UseVisualStyleBackColor = False
+        '
+        'CboProvince
+        '
+        Me.CboProvince.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.CboProvince.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.CboProvince.Enabled = False
+        Me.CboProvince.FormattingEnabled = True
+        Me.CboProvince.Location = New System.Drawing.Point(21, 89)
+        Me.CboProvince.Name = "CboProvince"
+        Me.CboProvince.Size = New System.Drawing.Size(331, 28)
+        Me.CboProvince.TabIndex = 2
+        '
+        'CboSexProvince
+        '
+        Me.CboSexProvince.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.CboSexProvince.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.CboSexProvince.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.CboSexProvince.FormattingEnabled = True
+        Me.CboSexProvince.Items.AddRange(New Object() {"Male", "Female"})
+        Me.CboSexProvince.Location = New System.Drawing.Point(535, 131)
+        Me.CboSexProvince.Name = "CboSexProvince"
+        Me.CboSexProvince.Size = New System.Drawing.Size(107, 28)
+        Me.CboSexProvince.TabIndex = 10
+        '
+        'ChSexProvince
+        '
+        Me.ChSexProvince.AutoSize = True
+        Me.ChSexProvince.BackColor = System.Drawing.Color.Transparent
+        Me.ChSexProvince.ForeColor = System.Drawing.Color.Red
+        Me.ChSexProvince.Location = New System.Drawing.Point(536, 102)
+        Me.ChSexProvince.Name = "ChSexProvince"
+        Me.ChSexProvince.Size = New System.Drawing.Size(55, 24)
+        Me.ChSexProvince.TabIndex = 9
+        Me.ChSexProvince.Text = "Sex"
+        Me.ChSexProvince.UseVisualStyleBackColor = False
+        '
         'Label3
         '
         Me.Label3.BackColor = System.Drawing.Color.Black
         Me.Label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label3.Location = New System.Drawing.Point(9, 97)
+        Me.Label3.Location = New System.Drawing.Point(9, 94)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(796, 2)
+        Me.Label3.Size = New System.Drawing.Size(518, 2)
         Me.Label3.TabIndex = 7
         Me.Label3.Text = "-"
         '
@@ -192,48 +287,17 @@ Partial Class FormDataAnalysis
         'BtnProvincePreview
         '
         Me.BtnProvincePreview.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnProvincePreview.Location = New System.Drawing.Point(364, 207)
+        Me.BtnProvincePreview.Location = New System.Drawing.Point(22, 231)
         Me.BtnProvincePreview.Name = "BtnProvincePreview"
         Me.BtnProvincePreview.Size = New System.Drawing.Size(164, 30)
         Me.BtnProvincePreview.TabIndex = 3
         Me.BtnProvincePreview.Text = "Print Preview"
         Me.BtnProvincePreview.UseVisualStyleBackColor = True
         '
-        'CboProvince
-        '
-        Me.CboProvince.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
-        Me.CboProvince.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
-        Me.CboProvince.Enabled = False
-        Me.CboProvince.FormattingEnabled = True
-        Me.CboProvince.Location = New System.Drawing.Point(197, 164)
-        Me.CboProvince.Name = "CboProvince"
-        Me.CboProvince.Size = New System.Drawing.Size(331, 28)
-        Me.CboProvince.TabIndex = 2
-        '
-        'RadEachProvince
-        '
-        Me.RadEachProvince.AutoSize = True
-        Me.RadEachProvince.BackColor = System.Drawing.Color.Transparent
-        Me.RadEachProvince.Location = New System.Drawing.Point(22, 164)
-        Me.RadEachProvince.Name = "RadEachProvince"
-        Me.RadEachProvince.Size = New System.Drawing.Size(150, 24)
-        Me.RadEachProvince.TabIndex = 1
-        Me.RadEachProvince.Text = "View One Provice"
-        Me.RadEachProvince.UseVisualStyleBackColor = False
-        '
-        'RadAllProvince
-        '
-        Me.RadAllProvince.AutoSize = True
-        Me.RadAllProvince.BackColor = System.Drawing.Color.Transparent
-        Me.RadAllProvince.Location = New System.Drawing.Point(22, 128)
-        Me.RadAllProvince.Name = "RadAllProvince"
-        Me.RadAllProvince.Size = New System.Drawing.Size(146, 24)
-        Me.RadAllProvince.TabIndex = 0
-        Me.RadAllProvince.Text = "View All Province"
-        Me.RadAllProvince.UseVisualStyleBackColor = False
-        '
         'UiTabPage2
         '
+        Me.UiTabPage2.Controls.Add(Me.CboSexComplain)
+        Me.UiTabPage2.Controls.Add(Me.chSexComplaint)
         Me.UiTabPage2.Controls.Add(Me.GroupBox2)
         Me.UiTabPage2.Controls.Add(Me.BtnPreviewDiagnosis)
         Me.UiTabPage2.Controls.Add(Me.cbodiagnosis)
@@ -245,6 +309,32 @@ Partial Class FormDataAnalysis
         Me.UiTabPage2.Size = New System.Drawing.Size(808, 277)
         Me.UiTabPage2.TabStop = True
         Me.UiTabPage2.Text = "Analys By Diagnosis With other"
+        '
+        'CboSexComplain
+        '
+        Me.CboSexComplain.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.CboSexComplain.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.CboSexComplain.Enabled = False
+        Me.CboSexComplain.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.CboSexComplain.FormattingEnabled = True
+        Me.CboSexComplain.Items.AddRange(New Object() {"Male", "Female"})
+        Me.CboSexComplain.Location = New System.Drawing.Point(613, 100)
+        Me.CboSexComplain.Name = "CboSexComplain"
+        Me.CboSexComplain.Size = New System.Drawing.Size(107, 28)
+        Me.CboSexComplain.TabIndex = 12
+        '
+        'chSexComplaint
+        '
+        Me.chSexComplaint.AutoSize = True
+        Me.chSexComplaint.BackColor = System.Drawing.Color.Transparent
+        Me.chSexComplaint.Enabled = False
+        Me.chSexComplaint.ForeColor = System.Drawing.Color.Red
+        Me.chSexComplaint.Location = New System.Drawing.Point(613, 71)
+        Me.chSexComplaint.Name = "chSexComplaint"
+        Me.chSexComplaint.Size = New System.Drawing.Size(55, 24)
+        Me.chSexComplaint.TabIndex = 11
+        Me.chSexComplaint.Text = "Sex"
+        Me.chSexComplaint.UseVisualStyleBackColor = False
         '
         'GroupBox2
         '
@@ -359,6 +449,8 @@ Partial Class FormDataAnalysis
         '
         'ByBlood
         '
+        Me.ByBlood.Controls.Add(Me.CboSexBlood)
+        Me.ByBlood.Controls.Add(Me.ChSexBlood)
         Me.ByBlood.Controls.Add(Me.RadParaAllDiagnosis)
         Me.ByBlood.Controls.Add(Me.cboParaDiagnosis)
         Me.ByBlood.Controls.Add(Me.RadParaOneDiagnosis)
@@ -370,6 +462,31 @@ Partial Class FormDataAnalysis
         Me.ByBlood.TabIndex = 0
         Me.ByBlood.Text = "By Blood"
         Me.ByBlood.UseVisualStyleBackColor = True
+        '
+        'CboSexBlood
+        '
+        Me.CboSexBlood.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.CboSexBlood.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.CboSexBlood.Enabled = False
+        Me.CboSexBlood.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.CboSexBlood.FormattingEnabled = True
+        Me.CboSexBlood.Items.AddRange(New Object() {"Male", "Female"})
+        Me.CboSexBlood.Location = New System.Drawing.Point(352, 83)
+        Me.CboSexBlood.Name = "CboSexBlood"
+        Me.CboSexBlood.Size = New System.Drawing.Size(107, 28)
+        Me.CboSexBlood.TabIndex = 12
+        '
+        'ChSexBlood
+        '
+        Me.ChSexBlood.AutoSize = True
+        Me.ChSexBlood.BackColor = System.Drawing.Color.Transparent
+        Me.ChSexBlood.ForeColor = System.Drawing.Color.Red
+        Me.ChSexBlood.Location = New System.Drawing.Point(352, 54)
+        Me.ChSexBlood.Name = "ChSexBlood"
+        Me.ChSexBlood.Size = New System.Drawing.Size(55, 24)
+        Me.ChSexBlood.TabIndex = 11
+        Me.ChSexBlood.Text = "Sex"
+        Me.ChSexBlood.UseVisualStyleBackColor = False
         '
         'RadParaAllDiagnosis
         '
@@ -416,6 +533,10 @@ Partial Class FormDataAnalysis
         '
         'Fibroscopy
         '
+        Me.Fibroscopy.Controls.Add(Me.CboSexFibros)
+        Me.Fibroscopy.Controls.Add(Me.ChSexFibros)
+        Me.Fibroscopy.Controls.Add(Me.CboFibroDiagnosis)
+        Me.Fibroscopy.Controls.Add(Me.ChViewFibroDiagnosis)
         Me.Fibroscopy.Controls.Add(Me.RadFibMotif)
         Me.Fibroscopy.Controls.Add(Me.CboFibroMotif)
         Me.Fibroscopy.Controls.Add(Me.RadFibOneMotif)
@@ -427,6 +548,54 @@ Partial Class FormDataAnalysis
         Me.Fibroscopy.TabIndex = 1
         Me.Fibroscopy.Text = "By Fibroscopy"
         Me.Fibroscopy.UseVisualStyleBackColor = True
+        '
+        'CboSexFibros
+        '
+        Me.CboSexFibros.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.CboSexFibros.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.CboSexFibros.Enabled = False
+        Me.CboSexFibros.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.CboSexFibros.FormattingEnabled = True
+        Me.CboSexFibros.Items.AddRange(New Object() {"Male", "Female"})
+        Me.CboSexFibros.Location = New System.Drawing.Point(616, 84)
+        Me.CboSexFibros.Name = "CboSexFibros"
+        Me.CboSexFibros.Size = New System.Drawing.Size(107, 28)
+        Me.CboSexFibros.TabIndex = 12
+        '
+        'ChSexFibros
+        '
+        Me.ChSexFibros.AutoSize = True
+        Me.ChSexFibros.BackColor = System.Drawing.Color.Transparent
+        Me.ChSexFibros.ForeColor = System.Drawing.Color.Red
+        Me.ChSexFibros.Location = New System.Drawing.Point(617, 55)
+        Me.ChSexFibros.Name = "ChSexFibros"
+        Me.ChSexFibros.Size = New System.Drawing.Size(55, 24)
+        Me.ChSexFibros.TabIndex = 11
+        Me.ChSexFibros.Text = "Sex"
+        Me.ChSexFibros.UseVisualStyleBackColor = False
+        '
+        'CboFibroDiagnosis
+        '
+        Me.CboFibroDiagnosis.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.CboFibroDiagnosis.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.CboFibroDiagnosis.DropDownWidth = 500
+        Me.CboFibroDiagnosis.Enabled = False
+        Me.CboFibroDiagnosis.FormattingEnabled = True
+        Me.CboFibroDiagnosis.Location = New System.Drawing.Point(320, 84)
+        Me.CboFibroDiagnosis.Name = "CboFibroDiagnosis"
+        Me.CboFibroDiagnosis.Size = New System.Drawing.Size(291, 28)
+        Me.CboFibroDiagnosis.TabIndex = 10
+        '
+        'ChViewFibroDiagnosis
+        '
+        Me.ChViewFibroDiagnosis.AutoSize = True
+        Me.ChViewFibroDiagnosis.ForeColor = System.Drawing.Color.Black
+        Me.ChViewFibroDiagnosis.Location = New System.Drawing.Point(320, 55)
+        Me.ChViewFibroDiagnosis.Name = "ChViewFibroDiagnosis"
+        Me.ChViewFibroDiagnosis.Size = New System.Drawing.Size(165, 24)
+        Me.ChViewFibroDiagnosis.TabIndex = 9
+        Me.ChViewFibroDiagnosis.Text = "View with diagnosis"
+        Me.ChViewFibroDiagnosis.UseVisualStyleBackColor = True
         '
         'RadFibMotif
         '
@@ -449,7 +618,7 @@ Partial Class FormDataAnalysis
         Me.CboFibroMotif.FormattingEnabled = True
         Me.CboFibroMotif.Location = New System.Drawing.Point(20, 84)
         Me.CboFibroMotif.Name = "CboFibroMotif"
-        Me.CboFibroMotif.Size = New System.Drawing.Size(331, 28)
+        Me.CboFibroMotif.Size = New System.Drawing.Size(291, 28)
         Me.CboFibroMotif.TabIndex = 7
         '
         'RadFibOneMotif
@@ -474,6 +643,10 @@ Partial Class FormDataAnalysis
         '
         'Nasogastro
         '
+        Me.Nasogastro.Controls.Add(Me.CboSexNasoga)
+        Me.Nasogastro.Controls.Add(Me.ChSexNasogo)
+        Me.Nasogastro.Controls.Add(Me.CboDiagnosisNasogastgro)
+        Me.Nasogastro.Controls.Add(Me.ChDiagnosisNaso)
         Me.Nasogastro.Controls.Add(Me.RadNasoAllMotif)
         Me.Nasogastro.Controls.Add(Me.CboNasoMotif)
         Me.Nasogastro.Controls.Add(Me.RadNasoByMotif)
@@ -485,6 +658,54 @@ Partial Class FormDataAnalysis
         Me.Nasogastro.TabIndex = 2
         Me.Nasogastro.Text = "By Nasogastro"
         Me.Nasogastro.UseVisualStyleBackColor = True
+        '
+        'CboSexNasoga
+        '
+        Me.CboSexNasoga.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.CboSexNasoga.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.CboSexNasoga.Enabled = False
+        Me.CboSexNasoga.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.CboSexNasoga.FormattingEnabled = True
+        Me.CboSexNasoga.Items.AddRange(New Object() {"Male", "Female"})
+        Me.CboSexNasoga.Location = New System.Drawing.Point(625, 80)
+        Me.CboSexNasoga.Name = "CboSexNasoga"
+        Me.CboSexNasoga.Size = New System.Drawing.Size(107, 28)
+        Me.CboSexNasoga.TabIndex = 14
+        '
+        'ChSexNasogo
+        '
+        Me.ChSexNasogo.AutoSize = True
+        Me.ChSexNasogo.BackColor = System.Drawing.Color.Transparent
+        Me.ChSexNasogo.ForeColor = System.Drawing.Color.Red
+        Me.ChSexNasogo.Location = New System.Drawing.Point(626, 51)
+        Me.ChSexNasogo.Name = "ChSexNasogo"
+        Me.ChSexNasogo.Size = New System.Drawing.Size(55, 24)
+        Me.ChSexNasogo.TabIndex = 13
+        Me.ChSexNasogo.Text = "Sex"
+        Me.ChSexNasogo.UseVisualStyleBackColor = False
+        '
+        'CboDiagnosisNasogastgro
+        '
+        Me.CboDiagnosisNasogastgro.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.CboDiagnosisNasogastgro.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.CboDiagnosisNasogastgro.DropDownWidth = 500
+        Me.CboDiagnosisNasogastgro.Enabled = False
+        Me.CboDiagnosisNasogastgro.FormattingEnabled = True
+        Me.CboDiagnosisNasogastgro.Location = New System.Drawing.Point(369, 81)
+        Me.CboDiagnosisNasogastgro.Name = "CboDiagnosisNasogastgro"
+        Me.CboDiagnosisNasogastgro.Size = New System.Drawing.Size(251, 28)
+        Me.CboDiagnosisNasogastgro.TabIndex = 12
+        '
+        'ChDiagnosisNaso
+        '
+        Me.ChDiagnosisNaso.AutoSize = True
+        Me.ChDiagnosisNaso.ForeColor = System.Drawing.Color.Black
+        Me.ChDiagnosisNaso.Location = New System.Drawing.Point(369, 52)
+        Me.ChDiagnosisNaso.Name = "ChDiagnosisNaso"
+        Me.ChDiagnosisNaso.Size = New System.Drawing.Size(165, 24)
+        Me.ChDiagnosisNaso.TabIndex = 11
+        Me.ChDiagnosisNaso.Text = "View with diagnosis"
+        Me.ChDiagnosisNaso.UseVisualStyleBackColor = True
         '
         'RadNasoAllMotif
         '
@@ -531,6 +752,10 @@ Partial Class FormDataAnalysis
         '
         'Coloscopy
         '
+        Me.Coloscopy.Controls.Add(Me.CboSexColoscopy)
+        Me.Coloscopy.Controls.Add(Me.ChSexColosco)
+        Me.Coloscopy.Controls.Add(Me.CboDiagnosisColoscopy)
+        Me.Coloscopy.Controls.Add(Me.ChViewDiagnosisColoscopy)
         Me.Coloscopy.Controls.Add(Me.RadColoAllDiagnosis)
         Me.Coloscopy.Controls.Add(Me.cboColoMotify)
         Me.Coloscopy.Controls.Add(Me.RadColoOneDiagnosis)
@@ -542,6 +767,54 @@ Partial Class FormDataAnalysis
         Me.Coloscopy.TabIndex = 3
         Me.Coloscopy.Text = "By Coloscopy"
         Me.Coloscopy.UseVisualStyleBackColor = True
+        '
+        'CboSexColoscopy
+        '
+        Me.CboSexColoscopy.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.CboSexColoscopy.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.CboSexColoscopy.Enabled = False
+        Me.CboSexColoscopy.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.CboSexColoscopy.FormattingEnabled = True
+        Me.CboSexColoscopy.Items.AddRange(New Object() {"Male", "Female"})
+        Me.CboSexColoscopy.Location = New System.Drawing.Point(672, 96)
+        Me.CboSexColoscopy.Name = "CboSexColoscopy"
+        Me.CboSexColoscopy.Size = New System.Drawing.Size(107, 28)
+        Me.CboSexColoscopy.TabIndex = 14
+        '
+        'ChSexColosco
+        '
+        Me.ChSexColosco.AutoSize = True
+        Me.ChSexColosco.BackColor = System.Drawing.Color.Transparent
+        Me.ChSexColosco.ForeColor = System.Drawing.Color.Red
+        Me.ChSexColosco.Location = New System.Drawing.Point(673, 67)
+        Me.ChSexColosco.Name = "ChSexColosco"
+        Me.ChSexColosco.Size = New System.Drawing.Size(55, 24)
+        Me.ChSexColosco.TabIndex = 13
+        Me.ChSexColosco.Text = "Sex"
+        Me.ChSexColosco.UseVisualStyleBackColor = False
+        '
+        'CboDiagnosisColoscopy
+        '
+        Me.CboDiagnosisColoscopy.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.CboDiagnosisColoscopy.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.CboDiagnosisColoscopy.DropDownWidth = 500
+        Me.CboDiagnosisColoscopy.Enabled = False
+        Me.CboDiagnosisColoscopy.FormattingEnabled = True
+        Me.CboDiagnosisColoscopy.Location = New System.Drawing.Point(376, 96)
+        Me.CboDiagnosisColoscopy.Name = "CboDiagnosisColoscopy"
+        Me.CboDiagnosisColoscopy.Size = New System.Drawing.Size(291, 28)
+        Me.CboDiagnosisColoscopy.TabIndex = 12
+        '
+        'ChViewDiagnosisColoscopy
+        '
+        Me.ChViewDiagnosisColoscopy.AutoSize = True
+        Me.ChViewDiagnosisColoscopy.ForeColor = System.Drawing.Color.Black
+        Me.ChViewDiagnosisColoscopy.Location = New System.Drawing.Point(376, 67)
+        Me.ChViewDiagnosisColoscopy.Name = "ChViewDiagnosisColoscopy"
+        Me.ChViewDiagnosisColoscopy.Size = New System.Drawing.Size(165, 24)
+        Me.ChViewDiagnosisColoscopy.TabIndex = 11
+        Me.ChViewDiagnosisColoscopy.Text = "View with diagnosis"
+        Me.ChViewDiagnosisColoscopy.UseVisualStyleBackColor = True
         '
         'RadColoAllDiagnosis
         '
@@ -663,6 +936,9 @@ Partial Class FormDataAnalysis
         Me.UiTab1.ResumeLayout(False)
         Me.UiTabPage1.ResumeLayout(False)
         Me.UiTabPage1.PerformLayout()
+        CType(Me.UiGroupBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.UiGroupBox1.ResumeLayout(False)
+        Me.UiGroupBox1.PerformLayout()
         Me.UiTabPage2.ResumeLayout(False)
         Me.UiTabPage2.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
@@ -731,4 +1007,23 @@ Partial Class FormDataAnalysis
     Friend WithEvents BgLoadAnalysis As System.ComponentModel.BackgroundWorker
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents ChViewDetialData As System.Windows.Forms.CheckBox
+    Friend WithEvents CboFibroDiagnosis As System.Windows.Forms.ComboBox
+    Friend WithEvents ChViewFibroDiagnosis As System.Windows.Forms.CheckBox
+    Friend WithEvents CboDiagnosisNasogastgro As System.Windows.Forms.ComboBox
+    Friend WithEvents ChDiagnosisNaso As System.Windows.Forms.CheckBox
+    Friend WithEvents CboDiagnosisColoscopy As System.Windows.Forms.ComboBox
+    Friend WithEvents ChViewDiagnosisColoscopy As System.Windows.Forms.CheckBox
+    Friend WithEvents ChSexProvince As System.Windows.Forms.CheckBox
+    Friend WithEvents CboSexProvince As System.Windows.Forms.ComboBox
+    Friend WithEvents CboSexComplain As System.Windows.Forms.ComboBox
+    Friend WithEvents chSexComplaint As System.Windows.Forms.CheckBox
+    Friend WithEvents CboSexBlood As System.Windows.Forms.ComboBox
+    Friend WithEvents ChSexBlood As System.Windows.Forms.CheckBox
+    Friend WithEvents CboSexFibros As System.Windows.Forms.ComboBox
+    Friend WithEvents ChSexFibros As System.Windows.Forms.CheckBox
+    Friend WithEvents CboSexNasoga As System.Windows.Forms.ComboBox
+    Friend WithEvents ChSexNasogo As System.Windows.Forms.CheckBox
+    Friend WithEvents CboSexColoscopy As System.Windows.Forms.ComboBox
+    Friend WithEvents ChSexColosco As System.Windows.Forms.CheckBox
+    Friend WithEvents UiGroupBox1 As Janus.Windows.EditControls.UIGroupBox
 End Class

@@ -5635,7 +5635,7 @@ Namespace DSAnalysisTableAdapters
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(3) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(6) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT        ppatientid, pgender, pAge, Age, pcontactaddress, prescriptionid, di"& _ 
@@ -5668,6 +5668,38 @@ Namespace DSAnalysisTableAdapters
             Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@From", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "Checkdate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@To", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "Checkdate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@diagnosis", Global.System.Data.SqlDbType.VarChar, 500, Global.System.Data.ParameterDirection.Input, 0, 0, "diagnosis", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(4) = New Global.System.Data.SqlClient.SqlCommand
+            Me._commandCollection(4).Connection = Me.Connection
+            Me._commandCollection(4).CommandText = "SELECT Age, Checkdate, diagnosis, pAge, patientid, pcontactaddress, pgender, pnam"& _ 
+                "e, ppatientid, pphoneno, prescriptionid FROM PROVINCE_DIAGNOSIS WHERE (Checkdate"& _ 
+                " BETWEEN @From AND @To) AND (diagnosis = @diagnosis) and pgender=@pgender"
+            Me._commandCollection(4).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@From", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "Checkdate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@To", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "Checkdate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@diagnosis", Global.System.Data.SqlDbType.VarChar, 500, Global.System.Data.ParameterDirection.Input, 0, 0, "diagnosis", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@pgender", Global.System.Data.SqlDbType.VarChar, 10, Global.System.Data.ParameterDirection.Input, 0, 0, "pgender", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(5) = New Global.System.Data.SqlClient.SqlCommand
+            Me._commandCollection(5).Connection = Me.Connection
+            Me._commandCollection(5).CommandText = "SELECT Age, Checkdate, diagnosis, pAge, patientid, pcontactaddress, pgender, pnam"& _ 
+                "e, ppatientid, pphoneno, prescriptionid FROM PROVINCE_DIAGNOSIS WHERE (Checkdate"& _ 
+                " BETWEEN @From AND @To) AND (pcontactaddress = @Address) and pgender=@pgender"
+            Me._commandCollection(5).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(5).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@From", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "Checkdate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(5).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@To", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "Checkdate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(5).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Address", Global.System.Data.SqlDbType.VarChar, 500, Global.System.Data.ParameterDirection.Input, 0, 0, "pcontactaddress", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(5).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@pgender", Global.System.Data.SqlDbType.VarChar, 10, Global.System.Data.ParameterDirection.Input, 0, 0, "pgender", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(6) = New Global.System.Data.SqlClient.SqlCommand
+            Me._commandCollection(6).Connection = Me.Connection
+            Me._commandCollection(6).CommandText = "SELECT Age, Checkdate, diagnosis, pAge, patientid, pcontactaddress, pgender, pnam"& _ 
+                "e, ppatientid, pphoneno, prescriptionid FROM PROVINCE_DIAGNOSIS WHERE (Checkdate"& _ 
+                " BETWEEN @From AND @To) AND (diagnosis = @diagnosis) and (pgender=@pgender) and "& _ 
+                "(pcontactaddress=@Address)"
+            Me._commandCollection(6).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(6).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@From", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "Checkdate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(6).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@To", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "Checkdate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(6).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@diagnosis", Global.System.Data.SqlDbType.VarChar, 500, Global.System.Data.ParameterDirection.Input, 0, 0, "diagnosis", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(6).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@pgender", Global.System.Data.SqlDbType.VarChar, 10, Global.System.Data.ParameterDirection.Input, 0, 0, "pgender", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(6).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Address", Global.System.Data.SqlDbType.VarChar, 500, Global.System.Data.ParameterDirection.Input, 0, 0, "pcontactaddress", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -5784,6 +5816,154 @@ Namespace DSAnalysisTableAdapters
                 Throw New Global.System.ArgumentNullException("diagnosis")
             Else
                 Me.Adapter.SelectCommand.Parameters(2).Value = CType(diagnosis,String)
+            End If
+            Dim dataTable As DSAnalysis.PROVINCE_DIAGNOSISDataTable = New DSAnalysis.PROVINCE_DIAGNOSISDataTable
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
+        Public Overloads Overridable Function FillBy3(ByVal dataTable As DSAnalysis.PROVINCE_DIAGNOSISDataTable, ByVal From As Date, ByVal _To As Date, ByVal diagnosis As String, ByVal pgender As String) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(4)
+            Me.Adapter.SelectCommand.Parameters(0).Value = CType(From,Date)
+            Me.Adapter.SelectCommand.Parameters(1).Value = CType(_To,Date)
+            If (diagnosis Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("diagnosis")
+            Else
+                Me.Adapter.SelectCommand.Parameters(2).Value = CType(diagnosis,String)
+            End If
+            If (pgender Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(3).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(3).Value = CType(pgender,String)
+            End If
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
+        Public Overloads Overridable Function SelectDateToDateDiagandSex(ByVal From As Date, ByVal _To As Date, ByVal diagnosis As String, ByVal pgender As String) As DSAnalysis.PROVINCE_DIAGNOSISDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(4)
+            Me.Adapter.SelectCommand.Parameters(0).Value = CType(From,Date)
+            Me.Adapter.SelectCommand.Parameters(1).Value = CType(_To,Date)
+            If (diagnosis Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("diagnosis")
+            Else
+                Me.Adapter.SelectCommand.Parameters(2).Value = CType(diagnosis,String)
+            End If
+            If (pgender Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(3).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(3).Value = CType(pgender,String)
+            End If
+            Dim dataTable As DSAnalysis.PROVINCE_DIAGNOSISDataTable = New DSAnalysis.PROVINCE_DIAGNOSISDataTable
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
+        Public Overloads Overridable Function FillBy4(ByVal dataTable As DSAnalysis.PROVINCE_DIAGNOSISDataTable, ByVal From As Date, ByVal _To As Date, ByVal Address As String, ByVal pgender As String) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(5)
+            Me.Adapter.SelectCommand.Parameters(0).Value = CType(From,Date)
+            Me.Adapter.SelectCommand.Parameters(1).Value = CType(_To,Date)
+            If (Address Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(2).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(2).Value = CType(Address,String)
+            End If
+            If (pgender Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(3).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(3).Value = CType(pgender,String)
+            End If
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
+        Public Overloads Overridable Function SelectDateToDateByProvinceAndSex(ByVal From As Date, ByVal _To As Date, ByVal Address As String, ByVal pgender As String) As DSAnalysis.PROVINCE_DIAGNOSISDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(5)
+            Me.Adapter.SelectCommand.Parameters(0).Value = CType(From,Date)
+            Me.Adapter.SelectCommand.Parameters(1).Value = CType(_To,Date)
+            If (Address Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(2).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(2).Value = CType(Address,String)
+            End If
+            If (pgender Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(3).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(3).Value = CType(pgender,String)
+            End If
+            Dim dataTable As DSAnalysis.PROVINCE_DIAGNOSISDataTable = New DSAnalysis.PROVINCE_DIAGNOSISDataTable
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
+        Public Overloads Overridable Function FillBy5(ByVal dataTable As DSAnalysis.PROVINCE_DIAGNOSISDataTable, ByVal From As Date, ByVal _To As Date, ByVal diagnosis As String, ByVal pgender As String, ByVal Address As String) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(6)
+            Me.Adapter.SelectCommand.Parameters(0).Value = CType(From,Date)
+            Me.Adapter.SelectCommand.Parameters(1).Value = CType(_To,Date)
+            If (diagnosis Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("diagnosis")
+            Else
+                Me.Adapter.SelectCommand.Parameters(2).Value = CType(diagnosis,String)
+            End If
+            If (pgender Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(3).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(3).Value = CType(pgender,String)
+            End If
+            If (Address Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(4).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(4).Value = CType(Address,String)
+            End If
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
+        Public Overloads Overridable Function SelectDateToDateDiagnosisProvinAndSex(ByVal From As Date, ByVal _To As Date, ByVal diagnosis As String, ByVal pgender As String, ByVal Address As String) As DSAnalysis.PROVINCE_DIAGNOSISDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(6)
+            Me.Adapter.SelectCommand.Parameters(0).Value = CType(From,Date)
+            Me.Adapter.SelectCommand.Parameters(1).Value = CType(_To,Date)
+            If (diagnosis Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("diagnosis")
+            Else
+                Me.Adapter.SelectCommand.Parameters(2).Value = CType(diagnosis,String)
+            End If
+            If (pgender Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(3).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(3).Value = CType(pgender,String)
+            End If
+            If (Address Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(4).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(4).Value = CType(Address,String)
             End If
             Dim dataTable As DSAnalysis.PROVINCE_DIAGNOSISDataTable = New DSAnalysis.PROVINCE_DIAGNOSISDataTable
             Me.Adapter.Fill(dataTable)
@@ -5934,7 +6114,7 @@ Namespace DSAnalysisTableAdapters
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(2) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(3) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT patientid, doctorid, diagnosis, Checkdate, consulttype, complaint, pname, "& _ 
@@ -5957,6 +6137,16 @@ Namespace DSAnalysisTableAdapters
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@From", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "Checkdate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@To", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "Checkdate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@diagnosis", Global.System.Data.SqlDbType.VarChar, 500, Global.System.Data.ParameterDirection.Input, 0, 0, "diagnosis", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(3) = New Global.System.Data.SqlClient.SqlCommand
+            Me._commandCollection(3).Connection = Me.Connection
+            Me._commandCollection(3).CommandText = "SELECT patientid, doctorid, diagnosis, Checkdate, consulttype, complaint, pname, "& _ 
+                "pgender, pAge, Age, prescriptionid FROM dbo.VIEW_DIAGNOSI_COMPLAINT"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"(Che"& _ 
+                "ckdate BETWEEN @From AND @To) AND (diagnosis=@diagnosis) and (pgender=@pgender)"
+            Me._commandCollection(3).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@From", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "Checkdate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@To", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "Checkdate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@diagnosis", Global.System.Data.SqlDbType.VarChar, 500, Global.System.Data.ParameterDirection.Input, 0, 0, "diagnosis", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@pgender", Global.System.Data.SqlDbType.VarChar, 10, Global.System.Data.ParameterDirection.Input, 0, 0, "pgender", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -6069,6 +6259,52 @@ Namespace DSAnalysisTableAdapters
                 Me.Adapter.SelectCommand.Parameters(2).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.SelectCommand.Parameters(2).Value = CType(diagnosis,String)
+            End If
+            Dim dataTable As DSAnalysis.VIEW_DIAGNOSI_COMPLAINTDataTable = New DSAnalysis.VIEW_DIAGNOSI_COMPLAINTDataTable
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
+        Public Overloads Overridable Function FillBy2(ByVal dataTable As DSAnalysis.VIEW_DIAGNOSI_COMPLAINTDataTable, ByVal From As Date, ByVal _To As Date, ByVal diagnosis As String, ByVal pgender As String) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(3)
+            Me.Adapter.SelectCommand.Parameters(0).Value = CType(From,Date)
+            Me.Adapter.SelectCommand.Parameters(1).Value = CType(_To,Date)
+            If (diagnosis Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("diagnosis")
+            Else
+                Me.Adapter.SelectCommand.Parameters(2).Value = CType(diagnosis,String)
+            End If
+            If (pgender Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("pgender")
+            Else
+                Me.Adapter.SelectCommand.Parameters(3).Value = CType(pgender,String)
+            End If
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
+        Public Overloads Overridable Function SelectComplaintWithDiagnosisAndSex(ByVal From As Date, ByVal _To As Date, ByVal diagnosis As String, ByVal pgender As String) As DSAnalysis.VIEW_DIAGNOSI_COMPLAINTDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(3)
+            Me.Adapter.SelectCommand.Parameters(0).Value = CType(From,Date)
+            Me.Adapter.SelectCommand.Parameters(1).Value = CType(_To,Date)
+            If (diagnosis Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("diagnosis")
+            Else
+                Me.Adapter.SelectCommand.Parameters(2).Value = CType(diagnosis,String)
+            End If
+            If (pgender Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("pgender")
+            Else
+                Me.Adapter.SelectCommand.Parameters(3).Value = CType(pgender,String)
             End If
             Dim dataTable As DSAnalysis.VIEW_DIAGNOSI_COMPLAINTDataTable = New DSAnalysis.VIEW_DIAGNOSI_COMPLAINTDataTable
             Me.Adapter.Fill(dataTable)
@@ -6219,7 +6455,7 @@ Namespace DSAnalysisTableAdapters
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(2) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(3) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT pname, pgender, pAge, Age, patientid, doctorid, diagnosis, Checkdate, cons"& _ 
@@ -6242,6 +6478,17 @@ Namespace DSAnalysisTableAdapters
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@From", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "Checkdate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@To", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "Checkdate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@diagnosis", Global.System.Data.SqlDbType.VarChar, 500, Global.System.Data.ParameterDirection.Input, 0, 0, "diagnosis", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(3) = New Global.System.Data.SqlClient.SqlCommand
+            Me._commandCollection(3).Connection = Me.Connection
+            Me._commandCollection(3).CommandText = "SELECT pname, pgender, pAge, Age, patientid, doctorid, diagnosis, Checkdate, cons"& _ 
+                "ulttype, prescriptionid, history FROM dbo.VIEW_DIAGNOSI_MEDICALHISTORY"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)& _ 
+                "(Checkdate BETWEEN @From and @To) AND (diagnosis=@diagnosis) and (pgender=@pgend"& _ 
+                "er)"
+            Me._commandCollection(3).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@From", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "Checkdate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@To", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "Checkdate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@diagnosis", Global.System.Data.SqlDbType.VarChar, 500, Global.System.Data.ParameterDirection.Input, 0, 0, "diagnosis", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@pgender", Global.System.Data.SqlDbType.VarChar, 10, Global.System.Data.ParameterDirection.Input, 0, 0, "pgender", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -6322,6 +6569,52 @@ Namespace DSAnalysisTableAdapters
                 Throw New Global.System.ArgumentNullException("diagnosis")
             Else
                 Me.Adapter.SelectCommand.Parameters(2).Value = CType(diagnosis,String)
+            End If
+            Dim dataTable As DSAnalysis.VIEW_DIAGNOSI_MEDICALHISTORYDataTable = New DSAnalysis.VIEW_DIAGNOSI_MEDICALHISTORYDataTable
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
+        Public Overloads Overridable Function FillBy2(ByVal dataTable As DSAnalysis.VIEW_DIAGNOSI_MEDICALHISTORYDataTable, ByVal From As Date, ByVal _To As Date, ByVal diagnosis As String, ByVal pgender As String) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(3)
+            Me.Adapter.SelectCommand.Parameters(0).Value = CType(From,Date)
+            Me.Adapter.SelectCommand.Parameters(1).Value = CType(_To,Date)
+            If (diagnosis Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("diagnosis")
+            Else
+                Me.Adapter.SelectCommand.Parameters(2).Value = CType(diagnosis,String)
+            End If
+            If (pgender Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("pgender")
+            Else
+                Me.Adapter.SelectCommand.Parameters(3).Value = CType(pgender,String)
+            End If
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
+        Public Overloads Overridable Function SelectMedicalHistoryWithDiagnosisAndSex(ByVal From As Date, ByVal _To As Date, ByVal diagnosis As String, ByVal pgender As String) As DSAnalysis.VIEW_DIAGNOSI_MEDICALHISTORYDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(3)
+            Me.Adapter.SelectCommand.Parameters(0).Value = CType(From,Date)
+            Me.Adapter.SelectCommand.Parameters(1).Value = CType(_To,Date)
+            If (diagnosis Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("diagnosis")
+            Else
+                Me.Adapter.SelectCommand.Parameters(2).Value = CType(diagnosis,String)
+            End If
+            If (pgender Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("pgender")
+            Else
+                Me.Adapter.SelectCommand.Parameters(3).Value = CType(pgender,String)
             End If
             Dim dataTable As DSAnalysis.VIEW_DIAGNOSI_MEDICALHISTORYDataTable = New DSAnalysis.VIEW_DIAGNOSI_MEDICALHISTORYDataTable
             Me.Adapter.Fill(dataTable)
@@ -6473,7 +6766,7 @@ Namespace DSAnalysisTableAdapters
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(2) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(3) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT pname, pgender, pAge, Age, patientid, doctorid, diagnosis, Checkdate, cons"& _ 
@@ -6497,6 +6790,17 @@ Namespace DSAnalysisTableAdapters
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@From", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "Checkdate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@To", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "Checkdate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@diagnosis", Global.System.Data.SqlDbType.VarChar, 500, Global.System.Data.ParameterDirection.Input, 0, 0, "diagnosis", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(3) = New Global.System.Data.SqlClient.SqlCommand
+            Me._commandCollection(3).Connection = Me.Connection
+            Me._commandCollection(3).CommandText = "SELECT pname, pgender, pAge, Age, patientid, doctorid, diagnosis, Checkdate, cons"& _ 
+                "ulttype, prescriptionid, physicalcheckid, physicalcheck FROM dbo.VIEW_DIAGNOSI_P"& _ 
+                "HYSICALCHECK"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE (Checkdate BETWEEN @From AND @To) AND diagnosis=@diagnosis a"& _ 
+                "nd pgender=@pgender"
+            Me._commandCollection(3).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@From", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "Checkdate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@To", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "Checkdate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@diagnosis", Global.System.Data.SqlDbType.VarChar, 500, Global.System.Data.ParameterDirection.Input, 0, 0, "diagnosis", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@pgender", Global.System.Data.SqlDbType.VarChar, 10, Global.System.Data.ParameterDirection.Input, 0, 0, "pgender", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -6577,6 +6881,52 @@ Namespace DSAnalysisTableAdapters
                 Throw New Global.System.ArgumentNullException("diagnosis")
             Else
                 Me.Adapter.SelectCommand.Parameters(2).Value = CType(diagnosis,String)
+            End If
+            Dim dataTable As DSAnalysis.VIEW_DIAGNOSI_PHYSICALCHECKDataTable = New DSAnalysis.VIEW_DIAGNOSI_PHYSICALCHECKDataTable
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
+        Public Overloads Overridable Function FillBy2(ByVal dataTable As DSAnalysis.VIEW_DIAGNOSI_PHYSICALCHECKDataTable, ByVal From As Date, ByVal _To As Date, ByVal diagnosis As String, ByVal pgender As String) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(3)
+            Me.Adapter.SelectCommand.Parameters(0).Value = CType(From,Date)
+            Me.Adapter.SelectCommand.Parameters(1).Value = CType(_To,Date)
+            If (diagnosis Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("diagnosis")
+            Else
+                Me.Adapter.SelectCommand.Parameters(2).Value = CType(diagnosis,String)
+            End If
+            If (pgender Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("pgender")
+            Else
+                Me.Adapter.SelectCommand.Parameters(3).Value = CType(pgender,String)
+            End If
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
+        Public Overloads Overridable Function SelectPhysicalWithDiagnosisAndSex(ByVal From As Date, ByVal _To As Date, ByVal diagnosis As String, ByVal pgender As String) As DSAnalysis.VIEW_DIAGNOSI_PHYSICALCHECKDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(3)
+            Me.Adapter.SelectCommand.Parameters(0).Value = CType(From,Date)
+            Me.Adapter.SelectCommand.Parameters(1).Value = CType(_To,Date)
+            If (diagnosis Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("diagnosis")
+            Else
+                Me.Adapter.SelectCommand.Parameters(2).Value = CType(diagnosis,String)
+            End If
+            If (pgender Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("pgender")
+            Else
+                Me.Adapter.SelectCommand.Parameters(3).Value = CType(pgender,String)
             End If
             Dim dataTable As DSAnalysis.VIEW_DIAGNOSI_PHYSICALCHECKDataTable = New DSAnalysis.VIEW_DIAGNOSI_PHYSICALCHECKDataTable
             Me.Adapter.Fill(dataTable)
@@ -6728,7 +7078,7 @@ Namespace DSAnalysisTableAdapters
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(2) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(4) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT ppatientid, pname, pgender, pAge, Age, pcontactaddress, request_date, Doct"& _ 
@@ -6751,6 +7101,26 @@ Namespace DSAnalysisTableAdapters
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@from", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "request_date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@to", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "request_date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Diagnosis", Global.System.Data.SqlDbType.NVarChar, 150, Global.System.Data.ParameterDirection.Input, 0, 0, "Diagnosis", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(3) = New Global.System.Data.SqlClient.SqlCommand
+            Me._commandCollection(3).Connection = Me.Connection
+            Me._commandCollection(3).CommandText = "SELECT ppatientid, pname, pgender, pAge, Age, pcontactaddress, request_date, Doct"& _ 
+                "or_ID, item_name, result, item_id, Diagnosis FROM dbo.VIEW_PARAEXAM_BLOOD"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE"& _ 
+                " (request_date between @from and @to) and Diagnosis=@Diagnosis and (pgender=@pge"& _ 
+                "nder)"
+            Me._commandCollection(3).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@from", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "request_date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@to", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "request_date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Diagnosis", Global.System.Data.SqlDbType.NVarChar, 150, Global.System.Data.ParameterDirection.Input, 0, 0, "Diagnosis", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@pgender", Global.System.Data.SqlDbType.VarChar, 10, Global.System.Data.ParameterDirection.Input, 0, 0, "pgender", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(4) = New Global.System.Data.SqlClient.SqlCommand
+            Me._commandCollection(4).Connection = Me.Connection
+            Me._commandCollection(4).CommandText = "SELECT ppatientid, pname, pgender, pAge, Age, pcontactaddress, request_date, Doct"& _ 
+                "or_ID, item_name, result, item_id, Diagnosis FROM dbo.VIEW_PARAEXAM_BLOOD"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE"& _ 
+                "  request_date between @From AND @To and pgender=@pgender"
+            Me._commandCollection(4).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@From", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "request_date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@To", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "request_date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@pgender", Global.System.Data.SqlDbType.VarChar, 10, Global.System.Data.ParameterDirection.Input, 0, 0, "pgender", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -6863,6 +7233,120 @@ Namespace DSAnalysisTableAdapters
                 Me.Adapter.SelectCommand.Parameters(2).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.SelectCommand.Parameters(2).Value = CType(Diagnosis,String)
+            End If
+            Dim dataTable As DSAnalysis.VIEW_PARAEXAM_BLOODDataTable = New DSAnalysis.VIEW_PARAEXAM_BLOODDataTable
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
+        Public Overloads Overridable Function FillBy2(ByVal dataTable As DSAnalysis.VIEW_PARAEXAM_BLOODDataTable, ByVal from As Global.System.Nullable(Of Date), ByVal _to As Global.System.Nullable(Of Date), ByVal Diagnosis As String, ByVal pgender As String) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(3)
+            If (from.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(from.Value,Date)
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
+            End If
+            If (_to.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(_to.Value,Date)
+            Else
+                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
+            End If
+            If (Diagnosis Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(2).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(2).Value = CType(Diagnosis,String)
+            End If
+            If (pgender Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("pgender")
+            Else
+                Me.Adapter.SelectCommand.Parameters(3).Value = CType(pgender,String)
+            End If
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
+        Public Overloads Overridable Function SelectParaBloodByDiagnosisAndSex(ByVal from As Global.System.Nullable(Of Date), ByVal _to As Global.System.Nullable(Of Date), ByVal Diagnosis As String, ByVal pgender As String) As DSAnalysis.VIEW_PARAEXAM_BLOODDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(3)
+            If (from.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(from.Value,Date)
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
+            End If
+            If (_to.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(_to.Value,Date)
+            Else
+                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
+            End If
+            If (Diagnosis Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(2).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(2).Value = CType(Diagnosis,String)
+            End If
+            If (pgender Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("pgender")
+            Else
+                Me.Adapter.SelectCommand.Parameters(3).Value = CType(pgender,String)
+            End If
+            Dim dataTable As DSAnalysis.VIEW_PARAEXAM_BLOODDataTable = New DSAnalysis.VIEW_PARAEXAM_BLOODDataTable
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
+        Public Overloads Overridable Function FillBy3(ByVal dataTable As DSAnalysis.VIEW_PARAEXAM_BLOODDataTable, ByVal From As Global.System.Nullable(Of Date), ByVal _To As Global.System.Nullable(Of Date), ByVal pgender As String) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(4)
+            If (From.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(From.Value,Date)
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
+            End If
+            If (_To.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(_To.Value,Date)
+            Else
+                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
+            End If
+            If (pgender Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("pgender")
+            Else
+                Me.Adapter.SelectCommand.Parameters(2).Value = CType(pgender,String)
+            End If
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
+        Public Overloads Overridable Function SelectParaExamBloodByDateToDateWithSex(ByVal From As Global.System.Nullable(Of Date), ByVal _To As Global.System.Nullable(Of Date), ByVal pgender As String) As DSAnalysis.VIEW_PARAEXAM_BLOODDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(4)
+            If (From.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(From.Value,Date)
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
+            End If
+            If (_To.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(_To.Value,Date)
+            Else
+                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
+            End If
+            If (pgender Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("pgender")
+            Else
+                Me.Adapter.SelectCommand.Parameters(2).Value = CType(pgender,String)
             End If
             Dim dataTable As DSAnalysis.VIEW_PARAEXAM_BLOODDataTable = New DSAnalysis.VIEW_PARAEXAM_BLOODDataTable
             Me.Adapter.Fill(dataTable)
@@ -7015,7 +7499,7 @@ Namespace DSAnalysisTableAdapters
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(3) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(7) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT     pname, pgender, pAge, Age, pcontactaddress, ppatientid, request_date, "& _ 
@@ -7050,6 +7534,52 @@ Namespace DSAnalysisTableAdapters
             Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@From", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "request_date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@To", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "request_date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@motify", Global.System.Data.SqlDbType.VarChar, 250, Global.System.Data.ParameterDirection.Input, 0, 0, "motify", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(4) = New Global.System.Data.SqlClient.SqlCommand
+            Me._commandCollection(4).Connection = Me.Connection
+            Me._commandCollection(4).CommandText = "SELECT     pname, pgender, pAge, Age, pcontactaddress, ppatientid, request_date, "& _ 
+                "Doctor_ID, Diagnosis, conclusion_id, conclusion_name, request_id, motify"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM  "& _ 
+                "       VIEW_PARAEXAM_FIBROSCOPY"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE (request_date BETWEEN @From AND @To) and "& _ 
+                "(motify=@motify) and (Diagnosis=@Diagnosis)"
+            Me._commandCollection(4).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@From", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "request_date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@To", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "request_date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@motify", Global.System.Data.SqlDbType.VarChar, 250, Global.System.Data.ParameterDirection.Input, 0, 0, "motify", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Diagnosis", Global.System.Data.SqlDbType.NVarChar, 150, Global.System.Data.ParameterDirection.Input, 0, 0, "Diagnosis", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(5) = New Global.System.Data.SqlClient.SqlCommand
+            Me._commandCollection(5).Connection = Me.Connection
+            Me._commandCollection(5).CommandText = "SELECT     pname, pgender, pAge, Age, pcontactaddress, ppatientid, request_date, "& _ 
+                "Doctor_ID, Diagnosis, conclusion_id, conclusion_name, request_id, motify"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM  "& _ 
+                "       VIEW_PARAEXAM_FIBROSCOPY"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE (request_date BETWEEN @From AND @To) and "& _ 
+                "(motify=@motify) and (Diagnosis=@Diagnosis) AND (pgender=@Sex)"
+            Me._commandCollection(5).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(5).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@From", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "request_date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(5).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@To", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "request_date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(5).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@motify", Global.System.Data.SqlDbType.VarChar, 250, Global.System.Data.ParameterDirection.Input, 0, 0, "motify", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(5).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Diagnosis", Global.System.Data.SqlDbType.NVarChar, 150, Global.System.Data.ParameterDirection.Input, 0, 0, "Diagnosis", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(5).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Sex", Global.System.Data.SqlDbType.VarChar, 10, Global.System.Data.ParameterDirection.Input, 0, 0, "pgender", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(6) = New Global.System.Data.SqlClient.SqlCommand
+            Me._commandCollection(6).Connection = Me.Connection
+            Me._commandCollection(6).CommandText = "SELECT Age, Diagnosis, Doctor_ID, conclusion_id, conclusion_name, motify, pAge, p"& _ 
+                "contactaddress, pgender, pname, ppatientid, request_date, request_id FROM VIEW_P"& _ 
+                "ARAEXAM_FIBROSCOPY WHERE (request_date BETWEEN @From AND @To) AND (Diagnosis = @"& _ 
+                "Diagnosis) and (pgender=@Sex)"
+            Me._commandCollection(6).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(6).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@From", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "request_date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(6).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@To", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "request_date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(6).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Diagnosis", Global.System.Data.SqlDbType.NVarChar, 150, Global.System.Data.ParameterDirection.Input, 0, 0, "Diagnosis", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(6).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Sex", Global.System.Data.SqlDbType.VarChar, 10, Global.System.Data.ParameterDirection.Input, 0, 0, "pgender", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(7) = New Global.System.Data.SqlClient.SqlCommand
+            Me._commandCollection(7).Connection = Me.Connection
+            Me._commandCollection(7).CommandText = "SELECT     pname, pgender, pAge, Age, pcontactaddress, ppatientid, request_date, "& _ 
+                "Doctor_ID, Diagnosis, conclusion_id, conclusion_name, request_id, motify"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM  "& _ 
+                "       VIEW_PARAEXAM_FIBROSCOPY"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE (request_date BETWEEN @From AND @To) and "& _ 
+                "(motify=@motify) and (Diagnosis=@Diagnosis) and (pgender=@Sex)"
+            Me._commandCollection(7).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(7).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@From", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "request_date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(7).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@To", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "request_date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(7).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@motify", Global.System.Data.SqlDbType.VarChar, 250, Global.System.Data.ParameterDirection.Input, 0, 0, "motify", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(7).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Diagnosis", Global.System.Data.SqlDbType.NVarChar, 150, Global.System.Data.ParameterDirection.Input, 0, 0, "Diagnosis", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(7).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Sex", Global.System.Data.SqlDbType.VarChar, 10, Global.System.Data.ParameterDirection.Input, 0, 0, "pgender", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -7219,6 +7749,274 @@ Namespace DSAnalysisTableAdapters
             Me.Adapter.Fill(dataTable)
             Return dataTable
         End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
+        Public Overloads Overridable Function FillBy3(ByVal dataTable As DSAnalysis.VIEW_PARAEXAM_FIBROSCOPYDataTable, ByVal From As Global.System.Nullable(Of Date), ByVal _To As Global.System.Nullable(Of Date), ByVal motify As String, ByVal Diagnosis As String) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(4)
+            If (From.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(From.Value,Date)
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
+            End If
+            If (_To.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(_To.Value,Date)
+            Else
+                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
+            End If
+            If (motify Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(2).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(2).Value = CType(motify,String)
+            End If
+            If (Diagnosis Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(3).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(3).Value = CType(Diagnosis,String)
+            End If
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
+        Public Overloads Overridable Function SelectFibroScopyWithMotifAndDiagnosis(ByVal From As Global.System.Nullable(Of Date), ByVal _To As Global.System.Nullable(Of Date), ByVal motify As String, ByVal Diagnosis As String) As DSAnalysis.VIEW_PARAEXAM_FIBROSCOPYDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(4)
+            If (From.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(From.Value,Date)
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
+            End If
+            If (_To.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(_To.Value,Date)
+            Else
+                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
+            End If
+            If (motify Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(2).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(2).Value = CType(motify,String)
+            End If
+            If (Diagnosis Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(3).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(3).Value = CType(Diagnosis,String)
+            End If
+            Dim dataTable As DSAnalysis.VIEW_PARAEXAM_FIBROSCOPYDataTable = New DSAnalysis.VIEW_PARAEXAM_FIBROSCOPYDataTable
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
+        Public Overloads Overridable Function FillBy4(ByVal dataTable As DSAnalysis.VIEW_PARAEXAM_FIBROSCOPYDataTable, ByVal From As Global.System.Nullable(Of Date), ByVal _To As Global.System.Nullable(Of Date), ByVal motify As String, ByVal Diagnosis As String, ByVal Sex As String) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(5)
+            If (From.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(From.Value,Date)
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
+            End If
+            If (_To.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(_To.Value,Date)
+            Else
+                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
+            End If
+            If (motify Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(2).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(2).Value = CType(motify,String)
+            End If
+            If (Diagnosis Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(3).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(3).Value = CType(Diagnosis,String)
+            End If
+            If (Sex Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Sex")
+            Else
+                Me.Adapter.SelectCommand.Parameters(4).Value = CType(Sex,String)
+            End If
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
+        Public Overloads Overridable Function SelectFibroScopyWithMotifDiagnosisAndSex(ByVal From As Global.System.Nullable(Of Date), ByVal _To As Global.System.Nullable(Of Date), ByVal motify As String, ByVal Diagnosis As String, ByVal Sex As String) As DSAnalysis.VIEW_PARAEXAM_FIBROSCOPYDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(5)
+            If (From.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(From.Value,Date)
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
+            End If
+            If (_To.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(_To.Value,Date)
+            Else
+                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
+            End If
+            If (motify Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(2).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(2).Value = CType(motify,String)
+            End If
+            If (Diagnosis Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(3).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(3).Value = CType(Diagnosis,String)
+            End If
+            If (Sex Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Sex")
+            Else
+                Me.Adapter.SelectCommand.Parameters(4).Value = CType(Sex,String)
+            End If
+            Dim dataTable As DSAnalysis.VIEW_PARAEXAM_FIBROSCOPYDataTable = New DSAnalysis.VIEW_PARAEXAM_FIBROSCOPYDataTable
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
+        Public Overloads Overridable Function FillBy5(ByVal dataTable As DSAnalysis.VIEW_PARAEXAM_FIBROSCOPYDataTable, ByVal From As Global.System.Nullable(Of Date), ByVal _To As Global.System.Nullable(Of Date), ByVal Diagnosis As String, ByVal Sex As String) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(6)
+            If (From.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(From.Value,Date)
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
+            End If
+            If (_To.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(_To.Value,Date)
+            Else
+                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
+            End If
+            If (Diagnosis Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(2).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(2).Value = CType(Diagnosis,String)
+            End If
+            If (Sex Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Sex")
+            Else
+                Me.Adapter.SelectCommand.Parameters(3).Value = CType(Sex,String)
+            End If
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
+        Public Overloads Overridable Function SelectFibroscopyWithDiagnosisAndSex(ByVal From As Global.System.Nullable(Of Date), ByVal _To As Global.System.Nullable(Of Date), ByVal Diagnosis As String, ByVal Sex As String) As DSAnalysis.VIEW_PARAEXAM_FIBROSCOPYDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(6)
+            If (From.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(From.Value,Date)
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
+            End If
+            If (_To.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(_To.Value,Date)
+            Else
+                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
+            End If
+            If (Diagnosis Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(2).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(2).Value = CType(Diagnosis,String)
+            End If
+            If (Sex Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Sex")
+            Else
+                Me.Adapter.SelectCommand.Parameters(3).Value = CType(Sex,String)
+            End If
+            Dim dataTable As DSAnalysis.VIEW_PARAEXAM_FIBROSCOPYDataTable = New DSAnalysis.VIEW_PARAEXAM_FIBROSCOPYDataTable
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
+        Public Overloads Overridable Function FillBy6(ByVal dataTable As DSAnalysis.VIEW_PARAEXAM_FIBROSCOPYDataTable, ByVal From As Global.System.Nullable(Of Date), ByVal _To As Global.System.Nullable(Of Date), ByVal motify As String, ByVal Diagnosis As String, ByVal Sex As String) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(7)
+            If (From.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(From.Value,Date)
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
+            End If
+            If (_To.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(_To.Value,Date)
+            Else
+                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
+            End If
+            If (motify Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(2).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(2).Value = CType(motify,String)
+            End If
+            If (Diagnosis Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(3).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(3).Value = CType(Diagnosis,String)
+            End If
+            If (Sex Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Sex")
+            Else
+                Me.Adapter.SelectCommand.Parameters(4).Value = CType(Sex,String)
+            End If
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
+        Public Overloads Overridable Function SelectFibScopyMotifDiagnosisAndSex(ByVal From As Global.System.Nullable(Of Date), ByVal _To As Global.System.Nullable(Of Date), ByVal motify As String, ByVal Diagnosis As String, ByVal Sex As String) As DSAnalysis.VIEW_PARAEXAM_FIBROSCOPYDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(7)
+            If (From.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(From.Value,Date)
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
+            End If
+            If (_To.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(_To.Value,Date)
+            Else
+                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
+            End If
+            If (motify Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(2).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(2).Value = CType(motify,String)
+            End If
+            If (Diagnosis Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(3).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(3).Value = CType(Diagnosis,String)
+            End If
+            If (Sex Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Sex")
+            Else
+                Me.Adapter.SelectCommand.Parameters(4).Value = CType(Sex,String)
+            End If
+            Dim dataTable As DSAnalysis.VIEW_PARAEXAM_FIBROSCOPYDataTable = New DSAnalysis.VIEW_PARAEXAM_FIBROSCOPYDataTable
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
     End Class
     
     '''<summary>
@@ -7365,7 +8163,7 @@ Namespace DSAnalysisTableAdapters
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(3) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(6) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT     pname, pgender, pAge, Age, pcontactaddress, ppatientid, request_date, "& _ 
@@ -7394,11 +8192,45 @@ Namespace DSAnalysisTableAdapters
             Me._commandCollection(3).CommandText = "SELECT     pname, pgender, pAge, Age, pcontactaddress, ppatientid, request_date, "& _ 
                 "Doctor_ID, Diagnosis, conclusion_id, conclusion_name, motify"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM         VIEW_"& _ 
                 "PARAEXAM_NASOGASTRO"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"(request_date BETWEEN @From AND @To) AND (motify = @"& _ 
-                "Diagnosis)"
+                "motify)"
             Me._commandCollection(3).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@From", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "request_date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@To", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "request_date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Diagnosis", Global.System.Data.SqlDbType.VarChar, 250, Global.System.Data.ParameterDirection.Input, 0, 0, "motify", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@motify", Global.System.Data.SqlDbType.VarChar, 250, Global.System.Data.ParameterDirection.Input, 0, 0, "motify", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(4) = New Global.System.Data.SqlClient.SqlCommand
+            Me._commandCollection(4).Connection = Me.Connection
+            Me._commandCollection(4).CommandText = "SELECT     pname, pgender, pAge, Age, pcontactaddress, ppatientid, request_date, "& _ 
+                "Doctor_ID, Diagnosis, conclusion_id, conclusion_name, motify"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM         VIEW_"& _ 
+                "PARAEXAM_NASOGASTRO"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"(request_date BETWEEN @From AND @To) AND (motify = @"& _ 
+                "motify) and (Diagnosis=@Diagnosis)"
+            Me._commandCollection(4).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@From", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "request_date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@To", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "request_date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@motify", Global.System.Data.SqlDbType.VarChar, 250, Global.System.Data.ParameterDirection.Input, 0, 0, "motify", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Diagnosis", Global.System.Data.SqlDbType.NVarChar, 150, Global.System.Data.ParameterDirection.Input, 0, 0, "Diagnosis", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(5) = New Global.System.Data.SqlClient.SqlCommand
+            Me._commandCollection(5).Connection = Me.Connection
+            Me._commandCollection(5).CommandText = "SELECT Age, Diagnosis, Doctor_ID, conclusion_id, conclusion_name, motify, pAge, p"& _ 
+                "contactaddress, pgender, pname, ppatientid, request_date FROM VIEW_PARAEXAM_NASO"& _ 
+                "GASTRO WHERE (request_date BETWEEN @From AND @To) AND (Diagnosis = @Diagnosis) a"& _ 
+                "nd (pgender=@pgender)"
+            Me._commandCollection(5).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(5).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@From", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "request_date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(5).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@To", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "request_date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(5).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Diagnosis", Global.System.Data.SqlDbType.NVarChar, 150, Global.System.Data.ParameterDirection.Input, 0, 0, "Diagnosis", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(5).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@pgender", Global.System.Data.SqlDbType.VarChar, 10, Global.System.Data.ParameterDirection.Input, 0, 0, "pgender", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(6) = New Global.System.Data.SqlClient.SqlCommand
+            Me._commandCollection(6).Connection = Me.Connection
+            Me._commandCollection(6).CommandText = "SELECT     pname, pgender, pAge, Age, pcontactaddress, ppatientid, request_date, "& _ 
+                "Doctor_ID, Diagnosis, conclusion_id, conclusion_name, motify"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM         VIEW_"& _ 
+                "PARAEXAM_NASOGASTRO"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"(request_date BETWEEN @From AND @To) AND (motify = @"& _ 
+                "motify) and (Diagnosis=@Diagnosis) and (pgender=@pgender)"
+            Me._commandCollection(6).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(6).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@From", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "request_date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(6).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@To", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "request_date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(6).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@motify", Global.System.Data.SqlDbType.VarChar, 250, Global.System.Data.ParameterDirection.Input, 0, 0, "motify", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(6).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Diagnosis", Global.System.Data.SqlDbType.NVarChar, 150, Global.System.Data.ParameterDirection.Input, 0, 0, "Diagnosis", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(6).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@pgender", Global.System.Data.SqlDbType.VarChar, 10, Global.System.Data.ParameterDirection.Input, 0, 0, "pgender", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -7520,7 +8352,7 @@ Namespace DSAnalysisTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
-        Public Overloads Overridable Function FillBy2(ByVal dataTable As DSAnalysis.VIEW_PARAEXAM_NASOGASTRODataTable, ByVal From As Global.System.Nullable(Of Date), ByVal _To As Global.System.Nullable(Of Date), ByVal Diagnosis As String) As Integer
+        Public Overloads Overridable Function FillBy2(ByVal dataTable As DSAnalysis.VIEW_PARAEXAM_NASOGASTRODataTable, ByVal From As Global.System.Nullable(Of Date), ByVal _To As Global.System.Nullable(Of Date), ByVal motify As String) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(3)
             If (From.HasValue = true) Then
                 Me.Adapter.SelectCommand.Parameters(0).Value = CType(From.Value,Date)
@@ -7532,10 +8364,10 @@ Namespace DSAnalysisTableAdapters
             Else
                 Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
             End If
-            If (Diagnosis Is Nothing) Then
+            If (motify Is Nothing) Then
                 Me.Adapter.SelectCommand.Parameters(2).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.SelectCommand.Parameters(2).Value = CType(Diagnosis,String)
+                Me.Adapter.SelectCommand.Parameters(2).Value = CType(motify,String)
             End If
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
@@ -7547,8 +8379,95 @@ Namespace DSAnalysisTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
-        Public Overloads Overridable Function SelectNasogastroWithMotif(ByVal From As Global.System.Nullable(Of Date), ByVal _To As Global.System.Nullable(Of Date), ByVal Diagnosis As String) As DSAnalysis.VIEW_PARAEXAM_NASOGASTRODataTable
+        Public Overloads Overridable Function SelectNasogastroWithMotif(ByVal From As Global.System.Nullable(Of Date), ByVal _To As Global.System.Nullable(Of Date), ByVal motify As String) As DSAnalysis.VIEW_PARAEXAM_NASOGASTRODataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(3)
+            If (From.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(From.Value,Date)
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
+            End If
+            If (_To.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(_To.Value,Date)
+            Else
+                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
+            End If
+            If (motify Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(2).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(2).Value = CType(motify,String)
+            End If
+            Dim dataTable As DSAnalysis.VIEW_PARAEXAM_NASOGASTRODataTable = New DSAnalysis.VIEW_PARAEXAM_NASOGASTRODataTable
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
+        Public Overloads Overridable Function FillBy3(ByVal dataTable As DSAnalysis.VIEW_PARAEXAM_NASOGASTRODataTable, ByVal From As Global.System.Nullable(Of Date), ByVal _To As Global.System.Nullable(Of Date), ByVal motify As String, ByVal Diagnosis As String) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(4)
+            If (From.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(From.Value,Date)
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
+            End If
+            If (_To.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(_To.Value,Date)
+            Else
+                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
+            End If
+            If (motify Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(2).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(2).Value = CType(motify,String)
+            End If
+            If (Diagnosis Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(3).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(3).Value = CType(Diagnosis,String)
+            End If
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
+        Public Overloads Overridable Function SelectNasogastrowithDiagnosisAndMofif(ByVal From As Global.System.Nullable(Of Date), ByVal _To As Global.System.Nullable(Of Date), ByVal motify As String, ByVal Diagnosis As String) As DSAnalysis.VIEW_PARAEXAM_NASOGASTRODataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(4)
+            If (From.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(From.Value,Date)
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
+            End If
+            If (_To.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(_To.Value,Date)
+            Else
+                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
+            End If
+            If (motify Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(2).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(2).Value = CType(motify,String)
+            End If
+            If (Diagnosis Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(3).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(3).Value = CType(Diagnosis,String)
+            End If
+            Dim dataTable As DSAnalysis.VIEW_PARAEXAM_NASOGASTRODataTable = New DSAnalysis.VIEW_PARAEXAM_NASOGASTRODataTable
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
+        Public Overloads Overridable Function FillBy4(ByVal dataTable As DSAnalysis.VIEW_PARAEXAM_NASOGASTRODataTable, ByVal From As Global.System.Nullable(Of Date), ByVal _To As Global.System.Nullable(Of Date), ByVal Diagnosis As String, ByVal pgender As String) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(5)
             If (From.HasValue = true) Then
                 Me.Adapter.SelectCommand.Parameters(0).Value = CType(From.Value,Date)
             Else
@@ -7563,6 +8482,115 @@ Namespace DSAnalysisTableAdapters
                 Me.Adapter.SelectCommand.Parameters(2).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.SelectCommand.Parameters(2).Value = CType(Diagnosis,String)
+            End If
+            If (pgender Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("pgender")
+            Else
+                Me.Adapter.SelectCommand.Parameters(3).Value = CType(pgender,String)
+            End If
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
+        Public Overloads Overridable Function SelectNasogastroWithDiagnosisAndSex(ByVal From As Global.System.Nullable(Of Date), ByVal _To As Global.System.Nullable(Of Date), ByVal Diagnosis As String, ByVal pgender As String) As DSAnalysis.VIEW_PARAEXAM_NASOGASTRODataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(5)
+            If (From.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(From.Value,Date)
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
+            End If
+            If (_To.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(_To.Value,Date)
+            Else
+                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
+            End If
+            If (Diagnosis Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(2).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(2).Value = CType(Diagnosis,String)
+            End If
+            If (pgender Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("pgender")
+            Else
+                Me.Adapter.SelectCommand.Parameters(3).Value = CType(pgender,String)
+            End If
+            Dim dataTable As DSAnalysis.VIEW_PARAEXAM_NASOGASTRODataTable = New DSAnalysis.VIEW_PARAEXAM_NASOGASTRODataTable
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
+        Public Overloads Overridable Function FillBy5(ByVal dataTable As DSAnalysis.VIEW_PARAEXAM_NASOGASTRODataTable, ByVal From As Global.System.Nullable(Of Date), ByVal _To As Global.System.Nullable(Of Date), ByVal motify As String, ByVal Diagnosis As String, ByVal pgender As String) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(6)
+            If (From.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(From.Value,Date)
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
+            End If
+            If (_To.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(_To.Value,Date)
+            Else
+                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
+            End If
+            If (motify Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(2).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(2).Value = CType(motify,String)
+            End If
+            If (Diagnosis Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(3).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(3).Value = CType(Diagnosis,String)
+            End If
+            If (pgender Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("pgender")
+            Else
+                Me.Adapter.SelectCommand.Parameters(4).Value = CType(pgender,String)
+            End If
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
+        Public Overloads Overridable Function SelectNasogastrowithDiagnosisAndMofifSex(ByVal From As Global.System.Nullable(Of Date), ByVal _To As Global.System.Nullable(Of Date), ByVal motify As String, ByVal Diagnosis As String, ByVal pgender As String) As DSAnalysis.VIEW_PARAEXAM_NASOGASTRODataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(6)
+            If (From.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(From.Value,Date)
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
+            End If
+            If (_To.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(_To.Value,Date)
+            Else
+                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
+            End If
+            If (motify Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(2).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(2).Value = CType(motify,String)
+            End If
+            If (Diagnosis Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(3).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(3).Value = CType(Diagnosis,String)
+            End If
+            If (pgender Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("pgender")
+            Else
+                Me.Adapter.SelectCommand.Parameters(4).Value = CType(pgender,String)
             End If
             Dim dataTable As DSAnalysis.VIEW_PARAEXAM_NASOGASTRODataTable = New DSAnalysis.VIEW_PARAEXAM_NASOGASTRODataTable
             Me.Adapter.Fill(dataTable)
@@ -7714,7 +8742,7 @@ Namespace DSAnalysisTableAdapters
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(3) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(6) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT     pname, pgender, pAge, Age, pcontactaddress, ppatientid, request_date, "& _ 
@@ -7747,6 +8775,40 @@ Namespace DSAnalysisTableAdapters
             Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@From", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "request_date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@To", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "request_date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@motiy", Global.System.Data.SqlDbType.VarChar, 250, Global.System.Data.ParameterDirection.Input, 0, 0, "motiy", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(4) = New Global.System.Data.SqlClient.SqlCommand
+            Me._commandCollection(4).Connection = Me.Connection
+            Me._commandCollection(4).CommandText = "SELECT     pname, pgender, pAge, Age, pcontactaddress, ppatientid, request_date, "& _ 
+                "Doctor_ID, Diagnosis, request_id, Conclusion, motiy"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM         VIEW_PARAEXAM_"& _ 
+                "COLOSCOPY"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE (request_date BETWEEN @From AND @To) AND (motiy = @motiy) AND D"& _ 
+                "iagnosis=@Diagnosis"
+            Me._commandCollection(4).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@From", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "request_date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@To", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "request_date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@motiy", Global.System.Data.SqlDbType.VarChar, 250, Global.System.Data.ParameterDirection.Input, 0, 0, "motiy", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Diagnosis", Global.System.Data.SqlDbType.NVarChar, 150, Global.System.Data.ParameterDirection.Input, 0, 0, "Diagnosis", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(5) = New Global.System.Data.SqlClient.SqlCommand
+            Me._commandCollection(5).Connection = Me.Connection
+            Me._commandCollection(5).CommandText = "SELECT Age, Conclusion, Diagnosis, Doctor_ID, motiy, pAge, pcontactaddress, pgend"& _ 
+                "er, pname, ppatientid, request_date, request_id FROM VIEW_PARAEXAM_COLOSCOPY WHE"& _ 
+                "RE (request_date BETWEEN @From AND @To) AND (Diagnosis = @Diagnosis) AND pgender"& _ 
+                "=@pgender"
+            Me._commandCollection(5).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(5).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@From", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "request_date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(5).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@To", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "request_date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(5).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Diagnosis", Global.System.Data.SqlDbType.NVarChar, 150, Global.System.Data.ParameterDirection.Input, 0, 0, "Diagnosis", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(5).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@pgender", Global.System.Data.SqlDbType.VarChar, 10, Global.System.Data.ParameterDirection.Input, 0, 0, "pgender", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(6) = New Global.System.Data.SqlClient.SqlCommand
+            Me._commandCollection(6).Connection = Me.Connection
+            Me._commandCollection(6).CommandText = "SELECT     pname, pgender, pAge, Age, pcontactaddress, ppatientid, request_date, "& _ 
+                "Doctor_ID, Diagnosis, request_id, Conclusion, motiy"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM         VIEW_PARAEXAM_"& _ 
+                "COLOSCOPY"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE (request_date BETWEEN @From AND @To) AND (motiy = @motiy) AND D"& _ 
+                "iagnosis=@Diagnosis and pgender=@pgender"
+            Me._commandCollection(6).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(6).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@From", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "request_date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(6).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@To", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "request_date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(6).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@motiy", Global.System.Data.SqlDbType.VarChar, 250, Global.System.Data.ParameterDirection.Input, 0, 0, "motiy", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(6).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Diagnosis", Global.System.Data.SqlDbType.NVarChar, 150, Global.System.Data.ParameterDirection.Input, 0, 0, "Diagnosis", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(6).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@pgender", Global.System.Data.SqlDbType.VarChar, 10, Global.System.Data.ParameterDirection.Input, 0, 0, "pgender", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -7911,6 +8973,202 @@ Namespace DSAnalysisTableAdapters
                 Me.Adapter.SelectCommand.Parameters(2).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.SelectCommand.Parameters(2).Value = CType(motiy,String)
+            End If
+            Dim dataTable As DSAnalysis.VIEW_PARAEXAM_COLOSCOPYDataTable = New DSAnalysis.VIEW_PARAEXAM_COLOSCOPYDataTable
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
+        Public Overloads Overridable Function FillBy3(ByVal dataTable As DSAnalysis.VIEW_PARAEXAM_COLOSCOPYDataTable, ByVal From As Global.System.Nullable(Of Date), ByVal _To As Global.System.Nullable(Of Date), ByVal motiy As String, ByVal Diagnosis As String) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(4)
+            If (From.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(From.Value,Date)
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
+            End If
+            If (_To.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(_To.Value,Date)
+            Else
+                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
+            End If
+            If (motiy Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(2).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(2).Value = CType(motiy,String)
+            End If
+            If (Diagnosis Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(3).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(3).Value = CType(Diagnosis,String)
+            End If
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
+        Public Overloads Overridable Function SelectColoscopyMotifandDiagnosis(ByVal From As Global.System.Nullable(Of Date), ByVal _To As Global.System.Nullable(Of Date), ByVal motiy As String, ByVal Diagnosis As String) As DSAnalysis.VIEW_PARAEXAM_COLOSCOPYDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(4)
+            If (From.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(From.Value,Date)
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
+            End If
+            If (_To.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(_To.Value,Date)
+            Else
+                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
+            End If
+            If (motiy Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(2).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(2).Value = CType(motiy,String)
+            End If
+            If (Diagnosis Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(3).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(3).Value = CType(Diagnosis,String)
+            End If
+            Dim dataTable As DSAnalysis.VIEW_PARAEXAM_COLOSCOPYDataTable = New DSAnalysis.VIEW_PARAEXAM_COLOSCOPYDataTable
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
+        Public Overloads Overridable Function FillBy4(ByVal dataTable As DSAnalysis.VIEW_PARAEXAM_COLOSCOPYDataTable, ByVal From As Global.System.Nullable(Of Date), ByVal _To As Global.System.Nullable(Of Date), ByVal Diagnosis As String, ByVal pgender As String) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(5)
+            If (From.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(From.Value,Date)
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
+            End If
+            If (_To.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(_To.Value,Date)
+            Else
+                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
+            End If
+            If (Diagnosis Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(2).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(2).Value = CType(Diagnosis,String)
+            End If
+            If (pgender Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("pgender")
+            Else
+                Me.Adapter.SelectCommand.Parameters(3).Value = CType(pgender,String)
+            End If
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
+        Public Overloads Overridable Function SelectColoscopyWithDiagnosisAndSex(ByVal From As Global.System.Nullable(Of Date), ByVal _To As Global.System.Nullable(Of Date), ByVal Diagnosis As String, ByVal pgender As String) As DSAnalysis.VIEW_PARAEXAM_COLOSCOPYDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(5)
+            If (From.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(From.Value,Date)
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
+            End If
+            If (_To.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(_To.Value,Date)
+            Else
+                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
+            End If
+            If (Diagnosis Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(2).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(2).Value = CType(Diagnosis,String)
+            End If
+            If (pgender Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("pgender")
+            Else
+                Me.Adapter.SelectCommand.Parameters(3).Value = CType(pgender,String)
+            End If
+            Dim dataTable As DSAnalysis.VIEW_PARAEXAM_COLOSCOPYDataTable = New DSAnalysis.VIEW_PARAEXAM_COLOSCOPYDataTable
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
+        Public Overloads Overridable Function FillBy5(ByVal dataTable As DSAnalysis.VIEW_PARAEXAM_COLOSCOPYDataTable, ByVal From As Global.System.Nullable(Of Date), ByVal _To As Global.System.Nullable(Of Date), ByVal motiy As String, ByVal Diagnosis As String, ByVal pgender As String) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(6)
+            If (From.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(From.Value,Date)
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
+            End If
+            If (_To.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(_To.Value,Date)
+            Else
+                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
+            End If
+            If (motiy Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(2).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(2).Value = CType(motiy,String)
+            End If
+            If (Diagnosis Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(3).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(3).Value = CType(Diagnosis,String)
+            End If
+            If (pgender Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("pgender")
+            Else
+                Me.Adapter.SelectCommand.Parameters(4).Value = CType(pgender,String)
+            End If
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
+        Public Overloads Overridable Function SelectColoscopyMotifandDiagnosisSex(ByVal From As Global.System.Nullable(Of Date), ByVal _To As Global.System.Nullable(Of Date), ByVal motiy As String, ByVal Diagnosis As String, ByVal pgender As String) As DSAnalysis.VIEW_PARAEXAM_COLOSCOPYDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(6)
+            If (From.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(From.Value,Date)
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
+            End If
+            If (_To.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(_To.Value,Date)
+            Else
+                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
+            End If
+            If (motiy Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(2).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(2).Value = CType(motiy,String)
+            End If
+            If (Diagnosis Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(3).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(3).Value = CType(Diagnosis,String)
+            End If
+            If (pgender Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("pgender")
+            Else
+                Me.Adapter.SelectCommand.Parameters(4).Value = CType(pgender,String)
             End If
             Dim dataTable As DSAnalysis.VIEW_PARAEXAM_COLOSCOPYDataTable = New DSAnalysis.VIEW_PARAEXAM_COLOSCOPYDataTable
             Me.Adapter.Fill(dataTable)

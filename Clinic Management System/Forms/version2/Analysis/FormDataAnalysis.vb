@@ -48,6 +48,17 @@
         Me.cboParaDiagnosis.ValueMember = DA_Diagnosis.SelectDiagnosis.Columns("diagnosisid").ColumnName
         Me.cboParaDiagnosis.SelectedIndex = -1
 
+        Me.CboDiagnosisNasogastgro.DataSource = DA_Diagnosis.SelectDiagnosis
+        Me.CboDiagnosisNasogastgro.DisplayMember = DA_Diagnosis.SelectDiagnosis.Columns("diagnosis").ColumnName
+        Me.CboDiagnosisNasogastgro.ValueMember = DA_Diagnosis.SelectDiagnosis.Columns("diagnosisid").ColumnName
+        Me.CboDiagnosisNasogastgro.SelectedIndex = -1
+
+
+        Me.CboDiagnosisColoscopy.DataSource = DA_Diagnosis.SelectDiagnosis
+        Me.CboDiagnosisColoscopy.DisplayMember = DA_Diagnosis.SelectDiagnosis.Columns("diagnosis").ColumnName
+        Me.CboDiagnosisColoscopy.ValueMember = DA_Diagnosis.SelectDiagnosis.Columns("diagnosisid").ColumnName
+        Me.CboDiagnosisColoscopy.SelectedIndex = -1
+
         Me.CboFibroMotif.DataSource = DA_MotifFibroNaso.GetData
         Me.CboFibroMotif.DisplayMember = DA_MotifFibroNaso.GetData.Columns("Motive").ColumnName
         Me.CboFibroMotif.ValueMember = DA_MotifFibroNaso.GetData.Columns("Motive").ColumnName
@@ -75,9 +86,15 @@
         If Me.InvokeRequired Then
             Me.Invoke(New MethodInvoker(AddressOf LoadingProvince))
         Else
-
+            
             If RadPAllDiagnosis.Checked = True Then
-                Dim tblAllDiagnosis As DataTable = DA_ProvinceAnalysis.SelectDateToDateAllProvince(DateFrom.Value.Date, DateTo.Value.Date)
+                Dim tblAllDiagnosis As DataTable
+                If ChSexProvince.Checked = True Then
+                    ' tblAllDiagnosis = DA_ProvinceAnalysis.SelectDateToDateDiagandSex(DateFrom.Value.Date, DateTo.Value.Date, cbo)
+                Else
+                    tblAllDiagnosis = DA_ProvinceAnalysis.SelectDateToDateAllProvince(DateFrom.Value.Date, DateTo.Value.Date)
+                End If
+
                 Dim REachProvince As New ReportDiagnosis
                 Dim REachProvinceV1 As New ReportDiagnosisV1
 
@@ -92,7 +109,13 @@
                 End If
             End If
             If RadOnePDiagnosis.Checked = True Then
-                Dim tblAllDiagnosis As DataTable = DA_ProvinceAnalysis.SelectDateToDateByDiagnosis(DateFrom.Value.Date, DateTo.Value.Date, CboPDiagnosis.Text)
+                Dim tblAllDiagnosis As DataTable
+
+                If ChSexProvince.Checked = True Then
+                    tblAllDiagnosis = DA_ProvinceAnalysis.SelectDateToDateDiagandSex(DateFrom.Value.Date, DateTo.Value.Date, CboPDiagnosis.Text, CboSexProvince.Text)
+                Else
+                    tblAllDiagnosis = DA_ProvinceAnalysis.SelectDateToDateByDiagnosis(DateFrom.Value.Date, DateTo.Value.Date, CboPDiagnosis.Text)
+                End If
                 Dim REachProvince As New ReportDiagnosis
                 Dim REachProvinceV1 As New ReportDiagnosisV1
                 REachProvince.SetDataSource(tblAllDiagnosis)
@@ -104,12 +127,18 @@
                     mainAnalysis.CrvViewer.ReportSource = REachProvince
                     REachProvince.SetParameterValue("Title", "Data Analys Diagnosis From: " & Format(Me.DateFrom.Value, "dd-MM-yyyy") & " To: " & Format(Me.DateTo.Value, "dd-MM-yyyy"))
                 End If
-               
+
             End If
 
             If RadEachProvince.Checked = True Then
                 If ValidateCombobox(CboProvince, "", ErrAnalysis) = False Then Exit Sub
-                Dim tblProvince As DataTable = DA_ProvinceAnalysis.SelectDateToDateByProvince(DateFrom.Value.Date, DateTo.Value.Date, CboProvince.Text)
+                Dim tblProvince As DataTable
+                If ChSexProvince.Checked = True Then
+                    tblProvince = DA_ProvinceAnalysis.SelectDateToDateByProvinceAndSex(DateFrom.Value.Date, DateTo.Value.Date, CboProvince.Text, CboSexProvince.Text)
+                Else
+                    tblProvince = DA_ProvinceAnalysis.SelectDateToDateByProvince(DateFrom.Value.Date, DateTo.Value.Date, CboProvince.Text)
+                End If
+
                 Dim REachProvince As New ReportEachProvince
                 Dim REachProvinceV1 As New ReportEachProvincev1
 
@@ -122,7 +151,7 @@
                     mainAnalysis.CrvViewer.ReportSource = REachProvince
                     REachProvince.SetParameterValue("Title", "From: " & Format(Me.DateFrom.Value, "dd-MM-yyyy") & " To: " & Format(Me.DateTo.Value, "dd-MM-yyyy"))
                 End If
-               
+
             End If
             If RadAllProvince.Checked = True Then
                 Dim tblProvince As DataTable = DA_ProvinceAnalysis.SelectDateToDateAllProvince(DateFrom.Value.Date, DateTo.Value.Date)
@@ -139,7 +168,7 @@
                     REachProvince.SetParameterValue("Title", "From: " & Format(Me.DateFrom.Value, "dd-MM-yyyy") & " To: " & Format(Me.DateTo.Value, "dd-MM-yyyy"))
                 End If
 
-                
+
             End If
         End If
     End Sub
@@ -206,7 +235,13 @@
             End If
             If RadEachDiagnosis.Checked = True Then
                 If RadByComplaint.Checked = True Then
-                    Dim tblDiagnosisCompliant As DataTable = DA_DiagnosisComplaintAnalys.SelectComplaintWithDiagnosis(DateFrom.Value, DateTo.Value, cbodiagnosis.Text)
+                    Dim tblDiagnosisCompliant As DataTable
+                    If chSexComplaint.Checked = True Then
+                        tblDiagnosisCompliant = DA_DiagnosisComplaintAnalys.SelectComplaintWithDiagnosisAndSex(DateFrom.Value, DateTo.Value, cbodiagnosis.Text, CboSexComplain.Text)
+                    Else
+                        tblDiagnosisCompliant = DA_DiagnosisComplaintAnalys.SelectComplaintWithDiagnosis(DateFrom.Value, DateTo.Value, cbodiagnosis.Text)
+                    End If
+
                     Dim ReportComplaint As New ReportDiagnosisComplaint
                     Dim ReportComplaintv1 As New ReportDiagnosisComplaintV1
                     ReportComplaint.SetDataSource(tblDiagnosisCompliant)
@@ -218,10 +253,15 @@
                         mainAnalysis.CrvViewer.ReportSource = ReportComplaint
                         ReportComplaint.SetParameterValue("Title", "Data Analysis (Diagnosis with Patient Complaint) From:" & Format(Me.DateFrom.Value, "dd-MM-yyyy") & " To: " & Format(Me.DateTo.Value, "dd-MM-yyyy"))
                     End If
-                   
+
                 End If
                 If RadByMedicalHistory.Checked = True Then
-                    Dim MedicalHistory As DataTable = DA_DiagnosisMedicalHistoryAnalys.SelectMedicalHistoryWithDiagnosis(DateFrom.Value, DateTo.Value, cbodiagnosis.Text)
+                    Dim MedicalHistory As DataTable
+                    If chSexComplaint.Checked = True Then
+                        MedicalHistory = DA_DiagnosisMedicalHistoryAnalys.SelectMedicalHistoryWithDiagnosisAndSex(DateFrom.Value, DateTo.Value, cbodiagnosis.Text, CboSexComplain.Text)
+                    Else
+                        MedicalHistory = DA_DiagnosisMedicalHistoryAnalys.SelectMedicalHistoryWithDiagnosis(DateFrom.Value, DateTo.Value, cbodiagnosis.Text)
+                    End If
                     Dim RMedicalHistory As New ReportDiagnosisMedicalHistory
                     Dim RMedicalHistoryv1 As New ReportDiagnosisMedicalHistoryV1
                     RMedicalHistory.SetDataSource(MedicalHistory)
@@ -235,7 +275,14 @@
                     End If
                 End If
                 If RadByPhysical.Checked = True Then
-                    Dim TblPysicalCheck As DataTable = DA_DiagnosisPhysicalAnalys.SelectPhysicalWithDiagnosis(DateFrom.Value, DateTo.Value, cbodiagnosis.Text)
+                    Dim TblPysicalCheck As DataTable
+
+                    If chSexComplaint.Checked Then
+                        TblPysicalCheck = DA_DiagnosisPhysicalAnalys.SelectPhysicalWithDiagnosisAndSex(DateFrom.Value, DateTo.Value, cbodiagnosis.Text, CboSexComplain.Text)
+                    Else
+                        TblPysicalCheck = DA_DiagnosisPhysicalAnalys.SelectPhysicalWithDiagnosis(DateFrom.Value, DateTo.Value, cbodiagnosis.Text)
+                    End If
+
                     Dim RPhysicalChecka As New ReportDiagnosisPhysicalCheck
                     Dim RphysicalCheckv1 As New ReportDiagnosisPhysicalCheckV1
 
@@ -259,6 +306,8 @@
 
     Private Sub RadEachComplaint_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RadEachDiagnosis.CheckedChanged
         cbodiagnosis.Enabled = RadEachDiagnosis.Checked
+        chSexComplaint.Enabled = RadEachDiagnosis.Checked
+        CboSexComplain.Enabled = RadEachDiagnosis.Checked
     End Sub
 
 
@@ -283,7 +332,14 @@
 
             ' Case data analysis with blood
             If RadParaAllDiagnosis.Checked = True Then
-                Dim tblParaExam As DataTable = DA_DiagnosisParaBloodAnalys.SelectParaExamBloodByDateToDate(DateFrom.Value, DateTo.Value)
+                Dim tblParaExam As DataTable
+
+                If ChSexBlood.Checked = True Then
+                    tblParaExam = DA_DiagnosisParaBloodAnalys.SelectParaExamBloodByDateToDateWithSex(DateFrom.Value, DateTo.Value, CboSexBlood.Text)
+                Else
+                    tblParaExam = DA_DiagnosisParaBloodAnalys.SelectParaExamBloodByDateToDate(DateFrom.Value, DateTo.Value)
+                End If
+
                 Dim RParaBlood As New ReportParaWithBlood
                 Dim RParaBloodV1 As New ReportParaWithBloodV1
 
@@ -299,7 +355,12 @@
               
             End If
             If RadParaOneDiagnosis.Checked = True Then
-                Dim tblParaExam As DataTable = DA_DiagnosisParaBloodAnalys.SelectParaExamBloodByDiagnosis(DateFrom.Value, DateTo.Value, cboParaDiagnosis.Text)
+                Dim tblParaExam As DataTable
+                If ChSexBlood.Checked = True Then
+                    tblParaExam = DA_DiagnosisParaBloodAnalys.SelectParaBloodByDiagnosisAndSex(DateFrom.Value, DateTo.Value, cboParaDiagnosis.Text, CboSexBlood.Text)
+                Else
+                    tblParaExam = DA_DiagnosisParaBloodAnalys.SelectParaExamBloodByDiagnosis(DateFrom.Value, DateTo.Value, cboParaDiagnosis.Text)
+                End If
                 Dim RParaBlood As New ReportParaWithBlood
                 Dim RParaBloodV1 As New ReportParaWithBloodV1
 
@@ -321,7 +382,18 @@
             Me.Invoke(New MethodInvoker(AddressOf LoadingParaExamFibro))
         Else
             If RadFibMotif.Checked = True Then
-                Dim TblFibro As DataTable = DA_DiagnosisParaFibroAnalys.SelectFibroscopyDateToDate(DateFrom.Value.Date, DateTo.Value.Date)
+                Dim TblFibro As DataTable
+
+                If ChViewFibroDiagnosis.Checked = True Then
+                    If ChSexFibros.Checked = True Then
+                        TblFibro = DA_DiagnosisParaFibroAnalys.SelectFibroscopyWithDiagnosisAndSex(DateFrom.Value.Date, DateTo.Value.Date, CboFibroDiagnosis.Text, CboSexFibros.Text)
+                    Else
+                        TblFibro = DA_DiagnosisParaFibroAnalys.SelectFibroscopyWithDiagnosis(DateFrom.Value.Date, DateTo.Value.Date, CboFibroDiagnosis.Text)
+                    End If
+                Else
+                    TblFibro = DA_DiagnosisParaFibroAnalys.SelectFibroscopyDateToDate(DateFrom.Value.Date, DateTo.Value.Date)
+                End If
+
                 Dim RParaFibro As New ReportDiagnosisFibroscopy
                 Dim RParaFibroV1 As New ReportDiagnosisFibroscopyV1
 
@@ -338,7 +410,17 @@
                 
             End If
             If RadFibOneMotif.Checked = True Then
-                Dim TblFibro As DataTable = DA_DiagnosisParaFibroAnalys.SelectFibroScopyWithMotif(DateFrom.Value.Date, DateTo.Value.Date, CboFibroMotif.Text)
+                Dim TblFibro As DataTable
+
+                If ChViewFibroDiagnosis.Checked = True Then
+                    If ChSexFibros.Checked = True Then
+                        TblFibro = DA_DiagnosisParaFibroAnalys.SelectFibroScopyWithMotifDiagnosisAndSex(DateFrom.Value.Date, DateTo.Value.Date, CboFibroMotif.Text, CboFibroDiagnosis.Text, CboSexFibros.Text)
+                    Else
+                        TblFibro = DA_DiagnosisParaFibroAnalys.SelectFibroScopyWithMotifAndDiagnosis(DateFrom.Value.Date, DateTo.Value.Date, CboFibroMotif.Text, CboFibroDiagnosis.Text)
+                    End If
+                Else
+                    TblFibro = DA_DiagnosisParaFibroAnalys.SelectFibroScopyWithMotif(DateFrom.Value.Date, DateTo.Value.Date, CboFibroMotif.Text)
+                End If
                 Dim RParaFibro As New ReportDiagnosisFibroscopy
                 Dim RParaFibroV1 As New ReportDiagnosisFibroscopyV1
 
@@ -359,8 +441,35 @@
         If Me.InvokeRequired Then
             Me.Invoke(New MethodInvoker(AddressOf LoadingParaExamNasogastro))
         Else
+            Dim tblNaso As DataTable
             If RadNasoAllMotif.Checked = True Then
-                Dim tblNaso As DataTable = DA_DiagnosisParaNasogasroAnalys.SelectNasogastroDateToDate(DateFrom.Value.Date, DateTo.Value.Date)
+                If ChDiagnosisNaso.Checked = True Then
+                    If ChSexNasogo.Checked = True Then
+                        tblNaso = DA_DiagnosisParaNasogasroAnalys.SelectNasogastroWithDiagnosisAndSex(DateFrom.Value.Date, DateTo.Value.Date, CboDiagnosisNasogastgro.Text, CboSexNasoga.Text)
+                    Else
+                        tblNaso = DA_DiagnosisParaNasogasroAnalys.SelectNasogastroWithDiagnosis(DateFrom.Value.Date, DateTo.Value.Date, CboDiagnosisNasogastgro.Text)
+                    End If
+
+                Else
+                    tblNaso = DA_DiagnosisParaNasogasroAnalys.SelectNasogastroDateToDate(DateFrom.Value.Date, DateTo.Value.Date)
+                End If
+
+            ElseIf RadNasoByMotif.Checked = True Then
+                If ChDiagnosisNaso.Checked = True Then
+                    If ChSexNasogo.Checked = True Then
+                        tblNaso = DA_DiagnosisParaNasogasroAnalys.SelectNasogastrowithDiagnosisAndMofifSex(DateFrom.Value.Date, DateTo.Value.Date, CboNasoMotif.Text, CboDiagnosisNasogastgro.Text, CboSexNasoga.Text)
+                    Else
+                        tblNaso = DA_DiagnosisParaNasogasroAnalys.SelectNasogastrowithDiagnosisAndMofif(DateFrom.Value.Date, DateTo.Value.Date, CboNasoMotif.Text, CboDiagnosisNasogastgro.Text)
+                    End If
+
+                Else
+                    tblNaso = DA_DiagnosisParaNasogasroAnalys.SelectNasogastroWithMotif(DateFrom.Value.Date, DateTo.Value.Date, CboNasoMotif.Text)
+                End If
+
+
+            End If
+            If RadNasoAllMotif.Checked = True Then
+
                 Dim RNasograstro As New ReportDiagnosisNasogastro
                 Dim RNasograstroV1 As New ReportDiagnosisNasogastroV1
 
@@ -373,10 +482,10 @@
                     mainAnalysis.CrvViewer.ReportSource = RNasograstro
                     RNasograstro.SetParameterValue("Title", "Data Analysis (Para Exam with Motif's Nasogastro) From: " & Format(DateFrom.Value, "dd-MM-yyyy") & " To: " & Format(DateTo.Value, "dd-MM-yyyy"))
                 End If
-                
+
             End If
             If RadNasoByMotif.Checked = True Then
-                Dim tblNaso As DataTable = DA_DiagnosisParaNasogasroAnalys.SelectNasogastroWithMotif(DateFrom.Value.Date, DateTo.Value.Date, CboNasoMotif.Text)
+
                 Dim RNasograstro As New ReportDiagnosisNasogastro
                 Dim RNasograstroV1 As New ReportDiagnosisNasogastroV1
 
@@ -396,8 +505,34 @@
         If Me.InvokeRequired Then
             Me.Invoke(New MethodInvoker(AddressOf LoadingParaExamColoscopy))
         Else
+            Dim tblColo As DataTable
             If RadColoAllDiagnosis.Checked = True Then
-                Dim tblColo As DataTable = DA_DiagnosisParaColoscopyAnalys.SelelectColoDateToDate(DateFrom.Value.Date, DateTo.Value.Date)
+                If ChViewDiagnosisColoscopy.Checked = True Then
+                    If ChSexColosco.Checked = True Then
+                        tblColo = DA_DiagnosisParaColoscopyAnalys.SelectColoscopyWithDiagnosisAndSex(DateFrom.Value.Date, DateTo.Value.Date, CboDiagnosisColoscopy.Text, CboSexColoscopy.Text)
+                    Else
+                        tblColo = DA_DiagnosisParaColoscopyAnalys.SelectColoscopyWithDiagnosis(DateFrom.Value.Date, DateTo.Value.Date, CboDiagnosisColoscopy.Text)
+                    End If
+
+                Else
+                    tblColo = DA_DiagnosisParaColoscopyAnalys.SelelectColoDateToDate(DateFrom.Value.Date, DateTo.Value.Date)
+                End If
+
+            ElseIf RadColoOneDiagnosis.Checked = True Then
+                If ChViewDiagnosisColoscopy.Checked = True Then
+                    If ChSexColosco.Checked = True Then
+                        tblColo = DA_DiagnosisParaColoscopyAnalys.SelectColoscopyMotifandDiagnosisSex(DateFrom.Value.Date, DateTo.Value.Date, cboColoMotify.Text, CboDiagnosisColoscopy.Text, CboSexColoscopy.Text)
+                    Else
+                        tblColo = DA_DiagnosisParaColoscopyAnalys.SelectColoscopyMotifandDiagnosis(DateFrom.Value.Date, DateTo.Value.Date, cboColoMotify.Text, CboDiagnosisColoscopy.Text)
+                    End If
+
+                Else
+                    tblColo = DA_DiagnosisParaColoscopyAnalys.SelectColoscopyWithMotif(DateFrom.Value.Date, DateTo.Value.Date, cboColoMotify.Text)
+                End If
+
+            End If
+            If RadColoAllDiagnosis.Checked = True Then
+
                 Dim RColoscopy As New ReportDiagnosisColoscopy
                 Dim RColoscopyV1 As New ReportDiagnosisColoscopyV1
                 RColoscopy.SetDataSource(tblColo)
@@ -409,10 +544,10 @@
                     mainAnalysis.CrvViewer.ReportSource = RColoscopy
                     RColoscopy.SetParameterValue("Title", "Data Analysis (Para Exam with motif's Coloscopy) From: " & Format(DateFrom.Value, "dd-MM-yyyy") & " To: " & Format(DateTo.Value, "dd-MM-yyyy"))
                 End If
-                
+
             End If
             If RadColoOneDiagnosis.Checked = True Then
-                Dim tblColo As DataTable = DA_DiagnosisParaColoscopyAnalys.SelectColoscopyWithMotif(DateFrom.Value.Date, DateTo.Value.Date, cboColoMotify.Text)
+
                 Dim RColoscopy As New ReportDiagnosisColoscopy
                 Dim RColoscopyV1 As New ReportDiagnosisColoscopyV1
                 RColoscopy.SetDataSource(tblColo)
@@ -493,5 +628,33 @@
         End If
     End Sub
 
-  
+
+    Private Sub ChDiagnosisNaso_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ChDiagnosisNaso.CheckedChanged
+        CboDiagnosisNasogastgro.Enabled = ChDiagnosisNaso.Checked
+        CboDiagnosisNasogastgro.SelectedIndex = -1
+    End Sub
+
+    Private Sub ChViewColoscopy_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ChViewDiagnosisColoscopy.CheckedChanged
+        CboDiagnosisColoscopy.Enabled = ChViewDiagnosisColoscopy.Checked
+    End Sub
+
+    Private Sub ChViewFibroDiagnosis_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ChViewFibroDiagnosis.CheckedChanged
+        CboFibroDiagnosis.Enabled = ChViewFibroDiagnosis.Checked
+    End Sub
+
+    Private Sub ChSexFibros_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ChSexFibros.CheckedChanged
+        CboSexFibros.Enabled = ChSexFibros.Checked
+    End Sub
+
+    Private Sub ChSexBlood_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ChSexBlood.CheckedChanged
+        CboSexBlood.Enabled = ChSexBlood.Checked
+    End Sub
+
+    Private Sub ChSexNasogo_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ChSexNasogo.CheckedChanged
+        CboSexNasoga.Enabled = ChSexNasogo.Checked
+    End Sub
+
+    Private Sub ChSexColosco_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ChSexColosco.CheckedChanged
+        CboSexColoscopy.Enabled = ChSexColosco.Checked
+    End Sub
 End Class

@@ -331,23 +331,15 @@ D:\CurrentProject\DrChakravuth\trunk\DrChatravuth\Clinic Management System\obj\D
 D:\CurrentProject\DrChakravuth\trunk\DrChatravuth\Clinic Management System\obj\Debug\Clinic Management System.vbproj.GenerateResource.Cache
 D:\CurrentProject\DrChakravuth\trunk\DrChatravuth\Clinic Management System\obj\Debug\Clinic Management System.exe.licenses
 C:\BanYanno\SoftProject\DrChakravuth\Clinic Management System\bin\Debug\Clinic Management System.exe.config
-C:\BanYanno\SoftProject\DrChakravuth\Clinic Management System\obj\Debug\Interop.AcroPDFLib.dll
-C:\BanYanno\SoftProject\DrChakravuth\Clinic Management System\obj\Debug\AxInterop.AcroPDFLib.dll
-C:\BanYanno\SoftProject\DrChakravuth\Clinic Management System\obj\Debug\Clinic Management System.vbproj.ResolveComReference.cache
-C:\BanYanno\SoftProject\DrChakravuth\Clinic Management System\obj\Debug\Clinic Management System.xml
-C:\BanYanno\SoftProject\DrChakravuth\Clinic Management System\obj\Debug\Clinic Management System.pdb
 C:\BanYanno\SoftProject\DrChakravuth\Clinic Management System\bin\Debug\Clinic Management System.exe
 C:\BanYanno\SoftProject\DrChakravuth\Clinic Management System\bin\Debug\Clinic Management System.pdb
 C:\BanYanno\SoftProject\DrChakravuth\Clinic Management System\bin\Debug\Clinic Management System.xml
-C:\BanYanno\SoftProject\DrChakravuth\Clinic Management System\bin\Debug\Janus.Windows.GridEX.v3.xml
-C:\BanYanno\SoftProject\DrChakravuth\Clinic Management System\bin\Debug\Janus.Windows.ExplorerBar.v3.xml
-C:\BanYanno\SoftProject\DrChakravuth\Clinic Management System\bin\Debug\Janus.Windows.CalendarCombo.v3.xml
-C:\BanYanno\SoftProject\DrChakravuth\Clinic Management System\bin\Debug\Janus.Windows.Ribbon.v3.xml
-C:\BanYanno\SoftProject\DrChakravuth\Clinic Management System\bin\Debug\Janus.Windows.UI.v3.xml
-C:\BanYanno\SoftProject\DrChakravuth\Clinic Management System\bin\Debug\Janus.Windows.ButtonBar.v3.xml
 C:\BanYanno\SoftProject\DrChakravuth\Clinic Management System\bin\Debug\Interop.AcroPDFLib.dll
 C:\BanYanno\SoftProject\DrChakravuth\Clinic Management System\bin\Debug\AxInterop.AcroPDFLib.dll
 C:\BanYanno\SoftProject\DrChakravuth\Clinic Management System\obj\Debug\ResolveAssemblyReference.cache
+C:\BanYanno\SoftProject\DrChakravuth\Clinic Management System\obj\Debug\Interop.AcroPDFLib.dll
+C:\BanYanno\SoftProject\DrChakravuth\Clinic Management System\obj\Debug\AxInterop.AcroPDFLib.dll
+C:\BanYanno\SoftProject\DrChakravuth\Clinic Management System\obj\Debug\Clinic Management System.vbproj.ResolveComReference.cache
 C:\BanYanno\SoftProject\DrChakravuth\Clinic Management System\obj\Debug\Clinic_Management_System.Appointment.resources
 C:\BanYanno\SoftProject\DrChakravuth\Clinic Management System\obj\Debug\Clinic_Management_System.NewAppointment.resources
 C:\BanYanno\SoftProject\DrChakravuth\Clinic Management System\obj\Debug\Clinic_Management_System.SearchAppointment.resources
@@ -496,3 +488,5 @@ C:\BanYanno\SoftProject\DrChakravuth\Clinic Management System\obj\Debug\Clinic_M
 C:\BanYanno\SoftProject\DrChakravuth\Clinic Management System\obj\Debug\Clinic Management System.vbproj.GenerateResource.Cache
 C:\BanYanno\SoftProject\DrChakravuth\Clinic Management System\obj\Debug\Clinic Management System.exe.licenses
 C:\BanYanno\SoftProject\DrChakravuth\Clinic Management System\obj\Debug\Clinic Management System.exe
+C:\BanYanno\SoftProject\DrChakravuth\Clinic Management System\obj\Debug\Clinic Management System.xml
+C:\BanYanno\SoftProject\DrChakravuth\Clinic Management System\obj\Debug\Clinic Management System.pdb
