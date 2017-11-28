@@ -48,6 +48,13 @@
         Me.cboParaDiagnosis.ValueMember = DA_Diagnosis.SelectDiagnosis.Columns("diagnosisid").ColumnName
         Me.cboParaDiagnosis.SelectedIndex = -1
 
+
+
+        Me.CboFibroDiagnosis.DataSource = DA_Diagnosis.SelectDiagnosis
+        Me.CboFibroDiagnosis.DisplayMember = DA_Diagnosis.SelectDiagnosis.Columns("diagnosis").ColumnName
+        Me.CboFibroDiagnosis.ValueMember = DA_Diagnosis.SelectDiagnosis.Columns("diagnosisid").ColumnName
+        Me.CboFibroDiagnosis.SelectedIndex = -1
+
         Me.CboDiagnosisNasogastgro.DataSource = DA_Diagnosis.SelectDiagnosis
         Me.CboDiagnosisNasogastgro.DisplayMember = DA_Diagnosis.SelectDiagnosis.Columns("diagnosis").ColumnName
         Me.CboDiagnosisNasogastgro.ValueMember = DA_Diagnosis.SelectDiagnosis.Columns("diagnosisid").ColumnName
