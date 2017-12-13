@@ -51,14 +51,14 @@ Public Class UPatientMedicalReport
         If Me.InvokeRequired Then
             Me.Invoke(New MethodInvoker(AddressOf PreviewReport))
         Else
-            Dim PatientTable As DataTable
-            Dim PatientID As Long
-            PatientTable = DA_Patient.SelectPatientByPID(CInt(Me.GridPatientConsult.GetRow.Cells("ppatientid").Value))
-            PatientID = PatientTable.Rows(0).Item("ppatientid")
+            ' Dim PatientTable As DataTable
+            Dim PatientID As Long = Me.GridPatientConsult.GetRow.Cells("patientid").Value
+            'PatientTable = DA_Patient.SelectPatientByPID(CInt(Me.GridPatientConsult.GetRow.Cells("ppatientid").Value))
+            'PatientID = PatientTable.Rows(0).Item("ppatientid")
 
             Dim RptRecord As New RptPatientRecord
             ' Dim RptViewer As New FormReportViewer
-
+            MsgBox(PatientID)
 
             Dim ComplaintTable As DataTable = DA_Complaint.SelectByPatientID(PatientID)
             Dim HistoryTable As DataTable = DA_History.SelectByPatientID(PatientID)

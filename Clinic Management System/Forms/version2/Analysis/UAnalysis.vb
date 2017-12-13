@@ -5,4 +5,7 @@
         FAnalysis.Show()
     End Sub
   
+    Private Sub BackgroundWorker1_DoWork(ByVal sender As System.Object, ByVal e As System.ComponentModel.DoWorkEventArgs) Handles BackgroundWorker1.DoWork
+
+    End Sub
 End Class

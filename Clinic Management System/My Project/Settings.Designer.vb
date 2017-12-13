@@ -70,7 +70,7 @@ Namespace My
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
          Global.System.Configuration.DefaultSettingValueAttribute("Data Source=NBC120\sql2008;Initial Catalog=cms_database;Persist Security Info=Tru"& _ 
-            "e;User ID=sa;Password=P@ssw0rd")>  _
+            "e;User ID=sa;Password=P@ssw0rd;Max Pool Size=2000;Connect Timeout=500")>  _
         Public ReadOnly Property cms_databaseConnectionString() As String
             Get
                 Return CType(Me("cms_databaseConnectionString"),String)

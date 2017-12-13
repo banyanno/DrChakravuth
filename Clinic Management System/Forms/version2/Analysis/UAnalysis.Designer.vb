@@ -50,6 +50,9 @@ Partial Class UAnalysis
         Me.BtnAnalysis.Text = "Clinic Analysis"
         Me.BtnAnalysis.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
+        'BackgroundWorker1
+        '
+        '
         'CrvViewer
         '
         Me.CrvViewer.ActiveViewIndex = -1

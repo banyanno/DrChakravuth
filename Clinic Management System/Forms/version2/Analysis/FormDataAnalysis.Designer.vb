@@ -485,7 +485,7 @@ Partial Class FormDataAnalysis
         Me.CboSexBlood.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.CboSexBlood.FormattingEnabled = True
         Me.CboSexBlood.Items.AddRange(New Object() {"Male", "Female"})
-        Me.CboSexBlood.Location = New System.Drawing.Point(390, 157)
+        Me.CboSexBlood.Location = New System.Drawing.Point(357, 85)
         Me.CboSexBlood.Name = "CboSexBlood"
         Me.CboSexBlood.Size = New System.Drawing.Size(107, 28)
         Me.CboSexBlood.TabIndex = 12
@@ -495,7 +495,7 @@ Partial Class FormDataAnalysis
         Me.ChSexBlood.AutoSize = True
         Me.ChSexBlood.BackColor = System.Drawing.Color.Transparent
         Me.ChSexBlood.ForeColor = System.Drawing.Color.Red
-        Me.ChSexBlood.Location = New System.Drawing.Point(390, 128)
+        Me.ChSexBlood.Location = New System.Drawing.Point(357, 56)
         Me.ChSexBlood.Name = "ChSexBlood"
         Me.ChSexBlood.Size = New System.Drawing.Size(55, 24)
         Me.ChSexBlood.TabIndex = 11
@@ -506,12 +506,12 @@ Partial Class FormDataAnalysis
         '
         Me.RadParaAllDiagnosis.AutoSize = True
         Me.RadParaAllDiagnosis.Checked = True
-        Me.RadParaAllDiagnosis.Location = New System.Drawing.Point(53, 97)
+        Me.RadParaAllDiagnosis.Location = New System.Drawing.Point(18, 25)
         Me.RadParaAllDiagnosis.Name = "RadParaAllDiagnosis"
-        Me.RadParaAllDiagnosis.Size = New System.Drawing.Size(156, 24)
+        Me.RadParaAllDiagnosis.Size = New System.Drawing.Size(171, 24)
         Me.RadParaAllDiagnosis.TabIndex = 0
         Me.RadParaAllDiagnosis.TabStop = True
-        Me.RadParaAllDiagnosis.Text = "View All Diagnosis"
+        Me.RadParaAllDiagnosis.Text = "View all by diagnosis"
         Me.RadParaAllDiagnosis.UseVisualStyleBackColor = True
         '
         'cboParaDiagnosis
@@ -520,7 +520,7 @@ Partial Class FormDataAnalysis
         Me.cboParaDiagnosis.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
         Me.cboParaDiagnosis.Enabled = False
         Me.cboParaDiagnosis.FormattingEnabled = True
-        Me.cboParaDiagnosis.Location = New System.Drawing.Point(53, 157)
+        Me.cboParaDiagnosis.Location = New System.Drawing.Point(18, 85)
         Me.cboParaDiagnosis.Name = "cboParaDiagnosis"
         Me.cboParaDiagnosis.Size = New System.Drawing.Size(331, 28)
         Me.cboParaDiagnosis.TabIndex = 3
@@ -528,17 +528,17 @@ Partial Class FormDataAnalysis
         'RadParaOneDiagnosis
         '
         Me.RadParaOneDiagnosis.AutoSize = True
-        Me.RadParaOneDiagnosis.Location = New System.Drawing.Point(53, 127)
+        Me.RadParaOneDiagnosis.Location = New System.Drawing.Point(18, 55)
         Me.RadParaOneDiagnosis.Name = "RadParaOneDiagnosis"
-        Me.RadParaOneDiagnosis.Size = New System.Drawing.Size(169, 24)
+        Me.RadParaOneDiagnosis.Size = New System.Drawing.Size(152, 24)
         Me.RadParaOneDiagnosis.TabIndex = 1
-        Me.RadParaOneDiagnosis.Text = "View One Diagnosis"
+        Me.RadParaOneDiagnosis.Text = "View by diagnosis"
         Me.RadParaOneDiagnosis.UseVisualStyleBackColor = True
         '
         'btnParaExamViewer
         '
         Me.btnParaExamViewer.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnParaExamViewer.Location = New System.Drawing.Point(53, 191)
+        Me.btnParaExamViewer.Location = New System.Drawing.Point(18, 128)
         Me.btnParaExamViewer.Name = "btnParaExamViewer"
         Me.btnParaExamViewer.Size = New System.Drawing.Size(210, 38)
         Me.btnParaExamViewer.TabIndex = 2
@@ -571,7 +571,7 @@ Partial Class FormDataAnalysis
         Me.CboSexFibros.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.CboSexFibros.FormattingEnabled = True
         Me.CboSexFibros.Items.AddRange(New Object() {"Male", "Female"})
-        Me.CboSexFibros.Location = New System.Drawing.Point(629, 148)
+        Me.CboSexFibros.Location = New System.Drawing.Point(617, 93)
         Me.CboSexFibros.Name = "CboSexFibros"
         Me.CboSexFibros.Size = New System.Drawing.Size(107, 28)
         Me.CboSexFibros.TabIndex = 12
@@ -581,7 +581,7 @@ Partial Class FormDataAnalysis
         Me.ChSexFibros.AutoSize = True
         Me.ChSexFibros.BackColor = System.Drawing.Color.Transparent
         Me.ChSexFibros.ForeColor = System.Drawing.Color.Red
-        Me.ChSexFibros.Location = New System.Drawing.Point(630, 119)
+        Me.ChSexFibros.Location = New System.Drawing.Point(618, 64)
         Me.ChSexFibros.Name = "ChSexFibros"
         Me.ChSexFibros.Size = New System.Drawing.Size(55, 24)
         Me.ChSexFibros.TabIndex = 11
@@ -595,7 +595,7 @@ Partial Class FormDataAnalysis
         Me.CboFibroDiagnosis.DropDownWidth = 500
         Me.CboFibroDiagnosis.Enabled = False
         Me.CboFibroDiagnosis.FormattingEnabled = True
-        Me.CboFibroDiagnosis.Location = New System.Drawing.Point(333, 148)
+        Me.CboFibroDiagnosis.Location = New System.Drawing.Point(320, 93)
         Me.CboFibroDiagnosis.Name = "CboFibroDiagnosis"
         Me.CboFibroDiagnosis.Size = New System.Drawing.Size(291, 28)
         Me.CboFibroDiagnosis.TabIndex = 10
@@ -604,7 +604,7 @@ Partial Class FormDataAnalysis
         '
         Me.ChViewFibroDiagnosis.AutoSize = True
         Me.ChViewFibroDiagnosis.ForeColor = System.Drawing.Color.Black
-        Me.ChViewFibroDiagnosis.Location = New System.Drawing.Point(333, 119)
+        Me.ChViewFibroDiagnosis.Location = New System.Drawing.Point(320, 64)
         Me.ChViewFibroDiagnosis.Name = "ChViewFibroDiagnosis"
         Me.ChViewFibroDiagnosis.Size = New System.Drawing.Size(165, 24)
         Me.ChViewFibroDiagnosis.TabIndex = 9
@@ -615,7 +615,7 @@ Partial Class FormDataAnalysis
         '
         Me.RadFibMotif.AutoSize = True
         Me.RadFibMotif.Checked = True
-        Me.RadFibMotif.Location = New System.Drawing.Point(33, 88)
+        Me.RadFibMotif.Location = New System.Drawing.Point(20, 33)
         Me.RadFibMotif.Name = "RadFibMotif"
         Me.RadFibMotif.Size = New System.Drawing.Size(206, 24)
         Me.RadFibMotif.TabIndex = 4
@@ -630,7 +630,7 @@ Partial Class FormDataAnalysis
         Me.CboFibroMotif.DropDownWidth = 500
         Me.CboFibroMotif.Enabled = False
         Me.CboFibroMotif.FormattingEnabled = True
-        Me.CboFibroMotif.Location = New System.Drawing.Point(33, 148)
+        Me.CboFibroMotif.Location = New System.Drawing.Point(20, 93)
         Me.CboFibroMotif.Name = "CboFibroMotif"
         Me.CboFibroMotif.Size = New System.Drawing.Size(291, 28)
         Me.CboFibroMotif.TabIndex = 7
@@ -638,7 +638,7 @@ Partial Class FormDataAnalysis
         'RadFibOneMotif
         '
         Me.RadFibOneMotif.AutoSize = True
-        Me.RadFibOneMotif.Location = New System.Drawing.Point(33, 118)
+        Me.RadFibOneMotif.Location = New System.Drawing.Point(20, 63)
         Me.RadFibOneMotif.Name = "RadFibOneMotif"
         Me.RadFibOneMotif.Size = New System.Drawing.Size(209, 24)
         Me.RadFibOneMotif.TabIndex = 5
@@ -648,7 +648,7 @@ Partial Class FormDataAnalysis
         'BtnFibPrintPreview
         '
         Me.BtnFibPrintPreview.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnFibPrintPreview.Location = New System.Drawing.Point(31, 183)
+        Me.BtnFibPrintPreview.Location = New System.Drawing.Point(18, 128)
         Me.BtnFibPrintPreview.Name = "BtnFibPrintPreview"
         Me.BtnFibPrintPreview.Size = New System.Drawing.Size(210, 38)
         Me.BtnFibPrintPreview.TabIndex = 6
@@ -681,7 +681,7 @@ Partial Class FormDataAnalysis
         Me.CboSexNasoga.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.CboSexNasoga.FormattingEnabled = True
         Me.CboSexNasoga.Items.AddRange(New Object() {"Male", "Female"})
-        Me.CboSexNasoga.Location = New System.Drawing.Point(653, 148)
+        Me.CboSexNasoga.Location = New System.Drawing.Point(615, 93)
         Me.CboSexNasoga.Name = "CboSexNasoga"
         Me.CboSexNasoga.Size = New System.Drawing.Size(107, 28)
         Me.CboSexNasoga.TabIndex = 14
@@ -691,7 +691,7 @@ Partial Class FormDataAnalysis
         Me.ChSexNasogo.AutoSize = True
         Me.ChSexNasogo.BackColor = System.Drawing.Color.Transparent
         Me.ChSexNasogo.ForeColor = System.Drawing.Color.Red
-        Me.ChSexNasogo.Location = New System.Drawing.Point(654, 119)
+        Me.ChSexNasogo.Location = New System.Drawing.Point(616, 64)
         Me.ChSexNasogo.Name = "ChSexNasogo"
         Me.ChSexNasogo.Size = New System.Drawing.Size(55, 24)
         Me.ChSexNasogo.TabIndex = 13
@@ -705,7 +705,7 @@ Partial Class FormDataAnalysis
         Me.CboDiagnosisNasogastgro.DropDownWidth = 500
         Me.CboDiagnosisNasogastgro.Enabled = False
         Me.CboDiagnosisNasogastgro.FormattingEnabled = True
-        Me.CboDiagnosisNasogastgro.Location = New System.Drawing.Point(397, 149)
+        Me.CboDiagnosisNasogastgro.Location = New System.Drawing.Point(359, 94)
         Me.CboDiagnosisNasogastgro.Name = "CboDiagnosisNasogastgro"
         Me.CboDiagnosisNasogastgro.Size = New System.Drawing.Size(251, 28)
         Me.CboDiagnosisNasogastgro.TabIndex = 12
@@ -714,7 +714,7 @@ Partial Class FormDataAnalysis
         '
         Me.ChDiagnosisNaso.AutoSize = True
         Me.ChDiagnosisNaso.ForeColor = System.Drawing.Color.Black
-        Me.ChDiagnosisNaso.Location = New System.Drawing.Point(397, 120)
+        Me.ChDiagnosisNaso.Location = New System.Drawing.Point(359, 65)
         Me.ChDiagnosisNaso.Name = "ChDiagnosisNaso"
         Me.ChDiagnosisNaso.Size = New System.Drawing.Size(165, 24)
         Me.ChDiagnosisNaso.TabIndex = 11
@@ -725,7 +725,7 @@ Partial Class FormDataAnalysis
         '
         Me.RadNasoAllMotif.AutoSize = True
         Me.RadNasoAllMotif.Checked = True
-        Me.RadNasoAllMotif.Location = New System.Drawing.Point(60, 89)
+        Me.RadNasoAllMotif.Location = New System.Drawing.Point(22, 34)
         Me.RadNasoAllMotif.Name = "RadNasoAllMotif"
         Me.RadNasoAllMotif.Size = New System.Drawing.Size(216, 24)
         Me.RadNasoAllMotif.TabIndex = 4
@@ -739,7 +739,7 @@ Partial Class FormDataAnalysis
         Me.CboNasoMotif.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
         Me.CboNasoMotif.Enabled = False
         Me.CboNasoMotif.FormattingEnabled = True
-        Me.CboNasoMotif.Location = New System.Drawing.Point(60, 149)
+        Me.CboNasoMotif.Location = New System.Drawing.Point(22, 94)
         Me.CboNasoMotif.Name = "CboNasoMotif"
         Me.CboNasoMotif.Size = New System.Drawing.Size(331, 28)
         Me.CboNasoMotif.TabIndex = 7
@@ -747,7 +747,7 @@ Partial Class FormDataAnalysis
         'RadNasoByMotif
         '
         Me.RadNasoByMotif.AutoSize = True
-        Me.RadNasoByMotif.Location = New System.Drawing.Point(60, 119)
+        Me.RadNasoByMotif.Location = New System.Drawing.Point(22, 64)
         Me.RadNasoByMotif.Name = "RadNasoByMotif"
         Me.RadNasoByMotif.Size = New System.Drawing.Size(219, 24)
         Me.RadNasoByMotif.TabIndex = 5
@@ -757,7 +757,7 @@ Partial Class FormDataAnalysis
         'BtnNasoPrintPreview
         '
         Me.BtnNasoPrintPreview.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnNasoPrintPreview.Location = New System.Drawing.Point(60, 183)
+        Me.BtnNasoPrintPreview.Location = New System.Drawing.Point(22, 128)
         Me.BtnNasoPrintPreview.Name = "BtnNasoPrintPreview"
         Me.BtnNasoPrintPreview.Size = New System.Drawing.Size(210, 38)
         Me.BtnNasoPrintPreview.TabIndex = 6
@@ -790,7 +790,7 @@ Partial Class FormDataAnalysis
         Me.CboSexColoscopy.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.CboSexColoscopy.FormattingEnabled = True
         Me.CboSexColoscopy.Items.AddRange(New Object() {"Male", "Female"})
-        Me.CboSexColoscopy.Location = New System.Drawing.Point(663, 164)
+        Me.CboSexColoscopy.Location = New System.Drawing.Point(656, 98)
         Me.CboSexColoscopy.Name = "CboSexColoscopy"
         Me.CboSexColoscopy.Size = New System.Drawing.Size(107, 28)
         Me.CboSexColoscopy.TabIndex = 14
@@ -800,7 +800,7 @@ Partial Class FormDataAnalysis
         Me.ChSexColosco.AutoSize = True
         Me.ChSexColosco.BackColor = System.Drawing.Color.Transparent
         Me.ChSexColosco.ForeColor = System.Drawing.Color.Red
-        Me.ChSexColosco.Location = New System.Drawing.Point(664, 135)
+        Me.ChSexColosco.Location = New System.Drawing.Point(657, 69)
         Me.ChSexColosco.Name = "ChSexColosco"
         Me.ChSexColosco.Size = New System.Drawing.Size(55, 24)
         Me.ChSexColosco.TabIndex = 13
@@ -814,7 +814,7 @@ Partial Class FormDataAnalysis
         Me.CboDiagnosisColoscopy.DropDownWidth = 500
         Me.CboDiagnosisColoscopy.Enabled = False
         Me.CboDiagnosisColoscopy.FormattingEnabled = True
-        Me.CboDiagnosisColoscopy.Location = New System.Drawing.Point(367, 164)
+        Me.CboDiagnosisColoscopy.Location = New System.Drawing.Point(360, 98)
         Me.CboDiagnosisColoscopy.Name = "CboDiagnosisColoscopy"
         Me.CboDiagnosisColoscopy.Size = New System.Drawing.Size(291, 28)
         Me.CboDiagnosisColoscopy.TabIndex = 12
@@ -823,7 +823,7 @@ Partial Class FormDataAnalysis
         '
         Me.ChViewDiagnosisColoscopy.AutoSize = True
         Me.ChViewDiagnosisColoscopy.ForeColor = System.Drawing.Color.Black
-        Me.ChViewDiagnosisColoscopy.Location = New System.Drawing.Point(367, 135)
+        Me.ChViewDiagnosisColoscopy.Location = New System.Drawing.Point(360, 69)
         Me.ChViewDiagnosisColoscopy.Name = "ChViewDiagnosisColoscopy"
         Me.ChViewDiagnosisColoscopy.Size = New System.Drawing.Size(165, 24)
         Me.ChViewDiagnosisColoscopy.TabIndex = 11
@@ -834,7 +834,7 @@ Partial Class FormDataAnalysis
         '
         Me.RadColoAllDiagnosis.AutoSize = True
         Me.RadColoAllDiagnosis.Checked = True
-        Me.RadColoAllDiagnosis.Location = New System.Drawing.Point(30, 103)
+        Me.RadColoAllDiagnosis.Location = New System.Drawing.Point(23, 37)
         Me.RadColoAllDiagnosis.Name = "RadColoAllDiagnosis"
         Me.RadColoAllDiagnosis.Size = New System.Drawing.Size(156, 24)
         Me.RadColoAllDiagnosis.TabIndex = 4
@@ -848,7 +848,7 @@ Partial Class FormDataAnalysis
         Me.cboColoMotify.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
         Me.cboColoMotify.Enabled = False
         Me.cboColoMotify.FormattingEnabled = True
-        Me.cboColoMotify.Location = New System.Drawing.Point(30, 164)
+        Me.cboColoMotify.Location = New System.Drawing.Point(23, 98)
         Me.cboColoMotify.Name = "cboColoMotify"
         Me.cboColoMotify.Size = New System.Drawing.Size(331, 28)
         Me.cboColoMotify.TabIndex = 7
@@ -856,7 +856,7 @@ Partial Class FormDataAnalysis
         'RadColoOneDiagnosis
         '
         Me.RadColoOneDiagnosis.AutoSize = True
-        Me.RadColoOneDiagnosis.Location = New System.Drawing.Point(30, 134)
+        Me.RadColoOneDiagnosis.Location = New System.Drawing.Point(23, 68)
         Me.RadColoOneDiagnosis.Name = "RadColoOneDiagnosis"
         Me.RadColoOneDiagnosis.Size = New System.Drawing.Size(169, 24)
         Me.RadColoOneDiagnosis.TabIndex = 5
@@ -866,7 +866,7 @@ Partial Class FormDataAnalysis
         'BtnColoPrintPreview
         '
         Me.BtnColoPrintPreview.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnColoPrintPreview.Location = New System.Drawing.Point(30, 199)
+        Me.BtnColoPrintPreview.Location = New System.Drawing.Point(23, 133)
         Me.BtnColoPrintPreview.Name = "BtnColoPrintPreview"
         Me.BtnColoPrintPreview.Size = New System.Drawing.Size(210, 38)
         Me.BtnColoPrintPreview.TabIndex = 6
