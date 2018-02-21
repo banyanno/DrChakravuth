@@ -231,7 +231,8 @@
 
     Private Sub btnDelete_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnDelete.Click
         If MsgBox("Are you sure you want to delete this patient record?", MsgBoxStyle.YesNo, "Confirm Delete") = MsgBoxResult.Yes Then
-            DA_Patient.DeletePatient(GridPatientInfo.CurrentRow.Cells("ppatientid").Value)
+            'DA_Patient.DeletePatient(GridPatientInfo.CurrentRow.Cells("ppatientid").Value)
+            DA_Patient.DeleteV1(False, GridPatientInfo.GetRow.Cells("ppatientid").Value)
             ''Clear Box
             ClearBox()
             ''Reload Data to Datagrid and Enable It

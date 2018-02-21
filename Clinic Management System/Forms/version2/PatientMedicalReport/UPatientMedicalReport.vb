@@ -58,7 +58,7 @@ Public Class UPatientMedicalReport
 
             Dim RptRecord As New RptPatientRecord
             ' Dim RptViewer As New FormReportViewer
-            MsgBox(PatientID)
+
 
             Dim ComplaintTable As DataTable = DA_Complaint.SelectByPatientID(PatientID)
             Dim HistoryTable As DataTable = DA_History.SelectByPatientID(PatientID)

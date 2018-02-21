@@ -1065,11 +1065,20 @@ Partial Public Class DSAnalysis
             MyBase.Columns.Add(Me.columnAge)
             Me.columnprescriptionid = New Global.System.Data.DataColumn("prescriptionid", GetType(Long), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnprescriptionid)
+            Me.columnpatientid.AllowDBNull = false
+            Me.columndoctorid.AllowDBNull = false
+            Me.columndiagnosis.AllowDBNull = false
             Me.columndiagnosis.MaxLength = 500
+            Me.columnCheckdate.AllowDBNull = false
+            Me.columnconsulttype.AllowDBNull = false
             Me.columnconsulttype.MaxLength = 250
+            Me.columncomplaint.AllowDBNull = false
             Me.columncomplaint.MaxLength = 500
+            Me.columnpname.AllowDBNull = false
             Me.columnpname.MaxLength = 200
+            Me.columnpgender.AllowDBNull = false
             Me.columnpgender.MaxLength = 10
+            Me.columnpAge.AllowDBNull = false
             Me.columnprescriptionid.AllowDBNull = false
         End Sub
         
@@ -2357,6 +2366,8 @@ Partial Public Class DSAnalysis
         
         Private columnmotify As Global.System.Data.DataColumn
         
+        Private columnpatientid As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Sub New()
             MyBase.New
@@ -2480,6 +2491,13 @@ Partial Public Class DSAnalysis
             End Get
         End Property
         
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property patientidColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnpatientid
+            End Get
+        End Property
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -2509,9 +2527,9 @@ Partial Public Class DSAnalysis
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
-        Public Overloads Function AddVIEW_PARAEXAM_FIBROSCOPYRow(ByVal pname As String, ByVal pgender As String, ByVal pAge As Date, ByVal Age As Integer, ByVal pcontactaddress As String, ByVal ppatientid As Long, ByVal request_date As Date, ByVal Doctor_ID As Integer, ByVal Diagnosis As String, ByVal conclusion_id As Integer, ByVal conclusion_name As String, ByVal motify As String) As VIEW_PARAEXAM_FIBROSCOPYRow
+        Public Overloads Function AddVIEW_PARAEXAM_FIBROSCOPYRow(ByVal pname As String, ByVal pgender As String, ByVal pAge As Date, ByVal Age As Integer, ByVal pcontactaddress As String, ByVal ppatientid As Long, ByVal request_date As Date, ByVal Doctor_ID As Integer, ByVal Diagnosis As String, ByVal conclusion_id As Integer, ByVal conclusion_name As String, ByVal motify As String, ByVal patientid As Integer) As VIEW_PARAEXAM_FIBROSCOPYRow
             Dim rowVIEW_PARAEXAM_FIBROSCOPYRow As VIEW_PARAEXAM_FIBROSCOPYRow = CType(Me.NewRow,VIEW_PARAEXAM_FIBROSCOPYRow)
-            Dim columnValuesArray() As Object = New Object() {pname, pgender, pAge, Age, pcontactaddress, ppatientid, request_date, Doctor_ID, Diagnosis, conclusion_id, conclusion_name, Nothing, motify}
+            Dim columnValuesArray() As Object = New Object() {pname, pgender, pAge, Age, pcontactaddress, ppatientid, request_date, Doctor_ID, Diagnosis, conclusion_id, conclusion_name, Nothing, motify, patientid}
             rowVIEW_PARAEXAM_FIBROSCOPYRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowVIEW_PARAEXAM_FIBROSCOPYRow)
             Return rowVIEW_PARAEXAM_FIBROSCOPYRow
@@ -2544,6 +2562,7 @@ Partial Public Class DSAnalysis
             Me.columnconclusion_name = MyBase.Columns("conclusion_name")
             Me.columnrequest_id = MyBase.Columns("request_id")
             Me.columnmotify = MyBase.Columns("motify")
+            Me.columnpatientid = MyBase.Columns("patientid")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
@@ -2574,6 +2593,8 @@ Partial Public Class DSAnalysis
             MyBase.Columns.Add(Me.columnrequest_id)
             Me.columnmotify = New Global.System.Data.DataColumn("motify", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnmotify)
+            Me.columnpatientid = New Global.System.Data.DataColumn("patientid", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnpatientid)
             Me.columnpname.AllowDBNull = false
             Me.columnpname.MaxLength = 200
             Me.columnpgender.AllowDBNull = false
@@ -2589,6 +2610,7 @@ Partial Public Class DSAnalysis
             Me.columnrequest_id.AllowDBNull = false
             Me.columnrequest_id.ReadOnly = true
             Me.columnmotify.MaxLength = 250
+            Me.columnpatientid.AllowDBNull = false
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
@@ -2742,6 +2764,8 @@ Partial Public Class DSAnalysis
         
         Private columnmotify As Global.System.Data.DataColumn
         
+        Private columnpatientid As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Sub New()
             MyBase.New
@@ -2858,6 +2882,13 @@ Partial Public Class DSAnalysis
             End Get
         End Property
         
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property patientidColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnpatientid
+            End Get
+        End Property
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -2887,9 +2918,9 @@ Partial Public Class DSAnalysis
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
-        Public Overloads Function AddVIEW_PARAEXAM_NASOGASTRORow(ByVal pname As String, ByVal pgender As String, ByVal pAge As Date, ByVal Age As Integer, ByVal pcontactaddress As String, ByVal ppatientid As Long, ByVal request_date As Date, ByVal Doctor_ID As Integer, ByVal Diagnosis As String, ByVal conclusion_id As Integer, ByVal conclusion_name As String, ByVal motify As String) As VIEW_PARAEXAM_NASOGASTRORow
+        Public Overloads Function AddVIEW_PARAEXAM_NASOGASTRORow(ByVal pname As String, ByVal pgender As String, ByVal pAge As Date, ByVal Age As Integer, ByVal pcontactaddress As String, ByVal ppatientid As Long, ByVal request_date As Date, ByVal Doctor_ID As Integer, ByVal Diagnosis As String, ByVal conclusion_id As Integer, ByVal conclusion_name As String, ByVal motify As String, ByVal patientid As Integer) As VIEW_PARAEXAM_NASOGASTRORow
             Dim rowVIEW_PARAEXAM_NASOGASTRORow As VIEW_PARAEXAM_NASOGASTRORow = CType(Me.NewRow,VIEW_PARAEXAM_NASOGASTRORow)
-            Dim columnValuesArray() As Object = New Object() {pname, pgender, pAge, Age, pcontactaddress, ppatientid, request_date, Doctor_ID, Diagnosis, conclusion_id, conclusion_name, motify}
+            Dim columnValuesArray() As Object = New Object() {pname, pgender, pAge, Age, pcontactaddress, ppatientid, request_date, Doctor_ID, Diagnosis, conclusion_id, conclusion_name, motify, patientid}
             rowVIEW_PARAEXAM_NASOGASTRORow.ItemArray = columnValuesArray
             Me.Rows.Add(rowVIEW_PARAEXAM_NASOGASTRORow)
             Return rowVIEW_PARAEXAM_NASOGASTRORow
@@ -2921,6 +2952,7 @@ Partial Public Class DSAnalysis
             Me.columnconclusion_id = MyBase.Columns("conclusion_id")
             Me.columnconclusion_name = MyBase.Columns("conclusion_name")
             Me.columnmotify = MyBase.Columns("motify")
+            Me.columnpatientid = MyBase.Columns("patientid")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
@@ -2949,6 +2981,8 @@ Partial Public Class DSAnalysis
             MyBase.Columns.Add(Me.columnconclusion_name)
             Me.columnmotify = New Global.System.Data.DataColumn("motify", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnmotify)
+            Me.columnpatientid = New Global.System.Data.DataColumn("patientid", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnpatientid)
             Me.columnpname.AllowDBNull = false
             Me.columnpname.MaxLength = 200
             Me.columnpgender.AllowDBNull = false
@@ -2959,6 +2993,7 @@ Partial Public Class DSAnalysis
             Me.columnDiagnosis.MaxLength = 150
             Me.columnconclusion_name.MaxLength = 250
             Me.columnmotify.MaxLength = 250
+            Me.columnpatientid.AllowDBNull = false
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
@@ -3112,6 +3147,8 @@ Partial Public Class DSAnalysis
         
         Private columnmotiy As Global.System.Data.DataColumn
         
+        Private columnpatientid As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Sub New()
             MyBase.New
@@ -3228,6 +3265,13 @@ Partial Public Class DSAnalysis
             End Get
         End Property
         
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property patientidColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnpatientid
+            End Get
+        End Property
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -3257,9 +3301,9 @@ Partial Public Class DSAnalysis
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
-        Public Overloads Function AddVIEW_PARAEXAM_COLOSCOPYRow(ByVal pname As String, ByVal pgender As String, ByVal pAge As Date, ByVal Age As Integer, ByVal pcontactaddress As String, ByVal ppatientid As Long, ByVal request_date As Date, ByVal Doctor_ID As Integer, ByVal Diagnosis As String, ByVal request_id As Long, ByVal Conclusion As String, ByVal motiy As String) As VIEW_PARAEXAM_COLOSCOPYRow
+        Public Overloads Function AddVIEW_PARAEXAM_COLOSCOPYRow(ByVal pname As String, ByVal pgender As String, ByVal pAge As Date, ByVal Age As Integer, ByVal pcontactaddress As String, ByVal ppatientid As Long, ByVal request_date As Date, ByVal Doctor_ID As Integer, ByVal Diagnosis As String, ByVal request_id As Long, ByVal Conclusion As String, ByVal motiy As String, ByVal patientid As Integer) As VIEW_PARAEXAM_COLOSCOPYRow
             Dim rowVIEW_PARAEXAM_COLOSCOPYRow As VIEW_PARAEXAM_COLOSCOPYRow = CType(Me.NewRow,VIEW_PARAEXAM_COLOSCOPYRow)
-            Dim columnValuesArray() As Object = New Object() {pname, pgender, pAge, Age, pcontactaddress, ppatientid, request_date, Doctor_ID, Diagnosis, request_id, Conclusion, motiy}
+            Dim columnValuesArray() As Object = New Object() {pname, pgender, pAge, Age, pcontactaddress, ppatientid, request_date, Doctor_ID, Diagnosis, request_id, Conclusion, motiy, patientid}
             rowVIEW_PARAEXAM_COLOSCOPYRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowVIEW_PARAEXAM_COLOSCOPYRow)
             Return rowVIEW_PARAEXAM_COLOSCOPYRow
@@ -3291,6 +3335,7 @@ Partial Public Class DSAnalysis
             Me.columnrequest_id = MyBase.Columns("request_id")
             Me.columnConclusion = MyBase.Columns("Conclusion")
             Me.columnmotiy = MyBase.Columns("motiy")
+            Me.columnpatientid = MyBase.Columns("patientid")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
@@ -3319,6 +3364,8 @@ Partial Public Class DSAnalysis
             MyBase.Columns.Add(Me.columnConclusion)
             Me.columnmotiy = New Global.System.Data.DataColumn("motiy", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnmotiy)
+            Me.columnpatientid = New Global.System.Data.DataColumn("patientid", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnpatientid)
             Me.columnpname.AllowDBNull = false
             Me.columnpname.MaxLength = 200
             Me.columnpgender.AllowDBNull = false
@@ -3329,6 +3376,7 @@ Partial Public Class DSAnalysis
             Me.columnDiagnosis.MaxLength = 150
             Me.columnConclusion.MaxLength = 100
             Me.columnmotiy.MaxLength = 250
+            Me.columnpatientid.AllowDBNull = false
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
@@ -3705,11 +3753,7 @@ Partial Public Class DSAnalysis
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Property patientid() As Long
             Get
-                Try 
-                    Return CType(Me(Me.tableVIEW_DIAGNOSI_COMPLAINT.patientidColumn),Long)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'patientid' in table 'VIEW_DIAGNOSI_COMPLAINT' is DBNull.", e)
-                End Try
+                Return CType(Me(Me.tableVIEW_DIAGNOSI_COMPLAINT.patientidColumn),Long)
             End Get
             Set
                 Me(Me.tableVIEW_DIAGNOSI_COMPLAINT.patientidColumn) = value
@@ -3719,11 +3763,7 @@ Partial Public Class DSAnalysis
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Property doctorid() As Integer
             Get
-                Try 
-                    Return CType(Me(Me.tableVIEW_DIAGNOSI_COMPLAINT.doctoridColumn),Integer)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'doctorid' in table 'VIEW_DIAGNOSI_COMPLAINT' is DBNull.", e)
-                End Try
+                Return CType(Me(Me.tableVIEW_DIAGNOSI_COMPLAINT.doctoridColumn),Integer)
             End Get
             Set
                 Me(Me.tableVIEW_DIAGNOSI_COMPLAINT.doctoridColumn) = value
@@ -3733,11 +3773,7 @@ Partial Public Class DSAnalysis
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Property diagnosis() As String
             Get
-                Try 
-                    Return CType(Me(Me.tableVIEW_DIAGNOSI_COMPLAINT.diagnosisColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'diagnosis' in table 'VIEW_DIAGNOSI_COMPLAINT' is DBNull.", e)
-                End Try
+                Return CType(Me(Me.tableVIEW_DIAGNOSI_COMPLAINT.diagnosisColumn),String)
             End Get
             Set
                 Me(Me.tableVIEW_DIAGNOSI_COMPLAINT.diagnosisColumn) = value
@@ -3747,11 +3783,7 @@ Partial Public Class DSAnalysis
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Property Checkdate() As Date
             Get
-                Try 
-                    Return CType(Me(Me.tableVIEW_DIAGNOSI_COMPLAINT.CheckdateColumn),Date)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Checkdate' in table 'VIEW_DIAGNOSI_COMPLAINT' is DBNull.", e)
-                End Try
+                Return CType(Me(Me.tableVIEW_DIAGNOSI_COMPLAINT.CheckdateColumn),Date)
             End Get
             Set
                 Me(Me.tableVIEW_DIAGNOSI_COMPLAINT.CheckdateColumn) = value
@@ -3761,11 +3793,7 @@ Partial Public Class DSAnalysis
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Property consulttype() As String
             Get
-                Try 
-                    Return CType(Me(Me.tableVIEW_DIAGNOSI_COMPLAINT.consulttypeColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'consulttype' in table 'VIEW_DIAGNOSI_COMPLAINT' is DBNull.", e)
-                End Try
+                Return CType(Me(Me.tableVIEW_DIAGNOSI_COMPLAINT.consulttypeColumn),String)
             End Get
             Set
                 Me(Me.tableVIEW_DIAGNOSI_COMPLAINT.consulttypeColumn) = value
@@ -3775,11 +3803,7 @@ Partial Public Class DSAnalysis
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Property complaint() As String
             Get
-                Try 
-                    Return CType(Me(Me.tableVIEW_DIAGNOSI_COMPLAINT.complaintColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'complaint' in table 'VIEW_DIAGNOSI_COMPLAINT' is DBNull.", e)
-                End Try
+                Return CType(Me(Me.tableVIEW_DIAGNOSI_COMPLAINT.complaintColumn),String)
             End Get
             Set
                 Me(Me.tableVIEW_DIAGNOSI_COMPLAINT.complaintColumn) = value
@@ -3789,11 +3813,7 @@ Partial Public Class DSAnalysis
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Property pname() As String
             Get
-                Try 
-                    Return CType(Me(Me.tableVIEW_DIAGNOSI_COMPLAINT.pnameColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'pname' in table 'VIEW_DIAGNOSI_COMPLAINT' is DBNull.", e)
-                End Try
+                Return CType(Me(Me.tableVIEW_DIAGNOSI_COMPLAINT.pnameColumn),String)
             End Get
             Set
                 Me(Me.tableVIEW_DIAGNOSI_COMPLAINT.pnameColumn) = value
@@ -3803,11 +3823,7 @@ Partial Public Class DSAnalysis
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Property pgender() As String
             Get
-                Try 
-                    Return CType(Me(Me.tableVIEW_DIAGNOSI_COMPLAINT.pgenderColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'pgender' in table 'VIEW_DIAGNOSI_COMPLAINT' is DBNull.", e)
-                End Try
+                Return CType(Me(Me.tableVIEW_DIAGNOSI_COMPLAINT.pgenderColumn),String)
             End Get
             Set
                 Me(Me.tableVIEW_DIAGNOSI_COMPLAINT.pgenderColumn) = value
@@ -3817,11 +3833,7 @@ Partial Public Class DSAnalysis
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Property pAge() As Date
             Get
-                Try 
-                    Return CType(Me(Me.tableVIEW_DIAGNOSI_COMPLAINT.pAgeColumn),Date)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'pAge' in table 'VIEW_DIAGNOSI_COMPLAINT' is DBNull.", e)
-                End Try
+                Return CType(Me(Me.tableVIEW_DIAGNOSI_COMPLAINT.pAgeColumn),Date)
             End Get
             Set
                 Me(Me.tableVIEW_DIAGNOSI_COMPLAINT.pAgeColumn) = value
@@ -3851,96 +3863,6 @@ Partial Public Class DSAnalysis
                 Me(Me.tableVIEW_DIAGNOSI_COMPLAINT.prescriptionidColumn) = value
             End Set
         End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
-        Public Function IspatientidNull() As Boolean
-            Return Me.IsNull(Me.tableVIEW_DIAGNOSI_COMPLAINT.patientidColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
-        Public Sub SetpatientidNull()
-            Me(Me.tableVIEW_DIAGNOSI_COMPLAINT.patientidColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
-        Public Function IsdoctoridNull() As Boolean
-            Return Me.IsNull(Me.tableVIEW_DIAGNOSI_COMPLAINT.doctoridColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
-        Public Sub SetdoctoridNull()
-            Me(Me.tableVIEW_DIAGNOSI_COMPLAINT.doctoridColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
-        Public Function IsdiagnosisNull() As Boolean
-            Return Me.IsNull(Me.tableVIEW_DIAGNOSI_COMPLAINT.diagnosisColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
-        Public Sub SetdiagnosisNull()
-            Me(Me.tableVIEW_DIAGNOSI_COMPLAINT.diagnosisColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
-        Public Function IsCheckdateNull() As Boolean
-            Return Me.IsNull(Me.tableVIEW_DIAGNOSI_COMPLAINT.CheckdateColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
-        Public Sub SetCheckdateNull()
-            Me(Me.tableVIEW_DIAGNOSI_COMPLAINT.CheckdateColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
-        Public Function IsconsulttypeNull() As Boolean
-            Return Me.IsNull(Me.tableVIEW_DIAGNOSI_COMPLAINT.consulttypeColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
-        Public Sub SetconsulttypeNull()
-            Me(Me.tableVIEW_DIAGNOSI_COMPLAINT.consulttypeColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
-        Public Function IscomplaintNull() As Boolean
-            Return Me.IsNull(Me.tableVIEW_DIAGNOSI_COMPLAINT.complaintColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
-        Public Sub SetcomplaintNull()
-            Me(Me.tableVIEW_DIAGNOSI_COMPLAINT.complaintColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
-        Public Function IspnameNull() As Boolean
-            Return Me.IsNull(Me.tableVIEW_DIAGNOSI_COMPLAINT.pnameColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
-        Public Sub SetpnameNull()
-            Me(Me.tableVIEW_DIAGNOSI_COMPLAINT.pnameColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
-        Public Function IspgenderNull() As Boolean
-            Return Me.IsNull(Me.tableVIEW_DIAGNOSI_COMPLAINT.pgenderColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
-        Public Sub SetpgenderNull()
-            Me(Me.tableVIEW_DIAGNOSI_COMPLAINT.pgenderColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
-        Public Function IspAgeNull() As Boolean
-            Return Me.IsNull(Me.tableVIEW_DIAGNOSI_COMPLAINT.pAgeColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
-        Public Sub SetpAgeNull()
-            Me(Me.tableVIEW_DIAGNOSI_COMPLAINT.pAgeColumn) = Global.System.Convert.DBNull
-        End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Function IsAgeNull() As Boolean
@@ -4668,6 +4590,16 @@ Partial Public Class DSAnalysis
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property patientid() As Integer
+            Get
+                Return CType(Me(Me.tableVIEW_PARAEXAM_FIBROSCOPY.patientidColumn),Integer)
+            End Get
+            Set
+                Me(Me.tableVIEW_PARAEXAM_FIBROSCOPY.patientidColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Function IsAgeNull() As Boolean
             Return Me.IsNull(Me.tableVIEW_PARAEXAM_FIBROSCOPY.AgeColumn)
         End Function
@@ -4919,6 +4851,16 @@ Partial Public Class DSAnalysis
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property patientid() As Integer
+            Get
+                Return CType(Me(Me.tableVIEW_PARAEXAM_NASOGASTRO.patientidColumn),Integer)
+            End Get
+            Set
+                Me(Me.tableVIEW_PARAEXAM_NASOGASTRO.patientidColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Function IsAgeNull() As Boolean
             Return Me.IsNull(Me.tableVIEW_PARAEXAM_NASOGASTRO.AgeColumn)
         End Function
@@ -5164,6 +5106,16 @@ Partial Public Class DSAnalysis
             End Get
             Set
                 Me(Me.tableVIEW_PARAEXAM_COLOSCOPY.motiyColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property patientid() As Integer
+            Get
+                Return CType(Me(Me.tableVIEW_PARAEXAM_COLOSCOPY.patientidColumn),Integer)
+            End Get
+            Set
+                Me(Me.tableVIEW_PARAEXAM_COLOSCOPY.patientidColumn) = value
             End Set
         End Property
         
@@ -6185,36 +6137,37 @@ Namespace DSAnalysisTableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(3) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT patientid, doctorid, diagnosis, Checkdate, consulttype, complaint, pname, "& _ 
-                "pgender, pAge, Age, prescriptionid FROM dbo.VIEW_DIAGNOSI_COMPLAINT"
+            Me._commandCollection(0).CommandText = "SELECT        patientid, doctorid, diagnosis, Checkdate, consulttype, complaint, "& _ 
+                "pname, pgender, pAge, Age, prescriptionid"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            VIEW_DIAGNOSI_COMPLAI"& _ 
+                "NT"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand
             Me._commandCollection(1).Connection = Me.Connection
-            Me._commandCollection(1).CommandText = "SELECT patientid, doctorid, diagnosis, Checkdate, consulttype, complaint, pname, "& _ 
-                "pgender, pAge, Age, prescriptionid FROM dbo.VIEW_DIAGNOSI_COMPLAINT"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE Check"& _ 
-                "date BETWEEN @From AND @To"
+            Me._commandCollection(1).CommandText = "SELECT Age, Checkdate, complaint, consulttype, diagnosis, doctorid, pAge, patient"& _ 
+                "id, pgender, pname, prescriptionid FROM VIEW_DIAGNOSI_COMPLAINT WHERE (Checkdate"& _ 
+                " BETWEEN @From AND @To)"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@From", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "Checkdate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@To", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "Checkdate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(2) = New Global.System.Data.SqlClient.SqlCommand
             Me._commandCollection(2).Connection = Me.Connection
-            Me._commandCollection(2).CommandText = "SELECT patientid, doctorid, diagnosis, Checkdate, consulttype, complaint, pname, "& _ 
-                "pgender, pAge, Age, prescriptionid FROM dbo.VIEW_DIAGNOSI_COMPLAINT"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"(Che"& _ 
-                "ckdate BETWEEN @From AND @To) AND diagnosis=@diagnosis"
+            Me._commandCollection(2).CommandText = "SELECT Age, Checkdate, complaint, consulttype, diagnosis, doctorid, pAge, patient"& _ 
+                "id, pgender, pname, prescriptionid FROM VIEW_DIAGNOSI_COMPLAINT WHERE (Checkdate"& _ 
+                " BETWEEN @From AND @To) AND (diagnosis = @diagnosis)"
             Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@From", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "Checkdate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@To", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "Checkdate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@diagnosis", Global.System.Data.SqlDbType.VarChar, 500, Global.System.Data.ParameterDirection.Input, 0, 0, "diagnosis", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@diagnosis", Global.System.Data.SqlDbType.NVarChar, 500, Global.System.Data.ParameterDirection.Input, 0, 0, "diagnosis", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(3) = New Global.System.Data.SqlClient.SqlCommand
             Me._commandCollection(3).Connection = Me.Connection
-            Me._commandCollection(3).CommandText = "SELECT patientid, doctorid, diagnosis, Checkdate, consulttype, complaint, pname, "& _ 
-                "pgender, pAge, Age, prescriptionid FROM dbo.VIEW_DIAGNOSI_COMPLAINT"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"(Che"& _ 
-                "ckdate BETWEEN @From AND @To) AND (diagnosis=@diagnosis) and (pgender=@pgender)"
+            Me._commandCollection(3).CommandText = "SELECT Age, Checkdate, complaint, consulttype, diagnosis, doctorid, pAge, patient"& _ 
+                "id, pgender, pname, prescriptionid FROM VIEW_DIAGNOSI_COMPLAINT WHERE (Checkdate"& _ 
+                " BETWEEN @From AND @To) AND (diagnosis = @diagnosis) AND (pgender = @pgender)"
             Me._commandCollection(3).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@From", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "Checkdate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@To", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "Checkdate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@diagnosis", Global.System.Data.SqlDbType.VarChar, 500, Global.System.Data.ParameterDirection.Input, 0, 0, "diagnosis", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@pgender", Global.System.Data.SqlDbType.VarChar, 10, Global.System.Data.ParameterDirection.Input, 0, 0, "pgender", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@diagnosis", Global.System.Data.SqlDbType.NVarChar, 500, Global.System.Data.ParameterDirection.Input, 0, 0, "diagnosis", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@pgender", Global.System.Data.SqlDbType.NVarChar, 10, Global.System.Data.ParameterDirection.Input, 0, 0, "pgender", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -6242,18 +6195,10 @@ Namespace DSAnalysisTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
-        Public Overloads Overridable Function FillBy(ByVal dataTable As DSAnalysis.VIEW_DIAGNOSI_COMPLAINTDataTable, ByVal From As Global.System.Nullable(Of Date), ByVal _To As Global.System.Nullable(Of Date)) As Integer
+        Public Overloads Overridable Function FillBy(ByVal dataTable As DSAnalysis.VIEW_DIAGNOSI_COMPLAINTDataTable, ByVal From As Date, ByVal _To As Date) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(1)
-            If (From.HasValue = true) Then
-                Me.Adapter.SelectCommand.Parameters(0).Value = CType(From.Value,Date)
-            Else
-                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
-            End If
-            If (_To.HasValue = true) Then
-                Me.Adapter.SelectCommand.Parameters(1).Value = CType(_To.Value,Date)
-            Else
-                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
-            End If
+            Me.Adapter.SelectCommand.Parameters(0).Value = CType(From,Date)
+            Me.Adapter.SelectCommand.Parameters(1).Value = CType(_To,Date)
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
             End If
@@ -6264,18 +6209,10 @@ Namespace DSAnalysisTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
-        Public Overloads Overridable Function SelectComplaintDateToDate(ByVal From As Global.System.Nullable(Of Date), ByVal _To As Global.System.Nullable(Of Date)) As DSAnalysis.VIEW_DIAGNOSI_COMPLAINTDataTable
+        Public Overloads Overridable Function SelectComplaintDateToDate(ByVal From As Date, ByVal _To As Date) As DSAnalysis.VIEW_DIAGNOSI_COMPLAINTDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(1)
-            If (From.HasValue = true) Then
-                Me.Adapter.SelectCommand.Parameters(0).Value = CType(From.Value,Date)
-            Else
-                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
-            End If
-            If (_To.HasValue = true) Then
-                Me.Adapter.SelectCommand.Parameters(1).Value = CType(_To.Value,Date)
-            Else
-                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
-            End If
+            Me.Adapter.SelectCommand.Parameters(0).Value = CType(From,Date)
+            Me.Adapter.SelectCommand.Parameters(1).Value = CType(_To,Date)
             Dim dataTable As DSAnalysis.VIEW_DIAGNOSI_COMPLAINTDataTable = New DSAnalysis.VIEW_DIAGNOSI_COMPLAINTDataTable
             Me.Adapter.Fill(dataTable)
             Return dataTable
@@ -6284,20 +6221,12 @@ Namespace DSAnalysisTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
-        Public Overloads Overridable Function FillBy1(ByVal dataTable As DSAnalysis.VIEW_DIAGNOSI_COMPLAINTDataTable, ByVal From As Global.System.Nullable(Of Date), ByVal _To As Global.System.Nullable(Of Date), ByVal diagnosis As String) As Integer
+        Public Overloads Overridable Function FillBy1(ByVal dataTable As DSAnalysis.VIEW_DIAGNOSI_COMPLAINTDataTable, ByVal From As Date, ByVal _To As Date, ByVal diagnosis As String) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(2)
-            If (From.HasValue = true) Then
-                Me.Adapter.SelectCommand.Parameters(0).Value = CType(From.Value,Date)
-            Else
-                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
-            End If
-            If (_To.HasValue = true) Then
-                Me.Adapter.SelectCommand.Parameters(1).Value = CType(_To.Value,Date)
-            Else
-                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
-            End If
+            Me.Adapter.SelectCommand.Parameters(0).Value = CType(From,Date)
+            Me.Adapter.SelectCommand.Parameters(1).Value = CType(_To,Date)
             If (diagnosis Is Nothing) Then
-                Me.Adapter.SelectCommand.Parameters(2).Value = Global.System.DBNull.Value
+                Throw New Global.System.ArgumentNullException("diagnosis")
             Else
                 Me.Adapter.SelectCommand.Parameters(2).Value = CType(diagnosis,String)
             End If
@@ -6311,20 +6240,12 @@ Namespace DSAnalysisTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
-        Public Overloads Overridable Function SelectComplaintWithDiagnosis(ByVal From As Global.System.Nullable(Of Date), ByVal _To As Global.System.Nullable(Of Date), ByVal diagnosis As String) As DSAnalysis.VIEW_DIAGNOSI_COMPLAINTDataTable
+        Public Overloads Overridable Function SelectComplaintWithDiagnosis(ByVal From As Date, ByVal _To As Date, ByVal diagnosis As String) As DSAnalysis.VIEW_DIAGNOSI_COMPLAINTDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(2)
-            If (From.HasValue = true) Then
-                Me.Adapter.SelectCommand.Parameters(0).Value = CType(From.Value,Date)
-            Else
-                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
-            End If
-            If (_To.HasValue = true) Then
-                Me.Adapter.SelectCommand.Parameters(1).Value = CType(_To.Value,Date)
-            Else
-                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
-            End If
+            Me.Adapter.SelectCommand.Parameters(0).Value = CType(From,Date)
+            Me.Adapter.SelectCommand.Parameters(1).Value = CType(_To,Date)
             If (diagnosis Is Nothing) Then
-                Me.Adapter.SelectCommand.Parameters(2).Value = Global.System.DBNull.Value
+                Throw New Global.System.ArgumentNullException("diagnosis")
             Else
                 Me.Adapter.SelectCommand.Parameters(2).Value = CType(diagnosis,String)
             End If
@@ -7558,6 +7479,7 @@ Namespace DSAnalysisTableAdapters
             tableMapping.ColumnMappings.Add("conclusion_name", "conclusion_name")
             tableMapping.ColumnMappings.Add("request_id", "request_id")
             tableMapping.ColumnMappings.Add("motify", "motify")
+            tableMapping.ColumnMappings.Add("patientid", "patientid")
             Me._adapter.TableMappings.Add(tableMapping)
         End Sub
         
@@ -7572,44 +7494,44 @@ Namespace DSAnalysisTableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(7) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT     pname, pgender, pAge, Age, pcontactaddress, ppatientid, request_date, "& _ 
-                "Doctor_ID, Diagnosis, conclusion_id, conclusion_name, request_id, motify"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM  "& _ 
-                "       VIEW_PARAEXAM_FIBROSCOPY"
+            Me._commandCollection(0).CommandText = "SELECT        pname, pgender, pAge, Age, pcontactaddress, ppatientid, request_dat"& _ 
+                "e, Doctor_ID, Diagnosis, conclusion_id, conclusion_name, request_id, motify, pat"& _ 
+                "ientid"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            VIEW_PARAEXAM_FIBROSCOPY"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand
             Me._commandCollection(1).Connection = Me.Connection
             Me._commandCollection(1).CommandText = "SELECT Age, Diagnosis, Doctor_ID, conclusion_id, conclusion_name, motify, pAge, p"& _ 
-                "contactaddress, pgender, pname, ppatientid, request_date, request_id FROM VIEW_P"& _ 
-                "ARAEXAM_FIBROSCOPY WHERE (request_date BETWEEN @From AND @To)"
+                "atientid, pcontactaddress, pgender, pname, ppatientid, request_date, request_id "& _ 
+                "FROM VIEW_PARAEXAM_FIBROSCOPY WHERE (request_date BETWEEN @From AND @To)"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@From", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "request_date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@To", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "request_date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(2) = New Global.System.Data.SqlClient.SqlCommand
             Me._commandCollection(2).Connection = Me.Connection
             Me._commandCollection(2).CommandText = "SELECT Age, Diagnosis, Doctor_ID, conclusion_id, conclusion_name, motify, pAge, p"& _ 
-                "contactaddress, pgender, pname, ppatientid, request_date, request_id FROM VIEW_P"& _ 
-                "ARAEXAM_FIBROSCOPY WHERE (request_date BETWEEN @From AND @To) AND (Diagnosis = @"& _ 
-                "Diagnosis)"
+                "atientid, pcontactaddress, pgender, pname, ppatientid, request_date, request_id "& _ 
+                "FROM VIEW_PARAEXAM_FIBROSCOPY WHERE (request_date BETWEEN @From AND @To) AND (Di"& _ 
+                "agnosis = @Diagnosis)"
             Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@From", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "request_date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@To", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "request_date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Diagnosis", Global.System.Data.SqlDbType.NVarChar, 150, Global.System.Data.ParameterDirection.Input, 0, 0, "Diagnosis", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(3) = New Global.System.Data.SqlClient.SqlCommand
             Me._commandCollection(3).Connection = Me.Connection
-            Me._commandCollection(3).CommandText = "SELECT     pname, pgender, pAge, Age, pcontactaddress, ppatientid, request_date, "& _ 
-                "Doctor_ID, Diagnosis, conclusion_id, conclusion_name, request_id, motify"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM  "& _ 
-                "       VIEW_PARAEXAM_FIBROSCOPY"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE (request_date BETWEEN @From AND @To) and "& _ 
-                "(motify=@motify)"
+            Me._commandCollection(3).CommandText = "SELECT Age, Diagnosis, Doctor_ID, conclusion_id, conclusion_name, motify, pAge, p"& _ 
+                "atientid, pcontactaddress, pgender, pname, ppatientid, request_date, request_id "& _ 
+                "FROM VIEW_PARAEXAM_FIBROSCOPY WHERE (request_date BETWEEN @From AND @To) AND (mo"& _ 
+                "tify = @motify)"
             Me._commandCollection(3).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@From", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "request_date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@To", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "request_date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@motify", Global.System.Data.SqlDbType.VarChar, 250, Global.System.Data.ParameterDirection.Input, 0, 0, "motify", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(4) = New Global.System.Data.SqlClient.SqlCommand
             Me._commandCollection(4).Connection = Me.Connection
-            Me._commandCollection(4).CommandText = "SELECT     pname, pgender, pAge, Age, pcontactaddress, ppatientid, request_date, "& _ 
-                "Doctor_ID, Diagnosis, conclusion_id, conclusion_name, request_id, motify"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM  "& _ 
-                "       VIEW_PARAEXAM_FIBROSCOPY"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE (request_date BETWEEN @From AND @To) and "& _ 
-                "(motify=@motify) and (Diagnosis=@Diagnosis)"
+            Me._commandCollection(4).CommandText = "SELECT Age, Diagnosis, Doctor_ID, conclusion_id, conclusion_name, motify, pAge, p"& _ 
+                "atientid, pcontactaddress, pgender, pname, ppatientid, request_date, request_id "& _ 
+                "FROM VIEW_PARAEXAM_FIBROSCOPY WHERE (request_date BETWEEN @From AND @To) AND (mo"& _ 
+                "tify = @motify) AND (Diagnosis = @Diagnosis)"
             Me._commandCollection(4).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@From", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "request_date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@To", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "request_date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -7617,10 +7539,10 @@ Namespace DSAnalysisTableAdapters
             Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Diagnosis", Global.System.Data.SqlDbType.NVarChar, 150, Global.System.Data.ParameterDirection.Input, 0, 0, "Diagnosis", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(5) = New Global.System.Data.SqlClient.SqlCommand
             Me._commandCollection(5).Connection = Me.Connection
-            Me._commandCollection(5).CommandText = "SELECT     pname, pgender, pAge, Age, pcontactaddress, ppatientid, request_date, "& _ 
-                "Doctor_ID, Diagnosis, conclusion_id, conclusion_name, request_id, motify"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM  "& _ 
-                "       VIEW_PARAEXAM_FIBROSCOPY"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE (request_date BETWEEN @From AND @To) and "& _ 
-                "(motify=@motify) and (Diagnosis=@Diagnosis) AND (pgender=@Sex)"
+            Me._commandCollection(5).CommandText = "SELECT Age, Diagnosis, Doctor_ID, conclusion_id, conclusion_name, motify, pAge, p"& _ 
+                "atientid, pcontactaddress, pgender, pname, ppatientid, request_date, request_id "& _ 
+                "FROM VIEW_PARAEXAM_FIBROSCOPY WHERE (request_date BETWEEN @From AND @To) AND (mo"& _ 
+                "tify = @motify) AND (Diagnosis = @Diagnosis) AND (pgender = @Sex)"
             Me._commandCollection(5).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(5).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@From", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "request_date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(5).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@To", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "request_date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -7630,9 +7552,9 @@ Namespace DSAnalysisTableAdapters
             Me._commandCollection(6) = New Global.System.Data.SqlClient.SqlCommand
             Me._commandCollection(6).Connection = Me.Connection
             Me._commandCollection(6).CommandText = "SELECT Age, Diagnosis, Doctor_ID, conclusion_id, conclusion_name, motify, pAge, p"& _ 
-                "contactaddress, pgender, pname, ppatientid, request_date, request_id FROM VIEW_P"& _ 
-                "ARAEXAM_FIBROSCOPY WHERE (request_date BETWEEN @From AND @To) AND (Diagnosis = @"& _ 
-                "Diagnosis) and (pgender=@Sex)"
+                "atientid, pcontactaddress, pgender, pname, ppatientid, request_date, request_id "& _ 
+                "FROM VIEW_PARAEXAM_FIBROSCOPY WHERE (request_date BETWEEN @From AND @To) AND (Di"& _ 
+                "agnosis = @Diagnosis) AND (pgender = @Sex)"
             Me._commandCollection(6).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(6).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@From", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "request_date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(6).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@To", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "request_date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -7640,10 +7562,10 @@ Namespace DSAnalysisTableAdapters
             Me._commandCollection(6).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Sex", Global.System.Data.SqlDbType.VarChar, 10, Global.System.Data.ParameterDirection.Input, 0, 0, "pgender", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(7) = New Global.System.Data.SqlClient.SqlCommand
             Me._commandCollection(7).Connection = Me.Connection
-            Me._commandCollection(7).CommandText = "SELECT     pname, pgender, pAge, Age, pcontactaddress, ppatientid, request_date, "& _ 
-                "Doctor_ID, Diagnosis, conclusion_id, conclusion_name, request_id, motify"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM  "& _ 
-                "       VIEW_PARAEXAM_FIBROSCOPY"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE (request_date BETWEEN @From AND @To) and "& _ 
-                "(motify=@motify) and (Diagnosis=@Diagnosis) and (pgender=@Sex)"
+            Me._commandCollection(7).CommandText = "SELECT Age, Diagnosis, Doctor_ID, conclusion_id, conclusion_name, motify, pAge, p"& _ 
+                "atientid, pcontactaddress, pgender, pname, ppatientid, request_date, request_id "& _ 
+                "FROM VIEW_PARAEXAM_FIBROSCOPY WHERE (request_date BETWEEN @From AND @To) AND (mo"& _ 
+                "tify = @motify) AND (Diagnosis = @Diagnosis) AND (pgender = @Sex)"
             Me._commandCollection(7).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(7).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@From", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "request_date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(7).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@To", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "request_date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -8222,6 +8144,7 @@ Namespace DSAnalysisTableAdapters
             tableMapping.ColumnMappings.Add("conclusion_id", "conclusion_id")
             tableMapping.ColumnMappings.Add("conclusion_name", "conclusion_name")
             tableMapping.ColumnMappings.Add("motify", "motify")
+            tableMapping.ColumnMappings.Add("patientid", "patientid")
             Me._adapter.TableMappings.Add(tableMapping)
         End Sub
         
@@ -8236,43 +8159,44 @@ Namespace DSAnalysisTableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(6) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT     pname, pgender, pAge, Age, pcontactaddress, ppatientid, request_date, "& _ 
-                "Doctor_ID, Diagnosis, conclusion_id, conclusion_name, motify"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM         VIEW_"& _ 
-                "PARAEXAM_NASOGASTRO"
+            Me._commandCollection(0).CommandText = "SELECT        pname, pgender, pAge, Age, pcontactaddress, ppatientid, request_dat"& _ 
+                "e, Doctor_ID, Diagnosis, conclusion_id, conclusion_name, motify, patientid"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM"& _ 
+                "            VIEW_PARAEXAM_NASOGASTRO"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand
             Me._commandCollection(1).Connection = Me.Connection
             Me._commandCollection(1).CommandText = "SELECT Age, Diagnosis, Doctor_ID, conclusion_id, conclusion_name, motify, pAge, p"& _ 
-                "contactaddress, pgender, pname, ppatientid, request_date FROM VIEW_PARAEXAM_NASO"& _ 
-                "GASTRO WHERE (request_date BETWEEN @From AND @To)"
+                "atientid, pcontactaddress, pgender, pname, ppatientid, request_date FROM VIEW_PA"& _ 
+                "RAEXAM_NASOGASTRO WHERE (request_date BETWEEN @From AND @To)"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@From", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "request_date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@To", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "request_date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(2) = New Global.System.Data.SqlClient.SqlCommand
             Me._commandCollection(2).Connection = Me.Connection
             Me._commandCollection(2).CommandText = "SELECT Age, Diagnosis, Doctor_ID, conclusion_id, conclusion_name, motify, pAge, p"& _ 
-                "contactaddress, pgender, pname, ppatientid, request_date FROM VIEW_PARAEXAM_NASO"& _ 
-                "GASTRO WHERE (request_date BETWEEN @From AND @To) AND (Diagnosis = @Diagnosis)"
+                "atientid, pcontactaddress, pgender, pname, ppatientid, request_date FROM VIEW_PA"& _ 
+                "RAEXAM_NASOGASTRO WHERE (request_date BETWEEN @From AND @To) AND (Diagnosis = @D"& _ 
+                "iagnosis)"
             Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@From", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "request_date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@To", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "request_date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Diagnosis", Global.System.Data.SqlDbType.NVarChar, 150, Global.System.Data.ParameterDirection.Input, 0, 0, "Diagnosis", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(3) = New Global.System.Data.SqlClient.SqlCommand
             Me._commandCollection(3).Connection = Me.Connection
-            Me._commandCollection(3).CommandText = "SELECT     pname, pgender, pAge, Age, pcontactaddress, ppatientid, request_date, "& _ 
-                "Doctor_ID, Diagnosis, conclusion_id, conclusion_name, motify"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM         VIEW_"& _ 
-                "PARAEXAM_NASOGASTRO"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"(request_date BETWEEN @From AND @To) AND (motify = @"& _ 
-                "motify)"
+            Me._commandCollection(3).CommandText = "SELECT Age, Diagnosis, Doctor_ID, conclusion_id, conclusion_name, motify, pAge, p"& _ 
+                "atientid, pcontactaddress, pgender, pname, ppatientid, request_date FROM VIEW_PA"& _ 
+                "RAEXAM_NASOGASTRO WHERE (request_date BETWEEN @From AND @To) AND (motify = @moti"& _ 
+                "fy)"
             Me._commandCollection(3).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@From", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "request_date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@To", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "request_date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@motify", Global.System.Data.SqlDbType.VarChar, 250, Global.System.Data.ParameterDirection.Input, 0, 0, "motify", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(4) = New Global.System.Data.SqlClient.SqlCommand
             Me._commandCollection(4).Connection = Me.Connection
-            Me._commandCollection(4).CommandText = "SELECT     pname, pgender, pAge, Age, pcontactaddress, ppatientid, request_date, "& _ 
-                "Doctor_ID, Diagnosis, conclusion_id, conclusion_name, motify"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM         VIEW_"& _ 
-                "PARAEXAM_NASOGASTRO"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"(request_date BETWEEN @From AND @To) AND (motify = @"& _ 
-                "motify) and (Diagnosis=@Diagnosis)"
+            Me._commandCollection(4).CommandText = "SELECT Age, Diagnosis, Doctor_ID, conclusion_id, conclusion_name, motify, pAge, p"& _ 
+                "atientid, pcontactaddress, pgender, pname, ppatientid, request_date FROM VIEW_PA"& _ 
+                "RAEXAM_NASOGASTRO WHERE (request_date BETWEEN @From AND @To) AND (motify = @moti"& _ 
+                "fy) AND (Diagnosis = @Diagnosis)"
             Me._commandCollection(4).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@From", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "request_date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@To", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "request_date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -8281,9 +8205,9 @@ Namespace DSAnalysisTableAdapters
             Me._commandCollection(5) = New Global.System.Data.SqlClient.SqlCommand
             Me._commandCollection(5).Connection = Me.Connection
             Me._commandCollection(5).CommandText = "SELECT Age, Diagnosis, Doctor_ID, conclusion_id, conclusion_name, motify, pAge, p"& _ 
-                "contactaddress, pgender, pname, ppatientid, request_date FROM VIEW_PARAEXAM_NASO"& _ 
-                "GASTRO WHERE (request_date BETWEEN @From AND @To) AND (Diagnosis = @Diagnosis) a"& _ 
-                "nd (pgender=@pgender)"
+                "atientid, pcontactaddress, pgender, pname, ppatientid, request_date FROM VIEW_PA"& _ 
+                "RAEXAM_NASOGASTRO WHERE (request_date BETWEEN @From AND @To) AND (Diagnosis = @D"& _ 
+                "iagnosis) AND (pgender = @pgender)"
             Me._commandCollection(5).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(5).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@From", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "request_date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(5).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@To", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "request_date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -8291,10 +8215,10 @@ Namespace DSAnalysisTableAdapters
             Me._commandCollection(5).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@pgender", Global.System.Data.SqlDbType.VarChar, 10, Global.System.Data.ParameterDirection.Input, 0, 0, "pgender", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(6) = New Global.System.Data.SqlClient.SqlCommand
             Me._commandCollection(6).Connection = Me.Connection
-            Me._commandCollection(6).CommandText = "SELECT     pname, pgender, pAge, Age, pcontactaddress, ppatientid, request_date, "& _ 
-                "Doctor_ID, Diagnosis, conclusion_id, conclusion_name, motify"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM         VIEW_"& _ 
-                "PARAEXAM_NASOGASTRO"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"(request_date BETWEEN @From AND @To) AND (motify = @"& _ 
-                "motify) and (Diagnosis=@Diagnosis) and (pgender=@pgender)"
+            Me._commandCollection(6).CommandText = "SELECT Age, Diagnosis, Doctor_ID, conclusion_id, conclusion_name, motify, pAge, p"& _ 
+                "atientid, pcontactaddress, pgender, pname, ppatientid, request_date FROM VIEW_PA"& _ 
+                "RAEXAM_NASOGASTRO WHERE (request_date BETWEEN @From AND @To) AND (motify = @moti"& _ 
+                "fy) AND (Diagnosis = @Diagnosis) AND (pgender = @pgender)"
             Me._commandCollection(6).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(6).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@From", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "request_date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(6).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@To", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "request_date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -8801,6 +8725,7 @@ Namespace DSAnalysisTableAdapters
             tableMapping.ColumnMappings.Add("request_id", "request_id")
             tableMapping.ColumnMappings.Add("Conclusion", "Conclusion")
             tableMapping.ColumnMappings.Add("motiy", "motiy")
+            tableMapping.ColumnMappings.Add("patientid", "patientid")
             Me._adapter.TableMappings.Add(tableMapping)
         End Sub
         
@@ -8815,42 +8740,42 @@ Namespace DSAnalysisTableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(6) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT     pname, pgender, pAge, Age, pcontactaddress, ppatientid, request_date, "& _ 
-                "Doctor_ID, Diagnosis, request_id, Conclusion, motiy"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM         VIEW_PARAEXAM_"& _ 
-                "COLOSCOPY"
+            Me._commandCollection(0).CommandText = "SELECT        pname, pgender, pAge, Age, pcontactaddress, ppatientid, request_dat"& _ 
+                "e, Doctor_ID, Diagnosis, request_id, Conclusion, motiy, patientid"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM         "& _ 
+                "   VIEW_PARAEXAM_COLOSCOPY"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand
             Me._commandCollection(1).Connection = Me.Connection
-            Me._commandCollection(1).CommandText = "SELECT Age, Conclusion, Diagnosis, Doctor_ID, motiy, pAge, pcontactaddress, pgend"& _ 
-                "er, pname, ppatientid, request_date, request_id FROM VIEW_PARAEXAM_COLOSCOPY WHE"& _ 
-                "RE (request_date BETWEEN @From AND @To)"
+            Me._commandCollection(1).CommandText = "SELECT Age, Conclusion, Diagnosis, Doctor_ID, motiy, pAge, patientid, pcontactadd"& _ 
+                "ress, pgender, pname, ppatientid, request_date, request_id FROM VIEW_PARAEXAM_CO"& _ 
+                "LOSCOPY WHERE (request_date BETWEEN @From AND @To)"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@From", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "request_date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@To", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "request_date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(2) = New Global.System.Data.SqlClient.SqlCommand
             Me._commandCollection(2).Connection = Me.Connection
-            Me._commandCollection(2).CommandText = "SELECT Age, Conclusion, Diagnosis, Doctor_ID, motiy, pAge, pcontactaddress, pgend"& _ 
-                "er, pname, ppatientid, request_date, request_id FROM VIEW_PARAEXAM_COLOSCOPY WHE"& _ 
-                "RE (request_date BETWEEN @From AND @To) AND (Diagnosis = @Diagnosis)"
+            Me._commandCollection(2).CommandText = "SELECT Age, Conclusion, Diagnosis, Doctor_ID, motiy, pAge, patientid, pcontactadd"& _ 
+                "ress, pgender, pname, ppatientid, request_date, request_id FROM VIEW_PARAEXAM_CO"& _ 
+                "LOSCOPY WHERE (request_date BETWEEN @From AND @To) AND (Diagnosis = @Diagnosis)"
             Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@From", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "request_date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@To", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "request_date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Diagnosis", Global.System.Data.SqlDbType.NVarChar, 150, Global.System.Data.ParameterDirection.Input, 0, 0, "Diagnosis", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(3) = New Global.System.Data.SqlClient.SqlCommand
             Me._commandCollection(3).Connection = Me.Connection
-            Me._commandCollection(3).CommandText = "SELECT     pname, pgender, pAge, Age, pcontactaddress, ppatientid, request_date, "& _ 
-                "Doctor_ID, Diagnosis, request_id, Conclusion, motiy"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM         VIEW_PARAEXAM_"& _ 
-                "COLOSCOPY"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE (request_date BETWEEN @From AND @To) AND (motiy = @motiy)"
+            Me._commandCollection(3).CommandText = "SELECT Age, Conclusion, Diagnosis, Doctor_ID, motiy, pAge, patientid, pcontactadd"& _ 
+                "ress, pgender, pname, ppatientid, request_date, request_id FROM VIEW_PARAEXAM_CO"& _ 
+                "LOSCOPY WHERE (request_date BETWEEN @From AND @To) AND (motiy = @motiy)"
             Me._commandCollection(3).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@From", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "request_date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@To", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "request_date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@motiy", Global.System.Data.SqlDbType.VarChar, 250, Global.System.Data.ParameterDirection.Input, 0, 0, "motiy", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(4) = New Global.System.Data.SqlClient.SqlCommand
             Me._commandCollection(4).Connection = Me.Connection
-            Me._commandCollection(4).CommandText = "SELECT     pname, pgender, pAge, Age, pcontactaddress, ppatientid, request_date, "& _ 
-                "Doctor_ID, Diagnosis, request_id, Conclusion, motiy"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM         VIEW_PARAEXAM_"& _ 
-                "COLOSCOPY"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE (request_date BETWEEN @From AND @To) AND (motiy = @motiy) AND D"& _ 
-                "iagnosis=@Diagnosis"
+            Me._commandCollection(4).CommandText = "SELECT Age, Conclusion, Diagnosis, Doctor_ID, motiy, pAge, patientid, pcontactadd"& _ 
+                "ress, pgender, pname, ppatientid, request_date, request_id FROM VIEW_PARAEXAM_CO"& _ 
+                "LOSCOPY WHERE (request_date BETWEEN @From AND @To) AND (motiy = @motiy) AND (Dia"& _ 
+                "gnosis = @Diagnosis)"
             Me._commandCollection(4).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@From", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "request_date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@To", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "request_date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -8858,10 +8783,10 @@ Namespace DSAnalysisTableAdapters
             Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Diagnosis", Global.System.Data.SqlDbType.NVarChar, 150, Global.System.Data.ParameterDirection.Input, 0, 0, "Diagnosis", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(5) = New Global.System.Data.SqlClient.SqlCommand
             Me._commandCollection(5).Connection = Me.Connection
-            Me._commandCollection(5).CommandText = "SELECT Age, Conclusion, Diagnosis, Doctor_ID, motiy, pAge, pcontactaddress, pgend"& _ 
-                "er, pname, ppatientid, request_date, request_id FROM VIEW_PARAEXAM_COLOSCOPY WHE"& _ 
-                "RE (request_date BETWEEN @From AND @To) AND (Diagnosis = @Diagnosis) AND pgender"& _ 
-                "=@pgender"
+            Me._commandCollection(5).CommandText = "SELECT Age, Conclusion, Diagnosis, Doctor_ID, motiy, pAge, patientid, pcontactadd"& _ 
+                "ress, pgender, pname, ppatientid, request_date, request_id FROM VIEW_PARAEXAM_CO"& _ 
+                "LOSCOPY WHERE (request_date BETWEEN @From AND @To) AND (Diagnosis = @Diagnosis) "& _ 
+                "AND (pgender = @pgender)"
             Me._commandCollection(5).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(5).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@From", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "request_date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(5).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@To", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "request_date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -8869,10 +8794,10 @@ Namespace DSAnalysisTableAdapters
             Me._commandCollection(5).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@pgender", Global.System.Data.SqlDbType.VarChar, 10, Global.System.Data.ParameterDirection.Input, 0, 0, "pgender", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(6) = New Global.System.Data.SqlClient.SqlCommand
             Me._commandCollection(6).Connection = Me.Connection
-            Me._commandCollection(6).CommandText = "SELECT     pname, pgender, pAge, Age, pcontactaddress, ppatientid, request_date, "& _ 
-                "Doctor_ID, Diagnosis, request_id, Conclusion, motiy"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM         VIEW_PARAEXAM_"& _ 
-                "COLOSCOPY"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE (request_date BETWEEN @From AND @To) AND (motiy = @motiy) AND D"& _ 
-                "iagnosis=@Diagnosis and pgender=@pgender"
+            Me._commandCollection(6).CommandText = "SELECT Age, Conclusion, Diagnosis, Doctor_ID, motiy, pAge, patientid, pcontactadd"& _ 
+                "ress, pgender, pname, ppatientid, request_date, request_id FROM VIEW_PARAEXAM_CO"& _ 
+                "LOSCOPY WHERE (request_date BETWEEN @From AND @To) AND (motiy = @motiy) AND (Dia"& _ 
+                "gnosis = @Diagnosis) AND (pgender = @pgender)"
             Me._commandCollection(6).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(6).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@From", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "request_date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(6).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@To", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "request_date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
