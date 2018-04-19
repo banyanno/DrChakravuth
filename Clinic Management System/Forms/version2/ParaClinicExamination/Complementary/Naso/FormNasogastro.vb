@@ -55,30 +55,35 @@
     End Sub
     Sub LoadNasoData()
         If DA_Naso.SelectNasoByRequestID(CLng(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value)).Rows.Count >= 1 Then
-            Dim NasoTable As New DataTable
-            NasoTable = DA_Naso.SelectNasoByRequestID(CLng(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value))
-            Me.cboNasoDemander.SelectedValue = NasoTable.Rows(0).Item("demander")
-            Me.txtNasoTolerance.Text = NasoTable.Rows(0).Item("tolerance")
-            Me.cboNasoMotify.SelectedValue = NasoTable.Rows(0).Item("motify")
-            Me.txtNasoOeso.Text = NasoTable.Rows(0).Item("oesophage")
-            Me.txtNasoEsto.Text = NasoTable.Rows(0).Item("estomac")
-            Me.txtNasoPylore.Text = NasoTable.Rows(0).Item("pylore")
-            Me.txtNasoBulbe.Text = NasoTable.Rows(0).Item("bulbe")
-            Me.txtNasoD1.Text = NasoTable.Rows(0).Item("d1_de_d2")
-            Me.TxtFundus.Text = NasoTable.Rows(0).Item("Fundus")
-            Me.TxtAntre.Text = NasoTable.Rows(0).Item("Antre")
-            If NasoTable.Rows(0).Item("cf") = "" Then
-                ChAnaPath.Checked = False
-            Else
-                ChAnaPath.Checked = True
-            End If
+            Try
+                Dim NasoTable As New DataTable
+                NasoTable = DA_Naso.SelectNasoByRequestID(CLng(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value))
+                Me.cboNasoDemander.SelectedValue = NasoTable.Rows(0).Item("demander")
+                Me.txtNasoTolerance.Text = NasoTable.Rows(0).Item("tolerance")
+                Me.cboNasoMotify.SelectedValue = NasoTable.Rows(0).Item("motify")
+                Me.txtNasoOeso.Text = NasoTable.Rows(0).Item("oesophage")
+                Me.txtNasoEsto.Text = NasoTable.Rows(0).Item("estomac")
+                Me.txtNasoPylore.Text = NasoTable.Rows(0).Item("pylore")
+                Me.txtNasoBulbe.Text = NasoTable.Rows(0).Item("bulbe")
+                Me.txtNasoD1.Text = NasoTable.Rows(0).Item("d1_de_d2")
+                Me.TxtFundus.Text = NasoTable.Rows(0).Item("Fundus")
+                Me.TxtAntre.Text = NasoTable.Rows(0).Item("Antre")
+                If NasoTable.Rows(0).Item("cf") = "" Then
+                    ChAnaPath.Checked = False
+                Else
+                    ChAnaPath.Checked = True
+                End If
 
-            'Me.txtNasoCF.Text = NasoTable.Rows(0).Item("cf")
-            'Me.cboNasoDocteur.SelectedValue = NasoTable.Rows(0).Item("docteur")
-            Me.txtnasomoreinfo.Text = NasoTable.Rows(0).Item("more_info")
+                'Me.txtNasoCF.Text = NasoTable.Rows(0).Item("cf")
+                'Me.cboNasoDocteur.SelectedValue = NasoTable.Rows(0).Item("docteur")
+                Me.txtnasomoreinfo.Text = NasoTable.Rows(0).Item("more_info")
 
-            ''Load Conclusion Data
-            Me.conclusionlist.DataSource = DA_NasoConclusion.SelectConclusionByRequestID(CInt(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value))
+                ''Load Conclusion Data
+                Me.conclusionlist.DataSource = DA_NasoConclusion.SelectConclusionByRequestID(CInt(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value))
+            Catch ex As Exception
+
+            End Try
+            
         End If
     End Sub
     Sub RefreshConclusionList()

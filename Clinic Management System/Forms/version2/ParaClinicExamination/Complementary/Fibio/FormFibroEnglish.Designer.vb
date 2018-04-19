@@ -238,17 +238,17 @@ Partial Class FormFibroEnglish
         '
         Me.TxtOther.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TxtOther.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtOther.Location = New System.Drawing.Point(561, 368)
+        Me.TxtOther.Location = New System.Drawing.Point(561, 387)
         Me.TxtOther.Multiline = True
         Me.TxtOther.Name = "TxtOther"
-        Me.TxtOther.Size = New System.Drawing.Size(396, 69)
+        Me.TxtOther.Size = New System.Drawing.Size(396, 48)
         Me.TxtOther.TabIndex = 53
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(558, 349)
+        Me.Label1.Location = New System.Drawing.Point(558, 368)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(44, 16)
         Me.Label1.TabIndex = 52
@@ -258,7 +258,7 @@ Partial Class FormFibroEnglish
         '
         Me.TxtAssessment.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TxtAssessment.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtAssessment.Location = New System.Drawing.Point(561, 290)
+        Me.TxtAssessment.Location = New System.Drawing.Point(561, 309)
         Me.TxtAssessment.Multiline = True
         Me.TxtAssessment.Name = "TxtAssessment"
         Me.TxtAssessment.Size = New System.Drawing.Size(396, 53)
@@ -282,9 +282,9 @@ Partial Class FormFibroEnglish
         Me.TxtEsophagus.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtEsophagus.Location = New System.Drawing.Point(128, 217)
         Me.TxtEsophagus.Name = "TxtEsophagus"
-        Me.TxtEsophagus.Size = New System.Drawing.Size(323, 26)
+        Me.TxtEsophagus.Size = New System.Drawing.Size(827, 26)
         Me.TxtEsophagus.TabIndex = 49
-        Me.TxtEsophagus.Text = "the gastro-esophageal junction was ..40 cm"
+        Me.TxtEsophagus.Text = "The gastro-esophageal junction was .40 cm, There was no evidence of esophagitis."
         '
         'TxtXylocainegel
         '
@@ -373,9 +373,9 @@ Partial Class FormFibroEnglish
         'ConclusionGroup
         '
         Me.ConclusionGroup.Controls.Add(Me.conclusionlist)
-        Me.ConclusionGroup.Location = New System.Drawing.Point(482, 66)
+        Me.ConclusionGroup.Location = New System.Drawing.Point(482, 53)
         Me.ConclusionGroup.Name = "ConclusionGroup"
-        Me.ConclusionGroup.Size = New System.Drawing.Size(478, 162)
+        Me.ConclusionGroup.Size = New System.Drawing.Size(478, 156)
         Me.ConclusionGroup.TabIndex = 9
         Me.ConclusionGroup.TabStop = False
         Me.ConclusionGroup.Text = "List of Recommendation:"
@@ -392,7 +392,7 @@ Partial Class FormFibroEnglish
         Me.conclusionlist.Location = New System.Drawing.Point(3, 18)
         Me.conclusionlist.Name = "conclusionlist"
         Me.conclusionlist.RowHeaders = Janus.Windows.GridEX.InheritableBoolean.[True]
-        Me.conclusionlist.Size = New System.Drawing.Size(472, 141)
+        Me.conclusionlist.Size = New System.Drawing.Size(472, 135)
         Me.conclusionlist.TabIndex = 0
         '
         'cboFibroDocteur
@@ -402,7 +402,7 @@ Partial Class FormFibroEnglish
         Me.cboFibroDocteur.Enabled = False
         Me.cboFibroDocteur.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboFibroDocteur.FormattingEnabled = True
-        Me.cboFibroDocteur.Location = New System.Drawing.Point(617, 234)
+        Me.cboFibroDocteur.Location = New System.Drawing.Point(617, 253)
         Me.cboFibroDocteur.Name = "cboFibroDocteur"
         Me.cboFibroDocteur.Size = New System.Drawing.Size(343, 26)
         Me.cboFibroDocteur.TabIndex = 15
@@ -421,7 +421,7 @@ Partial Class FormFibroEnglish
         '
         Me.Label21.AutoSize = True
         Me.Label21.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label21.Location = New System.Drawing.Point(558, 271)
+        Me.Label21.Location = New System.Drawing.Point(558, 290)
         Me.Label21.Name = "Label21"
         Me.Label21.Size = New System.Drawing.Size(89, 16)
         Me.Label21.TabIndex = 20
@@ -500,7 +500,7 @@ Partial Class FormFibroEnglish
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(554, 244)
+        Me.Label13.Location = New System.Drawing.Point(554, 263)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(57, 16)
         Me.Label13.TabIndex = 10

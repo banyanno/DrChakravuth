@@ -23,13 +23,14 @@ Partial Class FormResultColoEnglish
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormResultColoEnglish))
         Dim ConclusionList_DesignTimeLayout As Janus.Windows.GridEX.GridEXLayout = New Janus.Windows.GridEX.GridEXLayout
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormResultColoEnglish))
         Me.GroupBox7 = New System.Windows.Forms.GroupBox
         Me.DateResultExam = New System.Windows.Forms.DateTimePicker
         Me.Label6 = New System.Windows.Forms.Label
         Me.GroupBox15 = New System.Windows.Forms.GroupBox
-        Me.TxtProcedure = New System.Windows.Forms.RichTextBox
+        Me.LblPatientNo = New System.Windows.Forms.Label
+        Me.lblPatientName = New System.Windows.Forms.Label
         Me.LblProcedure = New System.Windows.Forms.Label
         Me.TxtImpression = New System.Windows.Forms.TextBox
         Me.TxtFinding = New System.Windows.Forms.TextBox
@@ -72,13 +73,13 @@ Partial Class FormResultColoEnglish
         Me.Label39 = New System.Windows.Forms.Label
         Me.Label38 = New System.Windows.Forms.Label
         Me.Label37 = New System.Windows.Forms.Label
-        Me.lblPatientName = New System.Windows.Forms.Label
-        Me.LblPatientNo = New System.Windows.Forms.Label
         Me.ErrAlert = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip
         Me.BtnSave = New System.Windows.Forms.ToolStripButton
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator
         Me.BtnCancel = New System.Windows.Forms.ToolStripButton
+        Me.TxtProcedure = New System.Windows.Forms.TextBox
+        Me.ChAnesthesia = New System.Windows.Forms.CheckBox
         Me.GroupBox7.SuspendLayout()
         Me.GroupBox15.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -103,7 +104,7 @@ Partial Class FormResultColoEnglish
         Me.GroupBox7.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox7.Location = New System.Drawing.Point(2, 28)
         Me.GroupBox7.Name = "GroupBox7"
-        Me.GroupBox7.Size = New System.Drawing.Size(1008, 661)
+        Me.GroupBox7.Size = New System.Drawing.Size(1008, 744)
         Me.GroupBox7.TabIndex = 1
         Me.GroupBox7.TabStop = False
         '
@@ -129,9 +130,10 @@ Partial Class FormResultColoEnglish
         '
         'GroupBox15
         '
+        Me.GroupBox15.Controls.Add(Me.ChAnesthesia)
+        Me.GroupBox15.Controls.Add(Me.TxtProcedure)
         Me.GroupBox15.Controls.Add(Me.LblPatientNo)
         Me.GroupBox15.Controls.Add(Me.lblPatientName)
-        Me.GroupBox15.Controls.Add(Me.TxtProcedure)
         Me.GroupBox15.Controls.Add(Me.LblProcedure)
         Me.GroupBox15.Controls.Add(Me.TxtImpression)
         Me.GroupBox15.Controls.Add(Me.TxtFinding)
@@ -163,20 +165,30 @@ Partial Class FormResultColoEnglish
         Me.GroupBox15.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox15.Location = New System.Drawing.Point(3, 97)
         Me.GroupBox15.Name = "GroupBox15"
-        Me.GroupBox15.Size = New System.Drawing.Size(990, 558)
+        Me.GroupBox15.Size = New System.Drawing.Size(990, 641)
         Me.GroupBox15.TabIndex = 4
         Me.GroupBox15.TabStop = False
         Me.GroupBox15.Text = "Result of Coloscopy"
         '
-        'TxtProcedure
+        'LblPatientNo
         '
-        Me.TxtProcedure.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TxtProcedure.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtProcedure.Location = New System.Drawing.Point(107, 270)
-        Me.TxtProcedure.Name = "TxtProcedure"
-        Me.TxtProcedure.Size = New System.Drawing.Size(373, 130)
-        Me.TxtProcedure.TabIndex = 76
-        Me.TxtProcedure.Text = resources.GetString("TxtProcedure.Text")
+        Me.LblPatientNo.AutoSize = True
+        Me.LblPatientNo.Location = New System.Drawing.Point(626, 458)
+        Me.LblPatientNo.Name = "LblPatientNo"
+        Me.LblPatientNo.Size = New System.Drawing.Size(90, 16)
+        Me.LblPatientNo.TabIndex = 12
+        Me.LblPatientNo.Text = "LblPatientNo"
+        Me.LblPatientNo.Visible = False
+        '
+        'lblPatientName
+        '
+        Me.lblPatientName.AutoSize = True
+        Me.lblPatientName.Location = New System.Drawing.Point(569, 503)
+        Me.lblPatientName.Name = "lblPatientName"
+        Me.lblPatientName.Size = New System.Drawing.Size(106, 16)
+        Me.lblPatientName.TabIndex = 13
+        Me.lblPatientName.Text = "lblPatientName"
+        Me.lblPatientName.Visible = False
         '
         'LblProcedure
         '
@@ -192,10 +204,11 @@ Partial Class FormResultColoEnglish
         '
         Me.TxtImpression.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TxtImpression.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtImpression.Location = New System.Drawing.Point(11, 489)
+        Me.TxtImpression.Location = New System.Drawing.Point(11, 525)
         Me.TxtImpression.Multiline = True
         Me.TxtImpression.Name = "TxtImpression"
-        Me.TxtImpression.Size = New System.Drawing.Size(464, 56)
+        Me.TxtImpression.ScrollBars = System.Windows.Forms.ScrollBars.Both
+        Me.TxtImpression.Size = New System.Drawing.Size(553, 100)
         Me.TxtImpression.TabIndex = 73
         '
         'TxtFinding
@@ -205,8 +218,9 @@ Partial Class FormResultColoEnglish
         Me.TxtFinding.Location = New System.Drawing.Point(11, 421)
         Me.TxtFinding.Multiline = True
         Me.TxtFinding.Name = "TxtFinding"
-        Me.TxtFinding.Size = New System.Drawing.Size(464, 46)
-        Me.TxtFinding.TabIndex = 72
+        Me.TxtFinding.ScrollBars = System.Windows.Forms.ScrollBars.Both
+        Me.TxtFinding.Size = New System.Drawing.Size(553, 82)
+        Me.TxtFinding.TabIndex = 73
         '
         'TxtRecalExam
         '
@@ -266,7 +280,7 @@ Partial Class FormResultColoEnglish
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(10, 470)
+        Me.Label3.Location = New System.Drawing.Point(10, 506)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(79, 16)
         Me.Label3.TabIndex = 65
@@ -613,26 +627,6 @@ Partial Class FormResultColoEnglish
         Me.Label37.TabIndex = 0
         Me.Label37.Text = "Duration:"
         '
-        'lblPatientName
-        '
-        Me.lblPatientName.AutoSize = True
-        Me.lblPatientName.Location = New System.Drawing.Point(569, 503)
-        Me.lblPatientName.Name = "lblPatientName"
-        Me.lblPatientName.Size = New System.Drawing.Size(106, 16)
-        Me.lblPatientName.TabIndex = 13
-        Me.lblPatientName.Text = "lblPatientName"
-        Me.lblPatientName.Visible = False
-        '
-        'LblPatientNo
-        '
-        Me.LblPatientNo.AutoSize = True
-        Me.LblPatientNo.Location = New System.Drawing.Point(626, 458)
-        Me.LblPatientNo.Name = "LblPatientNo"
-        Me.LblPatientNo.Size = New System.Drawing.Size(90, 16)
-        Me.LblPatientNo.TabIndex = 12
-        Me.LblPatientNo.Text = "LblPatientNo"
-        Me.LblPatientNo.Visible = False
-        '
         'ErrAlert
         '
         Me.ErrAlert.ContainerControl = Me
@@ -671,6 +665,28 @@ Partial Class FormResultColoEnglish
         Me.BtnCancel.Size = New System.Drawing.Size(77, 44)
         Me.BtnCancel.Text = "     Cancel     "
         Me.BtnCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
+        'TxtProcedure
+        '
+        Me.TxtProcedure.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtProcedure.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtProcedure.Location = New System.Drawing.Point(15, 292)
+        Me.TxtProcedure.Multiline = True
+        Me.TxtProcedure.Name = "TxtProcedure"
+        Me.TxtProcedure.ScrollBars = System.Windows.Forms.ScrollBars.Both
+        Me.TxtProcedure.Size = New System.Drawing.Size(549, 107)
+        Me.TxtProcedure.TabIndex = 72
+        Me.TxtProcedure.Text = resources.GetString("TxtProcedure.Text")
+        '
+        'ChAnesthesia
+        '
+        Me.ChAnesthesia.AutoSize = True
+        Me.ChAnesthesia.Location = New System.Drawing.Point(107, 82)
+        Me.ChAnesthesia.Name = "ChAnesthesia"
+        Me.ChAnesthesia.Size = New System.Drawing.Size(69, 20)
+        Me.ChAnesthesia.TabIndex = 76
+        Me.ChAnesthesia.Text = "Yes/No"
+        Me.ChAnesthesia.UseVisualStyleBackColor = True
         '
         'FormResultColoEnglish
         '
@@ -747,9 +763,10 @@ Partial Class FormResultColoEnglish
     Friend WithEvents TxtIntroduction As System.Windows.Forms.TextBox
     Friend WithEvents ErrAlert As System.Windows.Forms.ErrorProvider
     Friend WithEvents LblProcedure As System.Windows.Forms.Label
-    Friend WithEvents TxtProcedure As System.Windows.Forms.RichTextBox
     Friend WithEvents ToolStrip1 As System.Windows.Forms.ToolStrip
     Friend WithEvents BtnSave As System.Windows.Forms.ToolStripButton
     Friend WithEvents ToolStripSeparator1 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents BtnCancel As System.Windows.Forms.ToolStripButton
+    Friend WithEvents TxtProcedure As System.Windows.Forms.TextBox
+    Friend WithEvents ChAnesthesia As System.Windows.Forms.CheckBox
 End Class

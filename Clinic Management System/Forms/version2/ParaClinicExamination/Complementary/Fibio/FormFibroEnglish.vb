@@ -131,7 +131,7 @@
     Function GetValueConclustion() As String
         Dim ConValue As String = ""
         For i As Integer = 0 To conclusionlist.RowCount - 1
-            ConValue = ConValue & "" & conclusionlist.GetRow(i).Cells("conclusion_name").Value & ", "
+            ConValue = ConValue & "" & conclusionlist.GetRow(i).Cells("conclusion_name").Value
         Next
         Return ConValue
     End Function

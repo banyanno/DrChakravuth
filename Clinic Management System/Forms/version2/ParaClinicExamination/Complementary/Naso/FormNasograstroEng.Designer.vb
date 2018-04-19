@@ -23,15 +23,14 @@ Partial Class FormNasograstroEng
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormNasograstroEng))
         Dim conclusionlist_DesignTimeLayout As Janus.Windows.GridEX.GridEXLayout = New Janus.Windows.GridEX.GridEXLayout
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormNasograstroEng))
         Me.GroupBox6 = New System.Windows.Forms.GroupBox
         Me.lblPatientName = New System.Windows.Forms.Label
         Me.LblPatientNo = New System.Windows.Forms.Label
         Me.GroupBox12 = New System.Windows.Forms.GroupBox
         Me.TxtMoreInfo = New System.Windows.Forms.TextBox
         Me.Label1 = New System.Windows.Forms.Label
-        Me.TxtStomach = New System.Windows.Forms.RichTextBox
         Me.TxtAssessment = New System.Windows.Forms.TextBox
         Me.TxtEsophagus = New System.Windows.Forms.TextBox
         Me.TxtXylocainegel = New System.Windows.Forms.TextBox
@@ -69,6 +68,7 @@ Partial Class FormNasograstroEng
         Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator
         Me.ToolStripButton2 = New System.Windows.Forms.ToolStripButton
+        Me.TxtStomach = New System.Windows.Forms.TextBox
         Me.GroupBox6.SuspendLayout()
         Me.GroupBox12.SuspendLayout()
         Me.ConclusionGroup.SuspendLayout()
@@ -88,7 +88,7 @@ Partial Class FormNasograstroEng
         Me.GroupBox6.Controls.Add(Me.GroupBox16)
         Me.GroupBox6.Location = New System.Drawing.Point(5, 41)
         Me.GroupBox6.Name = "GroupBox6"
-        Me.GroupBox6.Size = New System.Drawing.Size(1071, 588)
+        Me.GroupBox6.Size = New System.Drawing.Size(1071, 637)
         Me.GroupBox6.TabIndex = 1
         Me.GroupBox6.TabStop = False
         '
@@ -114,9 +114,9 @@ Partial Class FormNasograstroEng
         '
         'GroupBox12
         '
+        Me.GroupBox12.Controls.Add(Me.TxtStomach)
         Me.GroupBox12.Controls.Add(Me.TxtMoreInfo)
         Me.GroupBox12.Controls.Add(Me.Label1)
-        Me.GroupBox12.Controls.Add(Me.TxtStomach)
         Me.GroupBox12.Controls.Add(Me.TxtAssessment)
         Me.GroupBox12.Controls.Add(Me.TxtEsophagus)
         Me.GroupBox12.Controls.Add(Me.TxtXylocainegel)
@@ -144,7 +144,7 @@ Partial Class FormNasograstroEng
         Me.GroupBox12.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox12.Location = New System.Drawing.Point(7, 105)
         Me.GroupBox12.Name = "GroupBox12"
-        Me.GroupBox12.Size = New System.Drawing.Size(1064, 474)
+        Me.GroupBox12.Size = New System.Drawing.Size(1064, 505)
         Me.GroupBox12.TabIndex = 15
         Me.GroupBox12.TabStop = False
         Me.GroupBox12.Text = "Result of Fibro"
@@ -153,7 +153,7 @@ Partial Class FormNasograstroEng
         '
         Me.TxtMoreInfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TxtMoreInfo.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtMoreInfo.Location = New System.Drawing.Point(551, 379)
+        Me.TxtMoreInfo.Location = New System.Drawing.Point(551, 415)
         Me.TxtMoreInfo.Multiline = True
         Me.TxtMoreInfo.Name = "TxtMoreInfo"
         Me.TxtMoreInfo.Size = New System.Drawing.Size(486, 81)
@@ -163,25 +163,17 @@ Partial Class FormNasograstroEng
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(548, 360)
+        Me.Label1.Location = New System.Drawing.Point(548, 396)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(44, 16)
         Me.Label1.TabIndex = 53
         Me.Label1.Text = "Other:"
         '
-        'TxtStomach
-        '
-        Me.TxtStomach.Location = New System.Drawing.Point(6, 276)
-        Me.TxtStomach.Name = "TxtStomach"
-        Me.TxtStomach.Size = New System.Drawing.Size(529, 184)
-        Me.TxtStomach.TabIndex = 52
-        Me.TxtStomach.Text = resources.GetString("TxtStomach.Text")
-        '
         'TxtAssessment
         '
         Me.TxtAssessment.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TxtAssessment.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtAssessment.Location = New System.Drawing.Point(551, 276)
+        Me.TxtAssessment.Location = New System.Drawing.Point(551, 312)
         Me.TxtAssessment.Multiline = True
         Me.TxtAssessment.Name = "TxtAssessment"
         Me.TxtAssessment.Size = New System.Drawing.Size(486, 81)
@@ -193,9 +185,9 @@ Partial Class FormNasograstroEng
         Me.TxtEsophagus.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtEsophagus.Location = New System.Drawing.Point(128, 217)
         Me.TxtEsophagus.Name = "TxtEsophagus"
-        Me.TxtEsophagus.Size = New System.Drawing.Size(323, 26)
+        Me.TxtEsophagus.Size = New System.Drawing.Size(829, 26)
         Me.TxtEsophagus.TabIndex = 49
-        Me.TxtEsophagus.Text = "the gastro-esophageal junction was ..40 cm"
+        Me.TxtEsophagus.Text = "the gastro-esophageal junction was .40 cm, There was no evidence of esophagitis."
         '
         'TxtXylocainegel
         '
@@ -286,7 +278,7 @@ Partial Class FormNasograstroEng
         Me.ConclusionGroup.Controls.Add(Me.conclusionlist)
         Me.ConclusionGroup.Location = New System.Drawing.Point(482, 53)
         Me.ConclusionGroup.Name = "ConclusionGroup"
-        Me.ConclusionGroup.Size = New System.Drawing.Size(478, 162)
+        Me.ConclusionGroup.Size = New System.Drawing.Size(478, 156)
         Me.ConclusionGroup.TabIndex = 9
         Me.ConclusionGroup.TabStop = False
         Me.ConclusionGroup.Text = "List of Recommendation:"
@@ -303,7 +295,7 @@ Partial Class FormNasograstroEng
         Me.conclusionlist.Location = New System.Drawing.Point(3, 18)
         Me.conclusionlist.Name = "conclusionlist"
         Me.conclusionlist.RowHeaders = Janus.Windows.GridEX.InheritableBoolean.[True]
-        Me.conclusionlist.Size = New System.Drawing.Size(472, 141)
+        Me.conclusionlist.Size = New System.Drawing.Size(472, 135)
         Me.conclusionlist.TabIndex = 0
         '
         'cboNasoDocteur
@@ -313,7 +305,7 @@ Partial Class FormNasograstroEng
         Me.cboNasoDocteur.Enabled = False
         Me.cboNasoDocteur.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboNasoDocteur.FormattingEnabled = True
-        Me.cboNasoDocteur.Location = New System.Drawing.Point(617, 223)
+        Me.cboNasoDocteur.Location = New System.Drawing.Point(617, 257)
         Me.cboNasoDocteur.Name = "cboNasoDocteur"
         Me.cboNasoDocteur.Size = New System.Drawing.Size(343, 26)
         Me.cboNasoDocteur.TabIndex = 15
@@ -332,7 +324,7 @@ Partial Class FormNasograstroEng
         '
         Me.Label21.AutoSize = True
         Me.Label21.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label21.Location = New System.Drawing.Point(554, 257)
+        Me.Label21.Location = New System.Drawing.Point(554, 293)
         Me.Label21.Name = "Label21"
         Me.Label21.Size = New System.Drawing.Size(89, 16)
         Me.Label21.TabIndex = 20
@@ -411,7 +403,7 @@ Partial Class FormNasograstroEng
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(554, 233)
+        Me.Label13.Location = New System.Drawing.Point(554, 267)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(57, 16)
         Me.Label13.TabIndex = 10
@@ -540,11 +532,22 @@ Partial Class FormNasograstroEng
         Me.ToolStripButton2.Text = "       Cancel      "
         Me.ToolStripButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
+        'TxtStomach
+        '
+        Me.TxtStomach.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtStomach.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtStomach.Location = New System.Drawing.Point(6, 276)
+        Me.TxtStomach.Multiline = True
+        Me.TxtStomach.Name = "TxtStomach"
+        Me.TxtStomach.Size = New System.Drawing.Size(524, 220)
+        Me.TxtStomach.TabIndex = 52
+        Me.TxtStomach.Text = resources.GetString("TxtStomach.Text")
+        '
         'FormNasograstroEng
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1317, 635)
+        Me.ClientSize = New System.Drawing.Size(1317, 750)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.GroupBox6)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -602,11 +605,11 @@ Partial Class FormNasograstroEng
     Friend WithEvents lblPatientName As System.Windows.Forms.Label
     Friend WithEvents LblPatientNo As System.Windows.Forms.Label
     Friend WithEvents ErrAlert As System.Windows.Forms.ErrorProvider
-    Friend WithEvents TxtStomach As System.Windows.Forms.RichTextBox
     Friend WithEvents TxtMoreInfo As System.Windows.Forms.TextBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents ToolStrip1 As System.Windows.Forms.ToolStrip
     Friend WithEvents ToolStripButton1 As System.Windows.Forms.ToolStripButton
     Friend WithEvents ToolStripSeparator1 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents ToolStripButton2 As System.Windows.Forms.ToolStripButton
+    Friend WithEvents TxtStomach As System.Windows.Forms.TextBox
 End Class

@@ -118,11 +118,11 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="TxtStomach.Text" xml:space="preserve">
-    <value>-There was a small amount of  bile in the stomach.
--The stomach was normal. Four biopsies were taken from the normal stomach mucosa for Helicobacter Pylori detection.
+    <value>-There was a small amount of clear fluid in the stomach.
+-The stomach was normal. Five biopsies were taken from the normal stomach mucosa for Helicobacter Pylori detection.
 -The duodenum was normal, the papilla of Valter was visualized and appeared normal
 
-The patient tolerated the procedure well.</value>
+The patient tolerated the procedure.</value>
   </data>
   <data name="conclusionlist_DesignTimeLayout.LayoutString" xml:space="preserve">
     <value>&lt;GridEXLayoutData&gt;&lt;RootTable&gt;&lt;Columns Collection="true" ElementName="Column"&gt;&lt;Column0 ID="request_id"&gt;&lt;Caption&gt;request_id&lt;/Caption&gt;&lt;DataMember&gt;request_id&lt;/DataMember&gt;&lt;Key&gt;request_id&lt;/Key&gt;&lt;Position&gt;0&lt;/Position&gt;&lt;Visible&gt;False&lt;/Visible&gt;&lt;/Column0&gt;&lt;Column1 ID="conclusion_id"&gt;&lt;Caption&gt;conclusion_id&lt;/Caption&gt;&lt;DataMember&gt;conclusion_id&lt;/DataMember&gt;&lt;Key&gt;conclusion_id&lt;/Key&gt;&lt;Position&gt;1&lt;/Position&gt;&lt;Visible&gt;False&lt;/Visible&gt;&lt;/Column1&gt;&lt;Column2 ID="conclusion_name"&gt;&lt;Caption&gt;Conclusion&lt;/Caption&gt;&lt;DataMember&gt;conclusion_name&lt;/DataMember&gt;&lt;Key&gt;conclusion_name&lt;/Key&gt;&lt;Position&gt;2&lt;/Position&gt;&lt;Width&gt;422&lt;/Width&gt;&lt;/Column2&gt;&lt;/Columns&gt;&lt;GroupCondition /&gt;&lt;RowHeaders&gt;False&lt;/RowHeaders&gt;&lt;RowHeaderContent&gt;RowPosition&lt;/RowHeaderContent&gt;&lt;RowHeight&gt;24&lt;/RowHeight&gt;&lt;/RootTable&gt;&lt;/GridEXLayoutData&gt;</value>

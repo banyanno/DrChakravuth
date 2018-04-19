@@ -74,6 +74,18 @@
                 TxtFinding.Text = ColoTable.Rows(0).Item("Finding")
                 TxtImpression.Text = ColoTable.Rows(0).Item("Impression")
                 txtcolomoreinfo.Text = ColoTable.Rows(0).Item("more_info")
+                Try
+
+                    If ColoTable.Rows(0).Item("IsAnesthesia") = "Yes" Then
+                        ChAnesthesia.Checked = True
+                    Else
+                        ChAnesthesia.Checked = False
+                    End If
+
+                Catch ex As Exception
+
+                End Try
+
                 'Me.cboColoDocteur.SelectedValue = ColoTable.Rows(0).Item("docteur")
                
                 ''Load Conclusion Data
@@ -140,7 +152,7 @@
                 If (DA_Colo.UpdateColoEnglish(RequestIDVal, txtColoDuree.Text, txtColoEva.Text, cboColoPreparation.SelectedValue.ToString, _
                   cboColoDemander.SelectedValue.ToString, txtColoTolerance.Text, chkColoAnesthegiste.Checked, ColoAnes, cboColoDocteur.Text, _
                   DateResultExam.Value.Date, GetValueConclustion, TxtIntroduction.Text, TxtIndication.Text, txtFentanyL.Text, _
-                  TxtPropofol.Text, TxtXylocainegel.Text, TxtRecalExam.Text, TxtFinding.Text, TxtImpression.Text, CInt(cboColoDocteur.SelectedValue), txtcolomoreinfo.Text, TxtProcedure.Text, RequestIDVal)) = 1 Then
+                  TxtPropofol.Text, TxtXylocainegel.Text, TxtRecalExam.Text, TxtFinding.Text, TxtImpression.Text, CInt(cboColoDocteur.SelectedValue), txtcolomoreinfo.Text, TxtProcedure.Text, IIf(ChAnesthesia.Checked = True, "Yes", "No").ToString, RequestIDVal)) = 1 Then
                     MsgBox("The coloscopy has been saved successfully", MsgBoxStyle.OkOnly, "Saved Coloscopy")
                     Me.DialogResult = Windows.Forms.DialogResult.OK
                 End If
@@ -153,7 +165,7 @@
                 Dim PatientVal As Double = CLng(Me.RequestPanel.RequestList.CurrentRow.Cells("ppatientid").Value)
                 If DA_Colo.InsertEnglishReport(RequestIDVal, PatientVal, Me.txtColoDuree.Text, txtColoEva.Text, cboColoPreparation.SelectedValue.ToString, _
                                                 cboColoDemander.SelectedValue.ToString, txtColoTolerance.Text, chkColoAnesthegiste.Checked, ColoAnes, _
-                                                DateResultExam.Value.Date, TxtIntroduction.Text, TxtIndication.Text, txtFentanyL.Text, TxtPropofol.Text, TxtXylocainegel.Text, TxtRecalExam.Text, TxtFinding.Text, TxtImpression.Text, GetValueConclustion, CInt(cboColoDocteur.SelectedValue), cboColoDocteur.Text, txtcolomoreinfo.Text, TxtProcedure.Text) = 1 Then
+                                                DateResultExam.Value.Date, TxtIntroduction.Text, TxtIndication.Text, txtFentanyL.Text, TxtPropofol.Text, TxtXylocainegel.Text, TxtRecalExam.Text, TxtFinding.Text, TxtImpression.Text, GetValueConclustion, CInt(cboColoDocteur.SelectedValue), cboColoDocteur.Text, txtcolomoreinfo.Text, TxtProcedure.Text, IIf(ChAnesthesia.Checked = True, "Yes", "No").ToString) = 1 Then
                     MsgBox("A coloscopy has been saved successfully", MsgBoxStyle.OkOnly, "Saved Coloscopy")
                     DA_DOCTOR_FEE.InsertNewDoctorFee(CInt(cboColoDocteur.SelectedValue), cboColoDocteur.Text, "Coloscopy", DateResultExam.Value.Date, LblPatientNo.Text, 0, lblPatientName.Text, GetValueConclustion)
                     Me.DialogResult = Windows.Forms.DialogResult.OK

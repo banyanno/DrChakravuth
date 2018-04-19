@@ -47,7 +47,7 @@
     Function GetValueConclustion() As String
         Dim ConValue As String = ""
         For i As Integer = 0 To conclusionlist.RowCount - 1
-            ConValue = ConValue & "" & conclusionlist.GetRow(i).Cells("conclusion_name").Value & ", "
+            ConValue = ConValue & "" & conclusionlist.GetRow(i).Cells("conclusion_name").Value
         Next
         Return ConValue
     End Function
@@ -84,40 +84,45 @@
     End Sub
     Sub LoadNasoData()
         If DA_Naso.SelectNasoByRequestID(CLng(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value)).Rows.Count >= 1 Then
-            Dim NasoTable As New DataTable
-            NasoTable = DA_Naso.SelectNasoByRequestID(CLng(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value))
-            Me.cboNasoDemander.SelectedValue = NasoTable.Rows(0).Item("demander")
-            Me.txtNasoTolerance.Text = NasoTable.Rows(0).Item("tolerance")
-            'Me.cboNasoMotify.SelectedValue = NasoTable.Rows(0).Item("motify")
-            'Me.txtNasoOeso.Text = NasoTable.Rows(0).Item("oesophage")
-            'Me.txtNasoEsto.Text = NasoTable.Rows(0).Item("estomac")
-            'Me.txtNasoPylore.Text = NasoTable.Rows(0).Item("pylore")
-            'Me.txtNasoBulbe.Text = NasoTable.Rows(0).Item("bulbe")
-            'Me.txtNasoD1.Text = NasoTable.Rows(0).Item("d1_de_d2")
-            'Me.TxtFundus.Text = NasoTable.Rows(0).Item("Fundus")
-            'Me.TxtAntre.Text = NasoTable.Rows(0).Item("Antre")
-            'If NasoTable.Rows(0).Item("cf") = "" Then
-            '    ChAnaPath.Checked = False
-            'Else
-            '    ChAnaPath.Checked = True
-            'End If
+            Try
+                Dim NasoTable As New DataTable
+                NasoTable = DA_Naso.SelectNasoByRequestID(CLng(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value))
+                Me.cboNasoDemander.SelectedValue = NasoTable.Rows(0).Item("demander")
+                Me.txtNasoTolerance.Text = NasoTable.Rows(0).Item("tolerance")
+                'Me.cboNasoMotify.SelectedValue = NasoTable.Rows(0).Item("motify")
+                'Me.txtNasoOeso.Text = NasoTable.Rows(0).Item("oesophage")
+                'Me.txtNasoEsto.Text = NasoTable.Rows(0).Item("estomac")
+                'Me.txtNasoPylore.Text = NasoTable.Rows(0).Item("pylore")
+                'Me.txtNasoBulbe.Text = NasoTable.Rows(0).Item("bulbe")
+                'Me.txtNasoD1.Text = NasoTable.Rows(0).Item("d1_de_d2")
+                'Me.TxtFundus.Text = NasoTable.Rows(0).Item("Fundus")
+                'Me.TxtAntre.Text = NasoTable.Rows(0).Item("Antre")
+                'If NasoTable.Rows(0).Item("cf") = "" Then
+                '    ChAnaPath.Checked = False
+                'Else
+                '    ChAnaPath.Checked = True
+                'End If
 
-            'Me.txtNasoCF.Text = NasoTable.Rows(0).Item("cf")
-            Me.cboNasoDocteur.SelectedValue = NasoTable.Rows(0).Item("Doctor_ID")
-            'Me.txtnasomoreinfo.Text = NasoTable.Rows(0).Item("more_info")
-            TxtIntroduction.Text = NasoTable.Rows(0).Item("Introduction")
-            TxtIndication.Text = NasoTable.Rows(0).Item("Indication")
-            TxtMedication.Text = NasoTable.Rows(0).Item("Medication")
-            TxtFentanyl.Text = NasoTable.Rows(0).Item("Fentanyl")
-            TxtPropofol.Text = NasoTable.Rows(0).Item("Propofol")
-            TxtXylocainegel.Text = NasoTable.Rows(0).Item("Xylocainegel")
-            TxtEsophagus.Text = NasoTable.Rows(0).Item("Esophagus")
-            TxtStomach.Text = NasoTable.Rows(0).Item("Stomach")
-            TxtAssessment.Text = NasoTable.Rows(0).Item("Assessment")
-            TxtMoreInfo.Text = NasoTable.Rows(0).Item("more_info")
+                'Me.txtNasoCF.Text = NasoTable.Rows(0).Item("cf")
+                Me.cboNasoDocteur.SelectedValue = NasoTable.Rows(0).Item("Doctor_ID")
+                'Me.txtnasomoreinfo.Text = NasoTable.Rows(0).Item("more_info")
+                TxtIntroduction.Text = NasoTable.Rows(0).Item("Introduction")
+                TxtIndication.Text = NasoTable.Rows(0).Item("Indication")
+                TxtMedication.Text = NasoTable.Rows(0).Item("Medication")
+                TxtFentanyl.Text = NasoTable.Rows(0).Item("Fentanyl")
+                TxtPropofol.Text = NasoTable.Rows(0).Item("Propofol")
+                TxtXylocainegel.Text = NasoTable.Rows(0).Item("Xylocainegel")
+                TxtEsophagus.Text = NasoTable.Rows(0).Item("Esophagus")
+                TxtStomach.Text = NasoTable.Rows(0).Item("Stomach")
+                TxtAssessment.Text = NasoTable.Rows(0).Item("Assessment")
+                TxtMoreInfo.Text = NasoTable.Rows(0).Item("more_info")
 
-            ''Load Conclusion Data
-            Me.conclusionlist.DataSource = DA_NasoConclusion.SelectConclusionByRequestID(CInt(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value))
+                ''Load Conclusion Data
+                Me.conclusionlist.DataSource = DA_NasoConclusion.SelectConclusionByRequestID(CInt(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value))
+            Catch ex As Exception
+
+            End Try
+            
         End If
     End Sub
 

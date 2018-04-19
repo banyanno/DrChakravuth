@@ -118,11 +118,11 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="TxtStomach.Text" xml:space="preserve">
-    <value>-There was a small amount of  bile in the stomach.
--The stomach was normal. Four biopsies were taken from the normal stomach mucosa for Helicobacter Pylori detection.
+    <value>-There was a small amount of clear fluid in the stomach.
+-The stomach was normal. Five biopsies were taken from the normal stomach mucosa for Helicobacter Pylori detection.
 -The duodenum was normal, the papilla of Valter was visualized and appeared normal
 
-The patient tolerated the procedure well.
+The patient tolerated the procedure.
 </value>
   </data>
   <data name="conclusionlist_DesignTimeLayout.LayoutString" xml:space="preserve">
