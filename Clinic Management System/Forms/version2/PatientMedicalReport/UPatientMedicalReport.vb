@@ -52,9 +52,9 @@ Public Class UPatientMedicalReport
             Me.Invoke(New MethodInvoker(AddressOf PreviewReport))
         Else
             ' Dim PatientTable As DataTable
-            Dim PatientID As Long = Me.GridPatientConsult.GetRow.Cells("patientid").Value
-            'PatientTable = DA_Patient.SelectPatientByPID(CInt(Me.GridPatientConsult.GetRow.Cells("ppatientid").Value))
-            'PatientID = PatientTable.Rows(0).Item("ppatientid")
+            'Dim PatientID As Long = Me.GridPatientConsult.GetRow.Cells("ppatientid").Value
+            PatientTable = DA_Patient.SelectPatientByPID(CInt(Me.GridPatientConsult.GetRow.Cells("ppatientid").Value))
+            PatientID = PatientTable.Rows(0).Item("ppatientid")
 
             Dim RptRecord As New RptPatientRecord
             ' Dim RptViewer As New FormReportViewer

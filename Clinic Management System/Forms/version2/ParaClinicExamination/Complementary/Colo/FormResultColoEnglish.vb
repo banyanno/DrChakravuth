@@ -73,6 +73,7 @@
                 TxtRecalExam.Text = ColoTable.Rows(0).Item("Rectalexam")
                 TxtFinding.Text = ColoTable.Rows(0).Item("Finding")
                 TxtImpression.Text = ColoTable.Rows(0).Item("Impression")
+                TxtProcedure.Text = ColoTable.Rows(0).Item("Colo_Procedure")
                 txtcolomoreinfo.Text = ColoTable.Rows(0).Item("more_info")
                 Try
 
@@ -129,7 +130,7 @@
     Function GetValueConclustion() As String
         Dim ConValue As String = ""
         For i As Integer = 0 To conclusionlist.RowCount - 1
-            ConValue = ConValue & "" & ConclusionList.GetRow(i).Cells("Conclusion").Value & ", "
+            ConValue = ConValue & " " & ConclusionList.GetRow(i).Cells("Conclusion").Value
         Next
         Return ConValue
     End Function

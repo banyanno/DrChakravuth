@@ -23,12 +23,13 @@ Partial Class FormNasograstroEng
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container
-        Dim conclusionlist_DesignTimeLayout As Janus.Windows.GridEX.GridEXLayout = New Janus.Windows.GridEX.GridEXLayout
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormNasograstroEng))
+        Dim conclusionlist_DesignTimeLayout As Janus.Windows.GridEX.GridEXLayout = New Janus.Windows.GridEX.GridEXLayout
         Me.GroupBox6 = New System.Windows.Forms.GroupBox
         Me.lblPatientName = New System.Windows.Forms.Label
         Me.LblPatientNo = New System.Windows.Forms.Label
         Me.GroupBox12 = New System.Windows.Forms.GroupBox
+        Me.TxtStomach = New System.Windows.Forms.TextBox
         Me.TxtMoreInfo = New System.Windows.Forms.TextBox
         Me.Label1 = New System.Windows.Forms.Label
         Me.TxtAssessment = New System.Windows.Forms.TextBox
@@ -68,7 +69,6 @@ Partial Class FormNasograstroEng
         Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator
         Me.ToolStripButton2 = New System.Windows.Forms.ToolStripButton
-        Me.TxtStomach = New System.Windows.Forms.TextBox
         Me.GroupBox6.SuspendLayout()
         Me.GroupBox12.SuspendLayout()
         Me.ConclusionGroup.SuspendLayout()
@@ -149,6 +149,17 @@ Partial Class FormNasograstroEng
         Me.GroupBox12.TabStop = False
         Me.GroupBox12.Text = "Result of Fibro"
         '
+        'TxtStomach
+        '
+        Me.TxtStomach.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtStomach.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtStomach.Location = New System.Drawing.Point(6, 276)
+        Me.TxtStomach.Multiline = True
+        Me.TxtStomach.Name = "TxtStomach"
+        Me.TxtStomach.Size = New System.Drawing.Size(524, 220)
+        Me.TxtStomach.TabIndex = 52
+        Me.TxtStomach.Text = resources.GetString("TxtStomach.Text")
+        '
         'TxtMoreInfo
         '
         Me.TxtMoreInfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
@@ -187,7 +198,7 @@ Partial Class FormNasograstroEng
         Me.TxtEsophagus.Name = "TxtEsophagus"
         Me.TxtEsophagus.Size = New System.Drawing.Size(829, 26)
         Me.TxtEsophagus.TabIndex = 49
-        Me.TxtEsophagus.Text = "the gastro-esophageal junction was .40 cm, There was no evidence of esophagitis."
+        Me.TxtEsophagus.Text = "The gastro-esophageal junction was .40 cm, There was no evidence of esophagitis."
         '
         'TxtXylocainegel
         '
@@ -531,17 +542,6 @@ Partial Class FormNasograstroEng
         Me.ToolStripButton2.Size = New System.Drawing.Size(112, 41)
         Me.ToolStripButton2.Text = "       Cancel      "
         Me.ToolStripButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        '
-        'TxtStomach
-        '
-        Me.TxtStomach.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TxtStomach.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtStomach.Location = New System.Drawing.Point(6, 276)
-        Me.TxtStomach.Multiline = True
-        Me.TxtStomach.Name = "TxtStomach"
-        Me.TxtStomach.Size = New System.Drawing.Size(524, 220)
-        Me.TxtStomach.TabIndex = 52
-        Me.TxtStomach.Text = resources.GetString("TxtStomach.Text")
         '
         'FormNasograstroEng
         '
