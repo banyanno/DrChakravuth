@@ -17,6 +17,7 @@
     Dim WaitingConsulting As MainWaitingConsuling
     Dim PatientReferTo As MainPatientReferto
     Dim DrRequestExam As DashbordDotorRequestExamination
+    Dim UreaBreathTest As MainUreaBreath
     Dim ParameterList As MainParameter
     Dim UserManager As UCDepartment
     Dim IssueReceipt As UPatientIssueReceipt
@@ -99,6 +100,10 @@
         Application.DoEvents()
         Login.UpdateLabelStatus("Configure Hospital System 21", True)
         MedicinceReceived = New UMgrMedicince
+        Application.DoEvents()
+        Login.UpdateLabelStatus("Configure Hospital System 22", True)
+        UreaBreathTest = New MainUreaBreath
+
     End Sub
     Private Delegate Sub DelShowLoadingPicture(ByVal visible As Boolean)
     Public Sub StatusLoading(ByVal v As Boolean)
@@ -149,6 +154,8 @@
                 AddUserControl(Me.MainContainer, PatientReferTo, "Patient send to other place.")
             Case "Dr.Request"
                 AddUserControl(Me.MainContainer, DrRequestExam, "List of patient Dr.Request for examination")
+            Case "Urea Breath"
+                AddUserControl(Me.MainContainer, UreaBreathTest, "List of patient Dr.Request for examination")
             Case "DiagnosisAnalysis"
                 AddUserControl(Me.MainContainer, ClinicAnalysis, "Clinic Diagnosis Analysis")
         End Select

@@ -6,6 +6,7 @@
     Dim DA_RequestBloodItem As New DSExaminationTableAdapters.tblrequestblooditemTableAdapter
     Dim DA_Request As New DSExaminationTableAdapters.tblrequestTableAdapter
     Dim DA_Waiting As New DSPAtientTableAdapters.tblwaitingTableAdapter
+    Dim DA_BreathTest As New DSExaminationTableAdapters.TblBreathTestTableAdapter
     Dim WaitingPanel As MainWaitingConsuling
     Dim RequestPanel As DashbordDotorRequestExamination
 
@@ -276,12 +277,24 @@
                     Exit Sub
                 End If
             End If
+            If ChUreaBreathTest.Checked = True Then
+                If DA_Request.CheckExistBreathTest(lblpatientid.Text, dtrequest.Value.Date) > 0 Then
+                    MessageBox.Show("You can not request Urea Breath test exam at the same day.", "Fibro Scan", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    Exit Sub
+
+                End If
+            End If
             If MessageBox.Show("Do you want to save request Para exam?", "Para exam", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
                 If Me.chkbilogy.Checked = False Then
                     ''Delete All PreCheckItem
                     DA_PreRequestBloodItem.DeleteItemByPatientID(CLng(Me.lblpatientid.Text))
                     ''DA_Request.InsertRequest(CLng(Me.lblpatientid.Text), FormatDateTime(Me.dtrequest.Value, DateFormat.ShortDate), CInt(Me.cbodoctor.SelectedValue), Me.chkbilogy.Checked, Me.chkfibro.Checked, Me.chknaso.Checked, Me.chkcolo.Checked, Me.chkecho.Checked, Me.chkscan.Checked, Me.chkmri.Checked, Me.chkfibroscan.Checked, Me.txtmoreinfo.Text, 1, CboDiagnosis.Text)
-                    DA_Request.InsertRequest(CLng(Me.lblpatientid.Text), Me.dtrequest.Value, CInt(Me.cbodoctor.SelectedValue), Me.chkbilogy.Checked, Me.chkfibro.Checked, Me.chknaso.Checked, Me.chkcolo.Checked, Me.chkecho.Checked, Me.chkscan.Checked, Me.chkmri.Checked, Me.chkfibroscan.Checked, Me.txtmoreinfo.Text, 1, CboDiagnosis.Text)
+                    DA_Request.InsertRequest(CLng(Me.lblpatientid.Text), Me.dtrequest.Value, CInt(Me.cbodoctor.SelectedValue), Me.chkbilogy.Checked, Me.chkfibro.Checked, Me.chknaso.Checked, Me.chkcolo.Checked, Me.chkecho.Checked, Me.chkscan.Checked, Me.chkmri.Checked, Me.chkfibroscan.Checked, Me.txtmoreinfo.Text, 1, CboDiagnosis.Text, ChUreaBreathTest.Checked)
+                    Dim MaxRequestID As Long = DA_Request.SelectMaxID
+                    If ChUreaBreathTest.Checked = True Then
+                        Dim strResult As String = "- S.1 :" & vbCrLf & "- S.2 :" & vbCrLf & "- /\(%..) :"
+                        DA_BreathTest.InsertNewBreathTest(MaxRequestID, CLng(Me.txtno.Text), txtname.Text, txtsex.Text, txtdatebirth.Text, txtaddress.Text, "", strResult, "", "", dtrequest.Value.Date, "")
+                    End If
                 Else
                     ''INSERT Request
                     If itemlist.SelectedItems.Count = 0 Then
@@ -289,7 +302,7 @@
                         Exit Sub
                     End If
                     ''DA_Request.InsertRequest(CLng(Me.lblpatientid.Text), FormatDateTime(Me.dtrequest.Value, DateFormat.ShortDate), CInt(Me.cbodoctor.SelectedValue), Me.chkbilogy.Checked, Me.chkfibro.Checked, Me.chknaso.Checked, Me.chkcolo.Checked, Me.chkecho.Checked, Me.chkscan.Checked, Me.chkmri.Checked, Me.chkfibroscan.Checked, Me.txtmoreinfo.Text, 1, CboDiagnosis.Text)
-                    DA_Request.InsertRequest(CLng(Me.lblpatientid.Text), Me.dtrequest.Value.Date, CInt(Me.cbodoctor.SelectedValue), Me.chkbilogy.Checked, Me.chkfibro.Checked, Me.chknaso.Checked, Me.chkcolo.Checked, Me.chkecho.Checked, Me.chkscan.Checked, Me.chkmri.Checked, Me.chkfibroscan.Checked, Me.txtmoreinfo.Text, 1, CboDiagnosis.Text)
+                    DA_Request.InsertRequest(CLng(Me.lblpatientid.Text), Me.dtrequest.Value.Date, CInt(Me.cbodoctor.SelectedValue), Me.chkbilogy.Checked, Me.chkfibro.Checked, Me.chknaso.Checked, Me.chkcolo.Checked, Me.chkecho.Checked, Me.chkscan.Checked, Me.chkmri.Checked, Me.chkfibroscan.Checked, Me.txtmoreinfo.Text, 1, CboDiagnosis.Text, ChUreaBreathTest.Checked)
 
                     ''INSERT CheckItem INTO TABLE RequestCheckItem
                     Dim MaxRequestID As Long = DA_Request.SelectMaxID
@@ -299,6 +312,10 @@
                         DA_RequestBloodItem.InsertRequestItem(MaxRequestID, CheckTable.Rows(i).Item("item_id"), CheckTable.Rows(i).Item("Result"))
                     Next
                     DA_PreRequestBloodItem.DeleteItemByPatientID(CLng(Me.lblpatientid.Text))
+                    If ChUreaBreathTest.Checked = True Then
+                        Dim strResult As String = "- S.1 :" & vbCrLf & "- S.2 :" & vbCrLf & "- /\(%..) :"
+                        DA_BreathTest.InsertNewBreathTest(MaxRequestID, CLng(Me.txtno.Text), txtname.Text, txtsex.Text, txtdatebirth.Text, txtaddress.Text, "", strResult, "", "", dtrequest.Value.Date, "")
+                    End If
                 End If
                 MsgBox("The request has been saved", MsgBoxStyle.Information, "Saved Request")
                 If BtnFindPatient.Visible = True Then
@@ -314,7 +331,14 @@
 
         Else
             If MessageBox.Show("Do you want to update request Para exam?", "Update", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
-                If DA_Request.UpdateMainRequest(dtrequest.Value.Date, CInt(cbodoctor.SelectedValue), Me.chkbilogy.Checked, Me.chkfibro.Checked, Me.chknaso.Checked, Me.chkcolo.Checked, Me.chkecho.Checked, Me.chkscan.Checked, Me.chkmri.Checked, Me.chkfibroscan.Checked, CboDiagnosis.Text, LblSaveOption.Text) = 1 Then
+                If DA_Request.UpdateMainRequest(dtrequest.Value.Date, CInt(cbodoctor.SelectedValue), Me.chkbilogy.Checked, Me.chkfibro.Checked, Me.chknaso.Checked, Me.chkcolo.Checked, Me.chkecho.Checked, Me.chkscan.Checked, Me.chkmri.Checked, Me.chkfibroscan.Checked, CboDiagnosis.Text, ChUreaBreathTest.Checked, LblSaveOption.Text) = 1 Then
+                    If ChUreaBreathTest.Checked = True Then
+                        If DA_BreathTest.CheckExistBreathTest(LblSaveOption.Text, txtno.Text) = 0 Then
+                            Dim strResult As String = "- S.1 :" & vbCrLf & "- S.2 :" & vbCrLf & "- /\(%..) :"
+                            DA_BreathTest.InsertNewBreathTest(LblSaveOption.Text, CLng(Me.txtno.Text), txtname.Text, txtsex.Text, txtdatebirth.Text, txtaddress.Text, "", strResult, "", "", dtrequest.Value.Date, "")
+                        End If
+                    End If
+
                     Me.DialogResult = Windows.Forms.DialogResult.OK
                 End If
 
@@ -352,4 +376,5 @@
             End If
         Next
     End Function
+
 End Class

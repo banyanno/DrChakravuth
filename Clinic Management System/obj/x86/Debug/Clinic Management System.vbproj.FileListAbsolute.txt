@@ -1,0 +1,4 @@
+C:\BanYanno\SoftProject\DrChakravuth\Clinic Management System\bin\Debug\Clinic Management System.exe.config
+C:\BanYanno\SoftProject\DrChakravuth\Clinic Management System\obj\x86\Debug\Interop.AcroPDFLib.dll
+C:\BanYanno\SoftProject\DrChakravuth\Clinic Management System\obj\x86\Debug\AxInterop.AcroPDFLib.dll
+C:\BanYanno\SoftProject\DrChakravuth\Clinic Management System\obj\x86\Debug\Clinic Management System.vbproj.ResolveComReference.cache

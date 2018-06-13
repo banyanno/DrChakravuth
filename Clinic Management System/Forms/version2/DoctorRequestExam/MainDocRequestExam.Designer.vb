@@ -31,6 +31,7 @@ Partial Class MainDocRequestExam
         Me.txtmoreinfo = New System.Windows.Forms.TextBox
         Me.Label9 = New System.Windows.Forms.Label
         Me.GroupRequestExam = New System.Windows.Forms.GroupBox
+        Me.ChUreaBreathTest = New System.Windows.Forms.CheckBox
         Me.GBloodCheck = New System.Windows.Forms.GroupBox
         Me.TxtBloodResult = New System.Windows.Forms.TextBox
         Me.btnDeleteItem = New System.Windows.Forms.Button
@@ -145,6 +146,7 @@ Partial Class MainDocRequestExam
         Me.GroupRequestExam.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
                     Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupRequestExam.Controls.Add(Me.ChUreaBreathTest)
         Me.GroupRequestExam.Controls.Add(Me.GBloodCheck)
         Me.GroupRequestExam.Controls.Add(Me.chkfibroscan)
         Me.GroupRequestExam.Controls.Add(Me.chkmri)
@@ -154,12 +156,22 @@ Partial Class MainDocRequestExam
         Me.GroupRequestExam.Controls.Add(Me.chknaso)
         Me.GroupRequestExam.Controls.Add(Me.chkfibro)
         Me.GroupRequestExam.Controls.Add(Me.chkbilogy)
-        Me.GroupRequestExam.Location = New System.Drawing.Point(9, 56)
+        Me.GroupRequestExam.Location = New System.Drawing.Point(8, 52)
         Me.GroupRequestExam.Name = "GroupRequestExam"
-        Me.GroupRequestExam.Size = New System.Drawing.Size(850, 217)
+        Me.GroupRequestExam.Size = New System.Drawing.Size(850, 222)
         Me.GroupRequestExam.TabIndex = 5
         Me.GroupRequestExam.TabStop = False
         Me.GroupRequestExam.Text = "Examination On"
+        '
+        'ChUreaBreathTest
+        '
+        Me.ChUreaBreathTest.AutoSize = True
+        Me.ChUreaBreathTest.Location = New System.Drawing.Point(9, 198)
+        Me.ChUreaBreathTest.Name = "ChUreaBreathTest"
+        Me.ChUreaBreathTest.Size = New System.Drawing.Size(107, 17)
+        Me.ChUreaBreathTest.TabIndex = 9
+        Me.ChUreaBreathTest.Text = "Urea Breath Test"
+        Me.ChUreaBreathTest.UseVisualStyleBackColor = True
         '
         'GBloodCheck
         '
@@ -175,7 +187,7 @@ Partial Class MainDocRequestExam
         Me.GBloodCheck.Enabled = False
         Me.GBloodCheck.Location = New System.Drawing.Point(138, 9)
         Me.GBloodCheck.Name = "GBloodCheck"
-        Me.GBloodCheck.Size = New System.Drawing.Size(705, 203)
+        Me.GBloodCheck.Size = New System.Drawing.Size(705, 208)
         Me.GBloodCheck.TabIndex = 8
         Me.GBloodCheck.TabStop = False
         Me.GBloodCheck.Text = "List blood check"
@@ -191,9 +203,9 @@ Partial Class MainDocRequestExam
         'btnDeleteItem
         '
         Me.btnDeleteItem.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnDeleteItem.Location = New System.Drawing.Point(565, 21)
+        Me.btnDeleteItem.Location = New System.Drawing.Point(558, 21)
         Me.btnDeleteItem.Name = "btnDeleteItem"
-        Me.btnDeleteItem.Size = New System.Drawing.Size(44, 23)
+        Me.btnDeleteItem.Size = New System.Drawing.Size(44, 27)
         Me.btnDeleteItem.TabIndex = 2
         Me.btnDeleteItem.Text = "-"
         Me.btnDeleteItem.UseVisualStyleBackColor = True
@@ -201,9 +213,9 @@ Partial Class MainDocRequestExam
         'btnAddItem
         '
         Me.btnAddItem.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnAddItem.Location = New System.Drawing.Point(515, 21)
+        Me.btnAddItem.Location = New System.Drawing.Point(508, 21)
         Me.btnAddItem.Name = "btnAddItem"
-        Me.btnAddItem.Size = New System.Drawing.Size(44, 23)
+        Me.btnAddItem.Size = New System.Drawing.Size(44, 27)
         Me.btnAddItem.TabIndex = 1
         Me.btnAddItem.Text = "+"
         Me.btnAddItem.UseVisualStyleBackColor = True
@@ -245,7 +257,7 @@ Partial Class MainDocRequestExam
         'chkfibroscan
         '
         Me.chkfibroscan.AutoSize = True
-        Me.chkfibroscan.Location = New System.Drawing.Point(10, 187)
+        Me.chkfibroscan.Location = New System.Drawing.Point(9, 176)
         Me.chkfibroscan.Name = "chkfibroscan"
         Me.chkfibroscan.Size = New System.Drawing.Size(77, 17)
         Me.chkfibroscan.TabIndex = 7
@@ -255,7 +267,7 @@ Partial Class MainDocRequestExam
         'chkmri
         '
         Me.chkmri.AutoSize = True
-        Me.chkmri.Location = New System.Drawing.Point(11, 165)
+        Me.chkmri.Location = New System.Drawing.Point(10, 154)
         Me.chkmri.Name = "chkmri"
         Me.chkmri.Size = New System.Drawing.Size(52, 17)
         Me.chkmri.TabIndex = 6
@@ -265,7 +277,7 @@ Partial Class MainDocRequestExam
         'chkscan
         '
         Me.chkscan.AutoSize = True
-        Me.chkscan.Location = New System.Drawing.Point(11, 142)
+        Me.chkscan.Location = New System.Drawing.Point(10, 131)
         Me.chkscan.Name = "chkscan"
         Me.chkscan.Size = New System.Drawing.Size(51, 17)
         Me.chkscan.TabIndex = 5
@@ -275,7 +287,7 @@ Partial Class MainDocRequestExam
         'chkecho
         '
         Me.chkecho.AutoSize = True
-        Me.chkecho.Location = New System.Drawing.Point(11, 119)
+        Me.chkecho.Location = New System.Drawing.Point(10, 108)
         Me.chkecho.Name = "chkecho"
         Me.chkecho.Size = New System.Drawing.Size(51, 17)
         Me.chkecho.TabIndex = 4
@@ -285,7 +297,7 @@ Partial Class MainDocRequestExam
         'chkcolo
         '
         Me.chkcolo.AutoSize = True
-        Me.chkcolo.Location = New System.Drawing.Point(11, 96)
+        Me.chkcolo.Location = New System.Drawing.Point(10, 85)
         Me.chkcolo.Name = "chkcolo"
         Me.chkcolo.Size = New System.Drawing.Size(75, 17)
         Me.chkcolo.TabIndex = 3
@@ -295,7 +307,7 @@ Partial Class MainDocRequestExam
         'chknaso
         '
         Me.chknaso.AutoSize = True
-        Me.chknaso.Location = New System.Drawing.Point(11, 73)
+        Me.chknaso.Location = New System.Drawing.Point(10, 62)
         Me.chknaso.Name = "chknaso"
         Me.chknaso.Size = New System.Drawing.Size(80, 17)
         Me.chknaso.TabIndex = 2
@@ -305,7 +317,7 @@ Partial Class MainDocRequestExam
         'chkfibro
         '
         Me.chkfibro.AutoSize = True
-        Me.chkfibro.Location = New System.Drawing.Point(11, 50)
+        Me.chkfibro.Location = New System.Drawing.Point(10, 39)
         Me.chkfibro.Name = "chkfibro"
         Me.chkfibro.Size = New System.Drawing.Size(77, 17)
         Me.chkfibro.TabIndex = 1
@@ -315,7 +327,7 @@ Partial Class MainDocRequestExam
         'chkbilogy
         '
         Me.chkbilogy.AutoSize = True
-        Me.chkbilogy.Location = New System.Drawing.Point(11, 27)
+        Me.chkbilogy.Location = New System.Drawing.Point(10, 16)
         Me.chkbilogy.Name = "chkbilogy"
         Me.chkbilogy.Size = New System.Drawing.Size(127, 17)
         Me.chkbilogy.TabIndex = 0
@@ -536,7 +548,7 @@ Partial Class MainDocRequestExam
         '
         Me.btnSave.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnSave.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnSave.Location = New System.Drawing.Point(718, 486)
+        Me.btnSave.Location = New System.Drawing.Point(718, 484)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(77, 30)
         Me.btnSave.TabIndex = 2
@@ -547,7 +559,7 @@ Partial Class MainDocRequestExam
         '
         Me.btnCancel.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnCancel.Location = New System.Drawing.Point(799, 486)
+        Me.btnCancel.Location = New System.Drawing.Point(799, 484)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(77, 30)
         Me.btnCancel.TabIndex = 3
@@ -640,4 +652,5 @@ Partial Class MainDocRequestExam
     Friend WithEvents lbloption As System.Windows.Forms.Label
     Friend WithEvents CboDiagnosis As System.Windows.Forms.ComboBox
     Friend WithEvents Label10 As System.Windows.Forms.Label
+    Friend WithEvents ChUreaBreathTest As System.Windows.Forms.CheckBox
 End Class

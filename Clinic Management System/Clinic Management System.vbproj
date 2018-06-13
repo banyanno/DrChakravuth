@@ -500,6 +500,18 @@
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Forms\version2\ParaClinicExamination\Complementary\BreathTest\BreathReport.vb">
+      <DependentUpon>BreathReport.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Forms\version2\ParaClinicExamination\Complementary\BreathTest\NewUreaBreath.Designer.vb">
+      <DependentUpon>NewUreaBreath.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\version2\ParaClinicExamination\Complementary\BreathTest\NewUreaBreath.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\version2\ParaClinicExamination\Complementary\CFAnaPath\FormCFAnaPath.Designer.vb">
       <DependentUpon>FormCFAnaPath.vb</DependentUpon>
     </Compile>
@@ -534,6 +546,12 @@
     </Compile>
     <Compile Include="Forms\version2\ParaClinicExamination\Complementary\Fibio\FormFibroEnglish.vb">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\version2\ParaClinicExamination\Complementary\BreathTest\MainUreaBreath.Designer.vb">
+      <DependentUpon>MainUreaBreath.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\version2\ParaClinicExamination\Complementary\BreathTest\MainUreaBreath.vb">
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Forms\version2\ParaClinicExamination\Complementary\Naso\FormNasograstroEng.Designer.vb">
       <DependentUpon>FormNasograstroEng.vb</DependentUpon>
@@ -1687,6 +1705,16 @@
     <EmbeddedResource Include="Forms\version2\DoctorRequestExam\Reports\EchoV1.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>EchoV1.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\ParaClinicExamination\Complementary\BreathTest\BreathReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>BreathReport.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\ParaClinicExamination\Complementary\BreathTest\MainUreaBreath.resx">
+      <DependentUpon>MainUreaBreath.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\ParaClinicExamination\Complementary\BreathTest\NewUreaBreath.resx">
+      <DependentUpon>NewUreaBreath.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\version2\ParaClinicExamination\Complementary\CFAnaPath\FormCFAnaPath.resx">
       <DependentUpon>FormCFAnaPath.vb</DependentUpon>

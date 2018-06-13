@@ -981,6 +981,7 @@
         DocRequestExam.chkecho.Checked = RequestList.GetRow.Cells("echo").Value
         DocRequestExam.chkscan.Checked = RequestList.GetRow.Cells("scan").Value
         DocRequestExam.chkmri.Checked = RequestList.GetRow.Cells("mri").Value
+        DocRequestExam.ChUreaBreathTest.Checked = RequestList.GetRow.Cells("breathtest").Value
         DocRequestExam.chkfibroscan.Checked = RequestList.GetRow.Cells("fibroscan").Value
         DocRequestExam.CboDiagnosis.Text = RequestList.GetRow.Cells("Diagnosis").Value
         DocRequestExam.BtnFindPatient_Click(sender, e)

@@ -490,3 +490,5 @@ C:\BanYanno\SoftProject\DrChakravuth\Clinic Management System\obj\Debug\Clinic M
 C:\BanYanno\SoftProject\DrChakravuth\Clinic Management System\obj\Debug\Clinic Management System.exe
 C:\BanYanno\SoftProject\DrChakravuth\Clinic Management System\obj\Debug\Clinic Management System.xml
 C:\BanYanno\SoftProject\DrChakravuth\Clinic Management System\obj\Debug\Clinic Management System.pdb
+C:\BanYanno\SoftProject\DrChakravuth\Clinic Management System\obj\Debug\Clinic_Management_System.MainUreaBreath.resources
+C:\BanYanno\SoftProject\DrChakravuth\Clinic Management System\obj\Debug\Clinic_Management_System.NewUreaBreath.resources
