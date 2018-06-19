@@ -233,8 +233,10 @@ Partial Class main
         PatientInfo_Item_0_2.StateStyles.FormatStyle.ForeColor = System.Drawing.Color.Blue
         PatientInfo_Item_0_2.Text = "Para Examination Result"
         PatientInfo_Item_0_3.Cursor = System.Windows.Forms.Cursors.Hand
+        PatientInfo_Item_0_3.Image = CType(resources.GetObject("PatientInfo_Item_0_3.Image"), System.Drawing.Image)
         PatientInfo_Item_0_3.Key = "Urea Breath"
-        PatientInfo_Item_0_3.Text = "Urea Breath"
+        PatientInfo_Item_0_3.StateStyles.FormatStyle.ForeColor = System.Drawing.Color.Blue
+        PatientInfo_Item_0_3.Text = "Urea Breath Test"
         PatientInfo_Item_0_4.Cursor = System.Windows.Forms.Cursors.Hand
         PatientInfo_Item_0_4.Enabled = False
         PatientInfo_Item_0_4.Image = CType(resources.GetObject("PatientInfo_Item_0_4.Image"), System.Drawing.Image)

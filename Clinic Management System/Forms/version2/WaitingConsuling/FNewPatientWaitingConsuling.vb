@@ -39,6 +39,7 @@
     Dim DA_Scan1 As New DSInvoiceTableAdapters.ScanTableAdapter
     Dim DA_FibroScan1 As New DSInvoiceTableAdapters.FibroScan1TableAdapter
     Dim DoctorExam As DashbordDotorRequestExamination
+    Dim DA_BreathTest As New DSExaminationTableAdapters.TblBreathTestTableAdapter
     Sub New()
 
         ' This call is required by the Windows Form Designer.
@@ -241,6 +242,8 @@
             Dim CAAnaPath As DataTable = DA_CFAnaPath1.GetData(PatientID)
 
             Dim PhysicalTable As DataTable = DA_Physical1.SelectByPatientID(PatientID)
+            Dim BreatTestTable As DataTable = DA_BreathTest.SelectBreathTestByPatientNo(CDbl(txtno.Text))
+
             RptRecord.Database.Tables("Patient").SetDataSource(PatientTable)
             RptRecord.Subreports("PrescriptionRemark").SetDataSource(PresRemark)
             RptRecord.Subreports("Complaint").Database.Tables("Complaint").SetDataSource(ComplaintTable)
@@ -256,6 +259,7 @@
             RptRecord.Subreports("MRI").Database.Tables("MRI").SetDataSource(MRITable)
             RptRecord.Subreports("Physical").Database.Tables("PhysicalExam").SetDataSource(PhysicalTable)
             RptRecord.Subreports("ACAnaPath").Database.Tables("CFAnaPath").SetDataSource(CAAnaPath)
+            RptRecord.Subreports("UreaBreathTest").Database.Tables("TblBreathTest").SetDataSource(BreatTestTable)
             Me.CRPatientDocViewer.ReportSource = RptRecord
 
         End If

@@ -38,9 +38,13 @@
     Private Sub BtnSave_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnSave.Click
         If ValidateTextField(txtno, "", ErrBreathTest) = False Then Exit Sub
         If ValidateTextField(txtname, "", ErrBreathTest) = False Then Exit Sub
+        If ValidateDateField(DateRequest, "", ErrBreathTest) = False Then Exit Sub
+
+        If ValidateCombobox(cbodoctor, "", ErrBreathTest) = False Then Exit Sub
+        If ValidateCombobox(CboConclusion, "", ErrBreathTest) = False Then Exit Sub
         If LblSaveOption.Text <> 0 Then
             If MessageBox.Show("Do you want to save result breath test?", "Breath Test", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
-                If DA_BreathTest.UpdateBreath(LblRequestNo.Text, txtno.Text, txtname.Text, txtsex.Text, txtdatebirth.Text, txtaddress.Text, TxtIndication.Text, TxtResult.Text, CboConclusion.Text, TxtMoreInfo.Text, DateRequest.Value.Date, cbodoctor.Text, LblSaveOption.Text) Then
+                If DA_BreathTest.UpdateBreath(LblRequestNo.Text, txtno.Text, txtname.Text, txtsex.Text, txtdatebirth.Text, txtaddress.Text, TxtIndication.Text, TxtResult.Text, CboConclusion.Text, TxtMoreInfo.Text, DateRequest.Value.Date, cbodoctor.Text) Then
                     Me.DialogResult = Windows.Forms.DialogResult.OK
                 End If
             End If

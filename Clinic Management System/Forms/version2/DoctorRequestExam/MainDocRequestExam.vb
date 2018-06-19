@@ -293,7 +293,7 @@
                     Dim MaxRequestID As Long = DA_Request.SelectMaxID
                     If ChUreaBreathTest.Checked = True Then
                         Dim strResult As String = "- S.1 :" & vbCrLf & "- S.2 :" & vbCrLf & "- /\(%..) :"
-                        DA_BreathTest.InsertNewBreathTest(MaxRequestID, CLng(Me.txtno.Text), txtname.Text, txtsex.Text, txtdatebirth.Text, txtaddress.Text, "", strResult, "", "", dtrequest.Value.Date, "")
+                        DA_BreathTest.InsertNewBreathTest(MaxRequestID, CLng(Me.txtno.Text), txtname.Text, txtsex.Text, txtdatebirth.Text, txtaddress.Text, "", strResult, "", "", dtrequest.Value.Date, cbodoctor.Text)
                     End If
                 Else
                     ''INSERT Request
@@ -314,7 +314,7 @@
                     DA_PreRequestBloodItem.DeleteItemByPatientID(CLng(Me.lblpatientid.Text))
                     If ChUreaBreathTest.Checked = True Then
                         Dim strResult As String = "- S.1 :" & vbCrLf & "- S.2 :" & vbCrLf & "- /\(%..) :"
-                        DA_BreathTest.InsertNewBreathTest(MaxRequestID, CLng(Me.txtno.Text), txtname.Text, txtsex.Text, txtdatebirth.Text, txtaddress.Text, "", strResult, "", "", dtrequest.Value.Date, "")
+                        DA_BreathTest.InsertNewBreathTest(MaxRequestID, CLng(Me.txtno.Text), txtname.Text, txtsex.Text, txtdatebirth.Text, txtaddress.Text, "", strResult, "", "", dtrequest.Value.Date, cbodoctor.Text)
                     End If
                 End If
                 MsgBox("The request has been saved", MsgBoxStyle.Information, "Saved Request")
@@ -335,7 +335,7 @@
                     If ChUreaBreathTest.Checked = True Then
                         If DA_BreathTest.CheckExistBreathTest(LblSaveOption.Text, txtno.Text) = 0 Then
                             Dim strResult As String = "- S.1 :" & vbCrLf & "- S.2 :" & vbCrLf & "- /\(%..) :"
-                            DA_BreathTest.InsertNewBreathTest(LblSaveOption.Text, CLng(Me.txtno.Text), txtname.Text, txtsex.Text, txtdatebirth.Text, txtaddress.Text, "", strResult, "", "", dtrequest.Value.Date, "")
+                            DA_BreathTest.InsertNewBreathTest(LblSaveOption.Text, CLng(Me.txtno.Text), txtname.Text, txtsex.Text, txtdatebirth.Text, txtaddress.Text, "", strResult, "", "", dtrequest.Value.Date, cbodoctor.Text)
                         End If
                     End If
 

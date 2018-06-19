@@ -120,6 +120,7 @@ Partial Class NewUreaBreath
         Me.txtno.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtno.Location = New System.Drawing.Point(105, 26)
         Me.txtno.Name = "txtno"
+        Me.txtno.ReadOnly = True
         Me.txtno.Size = New System.Drawing.Size(194, 24)
         Me.txtno.TabIndex = 0
         '

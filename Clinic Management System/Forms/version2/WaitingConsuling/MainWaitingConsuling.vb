@@ -36,6 +36,7 @@
     Dim DA_CFAnaPath As New DSExaminationTableAdapters.CFAnaPathTableAdapter
     Dim DA_Physical As New DSInvoiceTableAdapters.PhysicalExamTableAdapter
     Dim DAPatient As New DSPAtientTableAdapters.tblpatientTableAdapter
+    Dim DA_BreathTest As New DSExaminationTableAdapters.TblBreathTestTableAdapter
 
     Sub New()
 
@@ -198,6 +199,7 @@
 
             Dim CAAnaPath As DataTable = DA_CFAnaPath.GetData(PatientID)
             Dim PresRemark As DataTable = DA_PrescriptionRemark.SelectPrescriptionByPatientID(PatientID)
+            Dim BreatTestTable As DataTable = DA_BreathTest.SelectBreathTestByPatientNo(CDbl(WaitingList.GetRow.Cells("patientid").Value))
 
             Dim PhysicalTable As DataTable = DA_Physical.SelectByPatientID(PatientID)
             RptRecord.Database.Tables("Patient").SetDataSource(PatientTable)
@@ -215,6 +217,7 @@
             RptRecord.Subreports("Physical").Database.Tables("PhysicalExam").SetDataSource(PhysicalTable)
             RptRecord.Subreports("ACAnaPath").Database.Tables("CFAnaPath").SetDataSource(CAAnaPath)
             RptRecord.Subreports("PrescriptionRemark").SetDataSource(PresRemark)
+            RptRecord.Subreports("UreaBreathTest").Database.Tables("TblBreathTest").SetDataSource(BreatTestTable)
             Me.CRVMedicalHistoryReport.ReportSource = RptRecord
 
         End If

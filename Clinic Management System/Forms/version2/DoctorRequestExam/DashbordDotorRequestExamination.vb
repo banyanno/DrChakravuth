@@ -25,6 +25,8 @@
     Dim DA_PhysicalDetail As New DSPhysicalExamTableAdapters.tblphysicalcheckdetailTableAdapter
     Dim DA_V_PhysicalDetail As New DSPhysicalExamTableAdapters.V_PHYSICAL_EXAMTableAdapter
 
+    Dim DA_BreathTest As New DSExaminationTableAdapters.TblBreathTestTableAdapter
+
     Dim VALUE_LOADING_DATA As Integer
 
 
@@ -47,6 +49,7 @@
 
     Dim DA_Scan1 As New DSInvoiceTableAdapters.ScanTableAdapter
     Dim DA_FibroScan1 As New DSInvoiceTableAdapters.FibroScan1TableAdapter
+
 
 
 
@@ -429,6 +432,29 @@
 
         End Try
     End Sub
+    Private Sub LoadBreathTest()
+        If RequestList.SelectedItems.Count = 0 Then Exit Sub
+        Dim TblBreathTest As DataTable = DA_BreathTest.SelectBreathTestByID(CDbl(RequestList.GetRow.Cells("request_id").Value))
+        If TblBreathTest.Rows.Count = 0 Then
+            DateRequestBreath.Value = Now
+            cboBreathRequestBy.Text = ""
+            TxtBreathIndication.Text = ""
+            TxtBreathResult.Text = ""
+            CboBreathConclusion.Text = ""
+            TxtBreathMoreInfo.Text = ""
+        Else
+            For Each rows As DataRow In TblBreathTest.Rows
+                DateRequestBreath.Value = rows("DateTest")
+                cboBreathRequestBy.Text = rows("RequestBy")
+                TxtBreathIndication.Text = rows("Indication")
+                TxtBreathResult.Text = rows("Result")
+                CboBreathConclusion.Text = rows("Conclusion")
+                TxtBreathMoreInfo.Text = rows("BreathTestNote")
+            Next
+        End If
+       
+
+    End Sub
     Sub LoadCheckBloodResult(ByVal RequestID As Integer)
         Try
             Dim TblRequest As New DataTable
@@ -458,6 +484,7 @@
         LoadFibroScanData()
         LoadMRIData()
         LoadCFAnapath()
+        LoadBreathTest()
         FrmStatus.LoadStatusExam(RequestList.GetRow.Cells("request_id").Value)
         'Catch ex As Exception
 
@@ -656,6 +683,8 @@
                     ShowRptFibroEnglish()
                 Case 8
                     ShowRptNasoEng()
+                Case 9
+                    ShowRptBreathTest()
             End Select
         End If
     End Sub
@@ -713,6 +742,16 @@
         TblNasoConclusion = DA_NasoConclusion.SelectConclusionByRequestID(CLng(Me.RequestList.CurrentRow.Cells("request_id").Value))
         Rpt.SetDataSource(TblNaso)
         'Rpt.Subreports("NasoConclusion").SetDataSource(TblNasoConclusion)
+        FrmViewer.CVForm.ReportSource = Rpt
+        FrmViewer.SplitContainer1.Panel1Collapsed = True
+        FrmViewer.ShowDialog()
+    End Sub
+    Private Sub ShowRptBreathTest()
+        If Me.RequestList.SelectedItems.Count = 0 Then Exit Sub
+        Dim FrmViewer As New FormReportViewer
+        Dim Rpt As New BreathReport
+        Dim TblBreathTest As DataTable = DA_BreathTest.SelectBreathTestByID(CDbl(RequestList.GetRow.Cells("request_id").Value))
+        Rpt.SetDataSource(TblBreathTest)
         FrmViewer.CVForm.ReportSource = Rpt
         FrmViewer.SplitContainer1.Panel1Collapsed = True
         FrmViewer.ShowDialog()
@@ -933,6 +972,7 @@
             Dim MRITable As DataTable = DA_MRI1.SelectByPatientID(PatientID)
 
             Dim CAAnaPath As DataTable = DA_CFAnaPath.GetData(PatientID)
+            Dim BreatTestTable As DataTable = DA_BreathTest.SelectBreathTestByPatientNo(CDbl(RequestList.GetRow.Cells("patientid").Value))
 
             Dim PhysicalTable As DataTable = DA_Physical1.SelectByPatientID(PatientID)
             RptRecord.Database.Tables("Patient").SetDataSource(PatientTable)
@@ -950,6 +990,7 @@
             RptRecord.Subreports("MRI").Database.Tables("MRI").SetDataSource(MRITable)
             RptRecord.Subreports("Physical").Database.Tables("PhysicalExam").SetDataSource(PhysicalTable)
             RptRecord.Subreports("ACAnaPath").Database.Tables("CFAnaPath").SetDataSource(CAAnaPath)
+            RptRecord.Subreports("UreaBreathTest").Database.Tables("TblBreathTest").SetDataSource(BreatTestTable)
             Me.CRPatientDocViewer.ReportSource = RptRecord
 
         End If
@@ -1265,5 +1306,55 @@
                 BgLoadData.RunWorkerAsync()
             End If
         End If
+    End Sub
+
+    Private Sub BtnPrintBreathTest_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnPrintBreathTest.Click
+        If RequestList.SelectedItems.Count = 0 Then Exit Sub
+        MainApplicationForm.StatusLoading(True)
+        VALUE_LOADING_DATA = 9
+        Application.DoEvents()
+        BgLoadData.RunWorkerAsync()
+    End Sub
+
+    Private Sub BtnBreathTest_Click(ByVal sender As System.Object, ByVal e As Janus.Windows.Ribbon.CommandEventArgs) Handles BtnBreathTest.Click
+        If RequestList.SelectedItems.Count = 0 Then Exit Sub
+        If RequestList.SelectedItems.Count = 0 Then Exit Sub
+        If RequestList.GetRow.Cells("breathtest").Value = False Then
+            MessageBox.Show("You can not add information of " & DropDownCommand8.Text & ". Because doctor not request exam.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Else
+            Dim BreathTest As New NewUreaBreath
+            Dim TblBreathTest As DataTable = DA_BreathTest.SelectBreathTestByID(CDbl(RequestList.GetRow.Cells("request_id").Value))
+            If TblBreathTest.Rows.Count = 0 Then
+                BreathTest.LblSaveOption.Text = ""
+                BreathTest.DateRequest.Value = Now
+                BreathTest.cbodoctor.Text = ""
+                BreathTest.TxtIndication.Text = ""
+                BreathTest.TxtResult.Text = ""
+                BreathTest.CboConclusion.Text = ""
+                BreathTest.TxtMoreInfo.Text = ""
+            Else
+                For Each rows As DataRow In TblBreathTest.Rows
+                    BreathTest.LblSaveOption.Text = rows("RequestID")
+                    BreathTest.LblRequestNo.Text = rows("RequestID")
+                    BreathTest.txtno.Text = rows("PatientNo")
+                    BreathTest.txtname.Text = rows("PatientName")
+                    BreathTest.txtsex.Text = rows("PatientSex")
+                    BreathTest.txtdatebirth.Text = rows("PatientDOB")
+                    BreathTest.txtaddress.Text = rows("PatientAdress")
+                    BreathTest.DateRequest.Checked = True
+                    BreathTest.DateRequest.Value = rows("DateTest")
+                    BreathTest.cbodoctor.Text = rows("RequestBy")
+                    BreathTest.TxtIndication.Text = rows("Indication")
+                    BreathTest.TxtResult.Text = rows("Result")
+                    BreathTest.CboConclusion.Text = rows("Conclusion")
+                    BreathTest.TxtMoreInfo.Text = rows("BreathTestNote")
+                Next
+            End If
+            If BreathTest.ShowDialog = DialogResult.OK Then
+                LoadBreathTest()
+            End If
+        End If
+
+        
     End Sub
 End Class

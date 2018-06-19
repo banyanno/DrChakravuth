@@ -362,9 +362,9 @@ Partial Class MainDocRequestExam
         Me.cbodoctor.DropDownWidth = 500
         Me.cbodoctor.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbodoctor.FormattingEnabled = True
-        Me.cbodoctor.Location = New System.Drawing.Point(116, 18)
+        Me.cbodoctor.Location = New System.Drawing.Point(91, 18)
         Me.cbodoctor.Name = "cbodoctor"
-        Me.cbodoctor.Size = New System.Drawing.Size(196, 28)
+        Me.cbodoctor.Size = New System.Drawing.Size(221, 28)
         Me.cbodoctor.TabIndex = 0
         '
         'Label1

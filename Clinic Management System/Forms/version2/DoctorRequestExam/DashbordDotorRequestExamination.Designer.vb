@@ -33,17 +33,32 @@ Partial Class DashbordDotorRequestExamination
         Dim EchoConclusionList_DesignTimeLayout As Janus.Windows.GridEX.GridEXLayout = New Janus.Windows.GridEX.GridEXLayout
         Dim RequestList_DesignTimeLayout As Janus.Windows.GridEX.GridEXLayout = New Janus.Windows.GridEX.GridEXLayout
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip
+        Me.BtnRefresh = New System.Windows.Forms.ToolStripButton
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator
+        Me.BtnNewExam = New System.Windows.Forms.ToolStripButton
         Me.ToolStripSeparator14 = New System.Windows.Forms.ToolStripSeparator
+        Me.BntWaitingList = New System.Windows.Forms.ToolStripButton
         Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator
+        Me.btnCheckStatus = New System.Windows.Forms.ToolStripButton
         Me.ToolStripSeparator10 = New System.Windows.Forms.ToolStripSeparator
+        Me.BtnCompleteExam = New System.Windows.Forms.ToolStripButton
         Me.ToolStripSeparator11 = New System.Windows.Forms.ToolStripSeparator
+        Me.btnHistoryExam = New System.Windows.Forms.ToolStripButton
         Me.ToolStripSeparator12 = New System.Windows.Forms.ToolStripSeparator
+        Me.BtnMedicalReport = New System.Windows.Forms.ToolStripButton
         Me.ToolStripSeparator16 = New System.Windows.Forms.ToolStripSeparator
+        Me.ToolStripDropDownButton2 = New System.Windows.Forms.ToolStripDropDownButton
+        Me.BtnAsTable = New System.Windows.Forms.ToolStripMenuItem
+        Me.ToolStripSeparator13 = New System.Windows.Forms.ToolStripSeparator
+        Me.BtnAsCard = New System.Windows.Forms.ToolStripMenuItem
         Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator
+        Me.BtnCompletPatientExp = New System.Windows.Forms.ToolStripButton
         Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator
+        Me.BtnDeleteExam = New System.Windows.Forms.ToolStripButton
         Me.UiTab2 = New Janus.Windows.UI.Tab.UITab
+        Me.UiTabPage11 = New Janus.Windows.UI.Tab.UITabPage
         Me.CRPatientDocViewer = New CrystalDecisions.Windows.Forms.CrystalReportViewer
+        Me.UiTabPage3 = New Janus.Windows.UI.Tab.UITabPage
         Me.GroupBox4 = New System.Windows.Forms.GroupBox
         Me.cbodoctor = New System.Windows.Forms.TextBox
         Me.txtcheckdate = New System.Windows.Forms.TextBox
@@ -51,6 +66,22 @@ Partial Class DashbordDotorRequestExamination
         Me.ItemResultList = New Janus.Windows.GridEX.GridEX
         Me.Label1 = New System.Windows.Forms.Label
         Me.Label2 = New System.Windows.Forms.Label
+        Me.UiTabPage12 = New Janus.Windows.UI.Tab.UITabPage
+        Me.Panel1 = New System.Windows.Forms.Panel
+        Me.BtnPrintBreathTest = New System.Windows.Forms.Button
+        Me.TxtBreathMoreInfo = New System.Windows.Forms.TextBox
+        Me.Label68 = New System.Windows.Forms.Label
+        Me.DateRequestBreath = New System.Windows.Forms.DateTimePicker
+        Me.Label74 = New System.Windows.Forms.Label
+        Me.Label81 = New System.Windows.Forms.Label
+        Me.cboBreathRequestBy = New System.Windows.Forms.ComboBox
+        Me.Label82 = New System.Windows.Forms.Label
+        Me.TxtBreathResult = New System.Windows.Forms.TextBox
+        Me.Label83 = New System.Windows.Forms.Label
+        Me.TxtBreathIndication = New System.Windows.Forms.TextBox
+        Me.Label84 = New System.Windows.Forms.Label
+        Me.CboBreathConclusion = New System.Windows.Forms.ComboBox
+        Me.UiTabPage4 = New Janus.Windows.UI.Tab.UITabPage
         Me.TabControl1 = New System.Windows.Forms.TabControl
         Me.TabPage1 = New System.Windows.Forms.TabPage
         Me.GroupBox25 = New System.Windows.Forms.GroupBox
@@ -114,6 +145,7 @@ Partial Class DashbordDotorRequestExamination
         Me.chkFibroAnesthegiste = New System.Windows.Forms.CheckBox
         Me.txtFibroTolerance = New System.Windows.Forms.TextBox
         Me.Label11 = New System.Windows.Forms.Label
+        Me.UiTabPage5 = New Janus.Windows.UI.Tab.UITabPage
         Me.GroupBox6 = New System.Windows.Forms.GroupBox
         Me.btnNasogastro = New System.Windows.Forms.Button
         Me.GroupBox16 = New System.Windows.Forms.GroupBox
@@ -149,6 +181,7 @@ Partial Class DashbordDotorRequestExamination
         Me.Label30 = New System.Windows.Forms.Label
         Me.Label28 = New System.Windows.Forms.Label
         Me.Label29 = New System.Windows.Forms.Label
+        Me.UiTabPage6 = New Janus.Windows.UI.Tab.UITabPage
         Me.cboColoPreparation = New System.Windows.Forms.TextBox
         Me.GroupBox14 = New System.Windows.Forms.GroupBox
         Me.cboColoAnesthegiste = New System.Windows.Forms.TextBox
@@ -215,6 +248,7 @@ Partial Class DashbordDotorRequestExamination
         Me.Label45 = New System.Windows.Forms.Label
         Me.Label43 = New System.Windows.Forms.Label
         Me.Label44 = New System.Windows.Forms.Label
+        Me.UiTabPage7 = New Janus.Windows.UI.Tab.UITabPage
         Me.GroupBox8 = New System.Windows.Forms.GroupBox
         Me.TxtExamByDR = New System.Windows.Forms.TextBox
         Me.Label26 = New System.Windows.Forms.Label
@@ -248,29 +282,57 @@ Partial Class DashbordDotorRequestExamination
         Me.Label54 = New System.Windows.Forms.Label
         Me.Label53 = New System.Windows.Forms.Label
         Me.Label52 = New System.Windows.Forms.Label
+        Me.UiTabPage8 = New Janus.Windows.UI.Tab.UITabPage
         Me.GroupBox9 = New System.Windows.Forms.GroupBox
         Me.GroupBox20 = New System.Windows.Forms.GroupBox
         Me.txtscan = New System.Windows.Forms.TextBox
+        Me.UiTabPage9 = New Janus.Windows.UI.Tab.UITabPage
         Me.GroupBox10 = New System.Windows.Forms.GroupBox
         Me.txtmri = New System.Windows.Forms.TextBox
+        Me.UiTabPage10 = New Janus.Windows.UI.Tab.UITabPage
         Me.GroupBox11 = New System.Windows.Forms.GroupBox
         Me.txtfibroscan = New System.Windows.Forms.TextBox
+        Me.UiTabPage2 = New Janus.Windows.UI.Tab.UITabPage
         Me.GroupBox21 = New System.Windows.Forms.GroupBox
         Me.TxtCFAnaPath = New System.Windows.Forms.TextBox
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer
         Me.RequestList = New Janus.Windows.GridEX.GridEX
         Me.UiTab1 = New Janus.Windows.UI.Tab.UITab
+        Me.UiTabPage1 = New Janus.Windows.UI.Tab.UITabPage
         Me.PhysicalContextMenu = New Janus.Windows.Ribbon.RibbonContextMenu(Me.components)
+        Me.SeparatorCommand1 = New Janus.Windows.Ribbon.SeparatorCommand
+        Me.DropDownCommand1 = New Janus.Windows.Ribbon.DropDownCommand
+        Me.SeparatorCommand2 = New Janus.Windows.Ribbon.SeparatorCommand
+        Me.DropDownCommand2 = New Janus.Windows.Ribbon.DropDownCommand
         Me.DropDownCommand10 = New Janus.Windows.Ribbon.DropDownCommand
         Me.SeparatorCommand11 = New Janus.Windows.Ribbon.SeparatorCommand
         Me.DropDownCommand12 = New Janus.Windows.Ribbon.DropDownCommand
+        Me.SeparatorCommand3 = New Janus.Windows.Ribbon.SeparatorCommand
+        Me.DropDownCommand3 = New Janus.Windows.Ribbon.DropDownCommand
         Me.DropDownCommand20 = New Janus.Windows.Ribbon.DropDownCommand
         Me.SeparatorCommand17 = New Janus.Windows.Ribbon.SeparatorCommand
         Me.DropDownCommand21 = New Janus.Windows.Ribbon.DropDownCommand
+        Me.SeparatorCommand4 = New Janus.Windows.Ribbon.SeparatorCommand
+        Me.DropDownCommand4 = New Janus.Windows.Ribbon.DropDownCommand
         Me.DropDownCommand16 = New Janus.Windows.Ribbon.DropDownCommand
         Me.SeparatorCommand14 = New Janus.Windows.Ribbon.SeparatorCommand
         Me.DropDownCommand17 = New Janus.Windows.Ribbon.DropDownCommand
+        Me.SeparatorCommand5 = New Janus.Windows.Ribbon.SeparatorCommand
+        Me.DropDownCommand5 = New Janus.Windows.Ribbon.DropDownCommand
+        Me.SeparatorCommand6 = New Janus.Windows.Ribbon.SeparatorCommand
+        Me.DropDownCommand6 = New Janus.Windows.Ribbon.DropDownCommand
+        Me.SeparatorCommand7 = New Janus.Windows.Ribbon.SeparatorCommand
+        Me.DropDownCommand7 = New Janus.Windows.Ribbon.DropDownCommand
+        Me.SeparatorCommand8 = New Janus.Windows.Ribbon.SeparatorCommand
+        Me.DropDownCommand8 = New Janus.Windows.Ribbon.DropDownCommand
+        Me.SeparatorCommand9 = New Janus.Windows.Ribbon.SeparatorCommand
+        Me.DropDownCommand9 = New Janus.Windows.Ribbon.DropDownCommand
+        Me.SeparatorCommand18 = New Janus.Windows.Ribbon.SeparatorCommand
+        Me.BtnBreathTest = New Janus.Windows.Ribbon.DropDownCommand
         Me.BloodItemContextMenu = New Janus.Windows.Ribbon.RibbonContextMenu(Me.components)
+        Me.cmdEditCheckItem = New Janus.Windows.Ribbon.DropDownCommand
+        Me.SeparatorCommand10 = New Janus.Windows.Ribbon.SeparatorCommand
+        Me.cmdDeleteCheckItem = New Janus.Windows.Ribbon.DropDownCommand
         Me.BgLoadData = New System.ComponentModel.BackgroundWorker
         Me.ErrPhysical = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.BgLoadingReport = New System.ComponentModel.BackgroundWorker
@@ -284,59 +346,17 @@ Partial Class DashbordDotorRequestExamination
         Me.DropDownCommand18 = New Janus.Windows.Ribbon.DropDownCommand
         Me.SeparatorCommand16 = New Janus.Windows.Ribbon.SeparatorCommand
         Me.DropDownCommand19 = New Janus.Windows.Ribbon.DropDownCommand
-        Me.UiTabPage1 = New Janus.Windows.UI.Tab.UITabPage
-        Me.BtnRefresh = New System.Windows.Forms.ToolStripButton
-        Me.BtnNewExam = New System.Windows.Forms.ToolStripButton
-        Me.BntWaitingList = New System.Windows.Forms.ToolStripButton
-        Me.btnCheckStatus = New System.Windows.Forms.ToolStripButton
-        Me.BtnCompleteExam = New System.Windows.Forms.ToolStripButton
-        Me.btnHistoryExam = New System.Windows.Forms.ToolStripButton
-        Me.BtnMedicalReport = New System.Windows.Forms.ToolStripButton
-        Me.ToolStripDropDownButton2 = New System.Windows.Forms.ToolStripDropDownButton
-        Me.BtnAsTable = New System.Windows.Forms.ToolStripMenuItem
-        Me.ToolStripSeparator13 = New System.Windows.Forms.ToolStripSeparator
-        Me.BtnAsCard = New System.Windows.Forms.ToolStripMenuItem
-        Me.BtnCompletPatientExp = New System.Windows.Forms.ToolStripButton
-        Me.BtnDeleteExam = New System.Windows.Forms.ToolStripButton
-        Me.UiTabPage11 = New Janus.Windows.UI.Tab.UITabPage
-        Me.UiTabPage3 = New Janus.Windows.UI.Tab.UITabPage
-        Me.UiTabPage4 = New Janus.Windows.UI.Tab.UITabPage
-        Me.UiTabPage5 = New Janus.Windows.UI.Tab.UITabPage
-        Me.UiTabPage6 = New Janus.Windows.UI.Tab.UITabPage
-        Me.UiTabPage7 = New Janus.Windows.UI.Tab.UITabPage
-        Me.UiTabPage8 = New Janus.Windows.UI.Tab.UITabPage
-        Me.UiTabPage9 = New Janus.Windows.UI.Tab.UITabPage
-        Me.UiTabPage10 = New Janus.Windows.UI.Tab.UITabPage
-        Me.UiTabPage2 = New Janus.Windows.UI.Tab.UITabPage
-        Me.SeparatorCommand1 = New Janus.Windows.Ribbon.SeparatorCommand
-        Me.DropDownCommand1 = New Janus.Windows.Ribbon.DropDownCommand
-        Me.SeparatorCommand2 = New Janus.Windows.Ribbon.SeparatorCommand
-        Me.DropDownCommand2 = New Janus.Windows.Ribbon.DropDownCommand
-        Me.SeparatorCommand3 = New Janus.Windows.Ribbon.SeparatorCommand
-        Me.DropDownCommand3 = New Janus.Windows.Ribbon.DropDownCommand
-        Me.SeparatorCommand4 = New Janus.Windows.Ribbon.SeparatorCommand
-        Me.DropDownCommand4 = New Janus.Windows.Ribbon.DropDownCommand
-        Me.SeparatorCommand5 = New Janus.Windows.Ribbon.SeparatorCommand
-        Me.DropDownCommand5 = New Janus.Windows.Ribbon.DropDownCommand
-        Me.SeparatorCommand6 = New Janus.Windows.Ribbon.SeparatorCommand
-        Me.DropDownCommand6 = New Janus.Windows.Ribbon.DropDownCommand
-        Me.SeparatorCommand7 = New Janus.Windows.Ribbon.SeparatorCommand
-        Me.DropDownCommand7 = New Janus.Windows.Ribbon.DropDownCommand
-        Me.SeparatorCommand8 = New Janus.Windows.Ribbon.SeparatorCommand
-        Me.DropDownCommand8 = New Janus.Windows.Ribbon.DropDownCommand
-        Me.SeparatorCommand9 = New Janus.Windows.Ribbon.SeparatorCommand
-        Me.DropDownCommand9 = New Janus.Windows.Ribbon.DropDownCommand
-        Me.cmdEditCheckItem = New Janus.Windows.Ribbon.DropDownCommand
-        Me.SeparatorCommand10 = New Janus.Windows.Ribbon.SeparatorCommand
-        Me.cmdDeleteCheckItem = New Janus.Windows.Ribbon.DropDownCommand
-        Me.SeparatorCommand18 = New Janus.Windows.Ribbon.SeparatorCommand
-        Me.BtnBreathTest = New Janus.Windows.Ribbon.DropDownCommand
         Me.ToolStrip1.SuspendLayout()
         CType(Me.UiTab2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.UiTab2.SuspendLayout()
+        Me.UiTabPage11.SuspendLayout()
+        Me.UiTabPage3.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         CType(Me.ItemResultList, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.UiTabPage12.SuspendLayout()
+        Me.Panel1.SuspendLayout()
+        Me.UiTabPage4.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox25.SuspendLayout()
@@ -347,11 +367,13 @@ Partial Class DashbordDotorRequestExamination
         Me.GroupBox5.SuspendLayout()
         CType(Me.FibroConclusionList, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox17.SuspendLayout()
+        Me.UiTabPage5.SuspendLayout()
         Me.GroupBox6.SuspendLayout()
         Me.GroupBox16.SuspendLayout()
         Me.GroupBox13.SuspendLayout()
         Me.GroupBox19.SuspendLayout()
         CType(Me.NasoConclusionList, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.UiTabPage6.SuspendLayout()
         Me.GroupBox14.SuspendLayout()
         Me.TabControl2.SuspendLayout()
         Me.TabPage3.SuspendLayout()
@@ -363,15 +385,20 @@ Partial Class DashbordDotorRequestExamination
         Me.GroupBox15.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.ColoConclusionList, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.UiTabPage7.SuspendLayout()
         Me.GroupBox8.SuspendLayout()
         Me.GroupBox22.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.EchoConclusionList, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox18.SuspendLayout()
+        Me.UiTabPage8.SuspendLayout()
         Me.GroupBox9.SuspendLayout()
         Me.GroupBox20.SuspendLayout()
+        Me.UiTabPage9.SuspendLayout()
         Me.GroupBox10.SuspendLayout()
+        Me.UiTabPage10.SuspendLayout()
         Me.GroupBox11.SuspendLayout()
+        Me.UiTabPage2.SuspendLayout()
         Me.GroupBox21.SuspendLayout()
         Me.SplitContainer1.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel2.SuspendLayout()
@@ -379,18 +406,8 @@ Partial Class DashbordDotorRequestExamination
         CType(Me.RequestList, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UiTab1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.UiTab1.SuspendLayout()
-        CType(Me.ErrPhysical, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.UiTabPage1.SuspendLayout()
-        Me.UiTabPage11.SuspendLayout()
-        Me.UiTabPage3.SuspendLayout()
-        Me.UiTabPage4.SuspendLayout()
-        Me.UiTabPage5.SuspendLayout()
-        Me.UiTabPage6.SuspendLayout()
-        Me.UiTabPage7.SuspendLayout()
-        Me.UiTabPage8.SuspendLayout()
-        Me.UiTabPage9.SuspendLayout()
-        Me.UiTabPage10.SuspendLayout()
-        Me.UiTabPage2.SuspendLayout()
+        CType(Me.ErrPhysical, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ToolStrip1
@@ -404,50 +421,167 @@ Partial Class DashbordDotorRequestExamination
         Me.ToolStrip1.TabIndex = 0
         Me.ToolStrip1.Text = "ToolStrip1"
         '
+        'BtnRefresh
+        '
+        Me.BtnRefresh.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnRefresh.ForeColor = System.Drawing.Color.Blue
+        Me.BtnRefresh.Image = Global.Clinic_Management_System.My.Resources.Resources.refresh
+        Me.BtnRefresh.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.BtnRefresh.Name = "BtnRefresh"
+        Me.BtnRefresh.Size = New System.Drawing.Size(87, 30)
+        Me.BtnRefresh.Text = "Refresh"
+        '
         'ToolStripSeparator1
         '
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
         Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 33)
+        '
+        'BtnNewExam
+        '
+        Me.BtnNewExam.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnNewExam.ForeColor = System.Drawing.Color.Blue
+        Me.BtnNewExam.Image = Global.Clinic_Management_System.My.Resources.Resources.Measurement
+        Me.BtnNewExam.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.BtnNewExam.Name = "BtnNewExam"
+        Me.BtnNewExam.Size = New System.Drawing.Size(124, 30)
+        Me.BtnNewExam.Text = "New Request"
         '
         'ToolStripSeparator14
         '
         Me.ToolStripSeparator14.Name = "ToolStripSeparator14"
         Me.ToolStripSeparator14.Size = New System.Drawing.Size(6, 33)
         '
+        'BntWaitingList
+        '
+        Me.BntWaitingList.ForeColor = System.Drawing.Color.Blue
+        Me.BntWaitingList.Image = Global.Clinic_Management_System.My.Resources.Resources.wheelchair
+        Me.BntWaitingList.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.BntWaitingList.Name = "BntWaitingList"
+        Me.BntWaitingList.Size = New System.Drawing.Size(163, 30)
+        Me.BntWaitingList.Text = "Send To Waiting List"
+        '
         'ToolStripSeparator2
         '
         Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
         Me.ToolStripSeparator2.Size = New System.Drawing.Size(6, 33)
+        '
+        'btnCheckStatus
+        '
+        Me.btnCheckStatus.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCheckStatus.ForeColor = System.Drawing.Color.Blue
+        Me.btnCheckStatus.Image = Global.Clinic_Management_System.My.Resources.Resources._1349420620_todo_list
+        Me.btnCheckStatus.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btnCheckStatus.Name = "btnCheckStatus"
+        Me.btnCheckStatus.Size = New System.Drawing.Size(127, 30)
+        Me.btnCheckStatus.Text = "Check Status"
         '
         'ToolStripSeparator10
         '
         Me.ToolStripSeparator10.Name = "ToolStripSeparator10"
         Me.ToolStripSeparator10.Size = New System.Drawing.Size(6, 33)
         '
+        'BtnCompleteExam
+        '
+        Me.BtnCompleteExam.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnCompleteExam.ForeColor = System.Drawing.Color.Blue
+        Me.BtnCompleteExam.Image = Global.Clinic_Management_System.My.Resources.Resources.Checked
+        Me.BtnCompleteExam.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.BtnCompleteExam.Name = "BtnCompleteExam"
+        Me.BtnCompleteExam.Size = New System.Drawing.Size(192, 30)
+        Me.BtnCompleteExam.Text = "Edit Para exam out site"
+        '
         'ToolStripSeparator11
         '
         Me.ToolStripSeparator11.Name = "ToolStripSeparator11"
         Me.ToolStripSeparator11.Size = New System.Drawing.Size(6, 33)
+        '
+        'btnHistoryExam
+        '
+        Me.btnHistoryExam.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnHistoryExam.ForeColor = System.Drawing.Color.Blue
+        Me.btnHistoryExam.Image = Global.Clinic_Management_System.My.Resources.Resources.find
+        Me.btnHistoryExam.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btnHistoryExam.Name = "btnHistoryExam"
+        Me.btnHistoryExam.Size = New System.Drawing.Size(156, 30)
+        Me.btnHistoryExam.Text = "Find Patient Exam"
         '
         'ToolStripSeparator12
         '
         Me.ToolStripSeparator12.Name = "ToolStripSeparator12"
         Me.ToolStripSeparator12.Size = New System.Drawing.Size(6, 33)
         '
+        'BtnMedicalReport
+        '
+        Me.BtnMedicalReport.ForeColor = System.Drawing.Color.Blue
+        Me.BtnMedicalReport.Image = Global.Clinic_Management_System.My.Resources.Resources.DefineControls
+        Me.BtnMedicalReport.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.BtnMedicalReport.Name = "BtnMedicalReport"
+        Me.BtnMedicalReport.Size = New System.Drawing.Size(127, 30)
+        Me.BtnMedicalReport.Text = "Medical Report"
+        '
         'ToolStripSeparator16
         '
         Me.ToolStripSeparator16.Name = "ToolStripSeparator16"
         Me.ToolStripSeparator16.Size = New System.Drawing.Size(6, 33)
+        '
+        'ToolStripDropDownButton2
+        '
+        Me.ToolStripDropDownButton2.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BtnAsTable, Me.ToolStripSeparator13, Me.BtnAsCard})
+        Me.ToolStripDropDownButton2.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ToolStripDropDownButton2.ForeColor = System.Drawing.Color.Blue
+        Me.ToolStripDropDownButton2.Image = Global.Clinic_Management_System.My.Resources.Resources.arrow_down_green_48
+        Me.ToolStripDropDownButton2.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripDropDownButton2.Name = "ToolStripDropDownButton2"
+        Me.ToolStripDropDownButton2.Size = New System.Drawing.Size(99, 30)
+        Me.ToolStripDropDownButton2.Text = "View As"
+        '
+        'BtnAsTable
+        '
+        Me.BtnAsTable.ForeColor = System.Drawing.Color.Blue
+        Me.BtnAsTable.Image = Global.Clinic_Management_System.My.Resources.Resources.spreadsheet_template
+        Me.BtnAsTable.Name = "BtnAsTable"
+        Me.BtnAsTable.Size = New System.Drawing.Size(131, 22)
+        Me.BtnAsTable.Text = "As &Table"
+        '
+        'ToolStripSeparator13
+        '
+        Me.ToolStripSeparator13.Name = "ToolStripSeparator13"
+        Me.ToolStripSeparator13.Size = New System.Drawing.Size(128, 6)
+        '
+        'BtnAsCard
+        '
+        Me.BtnAsCard.ForeColor = System.Drawing.Color.Blue
+        Me.BtnAsCard.Image = Global.Clinic_Management_System.My.Resources.Resources.menu1
+        Me.BtnAsCard.Name = "BtnAsCard"
+        Me.BtnAsCard.Size = New System.Drawing.Size(131, 22)
+        Me.BtnAsCard.Text = "As &Card"
         '
         'ToolStripSeparator3
         '
         Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
         Me.ToolStripSeparator3.Size = New System.Drawing.Size(6, 33)
         '
+        'BtnCompletPatientExp
+        '
+        Me.BtnCompletPatientExp.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.BtnCompletPatientExp.Image = Global.Clinic_Management_System.My.Resources.Resources.Aproved
+        Me.BtnCompletPatientExp.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.BtnCompletPatientExp.Name = "BtnCompletPatientExp"
+        Me.BtnCompletPatientExp.Size = New System.Drawing.Size(128, 30)
+        Me.BtnCompletPatientExp.Text = "Complet Exam"
+        '
         'ToolStripSeparator4
         '
         Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
         Me.ToolStripSeparator4.Size = New System.Drawing.Size(6, 33)
+        '
+        'BtnDeleteExam
+        '
+        Me.BtnDeleteExam.Image = Global.Clinic_Management_System.My.Resources.Resources.delete_appointment
+        Me.BtnDeleteExam.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.BtnDeleteExam.Name = "BtnDeleteExam"
+        Me.BtnDeleteExam.Size = New System.Drawing.Size(169, 30)
+        Me.BtnDeleteExam.Text = "Delete Request Exam"
         '
         'UiTab2
         '
@@ -458,11 +592,21 @@ Partial Class DashbordDotorRequestExamination
         Me.UiTab2.Name = "UiTab2"
         Me.UiTab2.Size = New System.Drawing.Size(1356, 542)
         Me.UiTab2.TabIndex = 2
-        Me.UiTab2.TabPages.AddRange(New Janus.Windows.UI.Tab.UITabPage() {Me.UiTabPage11, Me.UiTabPage3, Me.UiTabPage4, Me.UiTabPage5, Me.UiTabPage6, Me.UiTabPage7, Me.UiTabPage8, Me.UiTabPage9, Me.UiTabPage10, Me.UiTabPage2})
+        Me.UiTab2.TabPages.AddRange(New Janus.Windows.UI.Tab.UITabPage() {Me.UiTabPage11, Me.UiTabPage3, Me.UiTabPage12, Me.UiTabPage4, Me.UiTabPage5, Me.UiTabPage6, Me.UiTabPage7, Me.UiTabPage8, Me.UiTabPage9, Me.UiTabPage10, Me.UiTabPage2})
         Me.UiTab2.TabsStateStyles.FormatStyle.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.UiTab2.TabsStateStyles.FormatStyle.FontSize = 10.0!
         Me.UiTab2.TabsStateStyles.FormatStyle.ForeColor = System.Drawing.Color.Blue
         Me.UiTab2.UseCompatibleTextRendering = False
+        '
+        'UiTabPage11
+        '
+        Me.UiTabPage11.Controls.Add(Me.CRPatientDocViewer)
+        Me.UiTabPage11.Key = "Medical Report"
+        Me.UiTabPage11.Location = New System.Drawing.Point(1, 26)
+        Me.UiTabPage11.Name = "UiTabPage11"
+        Me.UiTabPage11.Size = New System.Drawing.Size(1352, 513)
+        Me.UiTabPage11.TabStop = True
+        Me.UiTabPage11.Text = "     Medical Report     "
         '
         'CRPatientDocViewer
         '
@@ -478,6 +622,18 @@ Partial Class DashbordDotorRequestExamination
         Me.CRPatientDocViewer.Size = New System.Drawing.Size(1352, 513)
         Me.CRPatientDocViewer.TabIndex = 1
         Me.CRPatientDocViewer.ViewTimeSelectionFormula = ""
+        '
+        'UiTabPage3
+        '
+        Me.UiTabPage3.AutoScroll = True
+        Me.UiTabPage3.Controls.Add(Me.GroupBox4)
+        Me.UiTabPage3.ImageIndex = 0
+        Me.UiTabPage3.Key = "Biology(Blood Check)"
+        Me.UiTabPage3.Location = New System.Drawing.Point(1, 26)
+        Me.UiTabPage3.Name = "UiTabPage3"
+        Me.UiTabPage3.Size = New System.Drawing.Size(1352, 513)
+        Me.UiTabPage3.TabStop = True
+        Me.UiTabPage3.Text = "     Biology(Blood Check)    "
         '
         'GroupBox4
         '
@@ -558,6 +714,187 @@ Partial Class DashbordDotorRequestExamination
         Me.Label2.Size = New System.Drawing.Size(73, 15)
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "Check Date:"
+        '
+        'UiTabPage12
+        '
+        Me.UiTabPage12.Controls.Add(Me.Panel1)
+        Me.UiTabPage12.Key = "BreathTest"
+        Me.UiTabPage12.Location = New System.Drawing.Point(1, 26)
+        Me.UiTabPage12.Name = "UiTabPage12"
+        Me.UiTabPage12.Size = New System.Drawing.Size(1352, 513)
+        Me.UiTabPage12.TabStop = True
+        Me.UiTabPage12.Text = "Urea Breath Test"
+        '
+        'Panel1
+        '
+        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel1.Controls.Add(Me.BtnPrintBreathTest)
+        Me.Panel1.Controls.Add(Me.TxtBreathMoreInfo)
+        Me.Panel1.Controls.Add(Me.Label68)
+        Me.Panel1.Controls.Add(Me.DateRequestBreath)
+        Me.Panel1.Controls.Add(Me.Label74)
+        Me.Panel1.Controls.Add(Me.Label81)
+        Me.Panel1.Controls.Add(Me.cboBreathRequestBy)
+        Me.Panel1.Controls.Add(Me.Label82)
+        Me.Panel1.Controls.Add(Me.TxtBreathResult)
+        Me.Panel1.Controls.Add(Me.Label83)
+        Me.Panel1.Controls.Add(Me.TxtBreathIndication)
+        Me.Panel1.Controls.Add(Me.Label84)
+        Me.Panel1.Controls.Add(Me.CboBreathConclusion)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(1352, 513)
+        Me.Panel1.TabIndex = 3
+        '
+        'BtnPrintBreathTest
+        '
+        Me.BtnPrintBreathTest.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnPrintBreathTest.Location = New System.Drawing.Point(490, 59)
+        Me.BtnPrintBreathTest.Name = "BtnPrintBreathTest"
+        Me.BtnPrintBreathTest.Size = New System.Drawing.Size(181, 62)
+        Me.BtnPrintBreathTest.TabIndex = 10
+        Me.BtnPrintBreathTest.Text = "Print Result Breath Test"
+        Me.BtnPrintBreathTest.UseVisualStyleBackColor = True
+        '
+        'TxtBreathMoreInfo
+        '
+        Me.TxtBreathMoreInfo.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtBreathMoreInfo.Location = New System.Drawing.Point(118, 250)
+        Me.TxtBreathMoreInfo.Multiline = True
+        Me.TxtBreathMoreInfo.Name = "TxtBreathMoreInfo"
+        Me.TxtBreathMoreInfo.ReadOnly = True
+        Me.TxtBreathMoreInfo.Size = New System.Drawing.Size(426, 84)
+        Me.TxtBreathMoreInfo.TabIndex = 9
+        '
+        'Label68
+        '
+        Me.Label68.AutoSize = True
+        Me.Label68.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label68.Location = New System.Drawing.Point(5, 253)
+        Me.Label68.Name = "Label68"
+        Me.Label68.Size = New System.Drawing.Size(81, 20)
+        Me.Label68.TabIndex = 8
+        Me.Label68.Text = "More Info:"
+        '
+        'DateRequestBreath
+        '
+        Me.DateRequestBreath.Checked = False
+        Me.DateRequestBreath.CustomFormat = "dd/MM/yyyy"
+        Me.DateRequestBreath.Enabled = False
+        Me.DateRequestBreath.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DateRequestBreath.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.DateRequestBreath.Location = New System.Drawing.Point(118, 22)
+        Me.DateRequestBreath.Name = "DateRequestBreath"
+        Me.DateRequestBreath.Size = New System.Drawing.Size(196, 26)
+        Me.DateRequestBreath.TabIndex = 0
+        '
+        'Label74
+        '
+        Me.Label74.AutoSize = True
+        Me.Label74.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label74.Location = New System.Drawing.Point(4, 28)
+        Me.Label74.Name = "Label74"
+        Me.Label74.Size = New System.Drawing.Size(113, 20)
+        Me.Label74.TabIndex = 7
+        Me.Label74.Text = "Date Request:"
+        '
+        'Label81
+        '
+        Me.Label81.AutoSize = True
+        Me.Label81.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label81.Location = New System.Drawing.Point(4, 69)
+        Me.Label81.Name = "Label81"
+        Me.Label81.Size = New System.Drawing.Size(96, 20)
+        Me.Label81.TabIndex = 2
+        Me.Label81.Text = "Request By:"
+        '
+        'cboBreathRequestBy
+        '
+        Me.cboBreathRequestBy.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.cboBreathRequestBy.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.cboBreathRequestBy.DropDownWidth = 500
+        Me.cboBreathRequestBy.Enabled = False
+        Me.cboBreathRequestBy.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboBreathRequestBy.FormattingEnabled = True
+        Me.cboBreathRequestBy.Location = New System.Drawing.Point(118, 61)
+        Me.cboBreathRequestBy.Name = "cboBreathRequestBy"
+        Me.cboBreathRequestBy.Size = New System.Drawing.Size(339, 28)
+        Me.cboBreathRequestBy.TabIndex = 1
+        '
+        'Label82
+        '
+        Me.Label82.AutoSize = True
+        Me.Label82.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label82.Location = New System.Drawing.Point(4, 103)
+        Me.Label82.Name = "Label82"
+        Me.Label82.Size = New System.Drawing.Size(82, 20)
+        Me.Label82.TabIndex = 4
+        Me.Label82.Text = "Indication:"
+        '
+        'TxtBreathResult
+        '
+        Me.TxtBreathResult.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtBreathResult.Location = New System.Drawing.Point(118, 132)
+        Me.TxtBreathResult.Multiline = True
+        Me.TxtBreathResult.Name = "TxtBreathResult"
+        Me.TxtBreathResult.ReadOnly = True
+        Me.TxtBreathResult.Size = New System.Drawing.Size(339, 74)
+        Me.TxtBreathResult.TabIndex = 3
+        '
+        'Label83
+        '
+        Me.Label83.AutoSize = True
+        Me.Label83.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label83.Location = New System.Drawing.Point(4, 135)
+        Me.Label83.Name = "Label83"
+        Me.Label83.Size = New System.Drawing.Size(59, 20)
+        Me.Label83.TabIndex = 5
+        Me.Label83.Text = "Result:"
+        '
+        'TxtBreathIndication
+        '
+        Me.TxtBreathIndication.Enabled = False
+        Me.TxtBreathIndication.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtBreathIndication.Location = New System.Drawing.Point(118, 96)
+        Me.TxtBreathIndication.Name = "TxtBreathIndication"
+        Me.TxtBreathIndication.Size = New System.Drawing.Size(339, 26)
+        Me.TxtBreathIndication.TabIndex = 2
+        '
+        'Label84
+        '
+        Me.Label84.AutoSize = True
+        Me.Label84.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label84.Location = New System.Drawing.Point(4, 220)
+        Me.Label84.Name = "Label84"
+        Me.Label84.Size = New System.Drawing.Size(91, 20)
+        Me.Label84.TabIndex = 6
+        Me.Label84.Text = "Conclusion:"
+        '
+        'CboBreathConclusion
+        '
+        Me.CboBreathConclusion.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.CboBreathConclusion.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.CboBreathConclusion.DropDownWidth = 500
+        Me.CboBreathConclusion.Enabled = False
+        Me.CboBreathConclusion.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CboBreathConclusion.FormattingEnabled = True
+        Me.CboBreathConclusion.Items.AddRange(New Object() {"", "Positive", "Negative"})
+        Me.CboBreathConclusion.Location = New System.Drawing.Point(118, 212)
+        Me.CboBreathConclusion.Name = "CboBreathConclusion"
+        Me.CboBreathConclusion.Size = New System.Drawing.Size(197, 28)
+        Me.CboBreathConclusion.TabIndex = 4
+        '
+        'UiTabPage4
+        '
+        Me.UiTabPage4.AutoScroll = True
+        Me.UiTabPage4.Controls.Add(Me.TabControl1)
+        Me.UiTabPage4.Key = "Fibro"
+        Me.UiTabPage4.Location = New System.Drawing.Point(1, 26)
+        Me.UiTabPage4.Name = "UiTabPage4"
+        Me.UiTabPage4.Size = New System.Drawing.Size(1352, 513)
+        Me.UiTabPage4.TabStop = True
+        Me.UiTabPage4.Text = "   Fibroscopy   "
         '
         'TabControl1
         '
@@ -1215,6 +1552,17 @@ Partial Class DashbordDotorRequestExamination
         Me.Label11.TabIndex = 2
         Me.Label11.Text = "Tolérance:"
         '
+        'UiTabPage5
+        '
+        Me.UiTabPage5.AutoScroll = True
+        Me.UiTabPage5.Controls.Add(Me.GroupBox6)
+        Me.UiTabPage5.Key = "Nasogastro"
+        Me.UiTabPage5.Location = New System.Drawing.Point(1, 26)
+        Me.UiTabPage5.Name = "UiTabPage5"
+        Me.UiTabPage5.Size = New System.Drawing.Size(1352, 513)
+        Me.UiTabPage5.TabStop = True
+        Me.UiTabPage5.Text = "   Nasogastro   "
+        '
         'GroupBox6
         '
         Me.GroupBox6.Controls.Add(Me.btnNasogastro)
@@ -1582,6 +1930,24 @@ Partial Class DashbordDotorRequestExamination
         Me.Label29.Size = New System.Drawing.Size(42, 15)
         Me.Label29.TabIndex = 37
         Me.Label29.Text = "Motify:"
+        '
+        'UiTabPage6
+        '
+        Me.UiTabPage6.AutoScroll = True
+        Me.UiTabPage6.Controls.Add(Me.cboColoPreparation)
+        Me.UiTabPage6.Controls.Add(Me.GroupBox14)
+        Me.UiTabPage6.Controls.Add(Me.txtColoDuree)
+        Me.UiTabPage6.Controls.Add(Me.Label37)
+        Me.UiTabPage6.Controls.Add(Me.Label38)
+        Me.UiTabPage6.Controls.Add(Me.txtColoEva)
+        Me.UiTabPage6.Controls.Add(Me.Label39)
+        Me.UiTabPage6.Controls.Add(Me.TabControl2)
+        Me.UiTabPage6.Key = "Coloscopy"
+        Me.UiTabPage6.Location = New System.Drawing.Point(1, 26)
+        Me.UiTabPage6.Name = "UiTabPage6"
+        Me.UiTabPage6.Size = New System.Drawing.Size(1352, 513)
+        Me.UiTabPage6.TabStop = True
+        Me.UiTabPage6.Text = "   Coloscopy    "
         '
         'cboColoPreparation
         '
@@ -2283,6 +2649,17 @@ Partial Class DashbordDotorRequestExamination
         Me.Label44.TabIndex = 43
         Me.Label44.Text = "Motify:"
         '
+        'UiTabPage7
+        '
+        Me.UiTabPage7.AutoScroll = True
+        Me.UiTabPage7.Controls.Add(Me.GroupBox8)
+        Me.UiTabPage7.Key = "Echo"
+        Me.UiTabPage7.Location = New System.Drawing.Point(1, 26)
+        Me.UiTabPage7.Name = "UiTabPage7"
+        Me.UiTabPage7.Size = New System.Drawing.Size(1352, 513)
+        Me.UiTabPage7.TabStop = True
+        Me.UiTabPage7.Text = "   Echo   "
+        '
         'GroupBox8
         '
         Me.GroupBox8.Controls.Add(Me.TxtExamByDR)
@@ -2620,6 +2997,16 @@ Partial Class DashbordDotorRequestExamination
         Me.Label52.TabIndex = 7
         Me.Label52.Text = "Demander par:"
         '
+        'UiTabPage8
+        '
+        Me.UiTabPage8.Controls.Add(Me.GroupBox9)
+        Me.UiTabPage8.Key = "Scan"
+        Me.UiTabPage8.Location = New System.Drawing.Point(1, 26)
+        Me.UiTabPage8.Name = "UiTabPage8"
+        Me.UiTabPage8.Size = New System.Drawing.Size(1352, 512)
+        Me.UiTabPage8.TabStop = True
+        Me.UiTabPage8.Text = "   Scan    "
+        '
         'GroupBox9
         '
         Me.GroupBox9.Controls.Add(Me.GroupBox20)
@@ -2655,6 +3042,16 @@ Partial Class DashbordDotorRequestExamination
         Me.txtscan.Size = New System.Drawing.Size(1342, 474)
         Me.txtscan.TabIndex = 0
         '
+        'UiTabPage9
+        '
+        Me.UiTabPage9.Controls.Add(Me.GroupBox10)
+        Me.UiTabPage9.Key = "M-R-I"
+        Me.UiTabPage9.Location = New System.Drawing.Point(1, 26)
+        Me.UiTabPage9.Name = "UiTabPage9"
+        Me.UiTabPage9.Size = New System.Drawing.Size(1352, 512)
+        Me.UiTabPage9.TabStop = True
+        Me.UiTabPage9.Text = "   M-R-I   "
+        '
         'GroupBox10
         '
         Me.GroupBox10.Controls.Add(Me.txtmri)
@@ -2680,6 +3077,16 @@ Partial Class DashbordDotorRequestExamination
         Me.txtmri.Size = New System.Drawing.Size(1348, 494)
         Me.txtmri.TabIndex = 0
         '
+        'UiTabPage10
+        '
+        Me.UiTabPage10.Controls.Add(Me.GroupBox11)
+        Me.UiTabPage10.Key = "FibroScan"
+        Me.UiTabPage10.Location = New System.Drawing.Point(1, 26)
+        Me.UiTabPage10.Name = "UiTabPage10"
+        Me.UiTabPage10.Size = New System.Drawing.Size(1352, 512)
+        Me.UiTabPage10.TabStop = True
+        Me.UiTabPage10.Text = "   Fibro Scan   "
+        '
         'GroupBox11
         '
         Me.GroupBox11.Controls.Add(Me.txtfibroscan)
@@ -2704,6 +3111,16 @@ Partial Class DashbordDotorRequestExamination
         Me.txtfibroscan.ReadOnly = True
         Me.txtfibroscan.Size = New System.Drawing.Size(1348, 494)
         Me.txtfibroscan.TabIndex = 0
+        '
+        'UiTabPage2
+        '
+        Me.UiTabPage2.Controls.Add(Me.GroupBox21)
+        Me.UiTabPage2.Key = "C.F Ana-Path"
+        Me.UiTabPage2.Location = New System.Drawing.Point(1, 26)
+        Me.UiTabPage2.Name = "UiTabPage2"
+        Me.UiTabPage2.Size = New System.Drawing.Size(1352, 512)
+        Me.UiTabPage2.TabStop = True
+        Me.UiTabPage2.Text = "   C.F Ana-Path   "
         '
         'GroupBox21
         '
@@ -2793,10 +3210,43 @@ Partial Class DashbordDotorRequestExamination
         Me.UiTab1.TextOrientation = Janus.Windows.UI.Tab.TextOrientation.Horizontal
         Me.UiTab1.VisualStyle = Janus.Windows.UI.Tab.TabVisualStyle.VS2005
         '
+        'UiTabPage1
+        '
+        Me.UiTabPage1.Controls.Add(Me.UiTab2)
+        Me.UiTabPage1.Key = "Para Clinic Examination"
+        Me.UiTabPage1.Location = New System.Drawing.Point(1, 1)
+        Me.UiTabPage1.Name = "UiTabPage1"
+        Me.UiTabPage1.Size = New System.Drawing.Size(1356, 542)
+        Me.UiTabPage1.TabStop = True
+        Me.UiTabPage1.Text = "Para Clinic Examination"
+        '
         'PhysicalContextMenu
         '
         Me.PhysicalContextMenu.Commands.AddRange(New Janus.Windows.Ribbon.CommandBase() {Me.SeparatorCommand1, Me.DropDownCommand1, Me.SeparatorCommand2, Me.DropDownCommand2, Me.SeparatorCommand3, Me.DropDownCommand3, Me.SeparatorCommand4, Me.DropDownCommand4, Me.SeparatorCommand5, Me.DropDownCommand5, Me.SeparatorCommand6, Me.DropDownCommand6, Me.SeparatorCommand7, Me.DropDownCommand7, Me.SeparatorCommand8, Me.DropDownCommand8, Me.SeparatorCommand9, Me.DropDownCommand9, Me.SeparatorCommand18, Me.BtnBreathTest})
         Me.PhysicalContextMenu.Name = "PhysicalContextMenu"
+        '
+        'SeparatorCommand1
+        '
+        Me.SeparatorCommand1.Key = "SeparatorCommand1"
+        Me.SeparatorCommand1.Name = "SeparatorCommand1"
+        '
+        'DropDownCommand1
+        '
+        Me.DropDownCommand1.Key = "DropDownCommand1"
+        Me.DropDownCommand1.Name = "DropDownCommand1"
+        Me.DropDownCommand1.Text = "Biology(Blood Check) Result"
+        '
+        'SeparatorCommand2
+        '
+        Me.SeparatorCommand2.Key = "SeparatorCommand2"
+        Me.SeparatorCommand2.Name = "SeparatorCommand2"
+        '
+        'DropDownCommand2
+        '
+        Me.DropDownCommand2.Commands.AddRange(New Janus.Windows.Ribbon.CommandBase() {Me.DropDownCommand10, Me.SeparatorCommand11, Me.DropDownCommand12})
+        Me.DropDownCommand2.Key = "DropDownCommand2"
+        Me.DropDownCommand2.Name = "DropDownCommand2"
+        Me.DropDownCommand2.Text = "Fibroscopy"
         '
         'DropDownCommand10
         '
@@ -2815,6 +3265,18 @@ Partial Class DashbordDotorRequestExamination
         Me.DropDownCommand12.Name = "DropDownCommand12"
         Me.DropDownCommand12.Text = "French Result"
         '
+        'SeparatorCommand3
+        '
+        Me.SeparatorCommand3.Key = "SeparatorCommand3"
+        Me.SeparatorCommand3.Name = "SeparatorCommand3"
+        '
+        'DropDownCommand3
+        '
+        Me.DropDownCommand3.Commands.AddRange(New Janus.Windows.Ribbon.CommandBase() {Me.DropDownCommand20, Me.SeparatorCommand17, Me.DropDownCommand21})
+        Me.DropDownCommand3.Key = "DropDownCommand3"
+        Me.DropDownCommand3.Name = "DropDownCommand3"
+        Me.DropDownCommand3.Text = "Nasogastro"
+        '
         'DropDownCommand20
         '
         Me.DropDownCommand20.Key = "DropDownCommand20"
@@ -2831,6 +3293,18 @@ Partial Class DashbordDotorRequestExamination
         Me.DropDownCommand21.Key = "DropDownCommand21"
         Me.DropDownCommand21.Name = "DropDownCommand21"
         Me.DropDownCommand21.Text = "French Result"
+        '
+        'SeparatorCommand4
+        '
+        Me.SeparatorCommand4.Key = "SeparatorCommand4"
+        Me.SeparatorCommand4.Name = "SeparatorCommand4"
+        '
+        'DropDownCommand4
+        '
+        Me.DropDownCommand4.Commands.AddRange(New Janus.Windows.Ribbon.CommandBase() {Me.DropDownCommand16, Me.SeparatorCommand14, Me.DropDownCommand17})
+        Me.DropDownCommand4.Key = "DropDownCommand4"
+        Me.DropDownCommand4.Name = "DropDownCommand4"
+        Me.DropDownCommand4.Text = "Coloscopy"
         '
         'DropDownCommand16
         '
@@ -2849,10 +3323,93 @@ Partial Class DashbordDotorRequestExamination
         Me.DropDownCommand17.Name = "DropDownCommand17"
         Me.DropDownCommand17.Text = "French Result"
         '
+        'SeparatorCommand5
+        '
+        Me.SeparatorCommand5.Key = "SeparatorCommand5"
+        Me.SeparatorCommand5.Name = "SeparatorCommand5"
+        '
+        'DropDownCommand5
+        '
+        Me.DropDownCommand5.Key = "DropDownCommand5"
+        Me.DropDownCommand5.Name = "DropDownCommand5"
+        Me.DropDownCommand5.Text = "Echo Result"
+        '
+        'SeparatorCommand6
+        '
+        Me.SeparatorCommand6.Key = "SeparatorCommand6"
+        Me.SeparatorCommand6.Name = "SeparatorCommand6"
+        '
+        'DropDownCommand6
+        '
+        Me.DropDownCommand6.Key = "DropDownCommand6"
+        Me.DropDownCommand6.Name = "DropDownCommand6"
+        Me.DropDownCommand6.Text = "Scan Result"
+        '
+        'SeparatorCommand7
+        '
+        Me.SeparatorCommand7.Key = "SeparatorCommand7"
+        Me.SeparatorCommand7.Name = "SeparatorCommand7"
+        '
+        'DropDownCommand7
+        '
+        Me.DropDownCommand7.Key = "DropDownCommand7"
+        Me.DropDownCommand7.Name = "DropDownCommand7"
+        Me.DropDownCommand7.Text = "M-R-I Result"
+        '
+        'SeparatorCommand8
+        '
+        Me.SeparatorCommand8.Key = "SeparatorCommand8"
+        Me.SeparatorCommand8.Name = "SeparatorCommand8"
+        '
+        'DropDownCommand8
+        '
+        Me.DropDownCommand8.Key = "DropDownCommand8"
+        Me.DropDownCommand8.Name = "DropDownCommand8"
+        Me.DropDownCommand8.Text = "Fibro Scan Result"
+        '
+        'SeparatorCommand9
+        '
+        Me.SeparatorCommand9.Key = "SeparatorCommand9"
+        Me.SeparatorCommand9.Name = "SeparatorCommand9"
+        '
+        'DropDownCommand9
+        '
+        Me.DropDownCommand9.Key = "DropDownCommand9"
+        Me.DropDownCommand9.Name = "DropDownCommand9"
+        Me.DropDownCommand9.Text = "C.F Ana-path Result"
+        '
+        'SeparatorCommand18
+        '
+        Me.SeparatorCommand18.Key = "SeparatorCommand18"
+        Me.SeparatorCommand18.Name = "SeparatorCommand18"
+        '
+        'BtnBreathTest
+        '
+        Me.BtnBreathTest.Key = "DropDownCommand22"
+        Me.BtnBreathTest.Name = "BtnBreathTest"
+        Me.BtnBreathTest.Text = "Breath Test Result"
+        '
         'BloodItemContextMenu
         '
         Me.BloodItemContextMenu.Commands.AddRange(New Janus.Windows.Ribbon.CommandBase() {Me.cmdEditCheckItem, Me.SeparatorCommand10, Me.cmdDeleteCheckItem})
         Me.BloodItemContextMenu.Name = "BloodItemContextMenu"
+        '
+        'cmdEditCheckItem
+        '
+        Me.cmdEditCheckItem.Key = "DropDownCommand1"
+        Me.cmdEditCheckItem.Name = "cmdEditCheckItem"
+        Me.cmdEditCheckItem.Text = "Edit Check Item"
+        '
+        'SeparatorCommand10
+        '
+        Me.SeparatorCommand10.Key = "SeparatorCommand10"
+        Me.SeparatorCommand10.Name = "SeparatorCommand10"
+        '
+        'cmdDeleteCheckItem
+        '
+        Me.cmdDeleteCheckItem.Key = "DropDownCommand2"
+        Me.cmdDeleteCheckItem.Name = "cmdDeleteCheckItem"
+        Me.cmdDeleteCheckItem.Text = "Delete Check Item"
         '
         'BgLoadData
         '
@@ -2920,376 +3477,6 @@ Partial Class DashbordDotorRequestExamination
         Me.DropDownCommand19.Name = "DropDownCommand19"
         Me.DropDownCommand19.Text = "French Result"
         '
-        'UiTabPage1
-        '
-        Me.UiTabPage1.Controls.Add(Me.UiTab2)
-        Me.UiTabPage1.Key = "Para Clinic Examination"
-        Me.UiTabPage1.Location = New System.Drawing.Point(1, 1)
-        Me.UiTabPage1.Name = "UiTabPage1"
-        Me.UiTabPage1.Size = New System.Drawing.Size(1356, 542)
-        Me.UiTabPage1.TabStop = True
-        Me.UiTabPage1.Text = "Para Clinic Examination"
-        '
-        'BtnRefresh
-        '
-        Me.BtnRefresh.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnRefresh.ForeColor = System.Drawing.Color.Blue
-        Me.BtnRefresh.Image = Global.Clinic_Management_System.My.Resources.Resources.refresh
-        Me.BtnRefresh.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.BtnRefresh.Name = "BtnRefresh"
-        Me.BtnRefresh.Size = New System.Drawing.Size(87, 30)
-        Me.BtnRefresh.Text = "Refresh"
-        '
-        'BtnNewExam
-        '
-        Me.BtnNewExam.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnNewExam.ForeColor = System.Drawing.Color.Blue
-        Me.BtnNewExam.Image = Global.Clinic_Management_System.My.Resources.Resources.Measurement
-        Me.BtnNewExam.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.BtnNewExam.Name = "BtnNewExam"
-        Me.BtnNewExam.Size = New System.Drawing.Size(124, 30)
-        Me.BtnNewExam.Text = "New Request"
-        '
-        'BntWaitingList
-        '
-        Me.BntWaitingList.ForeColor = System.Drawing.Color.Blue
-        Me.BntWaitingList.Image = Global.Clinic_Management_System.My.Resources.Resources.wheelchair
-        Me.BntWaitingList.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.BntWaitingList.Name = "BntWaitingList"
-        Me.BntWaitingList.Size = New System.Drawing.Size(163, 30)
-        Me.BntWaitingList.Text = "Send To Waiting List"
-        '
-        'btnCheckStatus
-        '
-        Me.btnCheckStatus.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCheckStatus.ForeColor = System.Drawing.Color.Blue
-        Me.btnCheckStatus.Image = Global.Clinic_Management_System.My.Resources.Resources._1349420620_todo_list
-        Me.btnCheckStatus.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btnCheckStatus.Name = "btnCheckStatus"
-        Me.btnCheckStatus.Size = New System.Drawing.Size(127, 30)
-        Me.btnCheckStatus.Text = "Check Status"
-        '
-        'BtnCompleteExam
-        '
-        Me.BtnCompleteExam.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnCompleteExam.ForeColor = System.Drawing.Color.Blue
-        Me.BtnCompleteExam.Image = Global.Clinic_Management_System.My.Resources.Resources.Checked
-        Me.BtnCompleteExam.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.BtnCompleteExam.Name = "BtnCompleteExam"
-        Me.BtnCompleteExam.Size = New System.Drawing.Size(192, 30)
-        Me.BtnCompleteExam.Text = "Edit Para exam out site"
-        '
-        'btnHistoryExam
-        '
-        Me.btnHistoryExam.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnHistoryExam.ForeColor = System.Drawing.Color.Blue
-        Me.btnHistoryExam.Image = Global.Clinic_Management_System.My.Resources.Resources.find
-        Me.btnHistoryExam.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btnHistoryExam.Name = "btnHistoryExam"
-        Me.btnHistoryExam.Size = New System.Drawing.Size(156, 30)
-        Me.btnHistoryExam.Text = "Find Patient Exam"
-        '
-        'BtnMedicalReport
-        '
-        Me.BtnMedicalReport.ForeColor = System.Drawing.Color.Blue
-        Me.BtnMedicalReport.Image = Global.Clinic_Management_System.My.Resources.Resources.DefineControls
-        Me.BtnMedicalReport.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.BtnMedicalReport.Name = "BtnMedicalReport"
-        Me.BtnMedicalReport.Size = New System.Drawing.Size(127, 30)
-        Me.BtnMedicalReport.Text = "Medical Report"
-        '
-        'ToolStripDropDownButton2
-        '
-        Me.ToolStripDropDownButton2.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BtnAsTable, Me.ToolStripSeparator13, Me.BtnAsCard})
-        Me.ToolStripDropDownButton2.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ToolStripDropDownButton2.ForeColor = System.Drawing.Color.Blue
-        Me.ToolStripDropDownButton2.Image = Global.Clinic_Management_System.My.Resources.Resources.arrow_down_green_48
-        Me.ToolStripDropDownButton2.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripDropDownButton2.Name = "ToolStripDropDownButton2"
-        Me.ToolStripDropDownButton2.Size = New System.Drawing.Size(99, 30)
-        Me.ToolStripDropDownButton2.Text = "View As"
-        '
-        'BtnAsTable
-        '
-        Me.BtnAsTable.ForeColor = System.Drawing.Color.Blue
-        Me.BtnAsTable.Image = Global.Clinic_Management_System.My.Resources.Resources.spreadsheet_template
-        Me.BtnAsTable.Name = "BtnAsTable"
-        Me.BtnAsTable.Size = New System.Drawing.Size(131, 22)
-        Me.BtnAsTable.Text = "As &Table"
-        '
-        'ToolStripSeparator13
-        '
-        Me.ToolStripSeparator13.Name = "ToolStripSeparator13"
-        Me.ToolStripSeparator13.Size = New System.Drawing.Size(128, 6)
-        '
-        'BtnAsCard
-        '
-        Me.BtnAsCard.ForeColor = System.Drawing.Color.Blue
-        Me.BtnAsCard.Image = Global.Clinic_Management_System.My.Resources.Resources.menu1
-        Me.BtnAsCard.Name = "BtnAsCard"
-        Me.BtnAsCard.Size = New System.Drawing.Size(131, 22)
-        Me.BtnAsCard.Text = "As &Card"
-        '
-        'BtnCompletPatientExp
-        '
-        Me.BtnCompletPatientExp.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.BtnCompletPatientExp.Image = Global.Clinic_Management_System.My.Resources.Resources.Aproved
-        Me.BtnCompletPatientExp.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.BtnCompletPatientExp.Name = "BtnCompletPatientExp"
-        Me.BtnCompletPatientExp.Size = New System.Drawing.Size(128, 30)
-        Me.BtnCompletPatientExp.Text = "Complet Exam"
-        '
-        'BtnDeleteExam
-        '
-        Me.BtnDeleteExam.Image = Global.Clinic_Management_System.My.Resources.Resources.delete_appointment
-        Me.BtnDeleteExam.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.BtnDeleteExam.Name = "BtnDeleteExam"
-        Me.BtnDeleteExam.Size = New System.Drawing.Size(169, 30)
-        Me.BtnDeleteExam.Text = "Delete Request Exam"
-        '
-        'UiTabPage11
-        '
-        Me.UiTabPage11.Controls.Add(Me.CRPatientDocViewer)
-        Me.UiTabPage11.Key = "Medical Report"
-        Me.UiTabPage11.Location = New System.Drawing.Point(1, 26)
-        Me.UiTabPage11.Name = "UiTabPage11"
-        Me.UiTabPage11.Size = New System.Drawing.Size(1352, 513)
-        Me.UiTabPage11.TabStop = True
-        Me.UiTabPage11.Text = "     Medical Report     "
-        '
-        'UiTabPage3
-        '
-        Me.UiTabPage3.AutoScroll = True
-        Me.UiTabPage3.Controls.Add(Me.GroupBox4)
-        Me.UiTabPage3.ImageIndex = 0
-        Me.UiTabPage3.Key = "Biology(Blood Check)"
-        Me.UiTabPage3.Location = New System.Drawing.Point(1, 26)
-        Me.UiTabPage3.Name = "UiTabPage3"
-        Me.UiTabPage3.Size = New System.Drawing.Size(1352, 513)
-        Me.UiTabPage3.TabStop = True
-        Me.UiTabPage3.Text = "     Biology(Blood Check)    "
-        '
-        'UiTabPage4
-        '
-        Me.UiTabPage4.AutoScroll = True
-        Me.UiTabPage4.Controls.Add(Me.TabControl1)
-        Me.UiTabPage4.Key = "Fibro"
-        Me.UiTabPage4.Location = New System.Drawing.Point(1, 26)
-        Me.UiTabPage4.Name = "UiTabPage4"
-        Me.UiTabPage4.Size = New System.Drawing.Size(1352, 513)
-        Me.UiTabPage4.TabStop = True
-        Me.UiTabPage4.Text = "   Fibroscopy   "
-        '
-        'UiTabPage5
-        '
-        Me.UiTabPage5.AutoScroll = True
-        Me.UiTabPage5.Controls.Add(Me.GroupBox6)
-        Me.UiTabPage5.Key = "Nasogastro"
-        Me.UiTabPage5.Location = New System.Drawing.Point(1, 26)
-        Me.UiTabPage5.Name = "UiTabPage5"
-        Me.UiTabPage5.Size = New System.Drawing.Size(1352, 513)
-        Me.UiTabPage5.TabStop = True
-        Me.UiTabPage5.Text = "   Nasogastro   "
-        '
-        'UiTabPage6
-        '
-        Me.UiTabPage6.AutoScroll = True
-        Me.UiTabPage6.Controls.Add(Me.cboColoPreparation)
-        Me.UiTabPage6.Controls.Add(Me.GroupBox14)
-        Me.UiTabPage6.Controls.Add(Me.txtColoDuree)
-        Me.UiTabPage6.Controls.Add(Me.Label37)
-        Me.UiTabPage6.Controls.Add(Me.Label38)
-        Me.UiTabPage6.Controls.Add(Me.txtColoEva)
-        Me.UiTabPage6.Controls.Add(Me.Label39)
-        Me.UiTabPage6.Controls.Add(Me.TabControl2)
-        Me.UiTabPage6.Key = "Coloscopy"
-        Me.UiTabPage6.Location = New System.Drawing.Point(1, 26)
-        Me.UiTabPage6.Name = "UiTabPage6"
-        Me.UiTabPage6.Size = New System.Drawing.Size(1352, 513)
-        Me.UiTabPage6.TabStop = True
-        Me.UiTabPage6.Text = "   Coloscopy    "
-        '
-        'UiTabPage7
-        '
-        Me.UiTabPage7.AutoScroll = True
-        Me.UiTabPage7.Controls.Add(Me.GroupBox8)
-        Me.UiTabPage7.Key = "Echo"
-        Me.UiTabPage7.Location = New System.Drawing.Point(1, 26)
-        Me.UiTabPage7.Name = "UiTabPage7"
-        Me.UiTabPage7.Size = New System.Drawing.Size(1352, 513)
-        Me.UiTabPage7.TabStop = True
-        Me.UiTabPage7.Text = "   Echo   "
-        '
-        'UiTabPage8
-        '
-        Me.UiTabPage8.Controls.Add(Me.GroupBox9)
-        Me.UiTabPage8.Key = "Scan"
-        Me.UiTabPage8.Location = New System.Drawing.Point(1, 26)
-        Me.UiTabPage8.Name = "UiTabPage8"
-        Me.UiTabPage8.Size = New System.Drawing.Size(1352, 512)
-        Me.UiTabPage8.TabStop = True
-        Me.UiTabPage8.Text = "   Scan    "
-        '
-        'UiTabPage9
-        '
-        Me.UiTabPage9.Controls.Add(Me.GroupBox10)
-        Me.UiTabPage9.Key = "M-R-I"
-        Me.UiTabPage9.Location = New System.Drawing.Point(1, 26)
-        Me.UiTabPage9.Name = "UiTabPage9"
-        Me.UiTabPage9.Size = New System.Drawing.Size(1352, 512)
-        Me.UiTabPage9.TabStop = True
-        Me.UiTabPage9.Text = "   M-R-I   "
-        '
-        'UiTabPage10
-        '
-        Me.UiTabPage10.Controls.Add(Me.GroupBox11)
-        Me.UiTabPage10.Key = "FibroScan"
-        Me.UiTabPage10.Location = New System.Drawing.Point(1, 26)
-        Me.UiTabPage10.Name = "UiTabPage10"
-        Me.UiTabPage10.Size = New System.Drawing.Size(1352, 512)
-        Me.UiTabPage10.TabStop = True
-        Me.UiTabPage10.Text = "   Fibro Scan   "
-        '
-        'UiTabPage2
-        '
-        Me.UiTabPage2.Controls.Add(Me.GroupBox21)
-        Me.UiTabPage2.Key = "C.F Ana-Path"
-        Me.UiTabPage2.Location = New System.Drawing.Point(1, 26)
-        Me.UiTabPage2.Name = "UiTabPage2"
-        Me.UiTabPage2.Size = New System.Drawing.Size(1352, 512)
-        Me.UiTabPage2.TabStop = True
-        Me.UiTabPage2.Text = "   C.F Ana-Path   "
-        '
-        'SeparatorCommand1
-        '
-        Me.SeparatorCommand1.Key = "SeparatorCommand1"
-        Me.SeparatorCommand1.Name = "SeparatorCommand1"
-        '
-        'DropDownCommand1
-        '
-        Me.DropDownCommand1.Key = "DropDownCommand1"
-        Me.DropDownCommand1.Name = "DropDownCommand1"
-        Me.DropDownCommand1.Text = "Biology(Blood Check) Result"
-        '
-        'SeparatorCommand2
-        '
-        Me.SeparatorCommand2.Key = "SeparatorCommand2"
-        Me.SeparatorCommand2.Name = "SeparatorCommand2"
-        '
-        'DropDownCommand2
-        '
-        Me.DropDownCommand2.Commands.AddRange(New Janus.Windows.Ribbon.CommandBase() {Me.DropDownCommand10, Me.SeparatorCommand11, Me.DropDownCommand12})
-        Me.DropDownCommand2.Key = "DropDownCommand2"
-        Me.DropDownCommand2.Name = "DropDownCommand2"
-        Me.DropDownCommand2.Text = "Fibroscopy"
-        '
-        'SeparatorCommand3
-        '
-        Me.SeparatorCommand3.Key = "SeparatorCommand3"
-        Me.SeparatorCommand3.Name = "SeparatorCommand3"
-        '
-        'DropDownCommand3
-        '
-        Me.DropDownCommand3.Commands.AddRange(New Janus.Windows.Ribbon.CommandBase() {Me.DropDownCommand20, Me.SeparatorCommand17, Me.DropDownCommand21})
-        Me.DropDownCommand3.Key = "DropDownCommand3"
-        Me.DropDownCommand3.Name = "DropDownCommand3"
-        Me.DropDownCommand3.Text = "Nasogastro"
-        '
-        'SeparatorCommand4
-        '
-        Me.SeparatorCommand4.Key = "SeparatorCommand4"
-        Me.SeparatorCommand4.Name = "SeparatorCommand4"
-        '
-        'DropDownCommand4
-        '
-        Me.DropDownCommand4.Commands.AddRange(New Janus.Windows.Ribbon.CommandBase() {Me.DropDownCommand16, Me.SeparatorCommand14, Me.DropDownCommand17})
-        Me.DropDownCommand4.Key = "DropDownCommand4"
-        Me.DropDownCommand4.Name = "DropDownCommand4"
-        Me.DropDownCommand4.Text = "Coloscopy"
-        '
-        'SeparatorCommand5
-        '
-        Me.SeparatorCommand5.Key = "SeparatorCommand5"
-        Me.SeparatorCommand5.Name = "SeparatorCommand5"
-        '
-        'DropDownCommand5
-        '
-        Me.DropDownCommand5.Key = "DropDownCommand5"
-        Me.DropDownCommand5.Name = "DropDownCommand5"
-        Me.DropDownCommand5.Text = "Echo Result"
-        '
-        'SeparatorCommand6
-        '
-        Me.SeparatorCommand6.Key = "SeparatorCommand6"
-        Me.SeparatorCommand6.Name = "SeparatorCommand6"
-        '
-        'DropDownCommand6
-        '
-        Me.DropDownCommand6.Key = "DropDownCommand6"
-        Me.DropDownCommand6.Name = "DropDownCommand6"
-        Me.DropDownCommand6.Text = "Scan Result"
-        '
-        'SeparatorCommand7
-        '
-        Me.SeparatorCommand7.Key = "SeparatorCommand7"
-        Me.SeparatorCommand7.Name = "SeparatorCommand7"
-        '
-        'DropDownCommand7
-        '
-        Me.DropDownCommand7.Key = "DropDownCommand7"
-        Me.DropDownCommand7.Name = "DropDownCommand7"
-        Me.DropDownCommand7.Text = "M-R-I Result"
-        '
-        'SeparatorCommand8
-        '
-        Me.SeparatorCommand8.Key = "SeparatorCommand8"
-        Me.SeparatorCommand8.Name = "SeparatorCommand8"
-        '
-        'DropDownCommand8
-        '
-        Me.DropDownCommand8.Key = "DropDownCommand8"
-        Me.DropDownCommand8.Name = "DropDownCommand8"
-        Me.DropDownCommand8.Text = "Fibro Scan Result"
-        '
-        'SeparatorCommand9
-        '
-        Me.SeparatorCommand9.Key = "SeparatorCommand9"
-        Me.SeparatorCommand9.Name = "SeparatorCommand9"
-        '
-        'DropDownCommand9
-        '
-        Me.DropDownCommand9.Key = "DropDownCommand9"
-        Me.DropDownCommand9.Name = "DropDownCommand9"
-        Me.DropDownCommand9.Text = "C.F Ana-path Result"
-        '
-        'cmdEditCheckItem
-        '
-        Me.cmdEditCheckItem.Key = "DropDownCommand1"
-        Me.cmdEditCheckItem.Name = "cmdEditCheckItem"
-        Me.cmdEditCheckItem.Text = "Edit Check Item"
-        '
-        'SeparatorCommand10
-        '
-        Me.SeparatorCommand10.Key = "SeparatorCommand10"
-        Me.SeparatorCommand10.Name = "SeparatorCommand10"
-        '
-        'cmdDeleteCheckItem
-        '
-        Me.cmdDeleteCheckItem.Key = "DropDownCommand2"
-        Me.cmdDeleteCheckItem.Name = "cmdDeleteCheckItem"
-        Me.cmdDeleteCheckItem.Text = "Delete Check Item"
-        '
-        'SeparatorCommand18
-        '
-        Me.SeparatorCommand18.Key = "SeparatorCommand18"
-        Me.SeparatorCommand18.Name = "SeparatorCommand18"
-        '
-        'BtnBreathTest
-        '
-        Me.BtnBreathTest.Key = "DropDownCommand22"
-        Me.BtnBreathTest.Name = "BtnBreathTest"
-        Me.BtnBreathTest.Text = "Breath Test Result"
-        '
         'DashbordDotorRequestExamination
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -3302,10 +3489,16 @@ Partial Class DashbordDotorRequestExamination
         Me.ToolStrip1.PerformLayout()
         CType(Me.UiTab2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.UiTab2.ResumeLayout(False)
+        Me.UiTabPage11.ResumeLayout(False)
+        Me.UiTabPage3.ResumeLayout(False)
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
         CType(Me.ItemResultList, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.UiTabPage12.ResumeLayout(False)
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
+        Me.UiTabPage4.ResumeLayout(False)
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.GroupBox25.ResumeLayout(False)
@@ -3319,6 +3512,7 @@ Partial Class DashbordDotorRequestExamination
         CType(Me.FibroConclusionList, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox17.ResumeLayout(False)
         Me.GroupBox17.PerformLayout()
+        Me.UiTabPage5.ResumeLayout(False)
         Me.GroupBox6.ResumeLayout(False)
         Me.GroupBox16.ResumeLayout(False)
         Me.GroupBox16.PerformLayout()
@@ -3326,6 +3520,8 @@ Partial Class DashbordDotorRequestExamination
         Me.GroupBox13.PerformLayout()
         Me.GroupBox19.ResumeLayout(False)
         CType(Me.NasoConclusionList, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.UiTabPage6.ResumeLayout(False)
+        Me.UiTabPage6.PerformLayout()
         Me.GroupBox14.ResumeLayout(False)
         Me.GroupBox14.PerformLayout()
         Me.TabControl2.ResumeLayout(False)
@@ -3340,6 +3536,7 @@ Partial Class DashbordDotorRequestExamination
         Me.GroupBox15.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         CType(Me.ColoConclusionList, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.UiTabPage7.ResumeLayout(False)
         Me.GroupBox8.ResumeLayout(False)
         Me.GroupBox8.PerformLayout()
         Me.GroupBox22.ResumeLayout(False)
@@ -3348,13 +3545,17 @@ Partial Class DashbordDotorRequestExamination
         CType(Me.EchoConclusionList, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox18.ResumeLayout(False)
         Me.GroupBox18.PerformLayout()
+        Me.UiTabPage8.ResumeLayout(False)
         Me.GroupBox9.ResumeLayout(False)
         Me.GroupBox20.ResumeLayout(False)
         Me.GroupBox20.PerformLayout()
+        Me.UiTabPage9.ResumeLayout(False)
         Me.GroupBox10.ResumeLayout(False)
         Me.GroupBox10.PerformLayout()
+        Me.UiTabPage10.ResumeLayout(False)
         Me.GroupBox11.ResumeLayout(False)
         Me.GroupBox11.PerformLayout()
+        Me.UiTabPage2.ResumeLayout(False)
         Me.GroupBox21.ResumeLayout(False)
         Me.GroupBox21.PerformLayout()
         Me.SplitContainer1.Panel1.ResumeLayout(False)
@@ -3363,19 +3564,8 @@ Partial Class DashbordDotorRequestExamination
         CType(Me.RequestList, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.UiTab1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.UiTab1.ResumeLayout(False)
-        CType(Me.ErrPhysical, System.ComponentModel.ISupportInitialize).EndInit()
         Me.UiTabPage1.ResumeLayout(False)
-        Me.UiTabPage11.ResumeLayout(False)
-        Me.UiTabPage3.ResumeLayout(False)
-        Me.UiTabPage4.ResumeLayout(False)
-        Me.UiTabPage5.ResumeLayout(False)
-        Me.UiTabPage6.ResumeLayout(False)
-        Me.UiTabPage6.PerformLayout()
-        Me.UiTabPage7.ResumeLayout(False)
-        Me.UiTabPage8.ResumeLayout(False)
-        Me.UiTabPage9.ResumeLayout(False)
-        Me.UiTabPage10.ResumeLayout(False)
-        Me.UiTabPage2.ResumeLayout(False)
+        CType(Me.ErrPhysical, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -3679,5 +3869,20 @@ Partial Class DashbordDotorRequestExamination
     Friend WithEvents DropDownCommand21 As Janus.Windows.Ribbon.DropDownCommand
     Friend WithEvents SeparatorCommand18 As Janus.Windows.Ribbon.SeparatorCommand
     Friend WithEvents BtnBreathTest As Janus.Windows.Ribbon.DropDownCommand
+    Friend WithEvents UiTabPage12 As Janus.Windows.UI.Tab.UITabPage
+    Friend WithEvents Panel1 As System.Windows.Forms.Panel
+    Friend WithEvents TxtBreathMoreInfo As System.Windows.Forms.TextBox
+    Friend WithEvents Label68 As System.Windows.Forms.Label
+    Friend WithEvents DateRequestBreath As System.Windows.Forms.DateTimePicker
+    Friend WithEvents Label74 As System.Windows.Forms.Label
+    Friend WithEvents Label81 As System.Windows.Forms.Label
+    Friend WithEvents cboBreathRequestBy As System.Windows.Forms.ComboBox
+    Friend WithEvents Label82 As System.Windows.Forms.Label
+    Friend WithEvents TxtBreathResult As System.Windows.Forms.TextBox
+    Friend WithEvents Label83 As System.Windows.Forms.Label
+    Friend WithEvents TxtBreathIndication As System.Windows.Forms.TextBox
+    Friend WithEvents Label84 As System.Windows.Forms.Label
+    Friend WithEvents CboBreathConclusion As System.Windows.Forms.ComboBox
+    Friend WithEvents BtnPrintBreathTest As System.Windows.Forms.Button
 
 End Class
