@@ -34,7 +34,6 @@ Partial Class FormParaExamHistory
         Me.CboDiagnosis = New System.Windows.Forms.ComboBox
         Me.LblRequestID = New System.Windows.Forms.Label
         Me.BtnFindPatient = New System.Windows.Forms.Button
-        Me.lblpatientid = New System.Windows.Forms.Label
         Me.txtno = New System.Windows.Forms.TextBox
         Me.dtrequest = New System.Windows.Forms.DateTimePicker
         Me.Label2 = New System.Windows.Forms.Label
@@ -152,7 +151,6 @@ Partial Class FormParaExamHistory
         Me.GroupBox2.Controls.Add(Me.CboDiagnosis)
         Me.GroupBox2.Controls.Add(Me.LblRequestID)
         Me.GroupBox2.Controls.Add(Me.BtnFindPatient)
-        Me.GroupBox2.Controls.Add(Me.lblpatientid)
         Me.GroupBox2.Controls.Add(Me.txtno)
         Me.GroupBox2.Controls.Add(Me.dtrequest)
         Me.GroupBox2.Controls.Add(Me.Label2)
@@ -203,16 +201,6 @@ Partial Class FormParaExamHistory
         Me.BtnFindPatient.Text = "..."
         Me.BtnFindPatient.UseVisualStyleBackColor = True
         Me.BtnFindPatient.Visible = False
-        '
-        'lblpatientid
-        '
-        Me.lblpatientid.AutoSize = True
-        Me.lblpatientid.Location = New System.Drawing.Point(598, 33)
-        Me.lblpatientid.Name = "lblpatientid"
-        Me.lblpatientid.Size = New System.Drawing.Size(47, 13)
-        Me.lblpatientid.TabIndex = 40
-        Me.lblpatientid.Text = "patientid"
-        Me.lblpatientid.Visible = False
         '
         'txtno
         '
@@ -1024,7 +1012,6 @@ Partial Class FormParaExamHistory
     Friend WithEvents Cancel As System.Windows.Forms.Button
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
     Friend WithEvents BtnFindPatient As System.Windows.Forms.Button
-    Friend WithEvents lblpatientid As System.Windows.Forms.Label
     Friend WithEvents txtno As System.Windows.Forms.TextBox
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents Label4 As System.Windows.Forms.Label

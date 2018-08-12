@@ -2073,14 +2073,12 @@ Partial Public Class DSInvoice
             MyBase.Columns.Add(Me.columnVal_Para)
             Me.columnVal_Medicine = New Global.System.Data.DataColumn("Val_Medicine", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnVal_Medicine)
-            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint2", New Global.System.Data.DataColumn() {Me.columninvoice_id}, false))
             Me.columnReceivedBy.MaxLength = 50
             Me.columninvoice_id.AutoIncrement = true
             Me.columninvoice_id.AutoIncrementSeed = -1
             Me.columninvoice_id.AutoIncrementStep = -1
             Me.columninvoice_id.AllowDBNull = false
             Me.columninvoice_id.ReadOnly = true
-            Me.columninvoice_id.Unique = true
             Me.columnExpend_Note.MaxLength = 150
             Me.columnpatientid1.Caption = "patientid"
         End Sub
@@ -3203,11 +3201,6 @@ Partial Public Class DSInvoice
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
-        Public Function FindByprescriptionid(ByVal prescriptionid As Long) As PrescriptionRow
-            Return CType(Me.Rows.Find(New Object() {prescriptionid}),PrescriptionRow)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Overrides Function Clone() As Global.System.Data.DataTable
             Dim cln As PrescriptionDataTable = CType(MyBase.Clone,PrescriptionDataTable)
             cln.InitVars
@@ -3258,13 +3251,11 @@ Partial Public Class DSInvoice
             MyBase.Columns.Add(Me.columnlock)
             Me.columnTS = New Global.System.Data.DataColumn("TS", GetType(Byte()), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnTS)
-            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnprescriptionid}, true))
             Me.columnprescriptionid.AutoIncrement = true
             Me.columnprescriptionid.AutoIncrementSeed = -1
             Me.columnprescriptionid.AutoIncrementStep = -1
             Me.columnprescriptionid.AllowDBNull = false
             Me.columnprescriptionid.ReadOnly = true
-            Me.columnprescriptionid.Unique = true
             Me.columnpatientid.AllowDBNull = false
             Me.columndoctorid.AllowDBNull = false
             Me.columnDoctor_Name.MaxLength = 250
@@ -3918,11 +3909,6 @@ Partial Public Class DSInvoice
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
-        Public Function FindByprescriptiondetailid(ByVal prescriptiondetailid As Long) As PrescriptionDetailRow
-            Return CType(Me.Rows.Find(New Object() {prescriptiondetailid}),PrescriptionDetailRow)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Overrides Function Clone() As Global.System.Data.DataTable
             Dim cln As PrescriptionDetailDataTable = CType(MyBase.Clone,PrescriptionDetailDataTable)
             cln.InitVars
@@ -3967,13 +3953,11 @@ Partial Public Class DSInvoice
             MyBase.Columns.Add(Me.columnpatientid)
             Me.columnTimeUsed = New Global.System.Data.DataColumn("TimeUsed", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnTimeUsed)
-            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnprescriptiondetailid}, true))
             Me.columnprescriptiondetailid.AutoIncrement = true
             Me.columnprescriptiondetailid.AutoIncrementSeed = -1
             Me.columnprescriptiondetailid.AutoIncrementStep = -1
             Me.columnprescriptiondetailid.AllowDBNull = false
             Me.columnprescriptiondetailid.ReadOnly = true
-            Me.columnprescriptiondetailid.Unique = true
             Me.columnCheckdate.AllowDBNull = false
             Me.columnprescriptionid.AllowDBNull = false
             Me.columnmedicineid.AllowDBNull = false
@@ -6161,11 +6145,6 @@ Partial Public Class DSInvoice
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
-        Public Function FindByphysicalcheckdetailid(ByVal physicalcheckdetailid As Long) As PhysicalExamRow
-            Return CType(Me.Rows.Find(New Object() {physicalcheckdetailid}),PhysicalExamRow)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Overrides Function Clone() As Global.System.Data.DataTable
             Dim cln As PhysicalExamDataTable = CType(MyBase.Clone,PhysicalExamDataTable)
             cln.InitVars
@@ -6204,7 +6183,6 @@ Partial Public Class DSInvoice
             MyBase.Columns.Add(Me.columnpatientid)
             Me.columnprescriptionid = New Global.System.Data.DataColumn("prescriptionid", GetType(Long), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnprescriptionid)
-            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnphysicalcheckdetailid}, true))
             Me.columnphysicalcheckid.AllowDBNull = false
             Me.columnphysicalcheck.AllowDBNull = false
             Me.columnphysicalcheck.MaxLength = 500
@@ -6215,7 +6193,6 @@ Partial Public Class DSInvoice
             Me.columnphysicalcheckdetailid.AutoIncrementStep = -1
             Me.columnphysicalcheckdetailid.AllowDBNull = false
             Me.columnphysicalcheckdetailid.ReadOnly = true
-            Me.columnphysicalcheckdetailid.Unique = true
             Me.columnCheckdate.AllowDBNull = false
             Me.columnpatientid.AllowDBNull = false
             Me.columnprescriptionid.AllowDBNull = false
@@ -7337,11 +7314,6 @@ Partial Public Class DSInvoice
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
-        Public Function FindBycomplaintdetailid(ByVal complaintdetailid As Long) As ComplaintRow
-            Return CType(Me.Rows.Find(New Object() {complaintdetailid}),ComplaintRow)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Overrides Function Clone() As Global.System.Data.DataTable
             Dim cln As ComplaintDataTable = CType(MyBase.Clone,ComplaintDataTable)
             cln.InitVars
@@ -7380,13 +7352,11 @@ Partial Public Class DSInvoice
             MyBase.Columns.Add(Me.columnprescriptionid)
             Me.columnnote = New Global.System.Data.DataColumn("note", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnnote)
-            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columncomplaintdetailid}, true))
             Me.columncomplaintdetailid.AutoIncrement = true
             Me.columncomplaintdetailid.AutoIncrementSeed = -1
             Me.columncomplaintdetailid.AutoIncrementStep = -1
             Me.columncomplaintdetailid.AllowDBNull = false
             Me.columncomplaintdetailid.ReadOnly = true
-            Me.columncomplaintdetailid.Unique = true
             Me.columnCheckdate.AllowDBNull = false
             Me.columnpatientid.AllowDBNull = false
             Me.columncomplaintid.AllowDBNull = false
@@ -7657,11 +7627,6 @@ Partial Public Class DSInvoice
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
-        Public Function FindByhistorydetailid(ByVal historydetailid As Long) As HistoryRow
-            Return CType(Me.Rows.Find(New Object() {historydetailid}),HistoryRow)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Overrides Function Clone() As Global.System.Data.DataTable
             Dim cln As HistoryDataTable = CType(MyBase.Clone,HistoryDataTable)
             cln.InitVars
@@ -7700,13 +7665,11 @@ Partial Public Class DSInvoice
             MyBase.Columns.Add(Me.columnprescriptionid)
             Me.columnnote = New Global.System.Data.DataColumn("note", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnnote)
-            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnhistorydetailid}, true))
             Me.columnhistorydetailid.AutoIncrement = true
             Me.columnhistorydetailid.AutoIncrementSeed = -1
             Me.columnhistorydetailid.AutoIncrementStep = -1
             Me.columnhistorydetailid.AllowDBNull = false
             Me.columnhistorydetailid.ReadOnly = true
-            Me.columnhistorydetailid.Unique = true
             Me.columnCheckdate.AllowDBNull = false
             Me.columnpatientid.AllowDBNull = false
             Me.columnhistoryid.AllowDBNull = false
@@ -16869,7 +16832,7 @@ Namespace DSInvoiceTableAdapters
             Me._commandCollection(2).Connection = Me.Connection
             Me._commandCollection(2).CommandText = "SELECT I.pre_id, I.patientid,P.pname,P.pgender,P.pAge,P.pcontactaddress,P.pphonen"& _ 
                 "o,P.patientid AS patientno FROM dbo.tbl_preinvoice AS I INNER JOIN tblpatient AS"& _ 
-                " P ON I.patientid=P.ppatientid"
+                " P ON I.patientid=P.patientid"
             Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(3) = New Global.System.Data.SqlClient.SqlCommand
             Me._commandCollection(3).Connection = Me.Connection
@@ -21506,7 +21469,7 @@ Namespace DSInvoiceTableAdapters
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(1) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(2) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT P.physicalcheckdetailid,S.Checkdate,S.patientid, P.physicalcheckid,C.physi"& _ 
@@ -21522,6 +21485,15 @@ Namespace DSInvoiceTableAdapters
                 "ailid"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@physicalcheckdetailid", Global.System.Data.SqlDbType.BigInt, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "physicalcheckdetailid", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._commandCollection(2) = New Global.System.Data.SqlClient.SqlCommand
+            Me._commandCollection(2).Connection = Me.Connection
+            Me._commandCollection(2).CommandText = "SELECT P.physicalcheckdetailid,S.Checkdate,S.patientid, P.physicalcheckid,C.physi"& _ 
+                "calcheck,P.prescriptionid, P.note FROM (dbo.tblphysicalcheckdetail  AS P INNER J"& _ 
+                "OIN tblPhysicalCheck AS C on C.physicalcheckid=P.physicalcheckid) INNER JOIN tbl"& _ 
+                "prescription AS S  ON S.prescriptionid=P.prescriptionid WHERE S.prescriptionid=@"& _ 
+                "prescriptionid"
+            Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@prescriptionid", Global.System.Data.SqlDbType.BigInt, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "prescriptionid", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -21543,6 +21515,30 @@ Namespace DSInvoiceTableAdapters
         Public Overloads Overridable Function SelectByPatientID(ByVal patientid As Long) As DSInvoice.PhysicalExamDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             Me.Adapter.SelectCommand.Parameters(0).Value = CType(patientid,Long)
+            Dim dataTable As DSInvoice.PhysicalExamDataTable = New DSInvoice.PhysicalExamDataTable
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
+        Public Overloads Overridable Function FillBy(ByVal dataTable As DSInvoice.PhysicalExamDataTable, ByVal prescriptionid As Long) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(2)
+            Me.Adapter.SelectCommand.Parameters(0).Value = CType(prescriptionid,Long)
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
+        Public Overloads Overridable Function SelectByPatientPrescription(ByVal prescriptionid As Long) As DSInvoice.PhysicalExamDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(2)
+            Me.Adapter.SelectCommand.Parameters(0).Value = CType(prescriptionid,Long)
             Dim dataTable As DSInvoice.PhysicalExamDataTable = New DSInvoice.PhysicalExamDataTable
             Me.Adapter.Fill(dataTable)
             Return dataTable
@@ -22928,7 +22924,7 @@ Namespace DSInvoiceTableAdapters
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(1) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(2) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT P.complaintdetailid,S.Checkdate,S.patientid, P.complaintid,C.complaint,P.p"& _ 
@@ -22942,6 +22938,14 @@ Namespace DSInvoiceTableAdapters
             Me._commandCollection(1).CommandText = "DELETE FROM tblcomplaintdetail WHERE complaintdetailid=@complaintdetailid"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@complaintdetailid", Global.System.Data.SqlDbType.BigInt, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "complaintdetailid", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._commandCollection(2) = New Global.System.Data.SqlClient.SqlCommand
+            Me._commandCollection(2).Connection = Me.Connection
+            Me._commandCollection(2).CommandText = "SELECT P.complaintdetailid,S.Checkdate,S.patientid, P.complaintid,C.complaint,P.p"& _ 
+                "rescriptionid, P.note "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM (dbo.tblcomplaint AS C INNER JOIN tblcomplaintdetai"& _ 
+                "l AS P on C.complaintid=P.complaintid) "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"INNER JOIN tblprescription AS S  ON S.p"& _ 
+                "rescriptionid=P.prescriptionid "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE S.prescriptionid=@prescriptionid"
+            Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@prescriptionid", Global.System.Data.SqlDbType.BigInt, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "prescriptionid", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -22963,6 +22967,30 @@ Namespace DSInvoiceTableAdapters
         Public Overloads Overridable Function SelectByPatientID(ByVal patientid As Long) As DSInvoice.ComplaintDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             Me.Adapter.SelectCommand.Parameters(0).Value = CType(patientid,Long)
+            Dim dataTable As DSInvoice.ComplaintDataTable = New DSInvoice.ComplaintDataTable
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
+        Public Overloads Overridable Function FillBy(ByVal dataTable As DSInvoice.ComplaintDataTable, ByVal prescriptionid As Long) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(2)
+            Me.Adapter.SelectCommand.Parameters(0).Value = CType(prescriptionid,Long)
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
+        Public Overloads Overridable Function SelectByPrescrition(ByVal prescriptionid As Long) As DSInvoice.ComplaintDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(2)
+            Me.Adapter.SelectCommand.Parameters(0).Value = CType(prescriptionid,Long)
             Dim dataTable As DSInvoice.ComplaintDataTable = New DSInvoice.ComplaintDataTable
             Me.Adapter.Fill(dataTable)
             Return dataTable
@@ -23130,7 +23158,7 @@ Namespace DSInvoiceTableAdapters
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(1) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(2) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT P.historydetailid,S.Checkdate,S.patientid, P.historyid,H.history,P.prescri"& _ 
@@ -23144,6 +23172,14 @@ Namespace DSInvoiceTableAdapters
             Me._commandCollection(1).CommandText = "DELETE FROM tblhistorydetail  WHERE historydetailid=@historydetailid"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@historydetailid", Global.System.Data.SqlDbType.BigInt, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "historydetailid", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._commandCollection(2) = New Global.System.Data.SqlClient.SqlCommand
+            Me._commandCollection(2).Connection = Me.Connection
+            Me._commandCollection(2).CommandText = "SELECT P.historydetailid,S.Checkdate,S.patientid, P.historyid,H.history,P.prescri"& _ 
+                "ptionid, P.note FROM (dbo.tblhistorydetail  AS P INNER JOIN tblhistory AS H on H"& _ 
+                ".historyid=P.historyid) INNER JOIN tblprescription AS S  ON S.prescriptionid=P.p"& _ 
+                "rescriptionid WHERE S.prescriptionid=@Prescriont"
+            Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Prescriont", Global.System.Data.SqlDbType.BigInt, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "prescriptionid", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -23165,6 +23201,30 @@ Namespace DSInvoiceTableAdapters
         Public Overloads Overridable Function SelectByPatientID(ByVal patientid As Long) As DSInvoice.HistoryDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             Me.Adapter.SelectCommand.Parameters(0).Value = CType(patientid,Long)
+            Dim dataTable As DSInvoice.HistoryDataTable = New DSInvoice.HistoryDataTable
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
+        Public Overloads Overridable Function FillBy(ByVal dataTable As DSInvoice.HistoryDataTable, ByVal Prescriont As Long) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(2)
+            Me.Adapter.SelectCommand.Parameters(0).Value = CType(Prescriont,Long)
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
+        Public Overloads Overridable Function SelectMedicalByPrescription(ByVal Prescriont As Long) As DSInvoice.HistoryDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(2)
+            Me.Adapter.SelectCommand.Parameters(0).Value = CType(Prescriont,Long)
             Dim dataTable As DSInvoice.HistoryDataTable = New DSInvoice.HistoryDataTable
             Me.Adapter.Fill(dataTable)
             Return dataTable

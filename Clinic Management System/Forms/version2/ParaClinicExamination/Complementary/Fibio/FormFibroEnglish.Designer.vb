@@ -29,13 +29,13 @@ Partial Class FormFibroEnglish
         Me.cboFibroDemander = New System.Windows.Forms.ComboBox
         Me.cboFibroAnesthegiste = New System.Windows.Forms.ComboBox
         Me.Label10 = New System.Windows.Forms.Label
+        Me.LblPatientNo = New System.Windows.Forms.Label
         Me.chkFibroAnesthegiste = New System.Windows.Forms.CheckBox
         Me.txtFibroTolerance = New System.Windows.Forms.TextBox
         Me.DateResultExam = New System.Windows.Forms.DateTimePicker
         Me.Label11 = New System.Windows.Forms.Label
         Me.Label2 = New System.Windows.Forms.Label
         Me.lblPatientName = New System.Windows.Forms.Label
-        Me.LblPatientNo = New System.Windows.Forms.Label
         Me.GroupBox12 = New System.Windows.Forms.GroupBox
         Me.TxtOther = New System.Windows.Forms.TextBox
         Me.Label1 = New System.Windows.Forms.Label
@@ -83,6 +83,7 @@ Partial Class FormFibroEnglish
         Me.GroupBox17.Controls.Add(Me.cboFibroDemander)
         Me.GroupBox17.Controls.Add(Me.cboFibroAnesthegiste)
         Me.GroupBox17.Controls.Add(Me.Label10)
+        Me.GroupBox17.Controls.Add(Me.LblPatientNo)
         Me.GroupBox17.Controls.Add(Me.chkFibroAnesthegiste)
         Me.GroupBox17.Controls.Add(Me.txtFibroTolerance)
         Me.GroupBox17.Controls.Add(Me.DateResultExam)
@@ -126,6 +127,16 @@ Partial Class FormFibroEnglish
         Me.Label10.Size = New System.Drawing.Size(94, 16)
         Me.Label10.TabIndex = 1
         Me.Label10.Text = "Requested By:"
+        '
+        'LblPatientNo
+        '
+        Me.LblPatientNo.AutoSize = True
+        Me.LblPatientNo.Location = New System.Drawing.Point(806, 32)
+        Me.LblPatientNo.Name = "LblPatientNo"
+        Me.LblPatientNo.Size = New System.Drawing.Size(90, 16)
+        Me.LblPatientNo.TabIndex = 12
+        Me.LblPatientNo.Text = "LblPatientNo"
+        Me.LblPatientNo.Visible = False
         '
         'chkFibroAnesthegiste
         '
@@ -186,16 +197,6 @@ Partial Class FormFibroEnglish
         Me.lblPatientName.TabIndex = 13
         Me.lblPatientName.Text = "lblPatientName"
         Me.lblPatientName.Visible = False
-        '
-        'LblPatientNo
-        '
-        Me.LblPatientNo.AutoSize = True
-        Me.LblPatientNo.Location = New System.Drawing.Point(914, 44)
-        Me.LblPatientNo.Name = "LblPatientNo"
-        Me.LblPatientNo.Size = New System.Drawing.Size(68, 13)
-        Me.LblPatientNo.TabIndex = 12
-        Me.LblPatientNo.Text = "LblPatientNo"
-        Me.LblPatientNo.Visible = False
         '
         'GroupBox12
         '
@@ -565,7 +566,6 @@ Partial Class FormFibroEnglish
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.GroupBox12)
         Me.Controls.Add(Me.lblPatientName)
-        Me.Controls.Add(Me.LblPatientNo)
         Me.Controls.Add(Me.GroupBox17)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FormFibroEnglish"

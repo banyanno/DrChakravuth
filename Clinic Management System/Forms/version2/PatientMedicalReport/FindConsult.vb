@@ -26,4 +26,16 @@
             MedicalHistory.FindByPatientName(TxtPatientName.Text)
         End If
     End Sub
+
+    Private Sub RadPatientNo_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RadPatientNo.CheckedChanged
+        TxtPatientNo.Select()
+        TxtPatientNo.Focus()
+        TxtPatientNo.SelectAll()
+    End Sub
+
+    Private Sub RadPatientName_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RadPatientName.CheckedChanged
+        TxtPatientName.Focus()
+        TxtPatientName.Select()
+        TxtPatientName.SelectAll()
+    End Sub
 End Class

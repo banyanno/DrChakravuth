@@ -114,7 +114,7 @@
                 End If
             Else
                 '' Add New
-                If DA_Echo.InsertEcho(CLng(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value), CLng(Me.RequestPanel.RequestList.CurrentRow.Cells("ppatientid").Value), Me.cboEchoDemander.SelectedValue.ToString, Me.txtEchoIndication.Text, Me.txtEchoLeFoie.Text, Me.txtEchoLaVeine.Text, Me.txtEchoLaVesicule.Text, Me.txtEchoLesVoies.Text, Me.txtEchoLePancreas.Text, Me.txtEchoLaRate.Text, Me.txtEchoLesReins.Text, Me.txtEchoLaProstate.Text, Me.txtEchoLaVessie.Text, Me.txtechomoreinfo.Text, TxtResult.Text, DateResultExam.Value.Date, USER_ID, USER_NAME, CboDoctorExam.Text) = 1 Then
+                If DA_Echo.InsertEcho(CLng(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value), CLng(LblPatientNo.Text), Me.cboEchoDemander.SelectedValue.ToString, Me.txtEchoIndication.Text, Me.txtEchoLeFoie.Text, Me.txtEchoLaVeine.Text, Me.txtEchoLaVesicule.Text, Me.txtEchoLesVoies.Text, Me.txtEchoLePancreas.Text, Me.txtEchoLaRate.Text, Me.txtEchoLesReins.Text, Me.txtEchoLaProstate.Text, Me.txtEchoLaVessie.Text, Me.txtechomoreinfo.Text, TxtResult.Text, DateResultExam.Value.Date, USER_ID, USER_NAME, CboDoctorExam.Text) = 1 Then
                     MsgBox("An echo has been saved successfully", MsgBoxStyle.OkOnly, "Saved Echo")
                     Me.DialogResult = Windows.Forms.DialogResult.OK
                     DA_DOCTOR_FEE.InsertNewDoctorFee(USER_ID, SHOW_NAME, "Echo", DateResultExam.Value.Date, 0, LblPatientNo.Text, lblPatientName.Text, txtechomoreinfo.Text)

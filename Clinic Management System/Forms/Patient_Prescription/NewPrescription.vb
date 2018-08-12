@@ -83,7 +83,7 @@
         ClearDataFromPreTable()
 
         Dim Patient As New DataTable
-        Patient = DA_Patient.SelectPatientByPID(Me.lblpatientId.Text)
+        Patient = DA_Patient.SelectPatientByID(Me.lblpatientId.Text)
         Me.txtid.Text = Patient.Rows(0).Item("patientid").ToString
         Me.txtname.Text = Patient.Rows(0).Item("pname").ToString
         Me.txtsex.Text = Patient.Rows(0).Item("pgender").ToString

@@ -393,7 +393,7 @@
         If Me.GridPatientInfo.SelectedItems.Count > 0 Then
             If MessageBox.Show("Do want to send patient to Issue Receipt?", "Issure Receipt", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
                 Dim DA_PreInvoice As New DSInvoiceTableAdapters.tbl_preinvoiceTableAdapter
-                DA_PreInvoice.InsertInvoice(CLng(GridPatientInfo.GetRow.Cells("ppatientid").Value))
+                DA_PreInvoice.InsertInvoice(CLng(GridPatientInfo.GetRow.Cells("patientid").Value))
                 MsgBox("One patient was sent to the list of current receipts already", MsgBoxStyle.Information, "Send to Receipt List")
             End If
         Else

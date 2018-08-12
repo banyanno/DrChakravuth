@@ -39,7 +39,7 @@
     End Sub
     Private Sub PrescriptionHistory_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Dim Patient As New DataTable
-        Patient = DA_Patient.SelectPatientByPID(Me.lblpatientId.Text)
+        Patient = DA_Patient.SelectPatientByID(Me.lblpatientId.Text)
         Me.txtid.Text = Patient.Rows(0).Item("patientid").ToString
         Me.txtname.Text = Patient.Rows(0).Item("pname").ToString
         Me.txtsex.Text = Patient.Rows(0).Item("pgender").ToString
@@ -263,7 +263,7 @@
         Dim PrescriptionDetailTable As New DataTable
 
 
-        PatientTable = DA_Patient.SelectPatient(Me.lblpatientId.Text)
+        PatientTable = DA_Patient.GetDataByPatientUse(Me.lblpatientId.Text)
         PrescriptionTable = DA_Prescription.SelectPrescriptionByPatientID(Me.lblpatientId.Text)
         ComplaintDetailTable = DA_Complaint.SelectComplaintByPatientID(Me.lblpatientId.Text)
         HistoryDetailTable = DA_History.SelectHistoryByPatientID(Me.lblpatientId.Text)
@@ -308,7 +308,7 @@
         Dim PrescriptionDetailTable As New DataTable
 
         Dim PrescriptionID As Integer = CInt(Me.PrescriptionHistoryList.CurrentRow.Cells("prescriptionid").Value)
-        PatientTable = DA_Patient.SelectPatient(Me.lblpatientId.Text)
+        PatientTable = DA_Patient.GetDataByPatientUse(Me.lblpatientId.Text)
         PrescriptionTable = DA_Prescription.SelectPrescriptionByID(PrescriptionID)
         ComplaintDetailTable = DA_Complaint.SelectComplaintByPrescriptionID(Me.lblpatientId.Text, PrescriptionID)
         HistoryDetailTable = DA_History.SelectHistoryByPrescriptionID(Me.lblpatientId.Text, PrescriptionID)

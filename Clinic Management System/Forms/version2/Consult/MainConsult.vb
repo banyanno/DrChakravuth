@@ -23,7 +23,7 @@
     Sub SetPatientData()
 
         Dim Patient As New DataTable
-        Patient = DA_Patient.SelectPatientByPID(UMainWaiting.WaitingList.CurrentRow.Cells("ppatientid").Value)
+        Patient = DA_Patient.SelectPatientByID(UMainWaiting.WaitingList.CurrentRow.Cells("ppatientid").Value)
         Me.txtno.Text = Patient.Rows(0).Item("patientid")
         Me.txtname.Text = Patient.Rows(0).Item("pname")
         Me.txtsex.Text = Patient.Rows(0).Item("pgender")

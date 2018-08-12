@@ -51,7 +51,6 @@
         FNewConsulting.LblWaiting.Text = WaitingList.GetRow.Cells("waiting_id").Value
         FNewConsulting.txtname.Text = WaitingList.GetRow.Cells("pname").Value
         FNewConsulting.txtno.Text = WaitingList.GetRow.Cells("patientid").Value
-        FNewConsulting.LblAutoNo.Text = WaitingList.GetRow.Cells("ppatientid").Value
         FNewConsulting.txtsex.Text = WaitingList.GetRow.Cells("pgender").Value
         If TypeOf WaitingList.GetRow.Cells("Age").Value Is DBNull Then
             FNewConsulting.TxtAge.Text = ""
@@ -173,8 +172,8 @@
         Else
             Dim PatientTable As DataTable
             Dim PatientID As Long
-            PatientTable = DAPatient.SelectPatientByPID(CInt(Me.WaitingList.GetRow.Cells("ppatientid").Value))
-            PatientID = PatientTable.Rows(0).Item("ppatientid")
+            PatientTable = DAPatient.SelectPatientByID(CInt(Me.WaitingList.GetRow.Cells("patientid").Value))
+            PatientID = PatientTable.Rows(0).Item("patientid")
 
             Dim RptRecord As New RptPatientRecord
             ' Dim RptViewer As New FormReportViewer

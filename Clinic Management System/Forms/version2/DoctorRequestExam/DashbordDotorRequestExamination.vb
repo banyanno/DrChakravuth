@@ -946,8 +946,8 @@
         Else
             Dim PatientTable As DataTable
             Dim PatientID As Long
-            PatientTable = DAPatient.SelectPatientByPID(CInt(Me.RequestList.GetRow.Cells("ppatientid").Value))
-            PatientID = PatientTable.Rows(0).Item("ppatientid")
+            PatientTable = DAPatient.SelectPatientByID(CInt(Me.RequestList.GetRow.Cells("patientid").Value))
+            PatientID = PatientTable.Rows(0).Item("patientid")
 
             Dim RptRecord As New RptPatientRecord
             ' Dim RptViewer As New FormReportViewer

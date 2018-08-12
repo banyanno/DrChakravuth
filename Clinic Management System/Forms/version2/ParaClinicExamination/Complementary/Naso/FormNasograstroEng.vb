@@ -130,7 +130,7 @@
         If ValidateCombobox(cboNasoDemander, "", ErrAlert) = False Then Exit Sub
         If ValidateCombobox(cboNasoDocteur, "", ErrAlert) = False Then Exit Sub
         Dim RequestIDVal As Double = CLng(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value)
-        Dim PatientNo As Double = CInt(Me.RequestPanel.RequestList.CurrentRow.Cells("ppatientid").Value)
+
         If DA_Naso.SelectNasoByRequestID(RequestIDVal).Rows.Count >= 1 Then
             '' Update
             If DA_Naso.UpdateNasoEnglish(cboNasoDemander.SelectedValue.ToString, txtNasoTolerance.Text, cboNasoDocteur.Text, DateResultExam.Value.Date, CInt(cboNasoDocteur.SelectedValue), GetValueConclustion, TxtIntroduction.Text, TxtIndication.Text, TxtMedication.Text, TxtFentanyl.Text, TxtPropofol.Text, TxtXylocainegel.Text, TxtEsophagus.Text, TxtStomach.Text, TxtAssessment.Text, TxtMoreInfo.Text, RequestIDVal) = 1 Then
@@ -139,7 +139,7 @@
             End If
 
         Else
-            If DA_Naso.InsertNasoEnglish(PatientNo, RequestIDVal, cboNasoDemander.SelectedValue.ToString, txtNasoTolerance.Text, cboNasoDocteur.Text, DateResultExam.Value.Date, CInt(cboNasoDocteur.SelectedValue), GetValueConclustion, TxtIntroduction.Text, TxtIndication.Text, TxtMedication.Text, TxtFentanyl.Text, TxtPropofol.Text, TxtXylocainegel.Text, TxtEsophagus.Text, TxtStomach.Text, TxtAssessment.Text, TxtMoreInfo.Text) = 1 Then
+            If DA_Naso.InsertNasoEnglish(LblPatientNo.Text, RequestIDVal, cboNasoDemander.SelectedValue.ToString, txtNasoTolerance.Text, cboNasoDocteur.Text, DateResultExam.Value.Date, CInt(cboNasoDocteur.SelectedValue), GetValueConclustion, TxtIntroduction.Text, TxtIndication.Text, TxtMedication.Text, TxtFentanyl.Text, TxtPropofol.Text, TxtXylocainegel.Text, TxtEsophagus.Text, TxtStomach.Text, TxtAssessment.Text, TxtMoreInfo.Text) = 1 Then
                 MsgBox("A nasogastro has been saved successfully", MsgBoxStyle.OkOnly, "Saved Nasogastro")
                 DA_DOCTOR_FEE.InsertNewDoctorFee(CInt(cboNasoDocteur.SelectedValue), cboNasoDocteur.Text, "Nasogastro", DateResultExam.Value.Date, LblPatientNo.Text, 0, lblPatientName.Text, GetValueConclustion)
                 Me.DialogResult = Windows.Forms.DialogResult.OK

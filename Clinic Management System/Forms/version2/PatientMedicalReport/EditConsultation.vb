@@ -54,9 +54,9 @@ Public Class EditConsultation
         ' This call is required by the Windows Form Designer.
         InitializeComponent()
         Me.HistoryConsult = HistoryConsult
-        patientid = CInt(HistoryConsult.GridPatientConsult.GetRow.Cells("ppatientid").Value)
+        patientid = CInt(HistoryConsult.GridPatientConsult.GetRow.Cells("patientid").Value)
         prescriptionid = CInt(HistoryConsult.GridPatientConsult.GetRow.Cells("prescriptionid").Value)
-        LblPatientNo.Text = CInt(HistoryConsult.GridPatientConsult.GetRow.Cells("ppatientid").Value)
+
         lblPrintPrescription.Text = CInt(HistoryConsult.GridPatientConsult.GetRow.Cells("prescriptionid").Value)
         ' Add any initialization after the InitializeComponent() call.
 
@@ -93,23 +93,23 @@ Public Class EditConsultation
 
 
                 '-------Update Complaint --------
-                If DA_ComplaintDetail.SelectComplaintByPrescriptionID(prescriptionid).Rows.Count > 0 Then
-                    DA_ComplaintDetail.UpdateComplaintByPrescriptionID(CInt(Me.CboComplaint.SelectedValue), prescriptionid, Me.TxtComplainDescription.Text, prescriptionid)
-                Else
-                    DA_ComplaintDetail.InsertComplaint(CInt(Me.CboComplaint.SelectedValue), prescriptionid, Me.TxtComplainDescription.Text)
-                End If
+                'If DA_ComplaintDetail.SelectComplaintByPrescriptionID(prescriptionid).Rows.Count > 0 Then
+                DA_ComplaintDetail.UpdateComplainNote(Me.TxtComplainDescription.Text, prescriptionid)
+                'Else
+                '    DA_ComplaintDetail.InsertComplaint(CInt(Me.CboComplaint.SelectedValue), prescriptionid, Me.TxtComplainDescription.Text)
+                'End If
                 '-------Update Medical History --------
-                If DA_MedicalDetail.SelectHistoryByPrescriptionID(prescriptionid).Rows.Count > 0 Then
-                    DA_MedicalDetail.UpdateHistoryByPrescriptionID(CInt(Me.CboMedical.SelectedValue), prescriptionid, Me.TxtMedicalNote.Text, prescriptionid)
-                Else
-                    DA_MedicalDetail.InsertHistory(CInt(Me.CboMedical.SelectedValue), prescriptionid, Me.TxtMedicalNote.Text)
-                End If
+                'If DA_MedicalDetail.SelectHistoryByPrescriptionID(prescriptionid).Rows.Count > 0 Then
+                DA_MedicalDetail.UpdateMedicalNote(Me.TxtMedicalNote.Text, prescriptionid)
+                'Else
+                '    DA_MedicalDetail.InsertHistory(CInt(Me.CboMedical.SelectedValue), prescriptionid, Me.TxtMedicalNote.Text)
+                'End If
                 '-------Update Physicl Exam--------
-                If DA_PhysicalDetail.SelectPhysicalByPrescriptionID(prescriptionid).Rows.Count > 0 Then
-                    DA_PhysicalDetail.UpdatePhysicalByPrescriptionID(CInt(Me.CboPhysicalExam.SelectedValue), prescriptionid, Me.TxtPhysicalNote.Text, prescriptionid)
-                Else
-                    DA_PhysicalDetail.InsertPhysical(CInt(Me.CboPhysicalExam.SelectedValue), prescriptionid, Me.TxtPhysicalNote.Text)
-                End If
+                'If DA_PhysicalDetail.SelectPhysicalByPrescriptionID(prescriptionid).Rows.Count > 0 Then
+                DA_PhysicalDetail.UpdatePhysicalNote(Me.TxtPhysicalNote.Text, prescriptionid)
+                'Else
+                '    DA_PhysicalDetail.InsertPhysical(CInt(Me.CboPhysicalExam.SelectedValue), prescriptionid, Me.TxtPhysicalNote.Text)
+                'End If
 
                 MsgBox("Consultation was updated successfully", MsgBoxStyle.Information, "Consultation Updated")
 
@@ -117,8 +117,8 @@ Public Class EditConsultation
                 Dim RptOrdinance As New RptOrdinance
                 Dim OrdinanceViewer As New FormReportViewer
                 Dim RptPatientTable As New DataTable
-                RptPatientTable = DA_Patient.SelectPatient(patientid)
-                RptPatientTable = DA_Patient.SelectPatient(patientid)
+                RptPatientTable = DA_Patient.GetDataByPatientUse(patientid)
+                RptPatientTable = DA_Patient.GetDataByPatientUse(patientid)
                 If Me.PrescriptionList.RowCount > 0 Then
                     Dim RptOrdinanceTable As New DataTable
                     Dim DA_Ordinance As New DS_InvoiceTableAdapters.tblPrescriptionTableAdapter
@@ -132,7 +132,7 @@ Public Class EditConsultation
                         Dim CrExportOptions As ExportOptions
                         Dim CrDiskFileDestinationOptions As New DiskFileDestinationOptions()
                         Dim CrFormatTypeOptions As New PdfRtfWordFormatOptions()
-                        CrDiskFileDestinationOptions.DiskFileName =My.Application.Info.DirectoryPath & "\crystalExport.pdf"
+                        CrDiskFileDestinationOptions.DiskFileName = My.Application.Info.DirectoryPath & "\crystalExport.pdf"
                         CrExportOptions = RptOrdinance.ExportOptions
                         With CrExportOptions
                             .ExportDestinationType = ExportDestinationType.DiskFile
@@ -177,12 +177,15 @@ Public Class EditConsultation
         RefreshPrescriptionList()
     End Sub
     Dim DA_KeyWord As New DS_ParameterTableAdapters.KEY_WORDTableAdapter
+    Dim DAComplainDetail As New DSInvoiceTableAdapters.ComplaintTableAdapter
+    Dim DAMedicalHistory As New DSInvoiceTableAdapters.HistoryTableAdapter
+    Dim DAPhyis As New DSInvoiceTableAdapters.PhysicalExamTableAdapter
     Private Sub EditConsultation_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         '' Load Patient
         ' If ConsultList.Prescription_List.SelectedItems.Count = 0 Then Exit Sub
 
         Dim PatientTable As New DataTable
-        PatientTable = DA_Patient.SelectPatient(patientid)
+        PatientTable = DA_Patient.GetDataByPatientUse(patientid)
         'TxtPatientNoV1.Text = PatientTable.Rows(0).Item("ppatientid").ToString
         Me.txtno.Text = PatientTable.Rows(0).Item("patientid").ToString
         Me.txtname.Text = PatientTable.Rows(0).Item("pname").ToString
@@ -212,25 +215,32 @@ Public Class EditConsultation
         Me.cbomedicine.DisplayMember = MedicineList.Columns("medicinename").ColumnName
         Me.cbomedicine.ValueMember = MedicineList.Columns("medicineid").ColumnName
         Me.cbomedicine.SelectedIndex = -1
-
+        '=================================== Loading Complian
         With CboComplaint
             .DataSource = DA_Complaint.GetData
             .ValueMember = DA_Complaint.GetData.Columns("complaintid").ColumnName
             .DisplayMember = DA_Complaint.GetData.Columns("complaint").ColumnName
             .SelectedIndex = -1
         End With
+        GridPreComplaint.DataSource = DAComplainDetail.SelectByPrescrition(prescriptionid)
+        '=============== Load medicalhistory ==============
         With CboMedical
             .DataSource = DA_Medical.GetData
             .ValueMember = DA_Medical.GetData.Columns("historyid").ColumnName
             .DisplayMember = DA_Medical.GetData.Columns("history").ColumnName
             .SelectedIndex = -1
         End With
+        GridPreMedicalHistory.DataSource = DAMedicalHistory.SelectMedicalByPrescription(prescriptionid)
+
+        '==================== load Phyis ============
         With CboPhysicalExam
             .DataSource = DA_Physical.GetData
             .ValueMember = DA_Physical.GetData.Columns("physicalcheckid").ColumnName
             .DisplayMember = DA_Physical.GetData.Columns("physicalcheck").ColumnName
             .SelectedIndex = -1
         End With
+        GridPrePhysical.DataSource = DAPhyis.SelectByPatientPrescription(prescriptionid)
+
         With cboUsage
             .DataSource = DA_Usage.GetData
             .ValueMember = "USAGE_ID"
@@ -295,5 +305,53 @@ Public Class EditConsultation
         Dim DocRequestExam As New MainDocRequestExam(Me)
         DocRequestExam.ShowDialog()
 
+    End Sub
+
+    
+    Dim DAComDetail As New DSComplaintTableAdapters.tblcomplaintdetailTableAdapter
+    Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
+        If CboComplaint.SelectedIndex = -1 Then Exit Sub
+        DAComDetail.InsertComplaint(CboComplaint.SelectedValue, prescriptionid, "")
+        RefresComplain()
+    End Sub
+   
+    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+        If GridPreComplaint.SelectedItems.Count = 0 Then Exit Sub
+        DAComDetail.DeleteComplaint(GridPreComplaint.GetRow.Cells("complaintdetailid").Value)
+        RefresComplain()
+    End Sub
+    Private Sub RefresComplain()
+        GridPreComplaint.DataSource = DAComDetail.SelectComplaintByPrescriptionID(prescriptionid)
+    End Sub
+
+
+    Private Sub BtnAddMedicalHistor_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnAddMedicalHistor.Click
+        If CboMedical.SelectedIndex = -1 Then Exit Sub
+        DA_MedicalDetail.InsertHistory(CboMedical.SelectedValue, prescriptionid, "")
+        refreshMedical()
+    End Sub
+    Private Sub refreshMedical()
+        GridPreMedicalHistory.DataSource = DA_MedicalDetail.SelectHistoryByPrescriptionID(prescriptionid)
+    End Sub
+
+    Private Sub BtnRemoveMedicalHistory_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnRemoveMedicalHistory.Click
+        If GridPreMedicalHistory.SelectedItems.Count = 0 Then Exit Sub
+        DA_MedicalDetail.DeleteHistory(GridPreMedicalHistory.GetRow.Cells("historydetailid").Value)
+        refreshMedical()
+    End Sub
+
+    Private Sub BtnAddPrePhysical_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnAddPrePhysical.Click
+        If CboPhysicalExam.SelectedIndex = -1 Then Exit Sub
+        DA_PhysicalDetail.Insert(CboPhysicalExam.SelectedValue, prescriptionid, "")
+        RefreshPhysical()
+    End Sub
+
+    Private Sub BtnRemovePrePhysical_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnRemovePrePhysical.Click
+        If GridPrePhysical.SelectedItems.Count = 0 Then Exit Sub
+        DA_PhysicalDetail.DeletePhysical(GridPrePhysical.GetRow.Cells("physicalcheckdetailid").Value)
+        RefreshPhysical()
+    End Sub
+    Private Sub RefreshPhysical()
+        GridPrePhysical.DataSource = DAPhyis.SelectByPatientPrescription(prescriptionid)
     End Sub
 End Class

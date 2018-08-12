@@ -32,9 +32,11 @@
         If DA_FibroConclusion.SelectConclusion(CInt(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value), CInt(Me.cboFibroConclusion.SelectedValue)).Rows.Count > 0 Then
             MsgBox("The conclusion was added already", MsgBoxStyle.OkOnly, "Existing Conclusion")
         Else
-            DA_FibroConclusion.Insert(CInt(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value), CInt(Me.cboFibroConclusion.SelectedValue))
-            RefreshConclusionList()
-            cboFibroConclusion.SelectedIndex = -1
+            If DA_FibroConclusion.Insert(CInt(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value), CInt(Me.cboFibroConclusion.SelectedValue)) = 1 Then
+                RefreshConclusionList()
+                cboFibroConclusion.SelectedIndex = -1
+            End If
+           
         End If
     End Sub
     Sub RefreshConclusionList()
@@ -110,7 +112,12 @@
             'IIf(FibroTable.Rows(0).Item("cf") = "", ChAnaPath.Checked = False, ChAnaPath.Checked = True)
             'Me.txtFibroCF.Text = FibroTable.Rows(0).Item("cf")
             Me.cboFibroDocteur.SelectedValue = FibroTable.Rows(0).Item("Doctor_ID")
-            Me.TxtOther.Text = FibroTable.Rows(0).Item("more_info")
+            Try
+                Me.TxtOther.Text = FibroTable.Rows(0).Item("more_info")
+            Catch ex As Exception
+                Me.TxtOther.Text = ""
+            End Try
+
 
             ''Load Conclusion Data
             Me.conclusionlist.DataSource = DA_FibroConclusion.SelectConclusionByRequestID(CInt(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value))
@@ -154,7 +161,7 @@
         End If
         If MessageBox.Show("Do you want save Fibro scopy?", "Fibro", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
             Dim RequestIDVal As Double = CLng(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value)
-            Dim PatientNo As Double = CLng(Me.RequestPanel.RequestList.CurrentRow.Cells("ppatientid").Value)
+
             If DA_Fibro.SelectFibroByRequestID(CLng(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value)).Rows.Count >= 1 Then
                 '' Update
                 If DA_Fibro.UpdateFibroscopyEng(cboFibroDemander.SelectedValue.ToString, txtFibroTolerance.Text, chkFibroAnesthegiste.Checked, FibroAnes, cboFibroDocteur.Text, DateResultExam.Value.Date, CInt(cboFibroDocteur.SelectedValue), GetValueConclustion, TxtIntroduction.Text, TxtIndication.Text, TxtMedication.Text, TxtFentanyl.Text, TxtPropofol.Text, TxtXylocainegel.Text, TxtEsophagus.Text, TxtStomach.Text, TxtAssessment.Text, TxtOther.Text, RequestIDVal) = 1 Then
@@ -164,7 +171,7 @@
                
             Else
                 '' Add New
-                If DA_Fibro.InsertFibroscopyEng(RequestIDVal, PatientNo, cboFibroDemander.Text, txtFibroTolerance.Text, chkFibroAnesthegiste.Checked, FibroAnes, cboFibroDocteur.Text, DateResultExam.Value.Date, CInt(cboFibroDocteur.SelectedValue), GetValueConclustion, TxtIntroduction.Text, TxtIndication.Text, TxtMedication.Text, TxtFentanyl.Text, TxtPropofol.Text, TxtXylocainegel.Text, TxtEsophagus.Text, TxtStomach.Text, TxtAssessment.Text, TxtOther.Text) = 1 Then
+                If DA_Fibro.InsertFibroscopyEng(RequestIDVal, LblPatientNo.Text, cboFibroDemander.Text, txtFibroTolerance.Text, chkFibroAnesthegiste.Checked, FibroAnes, cboFibroDocteur.Text, DateResultExam.Value.Date, CInt(cboFibroDocteur.SelectedValue), GetValueConclustion, TxtIntroduction.Text, TxtIndication.Text, TxtMedication.Text, TxtFentanyl.Text, TxtPropofol.Text, TxtXylocainegel.Text, TxtEsophagus.Text, TxtStomach.Text, TxtAssessment.Text, TxtOther.Text) = 1 Then
                     MsgBox("A fibroscopy has been saved successfully", MsgBoxStyle.OkOnly, "Saved Fibroscopy")
                     DA_DOCTOR_FEE.InsertNewDoctorFee(CInt(cboFibroDocteur.SelectedValue), cboFibroDocteur.Text, "Fibroscopy", DateResultExam.Value.Date, LblPatientNo.Text, 0, lblPatientName.Text, GetValueConclustion)
                     Me.DialogResult = Windows.Forms.DialogResult.OK

@@ -25,6 +25,8 @@ Partial Class Appointment
         Dim AppointmentList_DesignTimeLayout As Janus.Windows.GridEX.GridEXLayout = New Janus.Windows.GridEX.GridEXLayout
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Appointment))
         Me.ToolStrip2 = New System.Windows.Forms.ToolStrip
+        Me.BtnRefresh = New System.Windows.Forms.ToolStripButton
+        Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator
         Me.BtnNewAppointment = New System.Windows.Forms.ToolStripButton
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator
         Me.btnfind = New System.Windows.Forms.ToolStripButton
@@ -35,8 +37,6 @@ Partial Class Appointment
         Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator
         Me.BtnDelete = New System.Windows.Forms.ToolStripButton
         Me.AppointmentList = New Janus.Windows.GridEX.GridEX
-        Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator
-        Me.BtnRefresh = New System.Windows.Forms.ToolStripButton
         Me.ToolStrip2.SuspendLayout()
         CType(Me.AppointmentList, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -51,6 +51,20 @@ Partial Class Appointment
         Me.ToolStrip2.Size = New System.Drawing.Size(974, 32)
         Me.ToolStrip2.TabIndex = 28
         Me.ToolStrip2.Text = "ToolStrip2"
+        '
+        'BtnRefresh
+        '
+        Me.BtnRefresh.ForeColor = System.Drawing.Color.Blue
+        Me.BtnRefresh.Image = Global.Clinic_Management_System.My.Resources.Resources.refresh
+        Me.BtnRefresh.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.BtnRefresh.Name = "BtnRefresh"
+        Me.BtnRefresh.Size = New System.Drawing.Size(75, 29)
+        Me.BtnRefresh.Text = "Refresh"
+        '
+        'ToolStripSeparator3
+        '
+        Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
+        Me.ToolStripSeparator3.Size = New System.Drawing.Size(6, 32)
         '
         'BtnNewAppointment
         '
@@ -89,7 +103,7 @@ Partial Class Appointment
         Me.BtnPatientConsult.Image = Global.Clinic_Management_System.My.Resources.Resources.Forward
         Me.BtnPatientConsult.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.BtnPatientConsult.Name = "BtnPatientConsult"
-        Me.BtnPatientConsult.Size = New System.Drawing.Size(179, 29)
+        Me.BtnPatientConsult.Size = New System.Drawing.Size(178, 29)
         Me.BtnPatientConsult.Text = "Send To Consultation"
         '
         'ToolStripSeparator5
@@ -139,20 +153,6 @@ Partial Class Appointment
         Me.AppointmentList.RowHeaders = Janus.Windows.GridEX.InheritableBoolean.[True]
         Me.AppointmentList.Size = New System.Drawing.Size(974, 807)
         Me.AppointmentList.TabIndex = 46
-        '
-        'ToolStripSeparator3
-        '
-        Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
-        Me.ToolStripSeparator3.Size = New System.Drawing.Size(6, 32)
-        '
-        'BtnRefresh
-        '
-        Me.BtnRefresh.ForeColor = System.Drawing.Color.Blue
-        Me.BtnRefresh.Image = Global.Clinic_Management_System.My.Resources.Resources.refresh
-        Me.BtnRefresh.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.BtnRefresh.Name = "BtnRefresh"
-        Me.BtnRefresh.Size = New System.Drawing.Size(74, 29)
-        Me.BtnRefresh.Text = "Refresh"
         '
         'Appointment
         '

@@ -76,7 +76,7 @@
 
     Private Sub BloodCheck_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Dim PatientData As New DataTable
-        PatientData = DA_Patient.SelectPatientByPID(Me.txtPatientID.Text)
+        PatientData = DA_Patient.SelectPatientByID(Me.txtPatientID.Text)
         Me.lblname.Text = PatientData.Rows(0).Item("pname").ToString
         Me.lblage.Text = Year(Now) - Year(PatientData.Rows(0).Item("pAge"))
         Me.lblsex.Text = PatientData.Rows(0).Item("pgender").ToString

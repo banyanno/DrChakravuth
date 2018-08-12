@@ -1914,11 +1914,6 @@ Partial Public Class DSExamination
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
-        Public Function FindByrequest_id(ByVal request_id As Long) As tblrequestRow
-            Return CType(Me.Rows.Find(New Object() {request_id}),tblrequestRow)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Overrides Function Clone() As Global.System.Data.DataTable
             Dim cln As tblrequestDataTable = CType(MyBase.Clone,tblrequestDataTable)
             cln.InitVars
@@ -1984,13 +1979,11 @@ Partial Public Class DSExamination
             MyBase.Columns.Add(Me.columnDiagnosis)
             Me.columnbreathtest = New Global.System.Data.DataColumn("breathtest", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnbreathtest)
-            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnrequest_id}, true))
             Me.columnrequest_id.AutoIncrement = true
             Me.columnrequest_id.AutoIncrementSeed = -1
             Me.columnrequest_id.AutoIncrementStep = -1
             Me.columnrequest_id.AllowDBNull = false
             Me.columnrequest_id.ReadOnly = true
-            Me.columnrequest_id.Unique = true
             Me.columnDiagnosis.MaxLength = 150
         End Sub
         
@@ -2510,11 +2503,6 @@ Partial Public Class DSExamination
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
-        Public Function FindByfibro_id(ByVal fibro_id As Long) As tblfibroscopyRow
-            Return CType(Me.Rows.Find(New Object() {fibro_id}),tblfibroscopyRow)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Overrides Function Clone() As Global.System.Data.DataTable
             Dim cln As tblfibroscopyDataTable = CType(MyBase.Clone,tblfibroscopyDataTable)
             cln.InitVars
@@ -2628,13 +2616,11 @@ Partial Public Class DSExamination
             MyBase.Columns.Add(Me.columnStomachandDuodenum)
             Me.columnAssessment = New Global.System.Data.DataColumn("Assessment", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnAssessment)
-            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnfibro_id}, true))
             Me.columnfibro_id.AutoIncrement = true
             Me.columnfibro_id.AutoIncrementSeed = -1
             Me.columnfibro_id.AutoIncrementStep = -1
             Me.columnfibro_id.AllowDBNull = false
             Me.columnfibro_id.ReadOnly = true
-            Me.columnfibro_id.Unique = true
             Me.columndemander.MaxLength = 250
             Me.columntolerance.MaxLength = 250
             Me.columnanesthegiste.MaxLength = 250
@@ -3399,11 +3385,6 @@ Partial Public Class DSExamination
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
-        Public Function FindBynaso_id(ByVal naso_id As Long) As tblnasogastroRow
-            Return CType(Me.Rows.Find(New Object() {naso_id}),tblnasogastroRow)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Overrides Function Clone() As Global.System.Data.DataTable
             Dim cln As tblnasogastroDataTable = CType(MyBase.Clone,tblnasogastroDataTable)
             cln.InitVars
@@ -3511,13 +3492,11 @@ Partial Public Class DSExamination
             MyBase.Columns.Add(Me.columnStomach)
             Me.columnAssessment = New Global.System.Data.DataColumn("Assessment", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnAssessment)
-            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnnaso_id}, true))
             Me.columnnaso_id.AutoIncrement = true
             Me.columnnaso_id.AutoIncrementSeed = -1
             Me.columnnaso_id.AutoIncrementStep = -1
             Me.columnnaso_id.AllowDBNull = false
             Me.columnnaso_id.ReadOnly = true
-            Me.columnnaso_id.Unique = true
             Me.columndemander.MaxLength = 250
             Me.columntolerance.MaxLength = 250
             Me.columnmotify.MaxLength = 250
@@ -4311,11 +4290,6 @@ Partial Public Class DSExamination
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
-        Public Function FindBycolo_id(ByVal colo_id As Long) As tblcoloscopyRow
-            Return CType(Me.Rows.Find(New Object() {colo_id}),tblcoloscopyRow)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Overrides Function Clone() As Global.System.Data.DataTable
             Dim cln As tblcoloscopyDataTable = CType(MyBase.Clone,tblcoloscopyDataTable)
             cln.InitVars
@@ -4432,13 +4406,11 @@ Partial Public Class DSExamination
             MyBase.Columns.Add(Me.columnColo_Procedure)
             Me.columnIsAnesthesia = New Global.System.Data.DataColumn("IsAnesthesia", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnIsAnesthesia)
-            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columncolo_id}, true))
             Me.columncolo_id.AutoIncrement = true
             Me.columncolo_id.AutoIncrementSeed = -1
             Me.columncolo_id.AutoIncrementStep = -1
             Me.columncolo_id.AllowDBNull = false
             Me.columncolo_id.ReadOnly = true
-            Me.columncolo_id.Unique = true
             Me.columnduree.MaxLength = 250
             Me.columneva.MaxLength = 250
             Me.columnpreparation.MaxLength = 250
@@ -5104,11 +5076,6 @@ Partial Public Class DSExamination
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
-        Public Function FindByecho_id(ByVal echo_id As Long) As tblechoRow
-            Return CType(Me.Rows.Find(New Object() {echo_id}),tblechoRow)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Overrides Function Clone() As Global.System.Data.DataTable
             Dim cln As tblechoDataTable = CType(MyBase.Clone,tblechoDataTable)
             cln.InitVars
@@ -5186,13 +5153,11 @@ Partial Public Class DSExamination
             MyBase.Columns.Add(Me.columnDoctorName)
             Me.columnExamBy = New Global.System.Data.DataColumn("ExamBy", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnExamBy)
-            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnecho_id}, true))
             Me.columnecho_id.AutoIncrement = true
             Me.columnecho_id.AutoIncrementSeed = -1
             Me.columnecho_id.AutoIncrementStep = -1
             Me.columnecho_id.AllowDBNull = false
             Me.columnecho_id.ReadOnly = true
-            Me.columnecho_id.Unique = true
             Me.columndemander.MaxLength = 250
             Me.columnindication.MaxLength = 250
             Me.columnle_foie.MaxLength = 250
@@ -7388,11 +7353,6 @@ Partial Public Class DSExamination
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
-        Public Function FindByecho_id(ByVal echo_id As Long) As EchoRow
-            Return CType(Me.Rows.Find(New Object() {echo_id}),EchoRow)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Overrides Function Clone() As Global.System.Data.DataTable
             Dim cln As EchoDataTable = CType(MyBase.Clone,EchoDataTable)
             cln.InitVars
@@ -7488,13 +7448,11 @@ Partial Public Class DSExamination
             MyBase.Columns.Add(Me.columnExamBy)
             Me.columnDoctorName = New Global.System.Data.DataColumn("DoctorName", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnDoctorName)
-            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnecho_id}, true))
             Me.columnecho_id.AutoIncrement = true
             Me.columnecho_id.AutoIncrementSeed = -1
             Me.columnecho_id.AutoIncrementStep = -1
             Me.columnecho_id.AllowDBNull = false
             Me.columnecho_id.ReadOnly = true
-            Me.columnecho_id.Unique = true
             Me.columnpname.AllowDBNull = false
             Me.columnpname.MaxLength = 200
             Me.columnpgender.AllowDBNull = false
@@ -8106,11 +8064,6 @@ Partial Public Class DSExamination
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
-        Public Function FindByfibro_id(ByVal fibro_id As Long) As FibroRow
-            Return CType(Me.Rows.Find(New Object() {fibro_id}),FibroRow)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Overrides Function Clone() As Global.System.Data.DataTable
             Dim cln As FibroDataTable = CType(MyBase.Clone,FibroDataTable)
             cln.InitVars
@@ -8245,13 +8198,11 @@ Partial Public Class DSExamination
             MyBase.Columns.Add(Me.columnStomachandDuodenum)
             Me.columnAssessment = New Global.System.Data.DataColumn("Assessment", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnAssessment)
-            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnfibro_id}, true))
             Me.columnfibro_id.AutoIncrement = true
             Me.columnfibro_id.AutoIncrementSeed = -1
             Me.columnfibro_id.AutoIncrementStep = -1
             Me.columnfibro_id.AllowDBNull = false
             Me.columnfibro_id.ReadOnly = true
-            Me.columnfibro_id.Unique = true
             Me.columnpname.AllowDBNull = false
             Me.columnpname.MaxLength = 200
             Me.columnpgender.AllowDBNull = false
@@ -9009,11 +8960,6 @@ Partial Public Class DSExamination
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
-        Public Function FindByitem_id(ByVal item_id As Integer) As tblblooditemRow
-            Return CType(Me.Rows.Find(New Object() {item_id}),tblblooditemRow)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Overrides Function Clone() As Global.System.Data.DataTable
             Dim cln As tblblooditemDataTable = CType(MyBase.Clone,tblblooditemDataTable)
             cln.InitVars
@@ -9037,13 +8983,11 @@ Partial Public Class DSExamination
             MyBase.Columns.Add(Me.columnitem_id)
             Me.columnitem_name = New Global.System.Data.DataColumn("item_name", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnitem_name)
-            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnitem_id}, true))
             Me.columnitem_id.AutoIncrement = true
             Me.columnitem_id.AutoIncrementSeed = -1
             Me.columnitem_id.AutoIncrementStep = -1
             Me.columnitem_id.AllowDBNull = false
             Me.columnitem_id.ReadOnly = true
-            Me.columnitem_id.Unique = true
             Me.columnitem_name.MaxLength = 250
         End Sub
         
@@ -9280,11 +9224,6 @@ Partial Public Class DSExamination
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
-        Public Function FindByexam_id(ByVal exam_id As Long) As tblphysicalexamRow
-            Return CType(Me.Rows.Find(New Object() {exam_id}),tblphysicalexamRow)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Overrides Function Clone() As Global.System.Data.DataTable
             Dim cln As tblphysicalexamDataTable = CType(MyBase.Clone,tblphysicalexamDataTable)
             cln.InitVars
@@ -9314,13 +9253,11 @@ Partial Public Class DSExamination
             MyBase.Columns.Add(Me.columnphysicalcheckid)
             Me.columnnote = New Global.System.Data.DataColumn("note", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnnote)
-            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnexam_id}, true))
             Me.columnexam_id.AutoIncrement = true
             Me.columnexam_id.AutoIncrementSeed = -1
             Me.columnexam_id.AutoIncrementStep = -1
             Me.columnexam_id.AllowDBNull = false
             Me.columnexam_id.ReadOnly = true
-            Me.columnexam_id.Unique = true
             Me.columnnote.MaxLength = 2500
         End Sub
         
@@ -9890,11 +9827,6 @@ Partial Public Class DSExamination
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
-        Public Function FindBynaso_id(ByVal naso_id As Long) As NasoRow
-            Return CType(Me.Rows.Find(New Object() {naso_id}),NasoRow)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Overrides Function Clone() As Global.System.Data.DataTable
             Dim cln As NasoDataTable = CType(MyBase.Clone,NasoDataTable)
             cln.InitVars
@@ -10023,13 +9955,11 @@ Partial Public Class DSExamination
             MyBase.Columns.Add(Me.columnStomach)
             Me.columnAssessment = New Global.System.Data.DataColumn("Assessment", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnAssessment)
-            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnnaso_id}, true))
             Me.columnnaso_id.AutoIncrement = true
             Me.columnnaso_id.AutoIncrementSeed = -1
             Me.columnnaso_id.AutoIncrementStep = -1
             Me.columnnaso_id.AllowDBNull = false
             Me.columnnaso_id.ReadOnly = true
-            Me.columnnaso_id.Unique = true
             Me.columnpname.AllowDBNull = false
             Me.columnpname.MaxLength = 200
             Me.columnpgender.AllowDBNull = false
@@ -22642,24 +22572,24 @@ Namespace DSExaminationTableAdapters
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand
             Me._commandCollection(1).Connection = Me.Connection
-            Me._commandCollection(1).CommandText = "SELECT COUNT(ppatientid) FROM tblrequest where ppatientid=@ppatientid and breatht"& _ 
-                "est=1 and request_date=@request_date"
+            Me._commandCollection(1).CommandText = "SELECT COUNT(ppatientid) FROM tblrequest where ppatientid=@patientid and breathte"& _ 
+                "st=1 and request_date=@request_date"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ppatientid", Global.System.Data.SqlDbType.BigInt, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "ppatientid", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@patientid", Global.System.Data.SqlDbType.BigInt, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "ppatientid", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@request_date", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "request_date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(2) = New Global.System.Data.SqlClient.SqlCommand
             Me._commandCollection(2).Connection = Me.Connection
-            Me._commandCollection(2).CommandText = "SELECT COUNT(ppatientid) FROM tblrequest where ppatientid=@ppatientid and colo=1 "& _ 
-                "and request_date=@request_date"
+            Me._commandCollection(2).CommandText = "SELECT COUNT(ppatientid) FROM tblrequest where ppatientid=@patientid and colo=1 a"& _ 
+                "nd request_date=@request_date"
             Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ppatientid", Global.System.Data.SqlDbType.BigInt, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "ppatientid", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@patientid", Global.System.Data.SqlDbType.BigInt, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "ppatientid", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@request_date", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "request_date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(3) = New Global.System.Data.SqlClient.SqlCommand
             Me._commandCollection(3).Connection = Me.Connection
-            Me._commandCollection(3).CommandText = "SELECT COUNT(ppatientid) FROM tblrequest where ppatientid=@ppatientid and echo=1 "& _ 
-                "and request_date=@request_date"
+            Me._commandCollection(3).CommandText = "SELECT COUNT(ppatientid) FROM tblrequest where ppatientid=@patientid and echo=1 a"& _ 
+                "nd request_date=@request_date"
             Me._commandCollection(3).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ppatientid", Global.System.Data.SqlDbType.BigInt, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "ppatientid", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@patientid", Global.System.Data.SqlDbType.BigInt, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "ppatientid", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@request_date", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "request_date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(4) = New Global.System.Data.SqlClient.SqlCommand
             Me._commandCollection(4).Connection = Me.Connection
@@ -22706,8 +22636,8 @@ Namespace DSExaminationTableAdapters
             Me._commandCollection(10).CommandText = "SELECT        R.request_id, R.ppatientid, P.patientid, P.pname, P.pgender, P.pAge"& _ 
                 ", R.request_date, R.Doctor_ID, R.biology, R.fibro, R.naso, R.colo, R.echo, R.sca"& _ 
                 "n, R.mri, R.fibroscan, R.more_info, R.status, R.breathtest"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            tblr"& _ 
-                "equest AS R INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         tblpatient AS P ON P.ppatientid"& _ 
-                " = R.ppatientid"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (P.patientid = @patientid) AND (R.Doctor_ID = 0)"
+                "equest AS R INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         tblpatient AS P ON P.patientid "& _ 
+                "= R.ppatientid"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (P.patientid = @patientid) AND (R.Doctor_ID = 0)"
             Me._commandCollection(10).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(10).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@patientid", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "patientid", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(11) = New Global.System.Data.SqlClient.SqlCommand
@@ -22716,9 +22646,9 @@ Namespace DSExaminationTableAdapters
                 ", R.request_date, R.Doctor_ID, D.Doctor_Name, R.biology, R.fibro, R.naso, R.colo"& _ 
                 ", R.echo, R.scan, R.mri, R.fibroscan, R.more_info, R.status, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                 "& _ 
                 "        R.breathtest"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            tblrequest AS R INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"              "& _ 
-                "           tblpatient AS P ON P.ppatientid = R.ppatientid INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"          "& _ 
-                "               Doctors AS D ON D.Doctor_ID = R.Doctor_ID"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (R.status"& _ 
-                " = @status) AND (P.pname LIKE @pname)"
+                "           tblpatient AS P ON P.patientid = R.ppatientid INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"           "& _ 
+                "              Doctors AS D ON D.Doctor_ID = R.Doctor_ID"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (R.status "& _ 
+                "= @status) AND (P.pname LIKE @pname)"
             Me._commandCollection(11).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(11).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@status", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "status", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(11).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@pname", Global.System.Data.SqlDbType.VarChar, 200, Global.System.Data.ParameterDirection.Input, 0, 0, "pname", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -22728,9 +22658,9 @@ Namespace DSExaminationTableAdapters
                 ", R.request_date, R.Doctor_ID, D.Doctor_Name, R.biology, R.fibro, R.naso, R.colo"& _ 
                 ", R.echo, R.scan, R.mri, R.fibroscan, R.more_info, R.status, R.Diagnosis, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"    "& _ 
                 "                     R.breathtest"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            tblrequest AS R INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&" "& _ 
-                "                        tblpatient AS P ON P.ppatientid = R.ppatientid INNER JOI"& _ 
-                "N"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         Doctors AS D ON D.Doctor_ID = R.Doctor_ID"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE    "& _ 
-                "    (R.request_id = @requestid)"
+                "                        tblpatient AS P ON P.patientid = R.ppatientid INNER JOIN"& _ 
+                ""&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         Doctors AS D ON D.Doctor_ID = R.Doctor_ID"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE     "& _ 
+                "   (R.request_id = @requestid)"
             Me._commandCollection(12).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(12).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@requestid", Global.System.Data.SqlDbType.BigInt, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "request_id", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(13) = New Global.System.Data.SqlClient.SqlCommand
@@ -22739,9 +22669,9 @@ Namespace DSExaminationTableAdapters
                 ", R.request_date, R.Doctor_ID, D.Doctor_Name, R.biology, R.fibro, R.naso, R.colo"& _ 
                 ", R.echo, R.scan, R.mri, R.fibroscan, R.more_info, R.status, R.Diagnosis, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"    "& _ 
                 "                     R.breathtest"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            tblrequest AS R INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&" "& _ 
-                "                        tblpatient AS P ON P.ppatientid = R.ppatientid INNER JOI"& _ 
-                "N"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         Doctors AS D ON D.Doctor_ID = R.Doctor_ID"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE    "& _ 
-                "    (R.status = @status)"
+                "                        tblpatient AS P ON P.patientid = R.ppatientid INNER JOIN"& _ 
+                ""&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         Doctors AS D ON D.Doctor_ID = R.Doctor_ID"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE     "& _ 
+                "   (R.status = @status)"
             Me._commandCollection(13).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(13).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@status", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "status", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(14) = New Global.System.Data.SqlClient.SqlCommand
@@ -22750,9 +22680,9 @@ Namespace DSExaminationTableAdapters
                 ", R.request_date, R.Doctor_ID, D.Doctor_Name, R.biology, R.fibro, R.naso, R.colo"& _ 
                 ", R.echo, R.scan, R.mri, R.fibroscan, R.more_info, R.status, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                 "& _ 
                 "        R.breathtest"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            tblrequest AS R INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"              "& _ 
-                "           tblpatient AS P ON P.ppatientid = R.ppatientid INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"          "& _ 
-                "               Doctors AS D ON D.Doctor_ID = R.Doctor_ID"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (R.status"& _ 
-                " = @status) AND (P.patientid = @patientid)"
+                "           tblpatient AS P ON P.patientid = R.ppatientid INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"           "& _ 
+                "              Doctors AS D ON D.Doctor_ID = R.Doctor_ID"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (R.status "& _ 
+                "= @status) AND (P.patientid = @patientid)"
             Me._commandCollection(14).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(14).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@status", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "status", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(14).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@patientid", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "patientid", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -23441,47 +23371,11 @@ Namespace DSExaminationTableAdapters
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update( _
-                    ByVal ppatientid As Global.System.Nullable(Of Long),  _
-                    ByVal request_date As Global.System.Nullable(Of Date),  _
-                    ByVal Doctor_ID As Global.System.Nullable(Of Integer),  _
-                    ByVal biology As Global.System.Nullable(Of Boolean),  _
-                    ByVal fibro As Global.System.Nullable(Of Boolean),  _
-                    ByVal naso As Global.System.Nullable(Of Boolean),  _
-                    ByVal colo As Global.System.Nullable(Of Boolean),  _
-                    ByVal echo As Global.System.Nullable(Of Boolean),  _
-                    ByVal scan As Global.System.Nullable(Of Boolean),  _
-                    ByVal mri As Global.System.Nullable(Of Boolean),  _
-                    ByVal fibroscan As Global.System.Nullable(Of Boolean),  _
-                    ByVal status As Global.System.Nullable(Of Integer),  _
-                    ByVal Diagnosis As String,  _
-                    ByVal breathtest As Global.System.Nullable(Of Boolean),  _
-                    ByVal Original_request_id As Long,  _
-                    ByVal Original_ppatientid As Global.System.Nullable(Of Long),  _
-                    ByVal Original_request_date As Global.System.Nullable(Of Date),  _
-                    ByVal Original_Doctor_ID As Global.System.Nullable(Of Integer),  _
-                    ByVal Original_biology As Global.System.Nullable(Of Boolean),  _
-                    ByVal Original_fibro As Global.System.Nullable(Of Boolean),  _
-                    ByVal Original_naso As Global.System.Nullable(Of Boolean),  _
-                    ByVal Original_colo As Global.System.Nullable(Of Boolean),  _
-                    ByVal Original_echo As Global.System.Nullable(Of Boolean),  _
-                    ByVal Original_scan As Global.System.Nullable(Of Boolean),  _
-                    ByVal Original_mri As Global.System.Nullable(Of Boolean),  _
-                    ByVal Original_fibroscan As Global.System.Nullable(Of Boolean),  _
-                    ByVal Original_status As Global.System.Nullable(Of Integer),  _
-                    ByVal Original_Diagnosis As String,  _
-                    ByVal Original_breathtest As Global.System.Nullable(Of Boolean)) As Integer
-            Return Me.Update(ppatientid, request_date, Doctor_ID, biology, fibro, naso, colo, echo, scan, mri, fibroscan, status, Diagnosis, breathtest, Original_request_id, Original_ppatientid, Original_request_date, Original_Doctor_ID, Original_biology, Original_fibro, Original_naso, Original_colo, Original_echo, Original_scan, Original_mri, Original_fibroscan, Original_status, Original_Diagnosis, Original_breathtest, Original_request_id)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function CheckExistBreathTest(ByVal ppatientid As Global.System.Nullable(Of Long), ByVal request_date As Global.System.Nullable(Of Date)) As Global.System.Nullable(Of Integer)
+        Public Overloads Overridable Function CheckExistBreathTest(ByVal patientid As Global.System.Nullable(Of Long), ByVal request_date As Global.System.Nullable(Of Date)) As Object
             Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(1)
-            If (ppatientid.HasValue = true) Then
-                command.Parameters(0).Value = CType(ppatientid.Value,Long)
+            If (patientid.HasValue = true) Then
+                command.Parameters(0).Value = CType(patientid.Value,Long)
             Else
                 command.Parameters(0).Value = Global.System.DBNull.Value
             End If
@@ -23505,18 +23399,18 @@ Namespace DSExaminationTableAdapters
             End Try
             If ((returnValue Is Nothing)  _
                         OrElse (returnValue.GetType Is GetType(Global.System.DBNull))) Then
-                Return New Global.System.Nullable(Of Integer)
+                Return Nothing
             Else
-                Return New Global.System.Nullable(Of Integer)(CType(returnValue,Integer))
+                Return CType(returnValue,Object)
             End If
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function CheckExistColo(ByVal ppatientid As Global.System.Nullable(Of Long), ByVal request_date As Global.System.Nullable(Of Date)) As Global.System.Nullable(Of Integer)
+        Public Overloads Overridable Function CheckExistColo(ByVal patientid As Global.System.Nullable(Of Long), ByVal request_date As Global.System.Nullable(Of Date)) As Object
             Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(2)
-            If (ppatientid.HasValue = true) Then
-                command.Parameters(0).Value = CType(ppatientid.Value,Long)
+            If (patientid.HasValue = true) Then
+                command.Parameters(0).Value = CType(patientid.Value,Long)
             Else
                 command.Parameters(0).Value = Global.System.DBNull.Value
             End If
@@ -23540,18 +23434,18 @@ Namespace DSExaminationTableAdapters
             End Try
             If ((returnValue Is Nothing)  _
                         OrElse (returnValue.GetType Is GetType(Global.System.DBNull))) Then
-                Return New Global.System.Nullable(Of Integer)
+                Return Nothing
             Else
-                Return New Global.System.Nullable(Of Integer)(CType(returnValue,Integer))
+                Return CType(returnValue,Object)
             End If
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function CheckExistEcho(ByVal ppatientid As Global.System.Nullable(Of Long), ByVal request_date As Global.System.Nullable(Of Date)) As Global.System.Nullable(Of Integer)
+        Public Overloads Overridable Function CheckExistEcho(ByVal patientid As Global.System.Nullable(Of Long), ByVal request_date As Global.System.Nullable(Of Date)) As Object
             Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(3)
-            If (ppatientid.HasValue = true) Then
-                command.Parameters(0).Value = CType(ppatientid.Value,Long)
+            If (patientid.HasValue = true) Then
+                command.Parameters(0).Value = CType(patientid.Value,Long)
             Else
                 command.Parameters(0).Value = Global.System.DBNull.Value
             End If
@@ -23575,9 +23469,9 @@ Namespace DSExaminationTableAdapters
             End Try
             If ((returnValue Is Nothing)  _
                         OrElse (returnValue.GetType Is GetType(Global.System.DBNull))) Then
-                Return New Global.System.Nullable(Of Integer)
+                Return Nothing
             Else
-                Return New Global.System.Nullable(Of Integer)(CType(returnValue,Integer))
+                Return CType(returnValue,Object)
             End If
         End Function
         
@@ -24498,8 +24392,8 @@ Namespace DSExaminationTableAdapters
                 "on, F.Medication, F.Fentanyl, F.Propofol, F.Xylocainegel, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                    "& _ 
                 "     F.Esophagus, F.StomachandDuodenum, F.Assessment"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            tblfibrosc"& _ 
                 "opy AS F INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         tblpatient AS P ON F.ppatientid = "& _ 
-                "P.ppatientid INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         USERS_SYSTEM ON F.Doctor_ID = "& _ 
-                "USERS_SYSTEM.UserID"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (F.request_id = @requestid)"
+                "P.patientid INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         USERS_SYSTEM ON F.Doctor_ID = U"& _ 
+                "SERS_SYSTEM.UserID"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (F.request_id = @requestid)"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@requestid", Global.System.Data.SqlDbType.BigInt, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "request_id", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(2) = New Global.System.Data.SqlClient.SqlCommand
@@ -25637,76 +25531,6 @@ Namespace DSExaminationTableAdapters
                     Me.Adapter.UpdateCommand.Connection.Close
                 End If
             End Try
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update( _
-                    ByVal request_id As Global.System.Nullable(Of Long),  _
-                    ByVal ppatientid As Global.System.Nullable(Of Long),  _
-                    ByVal demander As String,  _
-                    ByVal tolerance As String,  _
-                    ByVal is_anesthegiste As Global.System.Nullable(Of Boolean),  _
-                    ByVal anesthegiste As String,  _
-                    ByVal motify As String,  _
-                    ByVal oesophage As String,  _
-                    ByVal estomac As String,  _
-                    ByVal lac_muqueux As String,  _
-                    ByVal grosse_tub As String,  _
-                    ByVal d1_de_d2 As String,  _
-                    ByVal pylore As String,  _
-                    ByVal fundus As String,  _
-                    ByVal antre As String,  _
-                    ByVal bulbe As String,  _
-                    ByVal cf As String,  _
-                    ByVal docteur As String,  _
-                    ByVal more_info As String,  _
-                    ByVal DateResult As Global.System.Nullable(Of Date),  _
-                    ByVal Doctor_ID As Global.System.Nullable(Of Decimal),  _
-                    ByVal Conclusion As String,  _
-                    ByVal Introduction As String,  _
-                    ByVal Indication As String,  _
-                    ByVal Medication As String,  _
-                    ByVal Fentanyl As String,  _
-                    ByVal Propofol As String,  _
-                    ByVal Xylocainegel As String,  _
-                    ByVal Esophagus As String,  _
-                    ByVal StomachandDuodenum As String,  _
-                    ByVal Assessment As String,  _
-                    ByVal Original_fibro_id As Long,  _
-                    ByVal Original_request_id As Global.System.Nullable(Of Long),  _
-                    ByVal Original_ppatientid As Global.System.Nullable(Of Long),  _
-                    ByVal Original_demander As String,  _
-                    ByVal Original_tolerance As String,  _
-                    ByVal Original_is_anesthegiste As Global.System.Nullable(Of Boolean),  _
-                    ByVal Original_anesthegiste As String,  _
-                    ByVal Original_motify As String,  _
-                    ByVal Original_oesophage As String,  _
-                    ByVal Original_estomac As String,  _
-                    ByVal Original_lac_muqueux As String,  _
-                    ByVal Original_grosse_tub As String,  _
-                    ByVal Original_d1_de_d2 As String,  _
-                    ByVal Original_pylore As String,  _
-                    ByVal Original_fundus As String,  _
-                    ByVal Original_antre As String,  _
-                    ByVal Original_bulbe As String,  _
-                    ByVal Original_cf As String,  _
-                    ByVal Original_docteur As String,  _
-                    ByVal Original_more_info As String,  _
-                    ByVal Original_DateResult As Global.System.Nullable(Of Date),  _
-                    ByVal Original_Doctor_ID As Global.System.Nullable(Of Decimal),  _
-                    ByVal Original_Conclusion As String,  _
-                    ByVal Original_Introduction As String,  _
-                    ByVal Original_Indication As String,  _
-                    ByVal Original_Medication As String,  _
-                    ByVal Original_Fentanyl As String,  _
-                    ByVal Original_Propofol As String,  _
-                    ByVal Original_Xylocainegel As String,  _
-                    ByVal Original_Esophagus As String,  _
-                    ByVal Original_StomachandDuodenum As String,  _
-                    ByVal Original_Assessment As String) As Integer
-            Return Me.Update(request_id, ppatientid, demander, tolerance, is_anesthegiste, anesthegiste, motify, oesophage, estomac, lac_muqueux, grosse_tub, d1_de_d2, pylore, fundus, antre, bulbe, cf, docteur, more_info, DateResult, Doctor_ID, Conclusion, Introduction, Indication, Medication, Fentanyl, Propofol, Xylocainegel, Esophagus, StomachandDuodenum, Assessment, Original_fibro_id, Original_request_id, Original_ppatientid, Original_demander, Original_tolerance, Original_is_anesthegiste, Original_anesthegiste, Original_motify, Original_oesophage, Original_estomac, Original_lac_muqueux, Original_grosse_tub, Original_d1_de_d2, Original_pylore, Original_fundus, Original_antre, Original_bulbe, Original_cf, Original_docteur, Original_more_info, Original_DateResult, Original_Doctor_ID, Original_Conclusion, Original_Introduction, Original_Indication, Original_Medication, Original_Fentanyl, Original_Propofol, Original_Xylocainegel, Original_Esophagus, Original_StomachandDuodenum, Original_Assessment, Original_fibro_id)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -27130,9 +26954,9 @@ Namespace DSExaminationTableAdapters
                 "M.Signe, N.Conclusion, N.Introduction, N.Indication, N.Medication, N.Fentanyl, N"& _ 
                 ".Propofol, N.Xylocainegel, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         N.Esophagus, N.Stomach, N."& _ 
                 "Assessment"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            tblnasogastro AS N INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                     "& _ 
-                "    tblpatient AS P ON N.ppatientid = P.ppatientid INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                 "& _ 
-                "        USERS_SYSTEM ON N.Doctor_ID = USERS_SYSTEM.UserID"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (N.reque"& _ 
-                "st_id = @requestid)"
+                "    tblpatient AS P ON N.ppatientid = P.patientid INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                  "& _ 
+                "       USERS_SYSTEM ON N.Doctor_ID = USERS_SYSTEM.UserID"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (N.reques"& _ 
+                "t_id = @requestid)"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@requestid", Global.System.Data.SqlDbType.BigInt, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "request_id", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(2) = New Global.System.Data.SqlClient.SqlCommand
@@ -28201,72 +28025,6 @@ Namespace DSExaminationTableAdapters
                     Me.Adapter.UpdateCommand.Connection.Close
                 End If
             End Try
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update( _
-                    ByVal ppatientid As Global.System.Nullable(Of Long),  _
-                    ByVal request_id As Global.System.Nullable(Of Long),  _
-                    ByVal demander As String,  _
-                    ByVal tolerance As String,  _
-                    ByVal motify As String,  _
-                    ByVal oesophage As String,  _
-                    ByVal estomac As String,  _
-                    ByVal pylore As String,  _
-                    ByVal bulbe As String,  _
-                    ByVal d1_de_d2 As String,  _
-                    ByVal cf As String,  _
-                    ByVal docteur As String,  _
-                    ByVal more_info As String,  _
-                    ByVal Lacmuqueux As String,  _
-                    ByVal Grossetuberosite As String,  _
-                    ByVal Fundus As String,  _
-                    ByVal Antre As String,  _
-                    ByVal DateResult As Global.System.Nullable(Of Date),  _
-                    ByVal Doctor_ID As Global.System.Nullable(Of Decimal),  _
-                    ByVal Conclusion As String,  _
-                    ByVal Introduction As String,  _
-                    ByVal Indication As String,  _
-                    ByVal Medication As String,  _
-                    ByVal Fentanyl As String,  _
-                    ByVal Propofol As String,  _
-                    ByVal Xylocainegel As String,  _
-                    ByVal Esophagus As String,  _
-                    ByVal Stomach As String,  _
-                    ByVal Assessment As String,  _
-                    ByVal Original_naso_id As Long,  _
-                    ByVal Original_ppatientid As Global.System.Nullable(Of Long),  _
-                    ByVal Original_request_id As Global.System.Nullable(Of Long),  _
-                    ByVal Original_demander As String,  _
-                    ByVal Original_tolerance As String,  _
-                    ByVal Original_motify As String,  _
-                    ByVal Original_oesophage As String,  _
-                    ByVal Original_estomac As String,  _
-                    ByVal Original_pylore As String,  _
-                    ByVal Original_bulbe As String,  _
-                    ByVal Original_d1_de_d2 As String,  _
-                    ByVal Original_cf As String,  _
-                    ByVal Original_docteur As String,  _
-                    ByVal Original_more_info As String,  _
-                    ByVal Original_Lacmuqueux As String,  _
-                    ByVal Original_Grossetuberosite As String,  _
-                    ByVal Original_Fundus As String,  _
-                    ByVal Original_Antre As String,  _
-                    ByVal Original_DateResult As Global.System.Nullable(Of Date),  _
-                    ByVal Original_Doctor_ID As Global.System.Nullable(Of Decimal),  _
-                    ByVal Original_Conclusion As String,  _
-                    ByVal Original_Introduction As String,  _
-                    ByVal Original_Indication As String,  _
-                    ByVal Original_Medication As String,  _
-                    ByVal Original_Fentanyl As String,  _
-                    ByVal Original_Propofol As String,  _
-                    ByVal Original_Xylocainegel As String,  _
-                    ByVal Original_Esophagus As String,  _
-                    ByVal Original_Stomach As String,  _
-                    ByVal Original_Assessment As String) As Integer
-            Return Me.Update(ppatientid, request_id, demander, tolerance, motify, oesophage, estomac, pylore, bulbe, d1_de_d2, cf, docteur, more_info, Lacmuqueux, Grossetuberosite, Fundus, Antre, DateResult, Doctor_ID, Conclusion, Introduction, Indication, Medication, Fentanyl, Propofol, Xylocainegel, Esophagus, Stomach, Assessment, Original_naso_id, Original_ppatientid, Original_request_id, Original_demander, Original_tolerance, Original_motify, Original_oesophage, Original_estomac, Original_pylore, Original_bulbe, Original_d1_de_d2, Original_cf, Original_docteur, Original_more_info, Original_Lacmuqueux, Original_Grossetuberosite, Original_Fundus, Original_Antre, Original_DateResult, Original_Doctor_ID, Original_Conclusion, Original_Introduction, Original_Indication, Original_Medication, Original_Fentanyl, Original_Propofol, Original_Xylocainegel, Original_Esophagus, Original_Stomach, Original_Assessment, Original_naso_id)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -29669,9 +29427,9 @@ Namespace DSExaminationTableAdapters
                 "TEM.ShowName, C.Conclusion, C.Introduction, C.Indication, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                    "& _ 
                 "     C.Fentanyl, C.Propofol, C.Xylocainegel, C.Rectalexam, C.Finding, C.Impressi"& _ 
                 "on, C.Colo_Procedure, C.IsAnesthesia"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            tblcoloscopy AS C INNER JO"& _ 
-                "IN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         tblpatient AS P ON C.ppatientid = P.ppatientid INNE"& _ 
-                "R JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         USERS_SYSTEM ON C.Doctor_ID = USERS_SYSTEM.User"& _ 
-                "ID"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (C.request_id = @requestid)"
+                "IN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         tblpatient AS P ON C.ppatientid = P.patientid INNER"& _ 
+                " JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         USERS_SYSTEM ON C.Doctor_ID = USERS_SYSTEM.UserI"& _ 
+                "D"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (C.request_id = @requestid)"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@requestid", Global.System.Data.SqlDbType.BigInt, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "request_id", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(2) = New Global.System.Data.SqlClient.SqlCommand
@@ -30820,76 +30578,6 @@ Namespace DSExaminationTableAdapters
                     Me.Adapter.UpdateCommand.Connection.Close
                 End If
             End Try
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update( _
-                    ByVal request_id As Global.System.Nullable(Of Long),  _
-                    ByVal ppatientid As Global.System.Nullable(Of Long),  _
-                    ByVal duree As String,  _
-                    ByVal eva As String,  _
-                    ByVal preparation As String,  _
-                    ByVal demander As String,  _
-                    ByVal tolerance As String,  _
-                    ByVal is_anethegiste As Global.System.Nullable(Of Boolean),  _
-                    ByVal anethegiste As String,  _
-                    ByVal motiy As String,  _
-                    ByVal caecum As String,  _
-                    ByVal colon_droit As String,  _
-                    ByVal colon_transverse As String,  _
-                    ByVal colon_gauche As String,  _
-                    ByVal sigmoide As String,  _
-                    ByVal rectum As String,  _
-                    ByVal docteur As String,  _
-                    ByVal more_info As String,  _
-                    ByVal DateResult As Global.System.Nullable(Of Date),  _
-                    ByVal Doctor_ID As Global.System.Nullable(Of Decimal),  _
-                    ByVal Conclusion As String,  _
-                    ByVal Introduction As String,  _
-                    ByVal Indication As String,  _
-                    ByVal Fentanyl As String,  _
-                    ByVal Propofol As String,  _
-                    ByVal Xylocainegel As String,  _
-                    ByVal Rectalexam As String,  _
-                    ByVal Finding As String,  _
-                    ByVal Impression As String,  _
-                    ByVal Colo_Procedure As String,  _
-                    ByVal IsAnesthesia As String,  _
-                    ByVal Original_colo_id As Long,  _
-                    ByVal Original_request_id As Global.System.Nullable(Of Long),  _
-                    ByVal Original_ppatientid As Global.System.Nullable(Of Long),  _
-                    ByVal Original_duree As String,  _
-                    ByVal Original_eva As String,  _
-                    ByVal Original_preparation As String,  _
-                    ByVal Original_demander As String,  _
-                    ByVal Original_tolerance As String,  _
-                    ByVal Original_is_anethegiste As Global.System.Nullable(Of Boolean),  _
-                    ByVal Original_anethegiste As String,  _
-                    ByVal Original_motiy As String,  _
-                    ByVal Original_caecum As String,  _
-                    ByVal Original_colon_droit As String,  _
-                    ByVal Original_colon_transverse As String,  _
-                    ByVal Original_colon_gauche As String,  _
-                    ByVal Original_sigmoide As String,  _
-                    ByVal Original_rectum As String,  _
-                    ByVal Original_docteur As String,  _
-                    ByVal Original_more_info As String,  _
-                    ByVal Original_DateResult As Global.System.Nullable(Of Date),  _
-                    ByVal Original_Doctor_ID As Global.System.Nullable(Of Decimal),  _
-                    ByVal Original_Conclusion As String,  _
-                    ByVal Original_Introduction As String,  _
-                    ByVal Original_Indication As String,  _
-                    ByVal Original_Fentanyl As String,  _
-                    ByVal Original_Propofol As String,  _
-                    ByVal Original_Xylocainegel As String,  _
-                    ByVal Original_Rectalexam As String,  _
-                    ByVal Original_Finding As String,  _
-                    ByVal Original_Impression As String,  _
-                    ByVal Original_Colo_Procedure As String,  _
-                    ByVal Original_IsAnesthesia As String) As Integer
-            Return Me.Update(request_id, ppatientid, duree, eva, preparation, demander, tolerance, is_anethegiste, anethegiste, motiy, caecum, colon_droit, colon_transverse, colon_gauche, sigmoide, rectum, docteur, more_info, DateResult, Doctor_ID, Conclusion, Introduction, Indication, Fentanyl, Propofol, Xylocainegel, Rectalexam, Finding, Impression, Colo_Procedure, IsAnesthesia, Original_colo_id, Original_request_id, Original_ppatientid, Original_duree, Original_eva, Original_preparation, Original_demander, Original_tolerance, Original_is_anethegiste, Original_anethegiste, Original_motiy, Original_caecum, Original_colon_droit, Original_colon_transverse, Original_colon_gauche, Original_sigmoide, Original_rectum, Original_docteur, Original_more_info, Original_DateResult, Original_Doctor_ID, Original_Conclusion, Original_Introduction, Original_Indication, Original_Fentanyl, Original_Propofol, Original_Xylocainegel, Original_Rectalexam, Original_Finding, Original_Impression, Original_Colo_Procedure, Original_IsAnesthesia, Original_colo_id)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -32265,8 +31953,8 @@ Namespace DSExaminationTableAdapters
                 "e, E.la_vessie, E.more_info, E.ResultOfEcho, E.DateResult, E.Doctor_ID, E.Doctor"& _ 
                 "Name, USERS_SYSTEM.ShowName, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                  USERS_SYSTEM.Signe, E.ExamBy"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"F"& _ 
                 "ROM     tblecho AS E INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                  tblpatient AS P ON E.ppatient"& _ 
-                "id = P.ppatientid INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                  USERS_SYSTEM ON E.Doctor_ID = US"& _ 
-                "ERS_SYSTEM.UserID"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE  (E.request_id = @requestid)"
+                "id = P.patientid INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                  USERS_SYSTEM ON E.Doctor_ID = USE"& _ 
+                "RS_SYSTEM.UserID"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE  (E.request_id = @requestid)"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@requestid", Global.System.Data.SqlDbType.BigInt, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "request_id", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(2) = New Global.System.Data.SqlClient.SqlCommand
@@ -32999,52 +32687,6 @@ Namespace DSExaminationTableAdapters
                     Me.Adapter.UpdateCommand.Connection.Close
                 End If
             End Try
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update( _
-                    ByVal request_id As Global.System.Nullable(Of Long),  _
-                    ByVal ppatientid As Global.System.Nullable(Of Long),  _
-                    ByVal demander As String,  _
-                    ByVal indication As String,  _
-                    ByVal le_foie As String,  _
-                    ByVal la_veine As String,  _
-                    ByVal la_vesicule As String,  _
-                    ByVal les_voies As String,  _
-                    ByVal le_pancreas As String,  _
-                    ByVal la_rate As String,  _
-                    ByVal les_reins As String,  _
-                    ByVal la_prostate As String,  _
-                    ByVal la_vessie As String,  _
-                    ByVal more_info As String,  _
-                    ByVal ResultOfEcho As String,  _
-                    ByVal DateResult As Global.System.Nullable(Of Date),  _
-                    ByVal Doctor_ID As Global.System.Nullable(Of Decimal),  _
-                    ByVal DoctorName As String,  _
-                    ByVal ExamBy As String,  _
-                    ByVal Original_echo_id As Long,  _
-                    ByVal Original_request_id As Global.System.Nullable(Of Long),  _
-                    ByVal Original_ppatientid As Global.System.Nullable(Of Long),  _
-                    ByVal Original_demander As String,  _
-                    ByVal Original_indication As String,  _
-                    ByVal Original_le_foie As String,  _
-                    ByVal Original_la_veine As String,  _
-                    ByVal Original_la_vesicule As String,  _
-                    ByVal Original_les_voies As String,  _
-                    ByVal Original_le_pancreas As String,  _
-                    ByVal Original_la_rate As String,  _
-                    ByVal Original_les_reins As String,  _
-                    ByVal Original_la_prostate As String,  _
-                    ByVal Original_la_vessie As String,  _
-                    ByVal Original_more_info As String,  _
-                    ByVal Original_ResultOfEcho As String,  _
-                    ByVal Original_DateResult As Global.System.Nullable(Of Date),  _
-                    ByVal Original_Doctor_ID As Global.System.Nullable(Of Decimal),  _
-                    ByVal Original_DoctorName As String,  _
-                    ByVal Original_ExamBy As String) As Integer
-            Return Me.Update(request_id, ppatientid, demander, indication, le_foie, la_veine, la_vesicule, les_voies, le_pancreas, la_rate, les_reins, la_prostate, la_vessie, more_info, ResultOfEcho, DateResult, Doctor_ID, DoctorName, ExamBy, Original_echo_id, Original_request_id, Original_ppatientid, Original_demander, Original_indication, Original_le_foie, Original_la_veine, Original_la_vesicule, Original_les_voies, Original_le_pancreas, Original_la_rate, Original_les_reins, Original_la_prostate, Original_la_vessie, Original_more_info, Original_ResultOfEcho, Original_DateResult, Original_Doctor_ID, Original_DoctorName, Original_ExamBy, Original_echo_id)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -36123,9 +35765,9 @@ Namespace DSExaminationTableAdapters
                 ", E.la_prostate, E.la_vessie, E.more_info, E.ResultOfEcho, E.DateResult, E.Docto"& _ 
                 "r_ID, USERS_SYSTEM.ShowName, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         USERS_SYSTEM.Signe, E.Ex"& _ 
                 "amBy, E.DoctorName"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            tblecho AS E INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                   "& _ 
-                "      tblpatient AS P ON E.ppatientid = P.ppatientid INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"               "& _ 
-                "          USERS_SYSTEM ON E.Doctor_ID = USERS_SYSTEM.UserID"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (E.req"& _ 
-                "uest_id = @requestid)"
+                "      tblpatient AS P ON E.ppatientid = P.patientid INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                "& _ 
+                "         USERS_SYSTEM ON E.Doctor_ID = USERS_SYSTEM.UserID"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (E.requ"& _ 
+                "est_id = @requestid)"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@requestid", Global.System.Data.SqlDbType.BigInt, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "request_id", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
@@ -36346,8 +35988,8 @@ Namespace DSExaminationTableAdapters
                 "on, F.Medication, F.Fentanyl, F.Propofol, F.Xylocainegel, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                    "& _ 
                 "     F.Esophagus, F.StomachandDuodenum, F.Assessment"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            tblfibrosc"& _ 
                 "opy AS F INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         tblpatient AS P ON F.ppatientid = "& _ 
-                "P.ppatientid INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         USERS_SYSTEM ON F.Doctor_ID = "& _ 
-                "USERS_SYSTEM.UserID"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (F.request_id = @requestid)"
+                "P.patientid INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         USERS_SYSTEM ON F.Doctor_ID = U"& _ 
+                "SERS_SYSTEM.UserID"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (F.request_id = @requestid)"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@requestid", Global.System.Data.SqlDbType.BigInt, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "request_id", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
@@ -37084,13 +36726,6 @@ Namespace DSExaminationTableAdapters
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal item_name As String, ByVal Original_item_id As Integer, ByVal Original_item_name As String) As Integer
-            Return Me.Update(item_name, Original_item_id, Original_item_name, Original_item_id)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, false)>  _
         Public Overloads Overridable Function DeleteBloodCheck(ByVal Original_item_id As Integer) As Integer
             Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(1)
@@ -37673,13 +37308,6 @@ Namespace DSExaminationTableAdapters
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal request_id As Global.System.Nullable(Of Long), ByVal physicalcheckid As Global.System.Nullable(Of Integer), ByVal note As String, ByVal Original_exam_id As Long, ByVal Original_request_id As Global.System.Nullable(Of Long), ByVal Original_physicalcheckid As Global.System.Nullable(Of Integer), ByVal Original_note As String) As Integer
-            Return Me.Update(request_id, physicalcheckid, note, Original_exam_id, Original_request_id, Original_physicalcheckid, Original_note, Original_exam_id)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, false)>  _
         Public Overloads Overridable Function DeleteExam(ByVal Original_exam_id As Long) As Integer
             Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(1)
@@ -37954,9 +37582,9 @@ Namespace DSExaminationTableAdapters
                 "M.Signe, N.Conclusion, N.Introduction, N.Indication, N.Medication, N.Fentanyl, N"& _ 
                 ".Propofol, N.Xylocainegel, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         N.Esophagus, N.Stomach, N."& _ 
                 "Assessment"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            tblnasogastro AS N INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                     "& _ 
-                "    tblpatient AS P ON N.ppatientid = P.ppatientid INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                 "& _ 
-                "        USERS_SYSTEM ON N.Doctor_ID = USERS_SYSTEM.UserID"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (N.reque"& _ 
-                "st_id = @requestid)"
+                "    tblpatient AS P ON N.ppatientid = P.patientid INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                  "& _ 
+                "       USERS_SYSTEM ON N.Doctor_ID = USERS_SYSTEM.UserID"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (N.reques"& _ 
+                "t_id = @requestid)"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@requestid", Global.System.Data.SqlDbType.BigInt, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "request_id", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
@@ -38354,9 +37982,9 @@ Namespace DSExaminationTableAdapters
                 "SYSTEM.Signe, C.Conclusion, C.Introduction, C.Indication, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                    "& _ 
                 "     C.Fentanyl, C.Propofol, C.Xylocainegel, C.Rectalexam, C.Finding, C.Impressi"& _ 
                 "on, C.Colo_Procedure, C.IsAnesthesia"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            tblcoloscopy AS C INNER JO"& _ 
-                "IN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         tblpatient AS P ON C.ppatientid = P.ppatientid INNE"& _ 
-                "R JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         USERS_SYSTEM ON C.Doctor_ID = USERS_SYSTEM.User"& _ 
-                "ID"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (C.request_id = @requestid)"
+                "IN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         tblpatient AS P ON C.ppatientid = P.patientid INNER"& _ 
+                " JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         USERS_SYSTEM ON C.Doctor_ID = USERS_SYSTEM.UserI"& _ 
+                "D"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (C.request_id = @requestid)"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@requestid", Global.System.Data.SqlDbType.BigInt, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "request_id", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub

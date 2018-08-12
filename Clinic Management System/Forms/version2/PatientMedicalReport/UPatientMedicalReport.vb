@@ -54,37 +54,39 @@ Public Class UPatientMedicalReport
         Else
             ' Dim PatientTable As DataTable
             'Dim PatientID As Long = Me.GridPatientConsult.GetRow.Cells("ppatientid").Value
-            PatientTable = DA_Patient.SelectPatientByPID(CInt(Me.GridPatientConsult.GetRow.Cells("ppatientid").Value))
-            PatientID = PatientTable.Rows(0).Item("ppatientid")
-
+            PatientTable = DA_Patient.SelectPatientByID(CInt(Me.GridPatientConsult.GetRow.Cells("patientid").Value))
+            'PatientID = PatientTable.Rows(0).Item("ppatientid")
+            Dim PatientIDV1 As Double = GridPatientConsult.GetRow.Cells("patientid").Value
+            'MessageBox.Show(PatientIDV1 & "   " & PatientID)
             Dim RptRecord As New RptPatientRecord
             ' Dim RptViewer As New FormReportViewer
 
 
-            Dim ComplaintTable As DataTable = DA_Complaint.SelectByPatientID(PatientID)
-            Dim HistoryTable As DataTable = DA_History.SelectByPatientID(PatientID)
-            Dim PrescriptionTable As DataTable = DA_Prescription.SelectByPatientID(PatientID)
+            Dim ComplaintTable As DataTable = DA_Complaint.SelectByPatientID(PatientIDV1)
+            Dim HistoryTable As DataTable = DA_History.SelectByPatientID(PatientIDV1)
+            Dim PrescriptionTable As DataTable = DA_Prescription.SelectByPatientID(PatientIDV1)
 
-            Dim BiologyTable As DataTable = DA_Biology.SelectByPatientID(PatientID)
-            Dim FibroTable As DataTable = DA_Fibroscopy.SelectByPatientID(PatientID)
-            Dim ColoTable As DataTable = DA_Coloscopy.SelectByPatientID(PatientID)
+            Dim BiologyTable As DataTable = DA_Biology.SelectByPatientID(PatientIDV1)
+            Dim FibroTable As DataTable = DA_Fibroscopy.SelectByPatientID(PatientIDV1)
+            Dim ColoTable As DataTable = DA_Coloscopy.SelectByPatientID(PatientIDV1)
 
-            Dim NasoTable As DataTable = DA_Nasogastro.SelectByPatientID(PatientID)
+            Dim NasoTable As DataTable = DA_Nasogastro.SelectByPatientID(PatientIDV1)
 
-            Dim EchoTable As DataTable = DA_Echo.SelectByPatientID(PatientID)
+            Dim EchoTable As DataTable = DA_Echo.SelectByPatientID(PatientIDV1)
 
-            Dim ScanTable As DataTable = DA_Scan.SelectByPatientID(PatientID)
+            Dim ScanTable As DataTable = DA_Scan.SelectByPatientID(PatientIDV1)
 
-            Dim FibroScan As DataTable = DA_FibroScan.GetDataByPatientID(PatientID) 'SelectByPatientID(PatientID)
+            Dim FibroScan As DataTable = DA_FibroScan.GetDataByPatientID(PatientIDV1) 'SelectByPatientID(PatientID)
 
-            Dim MRITable As DataTable = DA_MRI.SelectByPatientID(PatientID)
+            Dim MRITable As DataTable = DA_MRI.SelectByPatientID(PatientIDV1)
 
-            Dim CAAnaPath As DataTable = DA_CFAnaPath.GetData(PatientID)
-            Dim PresRemark As DataTable = DA_PrescriptionRemark.SelectPrescriptionByPatientID(PatientID)
-            Dim BreatTestTable As DataTable = DA_BreathTest.SelectBreathTestByPatientNo(CDbl(GridPatientConsult.GetRow.Cells("patientid").Value))
+            Dim CAAnaPath As DataTable = DA_CFAnaPath.GetData(PatientIDV1)
+            Dim PresRemark As DataTable = DA_PrescriptionRemark.SelectPrescriptionByPatientID(PatientIDV1)
+            Dim BreatTestTable As DataTable = DA_BreathTest.SelectBreathTestByPatientNo(PatientIDV1)
 
-            Dim PhysicalTable As DataTable = DA_Physical.SelectByPatientID(PatientID)
+            Dim PhysicalTable As DataTable = DA_Physical.SelectByPatientID(PatientIDV1)
             RptRecord.Database.Tables("Patient").SetDataSource(PatientTable)
+            RptRecord.Subreports("PrescriptionRemark").SetDataSource(PresRemark)
             RptRecord.Subreports("Complaint").Database.Tables("Complaint").SetDataSource(ComplaintTable)
             RptRecord.Subreports("History").Database.Tables("History").SetDataSource(HistoryTable)
             RptRecord.Subreports("Prescription").Database.Tables("PrescriptionDetail").SetDataSource(PrescriptionTable)
@@ -98,7 +100,7 @@ Public Class UPatientMedicalReport
             RptRecord.Subreports("MRI").Database.Tables("MRI").SetDataSource(MRITable)
             RptRecord.Subreports("Physical").Database.Tables("PhysicalExam").SetDataSource(PhysicalTable)
             RptRecord.Subreports("ACAnaPath").Database.Tables("CFAnaPath").SetDataSource(CAAnaPath)
-            RptRecord.Subreports("PrescriptionRemark").SetDataSource(PresRemark)
+
             RptRecord.Subreports("UreaBreathTest").Database.Tables("TblBreathTest").SetDataSource(BreatTestTable)
             Me.CRPatientDocViewer.ReportSource = RptRecord
 
@@ -156,7 +158,7 @@ Public Class UPatientMedicalReport
         Dim RptInfoTable As New DataTable
         RptInfoTable = DA_PrescriptionHistory.SelectPrescriptionByID(CLng(Me.GridPatientConsult.GetRow.Cells("prescriptionid").Value.ToString))
         Dim DoctorID As Integer = CInt(RptInfoTable.Rows(0).Item("doctorid"))
-        RptPatientTable = DA_PatientHistory.SelectPatient(CLng(Me.GridPatientConsult.GetRow.Cells("ppatientid").Value))
+        RptPatientTable = DA_PatientHistory.GetDataByPatientUse(CLng(Me.GridPatientConsult.GetRow.Cells("patientid").Value))
         Dim RptOrdinanceTable As New DataTable
         Dim DA_Ordinance As New DS_InvoiceTableAdapters.tblPrescriptionTableAdapter
         'Dim DoctorName As String = DA_Doctor.SelectDoctorByID(DoctorID).Rows(0).Item("Doctor_Name").ToString

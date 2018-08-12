@@ -709,7 +709,7 @@ Partial Class NewPrescription
         Me.Label15.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.Label15.Location = New System.Drawing.Point(372, 23)
         Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(52, 22)
+        Me.Label15.Size = New System.Drawing.Size(51, 22)
         Me.Label15.TabIndex = 52
         Me.Label15.Text = "Result"
         Me.Label15.TextAlign = System.Drawing.ContentAlignment.MiddleLeft

@@ -78,7 +78,7 @@
             Exit Sub
         Else
             'txtno
-            Me.lblpatientid.Text = TblPatient.Rows(0).Item("ppatientid")
+
             'Me.lblpatientid.Text = patientID
             Me.txtname.Text = TblPatient.Rows(0).Item("pname")
             Me.txtsex.Text = TblPatient.Rows(0).Item("pgender")
@@ -130,7 +130,7 @@
         If MessageBox.Show("Do you want to save Para-exam history?", "Para-History", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
             ' Insert Request
             'If LblRequestID.Text = "0" Then
-            DA_Request.InsertRequest(CLng(Me.lblpatientid.Text), FormatDateTime(Me.dtrequest.Value.Date, DateFormat.ShortDate), 16, True, True, True, True, True, True, True, True, "Result Para exam from other place.", 0, CboDiagnosis.Text, True)
+            DA_Request.InsertRequest(CLng(Me.txtno.Text), FormatDateTime(Me.dtrequest.Value.Date, DateFormat.ShortDate), 16, True, True, True, True, True, True, True, True, "Result Para exam from other place.", 0, CboDiagnosis.Text, True)
             'End If
 
             ' Insert Scan
@@ -333,7 +333,7 @@
         'Else
         '    DA_EchoConclusion.UpdateEchoConclusion(txtechomoreinfo.Text, LblRequestID.Text)
         'End If
-        DA_Echo.InsertEcho(LblRequestID.Text, CLng(Me.lblpatientid.Text), dtrequest.Value.Date, "", "", "", "", "", "", "", "", "", "", txtechomoreinfo.Text, "", dtrequest.Value.Date, 1, "", "")
+        DA_Echo.InsertEcho(LblRequestID.Text, CLng(Me.txtno.Text), dtrequest.Value.Date, "", "", "", "", "", "", "", "", "", "", txtechomoreinfo.Text, "", dtrequest.Value.Date, 1, "", "")
     End Sub
     Sub GetConclustionEcho(ByVal RequesId As Double)
         Dim Tbl As DataTable = DA_EchoConclusion.SelectConclusionByRequestID(RequesId)

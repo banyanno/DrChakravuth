@@ -3,7 +3,7 @@
     Dim DA_Waiting As New DSPAtientTableAdapters.tblwaitingTableAdapter
     Dim UPatientInfo As PatientInformation
     Dim Appoint As Appointment
-    Dim ppatientid As Integer
+    Dim patientid As Integer
     ' Complaint Data.........................
     Dim DA_Complaint As New DSComplaintTableAdapters.tblcomplaintTableAdapter
     Dim DA_PreComplaintDetail As New DSComplaintTableAdapters.tblprecomplaintdetailTableAdapter
@@ -54,8 +54,8 @@
         InitializeComponent()
         Me.Appoint = Appoint
         ' Add any initialization after the InitializeComponent() call.
-        ppatientid = Appoint.AppointmentList.GetRow.Cells("ppatientid").Value
-        SetPatientData(ppatientid)
+        patientid = Appoint.AppointmentList.GetRow.Cells("Patient_ID").Value
+        SetPatientData(patientid)
     End Sub
     Sub New(ByVal PatientInforPanel As PatientInformation)
 
@@ -63,8 +63,8 @@
         InitializeComponent()
         Me.UPatientInfo = PatientInforPanel
         ' Add any initialization after the InitializeComponent() call.
-        ppatientid = UPatientInfo.GridPatientInfo.CurrentRow.Cells("ppatientid").Value
-        SetPatientData(ppatientid)
+        patientid = UPatientInfo.GridPatientInfo.CurrentRow.Cells("patientid").Value
+        SetPatientData(patientid)
     End Sub
 
     Sub New(ByVal DoctorExam As DashbordDotorRequestExamination)
@@ -73,14 +73,14 @@
         InitializeComponent()
         Me.DoctorExam = DoctorExam
         ' Add any initialization after the InitializeComponent() call.
-        ppatientid = DoctorExam.RequestList.GetRow.Cells("ppatientid").Value
-        SetPatientData(ppatientid)
+        patientid = DoctorExam.RequestList.GetRow.Cells("patientid").Value
+        SetPatientData(patientid)
     End Sub
     Sub SetPatientData(ByVal patientID As Integer)
         'Try
         Dim Patient As New DataTable
 
-        Patient = DA_Patient.SelectPatientByPID(patientID) '(UPatientInfo.GridPatientInfo.CurrentRow.Cells("ppatientid").Value)
+        Patient = DA_Patient.SelectPatientByID(patientID) '(UPatientInfo.GridPatientInfo.CurrentRow.Cells("ppatientid").Value)
         'MsgBox(Patient.Rows.Count & "    " & UPatientInfo.GridPatientInfo.CurrentRow.Cells("ppatientid").Value)
         Me.txtno.Text = Patient.Rows(0).Item("patientid")
         Me.txtname.Text = Patient.Rows(0).Item("pname")
@@ -125,7 +125,7 @@
         If ValidateDateField(dtwaiting, "", Err) = False Then Exit Sub
         If ValidateTextField(txtwaitno, "", Err) = False Then Exit Sub
         If MessageBox.Show("Do you want to send this patient to the waiting list for doctor consultation?", "Send to doctor consultation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
-            If DA_Waiting.InsertWaiting(ppatientid, Me.txtwaitno.Text, Me.txtdesc.Text, FormatDateTime(Me.dtwaiting.Value, DateFormat.ShortDate), 1) = 1 Then
+            If DA_Waiting.InsertWaiting(patientid, Me.txtwaitno.Text, Me.txtdesc.Text, FormatDateTime(Me.dtwaiting.Value, DateFormat.ShortDate), 1) = 1 Then
                 deletePreTable()
                 'If Me.CboComplaint.Text <> "" Then
                 If GridPreComplaint.RowCount > 0 Then
@@ -214,8 +214,8 @@
         Else
             Dim PatientTable As DataTable
             Dim PatientID As Long
-            PatientTable = DAPatient.SelectPatientByPID(ppatientid)
-            PatientID = PatientTable.Rows(0).Item("ppatientid")
+            PatientTable = DAPatient.SelectPatientByID(txtno.Text)
+            PatientID = PatientTable.Rows(0).Item("patientid")
 
             Dim RptRecord As New RptPatientRecord
             ' Dim RptViewer As New FormReportViewer

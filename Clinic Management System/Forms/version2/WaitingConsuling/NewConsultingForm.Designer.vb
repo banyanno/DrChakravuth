@@ -32,8 +32,6 @@ Partial Class NewConsultingForm
         Me.lblUserID = New System.Windows.Forms.Label
         Me.Label17 = New System.Windows.Forms.Label
         Me.TxtAge = New System.Windows.Forms.TextBox
-        Me.LblAutoNo = New System.Windows.Forms.Label
-        Me.LblPatientNo = New System.Windows.Forms.Label
         Me.Label5 = New System.Windows.Forms.Label
         Me.lblPrintPrescription = New System.Windows.Forms.Label
         Me.Label3 = New System.Windows.Forms.Label
@@ -146,8 +144,6 @@ Partial Class NewConsultingForm
         Me.GroupBox1.Controls.Add(Me.lblUserID)
         Me.GroupBox1.Controls.Add(Me.Label17)
         Me.GroupBox1.Controls.Add(Me.TxtAge)
-        Me.GroupBox1.Controls.Add(Me.LblAutoNo)
-        Me.GroupBox1.Controls.Add(Me.LblPatientNo)
         Me.GroupBox1.Controls.Add(Me.Label5)
         Me.GroupBox1.Controls.Add(Me.lblPrintPrescription)
         Me.GroupBox1.Controls.Add(Me.Label3)
@@ -170,9 +166,9 @@ Partial Class NewConsultingForm
         Me.lblUserID.AutoSize = True
         Me.lblUserID.Location = New System.Drawing.Point(954, 30)
         Me.lblUserID.Name = "lblUserID"
-        Me.lblUserID.Size = New System.Drawing.Size(58, 16)
+        Me.lblUserID.Size = New System.Drawing.Size(49, 16)
         Me.lblUserID.TabIndex = 48
-        Me.lblUserID.Text = "Label18"
+        Me.lblUserID.Text = "UserID"
         Me.lblUserID.Visible = False
         '
         'Label17
@@ -195,26 +191,6 @@ Partial Class NewConsultingForm
         Me.TxtAge.ReadOnly = True
         Me.TxtAge.Size = New System.Drawing.Size(72, 26)
         Me.TxtAge.TabIndex = 3
-        '
-        'LblAutoNo
-        '
-        Me.LblAutoNo.AutoSize = True
-        Me.LblAutoNo.Location = New System.Drawing.Point(830, 32)
-        Me.LblAutoNo.Name = "LblAutoNo"
-        Me.LblAutoNo.Size = New System.Drawing.Size(58, 16)
-        Me.LblAutoNo.TabIndex = 42
-        Me.LblAutoNo.Text = "Label17"
-        Me.LblAutoNo.Visible = False
-        '
-        'LblPatientNo
-        '
-        Me.LblPatientNo.AutoSize = True
-        Me.LblPatientNo.Location = New System.Drawing.Point(918, 29)
-        Me.LblPatientNo.Name = "LblPatientNo"
-        Me.LblPatientNo.Size = New System.Drawing.Size(15, 16)
-        Me.LblPatientNo.TabIndex = 18
-        Me.LblPatientNo.Text = "0"
-        Me.LblPatientNo.Visible = False
         '
         'Label5
         '
@@ -261,9 +237,9 @@ Partial Class NewConsultingForm
         Me.LblWaiting.AutoSize = True
         Me.LblWaiting.Location = New System.Drawing.Point(1050, 34)
         Me.LblWaiting.Name = "LblWaiting"
-        Me.LblWaiting.Size = New System.Drawing.Size(58, 16)
+        Me.LblWaiting.Size = New System.Drawing.Size(74, 16)
         Me.LblWaiting.TabIndex = 41
-        Me.LblWaiting.Text = "Label17"
+        Me.LblWaiting.Text = "WaitingNo"
         Me.LblWaiting.Visible = False
         '
         'txtno
@@ -465,9 +441,9 @@ Partial Class NewConsultingForm
         'Button1
         '
         Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button1.Location = New System.Drawing.Point(507, 23)
+        Me.Button1.Location = New System.Drawing.Point(502, 20)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(44, 23)
+        Me.Button1.Size = New System.Drawing.Size(44, 28)
         Me.Button1.TabIndex = 36
         Me.Button1.Text = "-"
         Me.Button1.UseVisualStyleBackColor = True
@@ -475,9 +451,9 @@ Partial Class NewConsultingForm
         'Button2
         '
         Me.Button2.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button2.Location = New System.Drawing.Point(441, 23)
+        Me.Button2.Location = New System.Drawing.Point(441, 20)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(57, 23)
+        Me.Button2.Size = New System.Drawing.Size(57, 28)
         Me.Button2.TabIndex = 35
         Me.Button2.Text = "+"
         Me.Button2.UseVisualStyleBackColor = True
@@ -685,7 +661,7 @@ Partial Class NewConsultingForm
         Me.BtnRemovePrePhysical.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BtnRemovePrePhysical.Location = New System.Drawing.Point(620, 17)
         Me.BtnRemovePrePhysical.Name = "BtnRemovePrePhysical"
-        Me.BtnRemovePrePhysical.Size = New System.Drawing.Size(57, 23)
+        Me.BtnRemovePrePhysical.Size = New System.Drawing.Size(57, 27)
         Me.BtnRemovePrePhysical.TabIndex = 14
         Me.BtnRemovePrePhysical.Text = "-"
         Me.BtnRemovePrePhysical.UseVisualStyleBackColor = True
@@ -695,7 +671,7 @@ Partial Class NewConsultingForm
         Me.BtnAddPrePhysical.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BtnAddPrePhysical.Location = New System.Drawing.Point(557, 17)
         Me.BtnAddPrePhysical.Name = "BtnAddPrePhysical"
-        Me.BtnAddPrePhysical.Size = New System.Drawing.Size(57, 23)
+        Me.BtnAddPrePhysical.Size = New System.Drawing.Size(57, 27)
         Me.BtnAddPrePhysical.TabIndex = 13
         Me.BtnAddPrePhysical.Text = "+"
         Me.BtnAddPrePhysical.UseVisualStyleBackColor = True
@@ -1195,7 +1171,6 @@ Partial Class NewConsultingForm
     Friend WithEvents Label35 As System.Windows.Forms.Label
     Friend WithEvents Label51 As System.Windows.Forms.Label
     Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
-    Friend WithEvents LblPatientNo As System.Windows.Forms.Label
     Friend WithEvents lblPrintPrescription As System.Windows.Forms.Label
     Friend WithEvents BtnSavePrint As System.Windows.Forms.Button
     Friend WithEvents dtprescription As System.Windows.Forms.DateTimePicker
@@ -1221,7 +1196,6 @@ Partial Class NewConsultingForm
     Friend WithEvents BtnCancel As System.Windows.Forms.Button
     Friend WithEvents ErrPrescription As System.Windows.Forms.ErrorProvider
     Friend WithEvents LblWaiting As System.Windows.Forms.Label
-    Friend WithEvents LblAutoNo As System.Windows.Forms.Label
     Friend WithEvents UiTabPage6 As Janus.Windows.UI.Tab.UITabPage
     Friend WithEvents GroupBox5 As System.Windows.Forms.GroupBox
     Friend WithEvents UiTabPage7 As Janus.Windows.UI.Tab.UITabPage

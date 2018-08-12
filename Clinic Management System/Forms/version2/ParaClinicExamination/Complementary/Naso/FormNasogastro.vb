@@ -126,7 +126,7 @@
                 Me.DialogResult = Windows.Forms.DialogResult.OK
             End If
         Else
-            If DA_Naso.InsertNaso(CInt(Me.RequestPanel.RequestList.CurrentRow.Cells("ppatientid").Value), CLng(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value), Me.cboNasoDemander.SelectedValue.ToString, Me.txtNasoTolerance.Text, Me.cboNasoMotify.SelectedValue.ToString, Me.txtNasoOeso.Text, Me.txtNasoEsto.Text, Me.txtNasoPylore.Text, Me.txtNasoBulbe.Text, Me.txtNasoD1.Text, IIf(ChAnaPath.Checked, ChAnaPath.Text, ""), Me.cboNasoDocteur.Text, Me.txtnasomoreinfo.Text.ToString, TxtLacMuquex.Text, TxtGrosseTuberose.Text, TxtFundus.Text, TxtAntre.Text, DateResultExam.Value.Date, CInt(cboNasoDocteur.SelectedValue), GetValueConclustion) = 1 Then
+            If DA_Naso.InsertNaso(CInt(Me.RequestPanel.RequestList.CurrentRow.Cells("ppatientid").Value), CLng(LblPatientNo.Text), Me.cboNasoDemander.SelectedValue.ToString, Me.txtNasoTolerance.Text, Me.cboNasoMotify.SelectedValue.ToString, Me.txtNasoOeso.Text, Me.txtNasoEsto.Text, Me.txtNasoPylore.Text, Me.txtNasoBulbe.Text, Me.txtNasoD1.Text, IIf(ChAnaPath.Checked, ChAnaPath.Text, ""), Me.cboNasoDocteur.Text, Me.txtnasomoreinfo.Text.ToString, TxtLacMuquex.Text, TxtGrosseTuberose.Text, TxtFundus.Text, TxtAntre.Text, DateResultExam.Value.Date, CInt(cboNasoDocteur.SelectedValue), GetValueConclustion) = 1 Then
                 MsgBox("A nasogastro has been saved successfully", MsgBoxStyle.OkOnly, "Saved Nasogastro")
                 DA_DOCTOR_FEE.InsertNewDoctorFee(CInt(cboNasoDocteur.SelectedValue), cboNasoDocteur.Text, "Nasogastro", DateResultExam.Value.Date, LblPatientNo.Text, 0, lblPatientName.Text, GetValueConclustion)
                 Me.DialogResult = Windows.Forms.DialogResult.OK

@@ -54,7 +54,6 @@ Partial Class MainDocRequestExam
         Me.GroupBox1 = New System.Windows.Forms.GroupBox
         Me.LblSaveOption = New System.Windows.Forms.Label
         Me.BtnFindPatient = New System.Windows.Forms.Button
-        Me.lblpatientid = New System.Windows.Forms.Label
         Me.txtno = New System.Windows.Forms.TextBox
         Me.Label3 = New System.Windows.Forms.Label
         Me.Label4 = New System.Windows.Forms.Label
@@ -382,7 +381,6 @@ Partial Class MainDocRequestExam
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox1.Controls.Add(Me.LblSaveOption)
         Me.GroupBox1.Controls.Add(Me.BtnFindPatient)
-        Me.GroupBox1.Controls.Add(Me.lblpatientid)
         Me.GroupBox1.Controls.Add(Me.txtno)
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.Label4)
@@ -403,7 +401,7 @@ Partial Class MainDocRequestExam
         'LblSaveOption
         '
         Me.LblSaveOption.AutoSize = True
-        Me.LblSaveOption.Location = New System.Drawing.Point(705, 41)
+        Me.LblSaveOption.Location = New System.Drawing.Point(602, 23)
         Me.LblSaveOption.Name = "LblSaveOption"
         Me.LblSaveOption.Size = New System.Drawing.Size(13, 13)
         Me.LblSaveOption.TabIndex = 42
@@ -420,16 +418,6 @@ Partial Class MainDocRequestExam
         Me.BtnFindPatient.Text = "..."
         Me.BtnFindPatient.UseVisualStyleBackColor = True
         Me.BtnFindPatient.Visible = False
-        '
-        'lblpatientid
-        '
-        Me.lblpatientid.AutoSize = True
-        Me.lblpatientid.Location = New System.Drawing.Point(623, 60)
-        Me.lblpatientid.Name = "lblpatientid"
-        Me.lblpatientid.Size = New System.Drawing.Size(47, 13)
-        Me.lblpatientid.TabIndex = 40
-        Me.lblpatientid.Text = "patientid"
-        Me.lblpatientid.Visible = False
         '
         'txtno
         '
@@ -642,7 +630,6 @@ Partial Class MainDocRequestExam
     Friend WithEvents itemlist As Janus.Windows.GridEX.GridEX
     Friend WithEvents btnDeleteItem As System.Windows.Forms.Button
     Friend WithEvents btnAddItem As System.Windows.Forms.Button
-    Friend WithEvents lblpatientid As System.Windows.Forms.Label
     Friend WithEvents Err As System.Windows.Forms.ErrorProvider
     Friend WithEvents txtmoreinfo As System.Windows.Forms.TextBox
     Friend WithEvents Label9 As System.Windows.Forms.Label

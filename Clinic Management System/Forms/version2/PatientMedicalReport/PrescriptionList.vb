@@ -35,7 +35,7 @@
             Dim RptInfoTable As New DataTable
             RptInfoTable = DA_Prescription.SelectPrescriptionByID(CLng(Me.Prescription_List.CurrentRow.Cells("prescriptionid").Value.ToString))
             Dim DoctorID As Integer = CInt(RptInfoTable.Rows(0).Item("doctorid"))
-            RptPatientTable = DA_Patient.SelectPatient(CLng(Me.HistoryPanel.GridPatientConsult.CurrentRow.Cells("ppatientid").Value))
+            RptPatientTable = DA_Patient.GetDataByPatientUse(CLng(Me.HistoryPanel.GridPatientConsult.CurrentRow.Cells("patientid").Value))
             Dim RptOrdinanceTable As New DataTable
             Dim DA_Ordinance As New DS_InvoiceTableAdapters.tblPrescriptionTableAdapter
             'Dim DoctorName As String = DA_Doctor.SelectDoctorByID(DoctorID).Rows(0).Item("Doctor_Name").ToString

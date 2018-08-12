@@ -66,7 +66,7 @@
     End Sub
 
     Private Sub MainInvoice_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        If DEPART_NAME = "Admin" Then
+        If DEPART_NAME.ToUpper = "Admin2".ToUpper Then
             GroupIncome.Enabled = True
         Else
             GroupIncome.Enabled = False

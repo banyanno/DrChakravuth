@@ -265,7 +265,6 @@ Partial Class MainInvoice
         Me.GroupIncome.Controls.Add(Me.Label3)
         Me.GroupIncome.Controls.Add(Me.Label4)
         Me.GroupIncome.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GroupIncome.Enabled = False
         Me.GroupIncome.Location = New System.Drawing.Point(0, 0)
         Me.GroupIncome.Name = "GroupIncome"
         Me.GroupIncome.Size = New System.Drawing.Size(217, 534)

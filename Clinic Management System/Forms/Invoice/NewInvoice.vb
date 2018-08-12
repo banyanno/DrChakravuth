@@ -42,7 +42,7 @@
         Me.txtinvoiceno.Text = Format(MaxInvoiceNo, "000000")
 
         Dim Patient As New DataTable
-        Patient = DA_Patient.SelectPatientByPID(History.lblpatientId.Text)
+        Patient = DA_Patient.SelectPatientByID(History.lblpatientId.Text)
         Me.txtid.Text = Patient.Rows(0).Item("patientid").ToString
         Me.txtname.Text = Patient.Rows(0).Item("pname").ToString
         Me.txtsex.Text = Patient.Rows(0).Item("pgender").ToString
@@ -181,7 +181,7 @@
         Dim RptMedicineTable As New DataTable
         Dim RptDoctorTable As New DataTable
 
-        RptPatientTable = DA_Patient.SelectPatient(History.lblpatientId.Text)
+        RptPatientTable = DA_Patient.GetDataByPatientUse(History.lblpatientId.Text)
         RptInvoiceTable = DA_RptInvoice.SelectInvoiceByID(InvoiceID)
         RptParaTable = DA_RptPara.SelectParaByInvoiceID(InvoiceID)
         RptMedicineTable = DA_RptMedicine.SelectMedicineOrderByInvoiceID(InvoiceID)

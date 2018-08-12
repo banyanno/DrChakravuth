@@ -54,7 +54,7 @@ SELECT Historyid, history FROM tblhistory WHERE (Historyid = @Historyid)</Comman
               <Mapping SourceColumn="history" DataSetColumn="history" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="cms_databaseConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteMedicalHistory" Modifier="Public" Name="DeleteMedicalHistory" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="DeleteMedicalHistory">
+              <DbSource ConnectionRef="cms_databaseConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteMedicalHistory" Modifier="Public" Name="DeleteMedicalHistory" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteMedicalHistory">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>DELETE FROM [dbo].[tblhistory] WHERE (([Historyid] = @Original_Historyid))</CommandText>
@@ -64,7 +64,7 @@ SELECT Historyid, history FROM tblhistory WHERE (Historyid = @Historyid)</Comman
                   </DbCommand>
                 </DeleteCommand>
               </DbSource>
-              <DbSource ConnectionRef="cms_databaseConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertMedicalHistory" Modifier="Public" Name="InsertMedicalHistory" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="InsertMedicalHistory">
+              <DbSource ConnectionRef="cms_databaseConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertMedicalHistory" Modifier="Public" Name="InsertMedicalHistory" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="InsertMedicalHistory">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>INSERT INTO [dbo].[tblhistory] ([history]) VALUES (@history);
@@ -75,7 +75,7 @@ SELECT Historyid, history FROM tblhistory WHERE (Historyid = @Historyid)</Comman
                   </DbCommand>
                 </InsertCommand>
               </DbSource>
-              <DbSource ConnectionRef="cms_databaseConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateMedicalHistorh" Modifier="Public" Name="UpdateMedicalHistorh" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="UpdateMedicalHistorh">
+              <DbSource ConnectionRef="cms_databaseConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateMedicalHistorh" Modifier="Public" Name="UpdateMedicalHistorh" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="UpdateMedicalHistorh">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE [dbo].[tblhistory] SET [history] = @history WHERE (([Historyid] = @Original_Historyid) AND ([history] = @Original_history));
@@ -267,6 +267,20 @@ SELECT historydetailid, historyid, prescriptionid, note FROM tblhistorydetail WH
                   </DbCommand>
                 </UpdateCommand>
               </DbSource>
+              <DbSource ConnectionRef="cms_databaseConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateMedicalNote" Modifier="Public" Name="UpdateMedicalNote" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="UpdateMedicalNote">
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>UPDATE       tblhistorydetail
+SET                note = @note
+WHERE        (prescriptionid = @Original_prescriptionid); 
+</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="note" ColumnName="note" DataSourceName="cms_database.dbo.tblhistorydetail" DataTypeServer="varchar(500)" DbType="AnsiString" Direction="Input" ParameterName="@note" Precision="0" ProviderType="VarChar" Scale="0" Size="500" SourceColumn="note" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Original_prescriptionid" ColumnName="prescriptionid" DataSourceName="cms_database.dbo.tblhistorydetail" DataTypeServer="bigint" DbType="Int64" Direction="Input" ParameterName="@Original_prescriptionid" Precision="0" ProviderType="BigInt" Scale="0" Size="8" SourceColumn="prescriptionid" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
             </Sources>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tblprehistorydetailTableAdapter" GeneratorDataComponentClassName="tblprehistorydetailTableAdapter" Name="tblprehistorydetail" UserDataComponentName="tblprehistorydetailTableAdapter">
@@ -397,8 +411,8 @@ SELECT preid, patientid, historyid, note FROM tblprehistorydetail WHERE (preid =
         <xs:element name="tblhistory" msprop:Generator_UserTableName="tblhistory" msprop:Generator_RowDeletedName="tblhistoryRowDeleted" msprop:Generator_RowChangedName="tblhistoryRowChanged" msprop:Generator_RowClassName="tblhistoryRow" msprop:Generator_RowChangingName="tblhistoryRowChanging" msprop:Generator_RowEvArgName="tblhistoryRowChangeEvent" msprop:Generator_RowEvHandlerName="tblhistoryRowChangeEventHandler" msprop:Generator_TableClassName="tblhistoryDataTable" msprop:Generator_TableVarName="tabletblhistory" msprop:Generator_RowDeletingName="tblhistoryRowDeleting" msprop:Generator_TablePropName="tblhistory">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Historyid" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="Historyid" msprop:Generator_ColumnVarNameInTable="columnHistoryid" msprop:Generator_ColumnPropNameInRow="Historyid" msprop:Generator_ColumnPropNameInTable="HistoryidColumn" type="xs:int" />
-              <xs:element name="history" msprop:Generator_UserColumnName="history" msprop:Generator_ColumnVarNameInTable="columnhistory" msprop:Generator_ColumnPropNameInRow="history" msprop:Generator_ColumnPropNameInTable="historyColumn">
+              <xs:element name="Historyid" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="Historyid" msprop:Generator_ColumnPropNameInRow="Historyid" msprop:Generator_ColumnVarNameInTable="columnHistoryid" msprop:Generator_ColumnPropNameInTable="HistoryidColumn" type="xs:int" />
+              <xs:element name="history" msprop:Generator_UserColumnName="history" msprop:Generator_ColumnPropNameInRow="history" msprop:Generator_ColumnVarNameInTable="columnhistory" msprop:Generator_ColumnPropNameInTable="historyColumn">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="500" />
@@ -411,17 +425,17 @@ SELECT preid, patientid, historyid, note FROM tblprehistorydetail WHERE (preid =
         <xs:element name="V_MEDICAL_HISTORY" msprop:Generator_UserTableName="V_MEDICAL_HISTORY" msprop:Generator_RowDeletedName="V_MEDICAL_HISTORYRowDeleted" msprop:Generator_RowChangedName="V_MEDICAL_HISTORYRowChanged" msprop:Generator_RowClassName="V_MEDICAL_HISTORYRow" msprop:Generator_RowChangingName="V_MEDICAL_HISTORYRowChanging" msprop:Generator_RowEvArgName="V_MEDICAL_HISTORYRowChangeEvent" msprop:Generator_RowEvHandlerName="V_MEDICAL_HISTORYRowChangeEventHandler" msprop:Generator_TableClassName="V_MEDICAL_HISTORYDataTable" msprop:Generator_TableVarName="tableV_MEDICAL_HISTORY" msprop:Generator_RowDeletingName="V_MEDICAL_HISTORYRowDeleting" msprop:Generator_TablePropName="V_MEDICAL_HISTORY">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="ppatientid" msprop:Generator_UserColumnName="ppatientid" msprop:Generator_ColumnVarNameInTable="columnppatientid" msprop:Generator_ColumnPropNameInRow="ppatientid" msprop:Generator_ColumnPropNameInTable="ppatientidColumn" type="xs:long" />
-              <xs:element name="historydetailid" msprop:Generator_UserColumnName="historydetailid" msprop:Generator_ColumnVarNameInTable="columnhistorydetailid" msprop:Generator_ColumnPropNameInRow="historydetailid" msprop:Generator_ColumnPropNameInTable="historydetailidColumn" type="xs:long" />
-              <xs:element name="historyid" msprop:Generator_UserColumnName="historyid" msprop:Generator_ColumnVarNameInTable="columnhistoryid" msprop:Generator_ColumnPropNameInRow="historyid" msprop:Generator_ColumnPropNameInTable="historyidColumn" type="xs:int" />
-              <xs:element name="history" msprop:Generator_UserColumnName="history" msprop:Generator_ColumnVarNameInTable="columnhistory" msprop:Generator_ColumnPropNameInRow="history" msprop:Generator_ColumnPropNameInTable="historyColumn">
+              <xs:element name="ppatientid" msprop:Generator_UserColumnName="ppatientid" msprop:Generator_ColumnPropNameInRow="ppatientid" msprop:Generator_ColumnVarNameInTable="columnppatientid" msprop:Generator_ColumnPropNameInTable="ppatientidColumn" type="xs:long" />
+              <xs:element name="historydetailid" msprop:Generator_UserColumnName="historydetailid" msprop:Generator_ColumnPropNameInRow="historydetailid" msprop:Generator_ColumnVarNameInTable="columnhistorydetailid" msprop:Generator_ColumnPropNameInTable="historydetailidColumn" type="xs:long" />
+              <xs:element name="historyid" msprop:Generator_UserColumnName="historyid" msprop:Generator_ColumnPropNameInRow="historyid" msprop:Generator_ColumnVarNameInTable="columnhistoryid" msprop:Generator_ColumnPropNameInTable="historyidColumn" type="xs:int" />
+              <xs:element name="history" msprop:Generator_UserColumnName="history" msprop:Generator_ColumnPropNameInRow="history" msprop:Generator_ColumnVarNameInTable="columnhistory" msprop:Generator_ColumnPropNameInTable="historyColumn">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="500" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="note" msprop:Generator_UserColumnName="note" msprop:Generator_ColumnVarNameInTable="columnnote" msprop:Generator_ColumnPropNameInRow="note" msprop:Generator_ColumnPropNameInTable="noteColumn">
+              <xs:element name="note" msprop:Generator_UserColumnName="note" msprop:Generator_ColumnPropNameInRow="note" msprop:Generator_ColumnVarNameInTable="columnnote" msprop:Generator_ColumnPropNameInTable="noteColumn">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="500" />
@@ -434,10 +448,10 @@ SELECT preid, patientid, historyid, note FROM tblprehistorydetail WHERE (preid =
         <xs:element name="tblhistorydetail" msprop:Generator_UserTableName="tblhistorydetail" msprop:Generator_RowDeletedName="tblhistorydetailRowDeleted" msprop:Generator_RowChangedName="tblhistorydetailRowChanged" msprop:Generator_RowClassName="tblhistorydetailRow" msprop:Generator_RowChangingName="tblhistorydetailRowChanging" msprop:Generator_RowEvArgName="tblhistorydetailRowChangeEvent" msprop:Generator_RowEvHandlerName="tblhistorydetailRowChangeEventHandler" msprop:Generator_TableClassName="tblhistorydetailDataTable" msprop:Generator_TableVarName="tabletblhistorydetail" msprop:Generator_RowDeletingName="tblhistorydetailRowDeleting" msprop:Generator_TablePropName="tblhistorydetail">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="historydetailid" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="historydetailid" msprop:Generator_ColumnVarNameInTable="columnhistorydetailid" msprop:Generator_ColumnPropNameInRow="historydetailid" msprop:Generator_ColumnPropNameInTable="historydetailidColumn" type="xs:long" />
-              <xs:element name="historyid" msprop:Generator_UserColumnName="historyid" msprop:Generator_ColumnVarNameInTable="columnhistoryid" msprop:Generator_ColumnPropNameInRow="historyid" msprop:Generator_ColumnPropNameInTable="historyidColumn" type="xs:int" />
-              <xs:element name="prescriptionid" msprop:Generator_UserColumnName="prescriptionid" msprop:Generator_ColumnVarNameInTable="columnprescriptionid" msprop:Generator_ColumnPropNameInRow="prescriptionid" msprop:Generator_ColumnPropNameInTable="prescriptionidColumn" type="xs:long" />
-              <xs:element name="note" msprop:Generator_UserColumnName="note" msprop:Generator_ColumnVarNameInTable="columnnote" msprop:Generator_ColumnPropNameInRow="note" msprop:Generator_ColumnPropNameInTable="noteColumn">
+              <xs:element name="historydetailid" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="historydetailid" msprop:Generator_ColumnPropNameInRow="historydetailid" msprop:Generator_ColumnVarNameInTable="columnhistorydetailid" msprop:Generator_ColumnPropNameInTable="historydetailidColumn" type="xs:long" />
+              <xs:element name="historyid" msprop:Generator_UserColumnName="historyid" msprop:Generator_ColumnPropNameInRow="historyid" msprop:Generator_ColumnVarNameInTable="columnhistoryid" msprop:Generator_ColumnPropNameInTable="historyidColumn" type="xs:int" />
+              <xs:element name="prescriptionid" msprop:Generator_UserColumnName="prescriptionid" msprop:Generator_ColumnPropNameInRow="prescriptionid" msprop:Generator_ColumnVarNameInTable="columnprescriptionid" msprop:Generator_ColumnPropNameInTable="prescriptionidColumn" type="xs:long" />
+              <xs:element name="note" msprop:Generator_UserColumnName="note" msprop:Generator_ColumnPropNameInRow="note" msprop:Generator_ColumnVarNameInTable="columnnote" msprop:Generator_ColumnPropNameInTable="noteColumn">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="500" />
@@ -450,10 +464,10 @@ SELECT preid, patientid, historyid, note FROM tblprehistorydetail WHERE (preid =
         <xs:element name="tblprehistorydetail" msprop:Generator_UserTableName="tblprehistorydetail" msprop:Generator_RowDeletedName="tblprehistorydetailRowDeleted" msprop:Generator_RowChangedName="tblprehistorydetailRowChanged" msprop:Generator_RowClassName="tblprehistorydetailRow" msprop:Generator_RowChangingName="tblprehistorydetailRowChanging" msprop:Generator_RowEvArgName="tblprehistorydetailRowChangeEvent" msprop:Generator_RowEvHandlerName="tblprehistorydetailRowChangeEventHandler" msprop:Generator_TableClassName="tblprehistorydetailDataTable" msprop:Generator_TableVarName="tabletblprehistorydetail" msprop:Generator_RowDeletingName="tblprehistorydetailRowDeleting" msprop:Generator_TablePropName="tblprehistorydetail">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="preid" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="preid" msprop:Generator_ColumnVarNameInTable="columnpreid" msprop:Generator_ColumnPropNameInRow="preid" msprop:Generator_ColumnPropNameInTable="preidColumn" type="xs:long" />
-              <xs:element name="patientid" msprop:Generator_UserColumnName="patientid" msprop:Generator_ColumnVarNameInTable="columnpatientid" msprop:Generator_ColumnPropNameInRow="patientid" msprop:Generator_ColumnPropNameInTable="patientidColumn" type="xs:long" minOccurs="0" />
-              <xs:element name="historyid" msprop:Generator_UserColumnName="historyid" msprop:Generator_ColumnVarNameInTable="columnhistoryid" msprop:Generator_ColumnPropNameInRow="historyid" msprop:Generator_ColumnPropNameInTable="historyidColumn" type="xs:int" minOccurs="0" />
-              <xs:element name="note" msprop:Generator_UserColumnName="note" msprop:Generator_ColumnVarNameInTable="columnnote" msprop:Generator_ColumnPropNameInRow="note" msprop:Generator_ColumnPropNameInTable="noteColumn" minOccurs="0">
+              <xs:element name="preid" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="preid" msprop:Generator_ColumnPropNameInRow="preid" msprop:Generator_ColumnVarNameInTable="columnpreid" msprop:Generator_ColumnPropNameInTable="preidColumn" type="xs:long" />
+              <xs:element name="patientid" msprop:Generator_UserColumnName="patientid" msprop:Generator_ColumnPropNameInRow="patientid" msprop:Generator_ColumnVarNameInTable="columnpatientid" msprop:Generator_ColumnPropNameInTable="patientidColumn" type="xs:long" minOccurs="0" />
+              <xs:element name="historyid" msprop:Generator_UserColumnName="historyid" msprop:Generator_ColumnPropNameInRow="historyid" msprop:Generator_ColumnVarNameInTable="columnhistoryid" msprop:Generator_ColumnPropNameInTable="historyidColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="note" msprop:Generator_UserColumnName="note" msprop:Generator_ColumnPropNameInRow="note" msprop:Generator_ColumnVarNameInTable="columnnote" msprop:Generator_ColumnPropNameInTable="noteColumn" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="500" />

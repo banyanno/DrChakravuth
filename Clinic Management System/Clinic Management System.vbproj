@@ -642,7 +642,7 @@
     <Compile Include="Forms\version2\PatientMedicalReport\ConsultationList.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\version2\PatientMedicalReport\EditConsultation.Designer.vb">
+    <Compile Include="Forms\version2\PatientMedicalReport\EditConsultation.designer.vb">
       <DependentUpon>EditConsultation.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\version2\PatientMedicalReport\EditConsultation.vb">
@@ -1791,7 +1791,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\version2\PatientMedicalReport\EditConsultation.resx">
       <DependentUpon>EditConsultation.vb</DependentUpon>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\version2\PatientMedicalReport\FindConsult.resx">
       <DependentUpon>FindConsult.vb</DependentUpon>

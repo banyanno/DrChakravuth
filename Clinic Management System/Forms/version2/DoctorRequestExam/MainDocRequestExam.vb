@@ -154,7 +154,6 @@
             MsgBox("Patient record was not found", MsgBoxStyle.Information, "No Record Found")
             Exit Sub
         Else
-            Me.lblpatientid.Text = TblPatient.Rows(0).Item("ppatientid")
             Me.txtname.Text = TblPatient.Rows(0).Item("pname")
             Me.txtsex.Text = TblPatient.Rows(0).Item("pgender")
             Me.txtaddress.Text = TblPatient.Rows(0).Item("pcontactaddress")
@@ -165,15 +164,15 @@
     End Sub
    
     Sub RefreshPreCheckItem()
-        Me.itemlist.DataSource = DA_PreRequestBloodItem.SelectItemByPatientID(CLng(Me.lblpatientid.Text))
+        Me.itemlist.DataSource = DA_PreRequestBloodItem.SelectItemByPatientID(CLng(Me.txtno.Text))
     End Sub
     Private Sub btnAddItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAddItem.Click
         Try
             If Me.LblSaveOption.Text = 0 Then
-                If DA_PreRequestBloodItem.SelectExisting(CLng(EmptyString(Me.lblpatientid.Text)), CInt(Me.cboitem.SelectedValue)).Rows.Count >= 1 Then
+                If DA_PreRequestBloodItem.SelectExisting(CLng(EmptyString(Me.txtno.Text)), CInt(Me.cboitem.SelectedValue)).Rows.Count >= 1 Then
                     MsgBox("This check item has been added already", MsgBoxStyle.Exclamation, "Existing Check Item")
                 Else
-                    DA_PreRequestBloodItem.InsertItem(CLng(Me.lblpatientid.Text), CInt(Me.cboitem.SelectedValue), TxtBloodResult.Text)
+                    DA_PreRequestBloodItem.InsertItem(CLng(Me.txtno.Text), CInt(Me.cboitem.SelectedValue), TxtBloodResult.Text)
                     Me.RefreshPreCheckItem()
                     cboitem.SelectedIndex = -1
                     Me.TxtBloodResult.Text = ""
@@ -197,7 +196,7 @@
     Private Sub btnDeleteItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnDeleteItem.Click
         Try
             If Me.LblSaveOption.Text = 0 Then
-                DA_PreRequestBloodItem.DeleteItem(CLng(Me.lblpatientid.Text), CInt(Me.itemlist.CurrentRow.Cells("item_id").Value))
+                DA_PreRequestBloodItem.DeleteItem(CLng(Me.txtno.Text), CInt(Me.itemlist.CurrentRow.Cells("item_id").Value))
                 Me.RefreshPreCheckItem()
             Else
                 DA_RequestBloodItem.DeleteCheckItem(CLng(RequestPanel.RequestList.CurrentRow.Cells("request_id").Value), CInt(Me.itemlist.CurrentRow.Cells("item_id").Value))
@@ -232,53 +231,53 @@
         If LblSaveOption.Text = "0" Then
 
             If chkfibro.Checked = True Then
-                If DA_Request.CheckExistFibro(lblpatientid.Text, dtrequest.Value.Date) > 0 Then
+                If DA_Request.CheckExistFibro(txtno.Text, dtrequest.Value.Date) > 0 Then
                     MessageBox.Show("You can not request Fibroscopy exam at the same day.", "Fibroscopy", MessageBoxButtons.OK, MessageBoxIcon.Error)
                     Exit Sub
                 End If
             End If
             If chknaso.Checked = True Then
-                If DA_Request.CheckExistNaso(lblpatientid.Text, dtrequest.Value.Date) > 0 Then
+                If DA_Request.CheckExistNaso(txtno.Text, dtrequest.Value.Date) > 0 Then
 
                     MessageBox.Show("You can not request Nasogastro exam at the same day.", "Nasogastro", MessageBoxButtons.OK, MessageBoxIcon.Error)
                     Exit Sub
                 End If
             End If
             If chkcolo.Checked = True Then
-                If DA_Request.CheckExistColo(lblpatientid.Text, dtrequest.Value.Date) > 0 Then
+                If DA_Request.CheckExistColo(txtno.Text, dtrequest.Value.Date) > 0 Then
 
                     MessageBox.Show("You can not request Coloscopy exam at the same day.", "Coloscopy", MessageBoxButtons.OK, MessageBoxIcon.Error)
                     Exit Sub
                 End If
             End If
             If chkecho.Checked = True Then
-                If DA_Request.CheckExistEcho(lblpatientid.Text, dtrequest.Value.Date) > 0 Then
+                If DA_Request.CheckExistEcho(txtno.Text, dtrequest.Value.Date) > 0 Then
                     MessageBox.Show("You can not request Echo exam at the same day.", "Echo", MessageBoxButtons.OK, MessageBoxIcon.Error)
                     Exit Sub
                 End If
             End If
             If chkscan.Checked = True Then
-                If DA_Request.CheckExistScan(lblpatientid.Text, dtrequest.Value.Date) > 0 Then
+                If DA_Request.CheckExistScan(txtno.Text, dtrequest.Value.Date) > 0 Then
                     MessageBox.Show("You can not request Scan  at the same day.", "Scan", MessageBoxButtons.OK, MessageBoxIcon.Error)
                     Exit Sub
                 End If
             End If
 
             If chkmri.Checked = True Then
-                If DA_Request.CheckExistMRI(lblpatientid.Text, dtrequest.Value.Date) > 0 Then
+                If DA_Request.CheckExistMRI(txtno.Text, dtrequest.Value.Date) > 0 Then
                     MessageBox.Show("You can not request  M-R-I exam at the same day.", "M-R-I ", MessageBoxButtons.OK, MessageBoxIcon.Error)
                     Exit Sub
                 End If
             End If
 
             If chkfibroscan.Checked = True Then
-                If DA_Request.CheckExistFibroScan(lblpatientid.Text, dtrequest.Value.Date) > 0 Then
+                If DA_Request.CheckExistFibroScan(txtno.Text, dtrequest.Value.Date) > 0 Then
                     MessageBox.Show("You can not request Fibro Scan exam at the same day.", "Fibro Scan", MessageBoxButtons.OK, MessageBoxIcon.Error)
                     Exit Sub
                 End If
             End If
             If ChUreaBreathTest.Checked = True Then
-                If DA_Request.CheckExistBreathTest(lblpatientid.Text, dtrequest.Value.Date) > 0 Then
+                If DA_Request.CheckExistBreathTest(txtno.Text, dtrequest.Value.Date) > 0 Then
                     MessageBox.Show("You can not request Urea Breath test exam at the same day.", "Fibro Scan", MessageBoxButtons.OK, MessageBoxIcon.Error)
                     Exit Sub
 
@@ -287,9 +286,9 @@
             If MessageBox.Show("Do you want to save request Para exam?", "Para exam", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
                 If Me.chkbilogy.Checked = False Then
                     ''Delete All PreCheckItem
-                    DA_PreRequestBloodItem.DeleteItemByPatientID(CLng(Me.lblpatientid.Text))
+                    DA_PreRequestBloodItem.DeleteItemByPatientID(CLng(Me.txtno.Text))
                     ''DA_Request.InsertRequest(CLng(Me.lblpatientid.Text), FormatDateTime(Me.dtrequest.Value, DateFormat.ShortDate), CInt(Me.cbodoctor.SelectedValue), Me.chkbilogy.Checked, Me.chkfibro.Checked, Me.chknaso.Checked, Me.chkcolo.Checked, Me.chkecho.Checked, Me.chkscan.Checked, Me.chkmri.Checked, Me.chkfibroscan.Checked, Me.txtmoreinfo.Text, 1, CboDiagnosis.Text)
-                    DA_Request.InsertRequest(CLng(Me.lblpatientid.Text), Me.dtrequest.Value, CInt(Me.cbodoctor.SelectedValue), Me.chkbilogy.Checked, Me.chkfibro.Checked, Me.chknaso.Checked, Me.chkcolo.Checked, Me.chkecho.Checked, Me.chkscan.Checked, Me.chkmri.Checked, Me.chkfibroscan.Checked, Me.txtmoreinfo.Text, 1, CboDiagnosis.Text, ChUreaBreathTest.Checked)
+                    DA_Request.InsertRequest(CLng(Me.txtno.Text), Me.dtrequest.Value, CInt(Me.cbodoctor.SelectedValue), Me.chkbilogy.Checked, Me.chkfibro.Checked, Me.chknaso.Checked, Me.chkcolo.Checked, Me.chkecho.Checked, Me.chkscan.Checked, Me.chkmri.Checked, Me.chkfibroscan.Checked, Me.txtmoreinfo.Text, 1, CboDiagnosis.Text, ChUreaBreathTest.Checked)
                     Dim MaxRequestID As Long = DA_Request.SelectMaxID
                     If ChUreaBreathTest.Checked = True Then
                         Dim strResult As String = "- S.1 :" & vbCrLf & "- S.2 :" & vbCrLf & "- /\(%..) :"
@@ -302,16 +301,16 @@
                         Exit Sub
                     End If
                     ''DA_Request.InsertRequest(CLng(Me.lblpatientid.Text), FormatDateTime(Me.dtrequest.Value, DateFormat.ShortDate), CInt(Me.cbodoctor.SelectedValue), Me.chkbilogy.Checked, Me.chkfibro.Checked, Me.chknaso.Checked, Me.chkcolo.Checked, Me.chkecho.Checked, Me.chkscan.Checked, Me.chkmri.Checked, Me.chkfibroscan.Checked, Me.txtmoreinfo.Text, 1, CboDiagnosis.Text)
-                    DA_Request.InsertRequest(CLng(Me.lblpatientid.Text), Me.dtrequest.Value.Date, CInt(Me.cbodoctor.SelectedValue), Me.chkbilogy.Checked, Me.chkfibro.Checked, Me.chknaso.Checked, Me.chkcolo.Checked, Me.chkecho.Checked, Me.chkscan.Checked, Me.chkmri.Checked, Me.chkfibroscan.Checked, Me.txtmoreinfo.Text, 1, CboDiagnosis.Text, ChUreaBreathTest.Checked)
+                    DA_Request.InsertRequest(CLng(Me.txtno.Text), Me.dtrequest.Value.Date, CInt(Me.cbodoctor.SelectedValue), Me.chkbilogy.Checked, Me.chkfibro.Checked, Me.chknaso.Checked, Me.chkcolo.Checked, Me.chkecho.Checked, Me.chkscan.Checked, Me.chkmri.Checked, Me.chkfibroscan.Checked, Me.txtmoreinfo.Text, 1, CboDiagnosis.Text, ChUreaBreathTest.Checked)
 
                     ''INSERT CheckItem INTO TABLE RequestCheckItem
                     Dim MaxRequestID As Long = DA_Request.SelectMaxID
                     Dim CheckTable As New DataTable
-                    CheckTable = DA_PreRequestBloodItem.SelectItemByPatientID(CLng(Me.lblpatientid.Text))
+                    CheckTable = DA_PreRequestBloodItem.SelectItemByPatientID(CLng(Me.txtno.Text))
                     For i = 0 To CheckTable.Rows.Count - 1
                         DA_RequestBloodItem.InsertRequestItem(MaxRequestID, CheckTable.Rows(i).Item("item_id"), CheckTable.Rows(i).Item("Result"))
                     Next
-                    DA_PreRequestBloodItem.DeleteItemByPatientID(CLng(Me.lblpatientid.Text))
+                    DA_PreRequestBloodItem.DeleteItemByPatientID(CLng(Me.txtno.Text))
                     If ChUreaBreathTest.Checked = True Then
                         Dim strResult As String = "- S.1 :" & vbCrLf & "- S.2 :" & vbCrLf & "- /\(%..) :"
                         DA_BreathTest.InsertNewBreathTest(MaxRequestID, CLng(Me.txtno.Text), txtname.Text, txtsex.Text, txtdatebirth.Text, txtaddress.Text, "", strResult, "", "", dtrequest.Value.Date, cbodoctor.Text)
@@ -349,7 +348,7 @@
 
     Private Sub btnCancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCancel.Click
         Try
-            DA_PreRequestBloodItem.DeleteItemByPatientID(CLng(Me.lblpatientid.Text))
+            DA_PreRequestBloodItem.DeleteItemByPatientID(CLng(Me.txtno.Text))
 
         Catch ex As Exception
 

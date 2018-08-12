@@ -39,42 +39,30 @@ Partial Class MainWaitingConsuling
         Dim GridFibroScan_DesignTimeLayout As Janus.Windows.GridEX.GridEXLayout = New Janus.Windows.GridEX.GridEXLayout
         Dim GridCFAnapat_DesignTimeLayout As Janus.Windows.GridEX.GridEXLayout = New Janus.Windows.GridEX.GridEXLayout
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip
-        Me.btnRefresh = New System.Windows.Forms.ToolStripButton
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator
-        Me.BtnNewConsult = New System.Windows.Forms.ToolStripButton
         Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator
-        Me.BtnDoctorRequestExamination = New System.Windows.Forms.ToolStripButton
         Me.ToolStripSeparator5 = New System.Windows.Forms.ToolStripSeparator
-        Me.BtnConsultainHistory = New System.Windows.Forms.ToolStripButton
         Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator
-        Me.btnCancelWaiting = New System.Windows.Forms.ToolStripButton
         Me.WaitingList = New Janus.Windows.GridEX.GridEX
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer
         Me.SplitContainer3 = New System.Windows.Forms.SplitContainer
         Me.GroupBox4 = New System.Windows.Forms.GroupBox
         Me.UiTab1 = New Janus.Windows.UI.Tab.UITab
-        Me.UiTabPage1 = New Janus.Windows.UI.Tab.UITabPage
         Me.CRVMedicalHistoryReport = New CrystalDecisions.Windows.Forms.CrystalReportViewer
-        Me.UiTabPage2 = New Janus.Windows.UI.Tab.UITabPage
         Me.GroupBox19 = New System.Windows.Forms.GroupBox
         Me.PrescriptionList = New Janus.Windows.GridEX.GridEX
         Me.ConPrescription = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.BtnDeletePrescription = New System.Windows.Forms.ToolStripMenuItem
-        Me.UiTabPage6 = New Janus.Windows.UI.Tab.UITabPage
         Me.GridComplaintList = New Janus.Windows.GridEX.GridEX
         Me.ConComplaint = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.BtnDeleteComplaint = New System.Windows.Forms.ToolStripMenuItem
-        Me.UiTabPage7 = New Janus.Windows.UI.Tab.UITabPage
         Me.GridMedical = New Janus.Windows.GridEX.GridEX
         Me.ConMedicalHistory = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.BtnDeleteMedical = New System.Windows.Forms.ToolStripMenuItem
-        Me.UiTabPage8 = New Janus.Windows.UI.Tab.UITabPage
         Me.PhysicalList = New Janus.Windows.GridEX.GridEX
         Me.ConPhysical = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.BtnDeletePhysical = New System.Windows.Forms.ToolStripMenuItem
-        Me.UiTabPage3 = New Janus.Windows.UI.Tab.UITabPage
         Me.UiTab2 = New Janus.Windows.UI.Tab.UITab
-        Me.UiTabPage4 = New Janus.Windows.UI.Tab.UITabPage
         Me.GroupBox1 = New System.Windows.Forms.GroupBox
         Me.GroupBox3 = New System.Windows.Forms.GroupBox
         Me.ItemResultList = New Janus.Windows.GridEX.GridEX
@@ -84,59 +72,71 @@ Partial Class MainWaitingConsuling
         Me.BtnAddBlood = New System.Windows.Forms.ToolStripMenuItem
         Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator
         Me.BtnDeleteBlood = New System.Windows.Forms.ToolStripMenuItem
-        Me.UiTabPage5 = New Janus.Windows.UI.Tab.UITabPage
         Me.GroupBox12 = New System.Windows.Forms.GroupBox
         Me.GroupBox5 = New System.Windows.Forms.GroupBox
         Me.FibroConclusionList = New Janus.Windows.GridEX.GridEX
         Me.ConFibro = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.BtnFibroscopy = New System.Windows.Forms.ToolStripMenuItem
-        Me.UiTabPage9 = New Janus.Windows.UI.Tab.UITabPage
         Me.GroupBox6 = New System.Windows.Forms.GroupBox
         Me.GroupBox2 = New System.Windows.Forms.GroupBox
         Me.NasoConclusionList = New Janus.Windows.GridEX.GridEX
         Me.ConNasogastro = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.BtnNasogastro = New System.Windows.Forms.ToolStripMenuItem
-        Me.UiTabPage10 = New Janus.Windows.UI.Tab.UITabPage
         Me.GroupBox7 = New System.Windows.Forms.GroupBox
         Me.GroupBox8 = New System.Windows.Forms.GroupBox
         Me.ColoConclusionList = New Janus.Windows.GridEX.GridEX
         Me.ConColoscopy = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.btnColoscopy = New System.Windows.Forms.ToolStripMenuItem
-        Me.UiTabPage11 = New Janus.Windows.UI.Tab.UITabPage
         Me.GroupBox9 = New System.Windows.Forms.GroupBox
         Me.GroupBox10 = New System.Windows.Forms.GroupBox
         Me.EchoConclusionList = New Janus.Windows.GridEX.GridEX
         Me.ConEcho = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.BtnDeleteEcho = New System.Windows.Forms.ToolStripMenuItem
-        Me.UiTabPage12 = New Janus.Windows.UI.Tab.UITabPage
         Me.GroupBox11 = New System.Windows.Forms.GroupBox
         Me.GroupBox20 = New System.Windows.Forms.GroupBox
         Me.GridScan = New Janus.Windows.GridEX.GridEX
         Me.ConScan = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.BtnDeleteScan = New System.Windows.Forms.ToolStripMenuItem
-        Me.UiTabPage13 = New Janus.Windows.UI.Tab.UITabPage
         Me.GroupBox21 = New System.Windows.Forms.GroupBox
         Me.GridMRI = New Janus.Windows.GridEX.GridEX
         Me.ConMRI = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.BtnMRI = New System.Windows.Forms.ToolStripMenuItem
-        Me.UiTabPage14 = New Janus.Windows.UI.Tab.UITabPage
         Me.GroupBox22 = New System.Windows.Forms.GroupBox
         Me.GridFibroScan = New Janus.Windows.GridEX.GridEX
         Me.ConFibroScan = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.BtnFibroscan = New System.Windows.Forms.ToolStripMenuItem
-        Me.UiTabPage15 = New Janus.Windows.UI.Tab.UITabPage
         Me.GroupBox23 = New System.Windows.Forms.GroupBox
         Me.GridCFAnapat = New Janus.Windows.GridEX.GridEX
         Me.ConCFAnaPath = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.BtnDeleteAnapath = New System.Windows.Forms.ToolStripMenuItem
         Me.ResultContextMenu = New Janus.Windows.Ribbon.RibbonContextMenu(Me.components)
-        Me.cmdDelete = New Janus.Windows.Ribbon.DropDownCommand
-        Me.DropDownCommand1 = New Janus.Windows.Ribbon.DropDownCommand
         Me.ErrPrescription = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.bgLoadingData = New System.ComponentModel.BackgroundWorker
         Me.BgLoadingReport = New System.ComponentModel.BackgroundWorker
         Me.ContextFibroConclusion = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.BtnDeletFibro = New System.Windows.Forms.ToolStripMenuItem
+        Me.UiTabPage1 = New Janus.Windows.UI.Tab.UITabPage
+        Me.UiTabPage2 = New Janus.Windows.UI.Tab.UITabPage
+        Me.UiTabPage6 = New Janus.Windows.UI.Tab.UITabPage
+        Me.UiTabPage7 = New Janus.Windows.UI.Tab.UITabPage
+        Me.UiTabPage8 = New Janus.Windows.UI.Tab.UITabPage
+        Me.UiTabPage3 = New Janus.Windows.UI.Tab.UITabPage
+        Me.btnRefresh = New System.Windows.Forms.ToolStripButton
+        Me.BtnNewConsult = New System.Windows.Forms.ToolStripButton
+        Me.BtnDoctorRequestExamination = New System.Windows.Forms.ToolStripButton
+        Me.BtnConsultainHistory = New System.Windows.Forms.ToolStripButton
+        Me.btnCancelWaiting = New System.Windows.Forms.ToolStripButton
+        Me.UiTabPage4 = New Janus.Windows.UI.Tab.UITabPage
+        Me.UiTabPage5 = New Janus.Windows.UI.Tab.UITabPage
+        Me.UiTabPage9 = New Janus.Windows.UI.Tab.UITabPage
+        Me.UiTabPage10 = New Janus.Windows.UI.Tab.UITabPage
+        Me.UiTabPage11 = New Janus.Windows.UI.Tab.UITabPage
+        Me.UiTabPage12 = New Janus.Windows.UI.Tab.UITabPage
+        Me.UiTabPage13 = New Janus.Windows.UI.Tab.UITabPage
+        Me.UiTabPage14 = New Janus.Windows.UI.Tab.UITabPage
+        Me.UiTabPage15 = New Janus.Windows.UI.Tab.UITabPage
+        Me.cmdDelete = New Janus.Windows.Ribbon.DropDownCommand
+        Me.DropDownCommand1 = New Janus.Windows.Ribbon.DropDownCommand
         Me.ToolStrip1.SuspendLayout()
         CType(Me.WaitingList, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer1.Panel1.SuspendLayout()
@@ -147,67 +147,67 @@ Partial Class MainWaitingConsuling
         Me.GroupBox4.SuspendLayout()
         CType(Me.UiTab1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.UiTab1.SuspendLayout()
-        Me.UiTabPage1.SuspendLayout()
-        Me.UiTabPage2.SuspendLayout()
         Me.GroupBox19.SuspendLayout()
         CType(Me.PrescriptionList, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ConPrescription.SuspendLayout()
-        Me.UiTabPage6.SuspendLayout()
         CType(Me.GridComplaintList, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ConComplaint.SuspendLayout()
-        Me.UiTabPage7.SuspendLayout()
         CType(Me.GridMedical, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ConMedicalHistory.SuspendLayout()
-        Me.UiTabPage8.SuspendLayout()
         CType(Me.PhysicalList, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ConPhysical.SuspendLayout()
-        Me.UiTabPage3.SuspendLayout()
         CType(Me.UiTab2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.UiTab2.SuspendLayout()
-        Me.UiTabPage4.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         CType(Me.ItemResultList, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ConBlood.SuspendLayout()
-        Me.UiTabPage5.SuspendLayout()
         Me.GroupBox12.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
         CType(Me.FibroConclusionList, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ConFibro.SuspendLayout()
-        Me.UiTabPage9.SuspendLayout()
         Me.GroupBox6.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.NasoConclusionList, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ConNasogastro.SuspendLayout()
-        Me.UiTabPage10.SuspendLayout()
         Me.GroupBox7.SuspendLayout()
         Me.GroupBox8.SuspendLayout()
         CType(Me.ColoConclusionList, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ConColoscopy.SuspendLayout()
-        Me.UiTabPage11.SuspendLayout()
         Me.GroupBox9.SuspendLayout()
         Me.GroupBox10.SuspendLayout()
         CType(Me.EchoConclusionList, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ConEcho.SuspendLayout()
-        Me.UiTabPage12.SuspendLayout()
         Me.GroupBox11.SuspendLayout()
         Me.GroupBox20.SuspendLayout()
         CType(Me.GridScan, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ConScan.SuspendLayout()
-        Me.UiTabPage13.SuspendLayout()
         Me.GroupBox21.SuspendLayout()
         CType(Me.GridMRI, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ConMRI.SuspendLayout()
-        Me.UiTabPage14.SuspendLayout()
         Me.GroupBox22.SuspendLayout()
         CType(Me.GridFibroScan, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ConFibroScan.SuspendLayout()
-        Me.UiTabPage15.SuspendLayout()
         Me.GroupBox23.SuspendLayout()
         CType(Me.GridCFAnapat, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ConCFAnaPath.SuspendLayout()
         CType(Me.ErrPrescription, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ContextFibroConclusion.SuspendLayout()
+        Me.UiTabPage1.SuspendLayout()
+        Me.UiTabPage2.SuspendLayout()
+        Me.UiTabPage6.SuspendLayout()
+        Me.UiTabPage7.SuspendLayout()
+        Me.UiTabPage8.SuspendLayout()
+        Me.UiTabPage3.SuspendLayout()
+        Me.UiTabPage4.SuspendLayout()
+        Me.UiTabPage5.SuspendLayout()
+        Me.UiTabPage9.SuspendLayout()
+        Me.UiTabPage10.SuspendLayout()
+        Me.UiTabPage11.SuspendLayout()
+        Me.UiTabPage12.SuspendLayout()
+        Me.UiTabPage13.SuspendLayout()
+        Me.UiTabPage14.SuspendLayout()
+        Me.UiTabPage15.SuspendLayout()
         Me.SuspendLayout()
         '
         'ToolStrip1
@@ -222,75 +222,25 @@ Partial Class MainWaitingConsuling
         Me.ToolStrip1.TabIndex = 0
         Me.ToolStrip1.Text = "ToolStrip1"
         '
-        'btnRefresh
-        '
-        Me.btnRefresh.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnRefresh.ForeColor = System.Drawing.Color.Blue
-        Me.btnRefresh.Image = Global.Clinic_Management_System.My.Resources.Resources.refresh
-        Me.btnRefresh.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btnRefresh.Name = "btnRefresh"
-        Me.btnRefresh.Size = New System.Drawing.Size(99, 29)
-        Me.btnRefresh.Text = "Refresh"
-        '
         'ToolStripSeparator1
         '
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
         Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 32)
-        '
-        'BtnNewConsult
-        '
-        Me.BtnNewConsult.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnNewConsult.ForeColor = System.Drawing.Color.Blue
-        Me.BtnNewConsult.Image = Global.Clinic_Management_System.My.Resources.Resources.Chat
-        Me.BtnNewConsult.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.BtnNewConsult.Name = "BtnNewConsult"
-        Me.BtnNewConsult.Size = New System.Drawing.Size(228, 29)
-        Me.BtnNewConsult.Text = "Start New Consultation"
         '
         'ToolStripSeparator2
         '
         Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
         Me.ToolStripSeparator2.Size = New System.Drawing.Size(6, 32)
         '
-        'BtnDoctorRequestExamination
-        '
-        Me.BtnDoctorRequestExamination.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnDoctorRequestExamination.ForeColor = System.Drawing.Color.Blue
-        Me.BtnDoctorRequestExamination.Image = Global.Clinic_Management_System.My.Resources.Resources._1349422790_microscope
-        Me.BtnDoctorRequestExamination.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.BtnDoctorRequestExamination.Name = "BtnDoctorRequestExamination"
-        Me.BtnDoctorRequestExamination.Size = New System.Drawing.Size(239, 29)
-        Me.BtnDoctorRequestExamination.Text = "Request for Examination"
-        '
         'ToolStripSeparator5
         '
         Me.ToolStripSeparator5.Name = "ToolStripSeparator5"
         Me.ToolStripSeparator5.Size = New System.Drawing.Size(6, 32)
         '
-        'BtnConsultainHistory
-        '
-        Me.BtnConsultainHistory.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnConsultainHistory.ForeColor = System.Drawing.Color.Blue
-        Me.BtnConsultainHistory.Image = Global.Clinic_Management_System.My.Resources.Resources._1349422899_clipboard
-        Me.BtnConsultainHistory.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.BtnConsultainHistory.Name = "BtnConsultainHistory"
-        Me.BtnConsultainHistory.Size = New System.Drawing.Size(162, 29)
-        Me.BtnConsultainHistory.Text = "Medical History"
-        '
         'ToolStripSeparator6
         '
         Me.ToolStripSeparator6.Name = "ToolStripSeparator6"
         Me.ToolStripSeparator6.Size = New System.Drawing.Size(6, 32)
-        '
-        'btnCancelWaiting
-        '
-        Me.btnCancelWaiting.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCancelWaiting.ForeColor = System.Drawing.Color.Blue
-        Me.btnCancelWaiting.Image = Global.Clinic_Management_System.My.Resources.Resources.delete_appointment
-        Me.btnCancelWaiting.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btnCancelWaiting.Name = "btnCancelWaiting"
-        Me.btnCancelWaiting.Size = New System.Drawing.Size(161, 29)
-        Me.btnCancelWaiting.Text = "Delete Waiting"
         '
         'WaitingList
         '
@@ -341,7 +291,7 @@ Partial Class MainWaitingConsuling
         Me.SplitContainer3.Panel1.Controls.Add(Me.WaitingList)
         Me.SplitContainer3.Panel2Collapsed = True
         Me.SplitContainer3.Size = New System.Drawing.Size(456, 748)
-        Me.SplitContainer3.SplitterDistance = 1092
+        Me.SplitContainer3.SplitterDistance = 431
         Me.SplitContainer3.TabIndex = 2
         '
         'GroupBox4
@@ -369,15 +319,6 @@ Partial Class MainWaitingConsuling
         Me.UiTab1.TabPages.AddRange(New Janus.Windows.UI.Tab.UITabPage() {Me.UiTabPage1, Me.UiTabPage2, Me.UiTabPage6, Me.UiTabPage7, Me.UiTabPage8, Me.UiTabPage3})
         Me.UiTab1.VisualStyle = Janus.Windows.UI.Tab.TabVisualStyle.Normal
         '
-        'UiTabPage1
-        '
-        Me.UiTabPage1.Controls.Add(Me.CRVMedicalHistoryReport)
-        Me.UiTabPage1.Location = New System.Drawing.Point(1, 25)
-        Me.UiTabPage1.Name = "UiTabPage1"
-        Me.UiTabPage1.Size = New System.Drawing.Size(995, 698)
-        Me.UiTabPage1.TabStop = True
-        Me.UiTabPage1.Text = "     Medical History Report     "
-        '
         'CRVMedicalHistoryReport
         '
         Me.CRVMedicalHistoryReport.ActiveViewIndex = -1
@@ -391,23 +332,13 @@ Partial Class MainWaitingConsuling
         Me.CRVMedicalHistoryReport.TabIndex = 0
         Me.CRVMedicalHistoryReport.ViewTimeSelectionFormula = ""
         '
-        'UiTabPage2
-        '
-        Me.UiTabPage2.Controls.Add(Me.GroupBox19)
-        Me.UiTabPage2.Location = New System.Drawing.Point(1, 25)
-        Me.UiTabPage2.Margin = New System.Windows.Forms.Padding(2)
-        Me.UiTabPage2.Name = "UiTabPage2"
-        Me.UiTabPage2.Size = New System.Drawing.Size(1455, 481)
-        Me.UiTabPage2.TabStop = True
-        Me.UiTabPage2.Text = "     Prescription     "
-        '
         'GroupBox19
         '
         Me.GroupBox19.Controls.Add(Me.PrescriptionList)
         Me.GroupBox19.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GroupBox19.Location = New System.Drawing.Point(0, 0)
         Me.GroupBox19.Name = "GroupBox19"
-        Me.GroupBox19.Size = New System.Drawing.Size(1455, 481)
+        Me.GroupBox19.Size = New System.Drawing.Size(995, 698)
         Me.GroupBox19.TabIndex = 69
         Me.GroupBox19.TabStop = False
         '
@@ -426,7 +357,7 @@ Partial Class MainWaitingConsuling
         Me.PrescriptionList.Name = "PrescriptionList"
         Me.PrescriptionList.RecordNavigator = True
         Me.PrescriptionList.RowHeaders = Janus.Windows.GridEX.InheritableBoolean.[True]
-        Me.PrescriptionList.Size = New System.Drawing.Size(1449, 459)
+        Me.PrescriptionList.Size = New System.Drawing.Size(989, 676)
         Me.PrescriptionList.TabIndex = 1
         '
         'ConPrescription
@@ -442,15 +373,6 @@ Partial Class MainWaitingConsuling
         Me.BtnDeletePrescription.Name = "BtnDeletePrescription"
         Me.BtnDeletePrescription.Size = New System.Drawing.Size(208, 26)
         Me.BtnDeletePrescription.Text = "Delete Prescription"
-        '
-        'UiTabPage6
-        '
-        Me.UiTabPage6.Controls.Add(Me.GridComplaintList)
-        Me.UiTabPage6.Location = New System.Drawing.Point(1, 25)
-        Me.UiTabPage6.Name = "UiTabPage6"
-        Me.UiTabPage6.Size = New System.Drawing.Size(1455, 481)
-        Me.UiTabPage6.TabStop = True
-        Me.UiTabPage6.Text = "     Patient Complaint     "
         '
         'GridComplaintList
         '
@@ -469,7 +391,7 @@ Partial Class MainWaitingConsuling
         Me.GridComplaintList.Name = "GridComplaintList"
         Me.GridComplaintList.RecordNavigator = True
         Me.GridComplaintList.RowHeaders = Janus.Windows.GridEX.InheritableBoolean.[True]
-        Me.GridComplaintList.Size = New System.Drawing.Size(1455, 481)
+        Me.GridComplaintList.Size = New System.Drawing.Size(995, 698)
         Me.GridComplaintList.TabIndex = 38
         '
         'ConComplaint
@@ -486,15 +408,6 @@ Partial Class MainWaitingConsuling
         Me.BtnDeleteComplaint.Size = New System.Drawing.Size(197, 26)
         Me.BtnDeleteComplaint.Text = "Delete Complaint"
         '
-        'UiTabPage7
-        '
-        Me.UiTabPage7.Controls.Add(Me.GridMedical)
-        Me.UiTabPage7.Location = New System.Drawing.Point(1, 25)
-        Me.UiTabPage7.Name = "UiTabPage7"
-        Me.UiTabPage7.Size = New System.Drawing.Size(1455, 481)
-        Me.UiTabPage7.TabStop = True
-        Me.UiTabPage7.Text = "     Medical History     "
-        '
         'GridMedical
         '
         Me.GridMedical.AllowEdit = Janus.Windows.GridEX.InheritableBoolean.[False]
@@ -510,7 +423,7 @@ Partial Class MainWaitingConsuling
         Me.GridMedical.RecordNavigator = True
         Me.GridMedical.RowFormatStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.GridMedical.RowHeaders = Janus.Windows.GridEX.InheritableBoolean.[True]
-        Me.GridMedical.Size = New System.Drawing.Size(1455, 481)
+        Me.GridMedical.Size = New System.Drawing.Size(995, 698)
         Me.GridMedical.TabIndex = 14
         '
         'ConMedicalHistory
@@ -526,15 +439,6 @@ Partial Class MainWaitingConsuling
         Me.BtnDeleteMedical.Name = "BtnDeleteMedical"
         Me.BtnDeleteMedical.Size = New System.Drawing.Size(233, 26)
         Me.BtnDeleteMedical.Text = "Delete Medical History"
-        '
-        'UiTabPage8
-        '
-        Me.UiTabPage8.Controls.Add(Me.PhysicalList)
-        Me.UiTabPage8.Location = New System.Drawing.Point(1, 25)
-        Me.UiTabPage8.Name = "UiTabPage8"
-        Me.UiTabPage8.Size = New System.Drawing.Size(1455, 481)
-        Me.UiTabPage8.TabStop = True
-        Me.UiTabPage8.Text = "     Physical     "
         '
         'PhysicalList
         '
@@ -567,15 +471,6 @@ Partial Class MainWaitingConsuling
         Me.BtnDeletePhysical.Size = New System.Drawing.Size(181, 26)
         Me.BtnDeletePhysical.Text = "Delete Physical"
         '
-        'UiTabPage3
-        '
-        Me.UiTabPage3.Controls.Add(Me.UiTab2)
-        Me.UiTabPage3.Location = New System.Drawing.Point(1, 25)
-        Me.UiTabPage3.Name = "UiTabPage3"
-        Me.UiTabPage3.Size = New System.Drawing.Size(1455, 481)
-        Me.UiTabPage3.TabStop = True
-        Me.UiTabPage3.Text = "     Para Clinic Examination     "
-        '
         'UiTab2
         '
         Me.UiTab2.Cursor = System.Windows.Forms.Cursors.Default
@@ -592,18 +487,6 @@ Partial Class MainWaitingConsuling
         Me.UiTab2.TabStripAlignment = Janus.Windows.UI.Tab.TabStripAlignment.Bottom
         Me.UiTab2.TextOrientation = Janus.Windows.UI.Tab.TextOrientation.Horizontal
         Me.UiTab2.UseCompatibleTextRendering = False
-        '
-        'UiTabPage4
-        '
-        Me.UiTabPage4.AutoScroll = True
-        Me.UiTabPage4.Controls.Add(Me.GroupBox1)
-        Me.UiTabPage4.ImageIndex = 0
-        Me.UiTabPage4.Key = "Biology(Blood Check)"
-        Me.UiTabPage4.Location = New System.Drawing.Point(1, 3)
-        Me.UiTabPage4.Name = "UiTabPage4"
-        Me.UiTabPage4.Size = New System.Drawing.Size(1451, 452)
-        Me.UiTabPage4.TabStop = True
-        Me.UiTabPage4.Text = "     Biology(Blood Check)     "
         '
         'GroupBox1
         '
@@ -687,17 +570,6 @@ Partial Class MainWaitingConsuling
         Me.BtnDeleteBlood.Size = New System.Drawing.Size(165, 26)
         Me.BtnDeleteBlood.Text = "Delete Blood"
         '
-        'UiTabPage5
-        '
-        Me.UiTabPage5.AutoScroll = True
-        Me.UiTabPage5.Controls.Add(Me.GroupBox12)
-        Me.UiTabPage5.Key = "Fibro"
-        Me.UiTabPage5.Location = New System.Drawing.Point(1, 3)
-        Me.UiTabPage5.Name = "UiTabPage5"
-        Me.UiTabPage5.Size = New System.Drawing.Size(1451, 452)
-        Me.UiTabPage5.TabStop = True
-        Me.UiTabPage5.Text = "    Fibroscopy     "
-        '
         'GroupBox12
         '
         Me.GroupBox12.Controls.Add(Me.GroupBox5)
@@ -751,17 +623,6 @@ Partial Class MainWaitingConsuling
         Me.BtnFibroscopy.Size = New System.Drawing.Size(201, 26)
         Me.BtnFibroscopy.Text = "Delete Fibroscopy"
         '
-        'UiTabPage9
-        '
-        Me.UiTabPage9.AutoScroll = True
-        Me.UiTabPage9.Controls.Add(Me.GroupBox6)
-        Me.UiTabPage9.Key = "Nasogastro"
-        Me.UiTabPage9.Location = New System.Drawing.Point(1, 3)
-        Me.UiTabPage9.Name = "UiTabPage9"
-        Me.UiTabPage9.Size = New System.Drawing.Size(1451, 452)
-        Me.UiTabPage9.TabStop = True
-        Me.UiTabPage9.Text = "     Nasogastro     "
-        '
         'GroupBox6
         '
         Me.GroupBox6.Controls.Add(Me.GroupBox2)
@@ -812,17 +673,6 @@ Partial Class MainWaitingConsuling
         Me.BtnNasogastro.Name = "BtnNasogastro"
         Me.BtnNasogastro.Size = New System.Drawing.Size(205, 26)
         Me.BtnNasogastro.Text = "Delete Nasogastro"
-        '
-        'UiTabPage10
-        '
-        Me.UiTabPage10.AutoScroll = True
-        Me.UiTabPage10.Controls.Add(Me.GroupBox7)
-        Me.UiTabPage10.Key = "Coloscopy"
-        Me.UiTabPage10.Location = New System.Drawing.Point(1, 3)
-        Me.UiTabPage10.Name = "UiTabPage10"
-        Me.UiTabPage10.Size = New System.Drawing.Size(1451, 452)
-        Me.UiTabPage10.TabStop = True
-        Me.UiTabPage10.Text = "     Coloscopy     "
         '
         'GroupBox7
         '
@@ -875,17 +725,6 @@ Partial Class MainWaitingConsuling
         Me.btnColoscopy.Size = New System.Drawing.Size(197, 26)
         Me.btnColoscopy.Text = "Delete Coloscopy"
         '
-        'UiTabPage11
-        '
-        Me.UiTabPage11.AutoScroll = True
-        Me.UiTabPage11.Controls.Add(Me.GroupBox9)
-        Me.UiTabPage11.Key = "Echo"
-        Me.UiTabPage11.Location = New System.Drawing.Point(1, 3)
-        Me.UiTabPage11.Name = "UiTabPage11"
-        Me.UiTabPage11.Size = New System.Drawing.Size(1451, 452)
-        Me.UiTabPage11.TabStop = True
-        Me.UiTabPage11.Text = "     Echo     "
-        '
         'GroupBox9
         '
         Me.GroupBox9.Controls.Add(Me.GroupBox10)
@@ -935,16 +774,6 @@ Partial Class MainWaitingConsuling
         Me.BtnDeleteEcho.Name = "BtnDeleteEcho"
         Me.BtnDeleteEcho.Size = New System.Drawing.Size(158, 26)
         Me.BtnDeleteEcho.Text = "Delete Echo"
-        '
-        'UiTabPage12
-        '
-        Me.UiTabPage12.Controls.Add(Me.GroupBox11)
-        Me.UiTabPage12.Key = "Scan"
-        Me.UiTabPage12.Location = New System.Drawing.Point(1, 3)
-        Me.UiTabPage12.Name = "UiTabPage12"
-        Me.UiTabPage12.Size = New System.Drawing.Size(1451, 452)
-        Me.UiTabPage12.TabStop = True
-        Me.UiTabPage12.Text = "     Scan     "
         '
         'GroupBox11
         '
@@ -998,16 +827,6 @@ Partial Class MainWaitingConsuling
         Me.BtnDeleteScan.Size = New System.Drawing.Size(158, 26)
         Me.BtnDeleteScan.Text = "Delete Scan"
         '
-        'UiTabPage13
-        '
-        Me.UiTabPage13.Controls.Add(Me.GroupBox21)
-        Me.UiTabPage13.Key = "M-R-I"
-        Me.UiTabPage13.Location = New System.Drawing.Point(1, 3)
-        Me.UiTabPage13.Name = "UiTabPage13"
-        Me.UiTabPage13.Size = New System.Drawing.Size(1451, 452)
-        Me.UiTabPage13.TabStop = True
-        Me.UiTabPage13.Text = "     M-R-I     "
-        '
         'GroupBox21
         '
         Me.GroupBox21.Controls.Add(Me.GridMRI)
@@ -1049,16 +868,6 @@ Partial Class MainWaitingConsuling
         Me.BtnMRI.Name = "BtnMRI"
         Me.BtnMRI.Size = New System.Drawing.Size(165, 26)
         Me.BtnMRI.Text = "Delete M-R-I"
-        '
-        'UiTabPage14
-        '
-        Me.UiTabPage14.Controls.Add(Me.GroupBox22)
-        Me.UiTabPage14.Key = "FibroScan"
-        Me.UiTabPage14.Location = New System.Drawing.Point(1, 3)
-        Me.UiTabPage14.Name = "UiTabPage14"
-        Me.UiTabPage14.Size = New System.Drawing.Size(1451, 452)
-        Me.UiTabPage14.TabStop = True
-        Me.UiTabPage14.Text = "     Fibro Scan     "
         '
         'GroupBox22
         '
@@ -1102,16 +911,6 @@ Partial Class MainWaitingConsuling
         Me.BtnFibroscan.Size = New System.Drawing.Size(198, 26)
         Me.BtnFibroscan.Text = "Delete Fibro Scan"
         '
-        'UiTabPage15
-        '
-        Me.UiTabPage15.Controls.Add(Me.GroupBox23)
-        Me.UiTabPage15.Key = "C.F Ana-Path"
-        Me.UiTabPage15.Location = New System.Drawing.Point(1, 3)
-        Me.UiTabPage15.Name = "UiTabPage15"
-        Me.UiTabPage15.Size = New System.Drawing.Size(1451, 452)
-        Me.UiTabPage15.TabStop = True
-        Me.UiTabPage15.Text = "     C.F Ana-Path     "
-        '
         'GroupBox23
         '
         Me.GroupBox23.Controls.Add(Me.GridCFAnapat)
@@ -1144,32 +943,20 @@ Partial Class MainWaitingConsuling
         '
         Me.ConCFAnaPath.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BtnDeleteAnapath})
         Me.ConCFAnaPath.Name = "ConComplaint"
-        Me.ConCFAnaPath.Size = New System.Drawing.Size(215, 30)
+        Me.ConCFAnaPath.Size = New System.Drawing.Size(214, 30)
         '
         'BtnDeleteAnapath
         '
         Me.BtnDeleteAnapath.Font = New System.Drawing.Font("Segoe UI", 12.0!)
         Me.BtnDeleteAnapath.ForeColor = System.Drawing.Color.Red
         Me.BtnDeleteAnapath.Name = "BtnDeleteAnapath"
-        Me.BtnDeleteAnapath.Size = New System.Drawing.Size(214, 26)
+        Me.BtnDeleteAnapath.Size = New System.Drawing.Size(213, 26)
         Me.BtnDeleteAnapath.Text = "Delete C.F Ana-Path"
         '
         'ResultContextMenu
         '
         Me.ResultContextMenu.Commands.AddRange(New Janus.Windows.Ribbon.CommandBase() {Me.cmdDelete, Me.DropDownCommand1})
         Me.ResultContextMenu.Name = "ResultContextMenu"
-        '
-        'cmdDelete
-        '
-        Me.cmdDelete.Key = "DropDownCommand2"
-        Me.cmdDelete.Name = "cmdDelete"
-        Me.cmdDelete.Text = "Delete Result"
-        '
-        'DropDownCommand1
-        '
-        Me.DropDownCommand1.Key = "DropDownCommand1"
-        Me.DropDownCommand1.Name = "DropDownCommand1"
-        Me.DropDownCommand1.Text = ""
         '
         'ErrPrescription
         '
@@ -1194,6 +981,219 @@ Partial Class MainWaitingConsuling
         Me.BtnDeletFibro.Size = New System.Drawing.Size(142, 24)
         Me.BtnDeletFibro.Text = "Delete ..."
         '
+        'UiTabPage1
+        '
+        Me.UiTabPage1.Controls.Add(Me.CRVMedicalHistoryReport)
+        Me.UiTabPage1.Location = New System.Drawing.Point(1, 25)
+        Me.UiTabPage1.Name = "UiTabPage1"
+        Me.UiTabPage1.Size = New System.Drawing.Size(995, 698)
+        Me.UiTabPage1.TabStop = True
+        Me.UiTabPage1.Text = "     Medical History Report     "
+        '
+        'UiTabPage2
+        '
+        Me.UiTabPage2.Controls.Add(Me.GroupBox19)
+        Me.UiTabPage2.Location = New System.Drawing.Point(1, 25)
+        Me.UiTabPage2.Margin = New System.Windows.Forms.Padding(2)
+        Me.UiTabPage2.Name = "UiTabPage2"
+        Me.UiTabPage2.Size = New System.Drawing.Size(995, 698)
+        Me.UiTabPage2.TabStop = True
+        Me.UiTabPage2.Text = "     Prescription     "
+        '
+        'UiTabPage6
+        '
+        Me.UiTabPage6.Controls.Add(Me.GridComplaintList)
+        Me.UiTabPage6.Location = New System.Drawing.Point(1, 25)
+        Me.UiTabPage6.Name = "UiTabPage6"
+        Me.UiTabPage6.Size = New System.Drawing.Size(995, 698)
+        Me.UiTabPage6.TabStop = True
+        Me.UiTabPage6.Text = "     Patient Complaint     "
+        '
+        'UiTabPage7
+        '
+        Me.UiTabPage7.Controls.Add(Me.GridMedical)
+        Me.UiTabPage7.Location = New System.Drawing.Point(1, 25)
+        Me.UiTabPage7.Name = "UiTabPage7"
+        Me.UiTabPage7.Size = New System.Drawing.Size(995, 698)
+        Me.UiTabPage7.TabStop = True
+        Me.UiTabPage7.Text = "     Medical History     "
+        '
+        'UiTabPage8
+        '
+        Me.UiTabPage8.Controls.Add(Me.PhysicalList)
+        Me.UiTabPage8.Location = New System.Drawing.Point(1, 25)
+        Me.UiTabPage8.Name = "UiTabPage8"
+        Me.UiTabPage8.Size = New System.Drawing.Size(1455, 481)
+        Me.UiTabPage8.TabStop = True
+        Me.UiTabPage8.Text = "     Physical     "
+        '
+        'UiTabPage3
+        '
+        Me.UiTabPage3.Controls.Add(Me.UiTab2)
+        Me.UiTabPage3.Location = New System.Drawing.Point(1, 25)
+        Me.UiTabPage3.Name = "UiTabPage3"
+        Me.UiTabPage3.Size = New System.Drawing.Size(1455, 481)
+        Me.UiTabPage3.TabStop = True
+        Me.UiTabPage3.Text = "     Para Clinic Examination     "
+        '
+        'btnRefresh
+        '
+        Me.btnRefresh.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnRefresh.ForeColor = System.Drawing.Color.Blue
+        Me.btnRefresh.Image = Global.Clinic_Management_System.My.Resources.Resources.refresh
+        Me.btnRefresh.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btnRefresh.Name = "btnRefresh"
+        Me.btnRefresh.Size = New System.Drawing.Size(99, 29)
+        Me.btnRefresh.Text = "Refresh"
+        '
+        'BtnNewConsult
+        '
+        Me.BtnNewConsult.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnNewConsult.ForeColor = System.Drawing.Color.Blue
+        Me.BtnNewConsult.Image = Global.Clinic_Management_System.My.Resources.Resources.Chat
+        Me.BtnNewConsult.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.BtnNewConsult.Name = "BtnNewConsult"
+        Me.BtnNewConsult.Size = New System.Drawing.Size(228, 29)
+        Me.BtnNewConsult.Text = "Start New Consultation"
+        '
+        'BtnDoctorRequestExamination
+        '
+        Me.BtnDoctorRequestExamination.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnDoctorRequestExamination.ForeColor = System.Drawing.Color.Blue
+        Me.BtnDoctorRequestExamination.Image = Global.Clinic_Management_System.My.Resources.Resources._1349422790_microscope
+        Me.BtnDoctorRequestExamination.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.BtnDoctorRequestExamination.Name = "BtnDoctorRequestExamination"
+        Me.BtnDoctorRequestExamination.Size = New System.Drawing.Size(239, 29)
+        Me.BtnDoctorRequestExamination.Text = "Request for Examination"
+        '
+        'BtnConsultainHistory
+        '
+        Me.BtnConsultainHistory.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnConsultainHistory.ForeColor = System.Drawing.Color.Blue
+        Me.BtnConsultainHistory.Image = Global.Clinic_Management_System.My.Resources.Resources._1349422899_clipboard
+        Me.BtnConsultainHistory.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.BtnConsultainHistory.Name = "BtnConsultainHistory"
+        Me.BtnConsultainHistory.Size = New System.Drawing.Size(162, 29)
+        Me.BtnConsultainHistory.Text = "Medical History"
+        '
+        'btnCancelWaiting
+        '
+        Me.btnCancelWaiting.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCancelWaiting.ForeColor = System.Drawing.Color.Blue
+        Me.btnCancelWaiting.Image = Global.Clinic_Management_System.My.Resources.Resources.delete_appointment
+        Me.btnCancelWaiting.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btnCancelWaiting.Name = "btnCancelWaiting"
+        Me.btnCancelWaiting.Size = New System.Drawing.Size(160, 29)
+        Me.btnCancelWaiting.Text = "Delete Waiting"
+        '
+        'UiTabPage4
+        '
+        Me.UiTabPage4.AutoScroll = True
+        Me.UiTabPage4.Controls.Add(Me.GroupBox1)
+        Me.UiTabPage4.ImageIndex = 0
+        Me.UiTabPage4.Key = "Biology(Blood Check)"
+        Me.UiTabPage4.Location = New System.Drawing.Point(1, 3)
+        Me.UiTabPage4.Name = "UiTabPage4"
+        Me.UiTabPage4.Size = New System.Drawing.Size(1451, 452)
+        Me.UiTabPage4.TabStop = True
+        Me.UiTabPage4.Text = "     Biology(Blood Check)     "
+        '
+        'UiTabPage5
+        '
+        Me.UiTabPage5.AutoScroll = True
+        Me.UiTabPage5.Controls.Add(Me.GroupBox12)
+        Me.UiTabPage5.Key = "Fibro"
+        Me.UiTabPage5.Location = New System.Drawing.Point(1, 3)
+        Me.UiTabPage5.Name = "UiTabPage5"
+        Me.UiTabPage5.Size = New System.Drawing.Size(1451, 452)
+        Me.UiTabPage5.TabStop = True
+        Me.UiTabPage5.Text = "    Fibroscopy     "
+        '
+        'UiTabPage9
+        '
+        Me.UiTabPage9.AutoScroll = True
+        Me.UiTabPage9.Controls.Add(Me.GroupBox6)
+        Me.UiTabPage9.Key = "Nasogastro"
+        Me.UiTabPage9.Location = New System.Drawing.Point(1, 3)
+        Me.UiTabPage9.Name = "UiTabPage9"
+        Me.UiTabPage9.Size = New System.Drawing.Size(1451, 452)
+        Me.UiTabPage9.TabStop = True
+        Me.UiTabPage9.Text = "     Nasogastro     "
+        '
+        'UiTabPage10
+        '
+        Me.UiTabPage10.AutoScroll = True
+        Me.UiTabPage10.Controls.Add(Me.GroupBox7)
+        Me.UiTabPage10.Key = "Coloscopy"
+        Me.UiTabPage10.Location = New System.Drawing.Point(1, 3)
+        Me.UiTabPage10.Name = "UiTabPage10"
+        Me.UiTabPage10.Size = New System.Drawing.Size(1451, 452)
+        Me.UiTabPage10.TabStop = True
+        Me.UiTabPage10.Text = "     Coloscopy     "
+        '
+        'UiTabPage11
+        '
+        Me.UiTabPage11.AutoScroll = True
+        Me.UiTabPage11.Controls.Add(Me.GroupBox9)
+        Me.UiTabPage11.Key = "Echo"
+        Me.UiTabPage11.Location = New System.Drawing.Point(1, 3)
+        Me.UiTabPage11.Name = "UiTabPage11"
+        Me.UiTabPage11.Size = New System.Drawing.Size(1451, 452)
+        Me.UiTabPage11.TabStop = True
+        Me.UiTabPage11.Text = "     Echo     "
+        '
+        'UiTabPage12
+        '
+        Me.UiTabPage12.Controls.Add(Me.GroupBox11)
+        Me.UiTabPage12.Key = "Scan"
+        Me.UiTabPage12.Location = New System.Drawing.Point(1, 3)
+        Me.UiTabPage12.Name = "UiTabPage12"
+        Me.UiTabPage12.Size = New System.Drawing.Size(1451, 452)
+        Me.UiTabPage12.TabStop = True
+        Me.UiTabPage12.Text = "     Scan     "
+        '
+        'UiTabPage13
+        '
+        Me.UiTabPage13.Controls.Add(Me.GroupBox21)
+        Me.UiTabPage13.Key = "M-R-I"
+        Me.UiTabPage13.Location = New System.Drawing.Point(1, 3)
+        Me.UiTabPage13.Name = "UiTabPage13"
+        Me.UiTabPage13.Size = New System.Drawing.Size(1451, 452)
+        Me.UiTabPage13.TabStop = True
+        Me.UiTabPage13.Text = "     M-R-I     "
+        '
+        'UiTabPage14
+        '
+        Me.UiTabPage14.Controls.Add(Me.GroupBox22)
+        Me.UiTabPage14.Key = "FibroScan"
+        Me.UiTabPage14.Location = New System.Drawing.Point(1, 3)
+        Me.UiTabPage14.Name = "UiTabPage14"
+        Me.UiTabPage14.Size = New System.Drawing.Size(1451, 452)
+        Me.UiTabPage14.TabStop = True
+        Me.UiTabPage14.Text = "     Fibro Scan     "
+        '
+        'UiTabPage15
+        '
+        Me.UiTabPage15.Controls.Add(Me.GroupBox23)
+        Me.UiTabPage15.Key = "C.F Ana-Path"
+        Me.UiTabPage15.Location = New System.Drawing.Point(1, 3)
+        Me.UiTabPage15.Name = "UiTabPage15"
+        Me.UiTabPage15.Size = New System.Drawing.Size(1451, 452)
+        Me.UiTabPage15.TabStop = True
+        Me.UiTabPage15.Text = "     C.F Ana-Path     "
+        '
+        'cmdDelete
+        '
+        Me.cmdDelete.Key = "DropDownCommand2"
+        Me.cmdDelete.Name = "cmdDelete"
+        Me.cmdDelete.Text = "Delete Result"
+        '
+        'DropDownCommand1
+        '
+        Me.DropDownCommand1.Key = "DropDownCommand1"
+        Me.DropDownCommand1.Name = "DropDownCommand1"
+        Me.DropDownCommand1.Text = ""
+        '
         'MainWaitingConsuling
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1214,67 +1214,67 @@ Partial Class MainWaitingConsuling
         Me.GroupBox4.ResumeLayout(False)
         CType(Me.UiTab1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.UiTab1.ResumeLayout(False)
-        Me.UiTabPage1.ResumeLayout(False)
-        Me.UiTabPage2.ResumeLayout(False)
         Me.GroupBox19.ResumeLayout(False)
         CType(Me.PrescriptionList, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ConPrescription.ResumeLayout(False)
-        Me.UiTabPage6.ResumeLayout(False)
         CType(Me.GridComplaintList, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ConComplaint.ResumeLayout(False)
-        Me.UiTabPage7.ResumeLayout(False)
         CType(Me.GridMedical, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ConMedicalHistory.ResumeLayout(False)
-        Me.UiTabPage8.ResumeLayout(False)
         CType(Me.PhysicalList, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ConPhysical.ResumeLayout(False)
-        Me.UiTabPage3.ResumeLayout(False)
         CType(Me.UiTab2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.UiTab2.ResumeLayout(False)
-        Me.UiTabPage4.ResumeLayout(False)
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox3.ResumeLayout(False)
         CType(Me.ItemResultList, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ConBlood.ResumeLayout(False)
-        Me.UiTabPage5.ResumeLayout(False)
         Me.GroupBox12.ResumeLayout(False)
         Me.GroupBox5.ResumeLayout(False)
         CType(Me.FibroConclusionList, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ConFibro.ResumeLayout(False)
-        Me.UiTabPage9.ResumeLayout(False)
         Me.GroupBox6.ResumeLayout(False)
         Me.GroupBox2.ResumeLayout(False)
         CType(Me.NasoConclusionList, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ConNasogastro.ResumeLayout(False)
-        Me.UiTabPage10.ResumeLayout(False)
         Me.GroupBox7.ResumeLayout(False)
         Me.GroupBox8.ResumeLayout(False)
         CType(Me.ColoConclusionList, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ConColoscopy.ResumeLayout(False)
-        Me.UiTabPage11.ResumeLayout(False)
         Me.GroupBox9.ResumeLayout(False)
         Me.GroupBox10.ResumeLayout(False)
         CType(Me.EchoConclusionList, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ConEcho.ResumeLayout(False)
-        Me.UiTabPage12.ResumeLayout(False)
         Me.GroupBox11.ResumeLayout(False)
         Me.GroupBox20.ResumeLayout(False)
         CType(Me.GridScan, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ConScan.ResumeLayout(False)
-        Me.UiTabPage13.ResumeLayout(False)
         Me.GroupBox21.ResumeLayout(False)
         CType(Me.GridMRI, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ConMRI.ResumeLayout(False)
-        Me.UiTabPage14.ResumeLayout(False)
         Me.GroupBox22.ResumeLayout(False)
         CType(Me.GridFibroScan, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ConFibroScan.ResumeLayout(False)
-        Me.UiTabPage15.ResumeLayout(False)
         Me.GroupBox23.ResumeLayout(False)
         CType(Me.GridCFAnapat, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ConCFAnaPath.ResumeLayout(False)
         CType(Me.ErrPrescription, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ContextFibroConclusion.ResumeLayout(False)
+        Me.UiTabPage1.ResumeLayout(False)
+        Me.UiTabPage2.ResumeLayout(False)
+        Me.UiTabPage6.ResumeLayout(False)
+        Me.UiTabPage7.ResumeLayout(False)
+        Me.UiTabPage8.ResumeLayout(False)
+        Me.UiTabPage3.ResumeLayout(False)
+        Me.UiTabPage4.ResumeLayout(False)
+        Me.UiTabPage5.ResumeLayout(False)
+        Me.UiTabPage9.ResumeLayout(False)
+        Me.UiTabPage10.ResumeLayout(False)
+        Me.UiTabPage11.ResumeLayout(False)
+        Me.UiTabPage12.ResumeLayout(False)
+        Me.UiTabPage13.ResumeLayout(False)
+        Me.UiTabPage14.ResumeLayout(False)
+        Me.UiTabPage15.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

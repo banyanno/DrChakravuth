@@ -163,8 +163,8 @@
             '' Add New
             If MessageBox.Show("Do you want to insert new Colo?", "Insert", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
                 Dim RequestIDVal As Double = (Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value)
-                Dim PatientVal As Double = CLng(Me.RequestPanel.RequestList.CurrentRow.Cells("ppatientid").Value)
-                If DA_Colo.InsertEnglishReport(RequestIDVal, PatientVal, Me.txtColoDuree.Text, txtColoEva.Text, cboColoPreparation.SelectedValue.ToString, _
+
+                If DA_Colo.InsertEnglishReport(RequestIDVal, CDbl(LblPatientNo.Text), Me.txtColoDuree.Text, txtColoEva.Text, cboColoPreparation.SelectedValue.ToString, _
                                                 cboColoDemander.SelectedValue.ToString, txtColoTolerance.Text, chkColoAnesthegiste.Checked, ColoAnes, _
                                                 DateResultExam.Value.Date, TxtIntroduction.Text, TxtIndication.Text, txtFentanyL.Text, TxtPropofol.Text, TxtXylocainegel.Text, TxtRecalExam.Text, TxtFinding.Text, TxtImpression.Text, GetValueConclustion, CInt(cboColoDocteur.SelectedValue), cboColoDocteur.Text, txtcolomoreinfo.Text, TxtProcedure.Text, IIf(ChAnesthesia.Checked = True, "Yes", "No").ToString) = 1 Then
                     MsgBox("A coloscopy has been saved successfully", MsgBoxStyle.OkOnly, "Saved Coloscopy")

@@ -56,7 +56,7 @@ Public Class NewConsultingForm
     End Sub
     Private Sub BtnCancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnCancel.Click
         'If MsgBox("Are you sure you want to cancel this consulation?", MsgBoxStyle.YesNo, "Confirm Concellation") = MsgBoxResult.Yes Then
-        DA_PrePrescription.DeletePrescriptionByPatientID(CLng(Me.LblAutoNo.Text))
+        DA_PrePrescription.DeletePrescriptionByPatientID(CLng(Me.txtno.Text))
         Me.Close()
         'End If
     End Sub
@@ -171,20 +171,20 @@ Public Class NewConsultingForm
                 Dim PrescriptionList As New DataTable
                 Dim ReadyDiagnosis As Integer = 0
                 'PrescriptionList = DA_PrePrescription.SelectPrescriptionByPatientID(CInt(Me.LblWaiting.CurrentRow.Cells("ppatientid").Value))
-                PrescriptionList = DA_PrePrescription.SelectPrescriptionByPatientID(LblAutoNo.Text)
+                PrescriptionList = DA_PrePrescription.SelectPrescriptionByPatientID(txtno.Text)
 
 
                 Dim ConsultPrice As Double
                 ConsultPrice = DA_ConsultType.SelectConsultByID(CInt(Me.cboconsulttype.SelectedValue)).Rows(0).Item("price")
                 '' Check Diagnosis Exist consult .
-                Dim tblCheckDiagnosis As DataTable = DA_Prescription.SelectCheckDiagnosis(LblAutoNo.Text, cbodiagnosis.Text)
+                Dim tblCheckDiagnosis As DataTable = DA_Prescription.SelectCheckDiagnosis(txtno.Text, cbodiagnosis.Text)
                 If tblCheckDiagnosis.Rows.Count > 0 Then
                     ReadyDiagnosis = 2
                 Else
                     ReadyDiagnosis = 1
                 End If
                 ''Insert Prescription (Primary Table)
-                DA_Prescription.InsertPrescription(CInt(LblAutoNo.Text), CInt(lblUserID.Text), Me.cbodiagnosis.Text, FormatDateTime(dtprescription.Value, DateFormat.ShortDate), cboconsulttype.Text, ConsultPrice, Me.txtremark.Text, ReadyDiagnosis)
+                DA_Prescription.InsertPrescription(CDbl(txtno.Text), CInt(lblUserID.Text), Me.cbodiagnosis.Text, FormatDateTime(dtprescription.Value, DateFormat.ShortDate), cboconsulttype.Text, ConsultPrice, Me.txtremark.Text, ReadyDiagnosis)
                 ''Get Data From PreDetailTable and Insert Into the real Detail Table (Foreign Tables)
                 Dim PrescriptionID As Long
                 If DA_Prescription.SelectMaxID.ToString = "" Then
@@ -197,13 +197,13 @@ Public Class NewConsultingForm
                 For m = 0 To PrescriptionList.Rows.Count - 1
                     DA_PrescriptionDetail.InsertPrescription(PrescriptionID, PrescriptionList.Rows(m).Item("medicineid"), PrescriptionList.Rows(m).Item("dosage"), PrescriptionList.Rows(m).Item("duration"), PrescriptionList.Rows(m).Item("TimeUsed"), TxtTotalUse.Text)
                 Next
-                DA_PrePrescription.DeletePrescriptionByPatientID(CInt(LblAutoNo.Text))
+                DA_PrePrescription.DeletePrescriptionByPatientID(CInt(txtno.Text))
 
-                If DA_PreInvoice.SelectByPatientID(CInt(LblAutoNo.Text)).Rows.Count < 1 Then
-                    DA_PreInvoice.InsertInvoice(CInt(LblAutoNo.Text))
+                If DA_PreInvoice.SelectByPatientID(CInt(txtno.Text)).Rows.Count < 1 Then
+                    DA_PreInvoice.InsertInvoice(CInt(txtno.Text))
                 End If
                 '-------Pre Invoice Consultation-----------
-                DA_PreConsultation.InsertConsultation(CLng(Me.LblAutoNo.Text), Me.cboconsulttype.Text, ConsultPrice)
+                DA_PreConsultation.InsertConsultation(CLng(Me.txtno.Text), Me.cboconsulttype.Text, ConsultPrice)
                 '--------Complaint---------
                 'If Me.CboComplaint.Text <> "" Then
                 If GridPreComplaint.RowCount > 0 Then
@@ -248,7 +248,7 @@ Public Class NewConsultingForm
                 Dim OrdinanceViewer As New FormReportViewer
                 Dim RptPatientTable As New DataTable
                 'RptPatientTable = DA_Patient.SelectPatient(CInt(Me.WaitingList.CurrentRow.Cells("ppatientid").Value))
-                RptPatientTable = DA_Patient.SelectPatient(CInt(LblAutoNo.Text))
+                RptPatientTable = DA_Patient.GetDataByPatientUse(CInt(txtno.Text))
                 If Me.PrescriptionList.RowCount > 0 Then
                     Dim MyProcess As New Process
                     Dim RptOrdinanceTable As New DataTable
@@ -326,7 +326,7 @@ Public Class NewConsultingForm
 
         'If MessageBox.Show("Do you want to add prescription record?", "Save", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
         'Try
-        DA_PrePrescription.InsertPrescription(CInt(LblAutoNo.Text), CInt(Me.cbomedicine.SelectedValue.ToString), Me.txtdosage.Text.ToString.Replace("'", "''"), Me.txtduration.Text.ToString.Replace("'", "''"), cboUsage.Text)
+        DA_PrePrescription.InsertPrescription(CInt(txtno.Text), CInt(Me.cbomedicine.SelectedValue.ToString), Me.txtdosage.Text.ToString.Replace("'", "''"), Me.txtduration.Text.ToString.Replace("'", "''"), cboUsage.Text)
         'MsgBox("One prescription was added", MsgBoxStyle.Information, "Successfully Added")
         Me.txtdosage.Text = ""
         Me.txtduration.Text = ""
@@ -346,7 +346,7 @@ Public Class NewConsultingForm
     Sub RefreshPrescriptionWithWaiting()
         'Try
 
-        Me.PrescriptionList.DataSource = DA_PrePrescription.SelectPrescriptionByPatientID(CInt(LblAutoNo.Text))
+        Me.PrescriptionList.DataSource = DA_PrePrescription.SelectPrescriptionByPatientID(CInt(txtno.Text))
 
 
     End Sub
