@@ -79,7 +79,7 @@ Partial Class MainInvoice
         Me.ExplorerBarContainerControl1.Controls.Add(Me.GroupBox1)
         Me.ExplorerBarContainerControl1.Location = New System.Drawing.Point(4, 26)
         Me.ExplorerBarContainerControl1.Name = "ExplorerBarContainerControl1"
-        Me.ExplorerBarContainerControl1.Size = New System.Drawing.Size(217, 336)
+        Me.ExplorerBarContainerControl1.Size = New System.Drawing.Size(261, 336)
         Me.ExplorerBarContainerControl1.TabIndex = 2
         '
         'GroupBox1
@@ -94,7 +94,7 @@ Partial Class MainInvoice
         Me.GroupBox1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GroupBox1.Location = New System.Drawing.Point(0, 0)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(217, 336)
+        Me.GroupBox1.Size = New System.Drawing.Size(261, 336)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         '
@@ -112,7 +112,7 @@ Partial Class MainInvoice
         Me.GroupBox2.Controls.Add(Me.RadByPatientID)
         Me.GroupBox2.Location = New System.Drawing.Point(3, 114)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(208, 216)
+        Me.GroupBox2.Size = New System.Drawing.Size(252, 216)
         Me.GroupBox2.TabIndex = 5
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Search Invoice By:"
@@ -121,7 +121,7 @@ Partial Class MainInvoice
         '
         Me.TxtPatientName.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.TxtPatientName.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtPatientName.Location = New System.Drawing.Point(-11, 155)
+        Me.TxtPatientName.Location = New System.Drawing.Point(33, 155)
         Me.TxtPatientName.Name = "TxtPatientName"
         Me.TxtPatientName.Size = New System.Drawing.Size(202, 26)
         Me.TxtPatientName.TabIndex = 6
@@ -130,7 +130,7 @@ Partial Class MainInvoice
         '
         Me.RadPatientName.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.RadPatientName.AutoSize = True
-        Me.RadPatientName.Location = New System.Drawing.Point(-11, 128)
+        Me.RadPatientName.Location = New System.Drawing.Point(33, 128)
         Me.RadPatientName.Name = "RadPatientName"
         Me.RadPatientName.Size = New System.Drawing.Size(92, 17)
         Me.RadPatientName.TabIndex = 5
@@ -142,7 +142,7 @@ Partial Class MainInvoice
         Me.btnsearch.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnsearch.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnsearch.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnsearch.Location = New System.Drawing.Point(92, 185)
+        Me.btnsearch.Location = New System.Drawing.Point(136, 185)
         Me.btnsearch.Name = "btnsearch"
         Me.btnsearch.Size = New System.Drawing.Size(103, 30)
         Me.btnsearch.TabIndex = 4
@@ -153,7 +153,7 @@ Partial Class MainInvoice
         '
         Me.txtinvoiceno.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtinvoiceno.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtinvoiceno.Location = New System.Drawing.Point(-11, 42)
+        Me.txtinvoiceno.Location = New System.Drawing.Point(33, 42)
         Me.txtinvoiceno.Name = "txtinvoiceno"
         Me.txtinvoiceno.Size = New System.Drawing.Size(202, 26)
         Me.txtinvoiceno.TabIndex = 3
@@ -162,7 +162,7 @@ Partial Class MainInvoice
         '
         Me.txtpatientid.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtpatientid.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtpatientid.Location = New System.Drawing.Point(-11, 97)
+        Me.txtpatientid.Location = New System.Drawing.Point(33, 97)
         Me.txtpatientid.Name = "txtpatientid"
         Me.txtpatientid.Size = New System.Drawing.Size(202, 26)
         Me.txtpatientid.TabIndex = 2
@@ -172,7 +172,7 @@ Partial Class MainInvoice
         Me.RadByInvoiceNo.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.RadByInvoiceNo.AutoSize = True
         Me.RadByInvoiceNo.Checked = True
-        Me.RadByInvoiceNo.Location = New System.Drawing.Point(-11, 19)
+        Me.RadByInvoiceNo.Location = New System.Drawing.Point(33, 19)
         Me.RadByInvoiceNo.Name = "RadByInvoiceNo"
         Me.RadByInvoiceNo.Size = New System.Drawing.Size(80, 17)
         Me.RadByInvoiceNo.TabIndex = 1
@@ -184,7 +184,7 @@ Partial Class MainInvoice
         '
         Me.RadByPatientID.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.RadByPatientID.AutoSize = True
-        Me.RadByPatientID.Location = New System.Drawing.Point(-11, 74)
+        Me.RadByPatientID.Location = New System.Drawing.Point(33, 74)
         Me.RadByPatientID.Name = "RadByPatientID"
         Me.RadByPatientID.Size = New System.Drawing.Size(75, 17)
         Me.RadByPatientID.TabIndex = 0
@@ -196,7 +196,7 @@ Partial Class MainInvoice
         Me.BtnFilterInvoice.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.BtnFilterInvoice.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BtnFilterInvoice.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnFilterInvoice.Location = New System.Drawing.Point(93, 81)
+        Me.BtnFilterInvoice.Location = New System.Drawing.Point(137, 81)
         Me.BtnFilterInvoice.Name = "BtnFilterInvoice"
         Me.BtnFilterInvoice.Size = New System.Drawing.Size(103, 27)
         Me.BtnFilterInvoice.TabIndex = 4
@@ -209,7 +209,7 @@ Partial Class MainInvoice
         Me.dtTo.CustomFormat = "dd/MM/yyyy"
         Me.dtTo.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dtTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.dtTo.Location = New System.Drawing.Point(31, 52)
+        Me.dtTo.Location = New System.Drawing.Point(75, 52)
         Me.dtTo.Name = "dtTo"
         Me.dtTo.ShowCheckBox = True
         Me.dtTo.Size = New System.Drawing.Size(166, 26)
@@ -221,7 +221,7 @@ Partial Class MainInvoice
         Me.dtFrom.CustomFormat = "dd/MM/yyyy"
         Me.dtFrom.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dtFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.dtFrom.Location = New System.Drawing.Point(31, 16)
+        Me.dtFrom.Location = New System.Drawing.Point(75, 16)
         Me.dtFrom.Name = "dtFrom"
         Me.dtFrom.ShowCheckBox = True
         Me.dtFrom.Size = New System.Drawing.Size(166, 26)
@@ -231,7 +231,7 @@ Partial Class MainInvoice
         '
         Me.Label2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(-9, 59)
+        Me.Label2.Location = New System.Drawing.Point(35, 59)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(23, 13)
         Me.Label2.TabIndex = 1
@@ -241,7 +241,7 @@ Partial Class MainInvoice
         '
         Me.Label1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(-9, 22)
+        Me.Label1.Location = New System.Drawing.Point(35, 22)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(33, 13)
         Me.Label1.TabIndex = 0
@@ -252,7 +252,7 @@ Partial Class MainInvoice
         Me.ExplorerBarContainerControl2.Controls.Add(Me.GroupIncome)
         Me.ExplorerBarContainerControl2.Location = New System.Drawing.Point(4, 387)
         Me.ExplorerBarContainerControl2.Name = "ExplorerBarContainerControl2"
-        Me.ExplorerBarContainerControl2.Size = New System.Drawing.Size(217, 534)
+        Me.ExplorerBarContainerControl2.Size = New System.Drawing.Size(261, 534)
         Me.ExplorerBarContainerControl2.TabIndex = 4
         '
         'GroupIncome
@@ -267,7 +267,7 @@ Partial Class MainInvoice
         Me.GroupIncome.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GroupIncome.Location = New System.Drawing.Point(0, 0)
         Me.GroupIncome.Name = "GroupIncome"
-        Me.GroupIncome.Size = New System.Drawing.Size(217, 534)
+        Me.GroupIncome.Size = New System.Drawing.Size(261, 534)
         Me.GroupIncome.TabIndex = 0
         Me.GroupIncome.TabStop = False
         '
@@ -276,7 +276,7 @@ Partial Class MainInvoice
         Me.BtnIncomeShow.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.BtnIncomeShow.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BtnIncomeShow.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnIncomeShow.Location = New System.Drawing.Point(-5, 186)
+        Me.BtnIncomeShow.Location = New System.Drawing.Point(39, 186)
         Me.BtnIncomeShow.Name = "BtnIncomeShow"
         Me.BtnIncomeShow.Size = New System.Drawing.Size(200, 34)
         Me.BtnIncomeShow.TabIndex = 9
@@ -289,7 +289,7 @@ Partial Class MainInvoice
         Me.dtincometo.CustomFormat = "dd/MM/yyyy"
         Me.dtincometo.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dtincometo.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.dtincometo.Location = New System.Drawing.Point(31, 55)
+        Me.dtincometo.Location = New System.Drawing.Point(75, 55)
         Me.dtincometo.Name = "dtincometo"
         Me.dtincometo.ShowCheckBox = True
         Me.dtincometo.Size = New System.Drawing.Size(166, 26)
@@ -301,7 +301,7 @@ Partial Class MainInvoice
         Me.dtincomefrom.CustomFormat = "dd/MM/yyyy"
         Me.dtincomefrom.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dtincomefrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.dtincomefrom.Location = New System.Drawing.Point(31, 19)
+        Me.dtincomefrom.Location = New System.Drawing.Point(75, 19)
         Me.dtincomefrom.Name = "dtincomefrom"
         Me.dtincomefrom.ShowCheckBox = True
         Me.dtincomefrom.Size = New System.Drawing.Size(166, 26)
@@ -316,7 +316,7 @@ Partial Class MainInvoice
         Me.GroupBox4.Controls.Add(Me.RadBySale)
         Me.GroupBox4.Controls.Add(Me.RadByAll)
         Me.GroupBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox4.Location = New System.Drawing.Point(-5, 102)
+        Me.GroupBox4.Location = New System.Drawing.Point(39, 102)
         Me.GroupBox4.Name = "GroupBox4"
         Me.GroupBox4.Size = New System.Drawing.Size(202, 69)
         Me.GroupBox4.TabIndex = 8
@@ -339,7 +339,7 @@ Partial Class MainInvoice
         '
         Me.RadByConsulation.AutoSize = True
         Me.RadByConsulation.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadByConsulation.Location = New System.Drawing.Point(36, 64)
+        Me.RadByConsulation.Location = New System.Drawing.Point(36, 44)
         Me.RadByConsulation.Name = "RadByConsulation"
         Me.RadByConsulation.Size = New System.Drawing.Size(126, 20)
         Me.RadByConsulation.TabIndex = 0
@@ -377,7 +377,7 @@ Partial Class MainInvoice
         Me.Label3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(-26, 61)
+        Me.Label3.Location = New System.Drawing.Point(18, 61)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(31, 20)
         Me.Label3.TabIndex = 5
@@ -388,7 +388,7 @@ Partial Class MainInvoice
         Me.Label4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(-26, 25)
+        Me.Label4.Location = New System.Drawing.Point(18, 25)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(50, 20)
         Me.Label4.TabIndex = 4
@@ -397,6 +397,7 @@ Partial Class MainInvoice
         'SplitContainer1
         '
         Me.SplitContainer1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.SplitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel2
         Me.SplitContainer1.Location = New System.Drawing.Point(0, 0)
         Me.SplitContainer1.Name = "SplitContainer1"
         '
@@ -408,7 +409,7 @@ Partial Class MainInvoice
         '
         Me.SplitContainer1.Panel2.Controls.Add(Me.ExplorerBar1)
         Me.SplitContainer1.Size = New System.Drawing.Size(1172, 938)
-        Me.SplitContainer1.SplitterDistance = 943
+        Me.SplitContainer1.SplitterDistance = 899
         Me.SplitContainer1.TabIndex = 1
         '
         'Panel1
@@ -416,7 +417,7 @@ Partial Class MainInvoice
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(943, 938)
+        Me.Panel1.Size = New System.Drawing.Size(899, 938)
         Me.Panel1.TabIndex = 0
         '
         'ExplorerBar1
@@ -452,7 +453,7 @@ Partial Class MainInvoice
         Me.ExplorerBar1.GroupsStateStyles.FormatStyle.BackColor = System.Drawing.SystemColors.Control
         Me.ExplorerBar1.Location = New System.Drawing.Point(0, 0)
         Me.ExplorerBar1.Name = "ExplorerBar1"
-        Me.ExplorerBar1.Size = New System.Drawing.Size(225, 938)
+        Me.ExplorerBar1.Size = New System.Drawing.Size(269, 938)
         Me.ExplorerBar1.TabIndex = 0
         Me.ExplorerBar1.VisualStyle = Janus.Windows.ExplorerBar.VisualStyle.VS2005
         '

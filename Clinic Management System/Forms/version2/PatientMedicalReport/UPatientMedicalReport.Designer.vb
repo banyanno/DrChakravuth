@@ -53,6 +53,7 @@ Partial Class UPatientMedicalReport
         'SplitContainer1
         '
         Me.SplitContainer1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.SplitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1
         Me.SplitContainer1.Location = New System.Drawing.Point(0, 33)
         Me.SplitContainer1.Name = "SplitContainer1"
         '
@@ -65,7 +66,7 @@ Partial Class UPatientMedicalReport
         '
         Me.SplitContainer1.Panel2.Controls.Add(Me.CRPatientDocViewer)
         Me.SplitContainer1.Size = New System.Drawing.Size(1277, 574)
-        Me.SplitContainer1.SplitterDistance = 674
+        Me.SplitContainer1.SplitterDistance = 547
         Me.SplitContainer1.TabIndex = 0
         '
         'GridPatientConsult
@@ -83,7 +84,7 @@ Partial Class UPatientMedicalReport
         Me.GridPatientConsult.Name = "GridPatientConsult"
         Me.GridPatientConsult.RecordNavigator = True
         Me.GridPatientConsult.RowHeaders = Janus.Windows.GridEX.InheritableBoolean.[True]
-        Me.GridPatientConsult.Size = New System.Drawing.Size(674, 574)
+        Me.GridPatientConsult.Size = New System.Drawing.Size(547, 574)
         Me.GridPatientConsult.TabIndex = 21
         '
         'CRPatientDocViewer
@@ -97,7 +98,7 @@ Partial Class UPatientMedicalReport
         Me.CRPatientDocViewer.SelectionFormula = ""
         Me.CRPatientDocViewer.ShowCloseButton = False
         Me.CRPatientDocViewer.ShowGroupTreeButton = False
-        Me.CRPatientDocViewer.Size = New System.Drawing.Size(599, 574)
+        Me.CRPatientDocViewer.Size = New System.Drawing.Size(726, 574)
         Me.CRPatientDocViewer.TabIndex = 0
         Me.CRPatientDocViewer.ViewTimeSelectionFormula = ""
         '

@@ -25,23 +25,20 @@
         Me.Close()
     End Sub
 
-    Private Sub FormIssueReceipt_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles Me.KeyDown
-      
-
-    End Sub
+  
 
     Private Sub FormIssueReceipt_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Dim ValConsult, ValPara, ValMedicine As Double
         txtexchangerate.Text = GetExchangeRate()
-        TblConsult = DA_PreConsultation.SelectByPatientID(CLng(PatientIssueReceipt.InvoiceList.CurrentRow.Cells("patientid").Value))
+        TblConsult = DA_PreConsultation.SelectByPatientID(CLng(txtno.Text))
         For Each rows As DataRow In TblConsult.Rows
             ValConsult = ValConsult + CDbl(rows("consultprice"))
         Next
-        TblPara = DA_PrePara.SelectParaByPatientID(PatientIssueReceipt.InvoiceList.CurrentRow.Cells("patientid").Value)
+        TblPara = DA_PrePara.SelectParaByPatientID(CLng(txtno.Text))
         For Each rows As DataRow In TblPara.Rows
             ValPara = ValPara + CDbl(rows("servicecharge"))
         Next
-        TblMedicine = DA_PreMedicineOrder.SelectMedicineByPatientID(PatientIssueReceipt.InvoiceList.CurrentRow.Cells("patientid").Value)
+        TblMedicine = DA_PreMedicineOrder.SelectMedicineByPatientID(CLng(txtno.Text))
         For Each row As DataRow In TblMedicine.Rows
             ValMedicine = ValMedicine + CDbl(row("amount"))
         Next
@@ -66,9 +63,9 @@
         Dim MedicineAmount As Decimal = 0
         Dim TotalAmount As Decimal = 0
 
-        TblConsult = DA_PreConsultation.SelectByPatientID(CLng(PatientIssueReceipt.InvoiceList.CurrentRow.Cells("patientid").Value))
-        TblPara = DA_PrePara.SelectParaByPatientID(PatientIssueReceipt.InvoiceList.CurrentRow.Cells("patientid").Value)
-        TblMedicine = DA_PreMedicineOrder.SelectMedicineByPatientID(PatientIssueReceipt.InvoiceList.CurrentRow.Cells("patientid").Value)
+        TblConsult = DA_PreConsultation.SelectByPatientID(CLng(txtno.Text))
+        TblPara = DA_PrePara.SelectParaByPatientID(CLng(txtno.Text))
+        TblMedicine = DA_PreMedicineOrder.SelectMedicineByPatientID(CLng(txtno.Text))
 
         For i As Integer = 0 To TblConsult.Rows.Count - 1
             ConsultAmount = ConsultAmount + CDec(TblConsult.Rows(i).Item("consultprice"))
@@ -121,9 +118,9 @@
        
         If MessageBox.Show("Do you want this issure invoice to patient?", "Issure Invoice", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
             'Dim TblConsult As New DataTable
-            Dim TblPreConsult As DataTable = DA_PreConsultation.SelectByPatientID(CLng(PatientIssueReceipt.InvoiceList.CurrentRow.Cells("patientid").Value))
-            Dim TblPrePara As DataTable = DA_PrePara.SelectParaByPatientID(CLng(PatientIssueReceipt.InvoiceList.CurrentRow.Cells("patientid").Value))
-            Dim TblPreMedicine As DataTable = DA_PreMedicineOrder.SelectMedicineByPatientID(CLng(PatientIssueReceipt.InvoiceList.CurrentRow.Cells("patientid").Value))
+            Dim TblPreConsult As DataTable = DA_PreConsultation.SelectByPatientID(CLng(CLng(txtno.Text)))
+            Dim TblPrePara As DataTable = DA_PrePara.SelectParaByPatientID(CLng(CLng(txtno.Text)))
+            Dim TblPreMedicine As DataTable = DA_PreMedicineOrder.SelectMedicineByPatientID(CLng(CLng(txtno.Text)))
             ''TblConsult = DA_Prescription.SelectPrescriptionByID(Me.InvoiceList.CurrentRow.Cells("prescriptionid").Value)
 
 
@@ -134,7 +131,7 @@
             Dim DA_Consultation As New DSInvoiceTableAdapters.tbl_invoice_consultationTableAdapter
 
             '' INSERT INVOICE
-            DA_Invoice.InsertInvoice(CDbl(PatientIssueReceipt.InvoiceList.CurrentRow.Cells("patientid").Value), FormatDateTime(Now, DateFormat.ShortDate), CDec(Me.txttotalusd.Text), CDec(EmptyString(Me.txtdiscount.Text)), CDec(EmptyString(Me.txtexchangerate.Text)), True, CDec(txtcash.Text), CDec(txtchange.Text), USER_NAME, EmptyString(TxtDeposit.Text), 0, "", EmptyString(TxtDisConsult.Text), EmptyString(TxtDisParaExam.Text), EmptyString(TxtDisMedicine.Text), EmptyString(LblValConsult.Text), EmptyString(LblValParaExam.Text), EmptyString(LblValMedicine.Text))
+            DA_Invoice.InsertInvoice(CDbl(txtno.Text), FormatDateTime(Now, DateFormat.ShortDate), CDec(Me.txttotalusd.Text), CDec(EmptyString(Me.txtdiscount.Text)), CDec(EmptyString(Me.txtexchangerate.Text)), True, CDec(txtcash.Text), CDec(txtchange.Text), USER_NAME, EmptyString(TxtDeposit.Text), 0, "", EmptyString(TxtDisConsult.Text), EmptyString(TxtDisParaExam.Text), EmptyString(TxtDisMedicine.Text), EmptyString(LblValConsult.Text), EmptyString(LblValParaExam.Text), EmptyString(LblValMedicine.Text))
             ''Get Max InvoiceID
             Dim InvoiceID As Long = DA_Invoice.SelectMaxID
 
@@ -234,7 +231,7 @@
                 DA_ReceiptDetail.InsertReceiptDetail(InvoiceID, TblPreMedicine.Rows(j).Item("medicinename"), TblPreMedicine.Rows(j).Item("qty"), TblPreMedicine.Rows(j).Item("unitname"), TblPreMedicine.Rows(j).Item("price"), (TblPreMedicine.Rows(j).Item("price") * TblPreMedicine.Rows(j).Item("qty")))
             Next
 
-            Dim PatientID As Long = CLng(PatientIssueReceipt.InvoiceList.GetRow.Cells("patientid").Value)
+            Dim PatientID As Long = CLng(EmptyString(txtno.Text))
 
             ''DELETE From PreConsultation
             DA_PreConsultation.DeleteByPatientID(PatientID)
@@ -264,8 +261,12 @@
             Catch ex As Exception
                 MessageBox.Show("Can not find printer!" & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End Try
+            Try
+                ReportInvoice.PrintToPrinter(1, False, 1, 1)
+            Catch ex As Exception
 
-            ReportInvoice.PrintToPrinter(1, False, 1, 1)
+            End Try
+
             ReportInvoice.Dispose()
             ReportInvoice.Close()
             'Viewer.CVForm.ReportSource = ReportInvoice

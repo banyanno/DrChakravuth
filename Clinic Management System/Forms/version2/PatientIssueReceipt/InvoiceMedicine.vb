@@ -159,7 +159,7 @@
             End If
 
             UnitPrice = CDbl(StoreTable.Rows(0).Item("last_price"))
-            DA_OrderMedicine.InsertMedicine(CLng(Me.Invoice.InvoiceList.CurrentRow.Cells("patientid").Value), CInt(Me.cbomedicine.SelectedValue), Me.CboUnit.SelectedValue.ToString, CInt(Me.txtorderqty.Text), UnitPrice)
+            DA_OrderMedicine.InsertMedicine(CLng(Me.Invoice.InvoiceList.CurrentRow.Cells("patientno").Value), CInt(Me.cbomedicine.SelectedValue), Me.CboUnit.SelectedValue.ToString, CInt(Me.txtorderqty.Text), UnitPrice)
             'MsgBox("One medicine order was added", MsgBoxStyle.Information, "Successfully Added")
             Me.txtorderqty.Text = ""
             Me.cbomedicine.SelectedIndex = -1

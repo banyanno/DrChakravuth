@@ -415,7 +415,7 @@ Partial Class UPatientIssueReceipt
         Me.ConsultationService.Controls.Add(Me.ConsultationList)
         Me.ConsultationService.Location = New System.Drawing.Point(4, 27)
         Me.ConsultationService.Name = "ConsultationService"
-        Me.ConsultationService.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
+        Me.ConsultationService.Padding = New System.Windows.Forms.Padding(3)
         Me.ConsultationService.Size = New System.Drawing.Size(577, 275)
         Me.ConsultationService.TabIndex = 0
         Me.ConsultationService.Text = "Consultation Service"
@@ -445,7 +445,7 @@ Partial Class UPatientIssueReceipt
         Me.ContextMenuConsultService.Font = New System.Drawing.Font("Tahoma", 12.0!)
         Me.ContextMenuConsultService.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BtnEditConsultation, Me.ToolStripMenuItem1, Me.btnDeleteConsultation, Me.ToolStripMenuItem2, Me.BtnAddConsult})
         Me.ContextMenuConsultService.Name = "ContextMenuStrip1"
-        Me.ContextMenuConsultService.Size = New System.Drawing.Size(216, 88)
+        Me.ContextMenuConsultService.Size = New System.Drawing.Size(216, 110)
         '
         'BtnEditConsultation
         '
@@ -495,7 +495,7 @@ Partial Class UPatientIssueReceipt
         Me.SaleMedicine.Controls.Add(Me.OrderList)
         Me.SaleMedicine.Location = New System.Drawing.Point(4, 29)
         Me.SaleMedicine.Name = "SaleMedicine"
-        Me.SaleMedicine.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
+        Me.SaleMedicine.Padding = New System.Windows.Forms.Padding(3)
         Me.SaleMedicine.Size = New System.Drawing.Size(1304, 434)
         Me.SaleMedicine.TabIndex = 0
         Me.SaleMedicine.Text = "Sale Medicine (F2)"
@@ -524,7 +524,7 @@ Partial Class UPatientIssueReceipt
         Me.ContextMenuMedicine.Font = New System.Drawing.Font("Tahoma", 12.0!)
         Me.ContextMenuMedicine.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BtnAddMedicince, Me.ToolStripSeparator5, Me.BtnDeleteMedicince})
         Me.ContextMenuMedicine.Name = "ContextMenuStrip1"
-        Me.ContextMenuMedicine.Size = New System.Drawing.Size(208, 80)
+        Me.ContextMenuMedicine.Size = New System.Drawing.Size(208, 58)
         '
         'BtnAddMedicince
         '

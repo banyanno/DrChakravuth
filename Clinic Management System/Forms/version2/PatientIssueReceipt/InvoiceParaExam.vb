@@ -32,7 +32,7 @@
             Dim ParaTable As New DataTable
             ParaTable = DA_Para.SelectParaByID(CInt(Me.cboexamination.SelectedValue.ToString))
             ServiceCharge = CDbl(ParaTable.Rows(0).Item("servicecharge").ToString)
-            DA_PrePara.InsertParaExam(CLng(Me.Invoice.InvoiceList.GetRow.Cells("patientid").Value), CInt(Me.cboexamination.SelectedValue), ServiceCharge)
+            DA_PrePara.InsertParaExam(CLng(Me.Invoice.InvoiceList.GetRow.Cells("patientno").Value), CInt(Me.cboexamination.SelectedValue), ServiceCharge)
             RefreshPara()
             cboexamination.Text = ""
             cboexamination.SelectedIndex = -1
@@ -44,7 +44,7 @@
       
     End Sub
     Private Sub RefreshPara()
-        Me.Invoice.ParaList.DataSource = DA_PrePara.SelectParaByPatientID(CLng(Me.Invoice.InvoiceList.CurrentRow.Cells("patientid").Value))
+        Me.Invoice.ParaList.DataSource = DA_PrePara.SelectParaByPatientID(CLng(Me.Invoice.InvoiceList.CurrentRow.Cells("patientno").Value))
     End Sub
 
     Private Sub BtnCancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnCancel.Click
@@ -52,7 +52,5 @@
     End Sub
 
    
-    Private Sub InvoiceParaExam_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-
-    End Sub
+   
 End Class

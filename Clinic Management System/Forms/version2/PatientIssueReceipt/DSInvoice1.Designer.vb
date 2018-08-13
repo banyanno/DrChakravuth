@@ -8076,11 +8076,6 @@ Partial Public Class DSInvoice
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
-        Public Function FindByinvoice_id(ByVal invoice_id As Decimal) As InvoiceRow
-            Return CType(Me.Rows.Find(New Object() {invoice_id}),InvoiceRow)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Overrides Function Clone() As Global.System.Data.DataTable
             Dim cln As InvoiceDataTable = CType(MyBase.Clone,InvoiceDataTable)
             cln.InitVars
@@ -8158,13 +8153,11 @@ Partial Public Class DSInvoice
             MyBase.Columns.Add(Me.columnDis_Para)
             Me.columnDis_Medicine = New Global.System.Data.DataColumn("Dis_Medicine", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnDis_Medicine)
-            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columninvoice_id}, true))
             Me.columninvoice_id.AutoIncrement = true
             Me.columninvoice_id.AutoIncrementSeed = -1
             Me.columninvoice_id.AutoIncrementStep = -1
             Me.columninvoice_id.AllowDBNull = false
             Me.columninvoice_id.ReadOnly = true
-            Me.columninvoice_id.Unique = true
             Me.columnpname.AllowDBNull = false
             Me.columnpname.MaxLength = 200
             Me.columnpgender.AllowDBNull = false
@@ -23412,8 +23405,8 @@ Namespace DSInvoiceTableAdapters
                 "ss, P.pphoneno, I.invoice_date, I.total, I.discount, I.exchange_rate, I.valid, I"& _ 
                 ".Cash_Received, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                      I.Change, I.ReceivedBy, I.deposit, P.pat"& _ 
                 "ientid AS patientNo, I.Dis_Consult, I.Dis_Para, I.Dis_Medicine"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM         tbl"& _ 
-                "_invoice AS I INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                      tblpatient AS P ON P.ppatientid "& _ 
-                "= I.patientid"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE     (I.invoice_id = @invoiceid)"
+                "_invoice AS I INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                      tblpatient AS P ON P.patientid ="& _ 
+                " I.patientid"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE     (I.invoice_id = @invoiceid)"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@invoiceid", Global.System.Data.SqlDbType.[Decimal], 9, Global.System.Data.ParameterDirection.Input, 18, 0, "invoice_id", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand
@@ -23422,9 +23415,9 @@ Namespace DSInvoiceTableAdapters
                 "ss, P.pphoneno, I.invoice_date, I.total, I.discount, I.exchange_rate, I.valid, I"& _ 
                 ".Cash_Received, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                      I.Change, I.ReceivedBy, I.deposit, P.pat"& _ 
                 "ientid AS patientNo, I.Dis_Consult, I.Dis_Para, I.Dis_Medicine"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM         tbl"& _ 
-                "_invoice AS I INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                      tblpatient AS P ON P.ppatientid "& _ 
-                "= I.patientid"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE     (I.invoice_date BETWEEN @datefrom AND @dateto)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ORDER B"& _ 
-                "Y I.invoice_id"
+                "_invoice AS I INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                      tblpatient AS P ON P.patientid ="& _ 
+                " I.patientid"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE     (I.invoice_date BETWEEN @datefrom AND @dateto)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ORDER BY"& _ 
+                " I.invoice_id"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@datefrom", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "invoice_date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@dateto", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "invoice_date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -23434,8 +23427,8 @@ Namespace DSInvoiceTableAdapters
                 "ss, P.pphoneno, I.invoice_date, I.total, I.discount, I.exchange_rate, I.valid, I"& _ 
                 ".Cash_Received, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                      I.Change, I.ReceivedBy, I.deposit, P.pat"& _ 
                 "ientid AS patientNo, I.Dis_Consult, I.Dis_Para, I.Dis_Medicine"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM         tbl"& _ 
-                "_invoice AS I INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                      tblpatient AS P ON P.ppatientid "& _ 
-                "= I.patientid"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE     (P.pname LIKE @patientName)"
+                "_invoice AS I INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                      tblpatient AS P ON P.patientid ="& _ 
+                " I.patientid"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE     (P.pname LIKE @patientName)"
             Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@patientName", Global.System.Data.SqlDbType.VarChar, 200, Global.System.Data.ParameterDirection.Input, 0, 0, "pname", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(3) = New Global.System.Data.SqlClient.SqlCommand
@@ -23444,8 +23437,8 @@ Namespace DSInvoiceTableAdapters
                 "ss, P.pphoneno, I.invoice_date, I.total, I.discount, I.exchange_rate, I.valid, I"& _ 
                 ".Cash_Received, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                      I.Change, I.ReceivedBy, I.deposit, P.pat"& _ 
                 "ientid AS patientNo, I.Dis_Consult, I.Dis_Para, I.Dis_Medicine"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM         tbl"& _ 
-                "_invoice AS I INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                      tblpatient AS P ON P.ppatientid "& _ 
-                "= I.patientid"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE     (P.patientid = @patientNo)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ORDER BY I.invoice_id"
+                "_invoice AS I INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                      tblpatient AS P ON P.patientid ="& _ 
+                " I.patientid"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE     (P.patientid = @patientNo)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ORDER BY I.invoice_id"
             Me._commandCollection(3).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@patientNo", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "patientNo", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub

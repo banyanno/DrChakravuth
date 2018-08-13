@@ -27,7 +27,7 @@ Public Class UPatientMedicalReport
     Dim DA_PatientHistory As New DS_PrescriptionTableAdapters.tblpatientTableAdapter
     Dim DA_BreathTest As New DSExaminationTableAdapters.TblBreathTestTableAdapter
     Private Sub UPatientMedicalReport_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        SplitContainer1.SplitterDistance = 164
+        'SplitContainer1.SplitterDistance = 164
     End Sub
 
     Private Sub BtnPrintPreview_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)

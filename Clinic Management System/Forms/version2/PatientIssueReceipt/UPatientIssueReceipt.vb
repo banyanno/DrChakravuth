@@ -248,4 +248,6 @@
         Dim FExchangeRate As New FormExchangeRate
         FExchangeRate.ShowDialog()
     End Sub
+
+    
 End Class
