@@ -25,8 +25,8 @@
     End Sub
 
     Private Sub BtnSave_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnSave.Click
-        If DA_ItemResult.UpdateResult(Me.TxtResultBlood.Text, CLng(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value), CInt(Me.RequestPanel.ItemResultList.CurrentRow.Cells("item_id").Value)) = 1 Then
-            Me.RequestPanel.LoadCheckBloodResult(RequestPanel.RequestList.GetRow.Cells("request_id").Value)
+        If DA_ItemResult.UpdateResult(Me.TxtResultBlood.Text, CLng(Me.RequestPanel.gridRequestList.CurrentRow.Cells("request_id").Value), CInt(Me.RequestPanel.ItemResultList.CurrentRow.Cells("item_id").Value)) = 1 Then
+            Me.RequestPanel.LoadCheckBloodResult(RequestPanel.gridRequestList.GetRow.Cells("request_id").Value)
             MsgBox("The result of blood check has been saved", MsgBoxStyle.OkOnly, "Saved Result")
             Me.Close()
         End If

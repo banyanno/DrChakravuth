@@ -1,4 +1,6 @@
-﻿Public Class FormIssueReceipt
+﻿Imports System.Data.Common
+
+Public Class FormIssueReceipt
     Dim PatientIssueReceipt As UPatientIssueReceipt
     Dim TblConsult As DataTable
     Dim TblPara As DataTable
@@ -11,6 +13,8 @@
     Dim DA_Issue As New DSStoreTableAdapters.tblissueTableAdapter
     Dim DA_Transaction As New DSStoreTableAdapters.tbltransactionTableAdapter
     Dim DA_Rate As New DSInvoiceTableAdapters.EXCHANGE_RATETableAdapter
+    Dim DR_NO As Double
+    Dim DR_NAME As String
 
     Sub New(ByVal PatientIssueReceipt As UPatientIssueReceipt)
 
@@ -25,11 +29,13 @@
         Me.Close()
     End Sub
 
-  
+
 
     Private Sub FormIssueReceipt_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Dim ValConsult, ValPara, ValMedicine As Double
         txtexchangerate.Text = GetExchangeRate()
+        DR_NO = IIf(TypeOf Me.PatientIssueReceipt.InvoiceList.GetRow.Cells("DR_NO").Value Is DBNull, 0, Me.PatientIssueReceipt.InvoiceList.GetRow.Cells("DR_NO").Value)
+        DR_NAME = IIf(TypeOf Me.PatientIssueReceipt.InvoiceList.GetRow.Cells("DR_NAME").Value Is DBNull, "", Me.PatientIssueReceipt.InvoiceList.GetRow.Cells("DR_NAME").Value)
         TblConsult = DA_PreConsultation.SelectByPatientID(CLng(txtno.Text))
         For Each rows As DataRow In TblConsult.Rows
             ValConsult = ValConsult + CDbl(rows("consultprice"))
@@ -40,7 +46,7 @@
         Next
         TblMedicine = DA_PreMedicineOrder.SelectMedicineByPatientID(CLng(txtno.Text))
         For Each row As DataRow In TblMedicine.Rows
-            ValMedicine = ValMedicine + CDbl(row("amount"))
+            ValMedicine = ValMedicine + CDbl(row("totalamount"))
         Next
         LblValConsult.Text = ValConsult
         LblValParaExam.Text = ValPara
@@ -74,16 +80,17 @@
             ParaAmount = ParaAmount + CDec(TblPara.Rows(x).Item("servicecharge"))
         Next
         For y As Integer = 0 To TblMedicine.Rows.Count - 1
-            MedicineAmount = MedicineAmount + CDec(TblMedicine.Rows(y).Item("amount"))
+            MedicineAmount = MedicineAmount + CDec(TblMedicine.Rows(y).Item("totalamount"))
         Next
 
         TotalAmount = ConsultAmount + MedicineAmount + ParaAmount
         Me.txttotalusd.Text = TotalAmount 'FormatCurrency(TotalAmount, 2)
         Me.txtsubtotalusd.Text = TotalAmount ' FormatCurrency(TotalAmount, 2)
-        Me.txtSubtotalriel.Text = TotalAmount * CDbl(Me.txtexchangerate.Text)
+        Me.txtSubtotalriel.Text = FormatNumber(TotalAmount * CDbl(Me.txtexchangerate.Text))
 
     End Sub
     Dim DA_ReceiptDetail As New DSInvoiceTableAdapters.RECEIPT_DETAILTableAdapter
+    Dim InvoiceID As Long
     Private Sub BtnSave_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnSave.Click
         If ChDisConsult.Checked = True Then
             If ValidateTextField(TxtDisConsult, "", ErrIssueReceipt) = False Then Exit Sub
@@ -115,7 +122,7 @@
             End If
         End If
 
-       
+
         If MessageBox.Show("Do you want this issure invoice to patient?", "Issure Invoice", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
             'Dim TblConsult As New DataTable
             Dim TblPreConsult As DataTable = DA_PreConsultation.SelectByPatientID(CLng(CLng(txtno.Text)))
@@ -131,9 +138,9 @@
             Dim DA_Consultation As New DSInvoiceTableAdapters.tbl_invoice_consultationTableAdapter
 
             '' INSERT INVOICE
-            DA_Invoice.InsertInvoice(CDbl(txtno.Text), FormatDateTime(Now, DateFormat.ShortDate), CDec(Me.txttotalusd.Text), CDec(EmptyString(Me.txtdiscount.Text)), CDec(EmptyString(Me.txtexchangerate.Text)), True, CDec(txtcash.Text), CDec(txtchange.Text), USER_NAME, EmptyString(TxtDeposit.Text), 0, "", EmptyString(TxtDisConsult.Text), EmptyString(TxtDisParaExam.Text), EmptyString(TxtDisMedicine.Text), EmptyString(LblValConsult.Text), EmptyString(LblValParaExam.Text), EmptyString(LblValMedicine.Text))
+            DA_Invoice.InsertInvoice(CDbl(txtno.Text), FormatDateTime(Now, DateFormat.ShortDate), CDec(Me.txttotalusd.Text), CDec(EmptyString(Me.txtdiscount.Text)), CDec(EmptyString(Me.txtexchangerate.Text)), True, CDec(txtcash.Text), CDec(txtchange.Text), USER_NAME, EmptyString(TxtDeposit.Text), 0, "", EmptyString(TxtDisConsult.Text), EmptyString(TxtDisParaExam.Text), EmptyString(TxtDisMedicine.Text), EmptyString(LblValConsult.Text), EmptyString(LblValParaExam.Text), EmptyString(LblValMedicine.Text), DR_NO, DR_NAME)
             ''Get Max InvoiceID
-            Dim InvoiceID As Long = DA_Invoice.SelectMaxID
+            InvoiceID = DA_Invoice.SelectMaxID
 
             ''Insert Consultation
             For x As Integer = 0 To TblPreConsult.Rows.Count - 1
@@ -143,7 +150,7 @@
 
             ''Insert ParaCheckID
             For i As Integer = 0 To TblPrePara.Rows.Count - 1
-                DA_ParaExam.InsertPara(InvoiceID, TblPrePara.Rows(i).Item("paracheckid"), TblPrePara.Rows(i).Item("servicecharge"))
+                DA_ParaExam.InsertPara(InvoiceID, TblPrePara.Rows(i).Item("paracheckid"), TblPrePara.Rows(i).Item("servicecharge"), TblPrePara.Rows(i).Item("ParaType"))
                 DA_ReceiptDetail.InsertReceiptDetail(InvoiceID, TblPrePara.Rows(i).Item("paracheck"), "", "", TblPrePara.Rows(i).Item("servicecharge"), TblPrePara.Rows(i).Item("servicecharge"))
             Next
 
@@ -154,82 +161,85 @@
 
             Dim StoreSaleTable As New DataTable
             For j As Integer = 0 To TblPreMedicine.Rows.Count - 1
-                DA_Medicine.InsertMedicine(InvoiceID, TblPreMedicine.Rows(j).Item("medicineid"), TblPreMedicine.Rows(j).Item("unitname"), TblPreMedicine.Rows(j).Item("qty"), TblPreMedicine.Rows(j).Item("price"))
+                DA_Medicine.InsertMedicine(InvoiceID, TblPreMedicine.Rows(j).Item("medicineid"), "", TblPreMedicine.Rows(j).Item("qty"), TblPreMedicine.Rows(j).Item("price"), TblPreMedicine.Rows(j).Item("medicinename"), TblPreMedicine.Rows(j).Item("totalamount"))
+                'Process cut stock in use use inventory
+                'StoreSaleTable = DA_Store.SelectStoreByMedicineIDAndUnitname(CInt(TblPreMedicine.Rows(j).Item("medicineid")), TblPreMedicine.Rows(j).Item("unitname").ToString)
+                'If StoreSaleTable.Rows(0).Item("unittype") = "Main unit" Then
+                '    ''UPDATE MAIN STORE
+                '    OldQty = FormatNumber(CDec(StoreSaleTable.Rows(0).Item("qty")), 2)
+                '    StoreID = CLng(StoreSaleTable.Rows(0).Item("store_id"))
+                '    DA_Store.UpdateQuantity(OldQty - CDec(TblPreMedicine.Rows(j).Item("qty")), StoreID)
+                '    ''Add Transaction
+                '    DA_Transaction.InsertTransaction(StoreID, 1, FormatDateTime(Now.Date, DateFormat.ShortDate), OldQty, CDec(TblPreMedicine.Rows(j).Item("qty")) * -1, FormatNumber(OldQty - CDec(TblPreMedicine.Rows(j).Item("qty")), 2))
+                '    ''Add Issue
+                '    DA_Issue.InsertIssue(StoreID, "Sale", FormatDateTime(Now.Date, DateFormat.ShortDate), CDec(TblPreMedicine.Rows(j).Item("qty")))
 
-                StoreSaleTable = DA_Store.SelectStoreByMedicineIDAndUnitname(CInt(TblPreMedicine.Rows(j).Item("medicineid")), TblPreMedicine.Rows(j).Item("unitname").ToString)
-                If StoreSaleTable.Rows(0).Item("unittype") = "Main unit" Then
-                    ''UPDATE MAIN STORE
-                    OldQty = FormatNumber(CDec(StoreSaleTable.Rows(0).Item("qty")), 2)
-                    StoreID = CLng(StoreSaleTable.Rows(0).Item("store_id"))
-                    DA_Store.UpdateQuantity(OldQty - CDec(TblPreMedicine.Rows(j).Item("qty")), StoreID)
-                    ''Add Transaction
-                    DA_Transaction.InsertTransaction(StoreID, 1, FormatDateTime(Now.Date, DateFormat.ShortDate), OldQty, CDec(TblPreMedicine.Rows(j).Item("qty")) * -1, FormatNumber(OldQty - CDec(TblPreMedicine.Rows(j).Item("qty")), 2))
-                    ''Add Issue
-                    DA_Issue.InsertIssue(StoreID, "Sale", FormatDateTime(Now.Date, DateFormat.ShortDate), CDec(TblPreMedicine.Rows(j).Item("qty")))
+                '    ''UPDATE SUB STORE
+                '    Dim SubStoreTable As New DataTable
+                '    Dim SaleSubQty As Decimal
+                '    SubStoreTable = DA_Store.SelectByMedicineIDAndUnitType(CInt(TblPreMedicine.Rows(j).Item("medicineid")), "Sub unit")
+                '    For x = 0 To SubStoreTable.Rows.Count - 1
+                '        SubOldQty = CDec(SubStoreTable.Rows(x).Item("qty"))
+                '        StoreID = CLng(SubStoreTable.Rows(x).Item("store_id"))
+                '        SaleSubQty = CDec(TblPreMedicine.Rows(j).Item("qty")) * CInt(SubStoreTable.Rows(x).Item("ratioqty"))
+                '        DA_Store.UpdateQuantity(SubOldQty - SaleSubQty, StoreID)
+                '        ''Add Transaction
+                '        DA_Transaction.InsertTransaction(StoreID, 1, FormatDateTime(Now.Date, DateFormat.ShortDate), SubOldQty, SaleSubQty * -1, SubOldQty - SaleSubQty)
+                '        ''Add Issue
+                '        DA_Issue.InsertIssue(StoreID, "Sale", FormatDateTime(Now.Date, DateFormat.ShortDate), SaleSubQty)
+                '    Next
+                'Else
 
-                    ''UPDATE SUB STORE
-                    Dim SubStoreTable As New DataTable
-                    Dim SaleSubQty As Decimal
-                    SubStoreTable = DA_Store.SelectByMedicineIDAndUnitType(CInt(TblPreMedicine.Rows(j).Item("medicineid")), "Sub unit")
-                    For x = 0 To SubStoreTable.Rows.Count - 1
-                        SubOldQty = CDec(SubStoreTable.Rows(x).Item("qty"))
-                        StoreID = CLng(SubStoreTable.Rows(x).Item("store_id"))
-                        SaleSubQty = CDec(TblPreMedicine.Rows(j).Item("qty")) * CInt(SubStoreTable.Rows(x).Item("ratioqty"))
-                        DA_Store.UpdateQuantity(SubOldQty - SaleSubQty, StoreID)
-                        ''Add Transaction
-                        DA_Transaction.InsertTransaction(StoreID, 1, FormatDateTime(Now.Date, DateFormat.ShortDate), SubOldQty, SaleSubQty * -1, SubOldQty - SaleSubQty)
-                        ''Add Issue
-                        DA_Issue.InsertIssue(StoreID, "Sale", FormatDateTime(Now.Date, DateFormat.ShortDate), SaleSubQty)
-                    Next
-                Else
-
-                    ''UPDATE MAIN STORE
-                    Dim MainStoreTable As New DataTable
-                    Dim SaleMainQty As Decimal
-                    MainStoreTable = DA_Store.SelectByMedicineIDAndUnitType(CInt(TblPreMedicine.Rows(j).Item("medicineid")), "Main unit")
-                    SubOldQty = CDec(MainStoreTable.Rows(0).Item("qty"))
-                    StoreID = CLng(MainStoreTable.Rows(0).Item("store_id"))
-                    SaleMainQty = FormatNumber(CDec(TblPreMedicine.Rows(j).Item("qty")) / CInt(StoreSaleTable.Rows(0).Item("ratioqty")), 2)
-                    DA_Store.UpdateQuantity(SubOldQty - SaleMainQty, StoreID)
-                    ''Add Transaction
-                    DA_Transaction.InsertTransaction(StoreID, 1, FormatDateTime(Now.Date, DateFormat.ShortDate), SubOldQty, SaleMainQty * -1, SubOldQty - SaleMainQty)
-                    ''Add Issue
-                    DA_Issue.InsertIssue(StoreID, "Sale", FormatDateTime(Now.Date, DateFormat.ShortDate), SaleMainQty)
+                '    ''UPDATE MAIN STORE
+                '    Dim MainStoreTable As New DataTable
+                '    Dim SaleMainQty As Decimal
+                '    MainStoreTable = DA_Store.SelectByMedicineIDAndUnitType(CInt(TblPreMedicine.Rows(j).Item("medicineid")), "Main unit")
+                '    SubOldQty = CDec(MainStoreTable.Rows(0).Item("qty"))
+                '    StoreID = CLng(MainStoreTable.Rows(0).Item("store_id"))
+                '    SaleMainQty = FormatNumber(CDec(TblPreMedicine.Rows(j).Item("qty")) / CInt(StoreSaleTable.Rows(0).Item("ratioqty")), 2)
+                '    DA_Store.UpdateQuantity(SubOldQty - SaleMainQty, StoreID)
+                '    ''Add Transaction
+                '    DA_Transaction.InsertTransaction(StoreID, 1, FormatDateTime(Now.Date, DateFormat.ShortDate), SubOldQty, SaleMainQty * -1, SubOldQty - SaleMainQty)
+                '    ''Add Issue
+                '    DA_Issue.InsertIssue(StoreID, "Sale", FormatDateTime(Now.Date, DateFormat.ShortDate), SaleMainQty)
 
 
-                    ''UPDATE SUB STORE
-                    Dim SubStoreTable As New DataTable
-                    Dim SaleSubQty As Decimal
-                    SubStoreTable = DA_Store.SelectByMedicineIDAndUnitType(CInt(TblPreMedicine.Rows(j).Item("medicineid")), "Sub unit")
-                    For x = 0 To SubStoreTable.Rows.Count - 1
+                '    ''UPDATE SUB STORE
+                '    Dim SubStoreTable As New DataTable
+                '    Dim SaleSubQty As Decimal
+                '    SubStoreTable = DA_Store.SelectByMedicineIDAndUnitType(CInt(TblPreMedicine.Rows(j).Item("medicineid")), "Sub unit")
+                '    For x = 0 To SubStoreTable.Rows.Count - 1
 
-                        SubOldQty = CDec(SubStoreTable.Rows(x).Item("qty"))
-                        StoreID = CLng(SubStoreTable.Rows(x).Item("store_id"))
-                        If StoreID = StoreSaleTable.Rows(0).Item("store_id") Then
-                            'Update current substore
-                            DA_Store.UpdateQuantity(SubOldQty - CDec(TblPreMedicine.Rows(j).Item("qty")), StoreID)
-                            ''Add Transaction
-                            DA_Transaction.InsertTransaction(StoreID, 1, FormatDateTime(Now.Date, DateFormat.ShortDate), SubOldQty, CDec(TblPreMedicine.Rows(j).Item("qty")) * -1, SubOldQty - CDec(TblPreMedicine.Rows(j).Item("qty")))
-                            ''Add Issue
-                            DA_Issue.InsertIssue(StoreID, "Sale", FormatDateTime(Now.Date, DateFormat.ShortDate), CDec(TblPreMedicine.Rows(j).Item("qty")))
-                        Else
-                            'Update other substore
-                            SaleSubQty = CDec(SaleMainQty) * CInt(SubStoreTable.Rows(x).Item("ratioqty"))
+                '        SubOldQty = CDec(SubStoreTable.Rows(x).Item("qty"))
+                '        StoreID = CLng(SubStoreTable.Rows(x).Item("store_id"))
+                '        If StoreID = StoreSaleTable.Rows(0).Item("store_id") Then
+                '            'Update current substore
+                '            DA_Store.UpdateQuantity(SubOldQty - CDec(TblPreMedicine.Rows(j).Item("qty")), StoreID)
+                '            ''Add Transaction
+                '            DA_Transaction.InsertTransaction(StoreID, 1, FormatDateTime(Now.Date, DateFormat.ShortDate), SubOldQty, CDec(TblPreMedicine.Rows(j).Item("qty")) * -1, SubOldQty - CDec(TblPreMedicine.Rows(j).Item("qty")))
+                '            ''Add Issue
+                '            DA_Issue.InsertIssue(StoreID, "Sale", FormatDateTime(Now.Date, DateFormat.ShortDate), CDec(TblPreMedicine.Rows(j).Item("qty")))
+                '        Else
+                '            'Update other substore
+                '            SaleSubQty = CDec(SaleMainQty) * CInt(SubStoreTable.Rows(x).Item("ratioqty"))
 
-                            DA_Store.UpdateQuantity(SubOldQty - SaleSubQty, StoreID)
-                            ''Add Transaction
-                            DA_Transaction.InsertTransaction(StoreID, 1, FormatDateTime(Now.Date, DateFormat.ShortDate), SubOldQty, SaleSubQty * -1, SubOldQty - SaleSubQty)
-                            ''Add Issue
-                            DA_Issue.InsertIssue(StoreID, "Sale", FormatDateTime(Now.Date, DateFormat.ShortDate), SaleSubQty)
-                        End If
+                '            DA_Store.UpdateQuantity(SubOldQty - SaleSubQty, StoreID)
+                '            ''Add Transaction
+                '            DA_Transaction.InsertTransaction(StoreID, 1, FormatDateTime(Now.Date, DateFormat.ShortDate), SubOldQty, SaleSubQty * -1, SubOldQty - SaleSubQty)
+                '            ''Add Issue
+                '            DA_Issue.InsertIssue(StoreID, "Sale", FormatDateTime(Now.Date, DateFormat.ShortDate), SaleSubQty)
+                '        End If
 
-                    Next
+                '    Next
 
-                End If
+                'End If
 
 
                 DA_ReceiptDetail.InsertReceiptDetail(InvoiceID, TblPreMedicine.Rows(j).Item("medicinename"), TblPreMedicine.Rows(j).Item("qty"), TblPreMedicine.Rows(j).Item("unitname"), TblPreMedicine.Rows(j).Item("price"), (TblPreMedicine.Rows(j).Item("price") * TblPreMedicine.Rows(j).Item("qty")))
             Next
+            ' Procesinng Cut stock
+            ProcessCutStoctToUsed(TblPreMedicine)
+
 
             Dim PatientID As Long = CLng(EmptyString(txtno.Text))
 
@@ -250,7 +260,7 @@
 
             Dim DA_InvoiceSmall As New DSInvoiceTableAdapters.V_ReceiptDetailTableAdapter
 
-            Dim InvoiceTable As DataTable = DA_InvoiceSmall.GetData(InvoiceID)
+            Dim InvoiceTable As DataTable = DA_InvoiceSmall.SelectByRECEIPT_NO(InvoiceID)
 
             'Set Datasourse of Report Tables
             ReportInvoice.SetDataSource(InvoiceTable)
@@ -293,7 +303,7 @@
 
     End Sub
 
-   
+
     Private Sub CashChange()
         'Try
         Dim Change As Double = 0
@@ -331,7 +341,7 @@
         SetDisableKeyString(e)
     End Sub
 
- 
+
 
 
     Private Sub txtcash_MouseClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles txtcash.MouseClick
@@ -339,7 +349,7 @@
         txtcash.SelectAll()
     End Sub
 
-   
+
     Private Sub txtcash_KeyUp(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles txtcash.KeyUp
         CashChange()
     End Sub
@@ -375,12 +385,12 @@
         TxtDeposit.SelectAll()
     End Sub
 
-   
+
     Private Sub GroupBox3_Enter(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GroupBox3.Enter
 
     End Sub
 
-  
+
     Private Sub ChDisConsult_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ChDisConsult.CheckedChanged
         TxtDisConsult.Enabled = ChDisConsult.Checked
         TxtDisConsult.Select()
@@ -448,7 +458,99 @@
     Private Sub TxtDisMedicine_MouseClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles TxtDisMedicine.MouseClick
         TxtDisMedicine.SelectAll()
     End Sub
+    Private THIDataContext As New BaseDataContext
+    Private Sub ProcessCutStoctToUsed(ByVal ObjTableItemDetial As DataTable)
+        THIDataContext.getTHIDataContext.Connection.Close()
+        THIDataContext.getTHIDataContext.Connection.Open()
+        Dim trans As DbTransaction = THIDataContext.getTHIDataContext.Connection.BeginTransaction
+        Dim DAUpdateQTYExpier As New DSRequestTableAdapters.ITEM_EXPIREDATE_DETAILTableAdapter
+        THIDataContext.getTHIDataContext.Transaction = trans
+
+        Try
+            '=========== tblUsed ==============
+            Dim mytblUsed As New tblUsed
+            mytblUsed.UsedDepartID = MAIN_STOCK_DEPART_ID  'CInt(DEPART_ID)
+            mytblUsed.UsedDescription = "Sale by user: " & USER_NAME & " in  " & DEPART_NAME & " Invoice No:" & InvoiceID
+            mytblUsed.UsedUserID = CInt(USER_ID)
+            mytblUsed.UsedDate = Now.Date
+
+            THIDataContext.getTHIDataContext.tblUseds.InsertOnSubmit(mytblUsed)
+            THIDataContext.getTHIDataContext.SubmitChanges()
+            '============ tblUsedDetail ============
+            For Each rRow As DataRow In ObjTableItemDetial.Rows
+                Dim mytblUsedDetail As New tblUsedDetail
+                mytblUsedDetail.UsedID = mytblUsed.UsedID
+                mytblUsedDetail.ItemID = Val(rRow("medicineid"))
+                mytblUsedDetail.UsedQuantity = Val(rRow("qty"))
+
+                THIDataContext.getTHIDataContext.tblUsedDetails.InsertOnSubmit(mytblUsedDetail)
+                THIDataContext.getTHIDataContext.SubmitChanges()
 
 
-    
+
+                Dim myMainStock As New tblCentralInventory
+                ' move to particular record to cut balance in main stock 
+                Dim q = From centralStock In THIDataContext.getTHIDataContext.tblCentralInventories Where centralStock.ItemID = Val(rRow("medicineid"))
+                myMainStock = q.SingleOrDefault
+
+
+                '========================= Management Begin item quantity before perform transaction =========================
+                Dim qBBT = (From BBT In THIDataContext.getTHIDataContext.tblBeginBalanceTraces Where BBT.Date.Value.Date = Now.Date And BBT.DepartID = CInt(MAIN_STOCK_DEPART_ID) And BBT.ItemID = Val(rRow("medicineid")) Select BBT.BeginBalanceTraceID).Count
+                If qBBT = 0 Then
+                    '========================= Register Begin Balance of item (myRequestToDepartID) =========================                        
+                    Dim mytblBeginBalanceTrace As New tblBeginBalanceTrace
+                    mytblBeginBalanceTrace.Date = Now.Date
+                    mytblBeginBalanceTrace.DepartID = MAIN_STOCK_DEPART_ID  'CInt(DEPART_ID)
+                    mytblBeginBalanceTrace.BeginBalanceOfDay = myMainStock.UnitsInStock
+                    mytblBeginBalanceTrace.ItemID = Val(rRow("medicineid"))
+
+                    THIDataContext.getTHIDataContext.tblBeginBalanceTraces.InsertOnSubmit(mytblBeginBalanceTrace)
+                    THIDataContext.getTHIDataContext.SubmitChanges()
+                End If
+
+                '========================= Update UnitsInStock of CentralInventory ===============
+                myMainStock.UnitsInStock = myMainStock.UnitsInStock - Val(rRow("qty"))
+                THIDataContext.getTHIDataContext.SubmitChanges()
+                '========================== Update date main inventory =========================== CInt(rRow("ExpireID"))
+                Dim TblExpireFIFO As DataTable = DAUpdateQTYExpier.SelectFIFOExpireByItem(CInt(rRow("medicineid")))
+                Dim TotalQTYEachItem As Integer = CInt(rRow("qty"))
+                Dim TemQTY As Integer = 0
+                For Each rowExpire As DataRow In TblExpireFIFO.Rows
+                    Dim ExpireID As Integer = CDbl(rowExpire("InventoryID"))
+                    Dim QTYExpire As Integer = CInt(rowExpire("UnitsInStock"))
+                    If TotalQTYEachItem >= QTYExpire Then
+                        TemQTY = TotalQTYEachItem
+                        TotalQTYEachItem = TemQTY - QTYExpire
+                        DAUpdateQTYExpier.UpdateDateExpire(0, ExpireID, CInt(rRow("medicineid")))
+                    Else
+                        DAUpdateQTYExpier.UpdateDateExpire((QTYExpire - TotalQTYEachItem), ExpireID, CInt(rRow("medicineid")))
+                        TotalQTYEachItem = 0
+                    End If
+                Next
+
+
+                'End If
+            Next
+
+            '*** Finished
+            trans.Commit()
+            THIDataContext.getTHIDataContext.Connection.Close()
+
+
+            'process run end of day.
+
+        Catch ex As Exception
+            trans.Rollback()
+            THIDataContext.getTHIDataContext.Connection.Close()
+            MsgBox("Error : " & ex.Message)
+        Finally
+
+            'MessageBox.Show("Used items save successful.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            'DEP_EOD.BtnEndofDay_Click(sender, e) ' BtnEndofDay_Click
+            Me.DialogResult = Windows.Forms.DialogResult.OK
+            trans = Nothing
+        End Try
+    End Sub
+
+
 End Class

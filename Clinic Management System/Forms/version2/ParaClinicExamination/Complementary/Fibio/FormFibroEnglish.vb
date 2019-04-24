@@ -29,18 +29,18 @@
   
 
     Private Sub BtnAddConclusion_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnAddConclusion.Click
-        If DA_FibroConclusion.SelectConclusion(CInt(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value), CInt(Me.cboFibroConclusion.SelectedValue)).Rows.Count > 0 Then
+        If DA_FibroConclusion.SelectConclusion(CInt(Me.RequestPanel.gridRequestList.CurrentRow.Cells("request_id").Value), CInt(Me.cboFibroConclusion.SelectedValue)).Rows.Count > 0 Then
             MsgBox("The conclusion was added already", MsgBoxStyle.OkOnly, "Existing Conclusion")
         Else
-            If DA_FibroConclusion.Insert(CInt(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value), CInt(Me.cboFibroConclusion.SelectedValue)) = 1 Then
+            If DA_FibroConclusion.Insert(CInt(Me.RequestPanel.gridRequestList.CurrentRow.Cells("request_id").Value), CInt(Me.cboFibroConclusion.SelectedValue)) = 1 Then
                 RefreshConclusionList()
                 cboFibroConclusion.SelectedIndex = -1
             End If
-           
+
         End If
     End Sub
     Sub RefreshConclusionList()
-        Me.conclusionlist.DataSource = DA_FibroConclusion.SelectConclusionByRequestID(CInt(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value))
+        Me.conclusionlist.DataSource = DA_FibroConclusion.SelectConclusionByRequestID(CInt(Me.RequestPanel.gridRequestList.CurrentRow.Cells("request_id").Value))
     End Sub
 
     Private Sub FormFibroEnglish_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
@@ -54,7 +54,7 @@
         Me.cboFibroAnesthegiste.DisplayMember = DA_Doctor.SelectDoctor.Columns("Doctor_Name").ColumnName
         cboFibroAnesthegiste.SelectedIndex = -1
 
-        
+
 
         'Me.cboFibroDocteur.DataSource = DA_Doctor.SelectDoctor
         'Me.cboFibroDocteur.ValueMember = DA_Doctor.SelectDoctor.Columns("Doctor_Name").ColumnName
@@ -75,7 +75,7 @@
         cboFibroDocteur.SelectedValue = USER_ID
     End Sub
     Sub LoadFibroData()
-        Dim RequestIDVal As Double = CLng(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value)
+        Dim RequestIDVal As Double = CLng(Me.RequestPanel.gridRequestList.CurrentRow.Cells("request_id").Value)
         If DA_Fibro.SelectFibroByRequestID(RequestIDVal).Rows.Count >= 1 Then
             ''Get Fibro
             Dim FibroTable As New DataTable
@@ -84,15 +84,15 @@
             Me.txtFibroTolerance.Text = FibroTable.Rows(0).Item("tolerance")
             Me.chkFibroAnesthegiste.Checked = FibroTable.Rows(0).Item("is_anesthegiste")
             Me.cboFibroAnesthegiste.SelectedValue = FibroTable.Rows(0).Item("anesthegiste")
-            TxtIntroduction.Text = FibroTable.Rows(0).Item("Introduction")
-            TxtIndication.Text = FibroTable.Rows(0).Item("Indication")
-            TxtMedication.Text = FibroTable.Rows(0).Item("Medication")
-            TxtFentanyl.Text = FibroTable.Rows(0).Item("Fentanyl")
-            TxtPropofol.Text = FibroTable.Rows(0).Item("Propofol")
-            TxtXylocainegel.Text = FibroTable.Rows(0).Item("Xylocainegel")
-            TxtEsophagus.Text = FibroTable.Rows(0).Item("Esophagus")
-            TxtStomach.Text = FibroTable.Rows(0).Item("StomachandDuodenum")
-            TxtAssessment.Text = FibroTable.Rows(0).Item("Assessment")
+            TxtIntroduction.Text = IIf(TypeOf FibroTable.Rows(0).Item("Introduction") Is DBNull, "", FibroTable.Rows(0).Item("Introduction"))
+            TxtIndication.Text = IIf(TypeOf FibroTable.Rows(0).Item("Indication") Is DBNull, "", FibroTable.Rows(0).Item("Indication"))
+            TxtMedication.Text = IIf(TypeOf FibroTable.Rows(0).Item("Medication") Is DBNull, "", FibroTable.Rows(0).Item("Medication"))
+            TxtFentanyl.Text = IIf(TypeOf FibroTable.Rows(0).Item("Fentanyl") Is DBNull, "", FibroTable.Rows(0).Item("Fentanyl"))
+            TxtPropofol.Text = IIf(TypeOf FibroTable.Rows(0).Item("Propofol") Is DBNull, "", FibroTable.Rows(0).Item("Propofol"))
+            TxtXylocainegel.Text = IIf(TypeOf FibroTable.Rows(0).Item("Xylocainegel") Is DBNull, "", FibroTable.Rows(0).Item("Xylocainegel"))
+            TxtEsophagus.Text = IIf(TypeOf FibroTable.Rows(0).Item("Esophagus") Is DBNull, "", FibroTable.Rows(0).Item("Esophagus"))
+            TxtStomach.Text = IIf(TypeOf FibroTable.Rows(0).Item("StomachandDuodenum") Is DBNull, "", FibroTable.Rows(0).Item("StomachandDuodenum"))
+            TxtAssessment.Text = IIf(TypeOf FibroTable.Rows(0).Item("Assessment") Is DBNull, "", FibroTable.Rows(0).Item("Assessment"))
 
             'Me.cboFibroMotify.SelectedValue = FibroTable.Rows(0).Item("motify")
             'Me.txtFibroOeso.Text = FibroTable.Rows(0).Item("oesophage")
@@ -120,7 +120,7 @@
 
 
             ''Load Conclusion Data
-            Me.conclusionlist.DataSource = DA_FibroConclusion.SelectConclusionByRequestID(CInt(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value))
+            Me.conclusionlist.DataSource = DA_FibroConclusion.SelectConclusionByRequestID(CInt(Me.RequestPanel.gridRequestList.CurrentRow.Cells("request_id").Value))
 
         End If
     End Sub
@@ -133,8 +133,8 @@
         End If
     End Sub
 
-   
-   
+
+
     Function GetValueConclustion() As String
         Dim ConValue As String = ""
         For i As Integer = 0 To conclusionlist.RowCount - 1
@@ -160,15 +160,15 @@
             FibroAnes = Me.cboFibroAnesthegiste.SelectedValue '.ToString.Replace("'", "''")
         End If
         If MessageBox.Show("Do you want save Fibro scopy?", "Fibro", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
-            Dim RequestIDVal As Double = CLng(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value)
+            Dim RequestIDVal As Double = CLng(Me.RequestPanel.gridRequestList.CurrentRow.Cells("request_id").Value)
 
-            If DA_Fibro.SelectFibroByRequestID(CLng(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value)).Rows.Count >= 1 Then
+            If DA_Fibro.SelectFibroByRequestID(CLng(Me.RequestPanel.gridRequestList.CurrentRow.Cells("request_id").Value)).Rows.Count >= 1 Then
                 '' Update
                 If DA_Fibro.UpdateFibroscopyEng(cboFibroDemander.SelectedValue.ToString, txtFibroTolerance.Text, chkFibroAnesthegiste.Checked, FibroAnes, cboFibroDocteur.Text, DateResultExam.Value.Date, CInt(cboFibroDocteur.SelectedValue), GetValueConclustion, TxtIntroduction.Text, TxtIndication.Text, TxtMedication.Text, TxtFentanyl.Text, TxtPropofol.Text, TxtXylocainegel.Text, TxtEsophagus.Text, TxtStomach.Text, TxtAssessment.Text, TxtOther.Text, RequestIDVal) = 1 Then
                     MsgBox("The fibroscopy has been saved successfully", MsgBoxStyle.OkOnly, "Saved Fibroscopy")
                     Me.DialogResult = Windows.Forms.DialogResult.OK
                 End If
-               
+
             Else
                 '' Add New
                 If DA_Fibro.InsertFibroscopyEng(RequestIDVal, LblPatientNo.Text, cboFibroDemander.Text, txtFibroTolerance.Text, chkFibroAnesthegiste.Checked, FibroAnes, cboFibroDocteur.Text, DateResultExam.Value.Date, CInt(cboFibroDocteur.SelectedValue), GetValueConclustion, TxtIntroduction.Text, TxtIndication.Text, TxtMedication.Text, TxtFentanyl.Text, TxtPropofol.Text, TxtXylocainegel.Text, TxtEsophagus.Text, TxtStomach.Text, TxtAssessment.Text, TxtOther.Text) = 1 Then
@@ -176,14 +176,14 @@
                     DA_DOCTOR_FEE.InsertNewDoctorFee(CInt(cboFibroDocteur.SelectedValue), cboFibroDocteur.Text, "Fibroscopy", DateResultExam.Value.Date, LblPatientNo.Text, 0, lblPatientName.Text, GetValueConclustion)
                     Me.DialogResult = Windows.Forms.DialogResult.OK
                 End If
-            
+
             End If
         End If
     End Sub
 
     Private Sub ToolStripButton2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ToolStripButton2.Click
-        If DA_Fibro.SelectFibroByRequestID(CLng(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value)).Rows.Count <= 0 Then
-            DA_FibroConclusion.DeleteConclusionByRequestID(CLng(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value))
+        If DA_Fibro.SelectFibroByRequestID(CLng(Me.RequestPanel.gridRequestList.CurrentRow.Cells("request_id").Value)).Rows.Count <= 0 Then
+            DA_FibroConclusion.DeleteConclusionByRequestID(CLng(Me.RequestPanel.gridRequestList.CurrentRow.Cells("request_id").Value))
         End If
         Me.Close()
     End Sub

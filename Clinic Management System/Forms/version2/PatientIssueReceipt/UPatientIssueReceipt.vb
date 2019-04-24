@@ -72,7 +72,7 @@
                 ParaAmount = ParaAmount + CDec(TblPara.Rows(x).Item("servicecharge"))
             Next
             For y As Integer = 0 To TblMedicine.Rows.Count - 1
-                MedicineAmount = MedicineAmount + CDec(TblMedicine.Rows(y).Item("amount"))
+                MedicineAmount = MedicineAmount + CDec(IIf(TypeOf TblMedicine.Rows(y).Item("totalamount") Is DBNull, "0", TblMedicine.Rows(y).Item("totalamount")))
             Next
 
             TotalAmount = ConsultAmount + MedicineAmount + ParaAmount
@@ -88,7 +88,7 @@
         FIssueReceipt.txtno.Text = InvoiceList.GetRow.Cells("patientno").Value
         FIssueReceipt.txtname.Text = InvoiceList.GetRow.Cells("pname").Value
         FIssueReceipt.txtsex.Text = InvoiceList.GetRow.Cells("pgender").Value
-        FIssueReceipt.txtdatebirth.Text = InvoiceList.GetRow.Cells("pAge").Value
+        FIssueReceipt.txtdatebirth.Text = Format(InvoiceList.GetRow.Cells("pAge").Value, "dd/MM/yyyy")
         If FIssueReceipt.ShowDialog() = DialogResult.OK Then
             RefreshInvoice()
         End If
@@ -224,15 +224,22 @@
         If InvoiceList.SelectedItems.Count = 0 Then
             MessageBox.Show("Please select patient before add medicince", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Else
-            Dim FrmOrder As New InvoiceMedicine(Me)
-            FrmOrder.ShowDialog()
+            'Dim FrmOrder As New InvoiceMedicine(Me)
+            'FrmOrder.ShowDialog()
+            Dim AddMedici As New InvoiceMedicineV2(Me)
+            AddMedici.ShowDialog()
         End If
     End Sub
 
     Private Sub BtnDeleteMedicince_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnDeleteMedicince.Click
         If Me.OrderList.RowCount >= 1 Then
             If MsgBox("Are you sure you want to delete this order?", MsgBoxStyle.YesNo, "Confirm Delete") Then
-                DA_PreMedicineOrder.DeleteMedicine(Me.OrderList.CurrentRow.Cells("pre_id").Value)
+                Try
+                    DA_PreMedicineOrder.DeleteMedicine(Me.OrderList.CurrentRow.Cells("pre_id").Value)
+                Catch ex As Exception
+
+                End Try
+
                 RefreshOrderList()
             End If
         End If
@@ -250,4 +257,8 @@
     End Sub
 
     
+    Private Sub BtnFindingInvoice_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnFindingInvoice.Click
+        Dim FFindingInvoice As New FindInvoiceDetial
+        FFindingInvoice.ShowDialog()
+    End Sub
 End Class

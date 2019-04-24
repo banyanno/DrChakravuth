@@ -21,26 +21,28 @@
         cboexamination.SelectedIndex = -1
     End Sub
     Private Sub BtnFinish_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnFinish.Click
-        If RequestPanel.RequestList.SelectedItems.Count = 0 Then Exit Sub
+        If RequestPanel.gridRequestList.SelectedItems.Count = 0 Then Exit Sub
         If MsgBox("Are you sure that the para examination was completed?", MsgBoxStyle.YesNo, "Confirm Completion") = MsgBoxResult.Yes Then
-            If DA_PreInvoice.SelectByPatientID(CLng(RequestPanel.RequestList.GetRow.Cells("ppatientid").Value)).Rows.Count < 1 Then
-                DA_PreInvoice.InsertInvoice(CLng(RequestPanel.RequestList.GetRow.Cells("ppatientid").Value))
+            If DA_PreInvoice.SelectByPatientID(CLng(RequestPanel.gridRequestList.GetRow.Cells("ppatientid").Value)).Rows.Count < 1 Then
+                DA_PreInvoice.InsertInvoice(CLng(RequestPanel.gridRequestList.GetRow.Cells("ppatientid").Value), USER_ID, SHOW_NAME)
             End If
-            DA_Request.UpdateStatus(0, CLng(RequestPanel.RequestList.GetRow.Cells("request_id").Value))
-            RequestPanel.RequestList.DataSource = DA_Request.SelectStatus(1)
+            DA_Request.UpdateStatus(0, CLng(RequestPanel.gridRequestList.GetRow.Cells("request_id").Value))
+            RequestPanel.gridRequestList.DataSource = DA_Request.SelectStatus(1)
             Me.Close()
         End If
     End Sub
     Sub RefreshParaList()
-        Me.ParaList.DataSource = DA_PrePara.SelectParaByPatientID(CLng(Me.RequestPanel.RequestList.CurrentRow.Cells("ppatientid").Value))
+        Me.ParaList.DataSource = DA_PrePara.SelectParaByPatientID(CLng(Me.RequestPanel.gridRequestList.CurrentRow.Cells("ppatientid").Value))
 
     End Sub
     Private Sub BtnAdd_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnAdd.Click
         Dim ServiceCharge As Double
+        Dim ParaType As String
         Dim ParaTable As New DataTable
         ParaTable = DA_Para.SelectParaByID(CInt(Me.cboexamination.SelectedValue.ToString))
         ServiceCharge = CDbl(ParaTable.Rows(0).Item("servicecharge").ToString)
-        DA_PrePara.InsertParaExam(CLng(Me.RequestPanel.RequestList.GetRow.Cells("ppatientid").Value), CInt(Me.cboexamination.SelectedValue), ServiceCharge)
+        ParaType = ParaTable.Rows(0).Item("ParaType").ToString
+        DA_PrePara.InsertParaExam(CLng(Me.RequestPanel.gridRequestList.GetRow.Cells("ppatientid").Value), CInt(Me.cboexamination.SelectedValue), ServiceCharge, ParaType)
         RefreshParaList()
         cboexamination.SelectedIndex = -1
     End Sub

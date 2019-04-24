@@ -25,6 +25,7 @@ Partial Class MainUreaBreath
         Me.components = New System.ComponentModel.Container
         Dim GridBreathTest_DesignTimeLayout As Janus.Windows.GridEX.GridEXLayout = New Janus.Windows.GridEX.GridEXLayout
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MainUreaBreath))
+        Dim JanusColorScheme1 As Janus.Windows.Common.JanusColorScheme = New Janus.Windows.Common.JanusColorScheme
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip
         Me.BtnPrintPreviw = New System.Windows.Forms.ToolStripButton
         Me.ToolStripSeparator5 = New System.Windows.Forms.ToolStripSeparator
@@ -59,6 +60,7 @@ Partial Class MainUreaBreath
         Me.CboConclusion = New System.Windows.Forms.ComboBox
         Me.ErrBreathTest = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.BgLoadData = New System.ComponentModel.BackgroundWorker
+        Me.VisualStyleManager1 = New Janus.Windows.Common.VisualStyleManager(Me.components)
         Me.ToolStrip1.SuspendLayout()
         CType(Me.GridBreathTest, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer1.Panel1.SuspendLayout()
@@ -74,67 +76,72 @@ Partial Class MainUreaBreath
         '
         'ToolStrip1
         '
+        Me.ToolStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
         Me.ToolStrip1.Font = New System.Drawing.Font("Segoe UI", 12.0!)
         Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BtnPrintPreviw, Me.ToolStripSeparator5, Me.BtnNewBreathTest, Me.ToolStripSeparator1, Me.BtnUpdateBreath, Me.ToolStripSeparator2, Me.btnDelete})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(915, 28)
+        Me.ToolStrip1.Size = New System.Drawing.Size(915, 48)
         Me.ToolStrip1.TabIndex = 0
         Me.ToolStrip1.Text = "New Breath Test"
         '
         'BtnPrintPreviw
         '
-        Me.BtnPrintPreviw.ForeColor = System.Drawing.Color.Blue
+        Me.BtnPrintPreviw.ForeColor = System.Drawing.Color.White
         Me.BtnPrintPreviw.Image = Global.Clinic_Management_System.My.Resources.Resources.printer
         Me.BtnPrintPreviw.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.BtnPrintPreviw.Name = "BtnPrintPreviw"
-        Me.BtnPrintPreviw.Size = New System.Drawing.Size(126, 25)
+        Me.BtnPrintPreviw.Size = New System.Drawing.Size(106, 45)
         Me.BtnPrintPreviw.Text = "Print Preview"
+        Me.BtnPrintPreviw.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
         'ToolStripSeparator5
         '
         Me.ToolStripSeparator5.Name = "ToolStripSeparator5"
-        Me.ToolStripSeparator5.Size = New System.Drawing.Size(6, 28)
+        Me.ToolStripSeparator5.Size = New System.Drawing.Size(6, 48)
         '
         'BtnNewBreathTest
         '
-        Me.BtnNewBreathTest.ForeColor = System.Drawing.Color.Blue
+        Me.BtnNewBreathTest.ForeColor = System.Drawing.Color.White
         Me.BtnNewBreathTest.Image = Global.Clinic_Management_System.My.Resources.Resources.send_to_doctor
         Me.BtnNewBreathTest.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.BtnNewBreathTest.Name = "BtnNewBreathTest"
-        Me.BtnNewBreathTest.Size = New System.Drawing.Size(145, 25)
+        Me.BtnNewBreathTest.Size = New System.Drawing.Size(125, 45)
         Me.BtnNewBreathTest.Text = "New Breath Test"
+        Me.BtnNewBreathTest.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         Me.BtnNewBreathTest.Visible = False
         '
         'ToolStripSeparator1
         '
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 28)
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 48)
         Me.ToolStripSeparator1.Visible = False
         '
         'BtnUpdateBreath
         '
-        Me.BtnUpdateBreath.ForeColor = System.Drawing.Color.Blue
+        Me.BtnUpdateBreath.ForeColor = System.Drawing.Color.White
         Me.BtnUpdateBreath.Image = Global.Clinic_Management_System.My.Resources.Resources.edit
         Me.BtnUpdateBreath.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.BtnUpdateBreath.Name = "BtnUpdateBreath"
-        Me.BtnUpdateBreath.Size = New System.Drawing.Size(201, 25)
+        Me.BtnUpdateBreath.Size = New System.Drawing.Size(181, 45)
         Me.BtnUpdateBreath.Text = "Upate Breath Test Result"
+        Me.BtnUpdateBreath.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
         'ToolStripSeparator2
         '
         Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(6, 28)
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(6, 48)
         '
         'btnDelete
         '
-        Me.btnDelete.ForeColor = System.Drawing.Color.Blue
+        Me.btnDelete.ForeColor = System.Drawing.Color.White
         Me.btnDelete.Image = Global.Clinic_Management_System.My.Resources.Resources.delete_appointment
         Me.btnDelete.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btnDelete.Name = "btnDelete"
-        Me.btnDelete.Size = New System.Drawing.Size(157, 25)
+        Me.btnDelete.Size = New System.Drawing.Size(137, 45)
         Me.btnDelete.Text = "Delete Breath Test"
+        Me.btnDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
         'GridBreathTest
         '
@@ -146,16 +153,19 @@ Partial Class MainUreaBreath
         Me.GridBreathTest.GroupByBoxVisible = False
         Me.GridBreathTest.Location = New System.Drawing.Point(0, 0)
         Me.GridBreathTest.Name = "GridBreathTest"
+        Me.GridBreathTest.Office2007ColorScheme = Janus.Windows.GridEX.Office2007ColorScheme.Silver
+        Me.GridBreathTest.Office2007CustomColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.GridBreathTest.RecordNavigator = True
         Me.GridBreathTest.RowHeaders = Janus.Windows.GridEX.InheritableBoolean.[True]
-        Me.GridBreathTest.Size = New System.Drawing.Size(915, 210)
+        Me.GridBreathTest.Size = New System.Drawing.Size(915, 190)
         Me.GridBreathTest.TabIndex = 1
+        Me.GridBreathTest.VisualStyleManager = Me.VisualStyleManager1
         '
         'SplitContainer1
         '
         Me.SplitContainer1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.SplitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel2
-        Me.SplitContainer1.Location = New System.Drawing.Point(0, 28)
+        Me.SplitContainer1.Location = New System.Drawing.Point(0, 48)
         Me.SplitContainer1.Name = "SplitContainer1"
         Me.SplitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal
         '
@@ -166,8 +176,8 @@ Partial Class MainUreaBreath
         'SplitContainer1.Panel2
         '
         Me.SplitContainer1.Panel2.Controls.Add(Me.SplitContainer2)
-        Me.SplitContainer1.Size = New System.Drawing.Size(915, 558)
-        Me.SplitContainer1.SplitterDistance = 210
+        Me.SplitContainer1.Size = New System.Drawing.Size(915, 538)
+        Me.SplitContainer1.SplitterDistance = 190
         Me.SplitContainer1.TabIndex = 2
         '
         'SplitContainer2
@@ -432,6 +442,17 @@ Partial Class MainUreaBreath
         'BgLoadData
         '
         '
+        'VisualStyleManager1
+        '
+        JanusColorScheme1.HighlightTextColor = System.Drawing.SystemColors.HotTrack
+        JanusColorScheme1.Name = "Scheme0"
+        JanusColorScheme1.Office2007ColorScheme = Janus.Windows.Common.Office2007ColorScheme.Silver
+        JanusColorScheme1.Office2007CustomColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        JanusColorScheme1.UseThemes = False
+        JanusColorScheme1.VisualStyle = Janus.Windows.Common.VisualStyle.Standard
+        Me.VisualStyleManager1.ColorSchemes.Add(JanusColorScheme1)
+        Me.VisualStyleManager1.DefaultColorScheme = "Scheme0"
+        '
         'MainUreaBreath
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -492,5 +513,6 @@ Partial Class MainUreaBreath
     Friend WithEvents BtnFindPatient As System.Windows.Forms.Button
     Friend WithEvents ErrBreathTest As System.Windows.Forms.ErrorProvider
     Friend WithEvents BgLoadData As System.ComponentModel.BackgroundWorker
+    Friend WithEvents VisualStyleManager1 As Janus.Windows.Common.VisualStyleManager
 
 End Class

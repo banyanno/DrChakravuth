@@ -68,12 +68,13 @@ Partial Class MainParameter
         Me.ToolStripButton8 = New System.Windows.Forms.ToolStripButton
         Me.ToolStripSeparator8 = New System.Windows.Forms.ToolStripSeparator
         Me.ParaList = New Janus.Windows.GridEX.GridEX
-        Me.ToolStrip3 = New System.Windows.Forms.ToolStrip
+        Me.ToolParaClinic = New System.Windows.Forms.ToolStrip
         Me.ToolStripButton4 = New System.Windows.Forms.ToolStripButton
         Me.ToolStripSeparator5 = New System.Windows.Forms.ToolStripSeparator
         Me.ToolStripButton6 = New System.Windows.Forms.ToolStripButton
         Me.ToolStripButton5 = New System.Windows.Forms.ToolStripButton
         Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator
+        Me.BtnParaClinicRefresh = New System.Windows.Forms.ToolStripButton
         Me.ComplaintList = New Janus.Windows.GridEX.GridEX
         Me.ToolStrip2 = New System.Windows.Forms.ToolStrip
         Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton
@@ -179,7 +180,7 @@ Partial Class MainParameter
         CType(Me.ConsultTypeList, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip4.SuspendLayout()
         CType(Me.ParaList, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.ToolStrip3.SuspendLayout()
+        Me.ToolParaClinic.SuspendLayout()
         CType(Me.ComplaintList, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip2.SuspendLayout()
         CType(Me.PhysicalList, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -374,7 +375,7 @@ Partial Class MainParameter
         Me.DoctorList.RowHeaders = Janus.Windows.GridEX.InheritableBoolean.[True]
         Me.DoctorList.SelectedFormatStyle.BackColorAlphaMode = Janus.Windows.GridEX.AlphaMode.Transparent
         Me.DoctorList.SelectedFormatStyle.BackColorGradient = System.Drawing.SystemColors.Highlight
-        Me.DoctorList.Size = New System.Drawing.Size(1642, 387)
+        Me.DoctorList.Size = New System.Drawing.Size(1640, 385)
         Me.DoctorList.TabIndex = 43
         '
         'ToolStrip6
@@ -385,7 +386,7 @@ Partial Class MainParameter
         Me.ToolStrip6.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip6.Name = "ToolStrip6"
         Me.ToolStrip6.Padding = New System.Windows.Forms.Padding(0, 0, 2, 0)
-        Me.ToolStrip6.Size = New System.Drawing.Size(1642, 32)
+        Me.ToolStrip6.Size = New System.Drawing.Size(1640, 32)
         Me.ToolStrip6.TabIndex = 29
         Me.ToolStrip6.Text = "ToolStrip6"
         '
@@ -441,7 +442,7 @@ Partial Class MainParameter
         Me.ConsultTypeList.Name = "ConsultTypeList"
         Me.ConsultTypeList.RecordNavigator = True
         Me.ConsultTypeList.RowHeaders = Janus.Windows.GridEX.InheritableBoolean.[True]
-        Me.ConsultTypeList.Size = New System.Drawing.Size(1642, 387)
+        Me.ConsultTypeList.Size = New System.Drawing.Size(1640, 385)
         Me.ConsultTypeList.TabIndex = 2
         '
         'ToolStrip4
@@ -450,7 +451,7 @@ Partial Class MainParameter
         Me.ToolStrip4.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButton7, Me.ToolStripSeparator7, Me.ToolStripButton9, Me.ToolStripButton8, Me.ToolStripSeparator8})
         Me.ToolStrip4.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip4.Name = "ToolStrip4"
-        Me.ToolStrip4.Size = New System.Drawing.Size(1642, 32)
+        Me.ToolStrip4.Size = New System.Drawing.Size(1640, 32)
         Me.ToolStrip4.TabIndex = 1
         Me.ToolStrip4.Text = "ToolStrip4"
         '
@@ -506,18 +507,18 @@ Partial Class MainParameter
         Me.ParaList.Name = "ParaList"
         Me.ParaList.RecordNavigator = True
         Me.ParaList.RowHeaders = Janus.Windows.GridEX.InheritableBoolean.[True]
-        Me.ParaList.Size = New System.Drawing.Size(1642, 389)
+        Me.ParaList.Size = New System.Drawing.Size(1640, 385)
         Me.ParaList.TabIndex = 4
         '
-        'ToolStrip3
+        'ToolParaClinic
         '
-        Me.ToolStrip3.ImageScalingSize = New System.Drawing.Size(25, 25)
-        Me.ToolStrip3.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButton4, Me.ToolStripSeparator5, Me.ToolStripButton6, Me.ToolStripButton5, Me.ToolStripSeparator6})
-        Me.ToolStrip3.Location = New System.Drawing.Point(0, 0)
-        Me.ToolStrip3.Name = "ToolStrip3"
-        Me.ToolStrip3.Size = New System.Drawing.Size(1642, 32)
-        Me.ToolStrip3.TabIndex = 3
-        Me.ToolStrip3.Text = "ToolStrip3"
+        Me.ToolParaClinic.ImageScalingSize = New System.Drawing.Size(25, 25)
+        Me.ToolParaClinic.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButton4, Me.ToolStripSeparator5, Me.ToolStripButton6, Me.ToolStripButton5, Me.ToolStripSeparator6, Me.BtnParaClinicRefresh})
+        Me.ToolParaClinic.Location = New System.Drawing.Point(0, 0)
+        Me.ToolParaClinic.Name = "ToolParaClinic"
+        Me.ToolParaClinic.Size = New System.Drawing.Size(1640, 32)
+        Me.ToolParaClinic.TabIndex = 3
+        Me.ToolParaClinic.Text = "ToolStrip3"
         '
         'ToolStripButton4
         '
@@ -559,6 +560,15 @@ Partial Class MainParameter
         Me.ToolStripSeparator6.Name = "ToolStripSeparator6"
         Me.ToolStripSeparator6.Size = New System.Drawing.Size(6, 32)
         '
+        'BtnParaClinicRefresh
+        '
+        Me.BtnParaClinicRefresh.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+        Me.BtnParaClinicRefresh.Image = CType(resources.GetObject("BtnParaClinicRefresh.Image"), System.Drawing.Image)
+        Me.BtnParaClinicRefresh.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.BtnParaClinicRefresh.Name = "BtnParaClinicRefresh"
+        Me.BtnParaClinicRefresh.Size = New System.Drawing.Size(71, 29)
+        Me.BtnParaClinicRefresh.Text = "    Refresh   "
+        '
         'ComplaintList
         '
         Me.ComplaintList.AllowEdit = Janus.Windows.GridEX.InheritableBoolean.[False]
@@ -571,7 +581,7 @@ Partial Class MainParameter
         Me.ComplaintList.Name = "ComplaintList"
         Me.ComplaintList.RecordNavigator = True
         Me.ComplaintList.RowHeaders = Janus.Windows.GridEX.InheritableBoolean.[True]
-        Me.ComplaintList.Size = New System.Drawing.Size(1642, 387)
+        Me.ComplaintList.Size = New System.Drawing.Size(1640, 385)
         Me.ComplaintList.TabIndex = 3
         '
         'ToolStrip2
@@ -580,7 +590,7 @@ Partial Class MainParameter
         Me.ToolStrip2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButton1, Me.ToolStripSeparator3, Me.ToolStripButton3, Me.ToolStripButton2, Me.ToolStripSeparator4})
         Me.ToolStrip2.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip2.Name = "ToolStrip2"
-        Me.ToolStrip2.Size = New System.Drawing.Size(1642, 32)
+        Me.ToolStrip2.Size = New System.Drawing.Size(1640, 32)
         Me.ToolStrip2.TabIndex = 2
         Me.ToolStrip2.Text = "ToolStrip2"
         '
@@ -726,18 +736,18 @@ Partial Class MainParameter
         Me.UiTabPage2.Key = "PatientComplaint"
         Me.UiTabPage2.Location = New System.Drawing.Point(1, 53)
         Me.UiTabPage2.Name = "UiTabPage2"
-        Me.UiTabPage2.Size = New System.Drawing.Size(1642, 419)
+        Me.UiTabPage2.Size = New System.Drawing.Size(1640, 417)
         Me.UiTabPage2.TabStop = True
         Me.UiTabPage2.Text = "Patient Complaint(Symptom)"
         '
         'UiTabPage3
         '
         Me.UiTabPage3.Controls.Add(Me.ParaList)
-        Me.UiTabPage3.Controls.Add(Me.ToolStrip3)
+        Me.UiTabPage3.Controls.Add(Me.ToolParaClinic)
         Me.UiTabPage3.Key = "ParaClinicExamination"
-        Me.UiTabPage3.Location = New System.Drawing.Point(1, 51)
+        Me.UiTabPage3.Location = New System.Drawing.Point(1, 53)
         Me.UiTabPage3.Name = "UiTabPage3"
-        Me.UiTabPage3.Size = New System.Drawing.Size(1642, 421)
+        Me.UiTabPage3.Size = New System.Drawing.Size(1640, 417)
         Me.UiTabPage3.TabStop = True
         Me.UiTabPage3.Text = "Para Clinic Examination"
         '
@@ -748,7 +758,7 @@ Partial Class MainParameter
         Me.UiTabPage4.Key = "ConsultationType"
         Me.UiTabPage4.Location = New System.Drawing.Point(1, 53)
         Me.UiTabPage4.Name = "UiTabPage4"
-        Me.UiTabPage4.Size = New System.Drawing.Size(1642, 419)
+        Me.UiTabPage4.Size = New System.Drawing.Size(1640, 417)
         Me.UiTabPage4.TabStop = True
         Me.UiTabPage4.Text = "Consultation Type"
         '
@@ -759,7 +769,7 @@ Partial Class MainParameter
         Me.UiTabPage6.Key = "DoctorInformation"
         Me.UiTabPage6.Location = New System.Drawing.Point(1, 53)
         Me.UiTabPage6.Name = "UiTabPage6"
-        Me.UiTabPage6.Size = New System.Drawing.Size(1642, 419)
+        Me.UiTabPage6.Size = New System.Drawing.Size(1640, 417)
         Me.UiTabPage6.TabStop = True
         Me.UiTabPage6.Text = "Doctor Information"
         '
@@ -1410,8 +1420,8 @@ Partial Class MainParameter
         Me.ToolStrip4.ResumeLayout(False)
         Me.ToolStrip4.PerformLayout()
         CType(Me.ParaList, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.ToolStrip3.ResumeLayout(False)
-        Me.ToolStrip3.PerformLayout()
+        Me.ToolParaClinic.ResumeLayout(False)
+        Me.ToolParaClinic.PerformLayout()
         CType(Me.ComplaintList, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ToolStrip2.ResumeLayout(False)
         Me.ToolStrip2.PerformLayout()
@@ -1508,7 +1518,7 @@ Partial Class MainParameter
     Friend WithEvents ToolStripSeparator8 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents UiTabPage3 As Janus.Windows.UI.Tab.UITabPage
     Friend WithEvents ParaList As Janus.Windows.GridEX.GridEX
-    Friend WithEvents ToolStrip3 As System.Windows.Forms.ToolStrip
+    Friend WithEvents ToolParaClinic As System.Windows.Forms.ToolStrip
     Friend WithEvents ToolStripButton4 As System.Windows.Forms.ToolStripButton
     Friend WithEvents ToolStripSeparator5 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents ToolStripButton6 As System.Windows.Forms.ToolStripButton
@@ -1607,5 +1617,6 @@ Partial Class MainParameter
     Friend WithEvents BtnDeleteMedicalHistory As System.Windows.Forms.ToolStripButton
     Friend WithEvents ToolStripSeparator37 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents BtnUpdateMedicalHistory As System.Windows.Forms.ToolStripButton
+    Friend WithEvents BtnParaClinicRefresh As System.Windows.Forms.ToolStripButton
 
 End Class

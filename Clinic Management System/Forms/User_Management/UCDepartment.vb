@@ -84,12 +84,13 @@ Public Class UCDepartment
             MessageBox.Show("Please select department name to edit.", "Edit", MessageBoxButtons.OK)
         Else
             Dim FDep As New frmDepartment()
-            FDep.lblSaveOption.Text = "1"
+            FDep.lblSaveOption.Text = LsDepartment.SelectedItems(0).SubItems(1).Text ' "1"
             FDep.departID = LsDepartment.SelectedItems(0).SubItems(1).Text
             FDep.txtDepartName.Text = LsDepartment.SelectedItems(0).Text
-            If FDep.ShowDialog() = DialogResult.OK Then
-                InitDepartment()
-            End If
+            FDep.ShowDialog()
+            'If FDep.ShowDialog() = DialogResult.OK Then
+            '    InitDepartment()
+            'End If
             FDep.Close()
             FDep.Dispose()
         End If
@@ -250,5 +251,35 @@ Public Class UCDepartment
         Catch ex As Exception
             MsgBox("Please select department name." & ex.Message, MsgBoxStyle.Critical, "Error")
         End Try
+    End Sub
+
+  
+
+  
+    
+
+    Private Sub BtnDeleteUser_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnDeleteUser.Click
+        If LsUser.SelectedItems.Count = 0 Then
+            MessageBox.Show("Please select user to edit.", "Update", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End If
+        If MessageBox.Show("Do you want to delete user?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
+            If DA_USystem.DeleteUserSystem(LsUser.SelectedItems(0).SubItems(1).Text) = 1 Then
+                Try
+                    LoadUserByGroup(LsDepartment.SelectedItems(0).SubItems(1).Text)
+                Catch ex As Exception
+
+                End Try
+
+            End If
+        End If
+    End Sub
+
+    Private Sub BtnViewAllUser_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnViewAllUser.Click
+        Try
+            LoadUserByGroup(LsDepartment.SelectedItems(0).SubItems(1).Text)
+        Catch ex As Exception
+
+        End Try
+
     End Sub
 End Class

@@ -23,6 +23,7 @@ Partial Class NewParaClinicExam
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(NewParaClinicExam))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox
         Me.TxtParaPrice = New System.Windows.Forms.TextBox
         Me.TxtParaName = New System.Windows.Forms.TextBox
@@ -32,22 +33,26 @@ Partial Class NewParaClinicExam
         Me.BtnCancel = New System.Windows.Forms.Button
         Me.btnSave = New System.Windows.Forms.Button
         Me.Err = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.CboParaType = New System.Windows.Forms.ComboBox
+        Me.Label3 = New System.Windows.Forms.Label
         Me.GroupBox1.SuspendLayout()
         CType(Me.Err, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.Label3)
+        Me.GroupBox1.Controls.Add(Me.CboParaType)
         Me.GroupBox1.Controls.Add(Me.TxtParaPrice)
         Me.GroupBox1.Controls.Add(Me.TxtParaName)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Location = New System.Drawing.Point(6, 1)
+        Me.GroupBox1.Location = New System.Drawing.Point(6, 3)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(379, 108)
+        Me.GroupBox1.Size = New System.Drawing.Size(365, 127)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "ParaClinicExam"
+        Me.GroupBox1.Text = "Para Exam"
         '
         'TxtParaPrice
         '
@@ -86,7 +91,7 @@ Partial Class NewParaClinicExam
         'LblSaveOption
         '
         Me.LblSaveOption.AutoSize = True
-        Me.LblSaveOption.Location = New System.Drawing.Point(23, 123)
+        Me.LblSaveOption.Location = New System.Drawing.Point(23, 144)
         Me.LblSaveOption.Name = "LblSaveOption"
         Me.LblSaveOption.Size = New System.Drawing.Size(13, 13)
         Me.LblSaveOption.TabIndex = 7
@@ -96,7 +101,7 @@ Partial Class NewParaClinicExam
         'BtnCancel
         '
         Me.BtnCancel.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnCancel.Location = New System.Drawing.Point(310, 115)
+        Me.BtnCancel.Location = New System.Drawing.Point(296, 136)
         Me.BtnCancel.Name = "BtnCancel"
         Me.BtnCancel.Size = New System.Drawing.Size(75, 29)
         Me.BtnCancel.TabIndex = 2
@@ -106,7 +111,7 @@ Partial Class NewParaClinicExam
         'btnSave
         '
         Me.btnSave.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnSave.Location = New System.Drawing.Point(230, 115)
+        Me.btnSave.Location = New System.Drawing.Point(216, 136)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(75, 29)
         Me.btnSave.TabIndex = 1
@@ -117,15 +122,37 @@ Partial Class NewParaClinicExam
         '
         Me.Err.ContainerControl = Me
         '
+        'CboParaType
+        '
+        Me.CboParaType.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.CboParaType.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
+        Me.CboParaType.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CboParaType.FormattingEnabled = True
+        Me.CboParaType.Items.AddRange(New Object() {"Fibroscopy", "Nasogastro", "Coloscopy", "Echo", "Scan", "M-R-I", "Fibro Scan", "Urea Breath", "Biology"})
+        Me.CboParaType.Location = New System.Drawing.Point(109, 92)
+        Me.CboParaType.Name = "CboParaType"
+        Me.CboParaType.Size = New System.Drawing.Size(236, 28)
+        Me.CboParaType.TabIndex = 2
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(17, 107)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(59, 13)
+        Me.Label3.TabIndex = 8
+        Me.Label3.Text = "Para Type:"
+        '
         'NewParaClinicExam
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(394, 151)
+        Me.ClientSize = New System.Drawing.Size(379, 173)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.LblSaveOption)
         Me.Controls.Add(Me.BtnCancel)
         Me.Controls.Add(Me.btnSave)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "NewParaClinicExam"
         Me.ShowInTaskbar = False
@@ -147,4 +174,6 @@ Partial Class NewParaClinicExam
     Friend WithEvents BtnCancel As System.Windows.Forms.Button
     Friend WithEvents btnSave As System.Windows.Forms.Button
     Friend WithEvents Err As System.Windows.Forms.ErrorProvider
+    Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents CboParaType As System.Windows.Forms.ComboBox
 End Class

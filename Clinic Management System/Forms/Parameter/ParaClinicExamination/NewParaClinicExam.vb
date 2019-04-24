@@ -25,6 +25,7 @@
     Private Sub btnSave_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSave.Click
         If ValidateTextField(Me.TxtParaName, "", Err) = False Then Exit Sub
         If ValidateTextField(Me.TxtParaPrice, "", Err) = False Then Exit Sub
+        If ValidateCombobox(CboParaType, "", Err) = False Then Exit Sub
         If IsNumeric(Me.TxtParaPrice.Text) = False Then
             MsgBox("Service charge must be number only", MsgBoxStyle.Exclamation, "Invalid Data")
             Me.TxtParaPrice.SelectAll()
@@ -32,13 +33,13 @@
             Exit Sub
         End If
         If Me.LblSaveOption.Text = 0 Then
-            DA_Para.InsertPara(Me.TxtParaName.Text.Replace("'", "''"), Me.TxtParaPrice.Text)
+            DA_Para.InsertPara(Me.TxtParaName.Text.Replace("'", "''"), Me.TxtParaPrice.Text, CboParaType.Text)
             MsgBox("One para clinic examination was added", MsgBoxStyle.Information, "Successfully Added")
             Para.RefreshDataParaExam()
             ClearData()
         Else
             If MsgBox("Are you sure you want to update this para clinic examination?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
-                DA_Para.UpdatePara(Me.TxtParaName.Text.Replace("'", "''"), Me.TxtParaPrice.Text, Para.ParaList.CurrentRow.Cells("paracheckid").Value)
+                DA_Para.UpdatePara(Me.TxtParaName.Text.Replace("'", "''"), Me.TxtParaPrice.Text, CboParaType.Text, Para.ParaList.CurrentRow.Cells("paracheckid").Value)
                 MsgBox("The para clinic examination was updated", MsgBoxStyle.Information, "Successfully Updated")
                 Para.RefreshDataParaExam()
                 Me.Close()

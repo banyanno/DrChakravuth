@@ -97,6 +97,7 @@ Partial Class FormParaExamHistory
         Me.CFAnapath = New System.Windows.Forms.TabPage
         Me.GroupBox8 = New System.Windows.Forms.GroupBox
         Me.TxtCFAnapath = New System.Windows.Forms.TextBox
+        Me.LblPatientId = New System.Windows.Forms.Label
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.TabControl1.SuspendLayout()
@@ -148,6 +149,7 @@ Partial Class FormParaExamHistory
         '
         Me.GroupBox2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox2.Controls.Add(Me.LblPatientId)
         Me.GroupBox2.Controls.Add(Me.CboDiagnosis)
         Me.GroupBox2.Controls.Add(Me.LblRequestID)
         Me.GroupBox2.Controls.Add(Me.BtnFindPatient)
@@ -184,7 +186,7 @@ Partial Class FormParaExamHistory
         'LblRequestID
         '
         Me.LblRequestID.AutoSize = True
-        Me.LblRequestID.Location = New System.Drawing.Point(725, 35)
+        Me.LblRequestID.Location = New System.Drawing.Point(651, 35)
         Me.LblRequestID.Name = "LblRequestID"
         Me.LblRequestID.Size = New System.Drawing.Size(13, 13)
         Me.LblRequestID.TabIndex = 42
@@ -418,6 +420,7 @@ Partial Class FormParaExamHistory
         BloodResultList_DesignTimeLayout.LayoutString = resources.GetString("BloodResultList_DesignTimeLayout.LayoutString")
         Me.BloodResultList.DesignTimeLayout = BloodResultList_DesignTimeLayout
         Me.BloodResultList.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BloodResultList.GridLineStyle = Janus.Windows.GridEX.GridLineStyle.Solid
         Me.BloodResultList.GroupByBoxVisible = False
         Me.BloodResultList.HeaderFormatStyle.FontSize = 10.0!
         Me.BloodResultList.Location = New System.Drawing.Point(6, 49)
@@ -524,6 +527,7 @@ Partial Class FormParaExamHistory
         Me.FibroConclusionList.DesignTimeLayout = FibroConclusionList_DesignTimeLayout
         Me.FibroConclusionList.Dock = System.Windows.Forms.DockStyle.Fill
         Me.FibroConclusionList.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.FibroConclusionList.GridLineStyle = Janus.Windows.GridEX.GridLineStyle.Solid
         Me.FibroConclusionList.GroupByBoxVisible = False
         Me.FibroConclusionList.HeaderFormatStyle.FontSize = 10.0!
         Me.FibroConclusionList.Location = New System.Drawing.Point(3, 16)
@@ -600,6 +604,7 @@ Partial Class FormParaExamHistory
         Me.NasoConclusionList.DesignTimeLayout = NasoConclusionList_DesignTimeLayout
         Me.NasoConclusionList.Dock = System.Windows.Forms.DockStyle.Fill
         Me.NasoConclusionList.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.NasoConclusionList.GridLineStyle = Janus.Windows.GridEX.GridLineStyle.Solid
         Me.NasoConclusionList.GroupByBoxVisible = False
         Me.NasoConclusionList.HeaderFormatStyle.FontSize = 10.0!
         Me.NasoConclusionList.Location = New System.Drawing.Point(3, 18)
@@ -956,6 +961,16 @@ Partial Class FormParaExamHistory
         Me.TxtCFAnapath.Size = New System.Drawing.Size(977, 366)
         Me.TxtCFAnapath.TabIndex = 0
         '
+        'LblPatientId
+        '
+        Me.LblPatientId.AutoSize = True
+        Me.LblPatientId.Location = New System.Drawing.Point(690, 33)
+        Me.LblPatientId.Name = "LblPatientId"
+        Me.LblPatientId.Size = New System.Drawing.Size(13, 13)
+        Me.LblPatientId.TabIndex = 44
+        Me.LblPatientId.Text = "0"
+        Me.LblPatientId.Visible = False
+        '
         'FormParaExamHistory
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1077,4 +1092,5 @@ Partial Class FormParaExamHistory
     Friend WithEvents txtechomoreinfo As System.Windows.Forms.TextBox
     Friend WithEvents LblRequestID As System.Windows.Forms.Label
     Friend WithEvents CboDiagnosis As System.Windows.Forms.ComboBox
+    Friend WithEvents LblPatientId As System.Windows.Forms.Label
 End Class

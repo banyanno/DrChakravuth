@@ -25,10 +25,12 @@ Partial Class NewConsultingForm
         Me.components = New System.ComponentModel.Container
         Dim GridPreComplaint_DesignTimeLayout As Janus.Windows.GridEX.GridEXLayout = New Janus.Windows.GridEX.GridEXLayout
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(NewConsultingForm))
+        Dim JanusColorScheme3 As Janus.Windows.Common.JanusColorScheme = New Janus.Windows.Common.JanusColorScheme
         Dim GridPreMedicalHistory_DesignTimeLayout As Janus.Windows.GridEX.GridEXLayout = New Janus.Windows.GridEX.GridEXLayout
         Dim GridPrePhysical_DesignTimeLayout As Janus.Windows.GridEX.GridEXLayout = New Janus.Windows.GridEX.GridEXLayout
         Dim PrescriptionList_DesignTimeLayout As Janus.Windows.GridEX.GridEXLayout = New Janus.Windows.GridEX.GridEXLayout
         Me.GroupBox1 = New System.Windows.Forms.GroupBox
+        Me.LblPPatintIID = New System.Windows.Forms.Label
         Me.lblUserID = New System.Windows.Forms.Label
         Me.Label17 = New System.Windows.Forms.Label
         Me.TxtAge = New System.Windows.Forms.TextBox
@@ -37,7 +39,7 @@ Partial Class NewConsultingForm
         Me.Label3 = New System.Windows.Forms.Label
         Me.Label4 = New System.Windows.Forms.Label
         Me.LblWaiting = New System.Windows.Forms.Label
-        Me.txtno = New System.Windows.Forms.TextBox
+        Me.TxtPatientNo = New System.Windows.Forms.TextBox
         Me.txtname = New System.Windows.Forms.TextBox
         Me.txtsex = New System.Windows.Forms.TextBox
         Me.BtnCancel = New System.Windows.Forms.Button
@@ -52,6 +54,7 @@ Partial Class NewConsultingForm
         Me.CboComplaint = New System.Windows.Forms.ComboBox
         Me.GroupBox10 = New System.Windows.Forms.GroupBox
         Me.GridPreComplaint = New Janus.Windows.GridEX.GridEX
+        Me.VisualStyleManager1 = New Janus.Windows.Common.VisualStyleManager(Me.components)
         Me.Button1 = New System.Windows.Forms.Button
         Me.Button2 = New System.Windows.Forms.Button
         Me.Label12 = New System.Windows.Forms.Label
@@ -89,7 +92,7 @@ Partial Class NewConsultingForm
         Me.BtnAddPrescription = New System.Windows.Forms.Button
         Me.Label1 = New System.Windows.Forms.Label
         Me.txtdosage = New System.Windows.Forms.TextBox
-        Me.txtduration = New System.Windows.Forms.TextBox
+        Me.TxtQTYUse = New System.Windows.Forms.TextBox
         Me.Label35 = New System.Windows.Forms.Label
         Me.Label51 = New System.Windows.Forms.Label
         Me.GroupBox3 = New System.Windows.Forms.GroupBox
@@ -141,6 +144,7 @@ Partial Class NewConsultingForm
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.LblPPatintIID)
         Me.GroupBox1.Controls.Add(Me.lblUserID)
         Me.GroupBox1.Controls.Add(Me.Label17)
         Me.GroupBox1.Controls.Add(Me.TxtAge)
@@ -149,7 +153,7 @@ Partial Class NewConsultingForm
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.LblWaiting)
-        Me.GroupBox1.Controls.Add(Me.txtno)
+        Me.GroupBox1.Controls.Add(Me.TxtPatientNo)
         Me.GroupBox1.Controls.Add(Me.txtname)
         Me.GroupBox1.Controls.Add(Me.txtsex)
         Me.GroupBox1.Dock = System.Windows.Forms.DockStyle.Top
@@ -161,10 +165,20 @@ Partial Class NewConsultingForm
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Patient Information"
         '
+        'LblPPatintIID
+        '
+        Me.LblPPatintIID.AutoSize = True
+        Me.LblPPatintIID.Location = New System.Drawing.Point(806, 23)
+        Me.LblPPatintIID.Name = "LblPPatintIID"
+        Me.LblPPatintIID.Size = New System.Drawing.Size(15, 16)
+        Me.LblPPatintIID.TabIndex = 20
+        Me.LblPPatintIID.Text = "0"
+        Me.LblPPatintIID.Visible = False
+        '
         'lblUserID
         '
         Me.lblUserID.AutoSize = True
-        Me.lblUserID.Location = New System.Drawing.Point(954, 30)
+        Me.lblUserID.Location = New System.Drawing.Point(844, 23)
         Me.lblUserID.Name = "lblUserID"
         Me.lblUserID.Size = New System.Drawing.Size(49, 16)
         Me.lblUserID.TabIndex = 48
@@ -235,23 +249,23 @@ Partial Class NewConsultingForm
         'LblWaiting
         '
         Me.LblWaiting.AutoSize = True
-        Me.LblWaiting.Location = New System.Drawing.Point(1050, 34)
+        Me.LblWaiting.Location = New System.Drawing.Point(927, 27)
         Me.LblWaiting.Name = "LblWaiting"
         Me.LblWaiting.Size = New System.Drawing.Size(74, 16)
         Me.LblWaiting.TabIndex = 41
         Me.LblWaiting.Text = "WaitingNo"
         Me.LblWaiting.Visible = False
         '
-        'txtno
+        'TxtPatientNo
         '
-        Me.AutocompleteMenu1.SetAutocompleteMenu(Me.txtno, Nothing)
-        Me.txtno.BackColor = System.Drawing.Color.White
-        Me.txtno.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtno.Location = New System.Drawing.Point(94, 24)
-        Me.txtno.Name = "txtno"
-        Me.txtno.ReadOnly = True
-        Me.txtno.Size = New System.Drawing.Size(134, 26)
-        Me.txtno.TabIndex = 0
+        Me.AutocompleteMenu1.SetAutocompleteMenu(Me.TxtPatientNo, Nothing)
+        Me.TxtPatientNo.BackColor = System.Drawing.Color.White
+        Me.TxtPatientNo.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtPatientNo.Location = New System.Drawing.Point(94, 24)
+        Me.TxtPatientNo.Name = "TxtPatientNo"
+        Me.TxtPatientNo.ReadOnly = True
+        Me.TxtPatientNo.Size = New System.Drawing.Size(134, 26)
+        Me.TxtPatientNo.TabIndex = 0
         '
         'txtname
         '
@@ -284,7 +298,7 @@ Partial Class NewConsultingForm
         Me.BtnCancel.Location = New System.Drawing.Point(1210, 111)
         Me.BtnCancel.Margin = New System.Windows.Forms.Padding(2)
         Me.BtnCancel.Name = "BtnCancel"
-        Me.BtnCancel.Size = New System.Drawing.Size(135, 47)
+        Me.BtnCancel.Size = New System.Drawing.Size(135, 43)
         Me.BtnCancel.TabIndex = 5
         Me.BtnCancel.Text = "Cancel"
         Me.BtnCancel.UseVisualStyleBackColor = True
@@ -295,10 +309,10 @@ Partial Class NewConsultingForm
         Me.BtnSavePrint.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BtnSavePrint.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnSavePrint.ForeColor = System.Drawing.Color.Blue
-        Me.BtnSavePrint.Location = New System.Drawing.Point(1062, 111)
+        Me.BtnSavePrint.Location = New System.Drawing.Point(1071, 111)
         Me.BtnSavePrint.Margin = New System.Windows.Forms.Padding(2)
         Me.BtnSavePrint.Name = "BtnSavePrint"
-        Me.BtnSavePrint.Size = New System.Drawing.Size(135, 47)
+        Me.BtnSavePrint.Size = New System.Drawing.Size(135, 43)
         Me.BtnSavePrint.TabIndex = 4
         Me.BtnSavePrint.Text = "Save"
         Me.BtnSavePrint.UseVisualStyleBackColor = True
@@ -424,6 +438,7 @@ Partial Class NewConsultingForm
         '
         'GridPreComplaint
         '
+        Me.GridPreComplaint.BorderStyle = Janus.Windows.GridEX.BorderStyle.Flat
         GridPreComplaint_DesignTimeLayout.LayoutString = resources.GetString("GridPreComplaint_DesignTimeLayout.LayoutString")
         Me.GridPreComplaint.DesignTimeLayout = GridPreComplaint_DesignTimeLayout
         Me.GridPreComplaint.Dock = System.Windows.Forms.DockStyle.Fill
@@ -432,11 +447,24 @@ Partial Class NewConsultingForm
         Me.GridPreComplaint.HeaderFormatStyle.FontItalic = Janus.Windows.GridEX.TriState.[False]
         Me.GridPreComplaint.Location = New System.Drawing.Point(3, 18)
         Me.GridPreComplaint.Name = "GridPreComplaint"
+        Me.GridPreComplaint.Office2007ColorScheme = Janus.Windows.GridEX.Office2007ColorScheme.Blue
+        Me.GridPreComplaint.Office2007CustomColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.GridPreComplaint.RecordNavigator = True
         Me.GridPreComplaint.RowFormatStyle.FontBold = Janus.Windows.GridEX.TriState.[False]
         Me.GridPreComplaint.RowHeaders = Janus.Windows.GridEX.InheritableBoolean.[True]
         Me.GridPreComplaint.Size = New System.Drawing.Size(536, 188)
         Me.GridPreComplaint.TabIndex = 1
+        Me.GridPreComplaint.VisualStyleManager = Me.VisualStyleManager1
+        '
+        'VisualStyleManager1
+        '
+        JanusColorScheme3.HighlightTextColor = System.Drawing.SystemColors.HotTrack
+        JanusColorScheme3.Name = "Scheme0"
+        JanusColorScheme3.Office2007ColorScheme = Janus.Windows.Common.Office2007ColorScheme.Blue
+        JanusColorScheme3.Office2007CustomColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        JanusColorScheme3.VisualStyle = Janus.Windows.Common.VisualStyle.Standard
+        Me.VisualStyleManager1.ColorSchemes.Add(JanusColorScheme3)
+        Me.VisualStyleManager1.DefaultColorScheme = "Scheme0"
         '
         'Button1
         '
@@ -477,7 +505,6 @@ Partial Class NewConsultingForm
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.TxtComplainDescription.AutoCompleteCustomSource.AddRange(New String() {"Hewrelfdjf", "ffsdfhowurwe", "Ban yannpre", "rueworjweorweorjw ", "fwerwg"})
         Me.AutocompleteMenu1.SetAutocompleteMenu(Me.TxtComplainDescription, Me.AutocompleteMenu1)
-        Me.TxtComplainDescription.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
         Me.TxtComplainDescription.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
         Me.TxtComplainDescription.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtComplainDescription.Location = New System.Drawing.Point(557, 62)
@@ -573,14 +600,18 @@ Partial Class NewConsultingForm
         Me.GridPreMedicalHistory.DesignTimeLayout = GridPreMedicalHistory_DesignTimeLayout
         Me.GridPreMedicalHistory.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GridPreMedicalHistory.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GridPreMedicalHistory.GridLineStyle = Janus.Windows.GridEX.GridLineStyle.Solid
         Me.GridPreMedicalHistory.GroupByBoxVisible = False
         Me.GridPreMedicalHistory.HeaderFormatStyle.FontBold = Janus.Windows.GridEX.TriState.[False]
         Me.GridPreMedicalHistory.Location = New System.Drawing.Point(3, 18)
         Me.GridPreMedicalHistory.Name = "GridPreMedicalHistory"
+        Me.GridPreMedicalHistory.Office2007ColorScheme = Janus.Windows.GridEX.Office2007ColorScheme.Blue
+        Me.GridPreMedicalHistory.Office2007CustomColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.GridPreMedicalHistory.RecordNavigator = True
         Me.GridPreMedicalHistory.RowHeaders = Janus.Windows.GridEX.InheritableBoolean.[True]
         Me.GridPreMedicalHistory.Size = New System.Drawing.Size(442, 175)
         Me.GridPreMedicalHistory.TabIndex = 1
+        Me.GridPreMedicalHistory.VisualStyleManager = Me.VisualStyleManager1
         '
         'Label14
         '
@@ -694,13 +725,17 @@ Partial Class NewConsultingForm
         Me.GridPrePhysical.DesignTimeLayout = GridPrePhysical_DesignTimeLayout
         Me.GridPrePhysical.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GridPrePhysical.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GridPrePhysical.GridLineStyle = Janus.Windows.GridEX.GridLineStyle.Solid
         Me.GridPrePhysical.GroupByBoxVisible = False
         Me.GridPrePhysical.HeaderFormatStyle.FontBold = Janus.Windows.GridEX.TriState.[False]
         Me.GridPrePhysical.Location = New System.Drawing.Point(3, 18)
         Me.GridPrePhysical.Name = "GridPrePhysical"
+        Me.GridPrePhysical.Office2007ColorScheme = Janus.Windows.GridEX.Office2007ColorScheme.Blue
+        Me.GridPrePhysical.Office2007CustomColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.GridPrePhysical.RecordNavigator = True
         Me.GridPrePhysical.Size = New System.Drawing.Size(536, 189)
         Me.GridPrePhysical.TabIndex = 0
+        Me.GridPrePhysical.VisualStyleManager = Me.VisualStyleManager1
         '
         'Label16
         '
@@ -760,7 +795,7 @@ Partial Class NewConsultingForm
         Me.GroupBox19.Controls.Add(Me.BtnAddPrescription)
         Me.GroupBox19.Controls.Add(Me.Label1)
         Me.GroupBox19.Controls.Add(Me.txtdosage)
-        Me.GroupBox19.Controls.Add(Me.txtduration)
+        Me.GroupBox19.Controls.Add(Me.TxtQTYUse)
         Me.GroupBox19.Controls.Add(Me.Label35)
         Me.GroupBox19.Controls.Add(Me.Label51)
         Me.GroupBox19.Dock = System.Windows.Forms.DockStyle.Fill
@@ -774,16 +809,16 @@ Partial Class NewConsultingForm
         '
         Me.AutocompleteMenu1.SetAutocompleteMenu(Me.TxtTotalUse, Nothing)
         Me.TxtTotalUse.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtTotalUse.Location = New System.Drawing.Point(1059, 20)
+        Me.TxtTotalUse.Location = New System.Drawing.Point(1012, 19)
         Me.TxtTotalUse.Name = "TxtTotalUse"
-        Me.TxtTotalUse.Size = New System.Drawing.Size(67, 26)
+        Me.TxtTotalUse.Size = New System.Drawing.Size(105, 26)
         Me.TxtTotalUse.TabIndex = 59
         '
         'Label7
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(998, 29)
+        Me.Label7.Location = New System.Drawing.Point(953, 28)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(60, 16)
         Me.Label7.TabIndex = 58
@@ -795,9 +830,9 @@ Partial Class NewConsultingForm
         Me.cbomedicine.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
         Me.cbomedicine.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbomedicine.FormattingEnabled = True
-        Me.cbomedicine.Location = New System.Drawing.Point(85, 20)
+        Me.cbomedicine.Location = New System.Drawing.Point(74, 20)
         Me.cbomedicine.Name = "cbomedicine"
-        Me.cbomedicine.Size = New System.Drawing.Size(279, 26)
+        Me.cbomedicine.Size = New System.Drawing.Size(244, 26)
         Me.cbomedicine.TabIndex = 0
         '
         'cboUsage
@@ -805,7 +840,7 @@ Partial Class NewConsultingForm
         Me.cboUsage.DropDownWidth = 300
         Me.cboUsage.Font = New System.Drawing.Font("Khmer OS Battambang", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboUsage.FormattingEnabled = True
-        Me.cboUsage.Location = New System.Drawing.Point(752, 16)
+        Me.cboUsage.Location = New System.Drawing.Point(708, 15)
         Me.cboUsage.Name = "cboUsage"
         Me.cboUsage.Size = New System.Drawing.Size(242, 30)
         Me.cboUsage.TabIndex = 3
@@ -816,7 +851,7 @@ Partial Class NewConsultingForm
         Me.Label6.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.Label6.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label6.Location = New System.Drawing.Point(707, 29)
+        Me.Label6.Location = New System.Drawing.Point(663, 28)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(49, 16)
         Me.Label6.TabIndex = 57
@@ -828,9 +863,9 @@ Partial Class NewConsultingForm
         Me.BtnRemovePrescription.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.BtnRemovePrescription.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BtnRemovePrescription.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnRemovePrescription.Location = New System.Drawing.Point(1261, 19)
+        Me.BtnRemovePrescription.Location = New System.Drawing.Point(1194, 18)
         Me.BtnRemovePrescription.Name = "BtnRemovePrescription"
-        Me.BtnRemovePrescription.Size = New System.Drawing.Size(75, 26)
+        Me.BtnRemovePrescription.Size = New System.Drawing.Size(69, 28)
         Me.BtnRemovePrescription.TabIndex = 5
         Me.BtnRemovePrescription.Text = "Remove"
         Me.BtnRemovePrescription.UseVisualStyleBackColor = True
@@ -843,25 +878,31 @@ Partial Class NewConsultingForm
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         PrescriptionList_DesignTimeLayout.LayoutString = resources.GetString("PrescriptionList_DesignTimeLayout.LayoutString")
         Me.PrescriptionList.DesignTimeLayout = PrescriptionList_DesignTimeLayout
+        Me.PrescriptionList.FlatBorderInHeaders = False
+        Me.PrescriptionList.FocusStyle = Janus.Windows.GridEX.FocusStyle.Solid
         Me.PrescriptionList.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PrescriptionList.GridLineStyle = Janus.Windows.GridEX.GridLineStyle.Solid
         Me.PrescriptionList.GroupByBoxVisible = False
         Me.PrescriptionList.HeaderFormatStyle.FontSize = 10.0!
         Me.PrescriptionList.HeaderFormatStyle.TextAlignment = Janus.Windows.GridEX.TextAlignment.Center
         Me.PrescriptionList.Location = New System.Drawing.Point(6, 58)
         Me.PrescriptionList.Name = "PrescriptionList"
+        Me.PrescriptionList.Office2007ColorScheme = Janus.Windows.GridEX.Office2007ColorScheme.Blue
+        Me.PrescriptionList.Office2007CustomColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.PrescriptionList.RecordNavigator = True
         Me.PrescriptionList.RowHeaders = Janus.Windows.GridEX.InheritableBoolean.[True]
         Me.PrescriptionList.Size = New System.Drawing.Size(1335, 204)
         Me.PrescriptionList.TabIndex = 5
+        Me.PrescriptionList.VisualStyleManager = Me.VisualStyleManager1
         '
         'BtnAddPrescription
         '
         Me.BtnAddPrescription.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.BtnAddPrescription.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BtnAddPrescription.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnAddPrescription.Location = New System.Drawing.Point(1179, 19)
+        Me.BtnAddPrescription.Location = New System.Drawing.Point(1123, 18)
         Me.BtnAddPrescription.Name = "BtnAddPrescription"
-        Me.BtnAddPrescription.Size = New System.Drawing.Size(75, 26)
+        Me.BtnAddPrescription.Size = New System.Drawing.Size(69, 28)
         Me.BtnAddPrescription.TabIndex = 4
         Me.BtnAddPrescription.Text = "Add"
         Me.BtnAddPrescription.UseVisualStyleBackColor = True
@@ -872,7 +913,7 @@ Partial Class NewConsultingForm
         Me.Label1.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.Label1.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label1.Location = New System.Drawing.Point(369, 29)
+        Me.Label1.Location = New System.Drawing.Point(333, 29)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(71, 16)
         Me.Label1.TabIndex = 56
@@ -883,19 +924,21 @@ Partial Class NewConsultingForm
         '
         Me.AutocompleteMenu1.SetAutocompleteMenu(Me.txtdosage, Nothing)
         Me.txtdosage.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtdosage.Location = New System.Drawing.Point(442, 20)
+        Me.txtdosage.Location = New System.Drawing.Point(406, 20)
         Me.txtdosage.Name = "txtdosage"
-        Me.txtdosage.Size = New System.Drawing.Size(154, 26)
+        Me.txtdosage.Size = New System.Drawing.Size(112, 26)
         Me.txtdosage.TabIndex = 1
         '
-        'txtduration
+        'TxtQTYUse
         '
-        Me.AutocompleteMenu1.SetAutocompleteMenu(Me.txtduration, Nothing)
-        Me.txtduration.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtduration.Location = New System.Drawing.Point(633, 20)
-        Me.txtduration.Name = "txtduration"
-        Me.txtduration.Size = New System.Drawing.Size(69, 26)
-        Me.txtduration.TabIndex = 2
+        Me.AutocompleteMenu1.SetAutocompleteMenu(Me.TxtQTYUse, Nothing)
+        Me.TxtQTYUse.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
+        Me.TxtQTYUse.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
+        Me.TxtQTYUse.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtQTYUse.Location = New System.Drawing.Point(561, 19)
+        Me.TxtQTYUse.Name = "TxtQTYUse"
+        Me.TxtQTYUse.Size = New System.Drawing.Size(95, 26)
+        Me.TxtQTYUse.TabIndex = 2
         '
         'Label35
         '
@@ -903,7 +946,7 @@ Partial Class NewConsultingForm
         Me.Label35.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label35.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.Label35.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label35.Location = New System.Drawing.Point(602, 29)
+        Me.Label35.Location = New System.Drawing.Point(527, 28)
         Me.Label35.Name = "Label35"
         Me.Label35.Size = New System.Drawing.Size(29, 16)
         Me.Label35.TabIndex = 52
@@ -916,7 +959,7 @@ Partial Class NewConsultingForm
         Me.Label51.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label51.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.Label51.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label51.Location = New System.Drawing.Point(17, 30)
+        Me.Label51.Location = New System.Drawing.Point(6, 30)
         Me.Label51.Name = "Label51"
         Me.Label51.Size = New System.Drawing.Size(64, 16)
         Me.Label51.TabIndex = 46
@@ -953,7 +996,7 @@ Partial Class NewConsultingForm
         Me.TxtDoctor.Location = New System.Drawing.Point(509, 56)
         Me.TxtDoctor.Name = "TxtDoctor"
         Me.TxtDoctor.ReadOnly = True
-        Me.TxtDoctor.Size = New System.Drawing.Size(242, 26)
+        Me.TxtDoctor.Size = New System.Drawing.Size(278, 26)
         Me.TxtDoctor.TabIndex = 49
         '
         'BtnParaExamHistory
@@ -1049,7 +1092,7 @@ Partial Class NewConsultingForm
         Me.cboconsulttype.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboconsulttype.Location = New System.Drawing.Point(509, 20)
         Me.cboconsulttype.Name = "cboconsulttype"
-        Me.cboconsulttype.Size = New System.Drawing.Size(242, 28)
+        Me.cboconsulttype.Size = New System.Drawing.Size(279, 28)
         Me.cboconsulttype.TabIndex = 1
         '
         'Label10
@@ -1086,6 +1129,9 @@ Partial Class NewConsultingForm
         Me.txtremark.ScrollBars = System.Windows.Forms.ScrollBars.Both
         Me.txtremark.Size = New System.Drawing.Size(1342, 85)
         Me.txtremark.TabIndex = 1
+        '
+        'bgLoadingData
+        '
         '
         'ErrPrescription
         '
@@ -1152,7 +1198,7 @@ Partial Class NewConsultingForm
 
     End Sub
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
-    Friend WithEvents txtno As System.Windows.Forms.TextBox
+    Friend WithEvents TxtPatientNo As System.Windows.Forms.TextBox
     Friend WithEvents txtname As System.Windows.Forms.TextBox
     Friend WithEvents txtsex As System.Windows.Forms.TextBox
     Friend WithEvents UiTab2 As Janus.Windows.UI.Tab.UITab
@@ -1167,7 +1213,7 @@ Partial Class NewConsultingForm
     Friend WithEvents BtnAddPrescription As System.Windows.Forms.Button
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents txtdosage As System.Windows.Forms.TextBox
-    Friend WithEvents txtduration As System.Windows.Forms.TextBox
+    Friend WithEvents TxtQTYUse As System.Windows.Forms.TextBox
     Friend WithEvents Label35 As System.Windows.Forms.Label
     Friend WithEvents Label51 As System.Windows.Forms.Label
     Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
@@ -1232,4 +1278,6 @@ Partial Class NewConsultingForm
     Friend WithEvents CboPhysicalExam As System.Windows.Forms.ComboBox
     Friend WithEvents TxtDoctor As System.Windows.Forms.TextBox
     Friend WithEvents lblUserID As System.Windows.Forms.Label
+    Friend WithEvents VisualStyleManager1 As Janus.Windows.Common.VisualStyleManager
+    Friend WithEvents LblPPatintIID As System.Windows.Forms.Label
 End Class

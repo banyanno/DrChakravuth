@@ -52,9 +52,10 @@ Partial Class MainDocRequestExam
         Me.cbodoctor = New System.Windows.Forms.ComboBox
         Me.Label1 = New System.Windows.Forms.Label
         Me.GroupBox1 = New System.Windows.Forms.GroupBox
+        Me.LblPPatientIDAuto = New System.Windows.Forms.Label
         Me.LblSaveOption = New System.Windows.Forms.Label
         Me.BtnFindPatient = New System.Windows.Forms.Button
-        Me.txtno = New System.Windows.Forms.TextBox
+        Me.TxtPatientNo = New System.Windows.Forms.TextBox
         Me.Label3 = New System.Windows.Forms.Label
         Me.Label4 = New System.Windows.Forms.Label
         Me.txtname = New System.Windows.Forms.TextBox
@@ -67,7 +68,6 @@ Partial Class MainDocRequestExam
         Me.btnSave = New System.Windows.Forms.Button
         Me.btnCancel = New System.Windows.Forms.Button
         Me.Err = New System.Windows.Forms.ErrorProvider(Me.components)
-        Me.lbloption = New System.Windows.Forms.Label
         Me.GroupBox2.SuspendLayout()
         Me.GroupRequestExam.SuspendLayout()
         Me.GBloodCheck.SuspendLayout()
@@ -379,9 +379,10 @@ Partial Class MainDocRequestExam
         '
         Me.GroupBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox1.Controls.Add(Me.LblPPatientIDAuto)
         Me.GroupBox1.Controls.Add(Me.LblSaveOption)
         Me.GroupBox1.Controls.Add(Me.BtnFindPatient)
-        Me.GroupBox1.Controls.Add(Me.txtno)
+        Me.GroupBox1.Controls.Add(Me.TxtPatientNo)
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.txtname)
@@ -397,6 +398,16 @@ Partial Class MainDocRequestExam
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Patient Information"
+        '
+        'LblPPatientIDAuto
+        '
+        Me.LblPPatientIDAuto.AutoSize = True
+        Me.LblPPatientIDAuto.Location = New System.Drawing.Point(634, 42)
+        Me.LblPPatientIDAuto.Name = "LblPPatientIDAuto"
+        Me.LblPPatientIDAuto.Size = New System.Drawing.Size(13, 13)
+        Me.LblPPatientIDAuto.TabIndex = 4
+        Me.LblPPatientIDAuto.Text = "0"
+        Me.LblPPatientIDAuto.Visible = False
         '
         'LblSaveOption
         '
@@ -419,13 +430,13 @@ Partial Class MainDocRequestExam
         Me.BtnFindPatient.UseVisualStyleBackColor = True
         Me.BtnFindPatient.Visible = False
         '
-        'txtno
+        'TxtPatientNo
         '
-        Me.txtno.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtno.Location = New System.Drawing.Point(116, 26)
-        Me.txtno.Name = "txtno"
-        Me.txtno.Size = New System.Drawing.Size(194, 24)
-        Me.txtno.TabIndex = 0
+        Me.TxtPatientNo.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtPatientNo.Location = New System.Drawing.Point(116, 26)
+        Me.TxtPatientNo.Name = "TxtPatientNo"
+        Me.TxtPatientNo.Size = New System.Drawing.Size(194, 24)
+        Me.TxtPatientNo.TabIndex = 0
         '
         'Label3
         '
@@ -558,22 +569,11 @@ Partial Class MainDocRequestExam
         '
         Me.Err.ContainerControl = Me
         '
-        'lbloption
-        '
-        Me.lbloption.AutoSize = True
-        Me.lbloption.Location = New System.Drawing.Point(13, 495)
-        Me.lbloption.Name = "lbloption"
-        Me.lbloption.Size = New System.Drawing.Size(13, 13)
-        Me.lbloption.TabIndex = 4
-        Me.lbloption.Text = "0"
-        Me.lbloption.Visible = False
-        '
         'MainDocRequestExam
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(878, 518)
-        Me.Controls.Add(Me.lbloption)
         Me.Controls.Add(Me.btnCancel)
         Me.Controls.Add(Me.btnSave)
         Me.Controls.Add(Me.GroupBox1)
@@ -594,12 +594,11 @@ Partial Class MainDocRequestExam
         Me.GroupBox1.PerformLayout()
         CType(Me.Err, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
-    Friend WithEvents txtno As System.Windows.Forms.TextBox
+    Friend WithEvents TxtPatientNo As System.Windows.Forms.TextBox
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents txtname As System.Windows.Forms.TextBox
@@ -636,7 +635,7 @@ Partial Class MainDocRequestExam
     Friend WithEvents BtnFindPatient As System.Windows.Forms.Button
     Friend WithEvents TxtBloodResult As System.Windows.Forms.TextBox
     Friend WithEvents LblSaveOption As System.Windows.Forms.Label
-    Friend WithEvents lbloption As System.Windows.Forms.Label
+    Friend WithEvents LblPPatientIDAuto As System.Windows.Forms.Label
     Friend WithEvents CboDiagnosis As System.Windows.Forms.ComboBox
     Friend WithEvents Label10 As System.Windows.Forms.Label
     Friend WithEvents ChUreaBreathTest As System.Windows.Forms.CheckBox

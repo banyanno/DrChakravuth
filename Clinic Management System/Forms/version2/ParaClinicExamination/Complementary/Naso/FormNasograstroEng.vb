@@ -24,10 +24,10 @@
         Me.RequestPanel = PanelRequest
     End Sub
     Private Sub BtnAddConclusion_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnAddConclusion.Click
-        If DA_NasoConclusion.SelectConclusion(CInt(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value), CInt(Me.cboNasoConclusion.SelectedValue)).Rows.Count > 0 Then
+        If DA_NasoConclusion.SelectConclusion(CInt(Me.RequestPanel.gridRequestList.CurrentRow.Cells("request_id").Value), CInt(Me.cboNasoConclusion.SelectedValue)).Rows.Count > 0 Then
             MsgBox("The conclusion was added already", MsgBoxStyle.OkOnly, "Existing Conclusion")
         Else
-            DA_NasoConclusion.Insert(CInt(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value), CInt(Me.cboNasoConclusion.SelectedValue))
+            DA_NasoConclusion.Insert(CInt(Me.RequestPanel.gridRequestList.CurrentRow.Cells("request_id").Value), CInt(Me.cboNasoConclusion.SelectedValue))
             RefreshConclusionList()
             cboNasoConclusion.SelectedIndex = -1
         End If
@@ -40,10 +40,10 @@
         End If
     End Sub
     Sub RefreshConclusionList()
-        Me.conclusionlist.DataSource = DA_NasoConclusion.SelectConclusionByRequestID(CInt(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value))
+        Me.conclusionlist.DataSource = DA_NasoConclusion.SelectConclusionByRequestID(CInt(Me.RequestPanel.gridRequestList.CurrentRow.Cells("request_id").Value))
     End Sub
 
-   
+
     Function GetValueConclustion() As String
         Dim ConValue As String = ""
         For i As Integer = 0 To conclusionlist.RowCount - 1
@@ -83,10 +83,10 @@
         cboNasoDocteur.SelectedValue = USER_ID
     End Sub
     Sub LoadNasoData()
-        If DA_Naso.SelectNasoByRequestID(CLng(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value)).Rows.Count >= 1 Then
+        If DA_Naso.SelectNasoByRequestID(CLng(Me.RequestPanel.gridRequestList.CurrentRow.Cells("request_id").Value)).Rows.Count >= 1 Then
             Try
                 Dim NasoTable As New DataTable
-                NasoTable = DA_Naso.SelectNasoByRequestID(CLng(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value))
+                NasoTable = DA_Naso.SelectNasoByRequestID(CLng(Me.RequestPanel.gridRequestList.CurrentRow.Cells("request_id").Value))
                 Me.cboNasoDemander.SelectedValue = NasoTable.Rows(0).Item("demander")
                 Me.txtNasoTolerance.Text = NasoTable.Rows(0).Item("tolerance")
                 'Me.cboNasoMotify.SelectedValue = NasoTable.Rows(0).Item("motify")
@@ -118,18 +118,18 @@
                 TxtMoreInfo.Text = NasoTable.Rows(0).Item("more_info")
 
                 ''Load Conclusion Data
-                Me.conclusionlist.DataSource = DA_NasoConclusion.SelectConclusionByRequestID(CInt(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value))
+                Me.conclusionlist.DataSource = DA_NasoConclusion.SelectConclusionByRequestID(CInt(Me.RequestPanel.gridRequestList.CurrentRow.Cells("request_id").Value))
             Catch ex As Exception
 
             End Try
-            
+
         End If
     End Sub
 
     Private Sub ToolStripButton1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ToolStripButton1.Click
         If ValidateCombobox(cboNasoDemander, "", ErrAlert) = False Then Exit Sub
         If ValidateCombobox(cboNasoDocteur, "", ErrAlert) = False Then Exit Sub
-        Dim RequestIDVal As Double = CLng(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value)
+        Dim RequestIDVal As Double = CLng(Me.RequestPanel.gridRequestList.CurrentRow.Cells("request_id").Value)
 
         If DA_Naso.SelectNasoByRequestID(RequestIDVal).Rows.Count >= 1 Then
             '' Update
@@ -144,13 +144,13 @@
                 DA_DOCTOR_FEE.InsertNewDoctorFee(CInt(cboNasoDocteur.SelectedValue), cboNasoDocteur.Text, "Nasogastro", DateResultExam.Value.Date, LblPatientNo.Text, 0, lblPatientName.Text, GetValueConclustion)
                 Me.DialogResult = Windows.Forms.DialogResult.OK
             End If
-       
+
         End If
     End Sub
 
     Private Sub ToolStripButton2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ToolStripButton2.Click
-        If DA_Naso.SelectNasoByRequestID(CLng(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value)).Rows.Count <= 0 Then
-            DA_NasoConclusion.DeleteConclusionByRequestID(CLng(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value))
+        If DA_Naso.SelectNasoByRequestID(CLng(Me.RequestPanel.gridRequestList.CurrentRow.Cells("request_id").Value)).Rows.Count <= 0 Then
+            DA_NasoConclusion.DeleteConclusionByRequestID(CLng(Me.RequestPanel.gridRequestList.CurrentRow.Cells("request_id").Value))
         End If
         Me.Close()
     End Sub

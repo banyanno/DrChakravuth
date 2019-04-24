@@ -27,7 +27,7 @@
     End Sub
     Private Sub ExaminationStatus_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Try
-            LoadStatusExam(CLng(Me.RequestPanel.RequestList.GetRow.Cells("request_id").Value))
+            LoadStatusExam(CLng(Me.RequestPanel.gridRequestList.GetRow.Cells("request_id").Value))
         Catch ex As Exception
 
         End Try

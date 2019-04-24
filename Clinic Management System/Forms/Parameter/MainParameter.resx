@@ -139,14 +139,30 @@
     <value>&lt;GridEXLayoutData&gt;&lt;RootTable&gt;&lt;Columns Collection="true" ElementName="Column"&gt;&lt;Column0 ID="consulttypeid"&gt;&lt;Caption&gt;Consult typeid&lt;/Caption&gt;&lt;DataMember&gt;consulttypeid&lt;/DataMember&gt;&lt;Key&gt;consulttypeid&lt;/Key&gt;&lt;Position&gt;0&lt;/Position&gt;&lt;Visible&gt;False&lt;/Visible&gt;&lt;Width&gt;130&lt;/Width&gt;&lt;/Column0&gt;&lt;Column1 ID="consulttypename"&gt;&lt;Caption&gt;Consultation Name&lt;/Caption&gt;&lt;DataMember&gt;consulttypename&lt;/DataMember&gt;&lt;Key&gt;consulttypename&lt;/Key&gt;&lt;Position&gt;1&lt;/Position&gt;&lt;Width&gt;229&lt;/Width&gt;&lt;HeaderStyle&gt;&lt;Font&gt;Verdana, 11.25pt&lt;/Font&gt;&lt;/HeaderStyle&gt;&lt;/Column1&gt;&lt;Column2 ID="price"&gt;&lt;Caption&gt;Price&lt;/Caption&gt;&lt;DataMember&gt;price&lt;/DataMember&gt;&lt;Key&gt;price&lt;/Key&gt;&lt;Position&gt;2&lt;/Position&gt;&lt;Width&gt;210&lt;/Width&gt;&lt;CellStyle&gt;&lt;TextAlignment&gt;Far&lt;/TextAlignment&gt;&lt;/CellStyle&gt;&lt;HeaderStyle&gt;&lt;Font&gt;Verdana, 11.25pt&lt;/Font&gt;&lt;/HeaderStyle&gt;&lt;/Column2&gt;&lt;/Columns&gt;&lt;GroupCondition /&gt;&lt;RowHeaderContent&gt;RowPosition&lt;/RowHeaderContent&gt;&lt;RowHeaderWidth&gt;55&lt;/RowHeaderWidth&gt;&lt;RowHeight&gt;26&lt;/RowHeight&gt;&lt;HeaderFormatStyle&gt;&lt;Font&gt;Verdana, 11.25pt&lt;/Font&gt;&lt;TextAlignment&gt;Center&lt;/TextAlignment&gt;&lt;/HeaderFormatStyle&gt;&lt;/RootTable&gt;&lt;/GridEXLayoutData&gt;</value>
   </data>
   <metadata name="ToolStrip4.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>323, 17</value>
+    <value>367, 17</value>
   </metadata>
   <data name="ParaList_DesignTimeLayout.LayoutString" xml:space="preserve">
-    <value>&lt;GridEXLayoutData&gt;&lt;RootTable&gt;&lt;Columns Collection="true" ElementName="Column"&gt;&lt;Column0 ID="paracheckid"&gt;&lt;Caption&gt;paracheckid&lt;/Caption&gt;&lt;DataMember&gt;paracheckid&lt;/DataMember&gt;&lt;Key&gt;paracheckid&lt;/Key&gt;&lt;Position&gt;0&lt;/Position&gt;&lt;Visible&gt;False&lt;/Visible&gt;&lt;Width&gt;130&lt;/Width&gt;&lt;/Column0&gt;&lt;Column1 ID="paracheck"&gt;&lt;Caption&gt;Examination Name&lt;/Caption&gt;&lt;DataMember&gt;paracheck&lt;/DataMember&gt;&lt;Key&gt;paracheck&lt;/Key&gt;&lt;Position&gt;1&lt;/Position&gt;&lt;Width&gt;229&lt;/Width&gt;&lt;HeaderStyle&gt;&lt;Font&gt;Verdana, 11.25pt&lt;/Font&gt;&lt;/HeaderStyle&gt;&lt;/Column1&gt;&lt;Column2 ID="servicecharge"&gt;&lt;Caption&gt;Price&lt;/Caption&gt;&lt;DataMember&gt;servicecharge&lt;/DataMember&gt;&lt;Key&gt;servicecharge&lt;/Key&gt;&lt;Position&gt;2&lt;/Position&gt;&lt;Width&gt;210&lt;/Width&gt;&lt;CellStyle&gt;&lt;TextAlignment&gt;Far&lt;/TextAlignment&gt;&lt;/CellStyle&gt;&lt;HeaderStyle&gt;&lt;Font&gt;Verdana, 11.25pt&lt;/Font&gt;&lt;/HeaderStyle&gt;&lt;/Column2&gt;&lt;/Columns&gt;&lt;GroupCondition /&gt;&lt;RowHeaderContent&gt;RowPosition&lt;/RowHeaderContent&gt;&lt;RowHeaderWidth&gt;55&lt;/RowHeaderWidth&gt;&lt;RowHeight&gt;26&lt;/RowHeight&gt;&lt;HeaderFormatStyle&gt;&lt;Font&gt;Verdana, 11.25pt&lt;/Font&gt;&lt;TextAlignment&gt;Center&lt;/TextAlignment&gt;&lt;/HeaderFormatStyle&gt;&lt;/RootTable&gt;&lt;/GridEXLayoutData&gt;</value>
+    <value>&lt;GridEXLayoutData&gt;&lt;RootTable&gt;&lt;Columns Collection="true" ElementName="Column"&gt;&lt;Column0 ID="paracheckid"&gt;&lt;Caption&gt;paracheckid&lt;/Caption&gt;&lt;DataMember&gt;paracheckid&lt;/DataMember&gt;&lt;Key&gt;paracheckid&lt;/Key&gt;&lt;Position&gt;0&lt;/Position&gt;&lt;Visible&gt;False&lt;/Visible&gt;&lt;Width&gt;130&lt;/Width&gt;&lt;/Column0&gt;&lt;Column1 ID="paracheck"&gt;&lt;Caption&gt;Examination Name&lt;/Caption&gt;&lt;DataMember&gt;paracheck&lt;/DataMember&gt;&lt;Key&gt;paracheck&lt;/Key&gt;&lt;Position&gt;1&lt;/Position&gt;&lt;Width&gt;229&lt;/Width&gt;&lt;HeaderStyle&gt;&lt;Font&gt;Verdana, 11.25pt&lt;/Font&gt;&lt;/HeaderStyle&gt;&lt;/Column1&gt;&lt;Column2 ID="servicecharge"&gt;&lt;Caption&gt;Price&lt;/Caption&gt;&lt;DataMember&gt;servicecharge&lt;/DataMember&gt;&lt;Key&gt;servicecharge&lt;/Key&gt;&lt;Position&gt;2&lt;/Position&gt;&lt;Width&gt;210&lt;/Width&gt;&lt;CellStyle&gt;&lt;TextAlignment&gt;Far&lt;/TextAlignment&gt;&lt;/CellStyle&gt;&lt;HeaderStyle&gt;&lt;Font&gt;Verdana, 11.25pt&lt;/Font&gt;&lt;/HeaderStyle&gt;&lt;/Column2&gt;&lt;Column3 ID="ParaType"&gt;&lt;Caption&gt;Type of Para&lt;/Caption&gt;&lt;DataMember&gt;ParaType&lt;/DataMember&gt;&lt;Key&gt;ParaType&lt;/Key&gt;&lt;Position&gt;3&lt;/Position&gt;&lt;Width&gt;161&lt;/Width&gt;&lt;/Column3&gt;&lt;/Columns&gt;&lt;GroupCondition /&gt;&lt;RowHeaderContent&gt;RowPosition&lt;/RowHeaderContent&gt;&lt;RowHeaderWidth&gt;55&lt;/RowHeaderWidth&gt;&lt;RowHeight&gt;26&lt;/RowHeight&gt;&lt;HeaderFormatStyle&gt;&lt;Font&gt;Verdana, 11.25pt&lt;/Font&gt;&lt;TextAlignment&gt;Center&lt;/TextAlignment&gt;&lt;/HeaderFormatStyle&gt;&lt;/RootTable&gt;&lt;/GridEXLayoutData&gt;</value>
   </data>
-  <metadata name="ToolStrip3.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="ToolParaClinic.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>221, 17</value>
   </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="BtnParaClinicRefresh.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIDSURBVDhPpZLrS5NhGMb3j4SWh0oRQVExD4gonkDpg4hG
+        YKxG6WBogkMZKgPNCEVJFBGdGETEvgwyO9DJE5syZw3PIlPEE9pgBCLZ5XvdMB8Ew8gXbl54nuf63dd9
+        0OGSnwCahxbPRNPAPMw9Xpg6ZmF46kZZ0xSKzJPIrhpDWsVnpBhGkKx3nAX8Pv7z1zg8OoY/cITdn4fw
+        bf/C0kYAN3Ma/w3gWfZL5kzTKBxjWyK2DftwI9tyMYCZKXbNHaD91bLYJrDXsYbrWfUKwJrPE9M2M1Oc
+        VzOOpHI7Jr376Hi9ogHqFIANO0/MmmmbmSmm9a8ze+I4MrNWAdjtoJgWcx+PSzg166yZZ8xM8XvXDix9
+        c4jIqFYAjoriBV9AhEPv1mH/sonogha0afbZMMZz+yreTGyhpusHwtNNCsA5U1zS4BLxzJIfg299qO32
+        Ir7UJtZfftyATqeT+8o2D8JSjQrAJblrncYL7ZJ2+bfaFnC/1S1NjL3diRat7qrO7wLRP3HjWsojBeCo
+        mDEo5mNjuweFGvjWg2EBhCbpkW78htSHHwRyNdmgAFzPEee2iFkzayy2OLXzT4gr6UdUnlXrullsxxQ+
+        kx0g8BTA3aZlButjSTyjODq/WcQcW/B/Je4OQhLvKQDnzN1mp0nnkvAhR8VuMzNrpm1mpjgkoVwB/v8D
+        TgDQASA1MVpwzwAAAABJRU5ErkJggg==
+</value>
+  </data>
   <data name="ComplaintList_DesignTimeLayout.LayoutString" xml:space="preserve">
     <value>&lt;GridEXLayoutData&gt;&lt;RootTable&gt;&lt;Columns Collection="true" ElementName="Column"&gt;&lt;Column0 ID="complaintid"&gt;&lt;Caption&gt;complaintid&lt;/Caption&gt;&lt;DataMember&gt;complaintid&lt;/DataMember&gt;&lt;Key&gt;complaintid&lt;/Key&gt;&lt;Position&gt;0&lt;/Position&gt;&lt;Visible&gt;False&lt;/Visible&gt;&lt;Width&gt;130&lt;/Width&gt;&lt;/Column0&gt;&lt;Column1 ID="complaint"&gt;&lt;Caption&gt;Complaint Name&lt;/Caption&gt;&lt;DataMember&gt;complaint&lt;/DataMember&gt;&lt;Key&gt;complaint&lt;/Key&gt;&lt;Position&gt;1&lt;/Position&gt;&lt;Width&gt;229&lt;/Width&gt;&lt;HeaderStyle&gt;&lt;Font&gt;Verdana, 11.25pt&lt;/Font&gt;&lt;/HeaderStyle&gt;&lt;/Column1&gt;&lt;/Columns&gt;&lt;GroupCondition /&gt;&lt;RowHeaderContent&gt;RowPosition&lt;/RowHeaderContent&gt;&lt;RowHeaderWidth&gt;55&lt;/RowHeaderWidth&gt;&lt;RowHeight&gt;26&lt;/RowHeight&gt;&lt;HeaderFormatStyle&gt;&lt;ForeColor&gt;64, 0, 0&lt;/ForeColor&gt;&lt;Font&gt;Verdana, 11.25pt&lt;/Font&gt;&lt;TextAlignment&gt;Center&lt;/TextAlignment&gt;&lt;/HeaderFormatStyle&gt;&lt;/RootTable&gt;&lt;/GridEXLayoutData&gt;</value>
   </data>
@@ -205,6 +221,6 @@
     <value>533, 54</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>217</value>
+    <value>67</value>
   </metadata>
 </root>

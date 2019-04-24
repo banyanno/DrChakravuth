@@ -53,7 +53,7 @@ Partial Class FormNewExpend
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Location = New System.Drawing.Point(8, 6)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(503, 266)
+        Me.GroupBox1.Size = New System.Drawing.Size(482, 240)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Expend Information"
@@ -76,7 +76,7 @@ Partial Class FormNewExpend
         Me.TxtExpendNote.Location = New System.Drawing.Point(29, 168)
         Me.TxtExpendNote.Multiline = True
         Me.TxtExpendNote.Name = "TxtExpendNote"
-        Me.TxtExpendNote.Size = New System.Drawing.Size(441, 81)
+        Me.TxtExpendNote.Size = New System.Drawing.Size(441, 62)
         Me.TxtExpendNote.TabIndex = 3
         '
         'TxtTotalExpend
@@ -134,7 +134,7 @@ Partial Class FormNewExpend
         'BtnSave
         '
         Me.BtnSave.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnSave.Location = New System.Drawing.Point(288, 278)
+        Me.BtnSave.Location = New System.Drawing.Point(266, 252)
         Me.BtnSave.Name = "BtnSave"
         Me.BtnSave.Size = New System.Drawing.Size(112, 35)
         Me.BtnSave.TabIndex = 1
@@ -144,7 +144,7 @@ Partial Class FormNewExpend
         'BtnCancel
         '
         Me.BtnCancel.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnCancel.Location = New System.Drawing.Point(406, 278)
+        Me.BtnCancel.Location = New System.Drawing.Point(384, 252)
         Me.BtnCancel.Name = "BtnCancel"
         Me.BtnCancel.Size = New System.Drawing.Size(105, 35)
         Me.BtnCancel.TabIndex = 2
@@ -158,7 +158,7 @@ Partial Class FormNewExpend
         'LblSaveOption
         '
         Me.LblSaveOption.AutoSize = True
-        Me.LblSaveOption.Location = New System.Drawing.Point(12, 289)
+        Me.LblSaveOption.Location = New System.Drawing.Point(12, 252)
         Me.LblSaveOption.Name = "LblSaveOption"
         Me.LblSaveOption.Size = New System.Drawing.Size(13, 13)
         Me.LblSaveOption.TabIndex = 3
@@ -170,7 +170,7 @@ Partial Class FormNewExpend
         Me.AcceptButton = Me.BtnSave
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(524, 317)
+        Me.ClientSize = New System.Drawing.Size(496, 292)
         Me.Controls.Add(Me.LblSaveOption)
         Me.Controls.Add(Me.BtnCancel)
         Me.Controls.Add(Me.BtnSave)

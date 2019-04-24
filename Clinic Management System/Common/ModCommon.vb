@@ -2,6 +2,16 @@
 Imports CrystalDecisions.CrystalReports.Engine
 Imports CrystalDecisions.Shared
 Module ModCommon
+    Public Sub AddUserControl(ByVal PanelHeader As Panel, ByVal PanelMain As Panel, ByVal UI As UserControl, ByVal Info As String, ByVal VisHeader As Boolean)
+        PanelMain.Cursor = Cursors.WaitCursor
+        PanelHeader.Visible = VisHeader
+        PanelMain.Controls.Clear()
+        PanelMain.AutoScroll = True
+        'PMainContainer.AutoScrollMinSize = New Size(UI.Width, UI.Height)
+        UI.Dock = DockStyle.Fill
+        PanelMain.Controls.Add(UI)
+        PanelMain.Cursor = Cursors.Default
+    End Sub
     Function GetRowIndexDataGrid(ByVal Grid As DataGridView) As Integer
         Return Grid.SelectedCells(0).RowIndex
     End Function
@@ -121,8 +131,8 @@ Module ModCommon
     Sub ChangeConnectionStringProvider(ByVal newProvider As String)
         My.Settings.Item("TakeoDBConnectionString") = newProvider
     End Sub
-    
-    
+
+
     ' User past paramenterfield to Crystal Report
     Sub SetCurrentValuesForParameterField(ByVal myParameterFields As ParameterFields, ByVal myArrayList As ArrayList, ByVal parameterFields As String)
         Dim currentParameterValues As ParameterValues = New ParameterValues()
@@ -134,7 +144,12 @@ Module ModCommon
         Dim myParameterField As ParameterField = myParameterFields(parameterFields)
         myParameterField.CurrentValues = currentParameterValues
     End Sub
-    
-   
-   
+    'Function GetDateServer() As Date
+    '    Dim DServer As DataTable = da.GetDateServer
+    '    For Each row As DataRow In DServer.Rows
+    '        Return row("DateServer")
+    '    Next
+    'End Function
+
+
 End Module

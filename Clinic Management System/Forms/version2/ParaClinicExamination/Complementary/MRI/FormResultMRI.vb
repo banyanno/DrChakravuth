@@ -16,20 +16,20 @@
         Me.RequestPanel = PanelRequest
     End Sub
     Private Sub FormResultMRI_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        If DA_MRI.SelectMRIByRequestID(CLng(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value)).Rows.Count >= 1 Then
-            Me.txtmri.Text = DA_MRI.SelectMRIByRequestID(CLng(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value)).Rows(0).Item("mri")
+        If DA_MRI.SelectMRIByRequestID(CLng(Me.RequestPanel.gridRequestList.CurrentRow.Cells("request_id").Value)).Rows.Count >= 1 Then
+            Me.txtmri.Text = DA_MRI.SelectMRIByRequestID(CLng(Me.RequestPanel.gridRequestList.CurrentRow.Cells("request_id").Value)).Rows(0).Item("mri")
         End If
     End Sub
 
     Private Sub BtnSave_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnSave.Click
-        If DA_MRI.SelectMRIByRequestID(CLng(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value)).Rows.Count >= 1 Then
+        If DA_MRI.SelectMRIByRequestID(CLng(Me.RequestPanel.gridRequestList.CurrentRow.Cells("request_id").Value)).Rows.Count >= 1 Then
             ''Update
-            DA_MRI.UpdateMRI(Me.txtmri.Text.Replace("'", "''"), CLng(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value))
+            DA_MRI.UpdateMRI(Me.txtmri.Text.Replace("'", "''"), CLng(Me.RequestPanel.gridRequestList.CurrentRow.Cells("request_id").Value))
             MsgBox("The MRI has been saved sucessfully", MsgBoxStyle.OkOnly, "Saved MRI")
             Me.DialogResult = Windows.Forms.DialogResult.OK
         Else
             ''Add New
-            DA_MRI.InsertMRI(CLng(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value), Me.txtmri.Text.Replace("'", "''"))
+            DA_MRI.InsertMRI(CLng(Me.RequestPanel.gridRequestList.CurrentRow.Cells("request_id").Value), Me.txtmri.Text.Replace("'", "''"))
             MsgBox("The MRI has been saved sucessfully", MsgBoxStyle.OkOnly, "Saved MRI")
             Me.DialogResult = Windows.Forms.DialogResult.OK
         End If

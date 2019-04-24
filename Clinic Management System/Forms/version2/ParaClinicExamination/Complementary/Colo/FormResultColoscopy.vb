@@ -66,9 +66,9 @@
     End Sub
     Sub LoadColoData()
         Try
-            If DA_Colo.SelectColoByRequestID(CLng(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value)).Rows.Count >= 1 Then
+            If DA_Colo.SelectColoByRequestID(CLng(Me.RequestPanel.gridRequestList.CurrentRow.Cells("request_id").Value)).Rows.Count >= 1 Then
                 Dim ColoTable As New DataTable
-                ColoTable = DA_Colo.SelectColoByRequestID(CLng(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value))
+                ColoTable = DA_Colo.SelectColoByRequestID(CLng(Me.RequestPanel.gridRequestList.CurrentRow.Cells("request_id").Value))
                 Me.txtColoDuree.Text = ColoTable.Rows(0).Item("duree")
                 Me.txtColoEva.Text = ColoTable.Rows(0).Item("eva")
                 Me.cboColoPreparation.SelectedValue = ColoTable.Rows(0).Item("preparation")
@@ -87,21 +87,21 @@
                 Me.txtcolomoreinfo.Text = ColoTable.Rows(0).Item("more_info")
                 txtnewfield.Text = ColoTable.Rows(0).Item("new_field")
                 ''Load Conclusion Data
-                Me.ConclusionList.DataSource = DA_ColoConclusion.SelectConclusionByRequestID(CInt(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value))
+                Me.ConclusionList.DataSource = DA_ColoConclusion.SelectConclusionByRequestID(CInt(Me.RequestPanel.gridRequestList.CurrentRow.Cells("request_id").Value))
             End If
         Catch ex As Exception
 
         End Try
-        
+
     End Sub
     Sub RefreshConclusionList()
-        Me.ConclusionList.DataSource = DA_ColoConclusion.SelectConclusionByRequestID(CInt(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value))
+        Me.ConclusionList.DataSource = DA_ColoConclusion.SelectConclusionByRequestID(CInt(Me.RequestPanel.gridRequestList.CurrentRow.Cells("request_id").Value))
     End Sub
     Private Sub BtnAddConclusion_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnAddConclusion.Click
-        If DA_ColoConclusion.SelectConclusion(CInt(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value), CInt(Me.cboColoConclusion.SelectedValue)).Rows.Count > 0 Then
+        If DA_ColoConclusion.SelectConclusion(CInt(Me.RequestPanel.gridRequestList.CurrentRow.Cells("request_id").Value), CInt(Me.cboColoConclusion.SelectedValue)).Rows.Count > 0 Then
             MsgBox("The conclusion was added already", MsgBoxStyle.OkOnly, "Existing Conclusion")
         Else
-            DA_ColoConclusion.Insert(CInt(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value), CInt(Me.cboColoConclusion.SelectedValue))
+            DA_ColoConclusion.Insert(CInt(Me.RequestPanel.gridRequestList.CurrentRow.Cells("request_id").Value), CInt(Me.cboColoConclusion.SelectedValue))
             RefreshConclusionList()
             cboColoConclusion.SelectedIndex = -1
         End If
@@ -125,15 +125,15 @@
             ColoAnes = Me.cboColoAnesthegiste.SelectedValue
         End If
 
-        If DA_Colo.SelectColoByRequestID(CLng(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value)).Rows.Count >= 1 Then
+        If DA_Colo.SelectColoByRequestID(CLng(Me.RequestPanel.gridRequestList.CurrentRow.Cells("request_id").Value)).Rows.Count >= 1 Then
             '' Update
-            If DA_Colo.UpdateColoByRequestID(Me.txtColoDuree.Text, Me.txtColoEva.Text, Me.cboColoPreparation.SelectedValue.ToString, Me.cboColoDemander.SelectedValue.ToString, Me.txtColoTolerance.Text, Me.chkColoAnesthegiste.Checked, ColoAnes, Me.cboColoMotify.SelectedValue, Me.txtColoCaecum.Text, Me.txtColoColonDroit.Text, Me.txtColoColonTransverse.Text, Me.txtColonGauche.Text, Me.txtColoSigmoide.Text, Me.txtColoRectum.Text, Me.cboColoDocteur.Text, Me.txtcolomoreinfo.Text.ToString, Me.txtnewfield.Text.ToString, DateResultExam.Value.Date, CInt(cboColoDocteur.SelectedValue), GetValueConclustion, CLng(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value)) = 1 Then
+            If DA_Colo.UpdateColoByRequestID(Me.txtColoDuree.Text, Me.txtColoEva.Text, Me.cboColoPreparation.SelectedValue.ToString, Me.cboColoDemander.SelectedValue.ToString, Me.txtColoTolerance.Text, Me.chkColoAnesthegiste.Checked, ColoAnes, Me.cboColoMotify.SelectedValue, Me.txtColoCaecum.Text, Me.txtColoColonDroit.Text, Me.txtColoColonTransverse.Text, Me.txtColonGauche.Text, Me.txtColoSigmoide.Text, Me.txtColoRectum.Text, Me.cboColoDocteur.Text, Me.txtcolomoreinfo.Text.ToString, Me.txtnewfield.Text.ToString, DateResultExam.Value.Date, CInt(cboColoDocteur.SelectedValue), GetValueConclustion, CLng(Me.RequestPanel.gridRequestList.CurrentRow.Cells("request_id").Value)) = 1 Then
                 MsgBox("The coloscopy has been saved successfully", MsgBoxStyle.OkOnly, "Saved Coloscopy")
                 Me.DialogResult = Windows.Forms.DialogResult.OK
             End If
         Else
             '' Add New
-            If DA_Colo.InsertColo(CLng(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value), CLng(LblPatientNo.Text), Me.txtColoDuree.Text, Me.txtColoEva.Text, Me.cboColoPreparation.SelectedValue.ToString, Me.cboColoDemander.SelectedValue.ToString, Me.txtColoTolerance.Text, Me.chkColoAnesthegiste.Checked, ColoAnes, Me.cboColoMotify.SelectedValue.ToString, Me.txtColoCaecum.Text, Me.txtColoColonDroit.Text, Me.txtColoColonTransverse.Text, Me.txtColonGauche.Text, Me.txtColoSigmoide.Text, Me.txtColoRectum.Text, Me.cboColoDocteur.Text, Me.txtcolomoreinfo.Text, Me.txtnewfield.Text.ToString, DateResultExam.Value.Date, CInt(cboColoDocteur.SelectedValue), GetValueConclustion) = 1 Then
+            If DA_Colo.InsertColo(CLng(Me.RequestPanel.gridRequestList.CurrentRow.Cells("request_id").Value), CLng(LblPatientNo.Text), Me.txtColoDuree.Text, Me.txtColoEva.Text, Me.cboColoPreparation.SelectedValue.ToString, Me.cboColoDemander.SelectedValue.ToString, Me.txtColoTolerance.Text, Me.chkColoAnesthegiste.Checked, ColoAnes, Me.cboColoMotify.SelectedValue.ToString, Me.txtColoCaecum.Text, Me.txtColoColonDroit.Text, Me.txtColoColonTransverse.Text, Me.txtColonGauche.Text, Me.txtColoSigmoide.Text, Me.txtColoRectum.Text, Me.cboColoDocteur.Text, Me.txtcolomoreinfo.Text, Me.txtnewfield.Text.ToString, DateResultExam.Value.Date, CInt(cboColoDocteur.SelectedValue), GetValueConclustion) = 1 Then
                 MsgBox("A coloscopy has been saved successfully", MsgBoxStyle.OkOnly, "Saved Coloscopy")
                 DA_DOCTOR_FEE.InsertNewDoctorFee(CInt(cboColoDocteur.SelectedValue), cboColoDocteur.Text, "Coloscopy", DateResultExam.Value.Date, LblPatientNo.Text, 0, lblPatientName.Text, GetValueConclustion)
                 Me.DialogResult = Windows.Forms.DialogResult.OK
@@ -148,8 +148,8 @@
         Return ConValue
     End Function
     Private Sub BtnCancel_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnCancel.Click
-        If DA_Colo.SelectColoByRequestID(CLng(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value)).Rows.Count <= 0 Then
-            DA_ColoConclusion.DeleteConclusionByRequestID(CLng(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value))
+        If DA_Colo.SelectColoByRequestID(CLng(Me.RequestPanel.gridRequestList.CurrentRow.Cells("request_id").Value)).Rows.Count <= 0 Then
+            DA_ColoConclusion.DeleteConclusionByRequestID(CLng(Me.RequestPanel.gridRequestList.CurrentRow.Cells("request_id").Value))
         End If
         Me.Close()
     End Sub

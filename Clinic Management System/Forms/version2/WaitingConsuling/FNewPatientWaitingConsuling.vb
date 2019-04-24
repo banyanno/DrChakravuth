@@ -3,7 +3,7 @@
     Dim DA_Waiting As New DSPAtientTableAdapters.tblwaitingTableAdapter
     Dim UPatientInfo As PatientInformation
     Dim Appoint As Appointment
-    Dim patientid As Integer
+    Dim patientid As Double
     ' Complaint Data.........................
     Dim DA_Complaint As New DSComplaintTableAdapters.tblcomplaintTableAdapter
     Dim DA_PreComplaintDetail As New DSComplaintTableAdapters.tblprecomplaintdetailTableAdapter
@@ -73,7 +73,7 @@
         InitializeComponent()
         Me.DoctorExam = DoctorExam
         ' Add any initialization after the InitializeComponent() call.
-        patientid = DoctorExam.RequestList.GetRow.Cells("patientid").Value
+        patientid = DoctorExam.gridRequestList.GetRow.Cells("patientid").Value
         SetPatientData(patientid)
     End Sub
     Sub SetPatientData(ByVal patientID As Integer)
@@ -82,7 +82,7 @@
 
         Patient = DA_Patient.SelectPatientByID(patientID) '(UPatientInfo.GridPatientInfo.CurrentRow.Cells("ppatientid").Value)
         'MsgBox(Patient.Rows.Count & "    " & UPatientInfo.GridPatientInfo.CurrentRow.Cells("ppatientid").Value)
-        Me.txtno.Text = Patient.Rows(0).Item("patientid")
+        Me.TxtPatientNo.Text = Patient.Rows(0).Item("patientid")
         Me.txtname.Text = Patient.Rows(0).Item("pname")
         Me.txtsex.Text = Patient.Rows(0).Item("pgender")
         Me.txtdatebirth.Text = Format(Patient.Rows(0).Item("pAge"), "dd/MM/yyyy")
@@ -125,12 +125,13 @@
         If ValidateDateField(dtwaiting, "", Err) = False Then Exit Sub
         If ValidateTextField(txtwaitno, "", Err) = False Then Exit Sub
         If MessageBox.Show("Do you want to send this patient to the waiting list for doctor consultation?", "Send to doctor consultation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
+            ' Insert waiting patien information for doctor counsultain.
             If DA_Waiting.InsertWaiting(patientid, Me.txtwaitno.Text, Me.txtdesc.Text, FormatDateTime(Me.dtwaiting.Value, DateFormat.ShortDate), 1) = 1 Then
                 deletePreTable()
                 'If Me.CboComplaint.Text <> "" Then
                 If GridPreComplaint.RowCount > 0 Then
                     For i As Int16 = 0 To GridPreComplaint.RowCount - 1
-                        DA_PreComplaintDetail.InsertComplaint(txtno.Text, GridPreComplaint.GetRow(i).Cells("complaintid").Value, Me.TxtComplainDescription.Text)
+                        DA_PreComplaintDetail.InsertComplaint(TxtPatientNo.Text, GridPreComplaint.GetRow(i).Cells("complaintid").Value, Me.TxtComplainDescription.Text)
                     Next
                 End If
 
@@ -139,7 +140,7 @@
                 'If Me.CboMedical.Text <> "" Then
                 If GridPreMedicalHistory.RowCount > 0 Then
                     For i As Int16 = 0 To GridPreMedicalHistory.RowCount - 1
-                        DA_PreMedicalDetail.InsertHistory(txtno.Text, GridPreMedicalHistory.GetRow(i).Cells("historyid").Value, Me.TxtMedicalNote.Text)
+                        DA_PreMedicalDetail.InsertHistory(TxtPatientNo.Text, GridPreMedicalHistory.GetRow(i).Cells("historyid").Value, Me.TxtMedicalNote.Text)
                     Next
                 End If
 
@@ -148,7 +149,7 @@
                 'If Me.CboPhysicalExam.Text <> "" Then
                 If GridPrePhysical.RowCount > 0 Then
                     For i As Int16 = 0 To GridPrePhysical.RowCount - 1
-                        DA_PrePhysicalDetail.InsertExam(txtno.Text, GridPrePhysical.GetRow(i).Cells("physicalcheckid").Value, Me.TxtPhysicalNote.Text)
+                        DA_PrePhysicalDetail.InsertExam(TxtPatientNo.Text, GridPrePhysical.GetRow(i).Cells("physicalcheckid").Value, Me.TxtPhysicalNote.Text)
                     Next
                 End If
 
@@ -169,34 +170,11 @@
     End Sub
 
     Sub deletePreTable()
-        DA_PreComplaintDetail.DeleteComplaint(CLng(Me.txtno.Text))
-        DA_PreMedicalDetail.DeleteAllMedicince(CLng(Me.txtno.Text))
-        DA_PrePhysicalDetail.DeleteExam(CLng(Me.txtno.Text))
+        DA_PreComplaintDetail.DeleteComplaint(CLng(Me.TxtPatientNo.Text))
+        DA_PreMedicalDetail.DeleteAllMedicince(CLng(Me.TxtPatientNo.Text))
+        DA_PrePhysicalDetail.DeleteExam(CLng(Me.TxtPatientNo.Text))
     End Sub
 
-    'Private Sub CboComplaint_SelectionChangeCommitted(ByVal sender As Object, ByVal e As System.EventArgs) Handles CboComplaint.SelectionChangeCommitted
-    '    'If Me.CboComplaint.Text <> "" Then
-    '    '    Me.TxtComplainDescription.ReadOnly = False
-    '    'Else
-    '    '    Me.TxtComplainDescription.ReadOnly = True
-    '    'End If
-    'End Sub
-
-    'Private Sub CboMedical_SelectionChangeCommitted(ByVal sender As Object, ByVal e As System.EventArgs) Handles CboMedical.SelectionChangeCommitted
-    '    'If Me.CboMedical.Text <> "" Then
-    '    '    Me.TxtMedicalNote.ReadOnly = False
-    '    'Else
-    '    '    Me.TxtMedicalNote.ReadOnly = True
-    '    'End If
-    'End Sub
-
-    'Private Sub CboPhysicalExam_SelectionChangeCommitted(ByVal sender As Object, ByVal e As System.EventArgs) Handles CboPhysicalExam.SelectionChangeCommitted
-    '    'If Me.CboPhysicalExam.Text <> "" Then
-    '    '    Me.TxtPhysicalNote.ReadOnly = False
-    '    'Else
-    '    '    Me.TxtPhysicalNote.ReadOnly = True
-    '    'End If
-    'End Sub
 
     Private Sub BtnMedical_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnMedical.Click
 
@@ -207,60 +185,65 @@
 
     Private Sub BgLoadingPatient_DoWork(ByVal sender As System.Object, ByVal e As System.ComponentModel.DoWorkEventArgs) Handles BgLoadingPatient.DoWork
         PreviewReport()
+        'Me.CRPatientDocViewer.ReportSource = ViewReportMainHistory.PreviewReport(TxtPatientNo.Text, CRPatientDocViewer)
     End Sub
     Sub PreviewReport()
         If Me.InvokeRequired Then
             Me.Invoke(New MethodInvoker(AddressOf PreviewReport))
         Else
-            Dim PatientTable As DataTable
-            Dim PatientID As Long
-            PatientTable = DAPatient.SelectPatientByID(txtno.Text)
-            PatientID = PatientTable.Rows(0).Item("patientid")
+            Me.CRPatientDocViewer.ReportSource = ViewReportMainHistory.PreviewReport(TxtPatientNo.Text)
+            'Dim PatientTable As DataTable
+            'Dim PatientID As Long
+            'Dim PPatientIDAuto As Long
+            'PatientTable = DAPatient.SelectPatientByID(TxtPatientNo.Text)
+            'PatientID = PatientTable.Rows(0).Item("patientid")
+            'PPatientIDAuto = PatientTable.Rows(0).Item("ppatientid")
 
-            Dim RptRecord As New RptPatientRecord
-            ' Dim RptViewer As New FormReportViewer
+            'Dim RptRecord As New RptPatientRecord
+            '' Dim RptViewer As New FormReportViewer
 
-            Dim PresRemark As DataTable = DA_PrescriptionRemark.SelectPrescriptionByPatientID(PatientID)
-            Dim ComplaintTable As DataTable = DA_Complaint1.SelectByPatientID(PatientID)
-            Dim HistoryTable As DataTable = DA_History1.SelectByPatientID(PatientID)
-            Dim PrescriptionTable As DataTable = DA_Prescription1.SelectByPatientID(PatientID)
+            'Dim PresRemark As DataTable = DA_PrescriptionRemark.SelectPrescriptionByPatientID(PPatientIDAuto)
+            'Dim ComplaintTable As DataTable = DA_Complaint1.SelectByPatientID(PPatientIDAuto)
+            'Dim HistoryTable As DataTable = DA_History1.SelectByPatientID(PPatientIDAuto)
+            'Dim PrescriptionTable As DataTable = DA_Prescription1.SelectByPatientID(PPatientIDAuto)
+            'Dim PhysicalTable As DataTable = DA_Physical1.SelectByPatientID(PPatientIDAuto)
 
-            Dim BiologyTable As DataTable = DA_Biology1.SelectByPatientID(PatientID)
-            Dim FibroTable As DataTable = DA_Fibroscopy1.SelectByPatientID(PatientID)
-            Dim ColoTable As DataTable = DA_Coloscopy1.SelectByPatientID(PatientID)
+            'Dim BiologyTable As DataTable = DA_Biology1.SelectByPatientID(PPatientIDAuto)
+            'Dim FibroTable As DataTable = DA_Fibroscopy1.SelectByPatientID(PPatientIDAuto)
+            'Dim ColoTable As DataTable = DA_Coloscopy1.SelectByPatientID(PPatientIDAuto)
 
-            Dim NasoTable As DataTable = DA_Nasogastro1.SelectByPatientID(PatientID)
+            'Dim NasoTable As DataTable = DA_Nasogastro1.SelectByPatientID(PPatientIDAuto)
 
-            Dim EchoTable As DataTable = DA_Echo1.SelectByPatientID(PatientID)
+            'Dim EchoTable As DataTable = DA_Echo1.SelectByPatientID(PPatientIDAuto)
 
-            Dim ScanTable As DataTable = DA_Scan1.SelectByPatientID(PatientID)
+            'Dim ScanTable As DataTable = DA_Scan1.SelectByPatientID(PPatientIDAuto)
 
-            Dim FibroScan As DataTable = DA_FibroScan1.GetDataByPatientID(PatientID) 'SelectByPatientID(PatientID)
+            'Dim FibroScan As DataTable = DA_FibroScan1.GetDataByPatientID(PPatientIDAuto) 'SelectByPatientID(PatientID)
 
-            Dim MRITable As DataTable = DA_MRI1.SelectByPatientID(PatientID)
+            'Dim MRITable As DataTable = DA_MRI1.SelectByPatientID(PPatientIDAuto)
 
-            Dim CAAnaPath As DataTable = DA_CFAnaPath1.GetData(PatientID)
+            'Dim CAAnaPath As DataTable = DA_CFAnaPath1.GetData(PPatientIDAuto)
 
-            Dim PhysicalTable As DataTable = DA_Physical1.SelectByPatientID(PatientID)
-            Dim BreatTestTable As DataTable = DA_BreathTest.SelectBreathTestByPatientNo(CDbl(txtno.Text))
 
-            RptRecord.Database.Tables("Patient").SetDataSource(PatientTable)
-            RptRecord.Subreports("PrescriptionRemark").SetDataSource(PresRemark)
-            RptRecord.Subreports("Complaint").Database.Tables("Complaint").SetDataSource(ComplaintTable)
-            RptRecord.Subreports("History").Database.Tables("History").SetDataSource(HistoryTable)
-            RptRecord.Subreports("Prescription").Database.Tables("PrescriptionDetail").SetDataSource(PrescriptionTable)
-            RptRecord.Subreports("Biology").Database.Tables("Blood").SetDataSource(BiologyTable)
-            RptRecord.Subreports("Fibroscopy").Database.Tables("Fibro").SetDataSource(FibroTable)
-            RptRecord.Subreports("Coloscopy").Database.Tables("Colo").SetDataSource(ColoTable)
-            RptRecord.Subreports("Nasogastro").Database.Tables("Naso").SetDataSource(NasoTable)
-            RptRecord.Subreports("Echo").Database.Tables("Echo").SetDataSource(EchoTable)
-            RptRecord.Subreports("FibroScan").Database.Tables("FibroScan1").SetDataSource(FibroScan)
-            RptRecord.Subreports("Scan").Database.Tables("Scan").SetDataSource(ScanTable)
-            RptRecord.Subreports("MRI").Database.Tables("MRI").SetDataSource(MRITable)
-            RptRecord.Subreports("Physical").Database.Tables("PhysicalExam").SetDataSource(PhysicalTable)
-            RptRecord.Subreports("ACAnaPath").Database.Tables("CFAnaPath").SetDataSource(CAAnaPath)
-            RptRecord.Subreports("UreaBreathTest").Database.Tables("TblBreathTest").SetDataSource(BreatTestTable)
-            Me.CRPatientDocViewer.ReportSource = RptRecord
+            'Dim BreatTestTable As DataTable = DA_BreathTest.SelectBreathTestByPatientNo(CDbl(PatientID))
+
+            'RptRecord.Database.Tables("Patient").SetDataSource(PatientTable)
+            'RptRecord.Subreports("PrescriptionRemark").SetDataSource(PresRemark)
+            'RptRecord.Subreports("Complaint").Database.Tables("Complaint").SetDataSource(ComplaintTable)
+            'RptRecord.Subreports("History").Database.Tables("History").SetDataSource(HistoryTable)
+            'RptRecord.Subreports("Prescription").Database.Tables("PrescriptionDetail").SetDataSource(PrescriptionTable)
+            'RptRecord.Subreports("Biology").Database.Tables("Blood").SetDataSource(BiologyTable)
+            'RptRecord.Subreports("Fibroscopy").Database.Tables("Fibro").SetDataSource(FibroTable)
+            'RptRecord.Subreports("Coloscopy").Database.Tables("Colo").SetDataSource(ColoTable)
+            'RptRecord.Subreports("Nasogastro").Database.Tables("Naso").SetDataSource(NasoTable)
+            'RptRecord.Subreports("Echo").Database.Tables("Echo").SetDataSource(EchoTable)
+            'RptRecord.Subreports("FibroScan").Database.Tables("FibroScan1").SetDataSource(FibroScan)
+            'RptRecord.Subreports("Scan").Database.Tables("Scan").SetDataSource(ScanTable)
+            'RptRecord.Subreports("MRI").Database.Tables("MRI").SetDataSource(MRITable)
+            'RptRecord.Subreports("Physical").Database.Tables("PhysicalExam").SetDataSource(PhysicalTable)
+            'RptRecord.Subreports("ACAnaPath").Database.Tables("CFAnaPath").SetDataSource(CAAnaPath)
+            'RptRecord.Subreports("UreaBreathTest").Database.Tables("TblBreathTest").SetDataSource(BreatTestTable)
+            'Me.CRPatientDocViewer.ReportSource = RptRecord
 
         End If
 
@@ -278,7 +261,7 @@
 
     Private Sub BtnParaExamHistory_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnParaExamHistory.Click
         Dim FParaExam As New FormParaExamHistory
-        FParaExam.LoadPatientInfo(Me.txtno.Text)
+        FParaExam.LoadPatientInfo(Me.TxtPatientNo.Text)
         FParaExam.ShowDialog()
     End Sub
 
@@ -286,62 +269,62 @@
 
     Private Sub BtnAddPreComplaint_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnAddPreComplaint.Click
         If ValidateCombobox(CboComplaint, "", Err) = False Then Exit Sub
-        If DA_PreComplaintDetail.ScalarPreComplaint(txtno.Text, CboComplaint.SelectedValue) > 0 Then
+        If DA_PreComplaintDetail.ScalarPreComplaint(TxtPatientNo.Text, CboComplaint.SelectedValue) > 0 Then
             MessageBox.Show("Complaint have been add to list already.", "Complaint", MessageBoxButtons.OK, MessageBoxIcon.Error)
             CboComplaint.Select()
             CboComplaint.Focus()
             CboComplaint.SelectAll()
         Else
-            DA_PreComplaintDetail.InsertComplaint(txtno.Text, CboComplaint.SelectedValue, TxtComplainDescription.Text)
-            GridPreComplaint.DataSource = DA_PreComplaintDetail.SelectByPPatientID(txtno.Text)
+            DA_PreComplaintDetail.InsertComplaint(TxtPatientNo.Text, CboComplaint.SelectedValue, TxtComplainDescription.Text)
+            GridPreComplaint.DataSource = DA_PreComplaintDetail.SelectByPPatientID(TxtPatientNo.Text)
             CboComplaint.SelectedIndex = -1
         End If
-        
+
     End Sub
 
     Private Sub BtnRemovePreComplaint_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnRemovePreComplaint.Click
         If GridPreComplaint.SelectedItems.Count = 0 Then Exit Sub
         DA_PreComplaintDetail.DeleteBuyPre(GridPreComplaint.GetRow.Cells("preid").Value)
-        GridPreComplaint.DataSource = DA_PreComplaintDetail.SelectByPPatientID(txtno.Text)
+        GridPreComplaint.DataSource = DA_PreComplaintDetail.SelectByPPatientID(TxtPatientNo.Text)
     End Sub
 
     Private Sub BtnAddMedicalHistor_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnAddMedicalHistor.Click
         If ValidateCombobox(CboMedical, "", Err) = False Then Exit Sub
-        If DA_PreMedicalDetail.ScalarMedicalHistory(txtno.Text, CboMedical.SelectedValue) > 0 Then
+        If DA_PreMedicalDetail.ScalarMedicalHistory(TxtPatientNo.Text, CboMedical.SelectedValue) > 0 Then
             MessageBox.Show("Medical History have been add to list already.", "Medical history", MessageBoxButtons.OK, MessageBoxIcon.Error)
             CboMedical.Select()
             CboMedical.SelectAll()
         Else
-            DA_PreMedicalDetail.InsertHistory(txtno.Text, CboMedical.SelectedValue, TxtMedicalNote.Text)
-            GridPreMedicalHistory.DataSource = DA_PreMedicalDetail.SelectByPPatientID(txtno.Text)
+            DA_PreMedicalDetail.InsertHistory(TxtPatientNo.Text, CboMedical.SelectedValue, TxtMedicalNote.Text)
+            GridPreMedicalHistory.DataSource = DA_PreMedicalDetail.SelectByPPatientID(TxtPatientNo.Text)
             CboMedical.SelectedIndex = -1
         End If
-       
+
     End Sub
 
     Private Sub BtnRemoveMedicalHistory_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnRemoveMedicalHistory.Click
         If GridPreMedicalHistory.SelectedItems.Count = 0 Then Exit Sub
         DA_PreMedicalDetail.DeleteHistory(GridPreMedicalHistory.GetRow.Cells("preid").Value)
-        GridPreMedicalHistory.DataSource = DA_PreMedicalDetail.SelectByPPatientID(txtno.Text)
+        GridPreMedicalHistory.DataSource = DA_PreMedicalDetail.SelectByPPatientID(TxtPatientNo.Text)
     End Sub
 
     Private Sub BtnAddPrePhysical_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnAddPrePhysical.Click
         If ValidateCombobox(CboPhysicalExam, "", Err) = False Then Exit Sub
-        If DA_PrePhysicalDetail.ScalarPhysicalCheck(txtno.Text, CboPhysicalExam.SelectedValue) > 0 Then
+        If DA_PrePhysicalDetail.ScalarPhysicalCheck(TxtPatientNo.Text, CboPhysicalExam.SelectedValue) > 0 Then
             MessageBox.Show("Physical exam have been add to list already.", "Physical Exam", MessageBoxButtons.OK, MessageBoxIcon.Error)
             CboPhysicalExam.Select()
             CboPhysicalExam.SelectAll()
         Else
-            DA_PrePhysicalDetail.InsertExam(txtno.Text, CboPhysicalExam.SelectedValue, TxtPhysicalNote.Text)
-            GridPrePhysical.DataSource = DA_PrePhysicalDetail.SelectByPPatientID(txtno.Text)
+            DA_PrePhysicalDetail.InsertExam(TxtPatientNo.Text, CboPhysicalExam.SelectedValue, TxtPhysicalNote.Text)
+            GridPrePhysical.DataSource = DA_PrePhysicalDetail.SelectByPPatientID(TxtPatientNo.Text)
             CboPhysicalExam.SelectedIndex = -1
         End If
-        
+
     End Sub
 
     Private Sub BtnRemovePrePhysical_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnRemovePrePhysical.Click
         If GridPrePhysical.SelectedItems.Count = 0 Then Exit Sub
         DA_PrePhysicalDetail.DeleteByPrePhysical(GridPrePhysical.GetRow.Cells("preid").Value)
-        GridPrePhysical.DataSource = DA_PrePhysicalDetail.SelectByPPatientID(txtno.Text)
+        GridPrePhysical.DataSource = DA_PrePhysicalDetail.SelectByPPatientID(TxtPatientNo.Text)
     End Sub
 End Class

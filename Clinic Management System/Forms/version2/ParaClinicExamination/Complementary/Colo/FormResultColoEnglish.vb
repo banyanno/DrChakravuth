@@ -55,9 +55,9 @@
     End Sub
     Sub LoadColoData()
         Try
-            If DA_Colo.SelectColoByRequestID(CLng(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value)).Rows.Count >= 1 Then
+            If DA_Colo.SelectColoByRequestID(CLng(Me.RequestPanel.gridRequestList.CurrentRow.Cells("request_id").Value)).Rows.Count >= 1 Then
                 Dim ColoTable As New DataTable
-                ColoTable = DA_Colo.SelectColoByRequestID(CLng(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value))
+                ColoTable = DA_Colo.SelectColoByRequestID(CLng(Me.RequestPanel.gridRequestList.CurrentRow.Cells("request_id").Value))
                 Me.txtColoDuree.Text = ColoTable.Rows(0).Item("duree")
                 Me.txtColoEva.Text = ColoTable.Rows(0).Item("eva")
                 Me.cboColoPreparation.SelectedValue = ColoTable.Rows(0).Item("preparation")
@@ -88,9 +88,9 @@
                 End Try
 
                 'Me.cboColoDocteur.SelectedValue = ColoTable.Rows(0).Item("docteur")
-               
+
                 ''Load Conclusion Data
-                Me.ConclusionList.DataSource = DA_ColoConclusion.SelectConclusionByRequestID(CInt(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value))
+                Me.ConclusionList.DataSource = DA_ColoConclusion.SelectConclusionByRequestID(CInt(Me.RequestPanel.gridRequestList.CurrentRow.Cells("request_id").Value))
             End If
         Catch ex As Exception
 
@@ -107,10 +107,10 @@
     End Sub
 
     Private Sub BtnAddConclusion_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnAddConclusion.Click
-        If DA_ColoConclusion.SelectConclusion(CInt(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value), CInt(Me.cboColoConclusion.SelectedValue)).Rows.Count > 0 Then
+        If DA_ColoConclusion.SelectConclusion(CInt(Me.RequestPanel.gridRequestList.CurrentRow.Cells("request_id").Value), CInt(Me.cboColoConclusion.SelectedValue)).Rows.Count > 0 Then
             MsgBox("The conclusion was added already", MsgBoxStyle.OkOnly, "Existing Conclusion")
         Else
-            DA_ColoConclusion.Insert(CInt(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value), CInt(Me.cboColoConclusion.SelectedValue))
+            DA_ColoConclusion.Insert(CInt(Me.RequestPanel.gridRequestList.CurrentRow.Cells("request_id").Value), CInt(Me.cboColoConclusion.SelectedValue))
             RefreshConclusionList()
             cboColoConclusion.SelectedIndex = -1
         End If
@@ -123,10 +123,10 @@
         End If
     End Sub
     Sub RefreshConclusionList()
-        Me.ConclusionList.DataSource = DA_ColoConclusion.SelectConclusionByRequestID(CInt(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value))
+        Me.ConclusionList.DataSource = DA_ColoConclusion.SelectConclusionByRequestID(CInt(Me.RequestPanel.gridRequestList.CurrentRow.Cells("request_id").Value))
     End Sub
 
-  
+
     Function GetValueConclustion() As String
         Dim ConValue As String = ""
         For i As Integer = 0 To conclusionlist.RowCount - 1
@@ -135,7 +135,7 @@
         Return ConValue
     End Function
 
-   
+
 
     Private Sub BtnSave_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnSave.Click
         If ValidateCombobox(cboColoDemander, "", ErrAlert) = False Then Exit Sub
@@ -147,8 +147,8 @@
             ColoAnes = Me.cboColoAnesthegiste.SelectedValue
         End If
 
-        If DA_Colo.SelectColoByRequestID(CLng(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value)).Rows.Count >= 1 Then
-            Dim RequestIDVal As Double = CLng(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value)
+        If DA_Colo.SelectColoByRequestID(CLng(Me.RequestPanel.gridRequestList.CurrentRow.Cells("request_id").Value)).Rows.Count >= 1 Then
+            Dim RequestIDVal As Double = CLng(Me.RequestPanel.gridRequestList.CurrentRow.Cells("request_id").Value)
             If MessageBox.Show("Do you want to update colo result?", "Update", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
                 If (DA_Colo.UpdateColoEnglish(RequestIDVal, txtColoDuree.Text, txtColoEva.Text, cboColoPreparation.SelectedValue.ToString, _
                   cboColoDemander.SelectedValue.ToString, txtColoTolerance.Text, chkColoAnesthegiste.Checked, ColoAnes, cboColoDocteur.Text, _
@@ -162,7 +162,7 @@
         Else
             '' Add New
             If MessageBox.Show("Do you want to insert new Colo?", "Insert", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
-                Dim RequestIDVal As Double = (Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value)
+                Dim RequestIDVal As Double = (Me.RequestPanel.gridRequestList.CurrentRow.Cells("request_id").Value)
 
                 If DA_Colo.InsertEnglishReport(RequestIDVal, CDbl(LblPatientNo.Text), Me.txtColoDuree.Text, txtColoEva.Text, cboColoPreparation.SelectedValue.ToString, _
                                                 cboColoDemander.SelectedValue.ToString, txtColoTolerance.Text, chkColoAnesthegiste.Checked, ColoAnes, _
@@ -179,8 +179,8 @@
     End Sub
 
     Private Sub BtnCancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnCancel.Click
-        If DA_Colo.SelectColoByRequestID(CLng(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value)).Rows.Count <= 0 Then
-            DA_ColoConclusion.DeleteConclusionByRequestID(CLng(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value))
+        If DA_Colo.SelectColoByRequestID(CLng(Me.RequestPanel.gridRequestList.CurrentRow.Cells("request_id").Value)).Rows.Count <= 0 Then
+            DA_ColoConclusion.DeleteConclusionByRequestID(CLng(Me.RequestPanel.gridRequestList.CurrentRow.Cells("request_id").Value))
         End If
         Me.Close()
     End Sub

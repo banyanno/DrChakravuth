@@ -561,12 +561,11 @@ Partial Class FormFibroscopy
         'lblPatientName
         '
         Me.lblPatientName.AutoSize = True
-        Me.lblPatientName.Location = New System.Drawing.Point(904, 49)
+        Me.lblPatientName.Location = New System.Drawing.Point(741, 35)
         Me.lblPatientName.Name = "lblPatientName"
         Me.lblPatientName.Size = New System.Drawing.Size(78, 13)
         Me.lblPatientName.TabIndex = 9
         Me.lblPatientName.Text = "lblPatientName"
-        Me.lblPatientName.Visible = False
         '
         'FormFibroscopy
         '

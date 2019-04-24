@@ -84,7 +84,8 @@
             Me.txtsex.Text = TblPatient.Rows(0).Item("pgender")
             Me.txtaddress.Text = TblPatient.Rows(0).Item("pcontactaddress")
             Me.txtno.Text = TblPatient.Rows(0).Item("patientid")
-            Me.txtdatebirth.Text = TblPatient.Rows(0).Item("pAge")
+            Me.LblPatientId.Text = TblPatient.Rows(0).Item("ppatientid")
+            Me.txtdatebirth.Text = Format(TblPatient.Rows(0).Item("pAge"), "dd-MM-yyyy")
         End If
 
     End Sub
@@ -130,7 +131,7 @@
         If MessageBox.Show("Do you want to save Para-exam history?", "Para-History", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
             ' Insert Request
             'If LblRequestID.Text = "0" Then
-            DA_Request.InsertRequest(CLng(Me.txtno.Text), FormatDateTime(Me.dtrequest.Value.Date, DateFormat.ShortDate), 16, True, True, True, True, True, True, True, True, "Result Para exam from other place.", 0, CboDiagnosis.Text, True)
+            DA_Request.InsertRequest(CLng(Me.LblPatientId.Text), FormatDateTime(Me.dtrequest.Value.Date, DateFormat.ShortDate), 16, True, True, True, True, True, True, True, True, "Result Para exam from other place.", 0, CboDiagnosis.Text, True)
             'End If
 
             ' Insert Scan
@@ -382,6 +383,11 @@
             DA_RequestBloodItem.DeleteCheckItem(LblRequestID.Text, CInt(Me.BloodResultList.CurrentRow.Cells("item_id").Value))
             GetRefreshBloodCheckItem(LblRequestID.Text)
         End If
+
+    End Sub
+
+   
+    Private Sub BtnFindPatient_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnFindPatient.Click
 
     End Sub
 End Class

@@ -39,9 +39,9 @@
 
     End Sub
     Sub LoadEchoData()
-        If DA_Echo.SelectEchoByRequestID(CLng(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value)).Rows.Count >= 1 Then
+        If DA_Echo.SelectEchoByRequestID(CLng(Me.RequestPanel.gridRequestList.CurrentRow.Cells("request_id").Value)).Rows.Count >= 1 Then
             Dim EchoTable As New DataTable
-            EchoTable = DA_Echo.SelectEchoByRequestID(CLng(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value))
+            EchoTable = DA_Echo.SelectEchoByRequestID(CLng(Me.RequestPanel.gridRequestList.CurrentRow.Cells("request_id").Value))
             Me.cboEchoDemander.SelectedValue = EchoTable.Rows(0).Item("demander")
             Me.CboDoctorExam.Text = EchoTable.Rows(0).Item("ExamBy")
             Me.txtEchoIndication.Text = EchoTable.Rows(0).Item("indication")
@@ -60,19 +60,19 @@
                 Me.TxtResult.Text = EchoTable.Rows(0).Item("ResultOfEcho")
             End If
             ''Load Conclusion Data
-            Me.ConclusionList.DataSource = DA_EchoConclusion.SelectConclusionByRequestID(CLng(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value))
-            RefreshImage(CLng(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value))
+            Me.ConclusionList.DataSource = DA_EchoConclusion.SelectConclusionByRequestID(CLng(Me.RequestPanel.gridRequestList.CurrentRow.Cells("request_id").Value))
+            RefreshImage(CLng(Me.RequestPanel.gridRequestList.CurrentRow.Cells("request_id").Value))
         End If
     End Sub
     Sub RefreshConclusionList()
-        Me.ConclusionList.DataSource = DA_EchoConclusion.SelectConclusionByRequestID(CInt(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value))
+        Me.ConclusionList.DataSource = DA_EchoConclusion.SelectConclusionByRequestID(CInt(Me.RequestPanel.gridRequestList.CurrentRow.Cells("request_id").Value))
     End Sub
 
     Private Sub BtnAddConclusion_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnAddConclusion.Click
-        If DA_EchoConclusion.SelectConclusion(CInt(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value), CInt(Me.cboEchoConclusion.SelectedValue)).Rows.Count > 0 Then
+        If DA_EchoConclusion.SelectConclusion(CInt(Me.RequestPanel.gridRequestList.CurrentRow.Cells("request_id").Value), CInt(Me.cboEchoConclusion.SelectedValue)).Rows.Count > 0 Then
             MsgBox("The conclusion was added already", MsgBoxStyle.OkOnly, "Existing Conclusion")
         Else
-            DA_EchoConclusion.Insert(CInt(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value), CInt(Me.cboEchoConclusion.SelectedValue))
+            DA_EchoConclusion.Insert(CInt(Me.RequestPanel.gridRequestList.CurrentRow.Cells("request_id").Value), CInt(Me.cboEchoConclusion.SelectedValue))
             RefreshConclusionList()
             cboEchoConclusion.SelectedIndex = -1
         End If
@@ -86,19 +86,19 @@
         End If
     End Sub
 
-    
+
 
     Private Sub BtnCancel_Click(ByVal sender As Object, ByVal e As System.EventArgs)
-        If DA_Echo.SelectEchoByRequestID(CLng(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value)).Rows.Count <= 0 Then
-            DA_EchoConclusion.DeleteConclusionByRequestID(CLng(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value))
+        If DA_Echo.SelectEchoByRequestID(CLng(Me.RequestPanel.gridRequestList.CurrentRow.Cells("request_id").Value)).Rows.Count <= 0 Then
+            DA_EchoConclusion.DeleteConclusionByRequestID(CLng(Me.RequestPanel.gridRequestList.CurrentRow.Cells("request_id").Value))
         End If
         Me.Close()
     End Sub
 
-    
+
     Private Sub BtnAddImg_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnAddImg.Click
         Dim Img As New ImageEcho(Me)
-        Img.LblRequesID.Text = CLng(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value)
+        Img.LblRequesID.Text = CLng(Me.RequestPanel.gridRequestList.CurrentRow.Cells("request_id").Value)
         Img.Show()
     End Sub
 
@@ -106,19 +106,19 @@
         If ValidateCombobox(cboEchoDemander, "", ErrAlert) = False Then Exit Sub
         If ValidateCombobox(CboDoctorExam, "", ErrAlert) = False Then Exit Sub
         If MessageBox.Show("Do you want save Echo?", "Echo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
-            If DA_Echo.SelectEchoByRequestID(CLng(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value)).Rows.Count >= 1 Then
+            If DA_Echo.SelectEchoByRequestID(CLng(Me.RequestPanel.gridRequestList.CurrentRow.Cells("request_id").Value)).Rows.Count >= 1 Then
                 '' Update
-                If DA_Echo.UpdateEchoByRequestID(Me.cboEchoDemander.SelectedValue.ToString, Me.txtEchoIndication.Text, Me.txtEchoLeFoie.Text, Me.txtEchoLaVeine.Text, Me.txtEchoLaVesicule.Text, Me.txtEchoLesVoies.Text, Me.txtEchoLePancreas.Text, Me.txtEchoLaRate.Text, Me.txtEchoLesReins.Text, Me.txtEchoLaProstate.Text, Me.txtEchoLaVessie.Text, Me.txtechomoreinfo.Text.ToString, TxtResult.Text, DateResultExam.Value.Date, USER_ID, SHOW_NAME, CboDoctorExam.Text, CLng(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value)) = 1 Then
+                If DA_Echo.UpdateEchoByRequestID(Me.cboEchoDemander.SelectedValue.ToString, Me.txtEchoIndication.Text, Me.txtEchoLeFoie.Text, Me.txtEchoLaVeine.Text, Me.txtEchoLaVesicule.Text, Me.txtEchoLesVoies.Text, Me.txtEchoLePancreas.Text, Me.txtEchoLaRate.Text, Me.txtEchoLesReins.Text, Me.txtEchoLaProstate.Text, Me.txtEchoLaVessie.Text, Me.txtechomoreinfo.Text.ToString, TxtResult.Text, DateResultExam.Value.Date, USER_ID, SHOW_NAME, CboDoctorExam.Text, CLng(Me.RequestPanel.gridRequestList.CurrentRow.Cells("request_id").Value)) = 1 Then
                     MsgBox("The echo has been saved successfully", MsgBoxStyle.OkOnly, "Saved Echo")
                     Me.DialogResult = Windows.Forms.DialogResult.OK
                 End If
             Else
                 '' Add New
-                If DA_Echo.InsertEcho(CLng(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value), CLng(LblPatientNo.Text), Me.cboEchoDemander.SelectedValue.ToString, Me.txtEchoIndication.Text, Me.txtEchoLeFoie.Text, Me.txtEchoLaVeine.Text, Me.txtEchoLaVesicule.Text, Me.txtEchoLesVoies.Text, Me.txtEchoLePancreas.Text, Me.txtEchoLaRate.Text, Me.txtEchoLesReins.Text, Me.txtEchoLaProstate.Text, Me.txtEchoLaVessie.Text, Me.txtechomoreinfo.Text, TxtResult.Text, DateResultExam.Value.Date, USER_ID, USER_NAME, CboDoctorExam.Text) = 1 Then
+                If DA_Echo.InsertEcho(CLng(Me.RequestPanel.gridRequestList.CurrentRow.Cells("request_id").Value), CLng(LblPatientNo.Text), Me.cboEchoDemander.SelectedValue.ToString, Me.txtEchoIndication.Text, Me.txtEchoLeFoie.Text, Me.txtEchoLaVeine.Text, Me.txtEchoLaVesicule.Text, Me.txtEchoLesVoies.Text, Me.txtEchoLePancreas.Text, Me.txtEchoLaRate.Text, Me.txtEchoLesReins.Text, Me.txtEchoLaProstate.Text, Me.txtEchoLaVessie.Text, Me.txtechomoreinfo.Text, TxtResult.Text, DateResultExam.Value.Date, USER_ID, USER_NAME, CboDoctorExam.Text) = 1 Then
                     MsgBox("An echo has been saved successfully", MsgBoxStyle.OkOnly, "Saved Echo")
                     Me.DialogResult = Windows.Forms.DialogResult.OK
                     DA_DOCTOR_FEE.InsertNewDoctorFee(USER_ID, SHOW_NAME, "Echo", DateResultExam.Value.Date, 0, LblPatientNo.Text, lblPatientName.Text, txtechomoreinfo.Text)
-                    DA_EchoConclusion.InsertNewEchoConclustion(CInt(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value), txtechomoreinfo.Text)
+                    DA_EchoConclusion.InsertNewEchoConclustion(CInt(Me.RequestPanel.gridRequestList.CurrentRow.Cells("request_id").Value), txtechomoreinfo.Text)
                 End If
             End If
         End If
@@ -136,7 +136,7 @@
         If GridImage.SelectedItems.Count = 0 Then Exit Sub
         If MessageBox.Show("Do you want to remove image?", "Echo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
             If DA_EchoImg.DeleteImage(GridImage.GetRow.Cells("IMG_ECHO_ID").Value) = 1 Then
-                RefreshImage(CLng(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value))
+                RefreshImage(CLng(Me.RequestPanel.gridRequestList.CurrentRow.Cells("request_id").Value))
             End If
         End If
     End Sub

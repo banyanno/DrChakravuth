@@ -23,8 +23,9 @@ Partial Class UPatientIssueReceipt
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container
-        Dim InvoiceList_DesignTimeLayout As Janus.Windows.GridEX.GridEXLayout = New Janus.Windows.GridEX.GridEXLayout
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(UPatientIssueReceipt))
+        Dim InvoiceList_DesignTimeLayout As Janus.Windows.GridEX.GridEXLayout = New Janus.Windows.GridEX.GridEXLayout
+        Dim JanusColorScheme1 As Janus.Windows.Common.JanusColorScheme = New Janus.Windows.Common.JanusColorScheme
         Dim ParaList_DesignTimeLayout As Janus.Windows.GridEX.GridEXLayout = New Janus.Windows.GridEX.GridEXLayout
         Dim ConsultationList_DesignTimeLayout As Janus.Windows.GridEX.GridEXLayout = New Janus.Windows.GridEX.GridEXLayout
         Dim OrderList_DesignTimeLayout As Janus.Windows.GridEX.GridEXLayout = New Janus.Windows.GridEX.GridEXLayout
@@ -38,17 +39,20 @@ Partial Class UPatientIssueReceipt
         Me.BtnSetExchangeRate = New System.Windows.Forms.ToolStripButton
         Me.ToolStripSeparator8 = New System.Windows.Forms.ToolStripSeparator
         Me.BtnDeletePreInvoice = New System.Windows.Forms.ToolStripButton
+        Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator
+        Me.BtnFindingInvoice = New System.Windows.Forms.ToolStripButton
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer
         Me.GroupBox1 = New System.Windows.Forms.GroupBox
         Me.SplitContainer3 = New System.Windows.Forms.SplitContainer
         Me.InvoiceList = New Janus.Windows.GridEX.GridEX
+        Me.VisualStyleManager1 = New Janus.Windows.Common.VisualStyleManager(Me.components)
         Me.SplitContainer2 = New System.Windows.Forms.SplitContainer
         Me.SplitContainer4 = New System.Windows.Forms.SplitContainer
         Me.SplitContainer5 = New System.Windows.Forms.SplitContainer
         Me.UiTab1 = New Janus.Windows.UI.Tab.UITab
         Me.UiTabPage2 = New Janus.Windows.UI.Tab.UITabPage
         Me.ParaList = New Janus.Windows.GridEX.GridEX
-        Me.ContextMenuExam = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.ContextMenuParaExam = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.BtnAddParaExam = New System.Windows.Forms.ToolStripMenuItem
         Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator
         Me.BtnDeleteParaExam = New System.Windows.Forms.ToolStripMenuItem
@@ -104,7 +108,7 @@ Partial Class UPatientIssueReceipt
         Me.UiTab1.SuspendLayout()
         Me.UiTabPage2.SuspendLayout()
         CType(Me.ParaList, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.ContextMenuExam.SuspendLayout()
+        Me.ContextMenuParaExam.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.ConsultationService.SuspendLayout()
         CType(Me.ConsultationList, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -117,88 +121,111 @@ Partial Class UPatientIssueReceipt
         '
         'ToolStrip1
         '
+        Me.ToolStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.ToolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden
         Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(30, 30)
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BtnIssueReceipt, Me.ToolStripSeparator1, Me.BtnRefreshIssueReceipt, Me.ToolStripSeparator2, Me.BtnNewExpend, Me.ToolStripSeparator7, Me.BtnSetExchangeRate, Me.ToolStripSeparator8, Me.BtnDeletePreInvoice})
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BtnIssueReceipt, Me.ToolStripSeparator1, Me.BtnRefreshIssueReceipt, Me.ToolStripSeparator2, Me.BtnNewExpend, Me.ToolStripSeparator7, Me.BtnSetExchangeRate, Me.ToolStripSeparator8, Me.BtnDeletePreInvoice, Me.ToolStripSeparator6, Me.BtnFindingInvoice})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(1312, 37)
+        Me.ToolStrip1.Size = New System.Drawing.Size(1312, 58)
         Me.ToolStrip1.TabIndex = 0
         Me.ToolStrip1.Text = "ToolStrip1"
         '
         'BtnIssueReceipt
         '
         Me.BtnIssueReceipt.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnIssueReceipt.ForeColor = System.Drawing.Color.Blue
+        Me.BtnIssueReceipt.ForeColor = System.Drawing.Color.White
         Me.BtnIssueReceipt.Image = Global.Clinic_Management_System.My.Resources.Resources.register
         Me.BtnIssueReceipt.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.BtnIssueReceipt.Name = "BtnIssueReceipt"
-        Me.BtnIssueReceipt.Size = New System.Drawing.Size(169, 34)
+        Me.BtnIssueReceipt.Size = New System.Drawing.Size(139, 55)
         Me.BtnIssueReceipt.Text = "Issue Invoice (F4)"
+        Me.BtnIssueReceipt.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
         'ToolStripSeparator1
         '
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 37)
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 58)
         '
         'BtnRefreshIssueReceipt
         '
         Me.BtnRefreshIssueReceipt.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnRefreshIssueReceipt.ForeColor = System.Drawing.Color.Blue
+        Me.BtnRefreshIssueReceipt.ForeColor = System.Drawing.Color.White
         Me.BtnRefreshIssueReceipt.Image = Global.Clinic_Management_System.My.Resources.Resources.refresh
         Me.BtnRefreshIssueReceipt.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.BtnRefreshIssueReceipt.Name = "BtnRefreshIssueReceipt"
-        Me.BtnRefreshIssueReceipt.Size = New System.Drawing.Size(162, 34)
+        Me.BtnRefreshIssueReceipt.Size = New System.Drawing.Size(132, 55)
         Me.BtnRefreshIssueReceipt.Text = "Refresh List (F5)"
+        Me.BtnRefreshIssueReceipt.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
         'ToolStripSeparator2
         '
         Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(6, 37)
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(6, 58)
         '
         'BtnNewExpend
         '
         Me.BtnNewExpend.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnNewExpend.ForeColor = System.Drawing.Color.Blue
+        Me.BtnNewExpend.ForeColor = System.Drawing.Color.White
         Me.BtnNewExpend.Image = Global.Clinic_Management_System.My.Resources.Resources.CashReceipt
         Me.BtnNewExpend.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.BtnNewExpend.Name = "BtnNewExpend"
-        Me.BtnNewExpend.Size = New System.Drawing.Size(132, 34)
+        Me.BtnNewExpend.Size = New System.Drawing.Size(102, 55)
         Me.BtnNewExpend.Text = "New Expend"
+        Me.BtnNewExpend.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
         'ToolStripSeparator7
         '
         Me.ToolStripSeparator7.Name = "ToolStripSeparator7"
-        Me.ToolStripSeparator7.Size = New System.Drawing.Size(6, 37)
+        Me.ToolStripSeparator7.Size = New System.Drawing.Size(6, 58)
         '
         'BtnSetExchangeRate
         '
         Me.BtnSetExchangeRate.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnSetExchangeRate.ForeColor = System.Drawing.Color.Blue
+        Me.BtnSetExchangeRate.ForeColor = System.Drawing.Color.White
         Me.BtnSetExchangeRate.Image = Global.Clinic_Management_System.My.Resources.Resources.invoice
         Me.BtnSetExchangeRate.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.BtnSetExchangeRate.Name = "BtnSetExchangeRate"
-        Me.BtnSetExchangeRate.Size = New System.Drawing.Size(182, 34)
+        Me.BtnSetExchangeRate.Size = New System.Drawing.Size(152, 55)
         Me.BtnSetExchangeRate.Text = "Set Exchange Rate"
+        Me.BtnSetExchangeRate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
         'ToolStripSeparator8
         '
         Me.ToolStripSeparator8.Name = "ToolStripSeparator8"
-        Me.ToolStripSeparator8.Size = New System.Drawing.Size(6, 37)
+        Me.ToolStripSeparator8.Size = New System.Drawing.Size(6, 58)
         '
         'BtnDeletePreInvoice
         '
         Me.BtnDeletePreInvoice.Font = New System.Drawing.Font("Segoe UI", 12.0!)
-        Me.BtnDeletePreInvoice.ForeColor = System.Drawing.Color.Blue
+        Me.BtnDeletePreInvoice.ForeColor = System.Drawing.Color.White
         Me.BtnDeletePreInvoice.Image = Global.Clinic_Management_System.My.Resources.Resources.delete_appointment
         Me.BtnDeletePreInvoice.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.BtnDeletePreInvoice.Name = "BtnDeletePreInvoice"
-        Me.BtnDeletePreInvoice.Size = New System.Drawing.Size(180, 34)
+        Me.BtnDeletePreInvoice.Size = New System.Drawing.Size(150, 55)
         Me.BtnDeletePreInvoice.Text = "Delete Issue Invoice"
+        Me.BtnDeletePreInvoice.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
+        'ToolStripSeparator6
+        '
+        Me.ToolStripSeparator6.Name = "ToolStripSeparator6"
+        Me.ToolStripSeparator6.Size = New System.Drawing.Size(6, 58)
+        '
+        'BtnFindingInvoice
+        '
+        Me.BtnFindingInvoice.Font = New System.Drawing.Font("Segoe UI", 11.0!)
+        Me.BtnFindingInvoice.ForeColor = System.Drawing.Color.White
+        Me.BtnFindingInvoice.Image = CType(resources.GetObject("BtnFindingInvoice.Image"), System.Drawing.Image)
+        Me.BtnFindingInvoice.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.BtnFindingInvoice.Name = "BtnFindingInvoice"
+        Me.BtnFindingInvoice.Size = New System.Drawing.Size(92, 55)
+        Me.BtnFindingInvoice.Text = "Find Invoice"
+        Me.BtnFindingInvoice.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
         'SplitContainer1
         '
         Me.SplitContainer1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.SplitContainer1.Location = New System.Drawing.Point(0, 37)
+        Me.SplitContainer1.Location = New System.Drawing.Point(0, 58)
         Me.SplitContainer1.Name = "SplitContainer1"
         Me.SplitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal
         '
@@ -209,8 +236,8 @@ Partial Class UPatientIssueReceipt
         'SplitContainer1.Panel2
         '
         Me.SplitContainer1.Panel2.Controls.Add(Me.SplitContainer2)
-        Me.SplitContainer1.Size = New System.Drawing.Size(1312, 1077)
-        Me.SplitContainer1.SplitterDistance = 296
+        Me.SplitContainer1.Size = New System.Drawing.Size(1312, 1056)
+        Me.SplitContainer1.SplitterDistance = 290
         Me.SplitContainer1.TabIndex = 1
         '
         'GroupBox1
@@ -221,7 +248,7 @@ Partial Class UPatientIssueReceipt
         Me.GroupBox1.ForeColor = System.Drawing.Color.Blue
         Me.GroupBox1.Location = New System.Drawing.Point(0, 0)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(1312, 296)
+        Me.GroupBox1.Size = New System.Drawing.Size(1312, 290)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "List of Patient Waiting for Invoice"
@@ -236,7 +263,7 @@ Partial Class UPatientIssueReceipt
         '
         Me.SplitContainer3.Panel1.Controls.Add(Me.InvoiceList)
         Me.SplitContainer3.Panel2Collapsed = True
-        Me.SplitContainer3.Size = New System.Drawing.Size(1306, 270)
+        Me.SplitContainer3.Size = New System.Drawing.Size(1306, 264)
         Me.SplitContainer3.SplitterDistance = 795
         Me.SplitContainer3.TabIndex = 1
         '
@@ -254,12 +281,26 @@ Partial Class UPatientIssueReceipt
         Me.InvoiceList.HideSelection = Janus.Windows.GridEX.HideSelection.HighlightInactive
         Me.InvoiceList.Location = New System.Drawing.Point(0, 0)
         Me.InvoiceList.Name = "InvoiceList"
+        Me.InvoiceList.Office2007CustomColor = System.Drawing.Color.White
         Me.InvoiceList.RecordNavigator = True
         Me.InvoiceList.RowHeaderFormatStyle.ForeColor = System.Drawing.Color.Blue
         Me.InvoiceList.RowHeaders = Janus.Windows.GridEX.InheritableBoolean.[True]
         Me.InvoiceList.SelectedInactiveFormatStyle.BackColor = System.Drawing.SystemColors.GradientActiveCaption
-        Me.InvoiceList.Size = New System.Drawing.Size(1306, 270)
+        Me.InvoiceList.Size = New System.Drawing.Size(1306, 264)
         Me.InvoiceList.TabIndex = 3
+        Me.InvoiceList.VisualStyleManager = Me.VisualStyleManager1
+        '
+        'VisualStyleManager1
+        '
+        JanusColorScheme1.HighlightTextColor = System.Drawing.Color.Black
+        JanusColorScheme1.MenuColor = System.Drawing.SystemColors.Control
+        JanusColorScheme1.Name = "Scheme0"
+        JanusColorScheme1.Office2007CustomColor = System.Drawing.Color.White
+        JanusColorScheme1.UseThemes = False
+        JanusColorScheme1.VisualStyle = Janus.Windows.Common.VisualStyle.Standard
+        JanusColorScheme1.WindowColor = System.Drawing.Color.White
+        Me.VisualStyleManager1.ColorSchemes.Add(JanusColorScheme1)
+        Me.VisualStyleManager1.DefaultColorScheme = "Scheme0"
         '
         'SplitContainer2
         '
@@ -290,7 +331,7 @@ Partial Class UPatientIssueReceipt
         Me.SplitContainer2.Panel2.Controls.Add(Me.Label6)
         Me.SplitContainer2.Panel2.Controls.Add(Me.Label5)
         Me.SplitContainer2.Panel2Collapsed = True
-        Me.SplitContainer2.Size = New System.Drawing.Size(1312, 777)
+        Me.SplitContainer2.Size = New System.Drawing.Size(1312, 762)
         Me.SplitContainer2.SplitterDistance = 696
         Me.SplitContainer2.TabIndex = 0
         '
@@ -308,8 +349,8 @@ Partial Class UPatientIssueReceipt
         'SplitContainer4.Panel2
         '
         Me.SplitContainer4.Panel2.Controls.Add(Me.TabControl2)
-        Me.SplitContainer4.Size = New System.Drawing.Size(1312, 777)
-        Me.SplitContainer4.SplitterDistance = 306
+        Me.SplitContainer4.Size = New System.Drawing.Size(1312, 762)
+        Me.SplitContainer4.SplitterDistance = 300
         Me.SplitContainer4.TabIndex = 1
         '
         'SplitContainer5
@@ -325,7 +366,7 @@ Partial Class UPatientIssueReceipt
         'SplitContainer5.Panel2
         '
         Me.SplitContainer5.Panel2.Controls.Add(Me.TabControl1)
-        Me.SplitContainer5.Size = New System.Drawing.Size(1312, 306)
+        Me.SplitContainer5.Size = New System.Drawing.Size(1312, 300)
         Me.SplitContainer5.SplitterDistance = 723
         Me.SplitContainer5.TabIndex = 4
         '
@@ -335,7 +376,7 @@ Partial Class UPatientIssueReceipt
         Me.UiTab1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.UiTab1.Location = New System.Drawing.Point(0, 0)
         Me.UiTab1.Name = "UiTab1"
-        Me.UiTab1.Size = New System.Drawing.Size(723, 306)
+        Me.UiTab1.Size = New System.Drawing.Size(723, 300)
         Me.UiTab1.TabIndex = 0
         Me.UiTab1.TabPages.AddRange(New Janus.Windows.UI.Tab.UITabPage() {Me.UiTabPage2})
         Me.UiTab1.TabsStateStyles.FormatStyle.FontSize = 11.0!
@@ -346,14 +387,14 @@ Partial Class UPatientIssueReceipt
         Me.UiTabPage2.Key = "Examination Service"
         Me.UiTabPage2.Location = New System.Drawing.Point(1, 26)
         Me.UiTabPage2.Name = "UiTabPage2"
-        Me.UiTabPage2.Size = New System.Drawing.Size(719, 277)
+        Me.UiTabPage2.Size = New System.Drawing.Size(719, 271)
         Me.UiTabPage2.TabStop = True
         Me.UiTabPage2.Text = "Para Examination Service (F3)"
         '
         'ParaList
         '
         Me.ParaList.AllowEdit = Janus.Windows.GridEX.InheritableBoolean.[False]
-        Me.ParaList.ContextMenuStrip = Me.ContextMenuExam
+        Me.ParaList.ContextMenuStrip = Me.ContextMenuParaExam
         ParaList_DesignTimeLayout.LayoutString = resources.GetString("ParaList_DesignTimeLayout.LayoutString")
         Me.ParaList.DesignTimeLayout = ParaList_DesignTimeLayout
         Me.ParaList.Dock = System.Windows.Forms.DockStyle.Fill
@@ -363,18 +404,20 @@ Partial Class UPatientIssueReceipt
         Me.ParaList.HeaderFormatStyle.TextAlignment = Janus.Windows.GridEX.TextAlignment.Center
         Me.ParaList.Location = New System.Drawing.Point(0, 0)
         Me.ParaList.Name = "ParaList"
+        Me.ParaList.Office2007CustomColor = System.Drawing.Color.White
         Me.ParaList.RecordNavigator = True
         Me.ParaList.RowHeaderFormatStyle.ForeColor = System.Drawing.Color.Blue
         Me.ParaList.RowHeaders = Janus.Windows.GridEX.InheritableBoolean.[True]
-        Me.ParaList.Size = New System.Drawing.Size(719, 277)
+        Me.ParaList.Size = New System.Drawing.Size(719, 271)
         Me.ParaList.TabIndex = 3
+        Me.ParaList.VisualStyleManager = Me.VisualStyleManager1
         '
-        'ContextMenuExam
+        'ContextMenuParaExam
         '
-        Me.ContextMenuExam.Font = New System.Drawing.Font("Tahoma", 12.0!)
-        Me.ContextMenuExam.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BtnAddParaExam, Me.ToolStripSeparator3, Me.BtnDeleteParaExam, Me.ToolStripSeparator4})
-        Me.ContextMenuExam.Name = "ContextMenuStrip1"
-        Me.ContextMenuExam.Size = New System.Drawing.Size(270, 64)
+        Me.ContextMenuParaExam.Font = New System.Drawing.Font("Tahoma", 12.0!)
+        Me.ContextMenuParaExam.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BtnAddParaExam, Me.ToolStripSeparator3, Me.BtnDeleteParaExam, Me.ToolStripSeparator4})
+        Me.ContextMenuParaExam.Name = "ContextMenuStrip1"
+        Me.ContextMenuParaExam.Size = New System.Drawing.Size(270, 64)
         '
         'BtnAddParaExam
         '
@@ -407,7 +450,7 @@ Partial Class UPatientIssueReceipt
         Me.TabControl1.Location = New System.Drawing.Point(0, 0)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(585, 306)
+        Me.TabControl1.Size = New System.Drawing.Size(585, 300)
         Me.TabControl1.TabIndex = 0
         '
         'ConsultationService
@@ -416,7 +459,7 @@ Partial Class UPatientIssueReceipt
         Me.ConsultationService.Location = New System.Drawing.Point(4, 27)
         Me.ConsultationService.Name = "ConsultationService"
         Me.ConsultationService.Padding = New System.Windows.Forms.Padding(3)
-        Me.ConsultationService.Size = New System.Drawing.Size(577, 275)
+        Me.ConsultationService.Size = New System.Drawing.Size(577, 269)
         Me.ConsultationService.TabIndex = 0
         Me.ConsultationService.Text = "Consultation Service"
         Me.ConsultationService.UseVisualStyleBackColor = True
@@ -435,17 +478,19 @@ Partial Class UPatientIssueReceipt
         Me.ConsultationList.HeaderFormatStyle.TextAlignment = Janus.Windows.GridEX.TextAlignment.Center
         Me.ConsultationList.Location = New System.Drawing.Point(3, 3)
         Me.ConsultationList.Name = "ConsultationList"
+        Me.ConsultationList.Office2007CustomColor = System.Drawing.Color.White
         Me.ConsultationList.RecordNavigator = True
         Me.ConsultationList.RowHeaders = Janus.Windows.GridEX.InheritableBoolean.[True]
-        Me.ConsultationList.Size = New System.Drawing.Size(571, 269)
+        Me.ConsultationList.Size = New System.Drawing.Size(571, 263)
         Me.ConsultationList.TabIndex = 2
+        Me.ConsultationList.VisualStyleManager = Me.VisualStyleManager1
         '
         'ContextMenuConsultService
         '
         Me.ContextMenuConsultService.Font = New System.Drawing.Font("Tahoma", 12.0!)
         Me.ContextMenuConsultService.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BtnEditConsultation, Me.ToolStripMenuItem1, Me.btnDeleteConsultation, Me.ToolStripMenuItem2, Me.BtnAddConsult})
         Me.ContextMenuConsultService.Name = "ContextMenuStrip1"
-        Me.ContextMenuConsultService.Size = New System.Drawing.Size(216, 110)
+        Me.ContextMenuConsultService.Size = New System.Drawing.Size(216, 88)
         '
         'BtnEditConsultation
         '
@@ -487,7 +532,7 @@ Partial Class UPatientIssueReceipt
         Me.TabControl2.Location = New System.Drawing.Point(0, 0)
         Me.TabControl2.Name = "TabControl2"
         Me.TabControl2.SelectedIndex = 0
-        Me.TabControl2.Size = New System.Drawing.Size(1312, 467)
+        Me.TabControl2.Size = New System.Drawing.Size(1312, 458)
         Me.TabControl2.TabIndex = 0
         '
         'SaleMedicine
@@ -496,7 +541,7 @@ Partial Class UPatientIssueReceipt
         Me.SaleMedicine.Location = New System.Drawing.Point(4, 29)
         Me.SaleMedicine.Name = "SaleMedicine"
         Me.SaleMedicine.Padding = New System.Windows.Forms.Padding(3)
-        Me.SaleMedicine.Size = New System.Drawing.Size(1304, 434)
+        Me.SaleMedicine.Size = New System.Drawing.Size(1304, 425)
         Me.SaleMedicine.TabIndex = 0
         Me.SaleMedicine.Text = "Sale Medicine (F2)"
         Me.SaleMedicine.UseVisualStyleBackColor = True
@@ -504,6 +549,7 @@ Partial Class UPatientIssueReceipt
         'OrderList
         '
         Me.OrderList.AllowEdit = Janus.Windows.GridEX.InheritableBoolean.[False]
+        Me.OrderList.BackColor = System.Drawing.Color.White
         Me.OrderList.ContextMenuStrip = Me.ContextMenuMedicine
         OrderList_DesignTimeLayout.LayoutString = resources.GetString("OrderList_DesignTimeLayout.LayoutString")
         Me.OrderList.DesignTimeLayout = OrderList_DesignTimeLayout
@@ -514,10 +560,13 @@ Partial Class UPatientIssueReceipt
         Me.OrderList.HeaderFormatStyle.TextAlignment = Janus.Windows.GridEX.TextAlignment.Center
         Me.OrderList.Location = New System.Drawing.Point(3, 3)
         Me.OrderList.Name = "OrderList"
+        Me.OrderList.Office2007CustomColor = System.Drawing.Color.White
         Me.OrderList.RecordNavigator = True
         Me.OrderList.RowHeaders = Janus.Windows.GridEX.InheritableBoolean.[True]
-        Me.OrderList.Size = New System.Drawing.Size(1298, 428)
+        Me.OrderList.Size = New System.Drawing.Size(1298, 419)
         Me.OrderList.TabIndex = 4
+        Me.OrderList.ThemedAreas = Janus.Windows.GridEX.ThemedArea.None
+        Me.OrderList.VisualStyleManager = Me.VisualStyleManager1
         '
         'ContextMenuMedicine
         '
@@ -722,7 +771,7 @@ Partial Class UPatientIssueReceipt
         Me.UiTab1.ResumeLayout(False)
         Me.UiTabPage2.ResumeLayout(False)
         CType(Me.ParaList, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.ContextMenuExam.ResumeLayout(False)
+        Me.ContextMenuParaExam.ResumeLayout(False)
         Me.TabControl1.ResumeLayout(False)
         Me.ConsultationService.ResumeLayout(False)
         CType(Me.ConsultationList, System.ComponentModel.ISupportInitialize).EndInit()
@@ -777,7 +826,7 @@ Partial Class UPatientIssueReceipt
     Friend WithEvents btnDeleteConsultation As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem2 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents BtnAddConsult As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ContextMenuExam As System.Windows.Forms.ContextMenuStrip
+    Friend WithEvents ContextMenuParaExam As System.Windows.Forms.ContextMenuStrip
     Friend WithEvents BtnAddParaExam As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ToolStripSeparator3 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents BtnDeleteParaExam As System.Windows.Forms.ToolStripMenuItem
@@ -790,5 +839,8 @@ Partial Class UPatientIssueReceipt
     Friend WithEvents BtnNewExpend As System.Windows.Forms.ToolStripButton
     Friend WithEvents ToolStripSeparator8 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents BtnSetExchangeRate As System.Windows.Forms.ToolStripButton
+    Friend WithEvents VisualStyleManager1 As Janus.Windows.Common.VisualStyleManager
+    Friend WithEvents ToolStripSeparator6 As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents BtnFindingInvoice As System.Windows.Forms.ToolStripButton
 
 End Class

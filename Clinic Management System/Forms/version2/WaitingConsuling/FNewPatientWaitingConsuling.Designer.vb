@@ -36,7 +36,7 @@ Partial Class FNewPatientWaitingConsuling
         Me.Label5 = New System.Windows.Forms.Label
         Me.Label3 = New System.Windows.Forms.Label
         Me.Label4 = New System.Windows.Forms.Label
-        Me.txtno = New System.Windows.Forms.TextBox
+        Me.TxtPatientNo = New System.Windows.Forms.TextBox
         Me.txtname = New System.Windows.Forms.TextBox
         Me.txtaddress = New System.Windows.Forms.TextBox
         Me.txtdatebirth = New System.Windows.Forms.TextBox
@@ -113,7 +113,7 @@ Partial Class FNewPatientWaitingConsuling
         Me.GroupBox1.Controls.Add(Me.Label5)
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.Label4)
-        Me.GroupBox1.Controls.Add(Me.txtno)
+        Me.GroupBox1.Controls.Add(Me.TxtPatientNo)
         Me.GroupBox1.Controls.Add(Me.txtname)
         Me.GroupBox1.Controls.Add(Me.txtaddress)
         Me.GroupBox1.Controls.Add(Me.txtdatebirth)
@@ -208,14 +208,14 @@ Partial Class FNewPatientWaitingConsuling
         '
         'txtno
         '
-        Me.AutocompleteMenu1.SetAutocompleteMenu(Me.txtno, Nothing)
-        Me.txtno.BackColor = System.Drawing.Color.White
-        Me.txtno.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtno.Location = New System.Drawing.Point(117, 26)
-        Me.txtno.Name = "txtno"
-        Me.txtno.ReadOnly = True
-        Me.txtno.Size = New System.Drawing.Size(194, 26)
-        Me.txtno.TabIndex = 30
+        Me.AutocompleteMenu1.SetAutocompleteMenu(Me.TxtPatientNo, Nothing)
+        Me.TxtPatientNo.BackColor = System.Drawing.Color.White
+        Me.TxtPatientNo.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtPatientNo.Location = New System.Drawing.Point(117, 26)
+        Me.TxtPatientNo.Name = "txtno"
+        Me.TxtPatientNo.ReadOnly = True
+        Me.TxtPatientNo.Size = New System.Drawing.Size(194, 26)
+        Me.TxtPatientNo.TabIndex = 30
         '
         'txtname
         '
@@ -267,7 +267,7 @@ Partial Class FNewPatientWaitingConsuling
         Me.Label1.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(350, 35)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(81, 14)
+        Me.Label1.Size = New System.Drawing.Size(80, 14)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Waitnig No:"
         '
@@ -315,7 +315,7 @@ Partial Class FNewPatientWaitingConsuling
         Me.Label8.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.Location = New System.Drawing.Point(22, 33)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(94, 14)
+        Me.Label8.Size = New System.Drawing.Size(93, 14)
         Me.Label8.TabIndex = 5
         Me.Label8.Text = "Waiting Date:"
         '
@@ -325,10 +325,10 @@ Partial Class FNewPatientWaitingConsuling
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.AutocompleteMenu1.SetAutocompleteMenu(Me.txtdesc, Me.AutocompleteMenu1)
         Me.txtdesc.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtdesc.Location = New System.Drawing.Point(117, 73)
+        Me.txtdesc.Location = New System.Drawing.Point(117, 63)
         Me.txtdesc.Multiline = True
         Me.txtdesc.Name = "txtdesc"
-        Me.txtdesc.Size = New System.Drawing.Size(1027, 39)
+        Me.txtdesc.Size = New System.Drawing.Size(1027, 49)
         Me.txtdesc.TabIndex = 4
         '
         'txtwaitno
@@ -772,6 +772,7 @@ Partial Class FNewPatientWaitingConsuling
         Me.AutocompleteMenu1.Items = New String(-1) {}
         Me.AutocompleteMenu1.MinFragmentLength = 1
         Me.AutocompleteMenu1.TargetControlWrapper = Nothing
+        Me.AutocompleteMenu1.ToolTipDuration = 3000
         '
         'FNewPatientWaitingConsuling
         '
@@ -819,7 +820,7 @@ Partial Class FNewPatientWaitingConsuling
     Friend WithEvents txtwaitno As System.Windows.Forms.TextBox
     Friend WithEvents BtnSave As System.Windows.Forms.Button
     Friend WithEvents BtnCancel As System.Windows.Forms.Button
-    Friend WithEvents txtno As System.Windows.Forms.TextBox
+    Friend WithEvents TxtPatientNo As System.Windows.Forms.TextBox
     Friend WithEvents txtname As System.Windows.Forms.TextBox
     Friend WithEvents txtaddress As System.Windows.Forms.TextBox
     Friend WithEvents txtdatebirth As System.Windows.Forms.TextBox

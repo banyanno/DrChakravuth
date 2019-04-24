@@ -32,10 +32,10 @@
 
     Private Sub BtnSave_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnSave.Click
         If lblaction.Text = 0 Then
-            If DA_PhysicalExam.SelectExisting(CLng(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value), CInt(Me.cboexamination.SelectedValue.ToString)).Rows.Count >= 1 Then
+            If DA_PhysicalExam.SelectExisting(CLng(Me.RequestPanel.gridRequestList.CurrentRow.Cells("request_id").Value), CInt(Me.cboexamination.SelectedValue.ToString)).Rows.Count >= 1 Then
                 MsgBox("This physical exam was added already", MsgBoxStyle.Exclamation, "Existing Exam")
             Else
-                If DA_PhysicalExam.InsertExam(CLng(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value), CInt(Me.cboexamination.SelectedValue.ToString), Me.txtdesc.Text.ToString.Replace("'", "''")) = 1 Then
+                If DA_PhysicalExam.InsertExam(CLng(Me.RequestPanel.gridRequestList.CurrentRow.Cells("request_id").Value), CInt(Me.cboexamination.SelectedValue.ToString), Me.txtdesc.Text.ToString.Replace("'", "''")) = 1 Then
                     MsgBox("One physical exam was added", MsgBoxStyle.Information, "Physical Exam Added")
                     ' Me.RequestPanel.LoadPhysicalExam()
                     Me.Close()

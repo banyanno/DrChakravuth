@@ -25,8 +25,10 @@ Partial Class PatientInformation
         Me.components = New System.ComponentModel.Container
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(PatientInformation))
         Dim GridPatientInfo_DesignTimeLayout As Janus.Windows.GridEX.GridEXLayout = New Janus.Windows.GridEX.GridEXLayout
+        Dim JanusColorScheme1 As Janus.Windows.Common.JanusColorScheme = New Janus.Windows.Common.JanusColorScheme
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer
         Me.GridPatientInfo = New Janus.Windows.GridEX.GridEX
+        Me.VisualStyleManager1 = New Janus.Windows.Common.VisualStyleManager(Me.components)
         Me.UiTab1 = New Janus.Windows.UI.Tab.UITab
         Me.UiTabPage1 = New Janus.Windows.UI.Tab.UITabPage
         Me.GroupBox1 = New System.Windows.Forms.GroupBox
@@ -90,6 +92,7 @@ Partial Class PatientInformation
         '
         Me.SplitContainer1.BackColor = System.Drawing.SystemColors.Control
         resources.ApplyResources(Me.SplitContainer1, "SplitContainer1")
+        Me.SplitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel2
         Me.SplitContainer1.Name = "SplitContainer1"
         '
         'SplitContainer1.Panel1
@@ -104,6 +107,7 @@ Partial Class PatientInformation
         'GridPatientInfo
         '
         Me.GridPatientInfo.AllowEdit = Janus.Windows.GridEX.InheritableBoolean.[False]
+        Me.GridPatientInfo.BorderStyle = Janus.Windows.GridEX.BorderStyle.None
         resources.ApplyResources(GridPatientInfo_DesignTimeLayout, "GridPatientInfo_DesignTimeLayout")
         Me.GridPatientInfo.DesignTimeLayout = GridPatientInfo_DesignTimeLayout
         resources.ApplyResources(Me.GridPatientInfo, "GridPatientInfo")
@@ -112,6 +116,8 @@ Partial Class PatientInformation
         Me.GridPatientInfo.HeaderFormatStyle.TextAlignment = Janus.Windows.GridEX.TextAlignment.Center
         Me.GridPatientInfo.HideSelection = Janus.Windows.GridEX.HideSelection.HighlightInactive
         Me.GridPatientInfo.Name = "GridPatientInfo"
+        Me.GridPatientInfo.Office2007ColorScheme = Janus.Windows.GridEX.Office2007ColorScheme.Silver
+        Me.GridPatientInfo.Office2007CustomColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.GridPatientInfo.RecordNavigator = True
         Me.GridPatientInfo.RowHeaderContent = Janus.Windows.GridEX.RowHeaderContent.RowPosition
         Me.GridPatientInfo.RowHeaderFormatStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!)
@@ -120,14 +126,28 @@ Partial Class PatientInformation
         Me.GridPatientInfo.SelectedInactiveFormatStyle.BackColor = System.Drawing.SystemColors.Highlight
         Me.GridPatientInfo.SelectedInactiveFormatStyle.ForeColor = System.Drawing.SystemColors.Window
         Me.GridPatientInfo.TableHeaderFormatStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.GridPatientInfo.ThemedAreas = Janus.Windows.GridEX.ThemedArea.None
+        Me.GridPatientInfo.VisualStyleManager = Me.VisualStyleManager1
+        '
+        'VisualStyleManager1
+        '
+        JanusColorScheme1.HighlightTextColor = System.Drawing.SystemColors.HighlightText
+        JanusColorScheme1.Name = "Scheme0"
+        JanusColorScheme1.Office2007ColorScheme = Janus.Windows.Common.Office2007ColorScheme.Silver
+        JanusColorScheme1.Office2007CustomColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        JanusColorScheme1.UseThemes = False
+        JanusColorScheme1.VisualStyle = Janus.Windows.Common.VisualStyle.Standard
+        Me.VisualStyleManager1.ColorSchemes.Add(JanusColorScheme1)
+        Me.VisualStyleManager1.DefaultColorScheme = "Scheme0"
         '
         'UiTab1
         '
         Me.UiTab1.BackColor = System.Drawing.SystemColors.Control
         resources.ApplyResources(Me.UiTab1, "UiTab1")
         Me.UiTab1.Name = "UiTab1"
+        Me.UiTab1.Office2007ColorScheme = Janus.Windows.UI.Office2007ColorScheme.Silver
         Me.UiTab1.TabPages.AddRange(New Janus.Windows.UI.Tab.UITabPage() {Me.UiTabPage1})
-        Me.UiTab1.VisualStyle = Janus.Windows.UI.Tab.TabVisualStyle.VS2005
+        Me.UiTab1.VisualStyleManager = Me.VisualStyleManager1
         '
         'UiTabPage1
         '
@@ -393,18 +413,18 @@ Partial Class PatientInformation
         '
         'ToolStrip1
         '
-        Me.ToolStrip1.BackColor = System.Drawing.SystemColors.Control
+        Me.ToolStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
         resources.ApplyResources(Me.ToolStrip1, "ToolStrip1")
         Me.ToolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden
         Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(25, 25)
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButton1, Me.ToolStripSeparator5, Me.BtnSendPatientWaiting, Me.ToolStripSeparator7, Me.btnPatientSendIssueReceipt, Me.ToolStripSeparator10, Me.btnPrescription, Me.ToolStripSeparator6, Me.BtnHistory, Me.BtnPatientReferal, Me.ToolStripSeparator11})
         Me.ToolStrip1.Name = "ToolStrip1"
+        Me.ToolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System
         '
         'ToolStripButton1
         '
         resources.ApplyResources(Me.ToolStripButton1, "ToolStripButton1")
-        Me.ToolStripButton1.ForeColor = System.Drawing.Color.Blue
-        Me.ToolStripButton1.Image = Global.Clinic_Management_System.My.Resources.Resources.refresh
+        Me.ToolStripButton1.ForeColor = System.Drawing.Color.White
         Me.ToolStripButton1.Name = "ToolStripButton1"
         '
         'ToolStripSeparator5
@@ -415,8 +435,7 @@ Partial Class PatientInformation
         'BtnSendPatientWaiting
         '
         resources.ApplyResources(Me.BtnSendPatientWaiting, "BtnSendPatientWaiting")
-        Me.BtnSendPatientWaiting.ForeColor = System.Drawing.Color.Blue
-        Me.BtnSendPatientWaiting.Image = Global.Clinic_Management_System.My.Resources.Resources._64aba8208423082b80b19790b24c2c085d955202_m
+        Me.BtnSendPatientWaiting.ForeColor = System.Drawing.Color.White
         Me.BtnSendPatientWaiting.Name = "BtnSendPatientWaiting"
         '
         'ToolStripSeparator7
@@ -427,7 +446,7 @@ Partial Class PatientInformation
         'btnPatientSendIssueReceipt
         '
         resources.ApplyResources(Me.btnPatientSendIssueReceipt, "btnPatientSendIssueReceipt")
-        Me.btnPatientSendIssueReceipt.ForeColor = System.Drawing.Color.Blue
+        Me.btnPatientSendIssueReceipt.ForeColor = System.Drawing.Color.White
         Me.btnPatientSendIssueReceipt.Name = "btnPatientSendIssueReceipt"
         '
         'ToolStripSeparator10
@@ -438,7 +457,7 @@ Partial Class PatientInformation
         'btnPrescription
         '
         resources.ApplyResources(Me.btnPrescription, "btnPrescription")
-        Me.btnPrescription.ForeColor = System.Drawing.Color.Blue
+        Me.btnPrescription.ForeColor = System.Drawing.Color.White
         Me.btnPrescription.Image = Global.Clinic_Management_System.My.Resources.Resources.edit
         Me.btnPrescription.Name = "btnPrescription"
         '
@@ -450,7 +469,7 @@ Partial Class PatientInformation
         'BtnHistory
         '
         resources.ApplyResources(Me.BtnHistory, "BtnHistory")
-        Me.BtnHistory.ForeColor = System.Drawing.Color.Blue
+        Me.BtnHistory.ForeColor = System.Drawing.Color.White
         Me.BtnHistory.Image = Global.Clinic_Management_System.My.Resources.Resources.new_appointment
         Me.BtnHistory.Name = "BtnHistory"
         '
@@ -543,5 +562,6 @@ Partial Class PatientInformation
     Friend WithEvents RadAddress As System.Windows.Forms.RadioButton
     Friend WithEvents txtsex As System.Windows.Forms.ComboBox
     Friend WithEvents ToolStripButton1 As System.Windows.Forms.ToolStripButton
+    Friend WithEvents VisualStyleManager1 As Janus.Windows.Common.VisualStyleManager
 
 End Class

@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <metadata name="ToolBarHepatite.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="ToolStripSplitButton1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHASURBVEhL7Za/S8NAFMeroKJIBxVxURehouDi4qIu/gtC
+        J6GTgoqD4OQkDoIuugkqIp10E8HRoSCIQ0fBwc3VUSRJWz8veSnWpEjuSi3iF77cvZd773O5pD9Sf1bl
+        cnlQp81TpVJZdBznoy6cC1m8bmtAHdpSei4pNKupqDzPK7qu+8xYMPQjUFGv9AOWA+qUSqV9cgtichOM
+        7T4wFIVFLqxIoYmpnWIUybwb5ht2dQwNxrtnTY9iA3BQZ63wjkc5wRfiS+wfP7k0uSfGVYl9EQzjMVsD
+        adOW0jPDXb5y3Hny/hEzP8OH/gIRi9K4z9baripyGUB3gAckZn5aA270UddTLJjdbVI4YmJqZxlFRuAN
+        CodMTO0Moyg5WAttlQzMjvspir2bhK6+1XGKgLUo9vkldDLwrx21vlxrOPbz+ZMBTgdcM3BOw8SiVr61
+        zMAkbvGBoU+MwAS7OG9r7rxLW8aKNbXgZikCZqdbJI5szVF3astYsSb6jHGBpPxsmfgqeMSt+1bf4B0N
+        Gw8mngNw/M3X/DF459qkXyQSMEXnJJcNvR1wq+B55ntfrWvGfWAodnMB/MHWNO/Wlv9qFaVSn3BEfuIJ
+        RELWAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="ToolStripSplitButton2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAN9SURBVEhLtZZZSFVRFIZVigZRnLIiMigkwoJEmnxJJAoH
+        ECkhJYKgwYcgCpoQlGggmp4yEsKHwpdoFrLebBCLDIqKeiyyMpHm1LpT379ZinbPvaHd+8PPXvNae5/D
+        PifBC8FgcHooFLro8/l64AvkKnNFBXGTya0j5xX8BN8GAoEzqmchkUFyot/v7yDhJgmFcAsF+llXWogn
+        8CeT91CDItfAEpE6bdg+IM+3UG8QkEtggDXDTAkkn4XnTPUE/lM0fkZeqnRqfGcTi7URfC34Ol1gJBA4
+        l6Qga5aZVLQZNpkaBmInkPOZpmVmUuNf6Esls05D/61BnNMLmhC2M+EdFYJ7rEihhYQB32xyQqyZZlLj
+        AfS1pkp/ib7eVG8QkK1dEtyt54ZeYS5P0DOdWMKC88wk2z5sP7DlIyci9yCXmjs6lAALSCiGk8zsCeK6
+        GPagqQ7kbIK5sITG/cSkmWs0cGQR5F4qrez2EQnf4Ef4DtsiF+gBclcRM8i6FSaZWfYi7NptnZnCwcQn
+        4fkhmcYdJCSrEPpp9KfIiS7YA8Suw/+FRq+Jv6p4ZB/ygWh5Sqwm7o1kku6j1zoHIFHP0Y8t4q4F/JlQ
+        R7wXbofDzz0iCJpFAyGHKS+zHjWXA8M8VjFTYwsdE8V18+yg0QMzOzDMCXjJ1NiCwhdgI43z9XxYU8yl
+        E6nA1MtJRH5e4wXFa9mpXqIkmug2Wm0u+TKw6TpdYKbYgaJ5Kk7jNHbeCg+Zy4GhdB9vMzV20DHSuI/i
+        pXA3je6ay0GPAbaYGltQ+AY8TOMVDDHAMJPNpROpwdaNrWoksVfC6J++f4EC+ynWDifS5Cv6GnPpRGbo
+        bWftGklsTzQkAx+30LGDRksoMsiaSiF9ZzuRp5g7IohZTp4umWwzjQ3sQH8heokaYIp2A58j78Knu3gU
+        sW8eakbjXuRyV2g8ILmYIvoOV1N8KutOdn8LedQRi8T14XNfJtY2YhtckfGCAhspqufWjLyMJsNfnZHA
+        V6+hJGsA2Ooc/wOKLqTQFQ1A4zDgO0ZMmXZt8ZXI711yLEAP/brmsRb8xXTs+h3Wr88clhyTZ1pqfMEu
+        u2nm/rGQ9YIN//jFFRz5dXjE5Ns0rneOeEON1FCyBoDXnCPeoHG5jtjkDboHnCPe4H3Sr9FPdtpI03us
+        8flh8ALNi2ioZ93ErqNcmwkJfwCH1CpuS0DiXAAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="BtnReports.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFESURBVEhL7ZYxTgJBFIY3JERCRWVoTCik1StQGUtbOz2C
+        NyBwCgqIF/AOhBNQUNvoHYzF7Pr9bwcigQVcedDsl7y82Rnm/8gwBJKKipOQZVmbenKqdtRswmKP8qIX
+        NZtoUa8IIcxp/WNUzBL7xfAap/6NsvLIE4jTNL0io66xsizRS4zsNvYux/tBvZFTV5Yl/kVM122cFpVt
+        AmQviFJqQH2ypnsyodWoUmJdkEJsEyC+R/QVpyUd02pao5cSt6hOUdmmyFL+WyoY+18u5DfsXUmFsizR
+        U7yEN/BIXWusrDzS4agZNzniIb2B8JmxeGd8wZzf5UIy0jN9bsoQvnl80Bq9lPjQr9MlsgVzkq+kgrHv
+        Z8yeFtIZb+IuThnKskQvsWDf2o0WyrJET/E2lJVHHiDmyM72s+jBTvF5/vpUVByPJPkBIBqO0vqdcbEA
+        AAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="GridHepatiteB_DesignTimeLayout.LayoutString" xml:space="preserve">
+    <value>&lt;GridEXLayoutData&gt;&lt;RootTable&gt;&lt;Columns Collection="true" ElementName="Column"&gt;&lt;Column0 ID="HEPATITE_ID"&gt;&lt;Caption&gt;HEPATITE_ID&lt;/Caption&gt;&lt;DataMember&gt;HEPATITE_ID&lt;/DataMember&gt;&lt;Key&gt;HEPATITE_ID&lt;/Key&gt;&lt;Position&gt;0&lt;/Position&gt;&lt;Visible&gt;False&lt;/Visible&gt;&lt;/Column0&gt;&lt;Column1 ID="PATIENT_NO"&gt;&lt;Caption&gt;Patient No&lt;/Caption&gt;&lt;DataMember&gt;PATIENT_NO&lt;/DataMember&gt;&lt;Key&gt;PATIENT_NO&lt;/Key&gt;&lt;Position&gt;1&lt;/Position&gt;&lt;Width&gt;110&lt;/Width&gt;&lt;/Column1&gt;&lt;Column2 ID="CREATE_DATE"&gt;&lt;Caption&gt;Create Hepatite&lt;/Caption&gt;&lt;DataMember&gt;CREATE_DATE&lt;/DataMember&gt;&lt;FormatString&gt;dd/MM/yyyy&lt;/FormatString&gt;&lt;Key&gt;CREATE_DATE&lt;/Key&gt;&lt;Position&gt;2&lt;/Position&gt;&lt;Width&gt;142&lt;/Width&gt;&lt;/Column2&gt;&lt;Column3 ID="PATIENT_NAME"&gt;&lt;Caption&gt;Patient Name&lt;/Caption&gt;&lt;DataMember&gt;PATIENT_NAME&lt;/DataMember&gt;&lt;Key&gt;PATIENT_NAME&lt;/Key&gt;&lt;Position&gt;3&lt;/Position&gt;&lt;Width&gt;130&lt;/Width&gt;&lt;/Column3&gt;&lt;Column4 ID="PATIENNT_SEX"&gt;&lt;Caption&gt;Sex&lt;/Caption&gt;&lt;DataMember&gt;PATIENNT_SEX&lt;/DataMember&gt;&lt;Key&gt;PATIENNT_SEX&lt;/Key&gt;&lt;Position&gt;4&lt;/Position&gt;&lt;Width&gt;69&lt;/Width&gt;&lt;/Column4&gt;&lt;Column5 ID="PATIENT_AGE"&gt;&lt;Caption&gt;Age&lt;/Caption&gt;&lt;DataMember&gt;PATIENT_AGE&lt;/DataMember&gt;&lt;Key&gt;PATIENT_AGE&lt;/Key&gt;&lt;Position&gt;5&lt;/Position&gt;&lt;Width&gt;49&lt;/Width&gt;&lt;/Column5&gt;&lt;Column6 ID="PATIENT_PHONE"&gt;&lt;Caption&gt;Phone&lt;/Caption&gt;&lt;DataMember&gt;PATIENT_PHONE&lt;/DataMember&gt;&lt;Key&gt;PATIENT_PHONE&lt;/Key&gt;&lt;Position&gt;6&lt;/Position&gt;&lt;/Column6&gt;&lt;Column7 ID="PATIENT_ADDRESS"&gt;&lt;Caption&gt;Address&lt;/Caption&gt;&lt;DataMember&gt;PATIENT_ADDRESS&lt;/DataMember&gt;&lt;Key&gt;PATIENT_ADDRESS&lt;/Key&gt;&lt;Position&gt;7&lt;/Position&gt;&lt;Width&gt;113&lt;/Width&gt;&lt;/Column7&gt;&lt;Column8 ID="HEPATITE_NOTE"&gt;&lt;Caption&gt;Note&lt;/Caption&gt;&lt;DataMember&gt;HEPATITE_NOTE&lt;/DataMember&gt;&lt;Key&gt;HEPATITE_NOTE&lt;/Key&gt;&lt;Position&gt;8&lt;/Position&gt;&lt;Width&gt;91&lt;/Width&gt;&lt;CellStyle&gt;&lt;Font&gt;Kh Battambang, 9.75pt&lt;/Font&gt;&lt;/CellStyle&gt;&lt;/Column8&gt;&lt;Column9 ID="IS_DELETE"&gt;&lt;Caption&gt;Is Delete&lt;/Caption&gt;&lt;ColumnType&gt;CheckBox&lt;/ColumnType&gt;&lt;DataMember&gt;IS_DELETE&lt;/DataMember&gt;&lt;EditType&gt;CheckBox&lt;/EditType&gt;&lt;Key&gt;IS_DELETE&lt;/Key&gt;&lt;Position&gt;9&lt;/Position&gt;&lt;Visible&gt;False&lt;/Visible&gt;&lt;/Column9&gt;&lt;/Columns&gt;&lt;GroupCondition /&gt;&lt;RowHeight&gt;30&lt;/RowHeight&gt;&lt;RowFormatStyle&gt;&lt;FontSize&gt;10&lt;/FontSize&gt;&lt;/RowFormatStyle&gt;&lt;/RootTable&gt;&lt;/GridEXLayoutData&gt;</value>
+  </data>
+  <metadata name="VisualStyleManager1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>23, 48</value>
+  </metadata>
+  <data name="GridHistoryHepatite_DesignTimeLayout.LayoutString" xml:space="preserve">
+    <value>&lt;GridEXLayoutData&gt;&lt;RootTable&gt;&lt;Columns Collection="true" ElementName="Column"&gt;&lt;Column0 ID="HEPATITE_DETIAL_ID"&gt;&lt;Caption&gt;HEPATITE_DETIAL_ID&lt;/Caption&gt;&lt;DataMember&gt;HEPATITE_DETIAL_ID&lt;/DataMember&gt;&lt;Key&gt;HEPATITE_DETIAL_ID&lt;/Key&gt;&lt;Position&gt;0&lt;/Position&gt;&lt;Visible&gt;False&lt;/Visible&gt;&lt;/Column0&gt;&lt;Column1 ID="HAPATITE_ID"&gt;&lt;Caption&gt;HAPATITE_ID&lt;/Caption&gt;&lt;DataMember&gt;HAPATITE_ID&lt;/DataMember&gt;&lt;Key&gt;HAPATITE_ID&lt;/Key&gt;&lt;Position&gt;1&lt;/Position&gt;&lt;Visible&gt;False&lt;/Visible&gt;&lt;/Column1&gt;&lt;Column2 ID="DATE_HAPATITE"&gt;&lt;Caption&gt;Date&lt;/Caption&gt;&lt;DataMember&gt;DATE_HAPATITE&lt;/DataMember&gt;&lt;FormatString&gt;dd/MM/yyyy&lt;/FormatString&gt;&lt;Key&gt;DATE_HAPATITE&lt;/Key&gt;&lt;Position&gt;2&lt;/Position&gt;&lt;Width&gt;184&lt;/Width&gt;&lt;/Column2&gt;&lt;Column3 ID="MEDICINCE_NAME"&gt;&lt;Caption&gt;Use Medicince&lt;/Caption&gt;&lt;DataMember&gt;MEDICINCE_NAME&lt;/DataMember&gt;&lt;Key&gt;MEDICINCE_NAME&lt;/Key&gt;&lt;Position&gt;3&lt;/Position&gt;&lt;Width&gt;162&lt;/Width&gt;&lt;/Column3&gt;&lt;Column4 ID="HAPTITE_RESUT"&gt;&lt;Caption&gt;Hepatite B Result&lt;/Caption&gt;&lt;DataMember&gt;HAPTITE_RESUT&lt;/DataMember&gt;&lt;Key&gt;HAPTITE_RESUT&lt;/Key&gt;&lt;Position&gt;4&lt;/Position&gt;&lt;Width&gt;191&lt;/Width&gt;&lt;CellStyle&gt;&lt;Font&gt;Kh Battambang, 9.75pt&lt;/Font&gt;&lt;/CellStyle&gt;&lt;/Column4&gt;&lt;/Columns&gt;&lt;GroupCondition /&gt;&lt;RowHeight&gt;30&lt;/RowHeight&gt;&lt;/RootTable&gt;&lt;/GridEXLayoutData&gt;</value>
+  </data>
+</root>

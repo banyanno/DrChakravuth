@@ -45,12 +45,22 @@
         ' Add any initialization after the InitializeComponent() call.
 
     End Sub
+    Public Sub UpdateStatusConsult(ByVal status As Integer, ByVal WatitnNo As Integer)
+        DA_Waiting.UpdateIStatusConsult(status, WatitnNo)
+    End Sub
     Private Sub BtnNewConsult_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnNewConsult.Click
         If WaitingList.SelectedItems.Count = 0 Then Exit Sub
+        If DA_Waiting.GetStatusConsult(WaitingList.GetRow.Cells("waiting_id").Value) = 1 Then
+            MessageBox.Show("The paiennt is consuling by another doctor. Please check another patient", "Consuling", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            LoadHistoryConsult(1)
+            Exit Sub
+        End If
+        UpdateStatusConsult(1, WaitingList.GetRow.Cells("waiting_id").Value)
         Dim FNewConsulting As New NewConsultingForm(Me)
         FNewConsulting.LblWaiting.Text = WaitingList.GetRow.Cells("waiting_id").Value
         FNewConsulting.txtname.Text = WaitingList.GetRow.Cells("pname").Value
-        FNewConsulting.txtno.Text = WaitingList.GetRow.Cells("patientid").Value
+        FNewConsulting.TxtPatientNo.Text = WaitingList.GetRow.Cells("patientid").Value
+        FNewConsulting.LblPPatintIID.Text = WaitingList.GetRow.Cells("ppatientid").Value
         FNewConsulting.txtsex.Text = WaitingList.GetRow.Cells("pgender").Value
         If TypeOf WaitingList.GetRow.Cells("Age").Value Is DBNull Then
             FNewConsulting.TxtAge.Text = ""
@@ -59,7 +69,7 @@
         End If
 
         FNewConsulting.Show()
-       
+
     End Sub
     Sub LoadHistoryConsult(ByVal Status As Integer, Optional ByVal patientID As Integer = 0, Optional ByVal PatientName As String = "")
         If patientID <> 0 Then
@@ -170,54 +180,60 @@
         If Me.InvokeRequired Then
             Me.Invoke(New MethodInvoker(AddressOf PreviewReport))
         Else
-            Dim PatientTable As DataTable
-            Dim PatientID As Long
-            PatientTable = DAPatient.SelectPatientByID(CInt(Me.WaitingList.GetRow.Cells("patientid").Value))
-            PatientID = PatientTable.Rows(0).Item("patientid")
 
-            Dim RptRecord As New RptPatientRecord
-            ' Dim RptViewer As New FormReportViewer
+            Me.CRVMedicalHistoryReport.ReportSource = ViewReportMainHistory.PreviewReport(CDbl(Me.WaitingList.GetRow.Cells("patientid").Value))
+            'Dim PatientTable As DataTable
+            'Dim PPatientIDAUTO As Long
+            'Dim PatientNo As Double
+            'PatientTable = DAPatient.SelectPatientByID(CDbl(Me.WaitingList.GetRow.Cells("patientid").Value))
+            'PPatientIDAUTO = Me.WaitingList.GetRow.Cells("ppatientid").Value 'PatientTable.Rows(0).Item("ppatientid")
+            ''MessageBox.Show(PatientID)
+            'PatientNo = CDbl(Me.WaitingList.GetRow.Cells("patientid").Value)
+            'Dim RptRecord As New RptPatientRecord
+            '' Dim RptViewer As New FormReportViewer
 
 
-            Dim ComplaintTable As DataTable = DA_Complaint.SelectByPatientID(PatientID)
-            Dim HistoryTable As DataTable = DA_History.SelectByPatientID(PatientID)
-            Dim PrescriptionTable As DataTable = DA_Prescription.SelectByPatientID(PatientID)
-            Dim BiologyTable As DataTable = DA_Biology.SelectByPatientID(PatientID)
-            Dim FibroTable As DataTable = DA_Fibroscopy.SelectByPatientID(PatientID)
-            Dim ColoTable As DataTable = DA_Coloscopy.SelectByPatientID(PatientID)
+            'Dim ComplaintTable As DataTable = DA_Complaint.SelectByPatientID(PPatientIDAUTO)
+            'Dim HistoryTable As DataTable = DA_History.SelectByPatientID(PPatientIDAUTO)
+            'Dim PhysicalTable As DataTable = DA_Physical.SelectByPatientID(PPatientIDAUTO)
+            'Dim PrescriptionTable As DataTable = DA_Prescription.SelectByPatientID(PPatientIDAUTO)
 
-            Dim NasoTable As DataTable = DA_Nasogastro.SelectByPatientID(PatientID)
+            'Dim BiologyTable As DataTable = DA_Biology.SelectByPatientID(PPatientIDAUTO)
+            'Dim FibroTable As DataTable = DA_Fibroscopy.SelectByPatientID(PPatientIDAUTO)
+            'Dim ColoTable As DataTable = DA_Coloscopy.SelectByPatientID(PPatientIDAUTO)
 
-            Dim EchoTable As DataTable = DA_Echo.SelectByPatientID(PatientID)
+            'Dim NasoTable As DataTable = DA_Nasogastro.SelectByPatientID(PPatientIDAUTO)
 
-            Dim ScanTable As DataTable = DA_Scan.SelectByPatientID(PatientID)
+            'Dim EchoTable As DataTable = DA_Echo.SelectByPatientID(PPatientIDAUTO)
 
-            Dim FibroScan As DataTable = DA_FibroScan.GetDataByPatientID(PatientID) 'SelectByPatientID(PatientID)
+            'Dim ScanTable As DataTable = DA_Scan.SelectByPatientID(PPatientIDAUTO)
 
-            Dim MRITable As DataTable = DA_MRI.SelectByPatientID(PatientID)
+            'Dim FibroScan As DataTable = DA_FibroScan.GetDataByPatientID(PPatientIDAUTO) 'SelectByPatientID(PatientID)
 
-            Dim CAAnaPath As DataTable = DA_CFAnaPath.GetData(PatientID)
-            Dim PresRemark As DataTable = DA_PrescriptionRemark.SelectPrescriptionByPatientID(PatientID)
-            Dim BreatTestTable As DataTable = DA_BreathTest.SelectBreathTestByPatientNo(CDbl(WaitingList.GetRow.Cells("patientid").Value))
+            'Dim MRITable As DataTable = DA_MRI.SelectByPatientID(PPatientIDAUTO)
 
-            Dim PhysicalTable As DataTable = DA_Physical.SelectByPatientID(PatientID)
-            RptRecord.Database.Tables("Patient").SetDataSource(PatientTable)
-            RptRecord.Subreports("Complaint").Database.Tables("Complaint").SetDataSource(ComplaintTable)
-            RptRecord.Subreports("History").Database.Tables("History").SetDataSource(HistoryTable)
-            RptRecord.Subreports("Prescription").Database.Tables("PrescriptionDetail").SetDataSource(PrescriptionTable)
-            RptRecord.Subreports("Biology").Database.Tables("Blood").SetDataSource(BiologyTable)
-            RptRecord.Subreports("Fibroscopy").Database.Tables("Fibro").SetDataSource(FibroTable)
-            RptRecord.Subreports("Coloscopy").Database.Tables("Colo").SetDataSource(ColoTable)
-            RptRecord.Subreports("Nasogastro").Database.Tables("Naso").SetDataSource(NasoTable)
-            RptRecord.Subreports("Echo").Database.Tables("Echo").SetDataSource(EchoTable)
-            RptRecord.Subreports("FibroScan").Database.Tables("FibroScan1").SetDataSource(FibroScan)
-            RptRecord.Subreports("Scan").Database.Tables("Scan").SetDataSource(ScanTable)
-            RptRecord.Subreports("MRI").Database.Tables("MRI").SetDataSource(MRITable)
-            RptRecord.Subreports("Physical").Database.Tables("PhysicalExam").SetDataSource(PhysicalTable)
-            RptRecord.Subreports("ACAnaPath").Database.Tables("CFAnaPath").SetDataSource(CAAnaPath)
-            RptRecord.Subreports("PrescriptionRemark").SetDataSource(PresRemark)
-            RptRecord.Subreports("UreaBreathTest").Database.Tables("TblBreathTest").SetDataSource(BreatTestTable)
-            Me.CRVMedicalHistoryReport.ReportSource = RptRecord
+            'Dim CAAnaPath As DataTable = DA_CFAnaPath.GetData(PPatientIDAUTO)
+            'Dim PresRemark As DataTable = DA_PrescriptionRemark.SelectPrescriptionByPatientID(PatientNo)
+            'Dim BreatTestTable As DataTable = DA_BreathTest.SelectBreathTestByPatientNo(PatientNo)
+
+
+            'RptRecord.Database.Tables("Patient").SetDataSource(PatientTable)
+            'RptRecord.Subreports("Complaint").Database.Tables("Complaint").SetDataSource(ComplaintTable)
+            'RptRecord.Subreports("History").Database.Tables("History").SetDataSource(HistoryTable)
+            'RptRecord.Subreports("Prescription").Database.Tables("PrescriptionDetail").SetDataSource(PrescriptionTable)
+            'RptRecord.Subreports("Biology").Database.Tables("Blood").SetDataSource(BiologyTable)
+            'RptRecord.Subreports("Fibroscopy").Database.Tables("Fibro").SetDataSource(FibroTable)
+            'RptRecord.Subreports("Coloscopy").Database.Tables("Colo").SetDataSource(ColoTable)
+            'RptRecord.Subreports("Nasogastro").Database.Tables("Naso").SetDataSource(NasoTable)
+            'RptRecord.Subreports("Echo").Database.Tables("Echo").SetDataSource(EchoTable)
+            'RptRecord.Subreports("FibroScan").Database.Tables("FibroScan1").SetDataSource(FibroScan)
+            'RptRecord.Subreports("Scan").Database.Tables("Scan").SetDataSource(ScanTable)
+            'RptRecord.Subreports("MRI").Database.Tables("MRI").SetDataSource(MRITable)
+            'RptRecord.Subreports("Physical").Database.Tables("PhysicalExam").SetDataSource(PhysicalTable)
+            'RptRecord.Subreports("ACAnaPath").Database.Tables("CFAnaPath").SetDataSource(CAAnaPath)
+            'RptRecord.Subreports("PrescriptionRemark").SetDataSource(PresRemark)
+            'RptRecord.Subreports("UreaBreathTest").Database.Tables("TblBreathTest").SetDataSource(BreatTestTable)
+            'Me.CRVMedicalHistoryReport.ReportSource = RptRecord
 
         End If
 

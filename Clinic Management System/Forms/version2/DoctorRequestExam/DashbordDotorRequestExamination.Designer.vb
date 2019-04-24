@@ -31,7 +31,8 @@ Partial Class DashbordDotorRequestExamination
         Dim ConclusionListEng_DesignTimeLayout As Janus.Windows.GridEX.GridEXLayout = New Janus.Windows.GridEX.GridEXLayout
         Dim ColoConclusionList_DesignTimeLayout As Janus.Windows.GridEX.GridEXLayout = New Janus.Windows.GridEX.GridEXLayout
         Dim EchoConclusionList_DesignTimeLayout As Janus.Windows.GridEX.GridEXLayout = New Janus.Windows.GridEX.GridEXLayout
-        Dim RequestList_DesignTimeLayout As Janus.Windows.GridEX.GridEXLayout = New Janus.Windows.GridEX.GridEXLayout
+        Dim gridRequestList_DesignTimeLayout As Janus.Windows.GridEX.GridEXLayout = New Janus.Windows.GridEX.GridEXLayout
+        Dim JanusColorScheme2 As Janus.Windows.Common.JanusColorScheme = New Janus.Windows.Common.JanusColorScheme
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip
         Me.BtnRefresh = New System.Windows.Forms.ToolStripButton
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator
@@ -296,7 +297,8 @@ Partial Class DashbordDotorRequestExamination
         Me.GroupBox21 = New System.Windows.Forms.GroupBox
         Me.TxtCFAnaPath = New System.Windows.Forms.TextBox
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer
-        Me.RequestList = New Janus.Windows.GridEX.GridEX
+        Me.gridRequestList = New Janus.Windows.GridEX.GridEX
+        Me.VisualStyleManager1 = New Janus.Windows.Common.VisualStyleManager(Me.components)
         Me.UiTab1 = New Janus.Windows.UI.Tab.UITab
         Me.UiTabPage1 = New Janus.Windows.UI.Tab.UITabPage
         Me.PhysicalContextMenu = New Janus.Windows.Ribbon.RibbonContextMenu(Me.components)
@@ -346,6 +348,7 @@ Partial Class DashbordDotorRequestExamination
         Me.DropDownCommand18 = New Janus.Windows.Ribbon.DropDownCommand
         Me.SeparatorCommand16 = New Janus.Windows.Ribbon.SeparatorCommand
         Me.DropDownCommand19 = New Janus.Windows.Ribbon.DropDownCommand
+        Me.CachedBreathReport1 = New Clinic_Management_System.CachedBreathReport
         Me.ToolStrip1.SuspendLayout()
         CType(Me.UiTab2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.UiTab2.SuspendLayout()
@@ -403,7 +406,7 @@ Partial Class DashbordDotorRequestExamination
         Me.SplitContainer1.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel2.SuspendLayout()
         Me.SplitContainer1.SuspendLayout()
-        CType(Me.RequestList, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.gridRequestList, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UiTab1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.UiTab1.SuspendLayout()
         Me.UiTabPage1.SuspendLayout()
@@ -412,6 +415,7 @@ Partial Class DashbordDotorRequestExamination
         '
         'ToolStrip1
         '
+        Me.ToolStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
         Me.ToolStrip1.Font = New System.Drawing.Font("Tahoma", 10.0!)
         Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(26, 26)
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BtnRefresh, Me.ToolStripSeparator1, Me.BtnNewExam, Me.ToolStripSeparator14, Me.BntWaitingList, Me.ToolStripSeparator2, Me.btnCheckStatus, Me.ToolStripSeparator10, Me.BtnCompleteExam, Me.ToolStripSeparator11, Me.btnHistoryExam, Me.ToolStripSeparator12, Me.BtnMedicalReport, Me.ToolStripSeparator16, Me.ToolStripDropDownButton2, Me.ToolStripSeparator3, Me.BtnCompletPatientExp, Me.ToolStripSeparator4, Me.BtnDeleteExam})
@@ -424,7 +428,7 @@ Partial Class DashbordDotorRequestExamination
         'BtnRefresh
         '
         Me.BtnRefresh.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnRefresh.ForeColor = System.Drawing.Color.Blue
+        Me.BtnRefresh.ForeColor = System.Drawing.Color.White
         Me.BtnRefresh.Image = Global.Clinic_Management_System.My.Resources.Resources.refresh
         Me.BtnRefresh.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.BtnRefresh.Name = "BtnRefresh"
@@ -439,7 +443,7 @@ Partial Class DashbordDotorRequestExamination
         'BtnNewExam
         '
         Me.BtnNewExam.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnNewExam.ForeColor = System.Drawing.Color.Blue
+        Me.BtnNewExam.ForeColor = System.Drawing.Color.White
         Me.BtnNewExam.Image = Global.Clinic_Management_System.My.Resources.Resources.Measurement
         Me.BtnNewExam.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.BtnNewExam.Name = "BtnNewExam"
@@ -453,7 +457,7 @@ Partial Class DashbordDotorRequestExamination
         '
         'BntWaitingList
         '
-        Me.BntWaitingList.ForeColor = System.Drawing.Color.Blue
+        Me.BntWaitingList.ForeColor = System.Drawing.Color.White
         Me.BntWaitingList.Image = Global.Clinic_Management_System.My.Resources.Resources.wheelchair
         Me.BntWaitingList.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.BntWaitingList.Name = "BntWaitingList"
@@ -468,7 +472,7 @@ Partial Class DashbordDotorRequestExamination
         'btnCheckStatus
         '
         Me.btnCheckStatus.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCheckStatus.ForeColor = System.Drawing.Color.Blue
+        Me.btnCheckStatus.ForeColor = System.Drawing.Color.White
         Me.btnCheckStatus.Image = Global.Clinic_Management_System.My.Resources.Resources._1349420620_todo_list
         Me.btnCheckStatus.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btnCheckStatus.Name = "btnCheckStatus"
@@ -483,7 +487,7 @@ Partial Class DashbordDotorRequestExamination
         'BtnCompleteExam
         '
         Me.BtnCompleteExam.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnCompleteExam.ForeColor = System.Drawing.Color.Blue
+        Me.BtnCompleteExam.ForeColor = System.Drawing.Color.White
         Me.BtnCompleteExam.Image = Global.Clinic_Management_System.My.Resources.Resources.Checked
         Me.BtnCompleteExam.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.BtnCompleteExam.Name = "BtnCompleteExam"
@@ -498,7 +502,7 @@ Partial Class DashbordDotorRequestExamination
         'btnHistoryExam
         '
         Me.btnHistoryExam.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnHistoryExam.ForeColor = System.Drawing.Color.Blue
+        Me.btnHistoryExam.ForeColor = System.Drawing.Color.White
         Me.btnHistoryExam.Image = Global.Clinic_Management_System.My.Resources.Resources.find
         Me.btnHistoryExam.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btnHistoryExam.Name = "btnHistoryExam"
@@ -512,7 +516,7 @@ Partial Class DashbordDotorRequestExamination
         '
         'BtnMedicalReport
         '
-        Me.BtnMedicalReport.ForeColor = System.Drawing.Color.Blue
+        Me.BtnMedicalReport.ForeColor = System.Drawing.Color.White
         Me.BtnMedicalReport.Image = Global.Clinic_Management_System.My.Resources.Resources.DefineControls
         Me.BtnMedicalReport.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.BtnMedicalReport.Name = "BtnMedicalReport"
@@ -528,7 +532,7 @@ Partial Class DashbordDotorRequestExamination
         '
         Me.ToolStripDropDownButton2.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BtnAsTable, Me.ToolStripSeparator13, Me.BtnAsCard})
         Me.ToolStripDropDownButton2.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ToolStripDropDownButton2.ForeColor = System.Drawing.Color.Blue
+        Me.ToolStripDropDownButton2.ForeColor = System.Drawing.Color.White
         Me.ToolStripDropDownButton2.Image = Global.Clinic_Management_System.My.Resources.Resources.arrow_down_green_48
         Me.ToolStripDropDownButton2.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.ToolStripDropDownButton2.Name = "ToolStripDropDownButton2"
@@ -563,7 +567,7 @@ Partial Class DashbordDotorRequestExamination
         '
         'BtnCompletPatientExp
         '
-        Me.BtnCompletPatientExp.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.BtnCompletPatientExp.ForeColor = System.Drawing.Color.White
         Me.BtnCompletPatientExp.Image = Global.Clinic_Management_System.My.Resources.Resources.Aproved
         Me.BtnCompletPatientExp.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.BtnCompletPatientExp.Name = "BtnCompletPatientExp"
@@ -750,9 +754,9 @@ Partial Class DashbordDotorRequestExamination
         'BtnPrintBreathTest
         '
         Me.BtnPrintBreathTest.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnPrintBreathTest.Location = New System.Drawing.Point(490, 59)
+        Me.BtnPrintBreathTest.Location = New System.Drawing.Point(478, 75)
         Me.BtnPrintBreathTest.Name = "BtnPrintBreathTest"
-        Me.BtnPrintBreathTest.Size = New System.Drawing.Size(181, 62)
+        Me.BtnPrintBreathTest.Size = New System.Drawing.Size(181, 47)
         Me.BtnPrintBreathTest.TabIndex = 10
         Me.BtnPrintBreathTest.Text = "Print Result Breath Test"
         Me.BtnPrintBreathTest.UseVisualStyleBackColor = True
@@ -3156,7 +3160,7 @@ Partial Class DashbordDotorRequestExamination
         '
         'SplitContainer1.Panel1
         '
-        Me.SplitContainer1.Panel1.Controls.Add(Me.RequestList)
+        Me.SplitContainer1.Panel1.Controls.Add(Me.gridRequestList)
         '
         'SplitContainer1.Panel2
         '
@@ -3165,35 +3169,51 @@ Partial Class DashbordDotorRequestExamination
         Me.SplitContainer1.SplitterDistance = 293
         Me.SplitContainer1.TabIndex = 3
         '
-        'RequestList
+        'gridRequestList
         '
-        Me.RequestList.AllowEdit = Janus.Windows.GridEX.InheritableBoolean.[False]
-        Me.PhysicalContextMenu.SetContextMenu(Me.RequestList, True)
-        RequestList_DesignTimeLayout.LayoutString = resources.GetString("RequestList_DesignTimeLayout.LayoutString")
-        Me.RequestList.DesignTimeLayout = RequestList_DesignTimeLayout
-        Me.RequestList.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.RequestList.FocusCellFormatStyle.BackColor = System.Drawing.SystemColors.Highlight
-        Me.RequestList.FocusCellFormatStyle.BackColorGradient = System.Drawing.SystemColors.Highlight
-        Me.RequestList.Font = New System.Drawing.Font("Verdana", 9.75!)
-        Me.RequestList.GroupByBoxVisible = False
-        Me.RequestList.HeaderFormatStyle.Font = New System.Drawing.Font("Verdana", 12.0!)
-        Me.RequestList.HeaderFormatStyle.FontBold = Janus.Windows.GridEX.TriState.[False]
-        Me.RequestList.HeaderFormatStyle.FontSize = 12.0!
-        Me.RequestList.HeaderFormatStyle.ForeColor = System.Drawing.Color.Blue
-        Me.RequestList.HeaderFormatStyle.TextAlignment = Janus.Windows.GridEX.TextAlignment.Center
-        Me.RequestList.HideSelection = Janus.Windows.GridEX.HideSelection.HighlightInactive
-        Me.RequestList.Location = New System.Drawing.Point(0, 0)
-        Me.RequestList.Name = "RequestList"
-        Me.RequestList.PreviewRowFormatStyle.Appearance = Janus.Windows.GridEX.Appearance.RaisedLight
-        Me.RequestList.RecordNavigator = True
-        Me.RequestList.RowFormatStyle.Font = New System.Drawing.Font("Verdana", 9.75!)
-        Me.RequestList.RowHeaders = Janus.Windows.GridEX.InheritableBoolean.[True]
-        Me.RequestList.SelectedFormatStyle.BackColorAlphaMode = Janus.Windows.GridEX.AlphaMode.Opaque
-        Me.RequestList.SelectedInactiveFormatStyle.BackColor = System.Drawing.SystemColors.Highlight
-        Me.RequestList.SelectedInactiveFormatStyle.ForeColor = System.Drawing.SystemColors.Window
-        Me.RequestList.Size = New System.Drawing.Size(1358, 293)
-        Me.RequestList.TabIndex = 7
-        Me.RequestList.TotalRowFormatStyle.BackColor = System.Drawing.SystemColors.Highlight
+        Me.gridRequestList.AllowEdit = Janus.Windows.GridEX.InheritableBoolean.[False]
+        Me.PhysicalContextMenu.SetContextMenu(Me.gridRequestList, True)
+        gridRequestList_DesignTimeLayout.LayoutString = resources.GetString("gridRequestList_DesignTimeLayout.LayoutString")
+        Me.gridRequestList.DesignTimeLayout = gridRequestList_DesignTimeLayout
+        Me.gridRequestList.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.gridRequestList.FocusCellFormatStyle.BackColor = System.Drawing.SystemColors.Highlight
+        Me.gridRequestList.FocusCellFormatStyle.BackColorGradient = System.Drawing.SystemColors.Highlight
+        Me.gridRequestList.Font = New System.Drawing.Font("Verdana", 9.75!)
+        Me.gridRequestList.GridLineStyle = Janus.Windows.GridEX.GridLineStyle.Solid
+        Me.gridRequestList.GroupByBoxVisible = False
+        Me.gridRequestList.HeaderFormatStyle.Font = New System.Drawing.Font("Verdana", 12.0!)
+        Me.gridRequestList.HeaderFormatStyle.FontBold = Janus.Windows.GridEX.TriState.[False]
+        Me.gridRequestList.HeaderFormatStyle.FontSize = 12.0!
+        Me.gridRequestList.HeaderFormatStyle.ForeColor = System.Drawing.Color.Blue
+        Me.gridRequestList.HeaderFormatStyle.TextAlignment = Janus.Windows.GridEX.TextAlignment.Center
+        Me.gridRequestList.HideSelection = Janus.Windows.GridEX.HideSelection.HighlightInactive
+        Me.gridRequestList.Location = New System.Drawing.Point(0, 0)
+        Me.gridRequestList.Name = "gridRequestList"
+        Me.gridRequestList.Office2007ColorScheme = Janus.Windows.GridEX.Office2007ColorScheme.Silver
+        Me.gridRequestList.Office2007CustomColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.gridRequestList.PreviewRowFormatStyle.Appearance = Janus.Windows.GridEX.Appearance.RaisedLight
+        Me.gridRequestList.RecordNavigator = True
+        Me.gridRequestList.RowFormatStyle.Font = New System.Drawing.Font("Verdana", 9.75!)
+        Me.gridRequestList.RowHeaders = Janus.Windows.GridEX.InheritableBoolean.[True]
+        Me.gridRequestList.SelectedFormatStyle.BackColor = System.Drawing.SystemColors.GradientActiveCaption
+        Me.gridRequestList.SelectedFormatStyle.BackColorAlphaMode = Janus.Windows.GridEX.AlphaMode.Opaque
+        Me.gridRequestList.SelectedInactiveFormatStyle.BackColor = System.Drawing.SystemColors.Highlight
+        Me.gridRequestList.SelectedInactiveFormatStyle.ForeColor = System.Drawing.SystemColors.Window
+        Me.gridRequestList.Size = New System.Drawing.Size(1358, 293)
+        Me.gridRequestList.TabIndex = 7
+        Me.gridRequestList.TotalRowFormatStyle.BackColor = System.Drawing.SystemColors.Highlight
+        Me.gridRequestList.VisualStyleManager = Me.VisualStyleManager1
+        '
+        'VisualStyleManager1
+        '
+        JanusColorScheme2.HighlightTextColor = System.Drawing.SystemColors.HotTrack
+        JanusColorScheme2.Name = "Scheme0"
+        JanusColorScheme2.Office2007ColorScheme = Janus.Windows.Common.Office2007ColorScheme.Silver
+        JanusColorScheme2.Office2007CustomColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        JanusColorScheme2.UseThemes = False
+        JanusColorScheme2.VisualStyle = Janus.Windows.Common.VisualStyle.Standard
+        Me.VisualStyleManager1.ColorSchemes.Add(JanusColorScheme2)
+        Me.VisualStyleManager1.DefaultColorScheme = "Scheme0"
         '
         'UiTab1
         '
@@ -3561,7 +3581,7 @@ Partial Class DashbordDotorRequestExamination
         Me.SplitContainer1.Panel1.ResumeLayout(False)
         Me.SplitContainer1.Panel2.ResumeLayout(False)
         Me.SplitContainer1.ResumeLayout(False)
-        CType(Me.RequestList, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.gridRequestList, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.UiTab1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.UiTab1.ResumeLayout(False)
         Me.UiTabPage1.ResumeLayout(False)
@@ -3703,7 +3723,7 @@ Partial Class DashbordDotorRequestExamination
     Friend WithEvents btnNasogastro As System.Windows.Forms.Button
     Friend WithEvents btnPrintColo As System.Windows.Forms.Button
     Friend WithEvents BtnPrintEcho As System.Windows.Forms.Button
-    Friend WithEvents RequestList As Janus.Windows.GridEX.GridEX
+    Friend WithEvents gridRequestList As Janus.Windows.GridEX.GridEX
     Friend WithEvents FibroConclusionList As Janus.Windows.GridEX.GridEX
     Friend WithEvents NasoConclusionList As Janus.Windows.GridEX.GridEX
     Friend WithEvents ColoConclusionList As Janus.Windows.GridEX.GridEX
@@ -3718,7 +3738,6 @@ Partial Class DashbordDotorRequestExamination
     Friend WithEvents ToolStripSeparator10 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents BtnCompleteExam As System.Windows.Forms.ToolStripButton
     Friend WithEvents btnHistoryExam As System.Windows.Forms.ToolStripButton
-    Friend WithEvents BtnRefresh As System.Windows.Forms.ToolStripButton
     Friend WithEvents ToolStripSeparator12 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents BgLoadData As System.ComponentModel.BackgroundWorker
     Friend WithEvents cboNasoDemander As System.Windows.Forms.TextBox
@@ -3884,5 +3903,8 @@ Partial Class DashbordDotorRequestExamination
     Friend WithEvents Label84 As System.Windows.Forms.Label
     Friend WithEvents CboBreathConclusion As System.Windows.Forms.ComboBox
     Friend WithEvents BtnPrintBreathTest As System.Windows.Forms.Button
+    Friend WithEvents BtnRefresh As System.Windows.Forms.ToolStripButton
+    Friend WithEvents VisualStyleManager1 As Janus.Windows.Common.VisualStyleManager
+    Friend WithEvents CachedBreathReport1 As Clinic_Management_System.CachedBreathReport
 
 End Class

@@ -61,7 +61,7 @@ Partial Class Receive
         Me.BtnClose.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BtnClose.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnClose.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.BtnClose.Location = New System.Drawing.Point(595, 269)
+        Me.BtnClose.Location = New System.Drawing.Point(598, 259)
         Me.BtnClose.Name = "BtnClose"
         Me.BtnClose.Size = New System.Drawing.Size(79, 30)
         Me.BtnClose.TabIndex = 7
@@ -109,7 +109,7 @@ Partial Class Receive
         Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.Label1.Location = New System.Drawing.Point(275, 15)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(134, 24)
+        Me.Label1.Size = New System.Drawing.Size(133, 24)
         Me.Label1.TabIndex = 41
         Me.Label1.Text = "Receive Form"
         '
@@ -153,7 +153,7 @@ Partial Class Receive
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.Red
-        Me.Label3.Location = New System.Drawing.Point(18, 276)
+        Me.Label3.Location = New System.Drawing.Point(21, 266)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(262, 20)
         Me.Label3.TabIndex = 64
@@ -163,7 +163,7 @@ Partial Class Receive
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(684, 311)
+        Me.ClientSize = New System.Drawing.Size(684, 297)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.cbomedicine)

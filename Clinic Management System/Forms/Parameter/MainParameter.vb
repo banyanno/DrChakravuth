@@ -139,6 +139,7 @@
         TypeForm.LblSaveOption.Text = 1
         TypeForm.TxtParaName.Text = Me.ParaList.CurrentRow.Cells("paracheck").Value
         TypeForm.TxtParaPrice.Text = Me.ParaList.CurrentRow.Cells("servicecharge").Value
+        TypeForm.CboParaType.Text = Me.ParaList.CurrentRow.Cells("ParaType").Value
         TypeForm.ShowDialog()
     End Sub
 
@@ -461,5 +462,9 @@
 
     Private Sub BtnRefreshMedicalHistory_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnRefreshMedicalHistory.Click
         RefreshMedicalHistory()
+    End Sub
+
+    Private Sub BtnParaClinicRefresh_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnParaClinicRefresh.Click
+        RefreshDataParaExam()
     End Sub
 End Class

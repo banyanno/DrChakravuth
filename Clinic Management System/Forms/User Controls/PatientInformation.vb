@@ -393,7 +393,7 @@
         If Me.GridPatientInfo.SelectedItems.Count > 0 Then
             If MessageBox.Show("Do want to send patient to Issue Receipt?", "Issure Receipt", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
                 Dim DA_PreInvoice As New DSInvoiceTableAdapters.tbl_preinvoiceTableAdapter
-                DA_PreInvoice.InsertInvoice(CLng(GridPatientInfo.GetRow.Cells("patientid").Value))
+                DA_PreInvoice.InsertInvoice(CLng(GridPatientInfo.GetRow.Cells("patientid").Value), USER_ID, USER_NAME)
                 MsgBox("One patient was sent to the list of current receipts already", MsgBoxStyle.Information, "Send to Receipt List")
             End If
         Else
@@ -544,5 +544,29 @@
 
     Private Sub txtphone_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtphone.KeyPress
        
+    End Sub
+
+    Private Sub TxtByPatientNo_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles TxtByPatientNo.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            Button2_Click(sender, e)
+        End If
+    End Sub
+
+    Private Sub TxtByPatientName_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles TxtByPatientName.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            Button2_Click(sender, e)
+        End If
+    End Sub
+
+    Private Sub TxtByPhone_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles TxtByPhone.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            Button2_Click(sender, e)
+        End If
+    End Sub
+
+    Private Sub CboAddress_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles CboAddress.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            Button2_Click(sender, e)
+        End If
     End Sub
 End Class

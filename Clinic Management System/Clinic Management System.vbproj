@@ -254,11 +254,34 @@
     <Compile Include="Forms\Consultation\ViewStomachConsultation.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\Doctor\CRVParaExamTotal.vb">
+      <DependentUpon>CRVParaExamTotal.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Forms\Doctor\CRVDoctorFeeForCounsultation.vb">
+      <DependentUpon>CRVDoctorFeeForCounsultation.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Forms\Doctor\CRVDoctorFeeForParaExam.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CRVDoctorFeeForParaExam.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Forms\Doctor\DoctorFee.Designer.vb">
       <DependentUpon>DoctorFee.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\Doctor\DoctorFee.vb">
       <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Doctor\DSDoctorFee.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSDoctorFee.xsd</DependentUpon>
     </Compile>
     <Compile Include="Forms\Doctor\NewDoctor.Designer.vb">
       <DependentUpon>NewDoctor.vb</DependentUpon>
@@ -272,6 +295,29 @@
       <DependentUpon>ReportDoctorFee.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Forms\HepatiteB\DashboardHepatiteB.Designer.vb">
+      <DependentUpon>DashboardHepatiteB.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\HepatiteB\DashboardHepatiteB.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\HepatiteB\DSHepatiteB.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSHepatiteB.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\HepatiteB\NewRegisterHepatite.Designer.vb">
+      <DependentUpon>NewRegisterHepatite.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\HepatiteB\NewRegisterHepatite.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\HepatiteB\NewRegisterHepatiteDetial.Designer.vb">
+      <DependentUpon>NewRegisterHepatiteDetial.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\HepatiteB\NewRegisterHepatiteDetial.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\Invoice\DS_Invoice.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -279,6 +325,12 @@
     </Compile>
     <Compile Include="Forms\Invoice\DS_Invoice.vb">
       <DependentUpon>DS_Invoice.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Invoice\FindInvoiceDetial.Designer.vb">
+      <DependentUpon>FindInvoiceDetial.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Invoice\FindInvoiceDetial.vb">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Invoice\Reports\RptIncomeV1.vb">
       <DependentUpon>RptIncomeV1.rpt</DependentUpon>
@@ -571,6 +623,17 @@
     <Compile Include="Forms\version2\ParaClinicExamination\ParaExamHistory\FrmFindHistory.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\version2\PatientIssueReceipt\DSNewInventory1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSNewInventory.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\version2\PatientIssueReceipt\InvoiceMedicineV2.Designer.vb">
+      <DependentUpon>InvoiceMedicineV2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\version2\PatientIssueReceipt\InvoiceMedicineV2.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\version2\PatientIssueReceipt\invoiceSmalV2.vb">
       <DependentUpon>invoiceSmalV2.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -689,12 +752,6 @@
     <Compile Include="Forms\version2\Stock\BarcodeGenerator\NewGenerateBarcode.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\version2\Stock\BarcodeGenerator\UIBarcodeGenerator.designer.vb">
-      <DependentUpon>UIBarcodeGenerator.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\version2\Stock\BarcodeGenerator\UIBarcodeGenerator.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Include="Forms\version2\Stock\DSStore.vb">
       <DependentUpon>DSStore.xsd</DependentUpon>
     </Compile>
@@ -716,6 +773,12 @@
       <DependentUpon>FMedicalReceived.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\version2\Stock\MedicinceReport\FMedicalReceived.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\version2\Stock\MedicinceReport\NewExpend.Designer.vb">
+      <DependentUpon>NewExpend.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\version2\Stock\MedicinceReport\NewExpend.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\version2\Stock\MedicinceReport\UMgrMedicince.Designer.vb">
@@ -961,12 +1024,6 @@
     <Compile Include="Forms\User_Management\FrmChangeUserPWD.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\User_Management\frmDepartment.designer.vb">
-      <DependentUpon>frmDepartment.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\User_Management\frmDepartment.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Forms\User_Management\FRMGroupProperties.designer.vb">
       <DependentUpon>FRMGroupProperties.vb</DependentUpon>
     </Compile>
@@ -979,7 +1036,7 @@
     <Compile Include="Forms\User_Management\FRMNewUser.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\User_Management\UserGlobleVariable.vb" />
+    <Compile Include="Common\UserGlobleVariable.vb" />
     <Compile Include="Forms\version2\DoctorRequestExam\DSExamination.vb">
       <DependentUpon>DSExamination.xsd</DependentUpon>
     </Compile>
@@ -1402,6 +1459,7 @@
     <Compile Include="Forms\version2\WaitingConsuling\NewConsultingForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\version2\WaitingConsuling\ViewReportMainHistory.vb" />
     <Compile Include="Interfaces\IAppointment.vb" />
     <Compile Include="Interfaces\ICheckBlood.vb" />
     <Compile Include="main.Designer.vb">
@@ -1416,6 +1474,752 @@
     <Compile Include="Models\ModelCheckBlood.vb" />
     <Compile Include="Models\ModelConsultation.vb" />
     <Compile Include="Models\ModelPatient.vb" />
+    <Compile Include="ModuleInventory\DSInventoryClinic.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSInventoryClinic.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\DSInventoryClinic.vb">
+      <DependentUpon>DSInventoryClinic.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\ForReceiveOrder.Designer.vb">
+      <DependentUpon>ForReceiveOrder.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\ForReceiveOrder.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\MainDashboardInventory.Designer.vb">
+      <DependentUpon>MainDashboardInventory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\MainDashboardInventory.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\MainInventory.Designer.vb">
+      <DependentUpon>MainInventory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\MainInventory.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Models\BaseDataContext.vb" />
+    <Compile Include="ModuleInventory\Models\Cabinet\CabinetList.vb" />
+    <Compile Include="ModuleInventory\Models\Cabinet\CabinetRepository.vb" />
+    <Compile Include="ModuleInventory\Models\Cabinet\DSCabinet.Designer.vb">
+      <DependentUpon>DSCabinet.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\Models\Cabinet\DSCabinet.vb">
+      <DependentUpon>DSCabinet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\Models\Cabinet\ICabinetRepository.vb" />
+    <Compile Include="ModuleInventory\Models\Categoty\CategoryRepository.vb" />
+    <Compile Include="ModuleInventory\Models\Categoty\ICategoryRepository.vb" />
+    <Compile Include="ModuleInventory\Models\Chemical\ChemicalRepository.vb" />
+    <Compile Include="ModuleInventory\Models\Chemical\DSChemical1.Designer.vb" />
+    <Compile Include="ModuleInventory\Models\Chemical\IChemicalRepository.vb" />
+    <Compile Include="ModuleInventory\Models\Container\ContainerRepository.vb" />
+    <Compile Include="ModuleInventory\Models\Container\DSContainer1.Designer.vb" />
+    <Compile Include="ModuleInventory\Models\Container\IContainerRepository.vb" />
+    <Compile Include="ModuleInventory\Models\Department\DepartRepository.vb" />
+    <Compile Include="ModuleInventory\Models\Department\DSDepartment.vb">
+      <DependentUpon>DSDepartment.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\Models\Department\DSDepartment1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSDepartment.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\Models\Department\IDepartRepository.vb" />
+    <Compile Include="ModuleInventory\Models\DepartStock\DepartStockRepository.vb" />
+    <Compile Include="ModuleInventory\Models\DepartStock\IDepartStockRepository.vb" />
+    <Compile Include="ModuleInventory\Models\Inventory\IInventory.vb" />
+    <Compile Include="ModuleInventory\Models\Inventory\Inventory.vb" />
+    <Compile Include="ModuleInventory\Models\ItemChemicalDetail\IItemChemicalDetail.vb" />
+    <Compile Include="ModuleInventory\Models\ItemChemicalDetail\ItemChemicalDetail.vb" />
+    <Compile Include="ModuleInventory\Models\ItemUnit\DSItemUnit1.Designer.vb" />
+    <Compile Include="ModuleInventory\Models\ItemUnit\IItemUnitRepository.vb" />
+    <Compile Include="ModuleInventory\Models\ItemUnit\ItemUnitRepository.vb" />
+    <Compile Include="ModuleInventory\Models\Item\CryMonlyUsedItem.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CryMonlyUsedItem.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Models\Item\DSCategoriesAndItems.vb">
+      <DependentUpon>DSCategoriesAndItems.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\Models\Item\DSCategoriesAndItems1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSCategoriesAndItems.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\Models\Item\IItem.vb" />
+    <Compile Include="ModuleInventory\Models\Item\Item.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Models\LabourFactory\DSLabourFac1.Designer.vb" />
+    <Compile Include="ModuleInventory\Models\LabourFactory\ILabourFactoryRepository.vb" />
+    <Compile Include="ModuleInventory\Models\LabourFactory\LabourFactoryRepository.vb" />
+    <Compile Include="ModuleInventory\Models\PurchaseOrder\IRequestDetailRepository.vb" />
+    <Compile Include="ModuleInventory\Models\PurchaseOrder\IRequestOrderRepository.vb" />
+    <Compile Include="ModuleInventory\Models\PurchaseOrder\PurchaseOrder.Designer.vb">
+      <DependentUpon>PurchaseOrder.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\Models\PurchaseOrder\PurchaseOrder.vb">
+      <DependentUpon>PurchaseOrder.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\Models\PurchaseOrder\RequestDetailRepository.vb" />
+    <Compile Include="ModuleInventory\Models\PurchaseOrder\RequestOrderRepository.vb" />
+    <Compile Include="ModuleInventory\Models\RunEndOfDay\DSEndofDayRun.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSEndofDayRun.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\Models\RunEndOfDay\DSEndofDayRun.vb">
+      <DependentUpon>DSEndofDayRun.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\Models\RunEndOfDay\EndofDayRepository.vb" />
+    <Compile Include="ModuleInventory\Models\RunEndOfDay\IEndofDayRepository.vb" />
+    <Compile Include="ModuleInventory\Models\Supplyer\FormSupplyer.Designer.vb">
+      <DependentUpon>FormSupplyer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\Models\Supplyer\FormSupplyer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Models\TakeoHospitalInventory.designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TakeoHospitalInventory.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\Models\UserManagement\IUserManagement.vb" />
+    <Compile Include="ModuleInventory\Models\UserManagement\UserManagementImplement.vb" />
+    <Compile Include="ModuleInventory\Models\Vendor\clsList.vb" />
+    <Compile Include="ModuleInventory\Models\Vendor\DSVendors.vb">
+      <DependentUpon>DSVendors.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\Models\Vendor\DSVendors1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSVendors.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\Models\Vendor\IVendorRepository.vb" />
+    <Compile Include="ModuleInventory\Models\Vendor\VendorRepository.vb" />
+    <Compile Include="ModuleInventory\ReceivedItem.Designer.vb">
+      <DependentUpon>ReceivedItem.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\ReceivedItem.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\AdjustStock\AdjustStockMainStock.Designer.vb">
+      <DependentUpon>AdjustStockMainStock.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\AdjustStock\AdjustStockMainStock.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\AdjustStock\frmAdjustStock.Designer.vb">
+      <DependentUpon>frmAdjustStock.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\AdjustStock\frmAdjustStock.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\AdjustStock\UCDashboardAdjustStock.Designer.vb">
+      <DependentUpon>UCDashboardAdjustStock.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\AdjustStock\UCDashboardAdjustStock.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Bardcode\UIBarcodeGenerator.Designer.vb">
+      <DependentUpon>UIBarcodeGenerator.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Bardcode\UIBarcodeGenerator.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Cabinet\DSLocationItemDetail.Designer.vb" />
+    <Compile Include="ModuleInventory\Views\Cabinet\frmCabinet.Designer.vb">
+      <DependentUpon>frmCabinet.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Cabinet\frmCabinet.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Cabinet\frmLocation.Designer.vb">
+      <DependentUpon>frmLocation.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Cabinet\frmLocation.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Cabinet\UCCabinet.Designer.vb">
+      <DependentUpon>UCCabinet.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Cabinet\UCCabinet.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Category\CrCategoryItemDailyTransactionReport.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrCategoryItemDailyTransactionReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Category\CrCategoryItemDailyTransactionReportV1.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrCategoryItemDailyTransactionReportV1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Category\CrCategoryItemDailyTransactionReportV1ForOPT.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrCategoryItemDailyTransactionReportV1ForOPT.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Category\CrCategoryItemDailyTransactionReportV2.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrCategoryItemDailyTransactionReportV2.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Category\CrCategoryItemMonthlyTransactionReport.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrCategoryItemMonthlyTransactionReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Category\CrCategoryItemMonthlyTransactionReportV1.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrCategoryItemMonthlyTransactionReportV1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Category\CrItemExpiredDate.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrItemExpiredDate.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Category\CrItemInStockReport.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrItemInStockReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Category\CrStockAdjustmentReport.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrStockAdjustmentReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Category\EditCost.Designer.vb">
+      <DependentUpon>EditCost.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Category\EditCost.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Category\EditeItemExpire.Designer.vb">
+      <DependentUpon>EditeItemExpire.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Category\EditeItemExpire.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Category\frmCategory.Designer.vb">
+      <DependentUpon>frmCategory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Category\frmCategory.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Category\UCCategories.designer.vb">
+      <DependentUpon>UCCategories.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Category\UCCategories.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Category\UCItemExpiredDate.Designer.vb">
+      <DependentUpon>UCItemExpiredDate.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Category\UCItemExpiredDate.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Category\UCReportItemTransaction.designer.vb">
+      <DependentUpon>UCReportItemTransaction.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Category\UCReportItemTransaction.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Chemical\frmChemical.Designer.vb">
+      <DependentUpon>frmChemical.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Chemical\frmChemical.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Chemical\UCChemical.Designer.vb">
+      <DependentUpon>UCChemical.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Chemical\UCChemical.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Container\frmContainer.Designer.vb">
+      <DependentUpon>frmContainer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Container\frmContainer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Container\UCContainer.Designer.vb">
+      <DependentUpon>UCContainer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Container\UCContainer.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Country\frmCountry.Designer.vb">
+      <DependentUpon>frmCountry.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Country\frmCountry.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Country\UCCountry.Designer.vb">
+      <DependentUpon>UCCountry.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Country\UCCountry.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Department\DepartmentStock\CrItemInDepartmentStock.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrItemInDepartmentStock.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Department\DepartmentStock\DepartInHouseUsedMainInven.Designer.vb">
+      <DependentUpon>DepartInHouseUsedMainInven.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Department\DepartmentStock\DepartInHouseUsedMainInven.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Department\DepartmentStock\DepartmentStockReports\CrDepartEndofDay.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrDepartEndofDay.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Department\DepartmentStock\DepartmentStockReports\CrInhouseUsedItem.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrInhouseUsedItem.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Department\DepartmentStock\DepartmentStockReports\CrItemAlert.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrItemAlert.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Department\DepartmentStock\DepartmentStockReports\ReportDepartEODDedielt.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportDepartEODDedielt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Department\DepartmentStock\DSDepartmentStock.vb">
+      <DependentUpon>DSDepartmentStock.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Department\DepartmentStock\DSDepartmentStock1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSDepartmentStock.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Department\DepartmentStock\DSInhouseUsedItem.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSInhouseUsedItem.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Department\DepartmentStock\frmDepartInHouseUsedItem.Designer.vb">
+      <DependentUpon>frmDepartInHouseUsedItem.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Department\DepartmentStock\frmDepartInHouseUsedItem.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Department\DepartmentStock\frmInpuItemQty.designer.vb">
+      <DependentUpon>frmInpuItemQty.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Department\DepartmentStock\frmInpuItemQty.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Department\DepartmentStock\frmItemListForDepart.Designer.vb">
+      <DependentUpon>frmItemListForDepart.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Department\DepartmentStock\frmItemListForDepart.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Department\DepartmentStock\frmMainStockInHouseUsedItem.Designer.vb">
+      <DependentUpon>frmMainStockInHouseUsedItem.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Department\DepartmentStock\frmMainStockInHouseUsedItem.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Department\DepartmentStock\UCDepartCurrentStock.Designer.vb">
+      <DependentUpon>UCDepartCurrentStock.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Department\DepartmentStock\UCDepartCurrentStock.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Department\DepartmentStock\UCInhouseUsedItem.Designer.vb">
+      <DependentUpon>UCInhouseUsedItem.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Department\DepartmentStock\UCInhouseUsedItem.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Department\frmDepartment.Designer.vb">
+      <DependentUpon>frmDepartment.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Department\frmDepartment.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Department\Users\DataClassesUserManagment1.designer.vb" />
+    <Compile Include="ModuleInventory\Views\Department\Users\DSUserManagement.Designer.vb">
+      <DependentUpon>DSUserManagement.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Department\Users\DSUserManagement.vb">
+      <DependentUpon>DSUserManagement.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Department\Users\FormGrantPermistionInventory.designer.vb">
+      <DependentUpon>FormGrantPermistionInventory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Department\Users\FormGrantPermistionInventory.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Department\Users\FormNewUserInventory.designer.vb">
+      <DependentUpon>FormNewUserInventory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Department\Users\FormNewUserInventory.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Department\Users\FRMChangePwdInventory.Designer.vb">
+      <DependentUpon>FRMChangePwdInventory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Department\Users\FRMChangePwdInventory.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Department\Users\FRMUpdateUserInventory.designer.vb">
+      <DependentUpon>FRMUpdateUserInventory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Department\Users\FRMUpdateUserInventory.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\ItemMigration.Designer.vb">
+      <DependentUpon>ItemMigration.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\ItemMigration.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\ItemUnit\frmItemUnit.Designer.vb">
+      <DependentUpon>frmItemUnit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\ItemUnit\frmItemUnit.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\ItemUnit\UCItemUnit.Designer.vb">
+      <DependentUpon>UCItemUnit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\ItemUnit\UCItemUnit.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Item\DSItemPrice1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSItemPrice.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Item\Fixasset\CryFixAsset.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CryFixAsset.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Item\Fixasset\DS_FIXASSET.Designer.vb">
+      <DependentUpon>DS_FIXASSET.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Item\Fixasset\DS_FIXASSET.vb">
+      <DependentUpon>DS_FIXASSET.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Item\Fixasset\FormCheckItemFixAsset.Designer.vb">
+      <DependentUpon>FormCheckItemFixAsset.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Item\Fixasset\FormCheckItemFixAsset.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Item\Fixasset\FormFixAsset.Designer.vb">
+      <DependentUpon>FormFixAsset.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Item\Fixasset\FormFixAsset.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Item\Fixasset\UFixInventory.Designer.vb">
+      <DependentUpon>UFixInventory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Item\Fixasset\UFixInventory.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Item\frmItem.designer.vb">
+      <DependentUpon>frmItem.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Item\frmItem.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Item\frmItemPrice.Designer.vb">
+      <DependentUpon>frmItemPrice.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Item\frmItemPrice.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\LabourFactory\frmLabourFactory.Designer.vb">
+      <DependentUpon>frmLabourFactory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\LabourFactory\frmLabourFactory.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\LabourFactory\UCLabourFactory.Designer.vb">
+      <DependentUpon>UCLabourFactory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\LabourFactory\UCLabourFactory.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Purchase_Order\Caritas\DSHospitalRequestToCaritas.Designer.vb" />
+    <Compile Include="ModuleInventory\Views\Purchase_Order\Caritas\FormCaritasRequestItem.Designer.vb">
+      <DependentUpon>FormCaritasRequestItem.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Purchase_Order\Caritas\FormCaritasRequestItem.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Purchase_Order\Caritas\frmAddCaritasRequestOrder.designer.vb">
+      <DependentUpon>frmAddCaritasRequestOrder.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Purchase_Order\Caritas\frmAddCaritasRequestOrder.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Purchase_Order\Caritas\frmHospitalRecItem.Designer.vb">
+      <DependentUpon>frmHospitalRecItem.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Purchase_Order\Caritas\frmHospitalRecItem.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Purchase_Order\Caritas\Received_Order.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Received_Order.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Purchase_Order\Caritas\Received_OrderV1.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Received_OrderV1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Purchase_Order\Caritas\ReportQuestToCaristas.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportQuestToCaristas.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Purchase_Order\Caritas\RptCaritasReceivedBySupplier.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RptCaritasReceivedBySupplier.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Purchase_Order\Caritas\RptCaritasReceivedByVender.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RptCaritasReceivedByVender.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Purchase_Order\Caritas\RptCaritasReqOrder1.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RptCaritasReqOrder.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Purchase_Order\Caritas\RptCaritasReqOrderV1.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RptCaritasReqOrderV1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Purchase_Order\Caritas\RptItemHospitalProject.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RptItemHospitalProject.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Purchase_Order\Caritas\RptItemHospitalProjectV1.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RptItemHospitalProjectV1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Purchase_Order\Caritas\RptItemHospitalProjectV2.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RptItemHospitalProjectV2.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Purchase_Order\Caritas\RptItemRequestSupplierGivenTrace.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RptItemRequestSupplierGivenTrace.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Purchase_Order\Caritas\RptItemRequestSupplierUsedInDepart.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RptItemRequestSupplierUsedInDepart.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Purchase_Order\Caritas\UCCaritasRequestOrder.Designer.vb">
+      <DependentUpon>UCCaritasRequestOrder.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Purchase_Order\Caritas\UCCaritasRequestOrder.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Purchase_Order\DSEOD.Designer.vb">
+      <DependentUpon>DSEOD.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Purchase_Order\DSEOD.vb">
+      <DependentUpon>DSEOD.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Purchase_Order\DSRequest.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSRequest.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Purchase_Order\DSRequest.vb">
+      <DependentUpon>DSRequest.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Purchase_Order\DSRptRequestHistoryStatusTrace.Designer.vb">
+      <DependentUpon>DSRptRequestHistoryStatusTrace.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Purchase_Order\DSRptRequestHistoryStatusTrace.vb">
+      <DependentUpon>DSRptRequestHistoryStatusTrace.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Purchase_Order\frmAddRequestOrder.designer.vb">
+      <DependentUpon>frmAddRequestOrder.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Purchase_Order\frmAddRequestOrder.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Purchase_Order\frmCompareItemInStock.designer.vb">
+      <DependentUpon>frmCompareItemInStock.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Purchase_Order\frmCompareItemInStock.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Purchase_Order\frmDepartResponseItem.designer.vb">
+      <DependentUpon>frmDepartResponseItem.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Purchase_Order\frmDepartResponseItem.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Purchase_Order\frmMainStockResponseItem.designer.vb">
+      <DependentUpon>frmMainStockResponseItem.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Purchase_Order\frmMainStockResponseItem.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Purchase_Order\frmREDStatus.Designer.vb">
+      <DependentUpon>frmREDStatus.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Purchase_Order\frmREDStatus.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Purchase_Order\frmRequestItemsDetail.designer.vb">
+      <DependentUpon>frmRequestItemsDetail.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Purchase_Order\frmRequestItemsDetail.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Purchase_Order\frmResponseRequestOrder.designer.vb">
+      <DependentUpon>frmResponseRequestOrder.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Purchase_Order\frmResponseRequestOrder.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Purchase_Order\POReports\CrHisRequest.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrHisRequest.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Purchase_Order\POReports\CRItemBalanceInHos.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CRItemBalanceInHos.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Purchase_Order\POReports\CrRequestOrder.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrRequestOrder.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Purchase_Order\POReports\frmHosItemBalance.Designer.vb">
+      <DependentUpon>frmHosItemBalance.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Purchase_Order\POReports\frmHosItemBalance.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Purchase_Order\POReports\frmReportViewer.designer.vb">
+      <DependentUpon>frmReportViewer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Purchase_Order\POReports\frmReportViewer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Purchase_Order\UCDepartReceivedRequest.designer.vb">
+      <DependentUpon>UCDepartReceivedRequest.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Purchase_Order\UCDepartReceivedRequest.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Purchase_Order\UCReceivedRequest.designer.vb">
+      <DependentUpon>UCReceivedRequest.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Purchase_Order\UCReceivedRequest.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Purchase_Order\UCRequestOrder.designer.vb">
+      <DependentUpon>UCRequestOrder.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Purchase_Order\UCRequestOrder.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Purchase_Order\UCRequestOrder_V1.designer.vb">
+      <DependentUpon>UCRequestOrder_V1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Purchase_Order\UCRequestOrder_V1.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Purchase_Order\UCRunEndOfDay.designer.vb">
+      <DependentUpon>UCRunEndOfDay.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Purchase_Order\UCRunEndOfDay.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Purchase_Order\UIShowAllItemBalanceInDeppartment.Designer.vb">
+      <DependentUpon>UIShowAllItemBalanceInDeppartment.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Purchase_Order\UIShowAllItemBalanceInDeppartment.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\ServerEviroment\DSServerEnviroment1.Designer.vb" />
+    <Compile Include="ModuleInventory\Views\Vendor\frmVender.Designer.vb">
+      <DependentUpon>frmVender.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Vendor\frmVender.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Vendor\UCVendor.Designer.vb">
+      <DependentUpon>UCVendor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Vendor\UCVendor.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Vendor\UCVendor_V1.Designer.vb">
+      <DependentUpon>UCVendor_V1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleInventory\Views\Vendor\UCVendor_V1.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -1550,6 +2354,18 @@
       <DependentUpon>ViewStomachConsultation.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Doctor\CRVParaExamTotal.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CRVParaExamTotal.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Doctor\CRVDoctorFeeForCounsultation.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CRVDoctorFeeForCounsultation.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Doctor\CRVDoctorFeeForParaExam.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CRVDoctorFeeForParaExam.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Doctor\DoctorFee.resx">
       <DependentUpon>DoctorFee.vb</DependentUpon>
       <SubType>Designer</SubType>
@@ -1561,6 +2377,18 @@
     <EmbeddedResource Include="Forms\Doctor\ReportDoctorFee.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ReportDoctorFee.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HepatiteB\DashboardHepatiteB.resx">
+      <DependentUpon>DashboardHepatiteB.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HepatiteB\NewRegisterHepatite.resx">
+      <DependentUpon>NewRegisterHepatite.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HepatiteB\NewRegisterHepatiteDetial.resx">
+      <DependentUpon>NewRegisterHepatiteDetial.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Invoice\FindInvoiceDetial.resx">
+      <DependentUpon>FindInvoiceDetial.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Invoice\Reports\RptIncomeV1.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -1745,6 +2573,9 @@
       <DependentUpon>FrmFindHistory.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\PatientIssueReceipt\InvoiceMedicineV2.resx">
+      <DependentUpon>InvoiceMedicineV2.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\version2\PatientIssueReceipt\invoiceSmalV2.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>invoiceSmalV2.vb</LastGenOutput>
@@ -1816,10 +2647,6 @@
       <DependentUpon>NewGenerateBarcode.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\version2\Stock\BarcodeGenerator\UIBarcodeGenerator.resx">
-      <DependentUpon>UIBarcodeGenerator.vb</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\version2\Stock\MedicinceReport\CryMedicinceReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CryMedicinceReport.vb</LastGenOutput>
@@ -1827,6 +2654,9 @@
     <EmbeddedResource Include="Forms\version2\Stock\MedicinceReport\FMedicalReceived.resx">
       <DependentUpon>FMedicalReceived.vb</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\version2\Stock\MedicinceReport\NewExpend.resx">
+      <DependentUpon>NewExpend.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\version2\Stock\MedicinceReport\UMgrMedicince.resx">
       <DependentUpon>UMgrMedicince.vb</DependentUpon>
@@ -1970,10 +2800,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\User_Management\FrmChangeUserPWD.resx">
       <DependentUpon>FrmChangeUserPWD.vb</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\User_Management\frmDepartment.resx">
-      <DependentUpon>frmDepartment.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\User_Management\FRMGroupProperties.resx">
@@ -2239,6 +3065,346 @@
     <EmbeddedResource Include="main.resx">
       <DependentUpon>main.vb</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\ForReceiveOrder.resx">
+      <DependentUpon>ForReceiveOrder.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\MainDashboardInventory.resx">
+      <DependentUpon>MainDashboardInventory.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\MainInventory.resx">
+      <DependentUpon>MainInventory.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\Models\Item\CryMonlyUsedItem.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CryMonlyUsedItem.vb</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="ModuleInventory\Models\TakeoHospitalInventory.dbml.layout">
+      <DependentUpon>TakeoHospitalInventory.dbml</DependentUpon>
+    </None>
+    <EmbeddedResource Include="ModuleInventory\Models\Supplyer\FormSupplyer.resx">
+      <DependentUpon>FormSupplyer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\ReceivedItem.resx">
+      <DependentUpon>ReceivedItem.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\Views\AdjustStock\AdjustStockMainStock.resx">
+      <DependentUpon>AdjustStockMainStock.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\Views\AdjustStock\frmAdjustStock.resx">
+      <DependentUpon>frmAdjustStock.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\Views\AdjustStock\UCDashboardAdjustStock.resx">
+      <DependentUpon>UCDashboardAdjustStock.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\Views\Bardcode\UIBarcodeGenerator.resx">
+      <DependentUpon>UIBarcodeGenerator.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\Views\Cabinet\frmCabinet.resx">
+      <DependentUpon>frmCabinet.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\Views\Cabinet\frmLocation.resx">
+      <DependentUpon>frmLocation.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\Views\Cabinet\UCCabinet.resx">
+      <DependentUpon>UCCabinet.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\Views\Category\CrCategoryItemDailyTransactionReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrCategoryItemDailyTransactionReport.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\Views\Category\CrCategoryItemDailyTransactionReportV1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrCategoryItemDailyTransactionReportV1.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\Views\Category\CrCategoryItemDailyTransactionReportV1ForOPT.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrCategoryItemDailyTransactionReportV1ForOPT.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\Views\Category\CrCategoryItemDailyTransactionReportV2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrCategoryItemDailyTransactionReportV2.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\Views\Category\CrCategoryItemMonthlyTransactionReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrCategoryItemMonthlyTransactionReport.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\Views\Category\CrCategoryItemMonthlyTransactionReportV1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrCategoryItemMonthlyTransactionReportV1.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\Views\Category\CrItemExpiredDate.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrItemExpiredDate.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\Views\Category\CrItemInStockReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrItemInStockReport.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\Views\Category\CrStockAdjustmentReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrStockAdjustmentReport.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\Views\Category\EditCost.resx">
+      <DependentUpon>EditCost.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\Views\Category\EditeItemExpire.resx">
+      <DependentUpon>EditeItemExpire.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\Views\Category\frmCategory.resx">
+      <DependentUpon>frmCategory.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\Views\Category\UCCategories.resx">
+      <DependentUpon>UCCategories.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\Views\Category\UCItemExpiredDate.resx">
+      <DependentUpon>UCItemExpiredDate.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\Views\Category\UCReportItemTransaction.resx">
+      <DependentUpon>UCReportItemTransaction.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\Views\Chemical\frmChemical.resx">
+      <DependentUpon>frmChemical.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\Views\Chemical\UCChemical.resx">
+      <DependentUpon>UCChemical.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\Views\Container\frmContainer.resx">
+      <DependentUpon>frmContainer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\Views\Container\UCContainer.resx">
+      <DependentUpon>UCContainer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\Views\Country\frmCountry.resx">
+      <DependentUpon>frmCountry.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\Views\Country\UCCountry.resx">
+      <DependentUpon>UCCountry.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\Views\Department\DepartmentStock\CrItemInDepartmentStock.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrItemInDepartmentStock.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\Views\Department\DepartmentStock\DepartInHouseUsedMainInven.resx">
+      <DependentUpon>DepartInHouseUsedMainInven.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\Views\Department\DepartmentStock\DepartmentStockReports\CrDepartEndofDay.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrDepartEndofDay.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\Views\Department\DepartmentStock\DepartmentStockReports\CrInhouseUsedItem.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrInhouseUsedItem.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\Views\Department\DepartmentStock\DepartmentStockReports\CrItemAlert.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrItemAlert.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\Views\Department\DepartmentStock\DepartmentStockReports\ReportDepartEODDedielt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReportDepartEODDedielt.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\Views\Department\DepartmentStock\frmDepartInHouseUsedItem.resx">
+      <DependentUpon>frmDepartInHouseUsedItem.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\Views\Department\DepartmentStock\frmInpuItemQty.resx">
+      <DependentUpon>frmInpuItemQty.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\Views\Department\DepartmentStock\frmItemListForDepart.resx">
+      <DependentUpon>frmItemListForDepart.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\Views\Department\DepartmentStock\frmMainStockInHouseUsedItem.resx">
+      <DependentUpon>frmMainStockInHouseUsedItem.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\Views\Department\DepartmentStock\UCDepartCurrentStock.resx">
+      <DependentUpon>UCDepartCurrentStock.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\Views\Department\DepartmentStock\UCInhouseUsedItem.resx">
+      <DependentUpon>UCInhouseUsedItem.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\Views\Department\frmDepartment.resx">
+      <DependentUpon>frmDepartment.vb</DependentUpon>
+    </EmbeddedResource>
+    <None Include="ModuleInventory\Views\Department\Users\DataClassesUserManagment.dbml.layout">
+      <DependentUpon>DataClassesUserManagment.dbml</DependentUpon>
+    </None>
+    <EmbeddedResource Include="ModuleInventory\Views\Department\Users\FormGrantPermistionInventory.resx">
+      <DependentUpon>FormGrantPermistionInventory.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\Views\Department\Users\FormNewUserInventory.resx">
+      <DependentUpon>FormNewUserInventory.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\Views\Department\Users\FRMChangePwdInventory.resx">
+      <DependentUpon>FRMChangePwdInventory.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\Views\Department\Users\FRMUpdateUserInventory.resx">
+      <DependentUpon>FRMUpdateUserInventory.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\Views\ItemMigration.resx">
+      <DependentUpon>ItemMigration.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\Views\ItemUnit\frmItemUnit.resx">
+      <DependentUpon>frmItemUnit.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\Views\ItemUnit\UCItemUnit.ca-ES.resx">
+      <DependentUpon>UCItemUnit.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\Views\ItemUnit\UCItemUnit.ca.resx">
+      <DependentUpon>UCItemUnit.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\Views\ItemUnit\UCItemUnit.resx">
+      <DependentUpon>UCItemUnit.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\Views\Item\Fixasset\CryFixAsset.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CryFixAsset.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\Views\Item\Fixasset\FormCheckItemFixAsset.resx">
+      <DependentUpon>FormCheckItemFixAsset.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\Views\Item\Fixasset\FormFixAsset.resx">
+      <DependentUpon>FormFixAsset.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\Views\Item\Fixasset\UFixInventory.resx">
+      <DependentUpon>UFixInventory.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\Views\Item\frmItem.resx">
+      <DependentUpon>frmItem.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\Views\Item\frmItemPrice.resx">
+      <DependentUpon>frmItemPrice.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\Views\LabourFactory\frmLabourFactory.resx">
+      <DependentUpon>frmLabourFactory.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\Views\LabourFactory\UCLabourFactory.resx">
+      <DependentUpon>UCLabourFactory.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\Views\Purchase_Order\Caritas\FormCaritasRequestItem.resx">
+      <DependentUpon>FormCaritasRequestItem.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\Views\Purchase_Order\Caritas\frmAddCaritasRequestOrder.resx">
+      <DependentUpon>frmAddCaritasRequestOrder.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\Views\Purchase_Order\Caritas\frmHospitalRecItem.resx">
+      <DependentUpon>frmHospitalRecItem.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\Views\Purchase_Order\Caritas\Received_Order.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Received_Order.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\Views\Purchase_Order\Caritas\Received_OrderV1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Received_OrderV1.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\Views\Purchase_Order\Caritas\ReportQuestToCaristas.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReportQuestToCaristas.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\Views\Purchase_Order\Caritas\RptCaritasReceivedBySupplier.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RptCaritasReceivedBySupplier.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\Views\Purchase_Order\Caritas\RptCaritasReceivedByVender.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RptCaritasReceivedByVender.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\Views\Purchase_Order\Caritas\RptCaritasReqOrder.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RptCaritasReqOrder1.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\Views\Purchase_Order\Caritas\RptCaritasReqOrderV1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RptCaritasReqOrderV1.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\Views\Purchase_Order\Caritas\RptItemHospitalProject.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RptItemHospitalProject.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\Views\Purchase_Order\Caritas\RptItemHospitalProjectV1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RptItemHospitalProjectV1.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\Views\Purchase_Order\Caritas\RptItemHospitalProjectV2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RptItemHospitalProjectV2.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\Views\Purchase_Order\Caritas\RptItemRequestSupplierGivenTrace.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RptItemRequestSupplierGivenTrace.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\Views\Purchase_Order\Caritas\RptItemRequestSupplierUsedInDepart.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RptItemRequestSupplierUsedInDepart.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\Views\Purchase_Order\Caritas\UCCaritasRequestOrder.resx">
+      <DependentUpon>UCCaritasRequestOrder.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\Views\Purchase_Order\frmAddRequestOrder.resx">
+      <DependentUpon>frmAddRequestOrder.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\Views\Purchase_Order\frmCompareItemInStock.resx">
+      <DependentUpon>frmCompareItemInStock.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\Views\Purchase_Order\frmDepartResponseItem.resx">
+      <DependentUpon>frmDepartResponseItem.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\Views\Purchase_Order\frmMainStockResponseItem.resx">
+      <DependentUpon>frmMainStockResponseItem.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\Views\Purchase_Order\frmREDStatus.resx">
+      <DependentUpon>frmREDStatus.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\Views\Purchase_Order\frmRequestItemsDetail.resx">
+      <DependentUpon>frmRequestItemsDetail.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\Views\Purchase_Order\frmResponseRequestOrder.resx">
+      <DependentUpon>frmResponseRequestOrder.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\Views\Purchase_Order\POReports\CrHisRequest.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrHisRequest.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\Views\Purchase_Order\POReports\CRItemBalanceInHos.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CRItemBalanceInHos.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\Views\Purchase_Order\POReports\CrRequestOrder.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrRequestOrder.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\Views\Purchase_Order\POReports\frmHosItemBalance.resx">
+      <DependentUpon>frmHosItemBalance.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\Views\Purchase_Order\POReports\frmReportViewer.resx">
+      <DependentUpon>frmReportViewer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\Views\Purchase_Order\UCDepartReceivedRequest.resx">
+      <DependentUpon>UCDepartReceivedRequest.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\Views\Purchase_Order\UCReceivedRequest.resx">
+      <DependentUpon>UCReceivedRequest.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\Views\Purchase_Order\UCRequestOrder.resx">
+      <DependentUpon>UCRequestOrder.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\Views\Purchase_Order\UCRequestOrder_V1.resx">
+      <DependentUpon>UCRequestOrder_V1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\Views\Purchase_Order\UCRunEndOfDay.resx">
+      <DependentUpon>UCRunEndOfDay.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\Views\Purchase_Order\UIShowAllItemBalanceInDeppartment.resx">
+      <DependentUpon>UIShowAllItemBalanceInDeppartment.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\Views\Vendor\frmVender.resx">
+      <DependentUpon>frmVender.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\Views\Vendor\UCVendor.resx">
+      <DependentUpon>UCVendor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleInventory\Views\Vendor\UCVendor_V1.resx">
+      <DependentUpon>UCVendor_V1.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\licenses.licx" />
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -2772,6 +3938,28 @@
     <None Include="DS\PATIENT\DSPAtient.xss">
       <DependentUpon>DSPAtient.xsd</DependentUpon>
     </None>
+    <None Include="Forms\Doctor\DSDoctorFee.xsc">
+      <DependentUpon>DSDoctorFee.xsd</DependentUpon>
+    </None>
+    <None Include="Forms\Doctor\DSDoctorFee.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSDoctorFee.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Forms\Doctor\DSDoctorFee.xss">
+      <DependentUpon>DSDoctorFee.xsd</DependentUpon>
+    </None>
+    <None Include="Forms\HepatiteB\DSHepatiteB.xsc">
+      <DependentUpon>DSHepatiteB.xsd</DependentUpon>
+    </None>
+    <None Include="Forms\HepatiteB\DSHepatiteB.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSHepatiteB.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Forms\HepatiteB\DSHepatiteB.xss">
+      <DependentUpon>DSHepatiteB.xsd</DependentUpon>
+    </None>
     <None Include="Forms\Parameter\DS_Parameter.xsc">
       <DependentUpon>DS_Parameter.xsd</DependentUpon>
     </None>
@@ -2860,6 +4048,17 @@
     <None Include="Forms\version2\PatientIssueReceipt\DSInvoice.xss">
       <DependentUpon>DSInvoice.xsd</DependentUpon>
     </None>
+    <None Include="Forms\version2\PatientIssueReceipt\DSNewInventory.xsc">
+      <DependentUpon>DSNewInventory.xsd</DependentUpon>
+    </None>
+    <None Include="Forms\version2\PatientIssueReceipt\DSNewInventory.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSNewInventory1.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Forms\version2\PatientIssueReceipt\DSNewInventory.xss">
+      <DependentUpon>DSNewInventory.xsd</DependentUpon>
+    </None>
     <None Include="Forms\version2\PhysicalExamination\DSPhysicalExam.xsc">
       <DependentUpon>DSPhysicalExam.xsd</DependentUpon>
     </None>
@@ -2915,6 +4114,265 @@
     <None Include="Forms\version2\Stock\Reports\DSStoreReport.xss">
       <DependentUpon>DSStoreReport.xsd</DependentUpon>
     </None>
+    <None Include="ModuleInventory\DSInventoryClinic.xsc">
+      <DependentUpon>DSInventoryClinic.xsd</DependentUpon>
+    </None>
+    <None Include="ModuleInventory\DSInventoryClinic.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSInventoryClinic.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ModuleInventory\DSInventoryClinic.xss">
+      <DependentUpon>DSInventoryClinic.xsd</DependentUpon>
+    </None>
+    <None Include="ModuleInventory\Models\Cabinet\DSCabinet.xsc">
+      <DependentUpon>DSCabinet.xsd</DependentUpon>
+    </None>
+    <None Include="ModuleInventory\Models\Cabinet\DSCabinet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSCabinet1.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ModuleInventory\Models\Cabinet\DSCabinet.xss">
+      <DependentUpon>DSCabinet.xsd</DependentUpon>
+    </None>
+    <None Include="ModuleInventory\Models\Chemical\DSChemical.xsc">
+      <DependentUpon>DSChemical.xsd</DependentUpon>
+    </None>
+    <None Include="ModuleInventory\Models\Chemical\DSChemical.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSChemical.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ModuleInventory\Models\Chemical\DSChemical.xss">
+      <DependentUpon>DSChemical.xsd</DependentUpon>
+    </None>
+    <None Include="ModuleInventory\Models\Container\DSContainer.xsc">
+      <DependentUpon>DSContainer.xsd</DependentUpon>
+    </None>
+    <None Include="ModuleInventory\Models\Container\DSContainer.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSContainer.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ModuleInventory\Models\Container\DSContainer.xss">
+      <DependentUpon>DSContainer.xsd</DependentUpon>
+    </None>
+    <None Include="ModuleInventory\Models\Department\DSDepartment.xsc">
+      <DependentUpon>DSDepartment.xsd</DependentUpon>
+    </None>
+    <None Include="ModuleInventory\Models\Department\DSDepartment.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSDepartment1.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ModuleInventory\Models\Department\DSDepartment.xss">
+      <DependentUpon>DSDepartment.xsd</DependentUpon>
+    </None>
+    <None Include="ModuleInventory\Models\ItemUnit\DSItemUnit.xsc">
+      <DependentUpon>DSItemUnit.xsd</DependentUpon>
+    </None>
+    <None Include="ModuleInventory\Models\ItemUnit\DSItemUnit.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSItemUnit.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ModuleInventory\Models\ItemUnit\DSItemUnit.xss">
+      <DependentUpon>DSItemUnit.xsd</DependentUpon>
+    </None>
+    <None Include="ModuleInventory\Models\Item\DSCategoriesAndItems.xsc">
+      <DependentUpon>DSCategoriesAndItems.xsd</DependentUpon>
+    </None>
+    <None Include="ModuleInventory\Models\Item\DSCategoriesAndItems.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSCategoriesAndItems1.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ModuleInventory\Models\Item\DSCategoriesAndItems.xss">
+      <DependentUpon>DSCategoriesAndItems.xsd</DependentUpon>
+    </None>
+    <None Include="ModuleInventory\Models\LabourFactory\DSLabourFac.xsc">
+      <DependentUpon>DSLabourFac.xsd</DependentUpon>
+    </None>
+    <None Include="ModuleInventory\Models\LabourFactory\DSLabourFac.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSLabourFac.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ModuleInventory\Models\LabourFactory\DSLabourFac.xss">
+      <DependentUpon>DSLabourFac.xsd</DependentUpon>
+    </None>
+    <None Include="ModuleInventory\Models\PurchaseOrder\PurchaseOrder.xsc">
+      <DependentUpon>PurchaseOrder.xsd</DependentUpon>
+    </None>
+    <None Include="ModuleInventory\Models\PurchaseOrder\PurchaseOrder.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PurchaseOrder1.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ModuleInventory\Models\PurchaseOrder\PurchaseOrder.xss">
+      <DependentUpon>PurchaseOrder.xsd</DependentUpon>
+    </None>
+    <None Include="ModuleInventory\Models\RunEndOfDay\DSEndofDayRun.xsc">
+      <DependentUpon>DSEndofDayRun.xsd</DependentUpon>
+    </None>
+    <None Include="ModuleInventory\Models\RunEndOfDay\DSEndofDayRun.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSEndofDayRun.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ModuleInventory\Models\RunEndOfDay\DSEndofDayRun.xss">
+      <DependentUpon>DSEndofDayRun.xsd</DependentUpon>
+    </None>
+    <None Include="ModuleInventory\Models\TakeoHospitalInventory.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>TakeoHospitalInventory.designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ModuleInventory\Models\Vendor\DSVendors.xsc">
+      <DependentUpon>DSVendors.xsd</DependentUpon>
+    </None>
+    <None Include="ModuleInventory\Models\Vendor\DSVendors.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSVendors1.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ModuleInventory\Models\Vendor\DSVendors.xss">
+      <DependentUpon>DSVendors.xsd</DependentUpon>
+    </None>
+    <None Include="ModuleInventory\Views\Bardcode\DSBarCode.xsc">
+      <DependentUpon>DSBarCode.xsd</DependentUpon>
+    </None>
+    <None Include="ModuleInventory\Views\Bardcode\DSBarCode.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSBarCode.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ModuleInventory\Views\Bardcode\DSBarCode.xss">
+      <DependentUpon>DSBarCode.xsd</DependentUpon>
+    </None>
+    <None Include="ModuleInventory\Views\Cabinet\DSLocationItemDetail.xsc">
+      <DependentUpon>DSLocationItemDetail.xsd</DependentUpon>
+    </None>
+    <None Include="ModuleInventory\Views\Cabinet\DSLocationItemDetail.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSLocationItemDetail1.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ModuleInventory\Views\Cabinet\DSLocationItemDetail.xss">
+      <DependentUpon>DSLocationItemDetail.xsd</DependentUpon>
+    </None>
+    <None Include="ModuleInventory\Views\Department\DepartmentStock\DSDepartmentStock.xsc">
+      <DependentUpon>DSDepartmentStock.xsd</DependentUpon>
+    </None>
+    <None Include="ModuleInventory\Views\Department\DepartmentStock\DSDepartmentStock.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSDepartmentStock1.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ModuleInventory\Views\Department\DepartmentStock\DSDepartmentStock.xss">
+      <DependentUpon>DSDepartmentStock.xsd</DependentUpon>
+    </None>
+    <None Include="ModuleInventory\Views\Department\DepartmentStock\DSInhouseUsedItem.xsc">
+      <DependentUpon>DSInhouseUsedItem.xsd</DependentUpon>
+    </None>
+    <None Include="ModuleInventory\Views\Department\DepartmentStock\DSInhouseUsedItem.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSInhouseUsedItem.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ModuleInventory\Views\Department\DepartmentStock\DSInhouseUsedItem.xss">
+      <DependentUpon>DSInhouseUsedItem.xsd</DependentUpon>
+    </None>
+    <None Include="ModuleInventory\Views\Department\Users\DataClassesUserManagment.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DataClassesUserManagment.designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ModuleInventory\Views\Department\Users\DSUserManagement.xsc">
+      <DependentUpon>DSUserManagement.xsd</DependentUpon>
+    </None>
+    <None Include="ModuleInventory\Views\Department\Users\DSUserManagement.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSUserManagement1.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ModuleInventory\Views\Department\Users\DSUserManagement.xss">
+      <DependentUpon>DSUserManagement.xsd</DependentUpon>
+    </None>
+    <None Include="ModuleInventory\Views\Item\DSItemPrice.xsc">
+      <DependentUpon>DSItemPrice.xsd</DependentUpon>
+    </None>
+    <None Include="ModuleInventory\Views\Item\DSItemPrice.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSItemPrice1.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ModuleInventory\Views\Item\DSItemPrice.xss">
+      <DependentUpon>DSItemPrice.xsd</DependentUpon>
+    </None>
+    <None Include="ModuleInventory\Views\Item\Fixasset\DS_FIXASSET.xsc">
+      <DependentUpon>DS_FIXASSET.xsd</DependentUpon>
+    </None>
+    <None Include="ModuleInventory\Views\Item\Fixasset\DS_FIXASSET.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_FIXASSET1.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ModuleInventory\Views\Item\Fixasset\DS_FIXASSET.xss">
+      <DependentUpon>DS_FIXASSET.xsd</DependentUpon>
+    </None>
+    <None Include="ModuleInventory\Views\Purchase_Order\Caritas\DSHospitalRequestToCaritas.xsc">
+      <DependentUpon>DSHospitalRequestToCaritas.xsd</DependentUpon>
+    </None>
+    <None Include="ModuleInventory\Views\Purchase_Order\Caritas\DSHospitalRequestToCaritas.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ModuleInventory\Views\Purchase_Order\Caritas\DSHospitalRequestToCaritas.xss">
+      <DependentUpon>DSHospitalRequestToCaritas.xsd</DependentUpon>
+    </None>
+    <None Include="ModuleInventory\Views\Purchase_Order\DSEOD.xsc">
+      <DependentUpon>DSEOD.xsd</DependentUpon>
+    </None>
+    <None Include="ModuleInventory\Views\Purchase_Order\DSEOD.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSEOD1.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ModuleInventory\Views\Purchase_Order\DSEOD.xss">
+      <DependentUpon>DSEOD.xsd</DependentUpon>
+    </None>
+    <None Include="ModuleInventory\Views\Purchase_Order\DSRequest.xsc">
+      <DependentUpon>DSRequest.xsd</DependentUpon>
+    </None>
+    <None Include="ModuleInventory\Views\Purchase_Order\DSRequest.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSRequest.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ModuleInventory\Views\Purchase_Order\DSRequest.xss">
+      <DependentUpon>DSRequest.xsd</DependentUpon>
+    </None>
+    <None Include="ModuleInventory\Views\Purchase_Order\DSRptRequestHistoryStatusTrace.xsc">
+      <DependentUpon>DSRptRequestHistoryStatusTrace.xsd</DependentUpon>
+    </None>
+    <None Include="ModuleInventory\Views\Purchase_Order\DSRptRequestHistoryStatusTrace.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSRptRequestHistoryStatusTrace1.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ModuleInventory\Views\Purchase_Order\DSRptRequestHistoryStatusTrace.xss">
+      <DependentUpon>DSRptRequestHistoryStatusTrace.xsd</DependentUpon>
+    </None>
+    <None Include="ModuleInventory\Views\ServerEviroment\DSServerEnviroment.xsc">
+      <DependentUpon>DSServerEnviroment.xsd</DependentUpon>
+    </None>
+    <None Include="ModuleInventory\Views\ServerEviroment\DSServerEnviroment.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ModuleInventory\Views\ServerEviroment\DSServerEnviroment.xss">
+      <DependentUpon>DSServerEnviroment.xsd</DependentUpon>
+    </None>
     <None Include="Resources\1349422462_analytics_64.png" />
     <None Include="Resources\1349422790_microscope.png" />
     <None Include="Resources\1349422899_clipboard.png" />
@@ -2945,6 +4403,7 @@
     <Content Include="bin\Debug\Janus.Windows.UI.v3.xml" />
     <None Include="Resources\1413013384_open-file.png" />
     <None Include="Resources\1342235152_navigation-down-button_basic_blue.png" />
+    <Content Include="ModuleInventory\Models\SubCategory\aa.txt" />
     <Content Include="Resources\gme3.jpg" />
     <Content Include="Resources\HEALTH-CLINIC-5.jpg" />
     <Content Include="Resources\HEALTH-CLINIC-51.jpg" />
@@ -2976,7 +4435,6 @@
     <Folder Include="Forms\version2\Appoinment\" />
     <Folder Include="Forms\version2\Prescription\" />
     <Folder Include="Forms\version2\Symptom\" />
-    <Folder Include="Modules\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

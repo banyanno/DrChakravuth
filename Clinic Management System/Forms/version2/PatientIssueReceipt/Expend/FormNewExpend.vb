@@ -1,5 +1,6 @@
 ﻿Public Class FormNewExpend
     Dim DA_Invoice As New DSInvoiceTableAdapters.tbl_invoiceTableAdapter
+    Dim DA_Expend As New DSMedicalReceiveTableAdapters.tbl_invoiceTableAdapter
     Private Sub BtnSave_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnSave.Click
         If ValidateTextField(TxtExpendNo, "", ErrExpend) = False Then Exit Sub
         If ValidateDateField(DateExpend, "", ErrExpend) = False Then Exit Sub
@@ -7,10 +8,9 @@
         If ValidateTextField(TxtExpendNote, "", ErrExpend) = False Then Exit Sub
         If LblSaveOption.Text = "0" Then
             If MessageBox.Show("Do you want to save new your expend?", "Save", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
-                If DA_Invoice.InsertInvoice(TxtExpendNo.Text, FormatDateTime(DateExpend.Value.Date, DateFormat.ShortDate), 0, 0, 0, 0, 0, 0, USER_NAME, 0, TxtTotalExpend.Text, TxtExpendNote.Text, 0, 0, 0, 0, 0, 0) = 1 Then
+                If DA_Expend.InsertExpendMedicine(DateExpend.Value.Date, TxtExpendNote.Text, 1111111111, TxtTotalExpend.Text, TxtExpendNo.Text, False) = 1 Then
                     Me.DialogResult = Windows.Forms.DialogResult.OK
                 End If
-
             End If
         Else
             If MessageBox.Show("Do you want to update your expend?", "Save", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then

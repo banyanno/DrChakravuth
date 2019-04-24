@@ -6,6 +6,7 @@ Imports System.Threading
 Public Class frmLoginChackTravoth
     Dim MainChackTravoth As main
     Dim DA_User_Login As New DSUserManagermentTableAdapters.V_USER_IN_DEPTableAdapter
+    Dim DAParams_Inven As New DSDepartmentTableAdapters.PARAMS_INVENTableAdapter
     Private Sub BtnOk_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnOk.Click
 
         If Me.txtUserName.Text.Trim.ToUpper = "" Then
@@ -40,6 +41,32 @@ Public Class frmLoginChackTravoth
     Dim MsgLogin As Integer
     Private Sub BgLogin_DoWork(ByVal sender As System.Object, ByVal e As System.ComponentModel.DoWorkEventArgs) Handles BgLogin.DoWork
         MsgLogin = CheckUseAndPwd(txtUserName.Text, txtPassword.Text)
+    End Sub
+    Sub IntialPARAMS_INVEN()
+
+        Dim PARAM_INVEN As DataTable = DAParams_Inven.GetData
+        '--- Query all parameters
+        For Each row As DataRow In PARAM_INVEN.Rows
+            Select Case row("ParamName")
+                Case "MAIN_STOCK_DEPART_ID"
+                    MAIN_STOCK_DEPART_ID = row("Value")
+                Case "PHARMACY_DEPART_ID"
+                    PHARMACY_DEPART_ID = row("Value")
+                Case "OPTICALSHOP_DEPART_ID"
+                    OPTICALSHOP_DEPART_ID = row("Value")
+                Case "OPEN"
+                    OPEN = row("Value")
+                Case "SENT"
+                    SENT = row("Value")
+                Case "RESPONSE"
+                    RESPONSE = row("Value")
+                Case "RECEIVED"
+                    RECEIVED = row("Value")
+                Case "APPROVED"
+                    APPROVED = row("Value")
+            End Select
+        Next
+
     End Sub
     Function CheckUseAndPwd(ByVal UserName As String, ByVal Pwd As String) As Integer
         ' Try
@@ -107,10 +134,10 @@ Public Class frmLoginChackTravoth
         If MsgLogin = 0 Then   'Successfully login
 
             '--- Initial inventory parameters
-
+            IntialPARAMS_INVEN()
 
             Dim StrWelcome As String = ""
-            UserGlobleVariable.USER_NAME = Me.txtUserName.Text.ToUpper.Trim
+            USER_NAME = Me.txtUserName.Text.ToUpper.Trim
             UserGlobleVariable.USER_PWD = Me.txtPassword.Text.ToUpper.Trim
             Me.UpdateLabelStatus("Log in successful.", True)
             Application.DoEvents()

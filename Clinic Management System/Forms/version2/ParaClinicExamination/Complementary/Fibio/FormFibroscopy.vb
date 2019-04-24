@@ -63,10 +63,10 @@
     End Sub
     Sub LoadFibroData()
         Try
-            If DA_Fibro.SelectFibroByRequestID(CLng(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value)).Rows.Count >= 1 Then
+            If DA_Fibro.SelectFibroByRequestID(CLng(Me.RequestPanel.gridRequestList.CurrentRow.Cells("request_id").Value)).Rows.Count >= 1 Then
                 ''Get Fibro
                 Dim FibroTable As New DataTable
-                FibroTable = DA_Fibro.SelectFibroByRequestID(CInt(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value))
+                FibroTable = DA_Fibro.SelectFibroByRequestID(CInt(Me.RequestPanel.gridRequestList.CurrentRow.Cells("request_id").Value))
                 Me.cboFibroDemander.SelectedValue = FibroTable.Rows(0).Item("demander")
                 Me.txtFibroTolerance.Text = FibroTable.Rows(0).Item("tolerance")
                 Me.chkFibroAnesthegiste.Checked = FibroTable.Rows(0).Item("is_anesthegiste")
@@ -92,23 +92,23 @@
                 Me.txtfibromoreinfo.Text = FibroTable.Rows(0).Item("more_info")
 
                 ''Load Conclusion Data
-                Me.conclusionlist.DataSource = DA_FibroConclusion.SelectConclusionByRequestID(CInt(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value))
+                Me.conclusionlist.DataSource = DA_FibroConclusion.SelectConclusionByRequestID(CInt(Me.RequestPanel.gridRequestList.CurrentRow.Cells("request_id").Value))
 
             End If
         Catch ex As Exception
 
         End Try
-        
+
     End Sub
     Sub RefreshConclusionList()
-        Me.conclusionlist.DataSource = DA_FibroConclusion.SelectConclusionByRequestID(CInt(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value))
+        Me.conclusionlist.DataSource = DA_FibroConclusion.SelectConclusionByRequestID(CInt(Me.RequestPanel.gridRequestList.CurrentRow.Cells("request_id").Value))
     End Sub
 
     Private Sub BtnAddConclusion_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnAddConclusion.Click
-        If DA_FibroConclusion.SelectConclusion(CInt(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value), CInt(Me.cboFibroConclusion.SelectedValue)).Rows.Count > 0 Then
+        If DA_FibroConclusion.SelectConclusion(CInt(Me.RequestPanel.gridRequestList.CurrentRow.Cells("request_id").Value), CInt(Me.cboFibroConclusion.SelectedValue)).Rows.Count > 0 Then
             MsgBox("The conclusion was added already", MsgBoxStyle.OkOnly, "Existing Conclusion")
         Else
-            DA_FibroConclusion.Insert(CInt(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value), CInt(Me.cboFibroConclusion.SelectedValue))
+            DA_FibroConclusion.Insert(CInt(Me.RequestPanel.gridRequestList.CurrentRow.Cells("request_id").Value), CInt(Me.cboFibroConclusion.SelectedValue))
             RefreshConclusionList()
             cboFibroConclusion.SelectedIndex = -1
         End If
@@ -126,7 +126,7 @@
             DA_FibroConclusion.DeleteConclusion(CInt(Me.conclusionlist.CurrentRow.Cells("request_id").Value), CInt(Me.conclusionlist.CurrentRow.Cells("conclusion_id").Value))
             RefreshConclusionList()
         End If
-   
+
     End Sub
 
     Private Sub BtnSave_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnSave.Click
@@ -139,22 +139,22 @@
             FibroAnes = Me.cboFibroAnesthegiste.SelectedValue '.ToString.Replace("'", "''")
         End If
         If MessageBox.Show("Do you want save Fibro scopy?", "Fibro", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
-            If DA_Fibro.SelectFibroByRequestID(CLng(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value)).Rows.Count >= 1 Then
+            If DA_Fibro.SelectFibroByRequestID(CLng(Me.RequestPanel.gridRequestList.CurrentRow.Cells("request_id").Value)).Rows.Count >= 1 Then
                 '' Update
-                If DA_Fibro.UpdateFibroByRequestID(Me.cboFibroDemander.SelectedValue.ToString, Me.txtFibroTolerance.Text, chkFibroAnesthegiste.Checked, FibroAnes, Me.cboFibroMotify.SelectedValue.ToString, Me.txtFibroOeso.Text, Me.txtFibroEsto.Text, Me.txtFibroLac.Text, Me.txtFibroGrosse.Text, Me.txtFibroD1.Text, Me.txtFibroPylore.Text, Me.txtFibroFundus.Text, Me.txtFibroAntre.Text, Me.txtFibroBulbe.Text, IIf(ChAnaPath.Checked, ChAnaPath.Text, ""), Me.cboFibroDocteur.Text, Me.txtfibromoreinfo.Text.ToString, DateResultExam.Value.Date, CInt(cboFibroDocteur.SelectedValue), GetValueConclustion, CLng(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value)) = 1 Then
+                If DA_Fibro.UpdateFibroByRequestID(Me.cboFibroDemander.SelectedValue.ToString, Me.txtFibroTolerance.Text, chkFibroAnesthegiste.Checked, FibroAnes, Me.cboFibroMotify.SelectedValue.ToString, Me.txtFibroOeso.Text, Me.txtFibroEsto.Text, Me.txtFibroLac.Text, Me.txtFibroGrosse.Text, Me.txtFibroD1.Text, Me.txtFibroPylore.Text, Me.txtFibroFundus.Text, Me.txtFibroAntre.Text, Me.txtFibroBulbe.Text, IIf(ChAnaPath.Checked, ChAnaPath.Text, ""), Me.cboFibroDocteur.Text, Me.txtfibromoreinfo.Text.ToString, DateResultExam.Value.Date, CInt(cboFibroDocteur.SelectedValue), GetValueConclustion, CLng(Me.RequestPanel.gridRequestList.CurrentRow.Cells("request_id").Value)) = 1 Then
                     MsgBox("The fibroscopy has been saved successfully", MsgBoxStyle.OkOnly, "Saved Fibroscopy")
                     Me.DialogResult = Windows.Forms.DialogResult.OK
                 End If
             Else
                 '' Add New
-                If DA_Fibro.InsertFibro(CLng(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value), CLng(LblPatientNo.Text), Me.cboFibroDemander.SelectedValue.ToString, Me.txtFibroTolerance.Text, chkFibroAnesthegiste.Checked, FibroAnes, Me.cboFibroMotify.SelectedValue.ToString, Me.txtFibroOeso.Text, Me.txtFibroEsto.Text, Me.txtFibroLac.Text, Me.txtFibroGrosse.Text, Me.txtFibroD1.Text, Me.txtFibroPylore.Text, Me.txtFibroFundus.Text, Me.txtFibroAntre.Text, Me.txtFibroBulbe.Text, IIf(ChAnaPath.Checked, ChAnaPath.Text, ""), Me.cboFibroDocteur.Text, Me.txtfibromoreinfo.Text.ToString, DateResultExam.Value.Date, CInt(cboFibroDocteur.SelectedValue), GetValueConclustion) = 1 Then
+                If DA_Fibro.InsertFibro(CLng(Me.RequestPanel.gridRequestList.CurrentRow.Cells("request_id").Value), CLng(LblPatientNo.Text), Me.cboFibroDemander.SelectedValue.ToString, Me.txtFibroTolerance.Text, chkFibroAnesthegiste.Checked, FibroAnes, Me.cboFibroMotify.SelectedValue.ToString, Me.txtFibroOeso.Text, Me.txtFibroEsto.Text, Me.txtFibroLac.Text, Me.txtFibroGrosse.Text, Me.txtFibroD1.Text, Me.txtFibroPylore.Text, Me.txtFibroFundus.Text, Me.txtFibroAntre.Text, Me.txtFibroBulbe.Text, IIf(ChAnaPath.Checked, ChAnaPath.Text, ""), Me.cboFibroDocteur.Text, Me.txtfibromoreinfo.Text.ToString, DateResultExam.Value.Date, CInt(cboFibroDocteur.SelectedValue), GetValueConclustion) = 1 Then
                     MsgBox("A fibroscopy has been saved successfully", MsgBoxStyle.OkOnly, "Saved Fibroscopy")
                     DA_DOCTOR_FEE.InsertNewDoctorFee(CInt(cboFibroDocteur.SelectedValue), cboFibroDocteur.Text, "Fibroscopy", DateResultExam.Value.Date, LblPatientNo.Text, 0, lblPatientName.Text, GetValueConclustion)
                     Me.DialogResult = Windows.Forms.DialogResult.OK
                 End If
             End If
         End If
-        
+
     End Sub
 
     Private Sub chkFibroAnesthegiste_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chkFibroAnesthegiste.CheckedChanged
@@ -166,8 +166,8 @@
     End Sub
 
     Private Sub BtnCancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnCancel.Click
-        If DA_Fibro.SelectFibroByRequestID(CLng(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value)).Rows.Count <= 0 Then
-            DA_FibroConclusion.DeleteConclusionByRequestID(CLng(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value))
+        If DA_Fibro.SelectFibroByRequestID(CLng(Me.RequestPanel.gridRequestList.CurrentRow.Cells("request_id").Value)).Rows.Count <= 0 Then
+            DA_FibroConclusion.DeleteConclusionByRequestID(CLng(Me.RequestPanel.gridRequestList.CurrentRow.Cells("request_id").Value))
         End If
         Me.Close()
     End Sub

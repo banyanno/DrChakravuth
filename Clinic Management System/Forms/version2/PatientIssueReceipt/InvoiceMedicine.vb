@@ -125,41 +125,42 @@
                 Me.txtorderqty.SelectAll()
                 Me.txtorderqty.Focus()
                 Exit Sub
-                'Else
-                '    Dim ToMain As Double
-                '    Dim CurMain As Integer
-                '    Dim MainStoreTable As New DataTable
-                '    MainStoreTable = DA_Store.SelectByMedicineIDAndUnitType(CInt(Me.cbomedicine.SelectedValue), "Main unit")
-                '    Dim OrderQty As Integer = CInt(Me.txtorderqty.Text)
-                '    Dim RatioQty As Integer = CInt(StoreTable.Rows(0).Item("ratioqty").ToString)
-                '    If OrderQty Mod RatioQty > 0 Then
-                '        ToMain = (OrderQty \ RatioQty) + 1
-                '    Else
-                '        ToMain = OrderQty / RatioQty
-                '    End If
+            Else
+                Dim ToMain As Double
+                Dim CurMain As Double
+                Dim MainStoreTable As New DataTable
+                MainStoreTable = DA_Store.SelectByMedicineIDAndUnitType(CInt(Me.cbomedicine.SelectedValue), "Main unit")
+                Dim OrderQty As Integer = CInt(Me.txtorderqty.Text)
+                Dim RatioQty As Integer = CInt(StoreTable.Rows(0).Item("ratioqty").ToString)
+                If OrderQty Mod RatioQty > 0 Then
+                    ToMain = (OrderQty \ RatioQty) + 1
+                Else
+                    ToMain = OrderQty / RatioQty
+                End If
+                'MsgBox(MainStoreTable.Rows(0).Item("qty"))
 
-                '    CurMain = CInt(MainStoreTable.Rows(0).Item("qty").ToString)
-                '    If ToMain > CurMain Then
-                '        MsgBox("Insufficent quantity ", MsgBoxStyle.Exclamation, "Insufficent Quantity")
-                '        Exit Sub
-                '    Else
-                '        Dim LastMainQty As Integer
-                '        Dim LastSubQty As Integer
-                '        LastMainQty = CurMain - ToMain
-                '        LastSubQty = CInt(Me.txtcurrentqty.Text) + RatioQty * ToMain
-                '        'UPDATE Store
-                '        DA_Store.UpdateQuantity(LastMainQty, CInt(MainStoreTable.Rows(0).Item("store_id").ToString))
-                '        DA_Store.UpdateQuantity(LastSubQty, CInt(StoreTable.Rows(0).Item("store_id").ToString))
-                '        'Record Transfer
-                '        DA_Transfer.InsertTransfer(CInt(MainStoreTable.Rows(0).Item("store_id").ToString), CInt(StoreTable.Rows(0).Item("store_id").ToString), CInt(Me.cbomedicine.SelectedValue), FormatDateTime(Now, DateFormat.ShortDate), ToMain)
-                '        'Record Transaction
-                '        DA_Transaction.InsertTransaction(CInt(MainStoreTable.Rows(0).Item("store_id").ToString), 1, FormatDateTime(Now, DateFormat.ShortDate), CInt(MainStoreTable.Rows(0).Item("qty").ToString), ToMain * -1, LastMainQty)
-                '        DA_Transaction.InsertTransaction(CInt(StoreTable.Rows(0).Item("store_id").ToString), 2, FormatDateTime(Now, DateFormat.ShortDate), CInt(Me.txtcurrentqty.Text), RatioQty * ToMain, LastSubQty)
-                '    End If
+                CurMain = CDbl(MainStoreTable.Rows(0).Item("qty").ToString)
+                If ToMain > CurMain Then
+                    MsgBox("Insufficent quantity ", MsgBoxStyle.Exclamation, "Insufficent Quantity")
+                    Exit Sub
+                Else
+                    Dim LastMainQty As Double
+                    Dim LastSubQty As Double
+                    LastMainQty = CurMain - ToMain
+                    LastSubQty = CDbl(Me.txtcurrentqty.Text) + (RatioQty * ToMain)
+                    'UPDATE Store
+                    DA_Store.UpdateQuantity(LastMainQty, CInt(MainStoreTable.Rows(0).Item("store_id").ToString))
+                    DA_Store.UpdateQuantity(LastSubQty, CInt(StoreTable.Rows(0).Item("store_id").ToString))
+                    'Record Transfer
+                    DA_Transfer.InsertTransfer(CInt(MainStoreTable.Rows(0).Item("store_id").ToString), CInt(StoreTable.Rows(0).Item("store_id").ToString), CInt(Me.cbomedicine.SelectedValue), FormatDateTime(Now, DateFormat.ShortDate), ToMain)
+                    'Record Transaction
+                    DA_Transaction.InsertTransaction(CInt(MainStoreTable.Rows(0).Item("store_id").ToString), 1, FormatDateTime(Now, DateFormat.ShortDate), CInt(MainStoreTable.Rows(0).Item("qty").ToString), ToMain * -1, LastMainQty)
+                    DA_Transaction.InsertTransaction(CInt(StoreTable.Rows(0).Item("store_id").ToString), 2, FormatDateTime(Now, DateFormat.ShortDate), CInt(Me.txtcurrentqty.Text), RatioQty * ToMain, LastSubQty)
+                End If
             End If
 
             UnitPrice = CDbl(StoreTable.Rows(0).Item("last_price"))
-            DA_OrderMedicine.InsertMedicine(CLng(Me.Invoice.InvoiceList.CurrentRow.Cells("patientno").Value), CInt(Me.cbomedicine.SelectedValue), Me.CboUnit.SelectedValue.ToString, CInt(Me.txtorderqty.Text), UnitPrice)
+            'DA_OrderMedicine.InsertMedicine(CLng(Me.Invoice.InvoiceList.CurrentRow.Cells("patientno").Value), CInt(Me.cbomedicine.SelectedValue), Me.CboUnit.SelectedValue.ToString, CInt(Me.txtorderqty.Text), UnitPrice)
             'MsgBox("One medicine order was added", MsgBoxStyle.Information, "Successfully Added")
             Me.txtorderqty.Text = ""
             Me.cbomedicine.SelectedIndex = -1

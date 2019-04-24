@@ -34,9 +34,10 @@ Public Class EditConsultation
     Private VALUE_LOADING_DATA As Integer
     Dim ConsultList As ConsultationList
     Dim HistoryConsult As UPatientMedicalReport
-
-    Dim patientid As Integer
-    Dim prescriptionid As Integer
+    Dim DAItem As New DSPAtientTableAdapters.tblItemTableAdapter
+    Dim PpatientidAuto As Long
+    Dim PatientNo As Long
+    Dim prescriptionid As Long
 
 
     Sub New(ByVal Consult As ConsultationList)
@@ -44,7 +45,8 @@ Public Class EditConsultation
         ' This call is required by the Windows Form Designer.
         InitializeComponent()
         Me.ConsultList = Consult
-        patientid = CLng(ConsultList.Prescription_List.CurrentRow.Cells("patientid").Value)
+        PatientNo = CLng(ConsultList.Prescription_List.CurrentRow.Cells("patientid").Value)
+        PpatientidAuto = CLng(ConsultList.Prescription_List.CurrentRow.Cells("ppatientid").Value)
         prescriptionid = CLng(ConsultList.Prescription_List.CurrentRow.Cells("prescriptionid").Value)
         ' Add any initialization after the InitializeComponent() call.
 
@@ -54,7 +56,8 @@ Public Class EditConsultation
         ' This call is required by the Windows Form Designer.
         InitializeComponent()
         Me.HistoryConsult = HistoryConsult
-        patientid = CInt(HistoryConsult.GridPatientConsult.GetRow.Cells("patientid").Value)
+        PatientNo = CLng(HistoryConsult.GridPatientConsult.CurrentRow.Cells("patientid").Value)
+        PpatientidAuto = CLng(HistoryConsult.GridPatientConsult.CurrentRow.Cells("ppatientid").Value)
         prescriptionid = CInt(HistoryConsult.GridPatientConsult.GetRow.Cells("prescriptionid").Value)
 
         lblPrintPrescription.Text = CInt(HistoryConsult.GridPatientConsult.GetRow.Cells("prescriptionid").Value)
@@ -89,7 +92,7 @@ Public Class EditConsultation
 
                 Dim ConsultPrice As Double = DA_ConsultType.SelectConsultByID(CInt(Me.cboconsulttype.SelectedValue)).Rows(0).Item("price")
                 'Update Table Presription (Primary Table)
-                DA_Prescription.UpdatePrescription(patientid, CInt(lblUserID.Text), Me.cbodiagnosis.Text, cboconsulttype.Text, ConsultPrice, Me.txtremark.Text, prescriptionid)
+                DA_Prescription.UpdatePrescription(PpatientidAuto, CInt(lblUserID.Text), Me.cbodiagnosis.Text, cboconsulttype.Text, ConsultPrice, Me.txtremark.Text, prescriptionid)
 
 
                 '-------Update Complaint --------
@@ -116,15 +119,15 @@ Public Class EditConsultation
                 ' Print Ordinance
                 Dim RptOrdinance As New RptOrdinance
                 Dim OrdinanceViewer As New FormReportViewer
-                Dim RptPatientTable As New DataTable
-                RptPatientTable = DA_Patient.GetDataByPatientUse(patientid)
-                RptPatientTable = DA_Patient.GetDataByPatientUse(patientid)
+                Dim PatientInfo As New DataTable
+                PatientInfo = DA_Patient.GetDataByPatientUse(PatientNo)
+                'RptPatientTable = DA_Patient.GetDataByPatientUse(PpatientidAuto)
                 If Me.PrescriptionList.RowCount > 0 Then
                     Dim RptOrdinanceTable As New DataTable
                     Dim DA_Ordinance As New DS_InvoiceTableAdapters.tblPrescriptionTableAdapter
                     RptOrdinanceTable = DA_Ordinance.SelectPrescriptionByID(prescriptionid)
                     RptOrdinance.Database.Tables("tblPrescription").SetDataSource(RptOrdinanceTable)
-                    RptOrdinance.Database.Tables("tblpatient").SetDataSource(RptPatientTable)
+                    RptOrdinance.Database.Tables("tblpatient").SetDataSource(PatientInfo)
                     RptOrdinance.SetParameterValue("Doctor", Me.txtDoctor.Text)
                     RptOrdinance.SetParameterValue("Diagnosis", Me.cbodiagnosis.Text)
                     RptOrdinance.SetParameterValue("DatePrescription", Format(Me.dtprescription.Value, "dd-MMM-yyyy"))
@@ -185,9 +188,9 @@ Public Class EditConsultation
         ' If ConsultList.Prescription_List.SelectedItems.Count = 0 Then Exit Sub
 
         Dim PatientTable As New DataTable
-        PatientTable = DA_Patient.GetDataByPatientUse(patientid)
+        PatientTable = DA_Patient.GetDataByPatientUse(PatientNo)
         'TxtPatientNoV1.Text = PatientTable.Rows(0).Item("ppatientid").ToString
-        Me.txtno.Text = PatientTable.Rows(0).Item("patientid").ToString
+        Me.TxtPatientNo.Text = PatientTable.Rows(0).Item("patientid").ToString
         Me.txtname.Text = PatientTable.Rows(0).Item("pname").ToString
         Me.txtsex.Text = PatientTable.Rows(0).Item("pgender").ToString
 
@@ -210,11 +213,17 @@ Public Class EditConsultation
         txtDoctor.Text = SHOW_NAME
         lblUserID.Text = USER_ID
         ''Load Medicine
-        Dim MedicineList As DataTable = DA_Medicine.SelectMedicine
-        Me.cbomedicine.DataSource = DA_Medicine.SelectMedicine
-        Me.cbomedicine.DisplayMember = MedicineList.Columns("medicinename").ColumnName
-        Me.cbomedicine.ValueMember = MedicineList.Columns("medicineid").ColumnName
-        Me.cbomedicine.SelectedIndex = -1
+        'Dim MedicineList As DataTable = DA_Medicine.SelectMedicine
+        'Me.cbomedicine.DataSource = DA_Medicine.SelectMedicine
+        'Me.cbomedicine.DisplayMember = MedicineList.Columns("medicinename").ColumnName
+        'Me.cbomedicine.ValueMember = MedicineList.Columns("medicineid").ColumnName
+        'Me.cbomedicine.SelectedIndex = -1
+        With cbomedicine
+            .DataSource = DAItem.GetData
+            .ValueMember = "ItemID"
+            .DisplayMember = "ItemName"
+            .SelectedIndex = -1
+        End With
         '=================================== Loading Complian
         With CboComplaint
             .DataSource = DA_Complaint.GetData
@@ -289,7 +298,7 @@ Public Class EditConsultation
 
 
     Private Sub BtnRemovePrescription_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnRemovePrescription.Click
-        Dim PPatientID As Long = CLng(patientid)
+        Dim PPatientID As Long = CLng(PpatientidAuto)
         Dim PrescriptionID As Long = CLng(PrescriptionID)
         DA_PrescriptionDetail.DeletePrescription(CLng(Me.PrescriptionList.CurrentRow.Cells("prescriptiondetailid").Value))
         RefreshPrescriptionList()
@@ -297,7 +306,7 @@ Public Class EditConsultation
 
     Private Sub BtnParaExamHistory_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnParaExamHistory.Click
         Dim FParaExam As New FormParaExamHistory
-        FParaExam.LoadPatientInfo(Me.txtno.Text)
+        FParaExam.LoadPatientInfo(Me.TxtPatientNo.Text)
         FParaExam.ShowDialog()
     End Sub
 

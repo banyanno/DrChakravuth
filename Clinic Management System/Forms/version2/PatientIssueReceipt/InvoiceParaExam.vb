@@ -19,8 +19,7 @@
         LoadPara()
     End Sub
     Sub LoadPara()
-        Dim ParaList As New DataTable
-        ParaList = DA_Para.SelectPara
+        Dim ParaList As DataTable = DA_Para.SelectPara
         Me.cboexamination.DataSource = ParaList
         Me.cboexamination.DisplayMember = ParaList.Columns("paracheck").ColumnName
         Me.cboexamination.ValueMember = ParaList.Columns("paracheckid").ColumnName
@@ -29,10 +28,12 @@
     Private Sub BtnSave_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnSave.Click
         Try
             Dim ServiceCharge As Double
+            Dim ParaType As String
             Dim ParaTable As New DataTable
             ParaTable = DA_Para.SelectParaByID(CInt(Me.cboexamination.SelectedValue.ToString))
             ServiceCharge = CDbl(ParaTable.Rows(0).Item("servicecharge").ToString)
-            DA_PrePara.InsertParaExam(CLng(Me.Invoice.InvoiceList.GetRow.Cells("patientno").Value), CInt(Me.cboexamination.SelectedValue), ServiceCharge)
+            ParaType = ParaTable.Rows(0).Item("ParaType").ToString
+            DA_PrePara.InsertParaExam(CLng(Me.Invoice.InvoiceList.GetRow.Cells("patientno").Value), CInt(Me.cboexamination.SelectedValue), ServiceCharge, ParaType)
             RefreshPara()
             cboexamination.Text = ""
             cboexamination.SelectedIndex = -1
@@ -53,4 +54,6 @@
 
    
    
+ 
+
 End Class

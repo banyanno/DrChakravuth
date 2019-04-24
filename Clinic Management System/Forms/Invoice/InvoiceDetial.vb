@@ -33,7 +33,7 @@
 
             'Dim Viewer As New FormReportViewer
             Dim DA_Invoice As New DSInvoiceTableAdapters.V_ReceiptDetailTableAdapter
-            Dim InvoiceTable As DataTable = DA_Invoice.GetData(InvoiceID)
+            Dim InvoiceTable As DataTable = DA_Invoice.SelectByRECEIPT_NO(InvoiceID)
             'Set Datasourse of Report Tables
             ReportInvoice.SetDataSource(InvoiceTable)
             ReportInvoiceEng.SetDataSource(InvoiceTable)
@@ -80,7 +80,7 @@
         UpdateExpend.LblSaveOption.Text = GridExpend.GetRow.Cells("invoice_id").Value
         UpdateExpend.DateExpend.Checked = True
         UpdateExpend.DateExpend.Value = GridExpend.GetRow.Cells("invoice_date").Value
-        UpdateExpend.TxtExpendNo.Text = GridExpend.GetRow.Cells("patientid").Value
+        UpdateExpend.TxtExpendNo.Text = GridExpend.GetRow.Cells("Expen_No").Value
         UpdateExpend.TxtTotalExpend.Text = GridExpend.GetRow.Cells("Expend").Value
         UpdateExpend.TxtExpendNote.Text = GridExpend.GetRow.Cells("Expend_Note").Value
         UpdateExpend.ShowDialog()
@@ -141,5 +141,10 @@
         Catch ex As Exception
 
         End Try
+    End Sub
+
+    Private Sub BtnFindingInvoice_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnFindingInvoice.Click
+        Dim FFindingInvoice As New FindInvoiceDetial
+        FFindingInvoice.ShowDialog()
     End Sub
 End Class

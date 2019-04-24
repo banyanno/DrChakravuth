@@ -25,6 +25,7 @@ Partial Class NewStore
         Me.components = New System.ComponentModel.Container
         Dim StoreList_DesignTimeLayout As Janus.Windows.GridEX.GridEXLayout = New Janus.Windows.GridEX.GridEXLayout
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(NewStore))
+        Dim JanusColorScheme1 As Janus.Windows.Common.JanusColorScheme = New Janus.Windows.Common.JanusColorScheme
         Me.Label5 = New System.Windows.Forms.Label
         Me.Label4 = New System.Windows.Forms.Label
         Me.Label3 = New System.Windows.Forms.Label
@@ -48,6 +49,7 @@ Partial Class NewStore
         Me.GroupBox2 = New System.Windows.Forms.GroupBox
         Me.StoreList = New Janus.Windows.GridEX.GridEX
         Me.GroupBox3 = New System.Windows.Forms.GroupBox
+        Me.VisualStyleManager1 = New Janus.Windows.Common.VisualStyleManager(Me.components)
         CType(Me.ErrMenu, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -73,7 +75,7 @@ Partial Class NewStore
         Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.Label4.Location = New System.Drawing.Point(242, 27)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(77, 18)
+        Me.Label4.Size = New System.Drawing.Size(76, 18)
         Me.Label4.TabIndex = 60
         Me.Label4.Text = "Unit Type :"
         '
@@ -298,11 +300,14 @@ Partial Class NewStore
         Me.StoreList.HideSelection = Janus.Windows.GridEX.HideSelection.HighlightInactive
         Me.StoreList.Location = New System.Drawing.Point(3, 16)
         Me.StoreList.Name = "StoreList"
+        Me.StoreList.Office2007ColorScheme = Janus.Windows.GridEX.Office2007ColorScheme.Silver
+        Me.StoreList.Office2007CustomColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.StoreList.RecordNavigator = True
         Me.StoreList.RowHeaders = Janus.Windows.GridEX.InheritableBoolean.[True]
         Me.StoreList.SelectedInactiveFormatStyle.ForeColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.StoreList.Size = New System.Drawing.Size(969, 175)
         Me.StoreList.TabIndex = 1
+        Me.StoreList.VisualStyleManager = Me.VisualStyleManager1
         '
         'GroupBox3
         '
@@ -314,6 +319,16 @@ Partial Class NewStore
         Me.GroupBox3.Size = New System.Drawing.Size(975, 131)
         Me.GroupBox3.TabIndex = 0
         Me.GroupBox3.TabStop = False
+        '
+        'VisualStyleManager1
+        '
+        JanusColorScheme1.HighlightTextColor = System.Drawing.SystemColors.HotTrack
+        JanusColorScheme1.Name = "Scheme0"
+        JanusColorScheme1.Office2007ColorScheme = Janus.Windows.Common.Office2007ColorScheme.Silver
+        JanusColorScheme1.Office2007CustomColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        JanusColorScheme1.VisualStyle = Janus.Windows.Common.VisualStyle.Standard
+        Me.VisualStyleManager1.ColorSchemes.Add(JanusColorScheme1)
+        Me.VisualStyleManager1.DefaultColorScheme = "Scheme0"
         '
         'NewStore
         '
@@ -368,4 +383,5 @@ Partial Class NewStore
     Friend WithEvents BtnAddUnit As System.Windows.Forms.Button
     Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
     Friend WithEvents StoreList As Janus.Windows.GridEX.GridEX
+    Friend WithEvents VisualStyleManager1 As Janus.Windows.Common.VisualStyleManager
 End Class

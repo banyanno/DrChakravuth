@@ -23,15 +23,19 @@ Partial Class EditConsultation
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container
-        Dim GridPreComplaint_DesignTimeLayout As Janus.Windows.GridEX.GridEXLayout = New Janus.Windows.GridEX.GridEXLayout
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(EditConsultation))
-        Dim PrescriptionList_DesignTimeLayout As Janus.Windows.GridEX.GridEXLayout = New Janus.Windows.GridEX.GridEXLayout
-        Dim GridPreMedicalHistory_DesignTimeLayout As Janus.Windows.GridEX.GridEXLayout = New Janus.Windows.GridEX.GridEXLayout
         Dim GridPrePhysical_DesignTimeLayout As Janus.Windows.GridEX.GridEXLayout = New Janus.Windows.GridEX.GridEXLayout
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(EditConsultation))
+        Dim GridPreComplaint_DesignTimeLayout As Janus.Windows.GridEX.GridEXLayout = New Janus.Windows.GridEX.GridEXLayout
+        Dim GridPreMedicalHistory_DesignTimeLayout As Janus.Windows.GridEX.GridEXLayout = New Janus.Windows.GridEX.GridEXLayout
+        Dim PrescriptionList_DesignTimeLayout As Janus.Windows.GridEX.GridEXLayout = New Janus.Windows.GridEX.GridEXLayout
         Me.TxtPhysicalNote = New System.Windows.Forms.TextBox
         Me.cboUsage = New System.Windows.Forms.ComboBox
         Me.Label15 = New System.Windows.Forms.Label
         Me.GroupBox7 = New System.Windows.Forms.GroupBox
+        Me.BtnRemovePrePhysical = New System.Windows.Forms.Button
+        Me.BtnAddPrePhysical = New System.Windows.Forms.Button
+        Me.GroupBox9 = New System.Windows.Forms.GroupBox
+        Me.GridPrePhysical = New Janus.Windows.GridEX.GridEX
         Me.Label16 = New System.Windows.Forms.Label
         Me.CboPhysicalExam = New System.Windows.Forms.ComboBox
         Me.SplitContainer2 = New System.Windows.Forms.SplitContainer
@@ -48,6 +52,10 @@ Partial Class EditConsultation
         Me.Label11 = New System.Windows.Forms.Label
         Me.UiTabPage7 = New Janus.Windows.UI.Tab.UITabPage
         Me.GroupBox6 = New System.Windows.Forms.GroupBox
+        Me.BtnRemoveMedicalHistory = New System.Windows.Forms.Button
+        Me.BtnAddMedicalHistor = New System.Windows.Forms.Button
+        Me.GroupBox8 = New System.Windows.Forms.GroupBox
+        Me.GridPreMedicalHistory = New Janus.Windows.GridEX.GridEX
         Me.Label14 = New System.Windows.Forms.Label
         Me.CboMedical = New System.Windows.Forms.ComboBox
         Me.TxtMedicalNote = New System.Windows.Forms.TextBox
@@ -92,21 +100,15 @@ Partial Class EditConsultation
         Me.Label4 = New System.Windows.Forms.Label
         Me.Label3 = New System.Windows.Forms.Label
         Me.Label5 = New System.Windows.Forms.Label
-        Me.txtno = New System.Windows.Forms.TextBox
+        Me.TxtPatientNo = New System.Windows.Forms.TextBox
         Me.GroupBox1 = New System.Windows.Forms.GroupBox
         Me.txtname = New System.Windows.Forms.TextBox
         Me.txtsex = New System.Windows.Forms.TextBox
         Me.ErrPrescription = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.AutocompleteMenu1 = New AutocompleteMenuNS.AutocompleteMenu
-        Me.GroupBox8 = New System.Windows.Forms.GroupBox
-        Me.GridPreMedicalHistory = New Janus.Windows.GridEX.GridEX
-        Me.BtnRemoveMedicalHistory = New System.Windows.Forms.Button
-        Me.BtnAddMedicalHistor = New System.Windows.Forms.Button
-        Me.GroupBox9 = New System.Windows.Forms.GroupBox
-        Me.GridPrePhysical = New Janus.Windows.GridEX.GridEX
-        Me.BtnRemovePrePhysical = New System.Windows.Forms.Button
-        Me.BtnAddPrePhysical = New System.Windows.Forms.Button
         Me.GroupBox7.SuspendLayout()
+        Me.GroupBox9.SuspendLayout()
+        CType(Me.GridPrePhysical, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer2.Panel1.SuspendLayout()
         Me.SplitContainer2.Panel2.SuspendLayout()
         Me.SplitContainer2.SuspendLayout()
@@ -118,6 +120,8 @@ Partial Class EditConsultation
         CType(Me.GridPreComplaint, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.UiTabPage7.SuspendLayout()
         Me.GroupBox6.SuspendLayout()
+        Me.GroupBox8.SuspendLayout()
+        CType(Me.GridPreMedicalHistory, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.UiTabPage8.SuspendLayout()
         Me.UiTabPage2.SuspendLayout()
         Me.GroupBox19.SuspendLayout()
@@ -130,10 +134,6 @@ Partial Class EditConsultation
         Me.UiTab2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.ErrPrescription, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupBox8.SuspendLayout()
-        CType(Me.GridPreMedicalHistory, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupBox9.SuspendLayout()
-        CType(Me.GridPrePhysical, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TxtPhysicalNote
@@ -157,7 +157,7 @@ Partial Class EditConsultation
         Me.cboUsage.FormattingEnabled = True
         Me.cboUsage.Location = New System.Drawing.Point(718, 17)
         Me.cboUsage.Name = "cboUsage"
-        Me.cboUsage.Size = New System.Drawing.Size(330, 35)
+        Me.cboUsage.Size = New System.Drawing.Size(298, 35)
         Me.cboUsage.TabIndex = 58
         '
         'Label15
@@ -186,6 +186,52 @@ Partial Class EditConsultation
         Me.GroupBox7.Size = New System.Drawing.Size(1527, 290)
         Me.GroupBox7.TabIndex = 0
         Me.GroupBox7.TabStop = False
+        '
+        'BtnRemovePrePhysical
+        '
+        Me.BtnRemovePrePhysical.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnRemovePrePhysical.Location = New System.Drawing.Point(477, 16)
+        Me.BtnRemovePrePhysical.Name = "BtnRemovePrePhysical"
+        Me.BtnRemovePrePhysical.Size = New System.Drawing.Size(57, 27)
+        Me.BtnRemovePrePhysical.TabIndex = 16
+        Me.BtnRemovePrePhysical.Text = "-"
+        Me.BtnRemovePrePhysical.UseVisualStyleBackColor = True
+        '
+        'BtnAddPrePhysical
+        '
+        Me.BtnAddPrePhysical.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnAddPrePhysical.Location = New System.Drawing.Point(414, 16)
+        Me.BtnAddPrePhysical.Name = "BtnAddPrePhysical"
+        Me.BtnAddPrePhysical.Size = New System.Drawing.Size(57, 27)
+        Me.BtnAddPrePhysical.TabIndex = 15
+        Me.BtnAddPrePhysical.Text = "+"
+        Me.BtnAddPrePhysical.UseVisualStyleBackColor = True
+        '
+        'GroupBox9
+        '
+        Me.GroupBox9.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+                    Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox9.Controls.Add(Me.GridPrePhysical)
+        Me.GroupBox9.Location = New System.Drawing.Point(9, 63)
+        Me.GroupBox9.Name = "GroupBox9"
+        Me.GroupBox9.Size = New System.Drawing.Size(411, 221)
+        Me.GroupBox9.TabIndex = 12
+        Me.GroupBox9.TabStop = False
+        '
+        'GridPrePhysical
+        '
+        Me.GridPrePhysical.AllowEdit = Janus.Windows.GridEX.InheritableBoolean.[False]
+        GridPrePhysical_DesignTimeLayout.LayoutString = resources.GetString("GridPrePhysical_DesignTimeLayout.LayoutString")
+        Me.GridPrePhysical.DesignTimeLayout = GridPrePhysical_DesignTimeLayout
+        Me.GridPrePhysical.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GridPrePhysical.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GridPrePhysical.GroupByBoxVisible = False
+        Me.GridPrePhysical.HeaderFormatStyle.FontBold = Janus.Windows.GridEX.TriState.[False]
+        Me.GridPrePhysical.Location = New System.Drawing.Point(3, 18)
+        Me.GridPrePhysical.Name = "GridPrePhysical"
+        Me.GridPrePhysical.RecordNavigator = True
+        Me.GridPrePhysical.Size = New System.Drawing.Size(405, 200)
+        Me.GridPrePhysical.TabIndex = 0
         '
         'Label16
         '
@@ -390,6 +436,52 @@ Partial Class EditConsultation
         Me.GroupBox6.TabIndex = 0
         Me.GroupBox6.TabStop = False
         '
+        'BtnRemoveMedicalHistory
+        '
+        Me.BtnRemoveMedicalHistory.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnRemoveMedicalHistory.Location = New System.Drawing.Point(438, 23)
+        Me.BtnRemoveMedicalHistory.Name = "BtnRemoveMedicalHistory"
+        Me.BtnRemoveMedicalHistory.Size = New System.Drawing.Size(57, 27)
+        Me.BtnRemoveMedicalHistory.TabIndex = 14
+        Me.BtnRemoveMedicalHistory.Text = "-"
+        Me.BtnRemoveMedicalHistory.UseVisualStyleBackColor = True
+        '
+        'BtnAddMedicalHistor
+        '
+        Me.BtnAddMedicalHistor.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnAddMedicalHistor.Location = New System.Drawing.Point(374, 23)
+        Me.BtnAddMedicalHistor.Name = "BtnAddMedicalHistor"
+        Me.BtnAddMedicalHistor.Size = New System.Drawing.Size(57, 27)
+        Me.BtnAddMedicalHistor.TabIndex = 13
+        Me.BtnAddMedicalHistor.Text = "+"
+        Me.BtnAddMedicalHistor.UseVisualStyleBackColor = True
+        '
+        'GroupBox8
+        '
+        Me.GroupBox8.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+                    Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox8.Controls.Add(Me.GridPreMedicalHistory)
+        Me.GroupBox8.Location = New System.Drawing.Point(10, 72)
+        Me.GroupBox8.Name = "GroupBox8"
+        Me.GroupBox8.Size = New System.Drawing.Size(414, 213)
+        Me.GroupBox8.TabIndex = 11
+        Me.GroupBox8.TabStop = False
+        '
+        'GridPreMedicalHistory
+        '
+        GridPreMedicalHistory_DesignTimeLayout.LayoutString = resources.GetString("GridPreMedicalHistory_DesignTimeLayout.LayoutString")
+        Me.GridPreMedicalHistory.DesignTimeLayout = GridPreMedicalHistory_DesignTimeLayout
+        Me.GridPreMedicalHistory.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GridPreMedicalHistory.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GridPreMedicalHistory.GroupByBoxVisible = False
+        Me.GridPreMedicalHistory.HeaderFormatStyle.FontBold = Janus.Windows.GridEX.TriState.[False]
+        Me.GridPreMedicalHistory.Location = New System.Drawing.Point(3, 18)
+        Me.GridPreMedicalHistory.Name = "GridPreMedicalHistory"
+        Me.GridPreMedicalHistory.RecordNavigator = True
+        Me.GridPreMedicalHistory.RowHeaders = Janus.Windows.GridEX.InheritableBoolean.[True]
+        Me.GridPreMedicalHistory.Size = New System.Drawing.Size(408, 192)
+        Me.GridPreMedicalHistory.TabIndex = 1
+        '
         'Label14
         '
         Me.Label14.AutoSize = True
@@ -451,7 +543,7 @@ Partial Class EditConsultation
         'UiTabPage2
         '
         Me.UiTabPage2.Controls.Add(Me.GroupBox19)
-        Me.UiTabPage2.Location = New System.Drawing.Point(2, 25)
+        Me.UiTabPage2.Location = New System.Drawing.Point(1, 24)
         Me.UiTabPage2.Margin = New System.Windows.Forms.Padding(2)
         Me.UiTabPage2.Name = "UiTabPage2"
         Me.UiTabPage2.Size = New System.Drawing.Size(1527, 290)
@@ -484,7 +576,7 @@ Partial Class EditConsultation
         '
         Me.AutocompleteMenu1.SetAutocompleteMenu(Me.TxtTotalUse, Nothing)
         Me.TxtTotalUse.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtTotalUse.Location = New System.Drawing.Point(1115, 22)
+        Me.TxtTotalUse.Location = New System.Drawing.Point(1090, 23)
         Me.TxtTotalUse.Name = "TxtTotalUse"
         Me.TxtTotalUse.Size = New System.Drawing.Size(75, 26)
         Me.TxtTotalUse.TabIndex = 59
@@ -495,7 +587,7 @@ Partial Class EditConsultation
         Me.Label7.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.Label7.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label7.Location = New System.Drawing.Point(1057, 27)
+        Me.Label7.Location = New System.Drawing.Point(1026, 28)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(56, 16)
         Me.Label7.TabIndex = 60
@@ -520,7 +612,7 @@ Partial Class EditConsultation
         Me.BtnRemovePrescription.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BtnRemovePrescription.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnRemovePrescription.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.BtnRemovePrescription.Location = New System.Drawing.Point(1274, 18)
+        Me.BtnRemovePrescription.Location = New System.Drawing.Point(1249, 19)
         Me.BtnRemovePrescription.Name = "BtnRemovePrescription"
         Me.BtnRemovePrescription.Size = New System.Drawing.Size(69, 28)
         Me.BtnRemovePrescription.TabIndex = 4
@@ -536,6 +628,7 @@ Partial Class EditConsultation
         PrescriptionList_DesignTimeLayout.LayoutString = resources.GetString("PrescriptionList_DesignTimeLayout.LayoutString")
         Me.PrescriptionList.DesignTimeLayout = PrescriptionList_DesignTimeLayout
         Me.PrescriptionList.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PrescriptionList.GridLineStyle = Janus.Windows.GridEX.GridLineStyle.Solid
         Me.PrescriptionList.GroupByBoxVisible = False
         Me.PrescriptionList.HeaderFormatStyle.FontSize = 10.0!
         Me.PrescriptionList.HeaderFormatStyle.TextAlignment = Janus.Windows.GridEX.TextAlignment.Center
@@ -551,7 +644,7 @@ Partial Class EditConsultation
         Me.BtnAddPrescription.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BtnAddPrescription.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnAddPrescription.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.BtnAddPrescription.Location = New System.Drawing.Point(1199, 18)
+        Me.BtnAddPrescription.Location = New System.Drawing.Point(1174, 19)
         Me.BtnAddPrescription.Name = "BtnAddPrescription"
         Me.BtnAddPrescription.Size = New System.Drawing.Size(69, 28)
         Me.BtnAddPrescription.TabIndex = 3
@@ -906,16 +999,16 @@ Partial Class EditConsultation
         Me.Label5.TabIndex = 45
         Me.Label5.Text = "Sex:"
         '
-        'txtno
+        'TxtPatientNo
         '
-        Me.AutocompleteMenu1.SetAutocompleteMenu(Me.txtno, Nothing)
-        Me.txtno.BackColor = System.Drawing.Color.White
-        Me.txtno.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtno.Location = New System.Drawing.Point(105, 24)
-        Me.txtno.Name = "txtno"
-        Me.txtno.ReadOnly = True
-        Me.txtno.Size = New System.Drawing.Size(146, 26)
-        Me.txtno.TabIndex = 0
+        Me.AutocompleteMenu1.SetAutocompleteMenu(Me.TxtPatientNo, Nothing)
+        Me.TxtPatientNo.BackColor = System.Drawing.Color.White
+        Me.TxtPatientNo.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtPatientNo.Location = New System.Drawing.Point(105, 24)
+        Me.TxtPatientNo.Name = "TxtPatientNo"
+        Me.TxtPatientNo.ReadOnly = True
+        Me.TxtPatientNo.Size = New System.Drawing.Size(146, 26)
+        Me.TxtPatientNo.TabIndex = 0
         '
         'GroupBox1
         '
@@ -924,7 +1017,7 @@ Partial Class EditConsultation
         Me.GroupBox1.Controls.Add(Me.Label5)
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.Label4)
-        Me.GroupBox1.Controls.Add(Me.txtno)
+        Me.GroupBox1.Controls.Add(Me.TxtPatientNo)
         Me.GroupBox1.Controls.Add(Me.txtname)
         Me.GroupBox1.Controls.Add(Me.txtsex)
         Me.GroupBox1.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -970,98 +1063,6 @@ Partial Class EditConsultation
         Me.AutocompleteMenu1.TargetControlWrapper = Nothing
         Me.AutocompleteMenu1.ToolTipDuration = 3000
         '
-        'GroupBox8
-        '
-        Me.GroupBox8.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.GroupBox8.Controls.Add(Me.GridPreMedicalHistory)
-        Me.GroupBox8.Location = New System.Drawing.Point(10, 72)
-        Me.GroupBox8.Name = "GroupBox8"
-        Me.GroupBox8.Size = New System.Drawing.Size(414, 213)
-        Me.GroupBox8.TabIndex = 11
-        Me.GroupBox8.TabStop = False
-        '
-        'GridPreMedicalHistory
-        '
-        GridPreMedicalHistory_DesignTimeLayout.LayoutString = resources.GetString("GridPreMedicalHistory_DesignTimeLayout.LayoutString")
-        Me.GridPreMedicalHistory.DesignTimeLayout = GridPreMedicalHistory_DesignTimeLayout
-        Me.GridPreMedicalHistory.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GridPreMedicalHistory.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GridPreMedicalHistory.GroupByBoxVisible = False
-        Me.GridPreMedicalHistory.HeaderFormatStyle.FontBold = Janus.Windows.GridEX.TriState.[False]
-        Me.GridPreMedicalHistory.Location = New System.Drawing.Point(3, 18)
-        Me.GridPreMedicalHistory.Name = "GridPreMedicalHistory"
-        Me.GridPreMedicalHistory.RecordNavigator = True
-        Me.GridPreMedicalHistory.RowHeaders = Janus.Windows.GridEX.InheritableBoolean.[True]
-        Me.GridPreMedicalHistory.Size = New System.Drawing.Size(408, 192)
-        Me.GridPreMedicalHistory.TabIndex = 1
-        '
-        'BtnRemoveMedicalHistory
-        '
-        Me.BtnRemoveMedicalHistory.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnRemoveMedicalHistory.Location = New System.Drawing.Point(438, 23)
-        Me.BtnRemoveMedicalHistory.Name = "BtnRemoveMedicalHistory"
-        Me.BtnRemoveMedicalHistory.Size = New System.Drawing.Size(57, 27)
-        Me.BtnRemoveMedicalHistory.TabIndex = 14
-        Me.BtnRemoveMedicalHistory.Text = "-"
-        Me.BtnRemoveMedicalHistory.UseVisualStyleBackColor = True
-        '
-        'BtnAddMedicalHistor
-        '
-        Me.BtnAddMedicalHistor.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnAddMedicalHistor.Location = New System.Drawing.Point(374, 23)
-        Me.BtnAddMedicalHistor.Name = "BtnAddMedicalHistor"
-        Me.BtnAddMedicalHistor.Size = New System.Drawing.Size(57, 27)
-        Me.BtnAddMedicalHistor.TabIndex = 13
-        Me.BtnAddMedicalHistor.Text = "+"
-        Me.BtnAddMedicalHistor.UseVisualStyleBackColor = True
-        '
-        'GroupBox9
-        '
-        Me.GroupBox9.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.GroupBox9.Controls.Add(Me.GridPrePhysical)
-        Me.GroupBox9.Location = New System.Drawing.Point(9, 63)
-        Me.GroupBox9.Name = "GroupBox9"
-        Me.GroupBox9.Size = New System.Drawing.Size(411, 221)
-        Me.GroupBox9.TabIndex = 12
-        Me.GroupBox9.TabStop = False
-        '
-        'GridPrePhysical
-        '
-        Me.GridPrePhysical.AllowEdit = Janus.Windows.GridEX.InheritableBoolean.[False]
-        GridPrePhysical_DesignTimeLayout.LayoutString = resources.GetString("GridPrePhysical_DesignTimeLayout.LayoutString")
-        Me.GridPrePhysical.DesignTimeLayout = GridPrePhysical_DesignTimeLayout
-        Me.GridPrePhysical.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GridPrePhysical.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GridPrePhysical.GroupByBoxVisible = False
-        Me.GridPrePhysical.HeaderFormatStyle.FontBold = Janus.Windows.GridEX.TriState.[False]
-        Me.GridPrePhysical.Location = New System.Drawing.Point(3, 18)
-        Me.GridPrePhysical.Name = "GridPrePhysical"
-        Me.GridPrePhysical.RecordNavigator = True
-        Me.GridPrePhysical.Size = New System.Drawing.Size(405, 200)
-        Me.GridPrePhysical.TabIndex = 0
-        '
-        'BtnRemovePrePhysical
-        '
-        Me.BtnRemovePrePhysical.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnRemovePrePhysical.Location = New System.Drawing.Point(477, 16)
-        Me.BtnRemovePrePhysical.Name = "BtnRemovePrePhysical"
-        Me.BtnRemovePrePhysical.Size = New System.Drawing.Size(57, 27)
-        Me.BtnRemovePrePhysical.TabIndex = 16
-        Me.BtnRemovePrePhysical.Text = "-"
-        Me.BtnRemovePrePhysical.UseVisualStyleBackColor = True
-        '
-        'BtnAddPrePhysical
-        '
-        Me.BtnAddPrePhysical.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnAddPrePhysical.Location = New System.Drawing.Point(414, 16)
-        Me.BtnAddPrePhysical.Name = "BtnAddPrePhysical"
-        Me.BtnAddPrePhysical.Size = New System.Drawing.Size(57, 27)
-        Me.BtnAddPrePhysical.TabIndex = 15
-        Me.BtnAddPrePhysical.Text = "+"
-        Me.BtnAddPrePhysical.UseVisualStyleBackColor = True
-        '
         'EditConsultation
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1078,6 +1079,8 @@ Partial Class EditConsultation
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.GroupBox7.ResumeLayout(False)
         Me.GroupBox7.PerformLayout()
+        Me.GroupBox9.ResumeLayout(False)
+        CType(Me.GridPrePhysical, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainer2.Panel1.ResumeLayout(False)
         Me.SplitContainer2.Panel2.ResumeLayout(False)
         Me.SplitContainer2.ResumeLayout(False)
@@ -1091,6 +1094,8 @@ Partial Class EditConsultation
         Me.UiTabPage7.ResumeLayout(False)
         Me.GroupBox6.ResumeLayout(False)
         Me.GroupBox6.PerformLayout()
+        Me.GroupBox8.ResumeLayout(False)
+        CType(Me.GridPreMedicalHistory, System.ComponentModel.ISupportInitialize).EndInit()
         Me.UiTabPage8.ResumeLayout(False)
         Me.UiTabPage2.ResumeLayout(False)
         Me.GroupBox19.ResumeLayout(False)
@@ -1107,10 +1112,6 @@ Partial Class EditConsultation
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.ErrPrescription, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupBox8.ResumeLayout(False)
-        CType(Me.GridPreMedicalHistory, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupBox9.ResumeLayout(False)
-        CType(Me.GridPrePhysical, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1167,7 +1168,7 @@ Partial Class EditConsultation
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents Label5 As System.Windows.Forms.Label
-    Friend WithEvents txtno As System.Windows.Forms.TextBox
+    Friend WithEvents TxtPatientNo As System.Windows.Forms.TextBox
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents BtnSavePrint As System.Windows.Forms.Button
     Friend WithEvents txtname As System.Windows.Forms.TextBox

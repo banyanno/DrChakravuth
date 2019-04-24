@@ -131,7 +131,7 @@ Partial Class FormFibroEnglish
         'LblPatientNo
         '
         Me.LblPatientNo.AutoSize = True
-        Me.LblPatientNo.Location = New System.Drawing.Point(806, 32)
+        Me.LblPatientNo.Location = New System.Drawing.Point(695, 16)
         Me.LblPatientNo.Name = "LblPatientNo"
         Me.LblPatientNo.Size = New System.Drawing.Size(90, 16)
         Me.LblPatientNo.TabIndex = 12

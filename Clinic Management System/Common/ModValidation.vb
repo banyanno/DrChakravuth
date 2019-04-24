@@ -6,6 +6,7 @@
             errProvider.SetError(txt, _
                "The " & fieldName & " must not be blank. " & _
                "Please enter a " & fieldName & ".")
+            txt.Select()
             txt.Focus()
             Return False
         Else

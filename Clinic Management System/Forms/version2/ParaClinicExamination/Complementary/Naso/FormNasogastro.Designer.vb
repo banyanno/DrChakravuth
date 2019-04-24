@@ -70,6 +70,7 @@ Partial Class FormNasogastro
         Me.ErrAlert = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.lblPatientName = New System.Windows.Forms.Label
         Me.LblPatientNo = New System.Windows.Forms.Label
+        Me.lblRequestid = New System.Windows.Forms.Label
         Me.GroupBox6.SuspendLayout()
         Me.GroupBox16.SuspendLayout()
         Me.GroupBox13.SuspendLayout()
@@ -561,12 +562,21 @@ Partial Class FormNasogastro
         'LblPatientNo
         '
         Me.LblPatientNo.AutoSize = True
-        Me.LblPatientNo.Location = New System.Drawing.Point(42, 583)
+        Me.LblPatientNo.Location = New System.Drawing.Point(7, 607)
         Me.LblPatientNo.Name = "LblPatientNo"
         Me.LblPatientNo.Size = New System.Drawing.Size(68, 13)
         Me.LblPatientNo.TabIndex = 12
         Me.LblPatientNo.Text = "LblPatientNo"
-        Me.LblPatientNo.Visible = False
+        '
+        'lblRequestid
+        '
+        Me.lblRequestid.AutoSize = True
+        Me.lblRequestid.Location = New System.Drawing.Point(231, 604)
+        Me.lblRequestid.Name = "lblRequestid"
+        Me.lblRequestid.Size = New System.Drawing.Size(13, 13)
+        Me.lblRequestid.TabIndex = 14
+        Me.lblRequestid.Text = "0"
+        Me.lblRequestid.Visible = False
         '
         'FormNasogastro
         '
@@ -574,6 +584,7 @@ Partial Class FormNasogastro
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1062, 629)
+        Me.Controls.Add(Me.lblRequestid)
         Me.Controls.Add(Me.lblPatientName)
         Me.Controls.Add(Me.LblPatientNo)
         Me.Controls.Add(Me.BtnCancel)
@@ -643,4 +654,5 @@ Partial Class FormNasogastro
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents lblPatientName As System.Windows.Forms.Label
     Friend WithEvents LblPatientNo As System.Windows.Forms.Label
+    Friend WithEvents lblRequestid As System.Windows.Forms.Label
 End Class

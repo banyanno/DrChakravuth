@@ -23,9 +23,10 @@ Partial Class main
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container
+        Dim JanusColorScheme2 As Janus.Windows.Common.JanusColorScheme = New Janus.Windows.Common.JanusColorScheme
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(main))
         Dim PatientInfo_Group_0 As Janus.Windows.ButtonBar.ButtonBarGroup = New Janus.Windows.ButtonBar.ButtonBarGroup
         Dim PatientInfo_Item_0_0 As Janus.Windows.ButtonBar.ButtonBarItem = New Janus.Windows.ButtonBar.ButtonBarItem
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(main))
         Dim PatientInfo_Item_0_1 As Janus.Windows.ButtonBar.ButtonBarItem = New Janus.Windows.ButtonBar.ButtonBarItem
         Dim PatientInfo_Item_0_2 As Janus.Windows.ButtonBar.ButtonBarItem = New Janus.Windows.ButtonBar.ButtonBarItem
         Dim PatientInfo_Item_0_3 As Janus.Windows.ButtonBar.ButtonBarItem = New Janus.Windows.ButtonBar.ButtonBarItem
@@ -36,12 +37,17 @@ Partial Class main
         Dim PatientInfo_Item_0_8 As Janus.Windows.ButtonBar.ButtonBarItem = New Janus.Windows.ButtonBar.ButtonBarItem
         Dim PatientInfo_Item_0_9 As Janus.Windows.ButtonBar.ButtonBarItem = New Janus.Windows.ButtonBar.ButtonBarItem
         Dim PatientInfo_Item_0_10 As Janus.Windows.ButtonBar.ButtonBarItem = New Janus.Windows.ButtonBar.ButtonBarItem
+        Dim PatientInfo_Item_0_11 As Janus.Windows.ButtonBar.ButtonBarItem = New Janus.Windows.ButtonBar.ButtonBarItem
+        Dim PatientInfo_Item_0_12 As Janus.Windows.ButtonBar.ButtonBarItem = New Janus.Windows.ButtonBar.ButtonBarItem
         Dim Inventory_Group_0 As Janus.Windows.ButtonBar.ButtonBarGroup = New Janus.Windows.ButtonBar.ButtonBarGroup
         Dim Inventory_Item_0_0 As Janus.Windows.ButtonBar.ButtonBarItem = New Janus.Windows.ButtonBar.ButtonBarItem
         Dim Inventory_Item_0_1 As Janus.Windows.ButtonBar.ButtonBarItem = New Janus.Windows.ButtonBar.ButtonBarItem
         Dim Inventory_Item_0_2 As Janus.Windows.ButtonBar.ButtonBarItem = New Janus.Windows.ButtonBar.ButtonBarItem
         Dim Inventory_Item_0_3 As Janus.Windows.ButtonBar.ButtonBarItem = New Janus.Windows.ButtonBar.ButtonBarItem
         Dim Inventory_Item_0_4 As Janus.Windows.ButtonBar.ButtonBarItem = New Janus.Windows.ButtonBar.ButtonBarItem
+        Dim Inventory_Item_0_5 As Janus.Windows.ButtonBar.ButtonBarItem = New Janus.Windows.ButtonBar.ButtonBarItem
+        Dim Inventory_Item_0_6 As Janus.Windows.ButtonBar.ButtonBarItem = New Janus.Windows.ButtonBar.ButtonBarItem
+        Dim Inventory_Item_0_7 As Janus.Windows.ButtonBar.ButtonBarItem = New Janus.Windows.ButtonBar.ButtonBarItem
         Dim Parameter_Group_0 As Janus.Windows.ButtonBar.ButtonBarGroup = New Janus.Windows.ButtonBar.ButtonBarGroup
         Dim Parameter_Item_0_0 As Janus.Windows.ButtonBar.ButtonBarItem = New Janus.Windows.ButtonBar.ButtonBarItem
         Dim Parameter_Item_0_1 As Janus.Windows.ButtonBar.ButtonBarItem = New Janus.Windows.ButtonBar.ButtonBarItem
@@ -57,6 +63,7 @@ Partial Class main
         Dim ButonUserManage_Group_0 As Janus.Windows.ButtonBar.ButtonBarGroup = New Janus.Windows.ButtonBar.ButtonBarGroup
         Dim ButonUserManage_Item_0_0 As Janus.Windows.ButtonBar.ButtonBarItem = New Janus.Windows.ButtonBar.ButtonBarItem
         Me.UiPanelManager1 = New Janus.Windows.UI.Dock.UIPanelManager(Me.components)
+        Me.VisualStyleManager1 = New Janus.Windows.Common.VisualStyleManager(Me.components)
         Me.UiPanelGroup1 = New Janus.Windows.UI.Dock.UIPanelGroup
         Me.uiPanel1 = New Janus.Windows.UI.Dock.UIPanel
         Me.uiPanel1Container = New Janus.Windows.UI.Dock.UIPanelInnerContainer
@@ -64,17 +71,15 @@ Partial Class main
         Me.ButtonBarContainerControl1 = New Janus.Windows.ButtonBar.ButtonBarContainerControl
         Me.uiPanel0 = New Janus.Windows.UI.Dock.UIPanel
         Me.uiPanel0Container = New Janus.Windows.UI.Dock.UIPanelInnerContainer
-        Me.ParameterTab = New Janus.Windows.UI.Tab.UITab
-        Me.UiTabPage2 = New Janus.Windows.UI.Tab.UITabPage
         Me.Inventory = New Janus.Windows.ButtonBar.ButtonBar
         Me.ButtonBarContainerControl2 = New Janus.Windows.ButtonBar.ButtonBarContainerControl
+        Me.ParameterTab = New Janus.Windows.UI.Tab.UITab
+        Me.UiTabPage2 = New Janus.Windows.UI.Tab.UITabPage
         Me.UiTabPage1 = New Janus.Windows.UI.Tab.UITabPage
         Me.Parameter = New Janus.Windows.ButtonBar.ButtonBar
-        Me.uiPanel5 = New Janus.Windows.UI.Dock.UIPanel
-        Me.uiPanel5Container = New Janus.Windows.UI.Dock.UIPanelInnerContainer
-        Me.ButonUserManage = New Janus.Windows.ButtonBar.ButtonBar
         Me.uiPanel2 = New Janus.Windows.UI.Dock.UIPanel
         Me.MainContainer = New Janus.Windows.UI.Dock.UIPanelInnerContainer
+        Me.ButonUserManage = New Janus.Windows.ButtonBar.ButtonBar
         Me.PicLoading = New System.Windows.Forms.PictureBox
         Me.RibboStatusBar = New Janus.Windows.Ribbon.RibbonStatusBar
         Me.ImageStatusbar = New System.Windows.Forms.ImageList(Me.components)
@@ -104,19 +109,15 @@ Partial Class main
         CType(Me.uiPanel0, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.uiPanel0.SuspendLayout()
         Me.uiPanel0Container.SuspendLayout()
-        CType(Me.ParameterTab, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.ParameterTab.SuspendLayout()
-        Me.UiTabPage2.SuspendLayout()
         CType(Me.Inventory, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Inventory.SuspendLayout()
+        CType(Me.ParameterTab, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.ParameterTab.SuspendLayout()
         Me.UiTabPage1.SuspendLayout()
         CType(Me.Parameter, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.uiPanel5, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.uiPanel5.SuspendLayout()
-        Me.uiPanel5Container.SuspendLayout()
-        CType(Me.ButonUserManage, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.uiPanel2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.uiPanel2.SuspendLayout()
+        CType(Me.ButonUserManage, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PicLoading, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -131,14 +132,14 @@ Partial Class main
         Me.UiPanelManager1.DefaultPanelSettings.CloseButtonVisible = False
         Me.UiPanelManager1.DefaultPanelSettings.TabStateStyles.FormatStyle.FontBold = Janus.Windows.UI.TriState.[True]
         Me.UiPanelManager1.DefaultPanelSettings.TabStateStyles.FormatStyle.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.UiPanelManager1.Office2007ColorScheme = Janus.Windows.UI.Office2007ColorScheme.Silver
         Me.UiPanelManager1.SplitterSize = 2
+        Me.UiPanelManager1.VisualStyleManager = Me.VisualStyleManager1
         Me.UiPanelGroup1.Id = New System.Guid("a7e1a778-c4cc-473a-85af-217166b72880")
         Me.uiPanel1.Id = New System.Guid("6badc5ff-1e53-43a1-b706-26a32561b312")
         Me.UiPanelGroup1.Panels.Add(Me.uiPanel1)
         Me.uiPanel0.Id = New System.Guid("6fce111e-eabc-48b3-82c5-615d5a1d5da8")
         Me.UiPanelGroup1.Panels.Add(Me.uiPanel0)
-        Me.uiPanel5.Id = New System.Guid("2e1c8e1e-07b0-4d6f-a984-d86542ea514b")
-        Me.UiPanelGroup1.Panels.Add(Me.uiPanel5)
         Me.UiPanelManager1.Panels.Add(Me.UiPanelGroup1)
         Me.uiPanel2.Id = New System.Guid("0fe518d4-53d2-41fb-ad2a-a31d5bfa0b71")
         Me.UiPanelManager1.Panels.Add(Me.uiPanel2)
@@ -150,7 +151,6 @@ Partial Class main
         Me.UiPanelManager1.AddDockPanelInfo(New System.Guid("a7e1a778-c4cc-473a-85af-217166b72880"), Janus.Windows.UI.Dock.PanelGroupStyle.OutlookNavigator, Janus.Windows.UI.Dock.PanelDockStyle.Left, False, New System.Drawing.Size(214, 838), True)
         Me.UiPanelManager1.AddDockPanelInfo(New System.Guid("6badc5ff-1e53-43a1-b706-26a32561b312"), New System.Guid("a7e1a778-c4cc-473a-85af-217166b72880"), -1, True)
         Me.UiPanelManager1.AddDockPanelInfo(New System.Guid("6fce111e-eabc-48b3-82c5-615d5a1d5da8"), New System.Guid("a7e1a778-c4cc-473a-85af-217166b72880"), -1, True)
-        Me.UiPanelManager1.AddDockPanelInfo(New System.Guid("2e1c8e1e-07b0-4d6f-a984-d86542ea514b"), New System.Guid("a7e1a778-c4cc-473a-85af-217166b72880"), -1, True)
         Me.UiPanelManager1.AddFloatingPanelInfo(New System.Guid("990e3ddc-fef1-4103-9421-9b2fce5b05ae"), New System.Drawing.Point(-1, -1), New System.Drawing.Size(-1, -1), False)
         Me.UiPanelManager1.AddFloatingPanelInfo(New System.Guid("6badc5ff-1e53-43a1-b706-26a32561b312"), New System.Drawing.Point(-1, -1), New System.Drawing.Size(-1, -1), False)
         Me.UiPanelManager1.AddFloatingPanelInfo(New System.Guid("6fce111e-eabc-48b3-82c5-615d5a1d5da8"), New System.Drawing.Point(-1, -1), New System.Drawing.Size(-1, -1), False)
@@ -161,6 +161,16 @@ Partial Class main
         Me.UiPanelManager1.AddFloatingPanelInfo(New System.Guid("7b4dadaa-8689-4559-be25-185ef28293ed"), New System.Drawing.Point(-1, -1), New System.Drawing.Size(-1, -1), False)
         Me.UiPanelManager1.AddFloatingPanelInfo(New System.Guid("2e1c8e1e-07b0-4d6f-a984-d86542ea514b"), New System.Drawing.Point(-1, -1), New System.Drawing.Size(-1, -1), False)
         Me.UiPanelManager1.EndPanelInfo()
+        '
+        'VisualStyleManager1
+        '
+        JanusColorScheme2.HighlightTextColor = System.Drawing.SystemColors.HotTrack
+        JanusColorScheme2.Name = "Scheme0"
+        JanusColorScheme2.Office2007ColorScheme = Janus.Windows.Common.Office2007ColorScheme.Silver
+        JanusColorScheme2.Office2007CustomColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        JanusColorScheme2.VisualStyle = Janus.Windows.Common.VisualStyle.Standard
+        Me.VisualStyleManager1.ColorSchemes.Add(JanusColorScheme2)
+        Me.VisualStyleManager1.DefaultColorScheme = "Scheme0"
         '
         'UiPanelGroup1
         '
@@ -189,28 +199,31 @@ Partial Class main
         Me.uiPanel1.CaptionFormatStyle.FontBold = Janus.Windows.UI.TriState.[True]
         Me.uiPanel1.CaptionStyle = Janus.Windows.UI.Dock.PanelCaptionStyle.Dark
         Me.uiPanel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.uiPanel1.Image = CType(resources.GetObject("uiPanel1.Image"), System.Drawing.Image)
         Me.uiPanel1.InnerContainer = Me.uiPanel1Container
         Me.uiPanel1.LargeImage = CType(resources.GetObject("uiPanel1.LargeImage"), System.Drawing.Image)
         Me.uiPanel1.Location = New System.Drawing.Point(0, 0)
         Me.uiPanel1.Name = "uiPanel1"
-        Me.uiPanel1.Size = New System.Drawing.Size(212, 742)
+        Me.uiPanel1.Size = New System.Drawing.Size(212, 774)
         Me.uiPanel1.TabIndex = 4
         Me.uiPanel1.Text = "Patient Management"
         '
         'uiPanel1Container
         '
         Me.uiPanel1Container.Controls.Add(Me.PatientInfo)
-        Me.uiPanel1Container.Location = New System.Drawing.Point(1, 24)
+        Me.uiPanel1Container.Location = New System.Drawing.Point(1, 48)
         Me.uiPanel1Container.Name = "uiPanel1Container"
-        Me.uiPanel1Container.Size = New System.Drawing.Size(210, 718)
+        Me.uiPanel1Container.Size = New System.Drawing.Size(210, 726)
         Me.uiPanel1Container.TabIndex = 0
         '
         'PatientInfo
         '
-        Me.PatientInfo.BackColor = System.Drawing.SystemColors.Control
+        Me.PatientInfo.BackColor = System.Drawing.Color.White
+        Me.PatientInfo.BlendColor = System.Drawing.Color.White
+        Me.PatientInfo.BorderStyle = Janus.Windows.ButtonBar.BorderStyle.None
         Me.PatientInfo.Controls.Add(Me.ButtonBarContainerControl1)
         Me.PatientInfo.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PatientInfo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PatientInfo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         PatientInfo_Item_0_0.Cursor = System.Windows.Forms.Cursors.Hand
         PatientInfo_Item_0_0.Enabled = False
         PatientInfo_Item_0_0.Image = CType(resources.GetObject("PatientInfo_Item_0_0.Image"), System.Drawing.Image)
@@ -253,7 +266,7 @@ Partial Class main
         PatientInfo_Item_0_5.Text = "Current Receipts (F1)"
         PatientInfo_Item_0_6.Cursor = System.Windows.Forms.Cursors.Hand
         PatientInfo_Item_0_6.Enabled = False
-        PatientInfo_Item_0_6.Icon = CType(resources.GetObject("PatientInfo_Item_0_6.Icon"), System.Drawing.Icon)
+        PatientInfo_Item_0_6.Image = CType(resources.GetObject("PatientInfo_Item_0_6.Image"), System.Drawing.Image)
         PatientInfo_Item_0_6.Key = "AccountManagement"
         PatientInfo_Item_0_6.StateStyles.FormatStyle.Font = New System.Drawing.Font("Verdana", 11.25!)
         PatientInfo_Item_0_6.StateStyles.FormatStyle.ForeColor = System.Drawing.Color.Blue
@@ -264,36 +277,51 @@ Partial Class main
         PatientInfo_Item_0_7.Key = "MedicinceReceived"
         PatientInfo_Item_0_7.StateStyles.FormatStyle.ForeColor = System.Drawing.Color.Blue
         PatientInfo_Item_0_7.Text = "Medicine Received"
+        PatientInfo_Item_0_7.Visible = False
         PatientInfo_Item_0_8.Cursor = System.Windows.Forms.Cursors.Hand
         PatientInfo_Item_0_8.Image = CType(resources.GetObject("PatientInfo_Item_0_8.Image"), System.Drawing.Image)
-        PatientInfo_Item_0_8.Key = "Appointment"
-        PatientInfo_Item_0_8.StateStyles.FormatStyle.Font = New System.Drawing.Font("Verdana", 11.25!)
+        PatientInfo_Item_0_8.Key = "Hepatite B"
         PatientInfo_Item_0_8.StateStyles.FormatStyle.ForeColor = System.Drawing.Color.Blue
-        PatientInfo_Item_0_8.Text = "Doctor Fee"
+        PatientInfo_Item_0_8.Text = "Hepatite B"
         PatientInfo_Item_0_9.Cursor = System.Windows.Forms.Cursors.Hand
-        PatientInfo_Item_0_9.Enabled = False
         PatientInfo_Item_0_9.Image = CType(resources.GetObject("PatientInfo_Item_0_9.Image"), System.Drawing.Image)
-        PatientInfo_Item_0_9.Key = "PatientReferTo"
+        PatientInfo_Item_0_9.Key = "Appointment"
         PatientInfo_Item_0_9.StateStyles.FormatStyle.Font = New System.Drawing.Font("Verdana", 11.25!)
         PatientInfo_Item_0_9.StateStyles.FormatStyle.ForeColor = System.Drawing.Color.Blue
-        PatientInfo_Item_0_9.Text = "Patient Refer To Other "
-        PatientInfo_Item_0_9.Visible = False
+        PatientInfo_Item_0_9.Text = "Doctor Fee"
         PatientInfo_Item_0_10.Cursor = System.Windows.Forms.Cursors.Hand
+        PatientInfo_Item_0_10.Enabled = False
         PatientInfo_Item_0_10.Image = CType(resources.GetObject("PatientInfo_Item_0_10.Image"), System.Drawing.Image)
-        PatientInfo_Item_0_10.Key = "DiagnosisAnalysis"
+        PatientInfo_Item_0_10.Key = "PatientReferTo"
+        PatientInfo_Item_0_10.StateStyles.FormatStyle.Font = New System.Drawing.Font("Verdana", 11.25!)
         PatientInfo_Item_0_10.StateStyles.FormatStyle.ForeColor = System.Drawing.Color.Blue
-        PatientInfo_Item_0_10.Text = "Diagnosis Analysis"
-        PatientInfo_Group_0.Items.AddRange(New Janus.Windows.ButtonBar.ButtonBarItem() {PatientInfo_Item_0_0, PatientInfo_Item_0_1, PatientInfo_Item_0_2, PatientInfo_Item_0_3, PatientInfo_Item_0_4, PatientInfo_Item_0_5, PatientInfo_Item_0_6, PatientInfo_Item_0_7, PatientInfo_Item_0_8, PatientInfo_Item_0_9, PatientInfo_Item_0_10})
+        PatientInfo_Item_0_10.Text = "Patient Refer To Other "
+        PatientInfo_Item_0_10.Visible = False
+        PatientInfo_Item_0_11.Cursor = System.Windows.Forms.Cursors.Hand
+        PatientInfo_Item_0_11.Image = CType(resources.GetObject("PatientInfo_Item_0_11.Image"), System.Drawing.Image)
+        PatientInfo_Item_0_11.Key = "DiagnosisAnalysis"
+        PatientInfo_Item_0_11.StateStyles.FormatStyle.ForeColor = System.Drawing.Color.Blue
+        PatientInfo_Item_0_11.Text = "Diagnosis Analysis"
+        PatientInfo_Item_0_12.Cursor = System.Windows.Forms.Cursors.Hand
+        PatientInfo_Item_0_12.Enabled = False
+        PatientInfo_Item_0_12.Image = CType(resources.GetObject("PatientInfo_Item_0_12.Image"), System.Drawing.Image)
+        PatientInfo_Item_0_12.Key = "Inventory"
+        PatientInfo_Item_0_12.Text = "Inventory "
+        PatientInfo_Item_0_12.Visible = False
+        PatientInfo_Group_0.Items.AddRange(New Janus.Windows.ButtonBar.ButtonBarItem() {PatientInfo_Item_0_0, PatientInfo_Item_0_1, PatientInfo_Item_0_2, PatientInfo_Item_0_3, PatientInfo_Item_0_4, PatientInfo_Item_0_5, PatientInfo_Item_0_6, PatientInfo_Item_0_7, PatientInfo_Item_0_8, PatientInfo_Item_0_9, PatientInfo_Item_0_10, PatientInfo_Item_0_11, PatientInfo_Item_0_12})
         PatientInfo_Group_0.Key = "PatientInformation"
         PatientInfo_Group_0.StateStyles.FormatStyle.FontBold = Janus.Windows.ButtonBar.TriState.[True]
+        PatientInfo_Group_0.Text = " "
         Me.PatientInfo.Groups.AddRange(New Janus.Windows.ButtonBar.ButtonBarGroup() {PatientInfo_Group_0})
         Me.PatientInfo.HeaderGroupVisible = False
         Me.PatientInfo.LargeImageSize = New System.Drawing.Size(55, 55)
         Me.PatientInfo.Location = New System.Drawing.Point(0, 0)
         Me.PatientInfo.Name = "PatientInfo"
-        Me.PatientInfo.Size = New System.Drawing.Size(210, 718)
+        Me.PatientInfo.Office2007ColorScheme = Janus.Windows.ButtonBar.Office2007ColorScheme.Silver
+        Me.PatientInfo.Size = New System.Drawing.Size(210, 726)
         Me.PatientInfo.TabIndex = 0
         Me.PatientInfo.Text = "Patient Info"
+        Me.PatientInfo.VisualStyleManager = Me.VisualStyleManager1
         '
         'ButtonBarContainerControl1
         '
@@ -309,38 +337,19 @@ Partial Class main
         Me.uiPanel0.LargeImage = CType(resources.GetObject("uiPanel0.LargeImage"), System.Drawing.Image)
         Me.uiPanel0.Location = New System.Drawing.Point(0, 0)
         Me.uiPanel0.Name = "uiPanel0"
-        Me.uiPanel0.Size = New System.Drawing.Size(212, 742)
+        Me.uiPanel0.Size = New System.Drawing.Size(212, 774)
         Me.uiPanel0.TabIndex = 4
         Me.uiPanel0.Text = "Parameter"
         '
         'uiPanel0Container
         '
         Me.uiPanel0Container.BackColor = System.Drawing.SystemColors.Control
+        Me.uiPanel0Container.Controls.Add(Me.Inventory)
         Me.uiPanel0Container.Controls.Add(Me.ParameterTab)
         Me.uiPanel0Container.Location = New System.Drawing.Point(1, 24)
         Me.uiPanel0Container.Name = "uiPanel0Container"
-        Me.uiPanel0Container.Size = New System.Drawing.Size(210, 718)
+        Me.uiPanel0Container.Size = New System.Drawing.Size(210, 750)
         Me.uiPanel0Container.TabIndex = 0
-        '
-        'ParameterTab
-        '
-        Me.ParameterTab.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ParameterTab.Location = New System.Drawing.Point(0, 0)
-        Me.ParameterTab.Name = "ParameterTab"
-        Me.ParameterTab.Size = New System.Drawing.Size(210, 718)
-        Me.ParameterTab.TabIndex = 2
-        Me.ParameterTab.TabPages.AddRange(New Janus.Windows.UI.Tab.UITabPage() {Me.UiTabPage2, Me.UiTabPage1})
-        Me.ParameterTab.UseCompatibleTextRendering = False
-        Me.ParameterTab.VisualStyle = Janus.Windows.UI.Tab.TabVisualStyle.Normal
-        '
-        'UiTabPage2
-        '
-        Me.UiTabPage2.Controls.Add(Me.Inventory)
-        Me.UiTabPage2.Location = New System.Drawing.Point(1, 21)
-        Me.UiTabPage2.Name = "UiTabPage2"
-        Me.UiTabPage2.Size = New System.Drawing.Size(206, 694)
-        Me.UiTabPage2.TabStop = True
-        Me.UiTabPage2.Text = "Store Management"
         '
         'Inventory
         '
@@ -354,6 +363,7 @@ Partial Class main
         Inventory_Item_0_0.StateStyles.FormatStyle.Font = New System.Drawing.Font("Verdana", 11.25!)
         Inventory_Item_0_0.StateStyles.FormatStyle.ForeColor = System.Drawing.Color.Blue
         Inventory_Item_0_0.Text = "Medicine Name"
+        Inventory_Item_0_0.Visible = False
         Inventory_Item_0_1.Cursor = System.Windows.Forms.Cursors.Hand
         Inventory_Item_0_1.Enabled = False
         Inventory_Item_0_1.Icon = CType(resources.GetObject("Inventory_Item_0_1.Icon"), System.Drawing.Icon)
@@ -361,6 +371,7 @@ Partial Class main
         Inventory_Item_0_1.StateStyles.FormatStyle.Font = New System.Drawing.Font("Verdana", 11.25!)
         Inventory_Item_0_1.StateStyles.FormatStyle.ForeColor = System.Drawing.Color.Blue
         Inventory_Item_0_1.Text = "Setup Medicince Category"
+        Inventory_Item_0_1.Visible = False
         Inventory_Item_0_2.Cursor = System.Windows.Forms.Cursors.Hand
         Inventory_Item_0_2.Enabled = False
         Inventory_Item_0_2.Icon = CType(resources.GetObject("Inventory_Item_0_2.Icon"), System.Drawing.Icon)
@@ -368,6 +379,7 @@ Partial Class main
         Inventory_Item_0_2.StateStyles.FormatStyle.Font = New System.Drawing.Font("Verdana", 11.25!)
         Inventory_Item_0_2.StateStyles.FormatStyle.ForeColor = System.Drawing.Color.Blue
         Inventory_Item_0_2.Text = "Store Transactions"
+        Inventory_Item_0_2.Visible = False
         Inventory_Item_0_3.Cursor = System.Windows.Forms.Cursors.Hand
         Inventory_Item_0_3.Enabled = False
         Inventory_Item_0_3.Icon = CType(resources.GetObject("Inventory_Item_0_3.Icon"), System.Drawing.Icon)
@@ -375,13 +387,33 @@ Partial Class main
         Inventory_Item_0_3.StateStyles.FormatStyle.Font = New System.Drawing.Font("Verdana", 11.25!)
         Inventory_Item_0_3.StateStyles.FormatStyle.ForeColor = System.Drawing.Color.Blue
         Inventory_Item_0_3.Text = "Store Report"
+        Inventory_Item_0_3.Visible = False
         Inventory_Item_0_4.Cursor = System.Windows.Forms.Cursors.Hand
         Inventory_Item_0_4.Enabled = False
         Inventory_Item_0_4.Icon = CType(resources.GetObject("Inventory_Item_0_4.Icon"), System.Drawing.Icon)
         Inventory_Item_0_4.Key = "Barcode"
         Inventory_Item_0_4.StateStyles.FormatStyle.ForeColor = System.Drawing.Color.Blue
         Inventory_Item_0_4.Text = "Barcode"
-        Inventory_Group_0.Items.AddRange(New Janus.Windows.ButtonBar.ButtonBarItem() {Inventory_Item_0_0, Inventory_Item_0_1, Inventory_Item_0_2, Inventory_Item_0_3, Inventory_Item_0_4})
+        Inventory_Item_0_4.Visible = False
+        Inventory_Item_0_5.Cursor = System.Windows.Forms.Cursors.Hand
+        Inventory_Item_0_5.Enabled = False
+        Inventory_Item_0_5.Image = CType(resources.GetObject("Inventory_Item_0_5.Image"), System.Drawing.Image)
+        Inventory_Item_0_5.Key = "Inventory"
+        Inventory_Item_0_5.StateStyles.FormatStyle.ForeColor = System.Drawing.Color.Blue
+        Inventory_Item_0_5.Text = "Inventory"
+        Inventory_Item_0_6.Cursor = System.Windows.Forms.Cursors.Hand
+        Inventory_Item_0_6.Enabled = False
+        Inventory_Item_0_6.Image = CType(resources.GetObject("Inventory_Item_0_6.Image"), System.Drawing.Image)
+        Inventory_Item_0_6.Key = "ClinicParameter"
+        Inventory_Item_0_6.StateStyles.FormatStyle.ForeColor = System.Drawing.Color.Blue
+        Inventory_Item_0_6.Text = "Clinic Parameter"
+        Inventory_Item_0_7.Cursor = System.Windows.Forms.Cursors.Hand
+        Inventory_Item_0_7.Enabled = False
+        Inventory_Item_0_7.Image = CType(resources.GetObject("Inventory_Item_0_7.Image"), System.Drawing.Image)
+        Inventory_Item_0_7.Key = "User Management"
+        Inventory_Item_0_7.StateStyles.FormatStyle.ForeColor = System.Drawing.Color.Blue
+        Inventory_Item_0_7.Text = "System Security"
+        Inventory_Group_0.Items.AddRange(New Janus.Windows.ButtonBar.ButtonBarItem() {Inventory_Item_0_0, Inventory_Item_0_1, Inventory_Item_0_2, Inventory_Item_0_3, Inventory_Item_0_4, Inventory_Item_0_5, Inventory_Item_0_6, Inventory_Item_0_7})
         Inventory_Group_0.Key = "Group1"
         Inventory_Group_0.StateStyles.FormatStyle.FontBold = Janus.Windows.ButtonBar.TriState.[True]
         Inventory_Group_0.Text = "Store Management"
@@ -390,9 +422,11 @@ Partial Class main
         Me.Inventory.LargeImageSize = New System.Drawing.Size(35, 35)
         Me.Inventory.Location = New System.Drawing.Point(0, 0)
         Me.Inventory.Name = "Inventory"
-        Me.Inventory.Size = New System.Drawing.Size(206, 694)
+        Me.Inventory.Office2007ColorScheme = Janus.Windows.ButtonBar.Office2007ColorScheme.Silver
+        Me.Inventory.Size = New System.Drawing.Size(210, 750)
         Me.Inventory.TabIndex = 1
         Me.Inventory.Text = "Inventory"
+        Me.Inventory.VisualStyleManager = Me.VisualStyleManager1
         '
         'ButtonBarContainerControl2
         '
@@ -401,13 +435,32 @@ Partial Class main
         Me.ButtonBarContainerControl2.Size = New System.Drawing.Size(0, 0)
         Me.ButtonBarContainerControl2.TabIndex = 2
         '
+        'ParameterTab
+        '
+        Me.ParameterTab.Location = New System.Drawing.Point(56, 67)
+        Me.ParameterTab.Name = "ParameterTab"
+        Me.ParameterTab.Office2007ColorScheme = Janus.Windows.UI.Office2007ColorScheme.Silver
+        Me.ParameterTab.Size = New System.Drawing.Size(154, 651)
+        Me.ParameterTab.TabIndex = 2
+        Me.ParameterTab.TabPages.AddRange(New Janus.Windows.UI.Tab.UITabPage() {Me.UiTabPage2, Me.UiTabPage1})
+        Me.ParameterTab.UseCompatibleTextRendering = False
+        Me.ParameterTab.VisualStyleManager = Me.VisualStyleManager1
+        '
+        'UiTabPage2
+        '
+        Me.UiTabPage2.Location = New System.Drawing.Point(1, 21)
+        Me.UiTabPage2.Name = "UiTabPage2"
+        Me.UiTabPage2.Size = New System.Drawing.Size(150, 627)
+        Me.UiTabPage2.TabStop = True
+        Me.UiTabPage2.Text = "Store Management"
+        '
         'UiTabPage1
         '
         Me.UiTabPage1.Controls.Add(Me.Parameter)
         Me.UiTabPage1.Key = "Clinic Setup"
-        Me.UiTabPage1.Location = New System.Drawing.Point(2, 22)
+        Me.UiTabPage1.Location = New System.Drawing.Point(1, 21)
         Me.UiTabPage1.Name = "UiTabPage1"
-        Me.UiTabPage1.Size = New System.Drawing.Size(206, 687)
+        Me.UiTabPage1.Size = New System.Drawing.Size(206, 694)
         Me.UiTabPage1.TabStop = True
         Me.UiTabPage1.Text = "Clinic Setup"
         '
@@ -493,53 +546,11 @@ Partial Class main
         Me.Parameter.LargeImageSize = New System.Drawing.Size(55, 55)
         Me.Parameter.Location = New System.Drawing.Point(0, 0)
         Me.Parameter.Name = "Parameter"
-        Me.Parameter.Size = New System.Drawing.Size(206, 687)
+        Me.Parameter.Office2007ColorScheme = Janus.Windows.ButtonBar.Office2007ColorScheme.Silver
+        Me.Parameter.Size = New System.Drawing.Size(206, 694)
         Me.Parameter.TabIndex = 1
         Me.Parameter.Text = "Parameter"
-        '
-        'uiPanel5
-        '
-        Me.uiPanel5.AutoHideButtonVisible = Janus.Windows.UI.InheritableBoolean.[True]
-        Me.uiPanel5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.uiPanel5.InnerContainer = Me.uiPanel5Container
-        Me.uiPanel5.LargeImage = CType(resources.GetObject("uiPanel5.LargeImage"), System.Drawing.Image)
-        Me.uiPanel5.Location = New System.Drawing.Point(0, 0)
-        Me.uiPanel5.Name = "uiPanel5"
-        Me.uiPanel5.Size = New System.Drawing.Size(212, 742)
-        Me.uiPanel5.TabIndex = 4
-        Me.uiPanel5.Text = "System Security"
-        '
-        'uiPanel5Container
-        '
-        Me.uiPanel5Container.Controls.Add(Me.ButonUserManage)
-        Me.uiPanel5Container.Location = New System.Drawing.Point(1, 24)
-        Me.uiPanel5Container.Name = "uiPanel5Container"
-        Me.uiPanel5Container.Size = New System.Drawing.Size(210, 718)
-        Me.uiPanel5Container.TabIndex = 0
-        '
-        'ButonUserManage
-        '
-        Me.ButonUserManage.BackColor = System.Drawing.SystemColors.Control
-        Me.ButonUserManage.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ButonUserManage.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        ButonUserManage_Item_0_0.Cursor = System.Windows.Forms.Cursors.Hand
-        ButonUserManage_Item_0_0.Enabled = False
-        ButonUserManage_Item_0_0.Image = CType(resources.GetObject("ButonUserManage_Item_0_0.Image"), System.Drawing.Image)
-        ButonUserManage_Item_0_0.Key = "User Management"
-        ButonUserManage_Item_0_0.StateStyles.FormatStyle.Font = New System.Drawing.Font("Verdana", 11.25!)
-        ButonUserManage_Item_0_0.StateStyles.FormatStyle.ForeColor = System.Drawing.Color.Blue
-        ButonUserManage_Item_0_0.Text = "User Management"
-        ButonUserManage_Group_0.Items.AddRange(New Janus.Windows.ButtonBar.ButtonBarItem() {ButonUserManage_Item_0_0})
-        ButonUserManage_Group_0.Key = "Group1"
-        ButonUserManage_Group_0.Text = "System Management In Clinic"
-        Me.ButonUserManage.Groups.AddRange(New Janus.Windows.ButtonBar.ButtonBarGroup() {ButonUserManage_Group_0})
-        Me.ButonUserManage.HeaderGroupVisible = False
-        Me.ButonUserManage.LargeImageSize = New System.Drawing.Size(55, 55)
-        Me.ButonUserManage.Location = New System.Drawing.Point(0, 0)
-        Me.ButonUserManage.Name = "ButonUserManage"
-        Me.ButonUserManage.Size = New System.Drawing.Size(210, 718)
-        Me.ButonUserManage.TabIndex = 0
-        Me.ButonUserManage.Text = "ButtonBar1"
+        Me.Parameter.VisualStyleManager = Me.VisualStyleManager1
         '
         'uiPanel2
         '
@@ -565,6 +576,30 @@ Partial Class main
         Me.MainContainer.Size = New System.Drawing.Size(993, 814)
         Me.MainContainer.TabIndex = 0
         '
+        'ButonUserManage
+        '
+        Me.ButonUserManage.BackColor = System.Drawing.SystemColors.Control
+        Me.ButonUserManage.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.ButonUserManage.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        ButonUserManage_Item_0_0.Cursor = System.Windows.Forms.Cursors.Hand
+        ButonUserManage_Item_0_0.Enabled = False
+        ButonUserManage_Item_0_0.Image = CType(resources.GetObject("ButonUserManage_Item_0_0.Image"), System.Drawing.Image)
+        ButonUserManage_Item_0_0.Key = "User Management"
+        ButonUserManage_Item_0_0.StateStyles.FormatStyle.Font = New System.Drawing.Font("Verdana", 11.25!)
+        ButonUserManage_Item_0_0.StateStyles.FormatStyle.ForeColor = System.Drawing.Color.Blue
+        ButonUserManage_Item_0_0.Text = "User Management"
+        ButonUserManage_Group_0.Items.AddRange(New Janus.Windows.ButtonBar.ButtonBarItem() {ButonUserManage_Item_0_0})
+        ButonUserManage_Group_0.Key = "Group1"
+        ButonUserManage_Group_0.Text = "System Management In Clinic"
+        Me.ButonUserManage.Groups.AddRange(New Janus.Windows.ButtonBar.ButtonBarGroup() {ButonUserManage_Group_0})
+        Me.ButonUserManage.HeaderGroupVisible = False
+        Me.ButonUserManage.LargeImageSize = New System.Drawing.Size(55, 55)
+        Me.ButonUserManage.Location = New System.Drawing.Point(0, 0)
+        Me.ButonUserManage.Name = "ButonUserManage"
+        Me.ButonUserManage.Size = New System.Drawing.Size(212, 742)
+        Me.ButonUserManage.TabIndex = 0
+        Me.ButonUserManage.Text = "ButtonBar1"
+        '
         'PicLoading
         '
         Me.PicLoading.Image = Global.Clinic_Management_System.My.Resources.Resources.loading_bar1
@@ -584,7 +619,7 @@ Partial Class main
         Me.RibboStatusBar.Location = New System.Drawing.Point(0, 844)
         Me.RibboStatusBar.Name = "RibboStatusBar"
         Me.RibboStatusBar.Office2007ColorScheme = Janus.Windows.Ribbon.Office2007ColorScheme.Custom
-        Me.RibboStatusBar.Office2007CustomColor = System.Drawing.Color.Empty
+        Me.RibboStatusBar.Office2007CustomColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.RibboStatusBar.RightPanelCommands.AddRange(New Janus.Windows.Ribbon.CommandBase() {Me.LabelCommand1, Me.LblUserLogIn, Me.LoadingBar})
         Me.RibboStatusBar.ShowToolTips = False
         Me.RibboStatusBar.Size = New System.Drawing.Size(1215, 30)
@@ -595,7 +630,7 @@ Partial Class main
         Me.RibboStatusBar.SuperTipComponent.ImageList = Nothing
         Me.RibboStatusBar.TabIndex = 5
         Me.RibboStatusBar.Text = "RibbonStatusBar1"
-        Me.RibboStatusBar.UseCompatibleTextRendering = False
+        Me.RibboStatusBar.UseCompatibleTextRendering = True
         '
         'ImageStatusbar
         '
@@ -659,7 +694,8 @@ Partial Class main
         '
         'LblUserLogIn
         '
-        Me.LblUserLogIn.ForegroundStyle.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.LblUserLogIn.ForegroundStyle.FontBold = True
+        Me.LblUserLogIn.ForegroundStyle.ForeColor = System.Drawing.Color.Red
         Me.LblUserLogIn.Key = "UserLogin"
         Me.LblUserLogIn.Name = "LblUserLogIn"
         Me.LblUserLogIn.Text = ""
@@ -739,19 +775,15 @@ Partial Class main
         CType(Me.uiPanel0, System.ComponentModel.ISupportInitialize).EndInit()
         Me.uiPanel0.ResumeLayout(False)
         Me.uiPanel0Container.ResumeLayout(False)
-        CType(Me.ParameterTab, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.ParameterTab.ResumeLayout(False)
-        Me.UiTabPage2.ResumeLayout(False)
         CType(Me.Inventory, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Inventory.ResumeLayout(False)
+        CType(Me.ParameterTab, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ParameterTab.ResumeLayout(False)
         Me.UiTabPage1.ResumeLayout(False)
         CType(Me.Parameter, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.uiPanel5, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.uiPanel5.ResumeLayout(False)
-        Me.uiPanel5Container.ResumeLayout(False)
-        CType(Me.ButonUserManage, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.uiPanel2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.uiPanel2.ResumeLayout(False)
+        CType(Me.ButonUserManage, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PicLoading, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -763,11 +795,8 @@ Partial Class main
     Friend WithEvents uiPanel0 As Janus.Windows.UI.Dock.UIPanel
     Friend WithEvents uiPanel0Container As Janus.Windows.UI.Dock.UIPanelInnerContainer
     Friend WithEvents uiPanel2 As Janus.Windows.UI.Dock.UIPanel
-    Friend WithEvents uiPanel5 As Janus.Windows.UI.Dock.UIPanel
-    Friend WithEvents uiPanel5Container As Janus.Windows.UI.Dock.UIPanelInnerContainer
     Friend WithEvents PatientInfo As Janus.Windows.ButtonBar.ButtonBar
     Friend WithEvents Parameter As Janus.Windows.ButtonBar.ButtonBar
-    Friend WithEvents RibboStatusBar As Janus.Windows.Ribbon.RibbonStatusBar
     Friend WithEvents DropDownCommand1 As Janus.Windows.Ribbon.DropDownCommand
     Friend WithEvents ButtonCommand1 As Janus.Windows.Ribbon.ButtonCommand
     Friend WithEvents DropDownCommand2 As Janus.Windows.Ribbon.DropDownCommand
@@ -793,5 +822,7 @@ Partial Class main
     Friend WithEvents ImageStatusbar As System.Windows.Forms.ImageList
     Friend WithEvents LabelCommand1 As Janus.Windows.Ribbon.LabelCommand
     Friend WithEvents LblUserLogIn As Janus.Windows.Ribbon.LabelCommand
+    Friend WithEvents VisualStyleManager1 As Janus.Windows.Common.VisualStyleManager
+    Friend WithEvents RibboStatusBar As Janus.Windows.Ribbon.RibbonStatusBar
 
 End Class

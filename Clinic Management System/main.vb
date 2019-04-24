@@ -23,10 +23,11 @@
     Dim IssueReceipt As UPatientIssueReceipt
     Dim PatientMedicalReport As UPatientMedicalReport
     Dim ClinicAnalysis As UAnalysis
+    Dim UIHepatiteB As DashboardHepatiteB
     Sub New()
         ' This call is required by the Windows Form Designer.
         InitializeComponent()
-        InitUC()
+        InitUI()
         CheckPermistionOnForm()
         ' Add any initialization after the InitializeComponent() call.
     End Sub
@@ -36,10 +37,10 @@
         InitializeComponent()
         Me.Login = login
         ' Add any initialization after the InitializeComponent() call.
-        InitUC()
+        InitUI()
         CheckPermistionOnForm()
     End Sub
-    Sub InitUC()
+    Sub InitUI()
 
         PatientInformation = New PatientInformation(Me)
         Login.UpdateLabelStatus("Configure Hospital System 1.", True)
@@ -103,6 +104,9 @@
         Application.DoEvents()
         Login.UpdateLabelStatus("Configure Hospital System 22", True)
         UreaBreathTest = New MainUreaBreath
+        Application.DoEvents()
+        Login.UpdateLabelStatus("Configure hospital System 23", True)
+        UIHepatiteB = New DashboardHepatiteB
 
     End Sub
     Private Delegate Sub DelShowLoadingPicture(ByVal visible As Boolean)
@@ -158,39 +162,15 @@
                 AddUserControl(Me.MainContainer, UreaBreathTest, "List of patient Dr.Request for examination")
             Case "DiagnosisAnalysis"
                 AddUserControl(Me.MainContainer, ClinicAnalysis, "Clinic Diagnosis Analysis")
+            Case "Hepatite B"
+                AddUserControl(Me.MainContainer, UIHepatiteB, "Dashboard Hepatite B...")
+            Case "Inventory"
+                Dim MInvenory As New MainInventory
+                MInvenory.ShowDialog()
         End Select
     End Sub
 
-    Private Sub Parameter_ItemClick(ByVal sender As System.Object, ByVal e As Janus.Windows.ButtonBar.ItemEventArgs) Handles Parameter.ItemClick
-        Dim ServiceType As New ServiceTypes
-        Dim Service As New Service
-        Select Case e.Item.Key
-            Case "ClinicParameter"
-                AddUserControl(Me.MainContainer, ParameterList, "Clinic parameter list.")
-                ParameterList.LoadAllPararmeter()
-                'Case "ConsultType"
-                '    AddUserControl(Me.MainContainer, ClinicConsultation, "Consultation Type")
-                'Case "Patient Complaint"
-                '    AddUserControl(Me.MainContainer, PatientComplaint, "Patient Complaint")
-                'Case "Medical History"
-                '    AddUserControl(Me.MainContainer, MedicalHistory, "Medical History")
-                'Case "Physical Examination"
-                '    AddUserControl(Me.MainContainer, PhysicalExam, "Physical Examination")
-                'Case "Para Clinic Examination"
-                '    AddUserControl(Me.MainContainer, ParaCheck, "Para Clinic Examination")
-                'Case "Para Clinic Examination"
-                '    AddUserControl(Me.MainContainer, PhysicalExam, "Physical Examination")
-                'Case "Doctor"
-                '    AddUserControl(Me.MainContainer, DoctorInformation, "Doctor")
-                'Case "Symptom"
-                '    AddUserControl(Me.MainContainer, SymptomInformation, "Symptom")
-                'Case "Service Type"
-                '    AddUserControl(Me.MainContainer, ServiceType, "Service Type")
-                'Case "Service"
-                '    AddUserControl(Me.MainContainer, Service, "Service")
-        End Select
-    End Sub
-
+   
     Dim PMedicine As New UCMedicine
     Dim PMedicineCategory As New MedicineCategory
     Dim UCInventory As New UCStock
@@ -198,19 +178,29 @@
     Dim UCStoreTransaction As New UCStock
     Dim UCReport As New UCStoreReport
     Dim UCBarcode As New UIBarcodeGenerator
+    Dim Service As New Service
     Private Sub Inventory_ItemClick(ByVal sender As System.Object, ByVal e As Janus.Windows.ButtonBar.ItemEventArgs) Handles Inventory.ItemClick
       
         Select Case e.Item.Key
-            Case "Medicine"
-                AddUserControl(Me.MainContainer, PMedicine, "Medicine")
-            Case "StoreManagement"
-                AddUserControl(Me.MainContainer, UCStoreManagement, "Store Management")
-            Case "StoreTransaction"
-                AddUserControl(Me.MainContainer, UCStoreTransaction, "Store Transactions")
-            Case "StoreReport"
-                AddUserControl(Me.MainContainer, UCReport, "Store Reports")
-            Case "Barcode"
-                AddUserControl(Me.MainContainer, UCBarcode, "Barcode")
+            'Case "Medicine"
+            '    AddUserControl(Me.MainContainer, PMedicine, "Medicine")
+            'Case "StoreManagement"
+            '    AddUserControl(Me.MainContainer, UCStoreManagement, "Store Management")
+            'Case "StoreTransaction"
+            '    AddUserControl(Me.MainContainer, UCStoreTransaction, "Store Transactions")
+            'Case "StoreReport"
+            '    AddUserControl(Me.MainContainer, UCReport, "Store Reports")
+            'Case "Barcode"
+            '    AddUserControl(Me.MainContainer, UCBarcode, "Barcode")
+            Case "Inventory"
+                Dim MInvenory As New MainInventory
+                MInvenory.ShowDialog()
+            Case "ClinicParameter"
+                AddUserControl(Me.MainContainer, ParameterList, "Clinic parameter list.")
+                ParameterList.LoadAllPararmeter()
+            Case "User Management"
+                AddUserControl(Me.MainContainer, UserManager, "User Managerment.")
+                UserManager.InitDepartment()
         End Select
     End Sub
 
@@ -225,7 +215,7 @@
 
         AddUserControl(Me.MainContainer, PatientInformation, "Patient Information")
         MainApplicationForm = Me
-        LblUserLogIn.Text = SHOW_NAME
+        LblUserLogIn.Text = USER_NAME ' SHOW_NAME
     End Sub
 
     Private Sub ButonUserManage_ItemClick(ByVal sender As System.Object, ByVal e As Janus.Windows.ButtonBar.ItemEventArgs) Handles ButonUserManage.ItemClick
@@ -348,5 +338,35 @@
         If e.KeyCode = Keys.F3 Then
             IssueReceipt.FireButtonEventExam()
         End If
+    End Sub
+
+    Private Sub Parameter_ItemClick(ByVal sender As System.Object, ByVal e As Janus.Windows.ButtonBar.ItemEventArgs) Handles Parameter.ItemClick
+        Dim ServiceType As New ServiceTypes
+        Dim Service As New Service
+        Select Case e.Item.Key
+            Case "ClinicParameter"
+                AddUserControl(Me.MainContainer, ParameterList, "Clinic parameter list.")
+                ParameterList.LoadAllPararmeter()
+                'Case "ConsultType"
+                '    AddUserControl(Me.MainContainer, ClinicConsultation, "Consultation Type")
+                'Case "Patient Complaint"
+                '    AddUserControl(Me.MainContainer, PatientComplaint, "Patient Complaint")
+                'Case "Medical History"
+                '    AddUserControl(Me.MainContainer, MedicalHistory, "Medical History")
+                'Case "Physical Examination"
+                '    AddUserControl(Me.MainContainer, PhysicalExam, "Physical Examination")
+                'Case "Para Clinic Examination"
+                '    AddUserControl(Me.MainContainer, ParaCheck, "Para Clinic Examination")
+                'Case "Para Clinic Examination"
+                '    AddUserControl(Me.MainContainer, PhysicalExam, "Physical Examination")
+                'Case "Doctor"
+                '    AddUserControl(Me.MainContainer, DoctorInformation, "Doctor")
+                'Case "Symptom"
+                '    AddUserControl(Me.MainContainer, SymptomInformation, "Symptom")
+                'Case "Service Type"
+                '    AddUserControl(Me.MainContainer, ServiceType, "Service Type")
+                'Case "Service"
+                '    AddUserControl(Me.MainContainer, Service, "Service")
+        End Select
     End Sub
 End Class

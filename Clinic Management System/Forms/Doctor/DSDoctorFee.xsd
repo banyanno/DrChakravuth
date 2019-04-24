@@ -1,0 +1,267 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DSDoctorFee" targetNamespace="http://tempuri.org/DSDoctorFee.xsd" xmlns:mstns="http://tempuri.org/DSDoctorFee.xsd" xmlns="http://tempuri.org/DSDoctorFee.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="cms_databaseConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="cms_databaseConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Clinic_Management_System.My.MySettings.GlobalReference.Default.cms_databaseConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ViewDoctorParaxamTableAdapter" GeneratorDataComponentClassName="ViewDoctorParaxamTableAdapter" Name="ViewDoctorParaxam" UserDataComponentName="ViewDoctorParaxamTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="cms_databaseConnectionString (MySettings)" DbObjectName="ChakravuthUpdate.dbo.ViewDoctorParaxam" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        UserID, Is_Doctor, invoice_id, paracheckid, servicecharge, UserName, DR_NAME, paracheck, invoice_date, ParaType, patientid, pname, pgender, pAge, pcontactaddress, pphoneno, Age
+FROM            ViewDoctorParaxam</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="UserID" DataSetColumn="UserID" />
+              <Mapping SourceColumn="Is_Doctor" DataSetColumn="Is_Doctor" />
+              <Mapping SourceColumn="invoice_id" DataSetColumn="invoice_id" />
+              <Mapping SourceColumn="paracheckid" DataSetColumn="paracheckid" />
+              <Mapping SourceColumn="servicecharge" DataSetColumn="servicecharge" />
+              <Mapping SourceColumn="UserName" DataSetColumn="UserName" />
+              <Mapping SourceColumn="DR_NAME" DataSetColumn="DR_NAME" />
+              <Mapping SourceColumn="paracheck" DataSetColumn="paracheck" />
+              <Mapping SourceColumn="invoice_date" DataSetColumn="invoice_date" />
+              <Mapping SourceColumn="ParaType" DataSetColumn="ParaType" />
+              <Mapping SourceColumn="patientid" DataSetColumn="patientid" />
+              <Mapping SourceColumn="pname" DataSetColumn="pname" />
+              <Mapping SourceColumn="pgender" DataSetColumn="pgender" />
+              <Mapping SourceColumn="pAge" DataSetColumn="pAge" />
+              <Mapping SourceColumn="pcontactaddress" DataSetColumn="pcontactaddress" />
+              <Mapping SourceColumn="pphoneno" DataSetColumn="pphoneno" />
+              <Mapping SourceColumn="Age" DataSetColumn="Age" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="cms_databaseConnectionString (MySettings)" DbObjectName="ChakravuthUpdate.dbo.ViewDoctorParaxam" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="SelectByDoctor" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="SelectByDoctor" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="SelectByDoctor" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT Age, DR_NAME, Is_Doctor, ParaType, UserID, UserName, invoice_date, invoice_id, pAge, paracheck, paracheckid, patientid, pcontactaddress, pgender, pname, pphoneno, servicecharge FROM ViewDoctorParaxam WHERE (invoice_date BETWEEN @DFrom AND @DTo) AND (UserID = @DoctorID)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="DFrom" ColumnName="invoice_date" DataSourceName="ChakravuthUpdate.dbo.ViewDoctorParaxam" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@DFrom" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="invoice_date" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="DTo" ColumnName="invoice_date" DataSourceName="ChakravuthUpdate.dbo.ViewDoctorParaxam" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@DTo" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="invoice_date" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="DoctorID" ColumnName="UserID" DataSourceName="ChakravuthUpdate.dbo.ViewDoctorParaxam" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@DoctorID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="UserID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="cms_databaseConnectionString (MySettings)" DbObjectName="ChakravuthUpdate.dbo.ViewDoctorParaxam" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillBy1" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="SelectAllFree" GeneratorSourceName="FillBy1" GetMethodModifier="Public" GetMethodName="SelectAllFree" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="SelectAllFree" UserSourceName="FillBy1">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT Age, DR_NAME, Is_Doctor, ParaType, UserID, UserName, invoice_date, invoice_id, pAge, paracheck, paracheckid, patientid, pcontactaddress, pgender, pname, pphoneno, servicecharge FROM ViewDoctorParaxam WHERE (invoice_date BETWEEN @DFrom AND @DTo)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="DFrom" ColumnName="invoice_date" DataSourceName="ChakravuthUpdate.dbo.ViewDoctorParaxam" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@DFrom" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="invoice_date" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="DTo" ColumnName="invoice_date" DataSourceName="ChakravuthUpdate.dbo.ViewDoctorParaxam" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@DTo" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="invoice_date" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ViewDoctorCounsultationTableAdapter" GeneratorDataComponentClassName="ViewDoctorCounsultationTableAdapter" Name="ViewDoctorCounsultation" UserDataComponentName="ViewDoctorCounsultationTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="cms_databaseConnectionString (MySettings)" DbObjectName="ChakravuthUpdate.dbo.ViewDoctorCounsultation" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        UserID, Is_Doctor, invoice_id, UserName, DR_NAME, invoice_date, consulttype, consultprice, patientid, pname, pgender, pAge, pcontactaddress, pphoneno, Age
+FROM            ViewDoctorCounsultation</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="UserID" DataSetColumn="UserID" />
+              <Mapping SourceColumn="Is_Doctor" DataSetColumn="Is_Doctor" />
+              <Mapping SourceColumn="invoice_id" DataSetColumn="invoice_id" />
+              <Mapping SourceColumn="UserName" DataSetColumn="UserName" />
+              <Mapping SourceColumn="DR_NAME" DataSetColumn="DR_NAME" />
+              <Mapping SourceColumn="invoice_date" DataSetColumn="invoice_date" />
+              <Mapping SourceColumn="consulttype" DataSetColumn="consulttype" />
+              <Mapping SourceColumn="consultprice" DataSetColumn="consultprice" />
+              <Mapping SourceColumn="patientid" DataSetColumn="patientid" />
+              <Mapping SourceColumn="pname" DataSetColumn="pname" />
+              <Mapping SourceColumn="pgender" DataSetColumn="pgender" />
+              <Mapping SourceColumn="pAge" DataSetColumn="pAge" />
+              <Mapping SourceColumn="pcontactaddress" DataSetColumn="pcontactaddress" />
+              <Mapping SourceColumn="pphoneno" DataSetColumn="pphoneno" />
+              <Mapping SourceColumn="Age" DataSetColumn="Age" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="cms_databaseConnectionString (MySettings)" DbObjectName="ChakravuthUpdate.dbo.ViewDoctorCounsultation" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="SelectDrCounsultByDate" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="SelectDrCounsultByDate" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="SelectDrCounsultByDate" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT Age, DR_NAME, Is_Doctor, UserID, UserName, consultprice, consulttype, invoice_date, invoice_id, pAge, patientid, pcontactaddress, pgender, pname, pphoneno FROM ViewDoctorCounsultation WHERE (invoice_date BETWEEN @DFrom AND @Dto)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="DFrom" ColumnName="invoice_date" DataSourceName="ChakravuthUpdate.dbo.ViewDoctorCounsultation" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@DFrom" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="invoice_date" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Dto" ColumnName="invoice_date" DataSourceName="ChakravuthUpdate.dbo.ViewDoctorCounsultation" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@Dto" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="invoice_date" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="cms_databaseConnectionString (MySettings)" DbObjectName="ChakravuthUpdate.dbo.ViewDoctorCounsultation" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillBy1" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="SelectDoctorFeeByDate" GeneratorSourceName="FillBy1" GetMethodModifier="Public" GetMethodName="SelectDoctorFeeByDate" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="SelectDoctorFeeByDate" UserSourceName="FillBy1">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT Age, DR_NAME, Is_Doctor, UserID, UserName, consultprice, consulttype, invoice_date, invoice_id, pAge, patientid, pcontactaddress, pgender, pname, pphoneno FROM ViewDoctorCounsultation WHERE (invoice_date BETWEEN @DFrom AND @DTo) AND (UserID = @DocNo)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="DFrom" ColumnName="invoice_date" DataSourceName="ChakravuthUpdate.dbo.ViewDoctorCounsultation" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@DFrom" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="invoice_date" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="DTo" ColumnName="invoice_date" DataSourceName="ChakravuthUpdate.dbo.ViewDoctorCounsultation" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@DTo" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="invoice_date" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="DocNo" ColumnName="UserID" DataSourceName="ChakravuthUpdate.dbo.ViewDoctorCounsultation" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@DocNo" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="UserID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DSDoctorFee" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="DSDoctorFee" msprop:Generator_DataSetName="DSDoctorFee" msprop:EnableTableAdapterManager="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ViewDoctorCounsultation" msprop:Generator_UserTableName="ViewDoctorCounsultation" msprop:Generator_RowDeletedName="ViewDoctorCounsultationRowDeleted" msprop:Generator_RowChangedName="ViewDoctorCounsultationRowChanged" msprop:Generator_RowClassName="ViewDoctorCounsultationRow" msprop:Generator_RowChangingName="ViewDoctorCounsultationRowChanging" msprop:Generator_RowEvArgName="ViewDoctorCounsultationRowChangeEvent" msprop:Generator_RowEvHandlerName="ViewDoctorCounsultationRowChangeEventHandler" msprop:Generator_TableClassName="ViewDoctorCounsultationDataTable" msprop:Generator_TableVarName="tableViewDoctorCounsultation" msprop:Generator_RowDeletingName="ViewDoctorCounsultationRowDeleting" msprop:Generator_TablePropName="ViewDoctorCounsultation">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="UserID" msprop:Generator_UserColumnName="UserID" msprop:Generator_ColumnVarNameInTable="columnUserID" msprop:Generator_ColumnPropNameInRow="UserID" msprop:Generator_ColumnPropNameInTable="UserIDColumn" type="xs:int" />
+              <xs:element name="Is_Doctor" msprop:Generator_UserColumnName="Is_Doctor" msprop:Generator_ColumnVarNameInTable="columnIs_Doctor" msprop:Generator_ColumnPropNameInRow="Is_Doctor" msprop:Generator_ColumnPropNameInTable="Is_DoctorColumn" type="xs:boolean" minOccurs="0" />
+              <xs:element name="invoice_id" msprop:Generator_UserColumnName="invoice_id" msprop:Generator_ColumnVarNameInTable="columninvoice_id" msprop:Generator_ColumnPropNameInRow="invoice_id" msprop:Generator_ColumnPropNameInTable="invoice_idColumn" type="xs:decimal" />
+              <xs:element name="UserName" msprop:Generator_UserColumnName="UserName" msprop:Generator_ColumnVarNameInTable="columnUserName" msprop:Generator_ColumnPropNameInRow="UserName" msprop:Generator_ColumnPropNameInTable="UserNameColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DR_NAME" msprop:Generator_UserColumnName="DR_NAME" msprop:Generator_ColumnVarNameInTable="columnDR_NAME" msprop:Generator_ColumnPropNameInRow="DR_NAME" msprop:Generator_ColumnPropNameInTable="DR_NAMEColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="invoice_date" msprop:Generator_UserColumnName="invoice_date" msprop:Generator_ColumnVarNameInTable="columninvoice_date" msprop:Generator_ColumnPropNameInRow="invoice_date" msprop:Generator_ColumnPropNameInTable="invoice_dateColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="consulttype" msprop:Generator_UserColumnName="consulttype" msprop:Generator_ColumnVarNameInTable="columnconsulttype" msprop:Generator_ColumnPropNameInRow="consulttype" msprop:Generator_ColumnPropNameInTable="consulttypeColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="consultprice" msprop:Generator_UserColumnName="consultprice" msprop:Generator_ColumnVarNameInTable="columnconsultprice" msprop:Generator_ColumnPropNameInRow="consultprice" msprop:Generator_ColumnPropNameInTable="consultpriceColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="patientid" msprop:Generator_UserColumnName="patientid" msprop:Generator_ColumnPropNameInRow="patientid" msprop:Generator_ColumnVarNameInTable="columnpatientid" msprop:Generator_ColumnPropNameInTable="patientidColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="pname" msprop:Generator_UserColumnName="pname" msprop:Generator_ColumnPropNameInRow="pname" msprop:Generator_ColumnVarNameInTable="columnpname" msprop:Generator_ColumnPropNameInTable="pnameColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="pgender" msprop:Generator_UserColumnName="pgender" msprop:Generator_ColumnPropNameInRow="pgender" msprop:Generator_ColumnVarNameInTable="columnpgender" msprop:Generator_ColumnPropNameInTable="pgenderColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="pAge" msprop:Generator_UserColumnName="pAge" msprop:Generator_ColumnPropNameInRow="pAge" msprop:Generator_ColumnVarNameInTable="columnpAge" msprop:Generator_ColumnPropNameInTable="pAgeColumn" type="xs:dateTime" />
+              <xs:element name="pcontactaddress" msprop:Generator_UserColumnName="pcontactaddress" msprop:Generator_ColumnPropNameInRow="pcontactaddress" msprop:Generator_ColumnVarNameInTable="columnpcontactaddress" msprop:Generator_ColumnPropNameInTable="pcontactaddressColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="pphoneno" msprop:Generator_UserColumnName="pphoneno" msprop:Generator_ColumnPropNameInRow="pphoneno" msprop:Generator_ColumnVarNameInTable="columnpphoneno" msprop:Generator_ColumnPropNameInTable="pphonenoColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Age" msprop:Generator_UserColumnName="Age" msprop:Generator_ColumnPropNameInRow="Age" msprop:Generator_ColumnVarNameInTable="columnAge" msprop:Generator_ColumnPropNameInTable="AgeColumn" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ViewDoctorParaxam" msprop:Generator_UserTableName="ViewDoctorParaxam" msprop:Generator_RowDeletedName="ViewDoctorParaxamRowDeleted" msprop:Generator_RowChangedName="ViewDoctorParaxamRowChanged" msprop:Generator_RowClassName="ViewDoctorParaxamRow" msprop:Generator_RowChangingName="ViewDoctorParaxamRowChanging" msprop:Generator_RowEvArgName="ViewDoctorParaxamRowChangeEvent" msprop:Generator_RowEvHandlerName="ViewDoctorParaxamRowChangeEventHandler" msprop:Generator_TableClassName="ViewDoctorParaxamDataTable" msprop:Generator_TableVarName="tableViewDoctorParaxam" msprop:Generator_RowDeletingName="ViewDoctorParaxamRowDeleting" msprop:Generator_TablePropName="ViewDoctorParaxam">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="UserID" msprop:Generator_UserColumnName="UserID" msprop:Generator_ColumnPropNameInRow="UserID" msprop:Generator_ColumnVarNameInTable="columnUserID" msprop:Generator_ColumnPropNameInTable="UserIDColumn" type="xs:int" />
+              <xs:element name="Is_Doctor" msprop:Generator_UserColumnName="Is_Doctor" msprop:Generator_ColumnPropNameInRow="Is_Doctor" msprop:Generator_ColumnVarNameInTable="columnIs_Doctor" msprop:Generator_ColumnPropNameInTable="Is_DoctorColumn" type="xs:boolean" minOccurs="0" />
+              <xs:element name="invoice_id" msprop:Generator_UserColumnName="invoice_id" msprop:Generator_ColumnPropNameInRow="invoice_id" msprop:Generator_ColumnVarNameInTable="columninvoice_id" msprop:Generator_ColumnPropNameInTable="invoice_idColumn" type="xs:decimal" />
+              <xs:element name="paracheckid" msprop:Generator_UserColumnName="paracheckid" msprop:Generator_ColumnPropNameInRow="paracheckid" msprop:Generator_ColumnVarNameInTable="columnparacheckid" msprop:Generator_ColumnPropNameInTable="paracheckidColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="servicecharge" msprop:Generator_UserColumnName="servicecharge" msprop:Generator_ColumnPropNameInRow="servicecharge" msprop:Generator_ColumnVarNameInTable="columnservicecharge" msprop:Generator_ColumnPropNameInTable="servicechargeColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="UserName" msprop:Generator_UserColumnName="UserName" msprop:Generator_ColumnPropNameInRow="UserName" msprop:Generator_ColumnVarNameInTable="columnUserName" msprop:Generator_ColumnPropNameInTable="UserNameColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DR_NAME" msprop:Generator_UserColumnName="DR_NAME" msprop:Generator_ColumnPropNameInRow="DR_NAME" msprop:Generator_ColumnVarNameInTable="columnDR_NAME" msprop:Generator_ColumnPropNameInTable="DR_NAMEColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="paracheck" msprop:Generator_UserColumnName="paracheck" msprop:Generator_ColumnPropNameInRow="paracheck" msprop:Generator_ColumnVarNameInTable="columnparacheck" msprop:Generator_ColumnPropNameInTable="paracheckColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="invoice_date" msprop:Generator_UserColumnName="invoice_date" msprop:Generator_ColumnPropNameInRow="invoice_date" msprop:Generator_ColumnVarNameInTable="columninvoice_date" msprop:Generator_ColumnPropNameInTable="invoice_dateColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ParaType" msprop:Generator_UserColumnName="ParaType" msprop:Generator_ColumnPropNameInRow="ParaType" msprop:Generator_ColumnVarNameInTable="columnParaType" msprop:Generator_ColumnPropNameInTable="ParaTypeColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="patientid" msprop:Generator_UserColumnName="patientid" msprop:Generator_ColumnPropNameInRow="patientid" msprop:Generator_ColumnVarNameInTable="columnpatientid" msprop:Generator_ColumnPropNameInTable="patientidColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="pname" msprop:Generator_UserColumnName="pname" msprop:Generator_ColumnPropNameInRow="pname" msprop:Generator_ColumnVarNameInTable="columnpname" msprop:Generator_ColumnPropNameInTable="pnameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="pgender" msprop:Generator_UserColumnName="pgender" msprop:Generator_ColumnPropNameInRow="pgender" msprop:Generator_ColumnVarNameInTable="columnpgender" msprop:Generator_ColumnPropNameInTable="pgenderColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="pAge" msprop:Generator_UserColumnName="pAge" msprop:Generator_ColumnPropNameInRow="pAge" msprop:Generator_ColumnVarNameInTable="columnpAge" msprop:Generator_ColumnPropNameInTable="pAgeColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="pcontactaddress" msprop:Generator_UserColumnName="pcontactaddress" msprop:Generator_ColumnPropNameInRow="pcontactaddress" msprop:Generator_ColumnVarNameInTable="columnpcontactaddress" msprop:Generator_ColumnPropNameInTable="pcontactaddressColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="pphoneno" msprop:Generator_UserColumnName="pphoneno" msprop:Generator_ColumnPropNameInRow="pphoneno" msprop:Generator_ColumnVarNameInTable="columnpphoneno" msprop:Generator_ColumnPropNameInTable="pphonenoColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Age" msprop:Generator_UserColumnName="Age" msprop:Generator_ColumnPropNameInRow="Age" msprop:Generator_ColumnVarNameInTable="columnAge" msprop:Generator_ColumnPropNameInTable="AgeColumn" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

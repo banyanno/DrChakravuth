@@ -96,8 +96,8 @@ Partial Class UCDepartment
         'SplitContainer1.Panel2
         '
         Me.SplitContainer1.Panel2.Controls.Add(Me.GroupBox4)
-        Me.SplitContainer1.Size = New System.Drawing.Size(952, 442)
-        Me.SplitContainer1.SplitterDistance = 494
+        Me.SplitContainer1.Size = New System.Drawing.Size(1075, 442)
+        Me.SplitContainer1.SplitterDistance = 557
         Me.SplitContainer1.SplitterWidth = 3
         Me.SplitContainer1.TabIndex = 1
         '
@@ -117,7 +117,7 @@ Partial Class UCDepartment
         'SplitContainer2.Panel2
         '
         Me.SplitContainer2.Panel2.Controls.Add(Me.GroupBox3)
-        Me.SplitContainer2.Size = New System.Drawing.Size(494, 442)
+        Me.SplitContainer2.Size = New System.Drawing.Size(557, 442)
         Me.SplitContainer2.SplitterDistance = 215
         Me.SplitContainer2.SplitterWidth = 3
         Me.SplitContainer2.TabIndex = 2
@@ -135,7 +135,7 @@ Partial Class UCDepartment
         Me.LsDepartment.Location = New System.Drawing.Point(0, 34)
         Me.LsDepartment.MultiSelect = False
         Me.LsDepartment.Name = "LsDepartment"
-        Me.LsDepartment.Size = New System.Drawing.Size(494, 181)
+        Me.LsDepartment.Size = New System.Drawing.Size(557, 181)
         Me.LsDepartment.Sorting = System.Windows.Forms.SortOrder.Ascending
         Me.LsDepartment.TabIndex = 1
         Me.LsDepartment.UseCompatibleStateImageBehavior = False
@@ -144,12 +144,12 @@ Partial Class UCDepartment
         '
         Me.ContextDepartment.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MenuGrantToDepart})
         Me.ContextDepartment.Name = "ContextMenuStrip1"
-        Me.ContextDepartment.Size = New System.Drawing.Size(137, 26)
+        Me.ContextDepartment.Size = New System.Drawing.Size(142, 26)
         '
         'MenuGrantToDepart
         '
         Me.MenuGrantToDepart.Name = "MenuGrantToDepart"
-        Me.MenuGrantToDepart.Size = New System.Drawing.Size(136, 22)
+        Me.MenuGrantToDepart.Size = New System.Drawing.Size(141, 22)
         Me.MenuGrantToDepart.Text = "Permission..."
         '
         'ImgList
@@ -164,22 +164,23 @@ Partial Class UCDepartment
         'ToolStrip1
         '
         Me.ToolStrip1.AutoSize = False
+        Me.ToolStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
         Me.ToolStrip1.Font = New System.Drawing.Font("Tahoma", 8.25!)
         Me.ToolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden
         Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(32, 32)
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BtnNew, Me.ToolStripSeparator1, Me.btnEdit, Me.ToolStripSeparator2, Me.BtnRefresh, Me.ToolStripSeparator3, Me.BtnPermission})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
-        Me.ToolStrip1.Size = New System.Drawing.Size(494, 34)
+        Me.ToolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System
+        Me.ToolStrip1.Size = New System.Drawing.Size(557, 34)
         Me.ToolStrip1.TabIndex = 3
         Me.ToolStrip1.Text = "ToolStrip1"
         '
         'BtnNew
         '
         Me.BtnNew.AutoSize = False
-        Me.BtnNew.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.BtnNew.Image = Global.Clinic_Management_System.My.Resources.Resources.blue_new
+        Me.BtnNew.ForeColor = System.Drawing.Color.White
+        Me.BtnNew.Image = CType(resources.GetObject("BtnNew.Image"), System.Drawing.Image)
         Me.BtnNew.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.BtnNew.Name = "BtnNew"
         Me.BtnNew.Size = New System.Drawing.Size(80, 31)
@@ -193,8 +194,8 @@ Partial Class UCDepartment
         'btnEdit
         '
         Me.btnEdit.AutoSize = False
-        Me.btnEdit.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.btnEdit.Image = Global.Clinic_Management_System.My.Resources.Resources.configuration_edit
+        Me.btnEdit.ForeColor = System.Drawing.Color.White
+        Me.btnEdit.Image = CType(resources.GetObject("btnEdit.Image"), System.Drawing.Image)
         Me.btnEdit.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btnEdit.Name = "btnEdit"
         Me.btnEdit.Size = New System.Drawing.Size(70, 31)
@@ -208,8 +209,8 @@ Partial Class UCDepartment
         'BtnRefresh
         '
         Me.BtnRefresh.AutoSize = False
-        Me.BtnRefresh.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.BtnRefresh.Image = Global.Clinic_Management_System.My.Resources.Resources.view_refresh
+        Me.BtnRefresh.ForeColor = System.Drawing.Color.White
+        Me.BtnRefresh.Image = CType(resources.GetObject("BtnRefresh.Image"), System.Drawing.Image)
         Me.BtnRefresh.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.BtnRefresh.Name = "BtnRefresh"
         Me.BtnRefresh.Size = New System.Drawing.Size(120, 30)
@@ -222,8 +223,8 @@ Partial Class UCDepartment
         '
         'BtnPermission
         '
-        Me.BtnPermission.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.BtnPermission.Image = Global.Clinic_Management_System.My.Resources.Resources.process
+        Me.BtnPermission.ForeColor = System.Drawing.Color.White
+        Me.BtnPermission.Image = CType(resources.GetObject("BtnPermission.Image"), System.Drawing.Image)
         Me.BtnPermission.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.BtnPermission.Name = "BtnPermission"
         Me.BtnPermission.Size = New System.Drawing.Size(134, 31)
@@ -238,7 +239,7 @@ Partial Class UCDepartment
         Me.GroupBox3.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Padding = New System.Windows.Forms.Padding(2, 1, 2, 1)
-        Me.GroupBox3.Size = New System.Drawing.Size(494, 224)
+        Me.GroupBox3.Size = New System.Drawing.Size(557, 224)
         Me.GroupBox3.TabIndex = 0
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Permission of Departement"
@@ -248,14 +249,14 @@ Partial Class UCDepartment
         Me.LsPermistion.BackColor = System.Drawing.SystemColors.Control
         Me.LsPermistion.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader5, Me.ColumnHeader6, Me.ColumnHeader7, Me.ColumnHeader8})
         Me.LsPermistion.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.LsPermistion.Font = New System.Drawing.Font("Khmer OS Battambang", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LsPermistion.Font = New System.Drawing.Font("Khmer OS Battambang", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LsPermistion.ForeColor = System.Drawing.Color.Navy
         Me.LsPermistion.HideSelection = False
         Me.LsPermistion.LargeImageList = Me.ImgList
         Me.LsPermistion.Location = New System.Drawing.Point(2, 45)
         Me.LsPermistion.MultiSelect = False
         Me.LsPermistion.Name = "LsPermistion"
-        Me.LsPermistion.Size = New System.Drawing.Size(490, 178)
+        Me.LsPermistion.Size = New System.Drawing.Size(553, 178)
         Me.LsPermistion.TabIndex = 5
         Me.LsPermistion.UseCompatibleStateImageBehavior = False
         '
@@ -280,22 +281,24 @@ Partial Class UCDepartment
         '
         'ToolStrip2
         '
+        Me.ToolStrip2.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
         Me.ToolStrip2.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden
         Me.ToolStrip2.ImageScalingSize = New System.Drawing.Size(24, 24)
         Me.ToolStrip2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButton1, Me.ToolStripSeparator11, Me.BtnMenuEdit, Me.ToolStripSeparator8, Me.BtnViewAllPermission})
         Me.ToolStrip2.Location = New System.Drawing.Point(2, 14)
         Me.ToolStrip2.Name = "ToolStrip2"
         Me.ToolStrip2.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
-        Me.ToolStrip2.Size = New System.Drawing.Size(490, 31)
+        Me.ToolStrip2.Size = New System.Drawing.Size(553, 31)
         Me.ToolStrip2.TabIndex = 4
         Me.ToolStrip2.Text = "ToolStrip2"
         '
         'ToolStripButton1
         '
+        Me.ToolStripButton1.ForeColor = System.Drawing.Color.White
         Me.ToolStripButton1.Image = Global.Clinic_Management_System.My.Resources.Resources._new
         Me.ToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.ToolStripButton1.Name = "ToolStripButton1"
-        Me.ToolStripButton1.Size = New System.Drawing.Size(109, 28)
+        Me.ToolStripButton1.Size = New System.Drawing.Size(120, 28)
         Me.ToolStripButton1.Text = "New Permission"
         '
         'ToolStripSeparator11
@@ -305,11 +308,12 @@ Partial Class UCDepartment
         '
         'BtnMenuEdit
         '
+        Me.BtnMenuEdit.ForeColor = System.Drawing.Color.White
         Me.BtnMenuEdit.Image = Global.Clinic_Management_System.My.Resources.Resources.configuration_edit
         Me.BtnMenuEdit.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.BtnMenuEdit.Name = "BtnMenuEdit"
-        Me.BtnMenuEdit.Size = New System.Drawing.Size(53, 28)
-        Me.BtnMenuEdit.Text = "Edit"
+        Me.BtnMenuEdit.Size = New System.Drawing.Size(73, 28)
+        Me.BtnMenuEdit.Text = "   Edit   "
         '
         'ToolStripSeparator8
         '
@@ -318,10 +322,11 @@ Partial Class UCDepartment
         '
         'BtnViewAllPermission
         '
+        Me.BtnViewAllPermission.ForeColor = System.Drawing.Color.White
         Me.BtnViewAllPermission.Image = Global.Clinic_Management_System.My.Resources.Resources.view_refresh
         Me.BtnViewAllPermission.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.BtnViewAllPermission.Name = "BtnViewAllPermission"
-        Me.BtnViewAllPermission.Size = New System.Drawing.Size(99, 28)
+        Me.BtnViewAllPermission.Size = New System.Drawing.Size(101, 28)
         Me.BtnViewAllPermission.Text = "Refresh Data"
         '
         'GroupBox4
@@ -333,7 +338,7 @@ Partial Class UCDepartment
         Me.GroupBox4.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.GroupBox4.Name = "GroupBox4"
         Me.GroupBox4.Padding = New System.Windows.Forms.Padding(2, 1, 2, 1)
-        Me.GroupBox4.Size = New System.Drawing.Size(455, 442)
+        Me.GroupBox4.Size = New System.Drawing.Size(515, 442)
         Me.GroupBox4.TabIndex = 4
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Users in department"
@@ -350,7 +355,7 @@ Partial Class UCDepartment
         Me.LsUser.Location = New System.Drawing.Point(2, 45)
         Me.LsUser.MultiSelect = False
         Me.LsUser.Name = "LsUser"
-        Me.LsUser.Size = New System.Drawing.Size(451, 396)
+        Me.LsUser.Size = New System.Drawing.Size(511, 396)
         Me.LsUser.TabIndex = 1
         Me.LsUser.UseCompatibleStateImageBehavior = False
         '
@@ -375,22 +380,24 @@ Partial Class UCDepartment
         '
         'ToolStripUser
         '
+        Me.ToolStripUser.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
         Me.ToolStripUser.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden
         Me.ToolStripUser.ImageScalingSize = New System.Drawing.Size(24, 24)
         Me.ToolStripUser.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BtnNewUser, Me.ToolStripSeparator6, Me.BtnEditUser, Me.ToolStripSeparator12, Me.BtnChangePassword, Me.ToolStripSeparator7, Me.BtnViewAllUser, Me.ToolStripSeparator4, Me.BtnDeleteUser})
         Me.ToolStripUser.Location = New System.Drawing.Point(2, 14)
         Me.ToolStripUser.Name = "ToolStripUser"
-        Me.ToolStripUser.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
-        Me.ToolStripUser.Size = New System.Drawing.Size(451, 31)
+        Me.ToolStripUser.RenderMode = System.Windows.Forms.ToolStripRenderMode.System
+        Me.ToolStripUser.Size = New System.Drawing.Size(511, 31)
         Me.ToolStripUser.TabIndex = 3
         Me.ToolStripUser.Text = "ToolStrip2"
         '
         'BtnNewUser
         '
+        Me.BtnNewUser.ForeColor = System.Drawing.Color.White
         Me.BtnNewUser.Image = Global.Clinic_Management_System.My.Resources.Resources.new_vendor
         Me.BtnNewUser.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.BtnNewUser.Name = "BtnNewUser"
-        Me.BtnNewUser.Size = New System.Drawing.Size(81, 28)
+        Me.BtnNewUser.Size = New System.Drawing.Size(85, 28)
         Me.BtnNewUser.Text = "New User"
         '
         'ToolStripSeparator6
@@ -400,11 +407,12 @@ Partial Class UCDepartment
         '
         'BtnEditUser
         '
+        Me.BtnEditUser.ForeColor = System.Drawing.Color.White
         Me.BtnEditUser.Image = Global.Clinic_Management_System.My.Resources.Resources.configuration_edit
         Me.BtnEditUser.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.BtnEditUser.Name = "BtnEditUser"
-        Me.BtnEditUser.Size = New System.Drawing.Size(53, 28)
-        Me.BtnEditUser.Text = "Edit"
+        Me.BtnEditUser.Size = New System.Drawing.Size(73, 28)
+        Me.BtnEditUser.Text = "   Edit   "
         '
         'ToolStripSeparator12
         '
@@ -413,9 +421,10 @@ Partial Class UCDepartment
         '
         'BtnChangePassword
         '
+        Me.BtnChangePassword.ForeColor = System.Drawing.Color.White
         Me.BtnChangePassword.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.BtnChangePassword.Name = "BtnChangePassword"
-        Me.BtnChangePassword.Size = New System.Drawing.Size(109, 28)
+        Me.BtnChangePassword.Size = New System.Drawing.Size(114, 28)
         Me.BtnChangePassword.Text = "Change Password..."
         '
         'ToolStripSeparator7
@@ -425,10 +434,11 @@ Partial Class UCDepartment
         '
         'BtnViewAllUser
         '
+        Me.BtnViewAllUser.ForeColor = System.Drawing.Color.White
         Me.BtnViewAllUser.Image = Global.Clinic_Management_System.My.Resources.Resources.view_refresh
         Me.BtnViewAllUser.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.BtnViewAllUser.Name = "BtnViewAllUser"
-        Me.BtnViewAllUser.Size = New System.Drawing.Size(99, 28)
+        Me.BtnViewAllUser.Size = New System.Drawing.Size(101, 28)
         Me.BtnViewAllUser.Text = "Refresh Data"
         '
         'ToolStripSeparator4
@@ -438,10 +448,11 @@ Partial Class UCDepartment
         '
         'BtnDeleteUser
         '
+        Me.BtnDeleteUser.ForeColor = System.Drawing.Color.White
         Me.BtnDeleteUser.Image = Global.Clinic_Management_System.My.Resources.Resources.Remove
         Me.BtnDeleteUser.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.BtnDeleteUser.Name = "BtnDeleteUser"
-        Me.BtnDeleteUser.Size = New System.Drawing.Size(91, 28)
+        Me.BtnDeleteUser.Size = New System.Drawing.Size(94, 28)
         Me.BtnDeleteUser.Text = "Delete User"
         '
         'UCDepartment
@@ -451,7 +462,7 @@ Partial Class UCDepartment
         Me.BackColor = System.Drawing.Color.Transparent
         Me.Controls.Add(Me.SplitContainer1)
         Me.Name = "UCDepartment"
-        Me.Size = New System.Drawing.Size(952, 442)
+        Me.Size = New System.Drawing.Size(1075, 442)
         Me.SplitContainer1.Panel1.ResumeLayout(False)
         Me.SplitContainer1.Panel2.ResumeLayout(False)
         Me.SplitContainer1.ResumeLayout(False)

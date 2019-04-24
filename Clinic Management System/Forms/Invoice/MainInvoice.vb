@@ -12,13 +12,19 @@
     End Sub
 
     Public Sub BtnFilterInvoice_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnFilterInvoice.Click
-        If ValidateDateTimePicker(dtFrom, "", ErrValidate) = False Then Exit Sub
-        If ValidateDateTimePicker(dtTo, "", ErrValidate) = False Then Exit Sub
+        'If ValidateDateTimePicker(dtFrom, "", ErrValidate) = False Then Exit Sub
+        'If ValidateDateTimePicker(dtTo, "", ErrValidate) = False Then Exit Sub
 
-        DA_Invoice.FillByInvoiceDate(DS_Invoice.Invoice, FormatDateTime(Me.dtFrom.Value, DateFormat.ShortDate), FormatDateTime(Me.dtTo.Value, DateFormat.ShortDate))
-        DA_InvoiceDetail.FillBy(DS_Invoice.RECEIPT_DETAIL)
-        Inv_DetialPanel.InvoiceList.DataSource = DS_Invoice.Invoice
-        Inv_DetialPanel.GridExpend.DataSource = DA_Expend.GetDataExpendByDate(FormatDateTime(Me.dtFrom.Value, DateFormat.ShortDate), FormatDateTime(Me.dtTo.Value, DateFormat.ShortDate))
+        'DA_Invoice.FillByInvoiceDate(DS_Invoice.Invoice, FormatDateTime(Me.dtFrom.Value, DateFormat.ShortDate), FormatDateTime(Me.dtTo.Value, DateFormat.ShortDate))
+        'DA_InvoiceDetail.FillBy(DS_Invoice.RECEIPT_DETAIL)
+        'Inv_DetialPanel.InvoiceList.DataSource = DS_Invoice.Invoice
+        If RadByReference.Checked = True Then
+            'Inv_DetialPanel.GridExpend.DataSource = DA_Expend.GetDataExpendByDate(FormatDateTime(Me.dtFrom.Value, DateFormat.ShortDate), FormatDateTime(Me.dtTo.Value, DateFormat.ShortDate))
+            Inv_DetialPanel.GridExpend.DataSource = DA_Expend.SelectExpendNo(FormatDateTime(Me.dtFrom.Value, DateFormat.ShortDate), FormatDateTime(Me.dtTo.Value, DateFormat.ShortDate), TxtReferenceNo.Text)
+        ElseIf RadByReferencenote.Checked = True Then
+            Inv_DetialPanel.GridExpend.DataSource = DA_Expend.SelectByExpendNote(FormatDateTime(Me.dtFrom.Value, DateFormat.ShortDate), FormatDateTime(Me.dtTo.Value, DateFormat.ShortDate), TxtExpendnote.Text)
+        End If
+
 
     End Sub
 
@@ -66,11 +72,11 @@
     End Sub
 
     Private Sub MainInvoice_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        If DEPART_NAME.ToUpper = "Admin2".ToUpper Then
-            GroupIncome.Enabled = True
-        Else
-            GroupIncome.Enabled = False
-        End If
+        'If DEPART_NAME.ToUpper = "Admin2".ToUpper Then
+        'GroupIncome.Enabled = True
+        'Else
+        'GroupIncome.Enabled = False
+        'End If
         AddUserControlToPanel(Panel1, Inv_DetialPanel)
     End Sub
 
@@ -150,5 +156,13 @@
     Private Sub BgLoading_RunWorkerCompleted(ByVal sender As System.Object, ByVal e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles BgLoading.RunWorkerCompleted
         MainApplicationForm.StatusLoading(False)
         BtnIncomeShow.Enabled = True
+    End Sub
+
+    Private Sub RadByReference_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RadByReference.CheckedChanged
+        TxtReferenceNo.Enabled = RadByReference.Checked
+    End Sub
+
+    Private Sub RadByReferencenote_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RadByReferencenote.CheckedChanged
+        TxtExpendnote.Enabled = RadByReferencenote.Checked
     End Sub
 End Class

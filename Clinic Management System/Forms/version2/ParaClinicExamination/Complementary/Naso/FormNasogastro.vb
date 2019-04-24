@@ -54,10 +54,10 @@
         cboNasoDocteur.SelectedValue = USER_ID
     End Sub
     Sub LoadNasoData()
-        If DA_Naso.SelectNasoByRequestID(CLng(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value)).Rows.Count >= 1 Then
+        If DA_Naso.SelectNasoByRequestID(CLng(Me.RequestPanel.gridRequestList.CurrentRow.Cells("request_id").Value)).Rows.Count >= 1 Then
             Try
                 Dim NasoTable As New DataTable
-                NasoTable = DA_Naso.SelectNasoByRequestID(CLng(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value))
+                NasoTable = DA_Naso.SelectNasoByRequestID(CLng(Me.RequestPanel.gridRequestList.CurrentRow.Cells("request_id").Value))
                 Me.cboNasoDemander.SelectedValue = NasoTable.Rows(0).Item("demander")
                 Me.txtNasoTolerance.Text = NasoTable.Rows(0).Item("tolerance")
                 Me.cboNasoMotify.SelectedValue = NasoTable.Rows(0).Item("motify")
@@ -79,22 +79,22 @@
                 Me.txtnasomoreinfo.Text = NasoTable.Rows(0).Item("more_info")
 
                 ''Load Conclusion Data
-                Me.conclusionlist.DataSource = DA_NasoConclusion.SelectConclusionByRequestID(CInt(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value))
+                Me.conclusionlist.DataSource = DA_NasoConclusion.SelectConclusionByRequestID(CInt(Me.RequestPanel.gridRequestList.CurrentRow.Cells("request_id").Value))
             Catch ex As Exception
 
             End Try
-            
+
         End If
     End Sub
     Sub RefreshConclusionList()
-        Me.conclusionlist.DataSource = DA_NasoConclusion.SelectConclusionByRequestID(CInt(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value))
+        Me.conclusionlist.DataSource = DA_NasoConclusion.SelectConclusionByRequestID(CInt(Me.RequestPanel.gridRequestList.CurrentRow.Cells("request_id").Value))
     End Sub
 
     Private Sub BtnAddConclusion_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnAddConclusion.Click
-        If DA_NasoConclusion.SelectConclusion(CInt(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value), CInt(Me.cboNasoConclusion.SelectedValue)).Rows.Count > 0 Then
+        If DA_NasoConclusion.SelectConclusion(CInt(Me.RequestPanel.gridRequestList.CurrentRow.Cells("request_id").Value), CInt(Me.cboNasoConclusion.SelectedValue)).Rows.Count > 0 Then
             MsgBox("The conclusion was added already", MsgBoxStyle.OkOnly, "Existing Conclusion")
         Else
-            DA_NasoConclusion.Insert(CInt(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value), CInt(Me.cboNasoConclusion.SelectedValue))
+            DA_NasoConclusion.Insert(CInt(Me.RequestPanel.gridRequestList.CurrentRow.Cells("request_id").Value), CInt(Me.cboNasoConclusion.SelectedValue))
             RefreshConclusionList()
             cboNasoConclusion.SelectedIndex = -1
         End If
@@ -108,8 +108,8 @@
     End Sub
 
     Private Sub BtnCancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnCancel.Click
-        If DA_Naso.SelectNasoByRequestID(CLng(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value)).Rows.Count <= 0 Then
-            DA_NasoConclusion.DeleteConclusionByRequestID(CLng(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value))
+        If DA_Naso.SelectNasoByRequestID(CLng(Me.RequestPanel.gridRequestList.CurrentRow.Cells("request_id").Value)).Rows.Count <= 0 Then
+            DA_NasoConclusion.DeleteConclusionByRequestID(CLng(Me.RequestPanel.gridRequestList.CurrentRow.Cells("request_id").Value))
         End If
         Me.Close()
     End Sub
@@ -119,14 +119,14 @@
         If ValidateCombobox(cboNasoMotify, "", ErrAlert) = False Then Exit Sub
         If ValidateCombobox(cboNasoDocteur, "", ErrAlert) = False Then Exit Sub
 
-        If DA_Naso.SelectNasoByRequestID(CLng(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value)).Rows.Count >= 1 Then
+        If DA_Naso.SelectNasoByRequestID(CLng(Me.RequestPanel.gridRequestList.CurrentRow.Cells("request_id").Value)).Rows.Count >= 1 Then
             '' Update
-            If DA_Naso.UpdateNasoByRequestID(Me.cboNasoDemander.SelectedValue.ToString, Me.txtNasoTolerance.Text, Me.cboNasoMotify.SelectedValue.ToString, Me.txtNasoOeso.Text, Me.txtNasoEsto.Text, Me.txtNasoPylore.Text, Me.txtNasoBulbe.Text, Me.txtNasoD1.Text, IIf(ChAnaPath.Checked, ChAnaPath.Text, ""), Me.cboNasoDocteur.Text, Me.txtnasomoreinfo.Text.ToString, TxtLacMuquex.Text, TxtGrosseTuberose.Text, TxtFundus.Text, TxtAntre.Text, DateResultExam.Value.Date, CInt(cboNasoDocteur.SelectedValue), GetValueConclustion, CLng(Me.RequestPanel.RequestList.CurrentRow.Cells("request_id").Value)) = 1 Then
+            If DA_Naso.UpdateNasoByRequestID(Me.cboNasoDemander.SelectedValue.ToString, Me.txtNasoTolerance.Text, Me.cboNasoMotify.SelectedValue.ToString, Me.txtNasoOeso.Text, Me.txtNasoEsto.Text, Me.txtNasoPylore.Text, Me.txtNasoBulbe.Text, Me.txtNasoD1.Text, IIf(ChAnaPath.Checked, ChAnaPath.Text, ""), Me.cboNasoDocteur.Text, Me.txtnasomoreinfo.Text.ToString, TxtLacMuquex.Text, TxtGrosseTuberose.Text, TxtFundus.Text, TxtAntre.Text, DateResultExam.Value.Date, CInt(cboNasoDocteur.SelectedValue), GetValueConclustion, CLng(Me.RequestPanel.gridRequestList.CurrentRow.Cells("request_id").Value)) = 1 Then
                 MsgBox("The nasogastro has been saved successfully", MsgBoxStyle.OkOnly, "Saved Nasogastro")
                 Me.DialogResult = Windows.Forms.DialogResult.OK
             End If
         Else
-            If DA_Naso.InsertNaso(CInt(Me.RequestPanel.RequestList.CurrentRow.Cells("ppatientid").Value), CLng(LblPatientNo.Text), Me.cboNasoDemander.SelectedValue.ToString, Me.txtNasoTolerance.Text, Me.cboNasoMotify.SelectedValue.ToString, Me.txtNasoOeso.Text, Me.txtNasoEsto.Text, Me.txtNasoPylore.Text, Me.txtNasoBulbe.Text, Me.txtNasoD1.Text, IIf(ChAnaPath.Checked, ChAnaPath.Text, ""), Me.cboNasoDocteur.Text, Me.txtnasomoreinfo.Text.ToString, TxtLacMuquex.Text, TxtGrosseTuberose.Text, TxtFundus.Text, TxtAntre.Text, DateResultExam.Value.Date, CInt(cboNasoDocteur.SelectedValue), GetValueConclustion) = 1 Then
+            If DA_Naso.InsertNaso(LblPatientNo.Text, lblRequestid.Text, Me.cboNasoDemander.SelectedValue.ToString, Me.txtNasoTolerance.Text, Me.cboNasoMotify.SelectedValue.ToString, Me.txtNasoOeso.Text, Me.txtNasoEsto.Text, Me.txtNasoPylore.Text, Me.txtNasoBulbe.Text, Me.txtNasoD1.Text, IIf(ChAnaPath.Checked, ChAnaPath.Text, ""), Me.cboNasoDocteur.Text, Me.txtnasomoreinfo.Text.ToString, TxtLacMuquex.Text, TxtGrosseTuberose.Text, TxtFundus.Text, TxtAntre.Text, DateResultExam.Value.Date, CInt(cboNasoDocteur.SelectedValue), GetValueConclustion) = 1 Then
                 MsgBox("A nasogastro has been saved successfully", MsgBoxStyle.OkOnly, "Saved Nasogastro")
                 DA_DOCTOR_FEE.InsertNewDoctorFee(CInt(cboNasoDocteur.SelectedValue), cboNasoDocteur.Text, "Nasogastro", DateResultExam.Value.Date, LblPatientNo.Text, 0, lblPatientName.Text, GetValueConclustion)
                 Me.DialogResult = Windows.Forms.DialogResult.OK
